@@ -4,15 +4,15 @@
 
 export const SITE_CONFIG = {
   // Production domain - update this for your new project
-  PRODUCTION_DOMAIN: 'https://0717records.com',
+  PRODUCTION_DOMAIN: 'http://taupirisound.co.nz/',
 
   // Organization information
-  ORGANIZATION_NAME: '07:17 Records',
+  ORGANIZATION_NAME: 'Taupriri Sound',
   ORGANIZATION_DESCRIPTION:
-    'A New Zealand based record label supporting local and international artists.',
+    "Taupiri Sound is a recording studio based in the countryside of northern Waikato. For over a decade we have worked on countless projects from educational resources to some of Aotearoa's best artists.",
 
   // Contact information
-  ORGANIZATION_EMAIL: '0717records@gmail.com',
+  ORGANIZATION_EMAIL: 'lance@taupirisound.co.nz',
 } as const;
 
 // Type-safe access to configuration values
