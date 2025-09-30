@@ -10,8 +10,6 @@ const PROTECTED_DOCUMENT_TYPES = [
   'footer',
   'homePage',
   'blogIndexPage',
-  'eventsIndexPage',
-  'favouritesIndexPage',
   'companyLinks',
   'termsAndConditions',
   'privacyPolicy'

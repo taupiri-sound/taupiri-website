@@ -57,15 +57,11 @@ export const sideContentBlockType = defineType({
       title: 'Call to Action (Optional)',
       type: 'array',
       group: 'content',
-      description: 'Optional call to action - can add a link button or email button',
+      description: 'Optional call to action - can add a link button',
       of: [
         defineArrayMember({
           type: 'embeddedCtaButton',
           title: 'CTA Button',
-        }),
-        defineArrayMember({
-          type: 'embeddedCtaEmailButton',
-          title: 'CTA Email Button',
         }),
       ],
       options: {
@@ -97,8 +93,6 @@ export const sideContentBlockType = defineType({
         if (firstCta._type === 'embeddedCtaButton') {
           const buttonText = firstCta.text?.slice(0, 20) + '...' || 'Button';
           ctaText = ` • CTA: ${buttonText}`;
-        } else if (firstCta._type === 'embeddedCtaEmailButton') {
-          ctaText = ' • Email Button';
         }
       }
 

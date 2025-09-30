@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { ItemList, Divider, RichText, Quote, TextImage, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, CtaEmailButton, EmbeddedCtaButton, EmbeddedCtaEmailButton, CtaEvents, CtaBlogPost, SubSection, SubSubSection, CollabBlock, FavouriteBlock, CompanyLinksBlock, BlockList } from '@/sanity/types';
+import type { Divider, RichText, Quote, TextImage, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockList } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -21,7 +21,6 @@ export interface SectionBlock extends BaseBlock {
 export type PageSectionBlock = Omit<PageSection, 'title'> & { _key: string; title: string };
 export type SubSectionBlock = Omit<SubSection, 'title'> & { _key: string; title: string };
 export type SubSubSectionBlock = Omit<SubSubSection, 'title'> & { _key: string; title: string };
-export type ItemListBlock = ItemList & { _key: string };
 export type DividerBlock = Divider & { _key: string };
 export type RichTextBlock = RichText & { _key: string };
 export type QuoteBlock = Quote & { _key: string };
@@ -36,13 +35,8 @@ export type SpotifyWidgetBlock = SpotifyWidget & { _key: string };
 export type BandcampWidgetBlock = BandcampWidget & { _key: string };
 export type CTAButtonBlock = CtaButton & { _key: string };
 export type CTACalloutLinkBlock = CtaCalloutLink & { _key: string };
-export type CTAEmailButtonBlock = CtaEmailButton & { _key: string };
 export type EmbeddedCTAButtonBlock = EmbeddedCtaButton & { _key: string };
-export type EmbeddedCTAEmailButtonBlock = EmbeddedCtaEmailButton & { _key: string };
-export type CTAEventsBlock = CtaEvents & { _key: string };
 export type CTABlogPostBlock = CtaBlogPost & { _key: string };
-export type CollabBlockType = CollabBlock & { _key: string };
-export type FavouriteBlockType = FavouriteBlock & { _key: string };
 export type CompanyLinksBlockType = CompanyLinksBlock & { _key: string };
 export type BlockListBlock = BlockList & { _key: string };
 
@@ -53,7 +47,6 @@ export type NestedBlock =
   | SubSubSectionBlock
   | SectionBlock
   | DividerBlock
-  | ItemListBlock
   | RichTextBlock
   | QuoteBlock
   | TextImageBlock
@@ -67,12 +60,7 @@ export type NestedBlock =
   | BandcampWidgetBlock
   | CTAButtonBlock
   | CTACalloutLinkBlock
-  | CTAEmailButtonBlock
-  | EmbeddedCTAEmailButtonBlock
-  | CTAEventsBlock
   | CTABlogPostBlock
-  | CollabBlockType
-  | FavouriteBlockType
   | CompanyLinksBlockType
   | BlockListBlock;
 
@@ -103,11 +91,6 @@ export const isSectionBlock = (block: NestedBlock): block is SectionBlock => {
 export const isDividerBlock = (block: NestedBlock): block is DividerBlock => {
   return block._type === 'divider';
 };
-
-export const isItemListBlock = (block: NestedBlock): block is ItemListBlock => {
-  return block._type === 'itemList';
-};
-
 
 export const isRichTextBlock = (block: NestedBlock): block is RichTextBlock => {
   return block._type === 'richText';
@@ -161,29 +144,8 @@ export const isCTACalloutLinkBlock = (block: NestedBlock): block is CTACalloutLi
   return block._type === 'ctaCalloutLink';
 };
 
-export const isCTAEmailButtonBlock = (block: NestedBlock): block is CTAEmailButtonBlock => {
-  return block._type === 'ctaEmailButton';
-};
-
-export const isEmbeddedCTAEmailButtonBlock = (block: NestedBlock): block is EmbeddedCTAEmailButtonBlock => {
-  return block._type === 'embeddedCtaEmailButton';
-};
-
-export const isCTAEventsBlock = (block: NestedBlock): block is CTAEventsBlock => {
-  return block._type === 'ctaEvents';
-};
-
 export const isCTABlogPostBlock = (block: NestedBlock): block is CTABlogPostBlock => {
   return block._type === 'ctaBlogPost';
-};
-
-
-export const isCollabBlock = (block: NestedBlock): block is CollabBlockType => {
-  return block._type === 'collabBlock';
-};
-
-export const isFavouriteBlock = (block: NestedBlock): block is FavouriteBlockType => {
-  return block._type === 'favouriteBlock';
 };
 
 export const isCompanyLinksBlock = (block: NestedBlock): block is CompanyLinksBlockType => {

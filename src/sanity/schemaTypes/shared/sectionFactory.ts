@@ -5,7 +5,6 @@ import { AnchorIdInput } from '../../components/AnchorIdInput';
 export const commonContentBlocks = [
   defineArrayMember({ type: 'divider' }),
   defineArrayMember({ type: 'richText' }),
-  defineArrayMember({ type: 'itemList' }),
   defineArrayMember({ type: 'blockList' }),
   defineArrayMember({ type: 'quote' }),
   defineArrayMember({ type: 'textImage' }),
@@ -13,16 +12,12 @@ export const commonContentBlocks = [
   defineArrayMember({ type: 'imageGallery' }),
   defineArrayMember({ type: 'ctaButton' }),
   defineArrayMember({ type: 'ctaCalloutLink' }),
-  defineArrayMember({ type: 'ctaEmailButton' }),
-  defineArrayMember({ type: 'ctaEvents' }),
   defineArrayMember({ type: 'ctaBlogPost' }),
   defineArrayMember({ type: 'card' }),
   defineArrayMember({ type: 'gridLayout' }),
   defineArrayMember({ type: 'youTubeVideo' }),
   defineArrayMember({ type: 'spotifyWidget' }),
   defineArrayMember({ type: 'bandcampWidget' }),
-  defineArrayMember({ type: 'collabBlock' }),
-  defineArrayMember({ type: 'favouriteBlock' }),
   defineArrayMember({ type: 'companyLinksBlock' }),
 ];
 

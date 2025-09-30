@@ -11,7 +11,6 @@ import { pageSectionType } from './pageSectionType';
 import { subSectionType } from './subSectionType';
 import { subSubSectionType } from './subSubSectionType';
 import { dividerType } from './blocks/dividerType';
-import { itemListType } from './blocks/itemListType';
 import { richTextType } from './blocks/richTextType';
 import { cardType } from './blocks/cardType';
 import { gridLayoutType } from './blocks/gridLayoutType';
@@ -25,25 +24,14 @@ import { quoteType } from './blocks/quoteType';
 import { textImageType } from './blocks/textImageType';
 import { ctaButtonType } from './blocks/ctaButtonType';
 import { ctaCalloutLinkType } from './blocks/ctaCalloutLinkType';
-import { ctaEmailButtonType } from './blocks/ctaEmailButtonType';
 import { embeddedCtaButtonType } from './blocks/embeddedCtaButtonType';
-import { embeddedCtaEmailButtonType } from './blocks/embeddedCtaEmailButtonType';
 import { homeHeroCtaButtonType } from './blocks/homeHeroCtaButtonType';
-import { ctaEventsType } from './blocks/ctaEventsType';
 import { ctaBlogPostType } from './blocks/ctaBlogPostType';
-import { collabBlockType } from './blocks/collabBlockType';
-import { favouriteBlockType } from './blocks/favouriteBlockType';
 import { companyLinksBlockType } from './blocks/companyLinksBlockType';
 import { blockListType } from './blocks/blockListType';
 import { siteSettingsType } from './siteSettingsType';
 import { companyLinksType } from './companyLinksType';
-import { eventType } from './eventType';
-import { eventsIndexPageType } from './eventsIndexPageType';
-import { collabType } from './collabType';
-import { collabPageSectionType } from './collabPageSectionType';
-import { favouritesType } from './favouritesType';
-import { favouritesIndexPageType } from './favouritesIndexPageType';
-import { companyLinksArrayType, collabLinksArrayType } from './shared/socialLinksArrayType';
+import { companyLinksArrayType } from './shared/socialLinksArrayType';
 import { sideContentBlockType, sideContentType } from './shared/sideContentBlockType';
 import { ctaListType } from './shared/ctaListType';
 import { navLinkType } from './navigation/navLinkType';
@@ -64,11 +52,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     pageType,
     blogIndexPageType,
     blogPostType,
-    eventType,
-    eventsIndexPageType,
-    collabType,
-    favouritesType,
-    favouritesIndexPageType,
     termsAndConditionsType,
     privacyPolicyType,
     blockContentType,
@@ -77,11 +60,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     footerType,
     pageBuilderType,
     pageSectionType,
-    collabPageSectionType,
     subSectionType,
     subSubSectionType,
     dividerType,
-    itemListType,
     richTextType,
     cardType,
     gridLayoutType,
@@ -95,19 +76,13 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     textImageType,
     ctaButtonType,
     ctaCalloutLinkType,
-    ctaEmailButtonType,
     embeddedCtaButtonType,
-    embeddedCtaEmailButtonType,
     homeHeroCtaButtonType,
-    ctaEventsType,
     ctaBlogPostType,
-    collabBlockType,
-    favouriteBlockType,
     companyLinksBlockType,
     blockListType,
     // Shared Components
     companyLinksArrayType,
-    collabLinksArrayType,
     sideContentBlockType,
     sideContentType,
     ctaListType,

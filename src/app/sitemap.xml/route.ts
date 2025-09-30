@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { getAllPages, getAllBlogPostsForSitemap, getCollabsForSitemap, getTermsAndConditions, getPrivacyPolicy } from '@/actions';
+import { getAllPages, getAllBlogPostsForSitemap, getTermsAndConditions, getPrivacyPolicy } from '@/actions';
 import { SITE_CONFIG } from '@/lib/constants';
-import type { ALL_PAGES_QUERYResult, ALL_BLOG_POSTS_SLUGS_QUERYResult, COLLABS_SITEMAP_QUERYResult } from '@/sanity/types';
+import type { ALL_PAGES_QUERYResult, ALL_BLOG_POSTS_SLUGS_QUERYResult } from '@/sanity/types';
 
 // ISR: Cache for 1 hour, but allow immediate updates via webhook
 export const revalidate = 3600;
@@ -17,10 +17,9 @@ export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
 
   // Fetch all content from Sanity
-  const [pages, blogPosts, collabs, termsAndConditions, privacyPolicy] = await Promise.all([
+  const [pages, blogPosts, termsAndConditions, privacyPolicy] = await Promise.all([
     getAllPages(),
     getAllBlogPostsForSitemap(),
-    getCollabsForSitemap(),
     getTermsAndConditions(),
     getPrivacyPolicy(),
   ]);
@@ -28,9 +27,6 @@ export async function GET() {
   const staticPages: SitemapUrl[] = [
     { url: '', changefreq: 'weekly', priority: '1.0' },
     { url: '/blog', changefreq: 'daily', priority: '0.9' },
-    { url: '/events', changefreq: 'weekly', priority: '0.8' },
-    { url: '/collabs', changefreq: 'weekly', priority: '0.8' },
-    { url: '/favourites', changefreq: 'weekly', priority: '0.8' },
   ];
 
   // Add legal pages if they exist and are not hidden
@@ -69,14 +65,6 @@ export async function GET() {
       changefreq: 'monthly',
       priority: '0.6'
     })),
-    // Collabs
-    ...(collabs || []).map((collab: COLLABS_SITEMAP_QUERYResult[number]) => ({
-      url: `/collabs/${collab.slug?.current}`,
-      lastmod: collab._updatedAt,
-      changefreq: 'monthly',
-      priority: '0.6'
-    })),
-    // Note: Events don't have individual pages, only listing page
   ];
 
   const allUrls = [...staticPages, ...legalPages, ...dynamicUrls];

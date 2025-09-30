@@ -1,10 +1,9 @@
 import React from 'react';
 import CTAButton from '../blocks/CTAButton';
-import CTAEmailButton from '../blocks/CTAEmailButton';
 import type { CTAButtonBlock } from '@/types/blocks';
 
 interface CTAListItem {
-  _type: 'embeddedCtaButton' | 'embeddedCtaEmailButton';
+  _type: 'embeddedCtaButton';
   _key: string;
   [key: string]: unknown; // Allow additional properties from the CTA button types
 }
@@ -66,9 +65,8 @@ const CTAList = ({
               className={ctaClassName}
             />
           );
-        } else if (cta._type === 'embeddedCtaEmailButton') {
-          return <CTAEmailButton key={cta._key} className={ctaClassName} />;
         }
+        // embeddedCtaEmailButton type exists in schema but is not rendered
         return null;
       })}
     </div>

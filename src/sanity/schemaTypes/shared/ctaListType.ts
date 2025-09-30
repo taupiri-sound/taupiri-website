@@ -18,10 +18,6 @@ export const ctaListType = defineType({
       type: 'embeddedCtaButton',
       title: 'CTA Button',
     }),
-    defineArrayMember({
-      type: 'embeddedCtaEmailButton', 
-      title: 'CTA Email Button',
-    }),
   ],
   options: {
     insertMenu: {

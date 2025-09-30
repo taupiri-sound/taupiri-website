@@ -49,21 +49,6 @@ export type VerticalNavLink = {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "eventsIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "favouritesIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "collab";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "blogIndexPage";
   } | {
     _ref: string;
@@ -105,21 +90,6 @@ export type NavLink = {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "eventsIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "favouritesIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "collab";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "blogIndexPage";
   } | {
     _ref: string;
@@ -144,9 +114,7 @@ export type NavLink = {
 
 export type CtaList = Array<{
   _key: string;
-} & EmbeddedCtaButton | {
-  _key: string;
-} & EmbeddedCtaEmailButton>;
+} & EmbeddedCtaButton>;
 
 export type SideContent = Array<{
   _key: string;
@@ -178,9 +146,7 @@ export type SideContentBlock = {
   }>;
   ctaBlocks?: Array<{
     _key: string;
-  } & EmbeddedCtaButton | {
-    _key: string;
-  } & EmbeddedCtaEmailButton>;
+  } & EmbeddedCtaButton>;
 };
 
 export type BlockList = {
@@ -198,27 +164,6 @@ export type CompanyLinksBlock = {
   blockAdded?: string;
 };
 
-export type FavouriteBlock = {
-  _type: "favouriteBlock";
-  rowSize?: "small" | "large";
-  favouriteListType?: "automatic" | "manual";
-  maxItemsPerBlock?: number;
-  favourites?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "favourites";
-  }>;
-};
-
-export type CollabBlock = {
-  _type: "collabBlock";
-  rowSize?: "small" | "large";
-  showCTA?: boolean;
-  ctaMessage?: string;
-};
-
 export type CtaBlogPost = {
   _type: "ctaBlogPost";
   blogPost?: {
@@ -227,23 +172,6 @@ export type CtaBlogPost = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "blogPost";
   };
-};
-
-export type CtaEvents = {
-  _type: "ctaEvents";
-  rowSize?: "small" | "large";
-  eventListType?: "automatic" | "manual";
-  events?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "event";
-  }>;
-  displayStyle?: "posterOnly" | "detailed";
-  showCTA?: boolean;
-  ctaMessage?: string;
-  hideViewAllButton?: boolean;
 };
 
 export type HomeHeroCtaButton = {
@@ -260,21 +188,6 @@ export type HomeHeroCtaButton = {
     _type: "reference";
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "homePage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "eventsIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "favouritesIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "collab";
   } | {
     _ref: string;
     _type: "reference";
@@ -299,11 +212,6 @@ export type HomeHeroCtaButton = {
   externalUrl?: string;
   pageSectionId?: string;
   openInNewTab?: boolean;
-};
-
-export type EmbeddedCtaEmailButton = {
-  _type: "embeddedCtaEmailButton";
-  buttonText?: string;
 };
 
 export type EmbeddedCtaButton = {
@@ -325,21 +233,6 @@ export type EmbeddedCtaButton = {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "eventsIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "favouritesIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "collab";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "blogIndexPage";
   } | {
     _ref: string;
@@ -360,11 +253,6 @@ export type EmbeddedCtaButton = {
   externalUrl?: string;
   pageSectionId?: string;
   openInNewTab?: boolean;
-};
-
-export type CtaEmailButton = {
-  _type: "ctaEmailButton";
-  alignment?: "inherit" | "left" | "center" | "right";
 };
 
 export type CtaCalloutLink = {
@@ -395,21 +283,6 @@ export type CtaCalloutLink = {
     _type: "reference";
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "homePage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "eventsIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "favouritesIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "collab";
   } | {
     _ref: string;
     _type: "reference";
@@ -452,21 +325,6 @@ export type CtaButton = {
     _type: "reference";
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "homePage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "eventsIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "favouritesIndexPage";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "collab";
   } | {
     _ref: string;
     _type: "reference";
@@ -656,29 +514,6 @@ export type RichText = {
   }>;
 };
 
-export type ItemList = {
-  _type: "itemList";
-  alignment?: "inherit" | "left" | "center" | "right";
-  items?: Array<{
-    text?: string;
-    icon?: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: "image";
-    };
-    _type: "listItem";
-    _key: string;
-  }>;
-};
-
 export type Divider = {
   _type: "divider";
   style?: string;
@@ -695,8 +530,6 @@ export type SubSubSection = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & ItemList | {
-    _key: string;
   } & BlockList | {
     _key: string;
   } & Quote | {
@@ -711,10 +544,6 @@ export type SubSubSection = {
     _key: string;
   } & CtaCalloutLink | {
     _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
@@ -726,10 +555,6 @@ export type SubSubSection = {
   } & SpotifyWidget | {
     _key: string;
   } & BandcampWidget | {
-    _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
     _key: string;
   } & CompanyLinksBlock>;
 };
@@ -747,8 +572,6 @@ export type SubSection = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & ItemList | {
-    _key: string;
   } & BlockList | {
     _key: string;
   } & Quote | {
@@ -763,10 +586,6 @@ export type SubSection = {
     _key: string;
   } & CtaCalloutLink | {
     _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
@@ -778,62 +597,6 @@ export type SubSection = {
   } & SpotifyWidget | {
     _key: string;
   } & BandcampWidget | {
-    _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
-    _key: string;
-  } & CompanyLinksBlock>;
-};
-
-export type CollabPageSection = {
-  _type: "collabPageSection";
-  hideSection?: boolean;
-  title?: string;
-  anchorId?: string;
-  content?: Array<{
-    _key: string;
-  } & SubSection | {
-    _key: string;
-  } & Divider | {
-    _key: string;
-  } & RichText | {
-    _key: string;
-  } & ItemList | {
-    _key: string;
-  } & BlockList | {
-    _key: string;
-  } & Quote | {
-    _key: string;
-  } & TextImage | {
-    _key: string;
-  } & ImageBlock | {
-    _key: string;
-  } & ImageGallery | {
-    _key: string;
-  } & CtaButton | {
-    _key: string;
-  } & CtaCalloutLink | {
-    _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
-  } & CtaBlogPost | {
-    _key: string;
-  } & Card | {
-    _key: string;
-  } & GridLayout | {
-    _key: string;
-  } & YouTubeVideo | {
-    _key: string;
-  } & SpotifyWidget | {
-    _key: string;
-  } & BandcampWidget | {
-    _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
     _key: string;
   } & CompanyLinksBlock>;
 };
@@ -854,8 +617,6 @@ export type PageSection = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & ItemList | {
-    _key: string;
   } & BlockList | {
     _key: string;
   } & Quote | {
@@ -870,10 +631,6 @@ export type PageSection = {
     _key: string;
   } & CtaCalloutLink | {
     _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
@@ -886,10 +643,6 @@ export type PageSection = {
     _key: string;
   } & BandcampWidget | {
     _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
-    _key: string;
   } & CompanyLinksBlock>;
 };
 
@@ -900,8 +653,6 @@ export type PageBuilder = Array<{
 } & Divider | {
   _key: string;
 } & RichText | {
-  _key: string;
-} & ItemList | {
   _key: string;
 } & BlockList | {
   _key: string;
@@ -917,10 +668,6 @@ export type PageBuilder = Array<{
   _key: string;
 } & CtaCalloutLink | {
   _key: string;
-} & CtaEmailButton | {
-  _key: string;
-} & CtaEvents | {
-  _key: string;
 } & CtaBlogPost | {
   _key: string;
 } & Card | {
@@ -932,10 +679,6 @@ export type PageBuilder = Array<{
 } & SpotifyWidget | {
   _key: string;
 } & BandcampWidget | {
-  _key: string;
-} & CollabBlock | {
-  _key: string;
-} & FavouriteBlock | {
   _key: string;
 } & CompanyLinksBlock>;
 
@@ -994,68 +737,6 @@ export type BlockContent = Array<{
   _key: string;
 }>;
 
-export type Favourites = {
-  _id: string;
-  _type: "favourites";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  category?: string;
-  profileImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  order?: number;
-  description?: string;
-  link?: string;
-  linkLabel?: string;
-};
-
-export type Event = {
-  _id: string;
-  _type: "event";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  shortDescription?: string;
-  venue?: string;
-  location?: string;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  tags?: Array<string>;
-  link?: string;
-  linkLabel?: string;
-  startDate?: string;
-  endDate?: string;
-  timeDescription?: string;
-  pastEventText?: string;
-  pastEventLinkBehavior?: "keep" | "change" | "remove";
-  pastEventLink?: string;
-  pastEventLinkLabel?: string;
-};
-
 export type HomePage = {
   _id: string;
   _type: "homePage";
@@ -1108,21 +789,6 @@ export type HomePage = {
       _ref: string;
       _type: "reference";
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "eventsIndexPage";
-    } | {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "favouritesIndexPage";
-    } | {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "collab";
-    } | {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
       [internalGroqTypeReferenceTo]?: "blogIndexPage";
     } | {
       _ref: string;
@@ -1171,8 +837,6 @@ export type PrivacyPolicy = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & ItemList | {
-    _key: string;
   } & BlockList | {
     _key: string;
   } & Quote | {
@@ -1187,10 +851,6 @@ export type PrivacyPolicy = {
     _key: string;
   } & CtaCalloutLink | {
     _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
@@ -1202,10 +862,6 @@ export type PrivacyPolicy = {
   } & SpotifyWidget | {
     _key: string;
   } & BandcampWidget | {
-    _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
     _key: string;
   } & CompanyLinksBlock>;
 };
@@ -1227,8 +883,6 @@ export type TermsAndConditions = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & ItemList | {
-    _key: string;
   } & BlockList | {
     _key: string;
   } & Quote | {
@@ -1243,10 +897,6 @@ export type TermsAndConditions = {
     _key: string;
   } & CtaCalloutLink | {
     _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
@@ -1258,10 +908,6 @@ export type TermsAndConditions = {
   } & SpotifyWidget | {
     _key: string;
   } & BandcampWidget | {
-    _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
     _key: string;
   } & CompanyLinksBlock>;
 };
@@ -1300,8 +946,6 @@ export type BlogPost = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & ItemList | {
-    _key: string;
   } & BlockList | {
     _key: string;
   } & Quote | {
@@ -1316,10 +960,6 @@ export type BlogPost = {
     _key: string;
   } & CtaCalloutLink | {
     _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
@@ -1331,10 +971,6 @@ export type BlogPost = {
   } & SpotifyWidget | {
     _key: string;
   } & BandcampWidget | {
-    _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
     _key: string;
   } & CompanyLinksBlock>;
   hasClosingCard?: boolean;
@@ -1367,117 +1003,6 @@ export type BlogIndexPage = {
   closingCard?: Card;
 };
 
-export type Collab = {
-  _id: string;
-  _type: "collab";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  slug?: Slug;
-  category?: string;
-  location?: string;
-  order?: number;
-  heroImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  previewImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  shortDescription?: string;
-  bio?: string;
-  mainContent?: Array<{
-    _key: string;
-  } & CollabPageSection>;
-  links?: CollabLinksArray;
-  sideContent?: SideContent;
-};
-
-export type CollabLinksArray = {
-  _type: "collabLinksArray";
-  socialLinksArray?: Array<{
-    url?: string;
-    detectedPlatform?: string;
-    platform?: "officialWebsite" | "genericLink";
-    customTitle?: string;
-    _type: "socialLinkItem";
-    _key: string;
-  }>;
-};
-
-export type FavouritesIndexPage = {
-  _id: string;
-  _type: "favouritesIndexPage";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  backgroundImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  subtitle?: string;
-  showFavouritesMessage?: boolean;
-  favouritesMessage?: Card;
-};
-
-export type EventsIndexPage = {
-  _id: string;
-  _type: "eventsIndexPage";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  backgroundImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  subtitle?: string;
-  noUpcomingEventsMessage?: string;
-  showEventHelpCTA?: boolean;
-  eventHelpCTAMessage?: string;
-  hasEventsMessage?: boolean;
-  eventsMessage?: Card;
-};
-
 export type Page = {
   _id: string;
   _type: "page";
@@ -1508,8 +1033,6 @@ export type Page = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & ItemList | {
-    _key: string;
   } & BlockList | {
     _key: string;
   } & Quote | {
@@ -1524,10 +1047,6 @@ export type Page = {
     _key: string;
   } & CtaCalloutLink | {
     _key: string;
-  } & CtaEmailButton | {
-    _key: string;
-  } & CtaEvents | {
-    _key: string;
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
@@ -1539,10 +1058,6 @@ export type Page = {
   } & SpotifyWidget | {
     _key: string;
   } & BandcampWidget | {
-    _key: string;
-  } & CollabBlock | {
-    _key: string;
-  } & FavouriteBlock | {
     _key: string;
   } & CompanyLinksBlock>;
   hasClosingCard?: boolean;
@@ -1756,7 +1271,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | SideContent | SideContentBlock | BlockList | CompanyLinksBlock | FavouriteBlock | CollabBlock | CtaBlogPost | CtaEvents | HomeHeroCtaButton | EmbeddedCtaEmailButton | EmbeddedCtaButton | CtaEmailButton | CtaCalloutLink | CtaButton | TextImage | Quote | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | GridLayout | Icon | RichText | ItemList | Divider | SubSubSection | SubSection | CollabPageSection | PageSection | PageBuilder | Footer | Header | BlockContent | Favourites | Event | HomePage | PrivacyPolicy | TermsAndConditions | BlogPost | BlogIndexPage | Collab | CollabLinksArray | FavouritesIndexPage | EventsIndexPage | Page | Card | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | SideContent | SideContentBlock | BlockList | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TextImage | Quote | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | GridLayout | Icon | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | HomePage | PrivacyPolicy | TermsAndConditions | BlogPost | BlogIndexPage | Page | Card | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -1815,27 +1330,6 @@ export type PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -1866,20 +1360,8 @@ export type PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -1937,27 +1419,6 @@ export type PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -1989,7 +1450,7 @@ export type PAGE_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -2026,27 +1487,6 @@ export type PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -2077,85 +1517,12 @@ export type PAGE_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -2197,27 +1564,6 @@ export type PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -2248,11 +1594,7 @@ export type PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -2357,30 +1699,6 @@ export type PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -2434,27 +1752,6 @@ export type PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -2485,20 +1782,8 @@ export type PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -2556,27 +1841,6 @@ export type PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -2608,7 +1872,7 @@ export type PAGE_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -2645,27 +1909,6 @@ export type PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -2696,85 +1939,12 @@ export type PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -2816,27 +1986,6 @@ export type PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -2867,11 +2016,7 @@ export type PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -2975,30 +2120,6 @@ export type PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -3091,27 +2212,6 @@ export type PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -3142,20 +2242,8 @@ export type PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -3213,27 +2301,6 @@ export type PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -3265,7 +2332,7 @@ export type PAGE_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -3302,27 +2369,6 @@ export type PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -3353,85 +2399,12 @@ export type PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -3472,27 +2445,6 @@ export type PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -3523,11 +2475,7 @@ export type PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -3626,30 +2574,6 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -3739,27 +2663,6 @@ export type PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -3790,19 +2693,8 @@ export type PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -3857,27 +2749,6 @@ export type PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -3909,7 +2780,7 @@ export type PAGE_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -3945,27 +2816,6 @@ export type PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -3996,81 +2846,11 @@ export type PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -4109,27 +2889,6 @@ export type PAGE_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -4160,11 +2919,7 @@ export type PAGE_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -4252,29 +3007,6 @@ export type PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -4573,27 +3305,6 @@ export type PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -4624,11 +3335,7 @@ export type PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
   } | null;
 } | null;
@@ -4713,27 +3420,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -4764,20 +3450,8 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -4835,27 +3509,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -4887,7 +3540,7 @@ export type HOME_PAGE_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -4924,27 +3577,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -4975,85 +3607,12 @@ export type HOME_PAGE_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -5095,27 +3654,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -5146,11 +3684,7 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -5255,30 +3789,6 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -5332,27 +3842,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -5383,20 +3872,8 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -5454,27 +3931,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -5506,7 +3962,7 @@ export type HOME_PAGE_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -5543,27 +3999,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -5594,85 +4029,12 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -5714,27 +4076,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -5765,11 +4106,7 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -5873,30 +4210,6 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -5989,27 +4302,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -6040,20 +4332,8 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -6111,27 +4391,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -6163,7 +4422,7 @@ export type HOME_PAGE_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -6200,27 +4459,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -6251,85 +4489,12 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -6370,27 +4535,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -6421,11 +4565,7 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -6524,30 +4664,6 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -6637,27 +4753,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -6688,19 +4783,8 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -6755,27 +4839,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -6807,7 +4870,7 @@ export type HOME_PAGE_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -6843,27 +4906,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -6894,81 +4936,11 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -7007,27 +4979,6 @@ export type HOME_PAGE_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -7058,11 +5009,7 @@ export type HOME_PAGE_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -7150,29 +5097,6 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -7433,92 +5357,7 @@ export type HOME_PAGE_QUERYResult = {
   }> | null;
 } | {
   _id: string;
-  _type: "collab";
-  heroStyle: null;
-  heroTextColor: null;
-  showHeroLogo: null;
-  enableFeaturedItems: null;
-  featuredImages: null;
-  heroBackgroundImages: null;
-  heroImageTransitionDuration: null;
-  heroTitle: null;
-  heroSubtitle: null;
-  heroFeaturedItemsSubtitle: null;
-  heroCallToActionList: null;
-  hideScrollIndicator: null;
-  heroContentPosition: null;
-  content: null;
-} | {
-  _id: string;
   _type: "companyLinks";
-  heroStyle: null;
-  heroTextColor: null;
-  showHeroLogo: null;
-  enableFeaturedItems: null;
-  featuredImages: null;
-  heroBackgroundImages: null;
-  heroImageTransitionDuration: null;
-  heroTitle: null;
-  heroSubtitle: null;
-  heroFeaturedItemsSubtitle: null;
-  heroCallToActionList: null;
-  hideScrollIndicator: null;
-  heroContentPosition: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "event";
-  heroStyle: null;
-  heroTextColor: null;
-  showHeroLogo: null;
-  enableFeaturedItems: null;
-  featuredImages: null;
-  heroBackgroundImages: null;
-  heroImageTransitionDuration: null;
-  heroTitle: null;
-  heroSubtitle: null;
-  heroFeaturedItemsSubtitle: null;
-  heroCallToActionList: null;
-  hideScrollIndicator: null;
-  heroContentPosition: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  heroStyle: null;
-  heroTextColor: null;
-  showHeroLogo: null;
-  enableFeaturedItems: null;
-  featuredImages: null;
-  heroBackgroundImages: null;
-  heroImageTransitionDuration: null;
-  heroTitle: null;
-  heroSubtitle: null;
-  heroFeaturedItemsSubtitle: null;
-  heroCallToActionList: null;
-  hideScrollIndicator: null;
-  heroContentPosition: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  heroStyle: null;
-  heroTextColor: null;
-  showHeroLogo: null;
-  enableFeaturedItems: null;
-  featuredImages: null;
-  heroBackgroundImages: null;
-  heroImageTransitionDuration: null;
-  heroTitle: null;
-  heroSubtitle: null;
-  heroFeaturedItemsSubtitle: null;
-  heroCallToActionList: null;
-  hideScrollIndicator: null;
-  heroContentPosition: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
   heroStyle: null;
   heroTextColor: null;
   showHeroLogo: null;
@@ -7602,27 +5441,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -7655,7 +5473,7 @@ export type HOME_PAGE_QUERYResult = {
     openInNewTab?: boolean;
     _type: "image";
     _key: string;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
   }> | null;
   heroBackgroundImages: Array<{
     asset: {
@@ -7713,27 +5531,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -7764,11 +5561,7 @@ export type HOME_PAGE_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-  } | {
-    _type: "embeddedCtaEmailButton";
-    _key: string;
-    buttonText?: string;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
   }> | null;
   hideScrollIndicator: boolean | null;
   heroContentPosition: "bottom-center" | "bottom-left" | "bottom-right" | "center-center" | "center-left" | "center-right" | "top-center" | "top-left" | "top-right" | null;
@@ -7818,27 +5611,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -7869,20 +5641,8 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -7940,27 +5700,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -7992,7 +5731,7 @@ export type HOME_PAGE_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -8029,27 +5768,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -8080,85 +5798,12 @@ export type HOME_PAGE_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -8200,27 +5845,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -8251,11 +5875,7 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -8360,30 +5980,6 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -8437,27 +6033,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -8488,20 +6063,8 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -8559,27 +6122,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -8611,7 +6153,7 @@ export type HOME_PAGE_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -8648,27 +6190,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -8699,85 +6220,12 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -8819,27 +6267,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -8870,11 +6297,7 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -8978,30 +6401,6 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -9094,27 +6493,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -9145,20 +6523,8 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -9216,27 +6582,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -9268,7 +6613,7 @@ export type HOME_PAGE_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -9305,27 +6650,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -9356,85 +6680,12 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -9475,27 +6726,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -9526,11 +6756,7 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -9629,30 +6855,6 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -9742,27 +6944,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -9793,19 +6974,8 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -9860,27 +7030,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -9912,7 +7061,7 @@ export type HOME_PAGE_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -9948,27 +7097,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -9999,81 +7127,11 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -10112,27 +7170,6 @@ export type HOME_PAGE_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -10163,11 +7200,7 @@ export type HOME_PAGE_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -10255,29 +7288,6 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -10598,27 +7608,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -10649,20 +7638,8 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -10720,27 +7697,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -10772,7 +7728,7 @@ export type HOME_PAGE_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -10809,27 +7765,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -10860,85 +7795,12 @@ export type HOME_PAGE_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -10980,27 +7842,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -11031,11 +7872,7 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -11140,30 +7977,6 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -11217,27 +8030,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -11268,20 +8060,8 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -11339,27 +8119,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -11391,7 +8150,7 @@ export type HOME_PAGE_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -11428,27 +8187,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -11479,85 +8217,12 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -11599,27 +8264,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -11650,11 +8294,7 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -11758,30 +8398,6 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -11874,27 +8490,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -11925,20 +8520,8 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -11996,27 +8579,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -12048,7 +8610,7 @@ export type HOME_PAGE_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -12085,27 +8647,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -12136,85 +8677,12 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -12255,27 +8723,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -12306,11 +8753,7 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -12409,30 +8852,6 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -12522,27 +8941,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -12573,19 +8971,8 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -12640,27 +9027,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -12692,7 +9058,7 @@ export type HOME_PAGE_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -12728,27 +9094,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -12779,81 +9124,11 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -12892,27 +9167,6 @@ export type HOME_PAGE_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -12943,11 +9197,7 @@ export type HOME_PAGE_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -13035,29 +9285,6 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -13378,27 +9605,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -13429,20 +9635,8 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -13500,27 +9694,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -13552,7 +9725,7 @@ export type HOME_PAGE_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -13589,27 +9762,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -13640,85 +9792,12 @@ export type HOME_PAGE_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -13760,27 +9839,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -13811,11 +9869,7 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -13920,30 +9974,6 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -13997,27 +10027,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -14048,20 +10057,8 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -14119,27 +10116,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -14171,7 +10147,7 @@ export type HOME_PAGE_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -14208,27 +10184,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -14259,85 +10214,12 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -14379,27 +10261,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -14430,11 +10291,7 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -14538,30 +10395,6 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -14654,27 +10487,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -14705,20 +10517,8 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -14776,27 +10576,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -14828,7 +10607,7 @@ export type HOME_PAGE_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -14865,27 +10644,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -14916,85 +10674,12 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -15035,27 +10720,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -15086,11 +10750,7 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -15189,30 +10849,6 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -15302,27 +10938,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -15353,19 +10968,8 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -15420,27 +11024,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -15472,7 +11055,7 @@ export type HOME_PAGE_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -15508,27 +11091,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -15559,81 +11121,11 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -15672,27 +11164,6 @@ export type HOME_PAGE_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -15723,11 +11194,7 @@ export type HOME_PAGE_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -15815,29 +11282,6 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -16209,27 +11653,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -16260,20 +11683,8 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -16331,27 +11742,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -16383,7 +11773,7 @@ export type HOME_PAGE_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -16420,27 +11810,6 @@ export type HOME_PAGE_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -16471,85 +11840,12 @@ export type HOME_PAGE_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -16591,27 +11887,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -16642,11 +11917,7 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -16751,30 +12022,6 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -16828,27 +12075,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -16879,20 +12105,8 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -16950,27 +12164,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -17002,7 +12195,7 @@ export type HOME_PAGE_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -17039,27 +12232,6 @@ export type HOME_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -17090,85 +12262,12 @@ export type HOME_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -17210,27 +12309,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -17261,11 +12339,7 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -17369,30 +12443,6 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -17485,27 +12535,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -17536,20 +12565,8 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -17607,27 +12624,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -17659,7 +12655,7 @@ export type HOME_PAGE_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -17696,27 +12692,6 @@ export type HOME_PAGE_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -17747,85 +12722,12 @@ export type HOME_PAGE_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -17866,27 +12768,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -17917,11 +12798,7 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -18020,30 +12897,6 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -18133,27 +12986,6 @@ export type HOME_PAGE_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -18184,19 +13016,8 @@ export type HOME_PAGE_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -18251,27 +13072,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -18303,7 +13103,7 @@ export type HOME_PAGE_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -18339,27 +13139,6 @@ export type HOME_PAGE_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -18390,81 +13169,11 @@ export type HOME_PAGE_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -18503,27 +13212,6 @@ export type HOME_PAGE_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -18554,11 +13242,7 @@ export type HOME_PAGE_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -18646,29 +13330,6 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -18946,42 +13607,7 @@ export type HEADER_QUERYResult = {
   hamburgerCallout: null;
 } | {
   _id: string;
-  _type: "collab";
-  horizontalNav: null;
-  verticalNav: null;
-  verticalNavCtas: null;
-  hamburgerCallout: null;
-} | {
-  _id: string;
   _type: "companyLinks";
-  horizontalNav: null;
-  verticalNav: null;
-  verticalNavCtas: null;
-  hamburgerCallout: null;
-} | {
-  _id: string;
-  _type: "event";
-  horizontalNav: null;
-  verticalNav: null;
-  verticalNavCtas: null;
-  hamburgerCallout: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  horizontalNav: null;
-  verticalNav: null;
-  verticalNavCtas: null;
-  hamburgerCallout: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  horizontalNav: null;
-  verticalNav: null;
-  verticalNavCtas: null;
-  hamburgerCallout: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
   horizontalNav: null;
   verticalNav: null;
   verticalNavCtas: null;
@@ -19018,27 +13644,6 @@ export type HEADER_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -19069,7 +13674,7 @@ export type HEADER_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
   }> | null;
   verticalNav: Array<{
     _type: "navSection";
@@ -19097,27 +13702,6 @@ export type HEADER_QUERYResult = {
         slug: Slug | null;
         pageType: "blogPost";
         href: string | null;
-      } | {
-        _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
       } | {
         _id: string;
         _type: "homePage";
@@ -19150,7 +13734,7 @@ export type HEADER_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
   }> | null;
   verticalNavCtas: Array<{
@@ -19173,27 +13757,6 @@ export type HEADER_QUERYResult = {
       slug: Slug | null;
       pageType: "blogPost";
       href: string | null;
-    } | {
-      _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
     } | {
       _id: string;
       _type: "homePage";
@@ -19226,11 +13789,7 @@ export type HEADER_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-  } | {
-    _type: "embeddedCtaEmailButton";
-    _key: string;
-    buttonText?: string;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
   }> | null;
   hamburgerCallout: {
     enabled: boolean | null;
@@ -19309,52 +13868,7 @@ export type SITE_SETTINGS_QUERYResult = {
   companyEmail: null;
 } | {
   _id: string;
-  _type: "collab";
-  siteTitle: null;
-  defaultPageTitle: null;
-  siteDescription: null;
-  seoKeywords: null;
-  defaultOgImage: null;
-  companyEmail: null;
-} | {
-  _id: string;
   _type: "companyLinks";
-  siteTitle: null;
-  defaultPageTitle: null;
-  siteDescription: null;
-  seoKeywords: null;
-  defaultOgImage: null;
-  companyEmail: null;
-} | {
-  _id: string;
-  _type: "event";
-  siteTitle: null;
-  defaultPageTitle: null;
-  siteDescription: null;
-  seoKeywords: null;
-  defaultOgImage: null;
-  companyEmail: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  siteTitle: null;
-  defaultPageTitle: null;
-  siteDescription: null;
-  seoKeywords: null;
-  defaultOgImage: null;
-  companyEmail: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  siteTitle: null;
-  defaultPageTitle: null;
-  siteDescription: null;
-  seoKeywords: null;
-  defaultOgImage: null;
-  companyEmail: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
   siteTitle: null;
   defaultPageTitle: null;
   siteDescription: null;
@@ -19465,10 +13979,6 @@ export type COMPANY_LINKS_QUERYResult = {
   companyLinks: null;
 } | {
   _id: string;
-  _type: "collab";
-  companyLinks: null;
-} | {
-  _id: string;
   _type: "companyLinks";
   companyLinks: {
     _type: "companyLinksArray";
@@ -19480,22 +13990,6 @@ export type COMPANY_LINKS_QUERYResult = {
       hideFromFooter: boolean | null;
     }> | null;
   } | null;
-} | {
-  _id: string;
-  _type: "event";
-  companyLinks: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  companyLinks: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  companyLinks: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
-  companyLinks: null;
 } | {
   _id: string;
   _type: "footer";
@@ -19535,34 +14029,7 @@ export type COMPANY_LINKS_QUERYResult = {
 } | null;
 // Variable: EVENTS_QUERY
 // Query: *[_type == "event"]|order(startDate desc){  _id,  title,  shortDescription,  venue,  location,  image{    asset,    alt,    hotspot,    crop  },  tags,  link,  linkLabel,  startDate,  endDate,  timeDescription,  pastEventText,  pastEventLinkBehavior,  pastEventLink,  pastEventLinkLabel}
-export type EVENTS_QUERYResult = Array<{
-  _id: string;
-  title: string | null;
-  shortDescription: string | null;
-  venue: string | null;
-  location: string | null;
-  image: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  tags: Array<string> | null;
-  link: string | null;
-  linkLabel: string | null;
-  startDate: string | null;
-  endDate: string | null;
-  timeDescription: string | null;
-  pastEventText: string | null;
-  pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-  pastEventLink: string | null;
-  pastEventLinkLabel: string | null;
-}>;
+export type EVENTS_QUERYResult = Array<never>;
 // Variable: EVENTS_INDEX_PAGE_QUERY
 // Query: *[_id == "eventsIndexPage"][0]{  _id,  _type,  title,  backgroundImage{    asset,    alt,    hotspot,    crop  },  subtitle,  noUpcomingEventsMessage,  showEventHelpCTA,  eventHelpCTAMessage,  hasEventsMessage,  eventsMessage{  ...,  ctaList[]{    _type,    _key,    _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},    _type == "embeddedCtaEmailButton" => {...}  }}}
 export type EVENTS_INDEX_PAGE_QUERYResult = {
@@ -19589,170 +14056,10 @@ export type EVENTS_INDEX_PAGE_QUERYResult = {
   eventsMessage: null;
 } | {
   _id: string;
-  _type: "collab";
-  title: null;
-  backgroundImage: null;
-  subtitle: null;
-  noUpcomingEventsMessage: null;
-  showEventHelpCTA: null;
-  eventHelpCTAMessage: null;
-  hasEventsMessage: null;
-  eventsMessage: null;
-} | {
-  _id: string;
   _type: "companyLinks";
   title: null;
   backgroundImage: null;
   subtitle: null;
-  noUpcomingEventsMessage: null;
-  showEventHelpCTA: null;
-  eventHelpCTAMessage: null;
-  hasEventsMessage: null;
-  eventsMessage: null;
-} | {
-  _id: string;
-  _type: "event";
-  title: string | null;
-  backgroundImage: null;
-  subtitle: null;
-  noUpcomingEventsMessage: null;
-  showEventHelpCTA: null;
-  eventHelpCTAMessage: null;
-  hasEventsMessage: null;
-  eventsMessage: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  title: string | null;
-  backgroundImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  subtitle: string | null;
-  noUpcomingEventsMessage: string | null;
-  showEventHelpCTA: boolean | null;
-  eventHelpCTAMessage: string | null;
-  hasEventsMessage: boolean | null;
-  eventsMessage: {
-    _type: "card";
-    cardStyle?: "feature" | "info" | "statement";
-    icon?: Icon;
-    title?: string;
-    bodyText?: string;
-    ctaList: Array<{
-      _type: "embeddedCtaButton";
-      _key: string;
-      text?: string;
-      variant?: "filled" | "outline";
-      linkType?: "external" | "internal";
-      internalLink: {
-        _id: string;
-        _type: "blogIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "blogIndexPage";
-        href: "/blog";
-      } | {
-        _id: string;
-        _type: "blogPost";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "blogPost";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
-        _type: "homePage";
-        title: null;
-        slug: null;
-        pageType: "homePage";
-        href: "/";
-      } | {
-        _id: string;
-        _type: "page";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "page";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "privacyPolicy";
-        title: string | null;
-        slug: null;
-        pageType: "privacyPolicy";
-        href: "/privacy-policy";
-      } | {
-        _id: string;
-        _type: "termsAndConditions";
-        title: string | null;
-        slug: null;
-        pageType: "termsAndConditions";
-        href: "/terms-and-conditions";
-      } | null;
-      externalUrl?: string;
-      pageSectionId?: string;
-      openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
-    }> | null;
-  } | null;
-} | {
-  _id: string;
-  _type: "favourites";
-  title: null;
-  backgroundImage: null;
-  subtitle: null;
-  noUpcomingEventsMessage: null;
-  showEventHelpCTA: null;
-  eventHelpCTAMessage: null;
-  hasEventsMessage: null;
-  eventsMessage: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
-  title: string | null;
-  backgroundImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  subtitle: string | null;
   noUpcomingEventsMessage: null;
   showEventHelpCTA: null;
   eventHelpCTAMessage: null;
@@ -19909,27 +14216,6 @@ export type BLOG_POSTS_QUERYResult = Array<{
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -19960,11 +14246,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
   } | null;
 }>;
@@ -20016,27 +14298,6 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -20067,11 +14328,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
   } | null;
 } | {
@@ -20110,27 +14367,6 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -20161,74 +14397,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
   } | null;
-} | {
-  _id: string;
-  _type: "collab";
-  title: null;
-  heroImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  subtitle: null;
-  noArticlesMessage: null;
-  hasClosingCard: null;
-  closingCard: null;
 } | {
   _id: string;
   _type: "companyLinks";
   title: null;
   heroImage: null;
   subtitle: null;
-  noArticlesMessage: null;
-  hasClosingCard: null;
-  closingCard: null;
-} | {
-  _id: string;
-  _type: "event";
-  title: string | null;
-  heroImage: null;
-  subtitle: null;
-  noArticlesMessage: null;
-  hasClosingCard: null;
-  closingCard: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  title: string | null;
-  heroImage: null;
-  subtitle: string | null;
-  noArticlesMessage: null;
-  hasClosingCard: null;
-  closingCard: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  title: null;
-  heroImage: null;
-  subtitle: null;
-  noArticlesMessage: null;
-  hasClosingCard: null;
-  closingCard: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
-  title: string | null;
-  heroImage: null;
-  subtitle: string | null;
   noArticlesMessage: null;
   hasClosingCard: null;
   closingCard: null;
@@ -20305,27 +14482,6 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -20356,11 +14512,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
   } | null;
 } | {
@@ -20479,27 +14631,6 @@ export type BLOG_POST_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -20530,20 +14661,8 @@ export type BLOG_POST_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -20601,27 +14720,6 @@ export type BLOG_POST_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -20653,7 +14751,7 @@ export type BLOG_POST_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -20690,27 +14788,6 @@ export type BLOG_POST_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -20741,85 +14818,12 @@ export type BLOG_POST_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -20861,27 +14865,6 @@ export type BLOG_POST_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -20912,11 +14895,7 @@ export type BLOG_POST_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -21021,30 +15000,6 @@ export type BLOG_POST_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -21098,27 +15053,6 @@ export type BLOG_POST_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -21149,20 +15083,8 @@ export type BLOG_POST_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -21220,27 +15142,6 @@ export type BLOG_POST_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -21272,7 +15173,7 @@ export type BLOG_POST_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -21309,27 +15210,6 @@ export type BLOG_POST_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -21360,85 +15240,12 @@ export type BLOG_POST_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -21480,27 +15287,6 @@ export type BLOG_POST_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -21531,11 +15317,7 @@ export type BLOG_POST_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -21639,30 +15421,6 @@ export type BLOG_POST_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -21755,27 +15513,6 @@ export type BLOG_POST_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -21806,20 +15543,8 @@ export type BLOG_POST_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -21877,27 +15602,6 @@ export type BLOG_POST_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -21929,7 +15633,7 @@ export type BLOG_POST_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -21966,27 +15670,6 @@ export type BLOG_POST_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -22017,85 +15700,12 @@ export type BLOG_POST_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -22136,27 +15746,6 @@ export type BLOG_POST_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -22187,11 +15776,7 @@ export type BLOG_POST_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -22290,30 +15875,6 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -22403,27 +15964,6 @@ export type BLOG_POST_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -22454,19 +15994,8 @@ export type BLOG_POST_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -22521,27 +16050,6 @@ export type BLOG_POST_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -22573,7 +16081,7 @@ export type BLOG_POST_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -22609,27 +16117,6 @@ export type BLOG_POST_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -22660,81 +16147,11 @@ export type BLOG_POST_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -22773,27 +16190,6 @@ export type BLOG_POST_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -22824,11 +16220,7 @@ export type BLOG_POST_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -22916,29 +16308,6 @@ export type BLOG_POST_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -23226,27 +16595,6 @@ export type BLOG_POST_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -23277,11 +16625,7 @@ export type BLOG_POST_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
   } | null;
   blogIndexHeroImage: null | {
@@ -23319,2309 +16663,19 @@ export type ADJACENT_BLOG_POSTS_QUERYResult = {
 };
 // Variable: COLLAB_QUERY
 // Query: *[_type == "collab" && slug.current == $slug][0]{  _id,  _type,  name,  slug,  category,  location,  heroImage{    asset,    alt,    hotspot,    crop  },  previewImage{    asset,    alt,    hotspot,    crop  },  shortDescription,  bio,  mainContent[]{  _type,  _key,  title,  anchorId,  content[]{  ...,  image{    asset,    alt,    hotspot,    crop  },  _type == "pageSection" => {    ...,    anchorId,    topText  },  _type == "subSection" => {    ...,    anchorId  },  _type == "subSubSection" => {    ...,    anchorId  },  _type == "ctaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCalloutLink" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCard" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "card" => {    ...,    ctaList[]{      _type,      _key,      _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},      _type == "embeddedCtaEmailButton" => {...}    }  },  _type == "gridLayout" => {    ...,    content[]{      ...,      _type == "card" => {        ...,        ctaList[]{          _type,          _key,          _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},          _type == "embeddedCtaEmailButton" => {...}        }      },      _type == "richText" => {...},      _type == "imageBlock" => {        ...,        image{          asset,          alt,          hotspot,          crop        }      },      _type == "youTubeVideo" => {...},      _type == "spotifyWidget" => {...},      _type == "bandcampWidget" => {...}    }  },  _type == "ctaBlogPost" => {    ...,    blogPost->{      _id,      _createdAt,      title,      slug,      subtitle,      author,      mainImage{        asset,        alt,        hotspot,        crop      },      hasOverrideDate,      overrideDate    }  },  _type == "ctaEvents" => {    ...,    events[]->{      _id,      title,      shortDescription,      venue,      location,      image{        asset,        alt,        hotspot,        crop      },      tags,      link,      linkLabel,      startDate,      endDate,      timeDescription,      pastEventText,      pastEventLinkBehavior,      pastEventLink,      pastEventLinkLabel    }  },  _type == "favouriteBlock" => {    ...,    favourites[]->{      _id,      name,      category,      order,      profileImage{        asset,        alt,        hotspot,        crop      },      description,      link,      linkLabel    }  },  "content": content[]{  ...,  image{    asset,    alt,    hotspot,    crop  },  _type == "pageSection" => {    ...,    anchorId,    topText  },  _type == "subSection" => {    ...,    anchorId  },  _type == "subSubSection" => {    ...,    anchorId  },  _type == "ctaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCalloutLink" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCard" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "card" => {    ...,    ctaList[]{      _type,      _key,      _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},      _type == "embeddedCtaEmailButton" => {...}    }  },  _type == "gridLayout" => {    ...,    content[]{      ...,      _type == "card" => {        ...,        ctaList[]{          _type,          _key,          _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},          _type == "embeddedCtaEmailButton" => {...}        }      },      _type == "richText" => {...},      _type == "imageBlock" => {        ...,        image{          asset,          alt,          hotspot,          crop        }      },      _type == "youTubeVideo" => {...},      _type == "spotifyWidget" => {...},      _type == "bandcampWidget" => {...}    }  },  _type == "ctaBlogPost" => {    ...,    blogPost->{      _id,      _createdAt,      title,      slug,      subtitle,      author,      mainImage{        asset,        alt,        hotspot,        crop      },      hasOverrideDate,      overrideDate    }  },  _type == "ctaEvents" => {    ...,    events[]->{      _id,      title,      shortDescription,      venue,      location,      image{        asset,        alt,        hotspot,        crop      },      tags,      link,      linkLabel,      startDate,      endDate,      timeDescription,      pastEventText,      pastEventLinkBehavior,      pastEventLink,      pastEventLinkLabel    }  },  _type == "favouriteBlock" => {    ...,    favourites[]->{      _id,      name,      category,      order,      profileImage{        asset,        alt,        hotspot,        crop      },      description,      link,      linkLabel    }  },    "content": content[]{  ...,  image{    asset,    alt,    hotspot,    crop  },  _type == "pageSection" => {    ...,    anchorId,    topText  },  _type == "subSection" => {    ...,    anchorId  },  _type == "subSubSection" => {    ...,    anchorId  },  _type == "ctaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCalloutLink" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCard" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "card" => {    ...,    ctaList[]{      _type,      _key,      _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},      _type == "embeddedCtaEmailButton" => {...}    }  },  _type == "gridLayout" => {    ...,    content[]{      ...,      _type == "card" => {        ...,        ctaList[]{          _type,          _key,          _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},          _type == "embeddedCtaEmailButton" => {...}        }      },      _type == "richText" => {...},      _type == "imageBlock" => {        ...,        image{          asset,          alt,          hotspot,          crop        }      },      _type == "youTubeVideo" => {...},      _type == "spotifyWidget" => {...},      _type == "bandcampWidget" => {...}    }  },  _type == "ctaBlogPost" => {    ...,    blogPost->{      _id,      _createdAt,      title,      slug,      subtitle,      author,      mainImage{        asset,        alt,        hotspot,        crop      },      hasOverrideDate,      overrideDate    }  },  _type == "ctaEvents" => {    ...,    events[]->{      _id,      title,      shortDescription,      venue,      location,      image{        asset,        alt,        hotspot,        crop      },      tags,      link,      linkLabel,      startDate,      endDate,      timeDescription,      pastEventText,      pastEventLinkBehavior,      pastEventLink,      pastEventLinkLabel    }  },  _type == "favouriteBlock" => {    ...,    favourites[]->{      _id,      name,      category,      order,      profileImage{        asset,        alt,        hotspot,        crop      },      description,      link,      linkLabel    }  },      "content": content[]{  ...,  image{    asset,    alt,    hotspot,    crop  },  _type == "pageSection" => {    ...,    anchorId,    topText  },  _type == "subSection" => {    ...,    anchorId  },  _type == "subSubSection" => {    ...,    anchorId  },  _type == "ctaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCalloutLink" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "ctaCard" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},  _type == "card" => {    ...,    ctaList[]{      _type,      _key,      _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},      _type == "embeddedCtaEmailButton" => {...}    }  },  _type == "gridLayout" => {    ...,    content[]{      ...,      _type == "card" => {        ...,        ctaList[]{          _type,          _key,          _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},          _type == "embeddedCtaEmailButton" => {...}        }      },      _type == "richText" => {...},      _type == "imageBlock" => {        ...,        image{          asset,          alt,          hotspot,          crop        }      },      _type == "youTubeVideo" => {...},      _type == "spotifyWidget" => {...},      _type == "bandcampWidget" => {...}    }  },  _type == "ctaBlogPost" => {    ...,    blogPost->{      _id,      _createdAt,      title,      slug,      subtitle,      author,      mainImage{        asset,        alt,        hotspot,        crop      },      hasOverrideDate,      overrideDate    }  },  _type == "ctaEvents" => {    ...,    events[]->{      _id,      title,      shortDescription,      venue,      location,      image{        asset,        alt,        hotspot,        crop      },      tags,      link,      linkLabel,      startDate,      endDate,      timeDescription,      pastEventText,      pastEventLinkBehavior,      pastEventLink,      pastEventLinkLabel    }  },  _type == "favouriteBlock" => {    ...,    favourites[]->{      _id,      name,      category,      order,      profileImage{        asset,        alt,        hotspot,        crop      },      description,      link,      linkLabel    }  }      }    }  }}},  sideContent[]{  _type,  _key,  style,  title,  richText,  ctaBlocks[]{    _type,    _key,    _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},    _type == "embeddedCtaEmailButton" => {...}  }},  links{    _type,    socialLinksArray[]{      _key,      platform,      url,      customTitle    }  }}
-export type COLLAB_QUERYResult = {
-  _id: string;
-  _type: "collab";
-  name: string | null;
-  slug: Slug | null;
-  category: string | null;
-  location: string | null;
-  heroImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  previewImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  shortDescription: string | null;
-  bio: string | null;
-  mainContent: Array<{
-    _type: "collabPageSection";
-    _key: string;
-    title: string | null;
-    anchorId: string | null;
-    content: Array<{
-      _key: string;
-      _type: "bandcampWidget";
-      embedCode?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "blockList";
-      items?: Array<{
-        leftContent?: string;
-        rightContent?: string;
-        _type: "blockListItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "card";
-      cardStyle?: "feature" | "info" | "statement";
-      icon?: Icon;
-      title?: string;
-      bodyText?: string;
-      ctaList: Array<{
-        _type: "embeddedCtaButton";
-        _key: string;
-        text?: string;
-        variant?: "filled" | "outline";
-        linkType?: "external" | "internal";
-        internalLink: {
-          _id: string;
-          _type: "blogIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "blogIndexPage";
-          href: "/blog";
-        } | {
-          _id: string;
-          _type: "blogPost";
-          title: string | null;
-          slug: Slug | null;
-          pageType: "blogPost";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
-          _type: "homePage";
-          title: null;
-          slug: null;
-          pageType: "homePage";
-          href: "/";
-        } | {
-          _id: string;
-          _type: "page";
-          title: string | null;
-          slug: Slug | null;
-          pageType: "page";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "privacyPolicy";
-          title: string | null;
-          slug: null;
-          pageType: "privacyPolicy";
-          href: "/privacy-policy";
-        } | {
-          _id: string;
-          _type: "termsAndConditions";
-          title: string | null;
-          slug: null;
-          pageType: "termsAndConditions";
-          href: "/terms-and-conditions";
-        } | null;
-        externalUrl?: string;
-        pageSectionId?: string;
-        openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
-      }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "companyLinksBlock";
-      blockAdded?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaBlogPost";
-      blogPost: {
-        _id: string;
-        _createdAt: string;
-        title: string | null;
-        slug: Slug | null;
-        subtitle: string | null;
-        author: string | null;
-        mainImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        hasOverrideDate: boolean | null;
-        overrideDate: string | null;
-      } | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaButton";
-      text?: string;
-      variant?: "filled" | "outline";
-      alignment?: "center" | "inherit" | "left" | "right";
-      linkType?: "external" | "internal";
-      internalLink: {
-        _id: string;
-        _type: "blogIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "blogIndexPage";
-        href: "/blog";
-      } | {
-        _id: string;
-        _type: "blogPost";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "blogPost";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
-        _type: "homePage";
-        title: null;
-        slug: null;
-        pageType: "homePage";
-        href: "/";
-      } | {
-        _id: string;
-        _type: "page";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "page";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "privacyPolicy";
-        title: string | null;
-        slug: null;
-        pageType: "privacyPolicy";
-        href: "/privacy-policy";
-      } | {
-        _id: string;
-        _type: "termsAndConditions";
-        title: string | null;
-        slug: null;
-        pageType: "termsAndConditions";
-        href: "/terms-and-conditions";
-      } | null;
-      externalUrl?: string;
-      pageSectionId?: string;
-      openInNewTab?: boolean;
-      image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaCalloutLink";
-      heading?: string;
-      text?: string;
-      image?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      linkType?: "external" | "internal";
-      internalLink: {
-        _id: string;
-        _type: "blogIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "blogIndexPage";
-        href: "/blog";
-      } | {
-        _id: string;
-        _type: "blogPost";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "blogPost";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
-        _type: "homePage";
-        title: null;
-        slug: null;
-        pageType: "homePage";
-        href: "/";
-      } | {
-        _id: string;
-        _type: "page";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "page";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "privacyPolicy";
-        title: string | null;
-        slug: null;
-        pageType: "privacyPolicy";
-        href: "/privacy-policy";
-      } | {
-        _id: string;
-        _type: "termsAndConditions";
-        title: string | null;
-        slug: null;
-        pageType: "termsAndConditions";
-        href: "/terms-and-conditions";
-      } | null;
-      externalUrl?: string;
-      pageSectionId?: string;
-      openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "divider";
-      style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "gridLayout";
-      columns?: "2" | "3";
-      content: Array<{
-        _key: string;
-        _type: "bandcampWidget";
-        embedCode?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "card";
-        cardStyle?: "feature" | "info" | "statement";
-        icon?: Icon;
-        title?: string;
-        bodyText?: string;
-        ctaList: Array<{
-          _type: "embeddedCtaButton";
-          _key: string;
-          text?: string;
-          variant?: "filled" | "outline";
-          linkType?: "external" | "internal";
-          internalLink: {
-            _id: string;
-            _type: "blogIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "blogIndexPage";
-            href: "/blog";
-          } | {
-            _id: string;
-            _type: "blogPost";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "blogPost";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
-            _type: "homePage";
-            title: null;
-            slug: null;
-            pageType: "homePage";
-            href: "/";
-          } | {
-            _id: string;
-            _type: "page";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "page";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "privacyPolicy";
-            title: string | null;
-            slug: null;
-            pageType: "privacyPolicy";
-            href: "/privacy-policy";
-          } | {
-            _id: string;
-            _type: "termsAndConditions";
-            title: string | null;
-            slug: null;
-            pageType: "termsAndConditions";
-            href: "/terms-and-conditions";
-          } | null;
-          externalUrl?: string;
-          pageSectionId?: string;
-          openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
-        }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "imageBlock";
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        size?: "full" | "small";
-        caption?: string;
-        content: null;
-      } | {
-        _key: string;
-        _type: "richText";
-        isCallout?: boolean;
-        textAlign?: "center" | "inherit" | "left" | "right";
-        content: Array<{
-          children?: Array<{
-            marks?: Array<string>;
-            text?: string;
-            _type: "span";
-            _key: string;
-          }>;
-          style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-          listItem?: "bullet" | "number";
-          markDefs?: Array<{
-            _key: string;
-          } & Color | {
-            href?: string;
-            _type: "link";
-            _key: string;
-          }>;
-          level?: number;
-          _type: "block";
-          _key: string;
-          image: null;
-          content: null;
-        }> | null;
-        image: null;
-      } | {
-        _key: string;
-        _type: "spotifyWidget";
-        embedCode?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "youTubeVideo";
-        url?: string;
-        image: null;
-        content: null;
-      }> | null;
-      image: null;
-    } | {
-      _key: string;
-      _type: "imageBlock";
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      size?: "full" | "small";
-      caption?: string;
-      content: null;
-    } | {
-      _key: string;
-      _type: "imageGallery";
-      columns?: "2" | "3" | "4";
-      images?: Array<{
-        image?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        caption?: string;
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "quote";
-      text?: string;
-      attribution?: string;
-      textAlign?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "richText";
-      isCallout?: boolean;
-      textAlign?: "center" | "inherit" | "left" | "right";
-      content: Array<{
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-        listItem?: "bullet" | "number";
-        markDefs?: Array<{
-          _key: string;
-        } & Color | {
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-        image: null;
-        content: null;
-      }> | null;
-      image: null;
-    } | {
-      _key: string;
-      _type: "spotifyWidget";
-      embedCode?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "subSection";
-      hideSection?: boolean;
-      title?: string;
-      anchorId: string | null;
-      content: Array<{
-        _key: string;
-        _type: "bandcampWidget";
-        embedCode?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "blockList";
-        items?: Array<{
-          leftContent?: string;
-          rightContent?: string;
-          _type: "blockListItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "card";
-        cardStyle?: "feature" | "info" | "statement";
-        icon?: Icon;
-        title?: string;
-        bodyText?: string;
-        ctaList: Array<{
-          _type: "embeddedCtaButton";
-          _key: string;
-          text?: string;
-          variant?: "filled" | "outline";
-          linkType?: "external" | "internal";
-          internalLink: {
-            _id: string;
-            _type: "blogIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "blogIndexPage";
-            href: "/blog";
-          } | {
-            _id: string;
-            _type: "blogPost";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "blogPost";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
-            _type: "homePage";
-            title: null;
-            slug: null;
-            pageType: "homePage";
-            href: "/";
-          } | {
-            _id: string;
-            _type: "page";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "page";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "privacyPolicy";
-            title: string | null;
-            slug: null;
-            pageType: "privacyPolicy";
-            href: "/privacy-policy";
-          } | {
-            _id: string;
-            _type: "termsAndConditions";
-            title: string | null;
-            slug: null;
-            pageType: "termsAndConditions";
-            href: "/terms-and-conditions";
-          } | null;
-          externalUrl?: string;
-          pageSectionId?: string;
-          openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
-        }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "companyLinksBlock";
-        blockAdded?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaBlogPost";
-        blogPost: {
-          _id: string;
-          _createdAt: string;
-          title: string | null;
-          slug: Slug | null;
-          subtitle: string | null;
-          author: string | null;
-          mainImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          hasOverrideDate: boolean | null;
-          overrideDate: string | null;
-        } | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaButton";
-        text?: string;
-        variant?: "filled" | "outline";
-        alignment?: "center" | "inherit" | "left" | "right";
-        linkType?: "external" | "internal";
-        internalLink: {
-          _id: string;
-          _type: "blogIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "blogIndexPage";
-          href: "/blog";
-        } | {
-          _id: string;
-          _type: "blogPost";
-          title: string | null;
-          slug: Slug | null;
-          pageType: "blogPost";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
-          _type: "homePage";
-          title: null;
-          slug: null;
-          pageType: "homePage";
-          href: "/";
-        } | {
-          _id: string;
-          _type: "page";
-          title: string | null;
-          slug: Slug | null;
-          pageType: "page";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "privacyPolicy";
-          title: string | null;
-          slug: null;
-          pageType: "privacyPolicy";
-          href: "/privacy-policy";
-        } | {
-          _id: string;
-          _type: "termsAndConditions";
-          title: string | null;
-          slug: null;
-          pageType: "termsAndConditions";
-          href: "/terms-and-conditions";
-        } | null;
-        externalUrl?: string;
-        pageSectionId?: string;
-        openInNewTab?: boolean;
-        image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaCalloutLink";
-        heading?: string;
-        text?: string;
-        image?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        linkType?: "external" | "internal";
-        internalLink: {
-          _id: string;
-          _type: "blogIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "blogIndexPage";
-          href: "/blog";
-        } | {
-          _id: string;
-          _type: "blogPost";
-          title: string | null;
-          slug: Slug | null;
-          pageType: "blogPost";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
-          _type: "homePage";
-          title: null;
-          slug: null;
-          pageType: "homePage";
-          href: "/";
-        } | {
-          _id: string;
-          _type: "page";
-          title: string | null;
-          slug: Slug | null;
-          pageType: "page";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "privacyPolicy";
-          title: string | null;
-          slug: null;
-          pageType: "privacyPolicy";
-          href: "/privacy-policy";
-        } | {
-          _id: string;
-          _type: "termsAndConditions";
-          title: string | null;
-          slug: null;
-          pageType: "termsAndConditions";
-          href: "/terms-and-conditions";
-        } | null;
-        externalUrl?: string;
-        pageSectionId?: string;
-        openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "divider";
-        style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "gridLayout";
-        columns?: "2" | "3";
-        content: Array<{
-          _key: string;
-          _type: "bandcampWidget";
-          embedCode?: string;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "card";
-          cardStyle?: "feature" | "info" | "statement";
-          icon?: Icon;
-          title?: string;
-          bodyText?: string;
-          ctaList: Array<{
-            _type: "embeddedCtaButton";
-            _key: string;
-            text?: string;
-            variant?: "filled" | "outline";
-            linkType?: "external" | "internal";
-            internalLink: {
-              _id: string;
-              _type: "blogIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "blogIndexPage";
-              href: "/blog";
-            } | {
-              _id: string;
-              _type: "blogPost";
-              title: string | null;
-              slug: Slug | null;
-              pageType: "blogPost";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
-              _type: "homePage";
-              title: null;
-              slug: null;
-              pageType: "homePage";
-              href: "/";
-            } | {
-              _id: string;
-              _type: "page";
-              title: string | null;
-              slug: Slug | null;
-              pageType: "page";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "privacyPolicy";
-              title: string | null;
-              slug: null;
-              pageType: "privacyPolicy";
-              href: "/privacy-policy";
-            } | {
-              _id: string;
-              _type: "termsAndConditions";
-              title: string | null;
-              slug: null;
-              pageType: "termsAndConditions";
-              href: "/terms-and-conditions";
-            } | null;
-            externalUrl?: string;
-            pageSectionId?: string;
-            openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
-          }> | null;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "imageBlock";
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          size?: "full" | "small";
-          caption?: string;
-          content: null;
-        } | {
-          _key: string;
-          _type: "richText";
-          isCallout?: boolean;
-          textAlign?: "center" | "inherit" | "left" | "right";
-          content: Array<{
-            children?: Array<{
-              marks?: Array<string>;
-              text?: string;
-              _type: "span";
-              _key: string;
-            }>;
-            style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-            listItem?: "bullet" | "number";
-            markDefs?: Array<{
-              _key: string;
-            } & Color | {
-              href?: string;
-              _type: "link";
-              _key: string;
-            }>;
-            level?: number;
-            _type: "block";
-            _key: string;
-            image: null;
-          }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "spotifyWidget";
-          embedCode?: string;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "youTubeVideo";
-          url?: string;
-          image: null;
-          content: null;
-        }> | null;
-        image: null;
-      } | {
-        _key: string;
-        _type: "imageBlock";
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        size?: "full" | "small";
-        caption?: string;
-        content: null;
-      } | {
-        _key: string;
-        _type: "imageGallery";
-        columns?: "2" | "3" | "4";
-        images?: Array<{
-          image?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          caption?: string;
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "quote";
-        text?: string;
-        attribution?: string;
-        textAlign?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "richText";
-        isCallout?: boolean;
-        textAlign?: "center" | "inherit" | "left" | "right";
-        content: Array<{
-          children?: Array<{
-            marks?: Array<string>;
-            text?: string;
-            _type: "span";
-            _key: string;
-          }>;
-          style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-          listItem?: "bullet" | "number";
-          markDefs?: Array<{
-            _key: string;
-          } & Color | {
-            href?: string;
-            _type: "link";
-            _key: string;
-          }>;
-          level?: number;
-          _type: "block";
-          _key: string;
-          image: null;
-          content: null;
-        }> | null;
-        image: null;
-      } | {
-        _key: string;
-        _type: "spotifyWidget";
-        embedCode?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "subSubSection";
-        hideSection?: boolean;
-        title?: string;
-        anchorId: string | null;
-        content: Array<{
-          _key: string;
-          _type: "bandcampWidget";
-          embedCode?: string;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "blockList";
-          items?: Array<{
-            leftContent?: string;
-            rightContent?: string;
-            _type: "blockListItem";
-            _key: string;
-          }>;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "card";
-          cardStyle?: "feature" | "info" | "statement";
-          icon?: Icon;
-          title?: string;
-          bodyText?: string;
-          ctaList: Array<{
-            _type: "embeddedCtaButton";
-            _key: string;
-            text?: string;
-            variant?: "filled" | "outline";
-            linkType?: "external" | "internal";
-            internalLink: {
-              _id: string;
-              _type: "blogIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "blogIndexPage";
-              href: "/blog";
-            } | {
-              _id: string;
-              _type: "blogPost";
-              title: string | null;
-              slug: Slug | null;
-              pageType: "blogPost";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
-              _type: "homePage";
-              title: null;
-              slug: null;
-              pageType: "homePage";
-              href: "/";
-            } | {
-              _id: string;
-              _type: "page";
-              title: string | null;
-              slug: Slug | null;
-              pageType: "page";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "privacyPolicy";
-              title: string | null;
-              slug: null;
-              pageType: "privacyPolicy";
-              href: "/privacy-policy";
-            } | {
-              _id: string;
-              _type: "termsAndConditions";
-              title: string | null;
-              slug: null;
-              pageType: "termsAndConditions";
-              href: "/terms-and-conditions";
-            } | null;
-            externalUrl?: string;
-            pageSectionId?: string;
-            openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
-          }> | null;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "companyLinksBlock";
-          blockAdded?: string;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "ctaBlogPost";
-          blogPost: {
-            _id: string;
-            _createdAt: string;
-            title: string | null;
-            slug: Slug | null;
-            subtitle: string | null;
-            author: string | null;
-            mainImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            hasOverrideDate: boolean | null;
-            overrideDate: string | null;
-          } | null;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "ctaButton";
-          text?: string;
-          variant?: "filled" | "outline";
-          alignment?: "center" | "inherit" | "left" | "right";
-          linkType?: "external" | "internal";
-          internalLink: {
-            _id: string;
-            _type: "blogIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "blogIndexPage";
-            href: "/blog";
-          } | {
-            _id: string;
-            _type: "blogPost";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "blogPost";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
-            _type: "homePage";
-            title: null;
-            slug: null;
-            pageType: "homePage";
-            href: "/";
-          } | {
-            _id: string;
-            _type: "page";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "page";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "privacyPolicy";
-            title: string | null;
-            slug: null;
-            pageType: "privacyPolicy";
-            href: "/privacy-policy";
-          } | {
-            _id: string;
-            _type: "termsAndConditions";
-            title: string | null;
-            slug: null;
-            pageType: "termsAndConditions";
-            href: "/terms-and-conditions";
-          } | null;
-          externalUrl?: string;
-          pageSectionId?: string;
-          openInNewTab?: boolean;
-          image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          content: null;
-        } | {
-          _key: string;
-          _type: "ctaCalloutLink";
-          heading?: string;
-          text?: string;
-          image?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          linkType?: "external" | "internal";
-          internalLink: {
-            _id: string;
-            _type: "blogIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "blogIndexPage";
-            href: "/blog";
-          } | {
-            _id: string;
-            _type: "blogPost";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "blogPost";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
-            _type: "homePage";
-            title: null;
-            slug: null;
-            pageType: "homePage";
-            href: "/";
-          } | {
-            _id: string;
-            _type: "page";
-            title: string | null;
-            slug: Slug | null;
-            pageType: "page";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "privacyPolicy";
-            title: string | null;
-            slug: null;
-            pageType: "privacyPolicy";
-            href: "/privacy-policy";
-          } | {
-            _id: string;
-            _type: "termsAndConditions";
-            title: string | null;
-            slug: null;
-            pageType: "termsAndConditions";
-            href: "/terms-and-conditions";
-          } | null;
-          externalUrl?: string;
-          pageSectionId?: string;
-          openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          content: null;
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "divider";
-          style?: string;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "gridLayout";
-          columns?: "2" | "3";
-          content: Array<{
-            _key: string;
-            _type: "bandcampWidget";
-            embedCode?: string;
-            image: null;
-          } | {
-            _key: string;
-            _type: "card";
-            cardStyle?: "feature" | "info" | "statement";
-            icon?: Icon;
-            title?: string;
-            bodyText?: string;
-            ctaList: Array<{
-              _type: "embeddedCtaButton";
-              _key: string;
-              text?: string;
-              variant?: "filled" | "outline";
-              linkType?: "external" | "internal";
-              internalLink: {
-                _id: string;
-                _type: "blogIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "blogIndexPage";
-                href: "/blog";
-              } | {
-                _id: string;
-                _type: "blogPost";
-                title: string | null;
-                slug: Slug | null;
-                pageType: "blogPost";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
-                _type: "homePage";
-                title: null;
-                slug: null;
-                pageType: "homePage";
-                href: "/";
-              } | {
-                _id: string;
-                _type: "page";
-                title: string | null;
-                slug: Slug | null;
-                pageType: "page";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "privacyPolicy";
-                title: string | null;
-                slug: null;
-                pageType: "privacyPolicy";
-                href: "/privacy-policy";
-              } | {
-                _id: string;
-                _type: "termsAndConditions";
-                title: string | null;
-                slug: null;
-                pageType: "termsAndConditions";
-                href: "/terms-and-conditions";
-              } | null;
-              externalUrl?: string;
-              pageSectionId?: string;
-              openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
-            }> | null;
-            image: null;
-          } | {
-            _key: string;
-            _type: "imageBlock";
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            size?: "full" | "small";
-            caption?: string;
-          } | {
-            _key: string;
-            _type: "richText";
-            isCallout?: boolean;
-            textAlign?: "center" | "inherit" | "left" | "right";
-            content?: Array<{
-              children?: Array<{
-                marks?: Array<string>;
-                text?: string;
-                _type: "span";
-                _key: string;
-              }>;
-              style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-              listItem?: "bullet" | "number";
-              markDefs?: Array<{
-                _key: string;
-              } & Color | {
-                href?: string;
-                _type: "link";
-                _key: string;
-              }>;
-              level?: number;
-              _type: "block";
-              _key: string;
-            }>;
-            image: null;
-          } | {
-            _key: string;
-            _type: "spotifyWidget";
-            embedCode?: string;
-            image: null;
-          } | {
-            _key: string;
-            _type: "youTubeVideo";
-            url?: string;
-            image: null;
-          }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "imageBlock";
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          size?: "full" | "small";
-          caption?: string;
-          content: null;
-        } | {
-          _key: string;
-          _type: "imageGallery";
-          columns?: "2" | "3" | "4";
-          images?: Array<{
-            image?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            caption?: string;
-            _key: string;
-          }>;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
-            _key: string;
-          }>;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "quote";
-          text?: string;
-          attribution?: string;
-          textAlign?: "center" | "inherit" | "left" | "right";
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "richText";
-          isCallout?: boolean;
-          textAlign?: "center" | "inherit" | "left" | "right";
-          content: Array<{
-            children?: Array<{
-              marks?: Array<string>;
-              text?: string;
-              _type: "span";
-              _key: string;
-            }>;
-            style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-            listItem?: "bullet" | "number";
-            markDefs?: Array<{
-              _key: string;
-            } & Color | {
-              href?: string;
-              _type: "link";
-              _key: string;
-            }>;
-            level?: number;
-            _type: "block";
-            _key: string;
-            image: null;
-          }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "spotifyWidget";
-          embedCode?: string;
-          image: null;
-          content: null;
-        } | {
-          _key: string;
-          _type: "textImage";
-          content: Array<{
-            children?: Array<{
-              marks?: Array<string>;
-              text?: string;
-              _type: "span";
-              _key: string;
-            }>;
-            style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-            listItem?: "bullet" | "number";
-            markDefs?: Array<{
-              _key: string;
-            } & Color | {
-              href?: string;
-              _type: "link";
-              _key: string;
-            }>;
-            level?: number;
-            _type: "block";
-            _key: string;
-            image: null;
-          }> | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          layout?: "text-left" | "text-right";
-        } | {
-          _key: string;
-          _type: "youTubeVideo";
-          url?: string;
-          image: null;
-          content: null;
-        }> | null;
-        image: null;
-      } | {
-        _key: string;
-        _type: "textImage";
-        content: Array<{
-          children?: Array<{
-            marks?: Array<string>;
-            text?: string;
-            _type: "span";
-            _key: string;
-          }>;
-          style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-          listItem?: "bullet" | "number";
-          markDefs?: Array<{
-            _key: string;
-          } & Color | {
-            href?: string;
-            _type: "link";
-            _key: string;
-          }>;
-          level?: number;
-          _type: "block";
-          _key: string;
-          image: null;
-          content: null;
-        }> | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        layout?: "text-left" | "text-right";
-      } | {
-        _key: string;
-        _type: "youTubeVideo";
-        url?: string;
-        image: null;
-        content: null;
-      }> | null;
-      image: null;
-    } | {
-      _key: string;
-      _type: "textImage";
-      content: Array<{
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-        listItem?: "bullet" | "number";
-        markDefs?: Array<{
-          _key: string;
-        } & Color | {
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-        image: null;
-        content: null;
-      }> | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      layout?: "text-left" | "text-right";
-    } | {
-      _key: string;
-      _type: "youTubeVideo";
-      url?: string;
-      image: null;
-      content: null;
-    }> | null;
-  }> | null;
-  sideContent: Array<{
-    _type: "sideContentBlock";
-    _key: string;
-    style: "highlighted" | "plain" | null;
-    title: string | null;
-    richText: Array<{
-      children?: Array<{
-        marks?: Array<string>;
-        text?: string;
-        _type: "span";
-        _key: string;
-      }>;
-      style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
-      listItem?: "bullet" | "number";
-      markDefs?: Array<{
-        _key: string;
-      } & Color | {
-        href?: string;
-        _type: "link";
-        _key: string;
-      }>;
-      level?: number;
-      _type: "block";
-      _key: string;
-    }> | null;
-    ctaBlocks: Array<{
-      _type: "embeddedCtaButton";
-      _key: string;
-      text?: string;
-      variant?: "filled" | "outline";
-      linkType?: "external" | "internal";
-      internalLink: {
-        _id: string;
-        _type: "blogIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "blogIndexPage";
-        href: "/blog";
-      } | {
-        _id: string;
-        _type: "blogPost";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "blogPost";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
-        _type: "homePage";
-        title: null;
-        slug: null;
-        pageType: "homePage";
-        href: "/";
-      } | {
-        _id: string;
-        _type: "page";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "page";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "privacyPolicy";
-        title: string | null;
-        slug: null;
-        pageType: "privacyPolicy";
-        href: "/privacy-policy";
-      } | {
-        _id: string;
-        _type: "termsAndConditions";
-        title: string | null;
-        slug: null;
-        pageType: "termsAndConditions";
-        href: "/terms-and-conditions";
-      } | null;
-      externalUrl?: string;
-      pageSectionId?: string;
-      openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
-    }> | null;
-  }> | null;
-  links: {
-    _type: "collabLinksArray";
-    socialLinksArray: Array<{
-      _key: string;
-      platform: "genericLink" | "officialWebsite" | null;
-      url: string | null;
-      customTitle: string | null;
-    }> | null;
-  } | null;
-} | null;
+export type COLLAB_QUERYResult = null;
 // Variable: COLLABS_SLUGS_QUERY
 // Query: *[_type == "collab" && defined(slug.current)]{   "slug": slug.current}
-export type COLLABS_SLUGS_QUERYResult = Array<{
-  slug: string | null;
-}>;
+export type COLLABS_SLUGS_QUERYResult = Array<never>;
 // Variable: COLLABS_ALL_QUERY
 // Query: *[_type == "collab" && defined(slug.current)]|order(order asc, name asc){  _id,  name,  slug,  category,  location,  order,  previewImage{    asset,    alt,    hotspot,    crop  },  shortDescription,  useShortDescriptionForCards,  cardDescription}
-export type COLLABS_ALL_QUERYResult = Array<{
-  _id: string;
-  name: string | null;
-  slug: Slug | null;
-  category: string | null;
-  location: string | null;
-  order: number | null;
-  previewImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  shortDescription: string | null;
-  useShortDescriptionForCards: null;
-  cardDescription: null;
-}>;
+export type COLLABS_ALL_QUERYResult = Array<never>;
 // Variable: COLLABS_SITEMAP_QUERY
 // Query: *[_type == "collab" && defined(slug.current)]{  _id,  _updatedAt,  name,  slug}
-export type COLLABS_SITEMAP_QUERYResult = Array<{
-  _id: string;
-  _updatedAt: string;
-  name: string | null;
-  slug: Slug | null;
-}>;
+export type COLLABS_SITEMAP_QUERYResult = Array<never>;
 // Variable: FAVOURITES_ALL_QUERY
 // Query: *[_type == "favourites"]|order(order asc, name asc){  _id,  name,  category,  order,  profileImage{    asset,    alt,    hotspot,    crop  },  description,  link,  linkLabel}
-export type FAVOURITES_ALL_QUERYResult = Array<{
-  _id: string;
-  name: string | null;
-  category: string | null;
-  order: number | null;
-  profileImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  description: string | null;
-  link: string | null;
-  linkLabel: string | null;
-}>;
+export type FAVOURITES_ALL_QUERYResult = Array<never>;
 // Variable: FAVOURITES_INDEX_PAGE_QUERY
 // Query: *[_id == "favouritesIndexPage"][0]{  _id,  _type,  title,  backgroundImage{    asset,    alt,    hotspot,    crop  },  subtitle,  showFavouritesMessage,  favouritesMessage{    ...,    ctaList[]{      _type,      _key,      _type == "embeddedCtaButton" => {  ...,  internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )},  "computedHref": select(    linkType == "external" => externalUrl,    linkType == "internal" && defined(pageSectionId) && pageSectionId != "" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/") + "#" + pageSectionId,    linkType == "internal" =>      coalesce(internalLink->{  _id,  _type,  title,  slug,  "pageType": _type,  "href": select(    _type == "homePage" => "/",    _type == "eventsIndexPage" => "/events",    _type == "favouritesIndexPage" => "/favourites",    _type == "blogIndexPage" => "/blog",    _type == "blogPost" => "/blog/" + slug.current,    _type == "collab" => "/collabs/" + slug.current,    _type == "termsAndConditions" => "/terms-and-conditions",    _type == "privacyPolicy" => "/privacy-policy",    "/" + slug.current  )}.href, "/"),    "/"  )},      _type == "embeddedCtaEmailButton" => {...}    }  }}
 export type FAVOURITES_INDEX_PAGE_QUERYResult = {
@@ -25642,157 +16696,12 @@ export type FAVOURITES_INDEX_PAGE_QUERYResult = {
   favouritesMessage: null;
 } | {
   _id: string;
-  _type: "collab";
-  title: null;
-  backgroundImage: null;
-  subtitle: null;
-  showFavouritesMessage: null;
-  favouritesMessage: null;
-} | {
-  _id: string;
   _type: "companyLinks";
   title: null;
   backgroundImage: null;
   subtitle: null;
   showFavouritesMessage: null;
   favouritesMessage: null;
-} | {
-  _id: string;
-  _type: "event";
-  title: string | null;
-  backgroundImage: null;
-  subtitle: null;
-  showFavouritesMessage: null;
-  favouritesMessage: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  title: string | null;
-  backgroundImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  subtitle: string | null;
-  showFavouritesMessage: null;
-  favouritesMessage: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  title: null;
-  backgroundImage: null;
-  subtitle: null;
-  showFavouritesMessage: null;
-  favouritesMessage: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
-  title: string | null;
-  backgroundImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
-  subtitle: string | null;
-  showFavouritesMessage: boolean | null;
-  favouritesMessage: {
-    _type: "card";
-    cardStyle?: "feature" | "info" | "statement";
-    icon?: Icon;
-    title?: string;
-    bodyText?: string;
-    ctaList: Array<{
-      _type: "embeddedCtaButton";
-      _key: string;
-      text?: string;
-      variant?: "filled" | "outline";
-      linkType?: "external" | "internal";
-      internalLink: {
-        _id: string;
-        _type: "blogIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "blogIndexPage";
-        href: "/blog";
-      } | {
-        _id: string;
-        _type: "blogPost";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "blogPost";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
-        _type: "homePage";
-        title: null;
-        slug: null;
-        pageType: "homePage";
-        href: "/";
-      } | {
-        _id: string;
-        _type: "page";
-        title: string | null;
-        slug: Slug | null;
-        pageType: "page";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "privacyPolicy";
-        title: string | null;
-        slug: null;
-        pageType: "privacyPolicy";
-        href: "/privacy-policy";
-      } | {
-        _id: string;
-        _type: "termsAndConditions";
-        title: string | null;
-        slug: null;
-        pageType: "termsAndConditions";
-        href: "/terms-and-conditions";
-      } | null;
-      externalUrl?: string;
-      pageSectionId?: string;
-      openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
-    }> | null;
-  } | null;
 } | {
   _id: string;
   _type: "footer";
@@ -25957,27 +16866,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -26008,20 +16896,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -26079,27 +16955,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -26131,7 +16986,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -26168,27 +17023,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -26219,85 +17053,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -26339,27 +17100,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -26390,11 +17130,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -26499,30 +17235,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -26576,27 +17288,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -26627,20 +17318,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -26698,27 +17377,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -26750,7 +17408,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -26787,27 +17445,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -26838,85 +17475,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -26958,27 +17522,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -27009,11 +17552,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -27117,30 +17656,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -27233,27 +17748,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -27284,20 +17778,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -27355,27 +17837,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -27407,7 +17868,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -27444,27 +17905,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -27495,85 +17935,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -27614,27 +17981,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -27665,11 +18011,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -27768,30 +18110,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -27881,27 +18199,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -27932,19 +18229,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -27999,27 +18285,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -28051,7 +18316,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -28087,27 +18352,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -28138,81 +18382,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -28251,27 +18425,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -28302,11 +18455,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -28394,29 +18543,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -28677,50 +18803,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   }> | null;
 } | {
   _id: string;
-  _type: "collab";
-  _updatedAt: string;
-  hide: null;
-  title: null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
   _type: "companyLinks";
   _updatedAt: string;
   hide: null;
   title: null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "event";
-  _updatedAt: string;
-  hide: null;
-  title: string | null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  _updatedAt: string;
-  hide: null;
-  title: string | null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  _updatedAt: string;
-  hide: null;
-  title: null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
-  _updatedAt: string;
-  hide: null;
-  title: string | null;
   topText: null;
   content: null;
 } | {
@@ -28792,27 +18878,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -28843,20 +18908,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -28914,27 +18967,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -28966,7 +18998,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -29003,27 +19035,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -29054,85 +19065,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -29174,27 +19112,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -29225,11 +19142,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -29334,30 +19247,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -29411,27 +19300,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -29462,20 +19330,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -29533,27 +19389,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -29585,7 +19420,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -29622,27 +19457,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -29673,85 +19487,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -29793,27 +19534,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -29844,11 +19564,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -29952,30 +19668,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -30068,27 +19760,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -30119,20 +19790,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -30190,27 +19849,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -30242,7 +19880,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -30279,27 +19917,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -30330,85 +19947,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -30449,27 +19993,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -30500,11 +20023,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -30603,30 +20122,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -30716,27 +20211,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -30767,19 +20241,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -30834,27 +20297,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -30886,7 +20328,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -30922,27 +20364,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -30973,81 +20394,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -31086,27 +20437,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -31137,11 +20467,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -31229,29 +20555,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -31563,27 +20866,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -31614,20 +20896,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -31685,27 +20955,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -31737,7 +20986,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -31774,27 +21023,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -31825,85 +21053,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -31945,27 +21100,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -31996,11 +21130,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -32105,30 +21235,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -32182,27 +21288,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -32233,20 +21318,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -32304,27 +21377,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -32356,7 +21408,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -32393,27 +21445,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -32444,85 +21475,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -32564,27 +21522,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -32615,11 +21552,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -32723,30 +21656,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -32839,27 +21748,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -32890,20 +21778,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -32961,27 +21837,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -33013,7 +21868,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -33050,27 +21905,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -33101,85 +21935,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -33220,27 +21981,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -33271,11 +22011,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -33374,30 +22110,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -33487,27 +22199,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -33538,19 +22229,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -33605,27 +22285,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -33657,7 +22316,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -33693,27 +22352,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -33744,81 +22382,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -33857,27 +22425,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -33908,11 +22455,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -34000,29 +22543,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -34334,27 +22854,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -34385,20 +22884,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -34456,27 +22943,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -34508,7 +22974,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -34545,27 +23011,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -34596,85 +23041,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -34716,27 +23088,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -34767,11 +23118,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -34876,30 +23223,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -34953,27 +23276,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -35004,20 +23306,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -35075,27 +23365,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -35127,7 +23396,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -35164,27 +23433,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -35215,85 +23463,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -35335,27 +23510,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -35386,11 +23540,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -35494,30 +23644,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -35610,27 +23736,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -35661,20 +23766,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -35732,27 +23825,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -35784,7 +23856,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -35821,27 +23893,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -35872,85 +23923,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -35991,27 +23969,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -36042,11 +23999,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -36145,30 +24098,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -36258,27 +24187,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -36309,19 +24217,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -36376,27 +24273,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -36428,7 +24304,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -36464,27 +24340,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -36515,81 +24370,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -36628,27 +24413,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -36679,11 +24443,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -36771,29 +24531,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -37129,27 +24866,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -37180,20 +24896,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -37251,27 +24955,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -37303,7 +24986,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -37340,27 +25023,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -37391,85 +25053,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -37511,27 +25100,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -37562,11 +25130,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -37671,30 +25235,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -37748,27 +25288,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -37799,20 +25318,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -37870,27 +25377,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -37922,7 +25408,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -37959,27 +25445,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -38010,85 +25475,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -38130,27 +25522,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -38181,11 +25552,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -38289,30 +25656,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -38405,27 +25748,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -38456,20 +25778,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -38527,27 +25837,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -38579,7 +25868,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -38616,27 +25905,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -38667,85 +25935,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -38786,27 +25981,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -38837,11 +26011,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -38940,30 +26110,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -39053,27 +26199,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -39104,19 +26229,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -39171,27 +26285,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -39223,7 +26316,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -39259,27 +26352,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -39310,81 +26382,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -39423,27 +26425,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -39474,11 +26455,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -39566,29 +26543,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -39911,27 +26865,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -39962,20 +26895,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -40033,27 +26954,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -40085,7 +26985,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -40122,27 +27022,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -40173,85 +27052,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -40293,27 +27099,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -40344,11 +27129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -40453,30 +27234,6 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -40530,27 +27287,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -40581,20 +27317,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -40652,27 +27376,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -40704,7 +27407,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -40741,27 +27444,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -40792,85 +27474,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -40912,27 +27521,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -40963,11 +27551,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -41071,30 +27655,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -41187,27 +27747,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -41238,20 +27777,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -41309,27 +27836,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -41361,7 +27867,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -41398,27 +27904,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -41449,85 +27934,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -41568,27 +27980,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -41619,11 +28010,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -41722,30 +28109,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -41835,27 +28198,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -41886,19 +28228,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -41953,27 +28284,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -42005,7 +28315,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -42041,27 +28351,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -42092,81 +28381,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -42205,27 +28424,6 @@ export type PRIVACY_POLICY_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -42256,11 +28454,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -42348,29 +28542,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -42631,50 +28802,10 @@ export type PRIVACY_POLICY_QUERYResult = {
   }> | null;
 } | {
   _id: string;
-  _type: "collab";
-  _updatedAt: string;
-  hide: null;
-  title: null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
   _type: "companyLinks";
   _updatedAt: string;
   hide: null;
   title: null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "event";
-  _updatedAt: string;
-  hide: null;
-  title: string | null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "eventsIndexPage";
-  _updatedAt: string;
-  hide: null;
-  title: string | null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "favourites";
-  _updatedAt: string;
-  hide: null;
-  title: null;
-  topText: null;
-  content: null;
-} | {
-  _id: string;
-  _type: "favouritesIndexPage";
-  _updatedAt: string;
-  hide: null;
-  title: string | null;
   topText: null;
   content: null;
 } | {
@@ -42746,27 +28877,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -42797,20 +28907,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -42868,27 +28966,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -42920,7 +28997,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -42957,27 +29034,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -43008,85 +29064,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -43128,27 +29111,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -43179,11 +29141,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -43288,30 +29246,6 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -43365,27 +29299,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -43416,20 +29329,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -43487,27 +29388,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -43539,7 +29419,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -43576,27 +29456,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -43627,85 +29486,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -43747,27 +29533,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -43798,11 +29563,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -43906,30 +29667,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -44022,27 +29759,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -44073,20 +29789,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -44144,27 +29848,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -44196,7 +29879,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -44233,27 +29916,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -44284,85 +29946,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -44403,27 +29992,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -44454,11 +30022,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -44557,30 +30121,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -44670,27 +30210,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -44721,19 +30240,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -44788,27 +30296,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -44840,7 +30327,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -44876,27 +30363,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -44927,81 +30393,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -45040,27 +30436,6 @@ export type PRIVACY_POLICY_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -45091,11 +30466,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -45183,29 +30554,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -45517,27 +30865,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -45568,20 +30895,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -45639,27 +30954,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -45691,7 +30985,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -45728,27 +31022,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -45779,85 +31052,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -45899,27 +31099,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -45950,11 +31129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -46059,30 +31234,6 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -46136,27 +31287,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -46187,20 +31317,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -46258,27 +31376,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -46310,7 +31407,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -46347,27 +31444,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -46398,85 +31474,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -46518,27 +31521,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -46569,11 +31551,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -46677,30 +31655,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -46793,27 +31747,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -46844,20 +31777,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -46915,27 +31836,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -46967,7 +31867,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -47004,27 +31904,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -47055,85 +31934,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -47174,27 +31980,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -47225,11 +32010,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -47328,30 +32109,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -47441,27 +32198,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -47492,19 +32228,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -47559,27 +32284,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -47611,7 +32315,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -47647,27 +32351,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -47698,81 +32381,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -47811,27 +32424,6 @@ export type PRIVACY_POLICY_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -47862,11 +32454,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -47954,29 +32542,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -48288,27 +32853,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -48339,20 +32883,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -48410,27 +32942,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -48462,7 +32973,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -48499,27 +33010,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -48550,85 +33040,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -48670,27 +33087,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -48721,11 +33117,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -48830,30 +33222,6 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -48907,27 +33275,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -48958,20 +33305,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -49029,27 +33364,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -49081,7 +33395,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -49118,27 +33432,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -49169,85 +33462,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -49289,27 +33509,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -49340,11 +33539,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -49448,30 +33643,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -49564,27 +33735,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -49615,20 +33765,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -49686,27 +33824,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -49738,7 +33855,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -49775,27 +33892,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -49826,85 +33922,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -49945,27 +33968,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -49996,11 +33998,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -50099,30 +34097,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -50212,27 +34186,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -50263,19 +34216,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -50330,27 +34272,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -50382,7 +34303,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -50418,27 +34339,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -50469,81 +34369,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -50582,27 +34412,6 @@ export type PRIVACY_POLICY_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -50633,11 +34442,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -50725,29 +34530,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -51083,27 +34865,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -51134,20 +34895,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    } | {
-      _type: "embeddedCtaEmailButton";
-      _key: string;
-      buttonText?: string;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     }> | null;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "collabBlock";
-    rowSize?: "large" | "small";
-    showCTA?: boolean;
-    ctaMessage?: string;
     image: null;
     content: null;
   } | {
@@ -51205,27 +34954,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -51257,7 +34985,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     pageSectionId?: string;
     openInNewTab?: boolean;
     image: null;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
@@ -51294,27 +35022,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       href: string | null;
     } | {
       _id: string;
-      _type: "collab";
-      title: null;
-      slug: Slug | null;
-      pageType: "collab";
-      href: string | null;
-    } | {
-      _id: string;
-      _type: "eventsIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "eventsIndexPage";
-      href: "/events";
-    } | {
-      _id: string;
-      _type: "favouritesIndexPage";
-      title: string | null;
-      slug: null;
-      pageType: "favouritesIndexPage";
-      href: "/favourites";
-    } | {
-      _id: string;
       _type: "homePage";
       title: null;
       slug: null;
@@ -51345,85 +35052,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     externalUrl?: string;
     pageSectionId?: string;
     openInNewTab?: boolean;
-    computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEmailButton";
-    alignment?: "center" | "inherit" | "left" | "right";
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "ctaEvents";
-    rowSize?: "large" | "small";
-    eventListType?: "automatic" | "manual";
-    events: Array<{
-      _id: string;
-      title: string | null;
-      shortDescription: string | null;
-      venue: string | null;
-      location: string | null;
-      image: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      tags: Array<string> | null;
-      link: string | null;
-      linkLabel: string | null;
-      startDate: string | null;
-      endDate: string | null;
-      timeDescription: string | null;
-      pastEventText: string | null;
-      pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-      pastEventLink: string | null;
-      pastEventLinkLabel: string | null;
-    }> | null;
-    displayStyle?: "detailed" | "posterOnly";
-    showCTA?: boolean;
-    ctaMessage?: string;
-    hideViewAllButton?: boolean;
-    image: null;
+    computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
     content: null;
   } | {
     _key: string;
     _type: "divider";
     style?: string;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
-    _type: "favouriteBlock";
-    rowSize?: "large" | "small";
-    favouriteListType?: "automatic" | "manual";
-    maxItemsPerBlock?: number;
-    favourites: Array<{
-      _id: string;
-      name: string | null;
-      category: string | null;
-      order: number | null;
-      profileImage: {
-        asset: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        } | null;
-        alt: string | null;
-        hotspot: SanityImageHotspot | null;
-        crop: SanityImageCrop | null;
-      } | null;
-      description: string | null;
-      link: string | null;
-      linkLabel: string | null;
-    }> | null;
     image: null;
     content: null;
   } | {
@@ -51465,27 +35099,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -51516,11 +35129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
       image: null;
       content: null;
@@ -51625,30 +35234,6 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "itemList";
-    alignment?: "center" | "inherit" | "left" | "right";
-    items?: Array<{
-      text?: string;
-      icon?: {
-        asset?: {
-          _ref: string;
-          _type: "reference";
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-        };
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        alt?: string;
-        _type: "image";
-      };
-      _type: "listItem";
-      _key: string;
-    }>;
-    image: null;
-    content: null;
-  } | {
-    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -51702,27 +35287,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -51753,20 +35317,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      } | {
-        _type: "embeddedCtaEmailButton";
-        _key: string;
-        buttonText?: string;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       }> | null;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "collabBlock";
-      rowSize?: "large" | "small";
-      showCTA?: boolean;
-      ctaMessage?: string;
       image: null;
       content: null;
     } | {
@@ -51824,27 +35376,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -51876,7 +35407,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       pageSectionId?: string;
       openInNewTab?: boolean;
       image: null;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
@@ -51913,27 +35444,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         href: string | null;
       } | {
         _id: string;
-        _type: "collab";
-        title: null;
-        slug: Slug | null;
-        pageType: "collab";
-        href: string | null;
-      } | {
-        _id: string;
-        _type: "eventsIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "eventsIndexPage";
-        href: "/events";
-      } | {
-        _id: string;
-        _type: "favouritesIndexPage";
-        title: string | null;
-        slug: null;
-        pageType: "favouritesIndexPage";
-        href: "/favourites";
-      } | {
-        _id: string;
         _type: "homePage";
         title: null;
         slug: null;
@@ -51964,85 +35474,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       externalUrl?: string;
       pageSectionId?: string;
       openInNewTab?: boolean;
-      computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEmailButton";
-      alignment?: "center" | "inherit" | "left" | "right";
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "ctaEvents";
-      rowSize?: "large" | "small";
-      eventListType?: "automatic" | "manual";
-      events: Array<{
-        _id: string;
-        title: string | null;
-        shortDescription: string | null;
-        venue: string | null;
-        location: string | null;
-        image: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        tags: Array<string> | null;
-        link: string | null;
-        linkLabel: string | null;
-        startDate: string | null;
-        endDate: string | null;
-        timeDescription: string | null;
-        pastEventText: string | null;
-        pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-        pastEventLink: string | null;
-        pastEventLinkLabel: string | null;
-      }> | null;
-      displayStyle?: "detailed" | "posterOnly";
-      showCTA?: boolean;
-      ctaMessage?: string;
-      hideViewAllButton?: boolean;
-      image: null;
+      computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
       content: null;
     } | {
       _key: string;
       _type: "divider";
       style?: string;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
-      _type: "favouriteBlock";
-      rowSize?: "large" | "small";
-      favouriteListType?: "automatic" | "manual";
-      maxItemsPerBlock?: number;
-      favourites: Array<{
-        _id: string;
-        name: string | null;
-        category: string | null;
-        order: number | null;
-        profileImage: {
-          asset: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          } | null;
-          alt: string | null;
-          hotspot: SanityImageHotspot | null;
-          crop: SanityImageCrop | null;
-        } | null;
-        description: string | null;
-        link: string | null;
-        linkLabel: string | null;
-      }> | null;
       image: null;
       content: null;
     } | {
@@ -52084,27 +35521,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -52135,11 +35551,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
         image: null;
         content: null;
@@ -52243,30 +35655,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "itemList";
-      alignment?: "center" | "inherit" | "left" | "right";
-      items?: Array<{
-        text?: string;
-        icon?: {
-          asset?: {
-            _ref: string;
-            _type: "reference";
-            _weak?: boolean;
-            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-          };
-          media?: unknown;
-          hotspot?: SanityImageHotspot;
-          crop?: SanityImageCrop;
-          alt?: string;
-          _type: "image";
-        };
-        _type: "listItem";
-        _key: string;
-      }>;
-      image: null;
-      content: null;
-    } | {
-      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -52359,27 +35747,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -52410,20 +35777,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _type: "embeddedCtaEmailButton";
-          _key: string;
-          buttonText?: string;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         }> | null;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "collabBlock";
-        rowSize?: "large" | "small";
-        showCTA?: boolean;
-        ctaMessage?: string;
         image: null;
         content: null;
       } | {
@@ -52481,27 +35836,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -52533,7 +35867,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         pageSectionId?: string;
         openInNewTab?: boolean;
         image: null;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
@@ -52570,27 +35904,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           href: string | null;
         } | {
           _id: string;
-          _type: "collab";
-          title: null;
-          slug: Slug | null;
-          pageType: "collab";
-          href: string | null;
-        } | {
-          _id: string;
-          _type: "eventsIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "eventsIndexPage";
-          href: "/events";
-        } | {
-          _id: string;
-          _type: "favouritesIndexPage";
-          title: string | null;
-          slug: null;
-          pageType: "favouritesIndexPage";
-          href: "/favourites";
-        } | {
-          _id: string;
           _type: "homePage";
           title: null;
           slug: null;
@@ -52621,85 +35934,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         externalUrl?: string;
         pageSectionId?: string;
         openInNewTab?: boolean;
-        computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEmailButton";
-        alignment?: "center" | "inherit" | "left" | "right";
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "ctaEvents";
-        rowSize?: "large" | "small";
-        eventListType?: "automatic" | "manual";
-        events: Array<{
-          _id: string;
-          title: string | null;
-          shortDescription: string | null;
-          venue: string | null;
-          location: string | null;
-          image: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          tags: Array<string> | null;
-          link: string | null;
-          linkLabel: string | null;
-          startDate: string | null;
-          endDate: string | null;
-          timeDescription: string | null;
-          pastEventText: string | null;
-          pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-          pastEventLink: string | null;
-          pastEventLinkLabel: string | null;
-        }> | null;
-        displayStyle?: "detailed" | "posterOnly";
-        showCTA?: boolean;
-        ctaMessage?: string;
-        hideViewAllButton?: boolean;
-        image: null;
+        computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         content: null;
       } | {
         _key: string;
         _type: "divider";
         style?: string;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
-        _type: "favouriteBlock";
-        rowSize?: "large" | "small";
-        favouriteListType?: "automatic" | "manual";
-        maxItemsPerBlock?: number;
-        favourites: Array<{
-          _id: string;
-          name: string | null;
-          category: string | null;
-          order: number | null;
-          profileImage: {
-            asset: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            } | null;
-            alt: string | null;
-            hotspot: SanityImageHotspot | null;
-            crop: SanityImageCrop | null;
-          } | null;
-          description: string | null;
-          link: string | null;
-          linkLabel: string | null;
-        }> | null;
         image: null;
         content: null;
       } | {
@@ -52740,27 +35980,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -52791,11 +36010,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
           image: null;
         } | {
@@ -52894,30 +36109,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "itemList";
-        alignment?: "center" | "inherit" | "left" | "right";
-        items?: Array<{
-          text?: string;
-          icon?: {
-            asset?: {
-              _ref: string;
-              _type: "reference";
-              _weak?: boolean;
-              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-            };
-            media?: unknown;
-            hotspot?: SanityImageHotspot;
-            crop?: SanityImageCrop;
-            alt?: string;
-            _type: "image";
-          };
-          _type: "listItem";
-          _key: string;
-        }>;
-        image: null;
-        content: null;
-      } | {
-        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -53007,27 +36198,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               href: string | null;
             } | {
               _id: string;
-              _type: "collab";
-              title: null;
-              slug: Slug | null;
-              pageType: "collab";
-              href: string | null;
-            } | {
-              _id: string;
-              _type: "eventsIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "eventsIndexPage";
-              href: "/events";
-            } | {
-              _id: string;
-              _type: "favouritesIndexPage";
-              title: string | null;
-              slug: null;
-              pageType: "favouritesIndexPage";
-              href: "/favourites";
-            } | {
-              _id: string;
               _type: "homePage";
               title: null;
               slug: null;
@@ -53058,19 +36228,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             externalUrl?: string;
             pageSectionId?: string;
             openInNewTab?: boolean;
-            computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-          } | {
-            _type: "embeddedCtaEmailButton";
-            _key: string;
-            buttonText?: string;
+            computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
           }> | null;
-          image: null;
-        } | {
-          _key: string;
-          _type: "collabBlock";
-          rowSize?: "large" | "small";
-          showCTA?: boolean;
-          ctaMessage?: string;
           image: null;
         } | {
           _key: string;
@@ -53125,27 +36284,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -53177,7 +36315,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           pageSectionId?: string;
           openInNewTab?: boolean;
           image: null;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "ctaCalloutLink";
@@ -53213,27 +36351,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             href: string | null;
           } | {
             _id: string;
-            _type: "collab";
-            title: null;
-            slug: Slug | null;
-            pageType: "collab";
-            href: string | null;
-          } | {
-            _id: string;
-            _type: "eventsIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "eventsIndexPage";
-            href: "/events";
-          } | {
-            _id: string;
-            _type: "favouritesIndexPage";
-            title: string | null;
-            slug: null;
-            pageType: "favouritesIndexPage";
-            href: "/favourites";
-          } | {
-            _id: string;
             _type: "homePage";
             title: null;
             slug: null;
@@ -53264,81 +36381,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           externalUrl?: string;
           pageSectionId?: string;
           openInNewTab?: boolean;
-          computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-        } | {
-          _key: string;
-          _type: "ctaEmailButton";
-          alignment?: "center" | "inherit" | "left" | "right";
-          image: null;
-        } | {
-          _key: string;
-          _type: "ctaEvents";
-          rowSize?: "large" | "small";
-          eventListType?: "automatic" | "manual";
-          events: Array<{
-            _id: string;
-            title: string | null;
-            shortDescription: string | null;
-            venue: string | null;
-            location: string | null;
-            image: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            tags: Array<string> | null;
-            link: string | null;
-            linkLabel: string | null;
-            startDate: string | null;
-            endDate: string | null;
-            timeDescription: string | null;
-            pastEventText: string | null;
-            pastEventLinkBehavior: "change" | "keep" | "remove" | null;
-            pastEventLink: string | null;
-            pastEventLinkLabel: string | null;
-          }> | null;
-          displayStyle?: "detailed" | "posterOnly";
-          showCTA?: boolean;
-          ctaMessage?: string;
-          hideViewAllButton?: boolean;
-          image: null;
+          computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
         } | {
           _key: string;
           _type: "divider";
           style?: string;
-          image: null;
-        } | {
-          _key: string;
-          _type: "favouriteBlock";
-          rowSize?: "large" | "small";
-          favouriteListType?: "automatic" | "manual";
-          maxItemsPerBlock?: number;
-          favourites: Array<{
-            _id: string;
-            name: string | null;
-            category: string | null;
-            order: number | null;
-            profileImage: {
-              asset: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              } | null;
-              alt: string | null;
-              hotspot: SanityImageHotspot | null;
-              crop: SanityImageCrop | null;
-            } | null;
-            description: string | null;
-            link: string | null;
-            linkLabel: string | null;
-          }> | null;
           image: null;
         } | {
           _key: string;
@@ -53377,27 +36424,6 @@ export type PRIVACY_POLICY_QUERYResult = {
                 href: string | null;
               } | {
                 _id: string;
-                _type: "collab";
-                title: null;
-                slug: Slug | null;
-                pageType: "collab";
-                href: string | null;
-              } | {
-                _id: string;
-                _type: "eventsIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "eventsIndexPage";
-                href: "/events";
-              } | {
-                _id: string;
-                _type: "favouritesIndexPage";
-                title: string | null;
-                slug: null;
-                pageType: "favouritesIndexPage";
-                href: "/favourites";
-              } | {
-                _id: string;
                 _type: "homePage";
                 title: null;
                 slug: null;
@@ -53428,11 +36454,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               externalUrl?: string;
               pageSectionId?: string;
               openInNewTab?: boolean;
-              computedHref: string | "/" | null | "/blog" | "/events" | "/favourites" | "/privacy-policy" | "/terms-and-conditions";
-            } | {
-              _type: "embeddedCtaEmailButton";
-              _key: string;
-              buttonText?: string;
+              computedHref: string | "/" | null | "/blog" | "/privacy-policy" | "/terms-and-conditions";
             }> | null;
           } | {
             _key: string;
@@ -53520,29 +36542,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
-            _key: string;
-          }>;
-          image: null;
-        } | {
-          _key: string;
-          _type: "itemList";
-          alignment?: "center" | "inherit" | "left" | "right";
-          items?: Array<{
-            text?: string;
-            icon?: {
-              asset?: {
-                _ref: string;
-                _type: "reference";
-                _weak?: boolean;
-                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-              };
-              media?: unknown;
-              hotspot?: SanityImageHotspot;
-              crop?: SanityImageCrop;
-              alt?: string;
-              _type: "image";
-            };
-            _type: "listItem";
             _key: string;
           }>;
           image: null;

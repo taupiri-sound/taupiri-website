@@ -5,7 +5,6 @@ import Link from 'next/link';
 import UnifiedImage from '@/components/UI/UnifiedImage';
 import { SocialIcon, type SocialPlatform, getPlatformLabel } from '@/utils/socialIcons';
 import { cleanPlatform } from '@/utils/cleanPlatform';
-import CTAEmailButton from '@/components/UI/CTAEmailButton';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import { detectPlatformFromUrl } from '@/sanity/schemaTypes/shared/platformsConfig';
 import { usePageLoad } from '@/contexts/PageLoadContext';
@@ -146,11 +145,6 @@ const Footer = ({ footerData, siteSettingsData, companyLinksData, legalPagesVisi
 
         {/* RIGHT COLUMN */}
         <div className='flex flex-col justify-start items-center md:items-end col-start-3 row-start-1 mt-10 md:mt-0'>
-          {/* CTA Email Button */}
-          {siteSettingsData?.companyEmail && (
-            <CTAEmailButton className='text-body-base font-medium footer-cta-button' />
-          )}
-
           {/* Company Links */}
           {transformedLinks.length > 0 && (
             <div

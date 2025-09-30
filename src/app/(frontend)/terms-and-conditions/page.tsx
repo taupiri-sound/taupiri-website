@@ -3,9 +3,6 @@ import { notFound } from 'next/navigation';
 import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
 import { getTermsAndConditions, getSiteSettings, getCompanyLinks } from '@/actions';
-import { getAllEvents } from '@/actions/events';
-import { getCollabs } from '@/actions/collabs';
-import { getFavourites } from '@/actions/favourites';
 import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 import {
@@ -37,12 +34,9 @@ export async function generateMetadata() {
 }
 
 const TermsAndConditionsPage = async () => {
-  const [termsData, siteSettings, events, collabs, favourites, companyLinks] = await Promise.all([
+  const [termsData, siteSettings, companyLinks] = await Promise.all([
     getTermsAndConditions(),
     getSiteSettings(),
-    getAllEvents(),
-    getCollabs(),
-    getFavourites(),
     getCompanyLinks(),
   ]);
 
@@ -118,9 +112,6 @@ const TermsAndConditionsPage = async () => {
                   }
                 : undefined
             }
-            events={events}
-            collabs={collabs}
-            favourites={favourites}
             companyLinks={companyLinks}
             alignment='left'
           />

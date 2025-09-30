@@ -1,11 +1,11 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { CardBlock } from '@/types/blocks';
-import Icon from './Icon';
 import CTAList from '../UI/CTAList';
 import CardContainer from '../UI/CardContainer';
 import Heading from '../Typography/Heading/Heading';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
+import UnifiedImage from '../UI/UnifiedImage';
 
 interface CardProps extends Omit<CardBlock, '_type' | '_key'> {
   className?: string;
@@ -192,6 +192,38 @@ const Card = (props: CardProps) => {
         </div>
       </div>
     </CardContainer>
+  );
+};
+
+// Simple inline Icon component for displaying card icons
+interface IconProps {
+  image?: {
+    asset?: { _ref: string };
+    alt?: string;
+  };
+  showIcon: boolean;
+  className?: string;
+}
+
+const Icon: React.FC<IconProps> = ({ image, showIcon, className = '' }) => {
+  if (!showIcon) return null;
+
+  // If no custom image provided, you could use a default icon or just return null
+  if (!image?.asset?._ref) {
+    return null;
+  }
+
+  return (
+    <UnifiedImage
+      src={image}
+      alt={image.alt || 'Icon'}
+      mode='sized'
+      width={100}
+      height={100}
+      sizeContext='icon'
+      objectFit='contain'
+      className={className}
+    />
   );
 };
 

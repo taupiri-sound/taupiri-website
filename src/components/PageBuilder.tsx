@@ -3,9 +3,6 @@
 import React from 'react';
 import type {
   PAGE_QUERYResult,
-  EVENTS_QUERYResult,
-  COLLABS_ALL_QUERYResult,
-  FAVOURITES_ALL_QUERYResult,
   COMPANY_LINKS_QUERYResult,
 } from '@/sanity/types';
 import type { NestedBlock, BlockListBlock } from '@/types/blocks';
@@ -17,15 +14,12 @@ import { pageSectionTopSpacing, contentBlockBottomSpacing, subSectionTopSpacing 
 import PageSection from './Layout/PageSection';
 import SubSection from './Layout/SubSection';
 import SubSubSection from './Layout/SubSubSection';
-import ItemList from './blocks/ItemList';
 import RichText from './blocks/RichText';
 import Quote from './blocks/Quote';
 import TextImage from './blocks/TextImage';
 import Card from './blocks/Card';
 import CTAButton from './blocks/CTAButton';
 import CTACalloutLinkComponent from './blocks/CTACalloutLink';
-import CTAEmailButtonComponent from './blocks/CTAEmailButton';
-import CTAEvents from './blocks/CTAEvents';
 import CTABlogPost from './blocks/CTABlogPost';
 import GridLayout from './blocks/GridLayout';
 import ImageBlock from './blocks/Image';
@@ -33,8 +27,6 @@ import ImageGallery from './blocks/ImageGallery';
 import YouTubeVideo from './blocks/YouTubeVideo';
 import SpotifyWidget from './blocks/SpotifyWidget';
 import BandcampWidget from './blocks/BandcampWidget';
-import CollabBlock from './blocks/CollabBlock';
-import FavouriteBlock from './blocks/FavouriteBlock';
 import CompanyLinksBlock from './blocks/CompanyLinksBlock';
 import BlockList from './blocks/BlockList';
 import Divider from './UI/Divider';
@@ -44,9 +36,6 @@ interface SharedPageBuilderProps {
   documentId: string;
   documentType: string;
   siteSettings?: SiteSettingsProps;
-  events?: EVENTS_QUERYResult;
-  collabs?: COLLABS_ALL_QUERYResult;
-  favourites?: FAVOURITES_ALL_QUERYResult;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   alignment?: 'left' | 'center' | 'right';
 }
@@ -77,9 +66,6 @@ const BlockRenderer = ({
   pathPrefix,
   nestingLevel = 1,
   siteSettings,
-  events,
-  collabs,
-  favourites,
   companyLinks,
   alignment = 'center',
 }: BlockRendererProps) => {
@@ -202,9 +188,6 @@ const BlockRenderer = ({
               pathPrefix={`${blockPath}.content`}
               nestingLevel={nestingLevel + 1}
               siteSettings={siteSettings}
-              events={events}
-              collabs={collabs}
-              favourites={favourites}
               companyLinks={companyLinks}
               alignment={alignment}
             />
@@ -296,13 +279,6 @@ const BlockRenderer = ({
               </BlockWrapper>
             );
 
-          case 'itemList':
-            return (
-              <BlockWrapper key={block._key}>
-                <ItemList {...block} inheritAlignment={alignment} />
-              </BlockWrapper>
-            );
-
           case 'richText':
             return (
               <BlockWrapper key={block._key}>
@@ -347,13 +323,6 @@ const BlockRenderer = ({
             return (
               <BlockWrapper key={block._key}>
                 <CTACalloutLinkComponent {...block} />
-              </BlockWrapper>
-            );
-
-          case 'ctaEmailButton':
-            return (
-              <BlockWrapper key={block._key}>
-                <CTAEmailButtonComponent {...block} inheritAlignment={alignment} />
               </BlockWrapper>
             );
 
@@ -427,49 +396,6 @@ const BlockRenderer = ({
               </BlockWrapper>
             );
 
-          case 'ctaEvents':
-            return (
-              <BlockWrapper key={block._key}>
-                <CTAEvents
-                  events={(block as unknown as { events: EVENTS_QUERYResult }).events || []}
-                  allEvents={events}
-                  eventListType={(block as unknown as { eventListType?: string }).eventListType as 'automatic' | 'manual' || 'manual'}
-                  displayStyle={block.displayStyle || 'detailed'}
-                  showCTA={block.showCTA}
-                  ctaMessage={block.ctaMessage}
-                  rowSize={(block as unknown as { rowSize?: string }).rowSize as 'small' | 'large' || 'large'}
-                  hideViewAllButton={(block as unknown as { hideViewAllButton?: boolean }).hideViewAllButton ?? false}
-                  generateSchema={true}
-                  baseUrl='https://0717records.com'
-                />
-              </BlockWrapper>
-            );
-
-          case 'collabBlock':
-            return (
-              <BlockWrapper key={block._key}>
-                <CollabBlock
-                  collabs={collabs || []}
-                  rowSize={(block as unknown as { rowSize?: string }).rowSize as 'small' | 'large' || 'large'}
-                  showCTA={block.showCTA}
-                  ctaMessage={block.ctaMessage}
-                />
-              </BlockWrapper>
-            );
-
-          case 'favouriteBlock':
-            return (
-              <BlockWrapper key={block._key}>
-                <FavouriteBlock
-                  favourites={favourites || []}
-                  rowSize={(block as unknown as { rowSize?: string }).rowSize as 'small' | 'large' || 'large'}
-                  favouriteListType={(block as { favouriteListType?: 'automatic' | 'manual' }).favouriteListType}
-                  selectedFavourites={(block as { favourites?: FAVOURITES_ALL_QUERYResult }).favourites}
-                  maxItemsPerBlock={(block as unknown as { maxItemsPerBlock?: number }).maxItemsPerBlock || 4}
-                />
-              </BlockWrapper>
-            );
-
           case 'companyLinksBlock':
             return (
               <BlockWrapper key={block._key}>
@@ -510,9 +436,6 @@ const PageBuilder = ({
   documentType,
   pathPrefix = 'content',
   siteSettings,
-  events,
-  collabs,
-  favourites,
   companyLinks,
   alignment = 'center',
 }: PageBuilderProps) => {
@@ -537,9 +460,6 @@ const PageBuilder = ({
         documentType={documentType}
         pathPrefix={pathPrefix}
         siteSettings={siteSettings}
-        events={events}
-        collabs={collabs}
-        favourites={favourites}
         companyLinks={companyLinks}
         alignment={alignment}
       />

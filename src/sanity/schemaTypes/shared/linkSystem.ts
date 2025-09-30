@@ -12,9 +12,6 @@ import { SectionDropdown } from '../../components/SectionDropdown';
 export const LINKABLE_PAGE_TYPES = [
   { type: 'page' },
   { type: 'homePage' },
-  { type: 'eventsIndexPage' },
-  { type: 'favouritesIndexPage' },
-  { type: 'collab' },
   { type: 'blogIndexPage' },
   { type: 'blogPost' },
   { type: 'termsAndConditions' },
