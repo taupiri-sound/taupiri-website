@@ -33,7 +33,8 @@ export const footerType = defineType({
               type: 'string',
               title: 'Message Text',
               description: 'The main message content (e.g., "Thank you for creating")',
-              validation: (Rule) => Rule.max(200).warning('Keep messages concise for better display'),
+              validation: (Rule) =>
+                Rule.max(200).warning('Keep messages concise for better display'),
             }),
           ],
           preview: {
@@ -43,7 +44,9 @@ export const footerType = defineType({
             },
             prepare({ title, message }) {
               const displayTitle = title || 'Untitled Message';
-              const displaySubtitle = message ? message.substring(0, 50) + (message.length > 50 ? '...' : '') : 'No message';
+              const displaySubtitle = message
+                ? message.substring(0, 50) + (message.length > 50 ? '...' : '')
+                : 'No message';
               return {
                 title: displayTitle,
                 subtitle: displaySubtitle,
@@ -61,7 +64,7 @@ export const footerType = defineType({
       type: 'string',
       title: 'Copyright Text',
       description: 'Copyright notice that appears at the bottom of the footer',
-      initialValue: '© 07:17 Records 2025',
+      initialValue: '© Taupiri Sound 2025',
       validation: (Rule) => Rule.required().error('Copyright text is required'),
     }),
   ],
