@@ -32,7 +32,7 @@ const DraftHomePage = () => {
       <section className={styles.hero}>
         <div className={styles.heroBackground}>
           <Image
-            src='/images/hero-placeholder.jpg'
+            src='/images/samples/studio-02.jpg'
             alt='Studio background'
             fill
             style={{ objectFit: 'cover' }}
@@ -106,7 +106,7 @@ const DraftHomePage = () => {
             <div className={styles.serviceCard}>
               <div className={styles.serviceImage}>
                 <Image
-                  src='/images/service-mixing.jpg'
+                  src='/images/samples/studio-01.jpg'
                   alt='Mixing'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -125,7 +125,7 @@ const DraftHomePage = () => {
             <div className={styles.serviceCard}>
               <div className={styles.serviceImage}>
                 <Image
-                  src='/images/service-mastering.jpg'
+                  src='/images/samples/studio-03.jpg'
                   alt='Mastering'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -143,7 +143,7 @@ const DraftHomePage = () => {
             <div className={styles.serviceCard}>
               <div className={styles.serviceImage}>
                 <Image
-                  src='/images/service-recording.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Live Recording'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -162,7 +162,7 @@ const DraftHomePage = () => {
             <div className={styles.serviceCard}>
               <div className={styles.serviceImage}>
                 <Image
-                  src='/images/service-production.jpg'
+                  src='/images/samples/studio-05.jpg'
                   alt='Production'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -192,7 +192,7 @@ const DraftHomePage = () => {
               <div className={styles.artistCard}>
                 <div className={styles.artistImage}>
                   <Image
-                    src='/images/artist-1.jpg'
+                    src='/images/samples/studio-06.jpg'
                     alt='Artist Name'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -205,7 +205,7 @@ const DraftHomePage = () => {
               <div className={styles.artistCard}>
                 <div className={styles.artistImage}>
                   <Image
-                    src='/images/artist-2.jpg'
+                    src='/images/samples/studio-01.jpg'
                     alt='Artist Name'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -218,7 +218,7 @@ const DraftHomePage = () => {
               <div className={styles.artistCard}>
                 <div className={styles.artistImage}>
                   <Image
-                    src='/images/artist-3.jpg'
+                    src='/images/samples/studio-02.jpg'
                     alt='Artist Name'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -237,7 +237,7 @@ const DraftHomePage = () => {
               <div className={styles.musicPlayer}>
                 <div className={styles.albumArt}>
                   <Image
-                    src='/images/album-1.jpg'
+                    src='/images/samples/studio-03.jpg'
                     alt='Album'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -253,14 +253,14 @@ const DraftHomePage = () => {
               <div className={styles.musicPlayer}>
                 <div className={styles.albumArt}>
                   <Image
-                    src='/images/album-2.jpg'
+                    src='/images/samples/studio-04.jpg'
                     alt='Album'
                     fill
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className={styles.playerInfo}>
-                  <h4 className={styles.trackTitle}>Urban Māori</h4>
+                  <h4 className={styles.trackTitle}>Urban Maori</h4>
                   <p className={styles.trackArtist}>Te Reo Collective</p>
                   <div className={styles.audioPlaceholder}>🎵 Audio Player Placeholder</div>
                 </div>
@@ -283,7 +283,7 @@ const DraftHomePage = () => {
             <div className={styles.studioImageGallery}>
               <div className={styles.mainStudioImage}>
                 <Image
-                  src='/images/studio-main.jpg'
+                  src='/images/samples/studio-05.jpg'
                   alt='Studio main room'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -292,7 +292,7 @@ const DraftHomePage = () => {
               <div className={styles.studioThumbnails}>
                 <div className={styles.thumbnail}>
                   <Image
-                    src='/images/studio-control.jpg'
+                    src='/images/samples/studio-06.jpg'
                     alt='Control room'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -300,7 +300,7 @@ const DraftHomePage = () => {
                 </div>
                 <div className={styles.thumbnail}>
                   <Image
-                    src='/images/studio-booth.jpg'
+                    src='/images/samples/studio-01.jpg'
                     alt='Recording booth'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -352,7 +352,7 @@ const DraftHomePage = () => {
             <div className={styles.teamMember}>
               <div className={styles.memberImage}>
                 <Image
-                  src='/images/team-member-1.jpg'
+                  src='/images/profiles/profile-01.jpg'
                   alt='Team member'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -369,7 +369,7 @@ const DraftHomePage = () => {
             <div className={styles.teamMember}>
               <div className={styles.memberImage}>
                 <Image
-                  src='/images/team-member-2.jpg'
+                  src='/images/profiles/profile-2.jpg'
                   alt='Team member'
                   fill
                   style={{ objectFit: 'cover' }}

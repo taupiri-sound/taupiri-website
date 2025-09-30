@@ -52,7 +52,7 @@ const MusicPage = () => {
             <div className={styles.artistCard}>
               <div className={styles.artistImageWrapper}>
                 <Image
-                  src='/images/artist-1.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Hana Morrison'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -83,7 +83,7 @@ const MusicPage = () => {
             <div className={styles.artistCard}>
               <div className={styles.artistImageWrapper}>
                 <Image
-                  src='/images/artist-2.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Te Reo Collective'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -136,7 +136,7 @@ const MusicPage = () => {
             <div className={styles.artistCard}>
               <div className={styles.artistImageWrapper}>
                 <Image
-                  src='/images/artist-4.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Kiri Williams'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -173,7 +173,7 @@ const MusicPage = () => {
             <div className={styles.artistCard}>
               <div className={styles.artistImageWrapper}>
                 <Image
-                  src='/images/artist-5.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='The Waikato Choir'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -216,7 +216,7 @@ const MusicPage = () => {
               <div className={styles.musicPlayer}>
                 <div className={styles.albumArt}>
                   <Image
-                    src='/images/album-1.jpg'
+                    src='/images/samples/studio-05.jpg'
                     alt='Waiata Aroha'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -233,7 +233,7 @@ const MusicPage = () => {
               <div className={styles.musicPlayer}>
                 <div className={styles.albumArt}>
                   <Image
-                    src='/images/album-2.jpg'
+                    src='/images/samples/studio-05.jpg'
                     alt='Urban Māori'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -250,7 +250,7 @@ const MusicPage = () => {
               <div className={styles.musicPlayer}>
                 <div className={styles.albumArt}>
                   <Image
-                    src='/images/album-3.jpg'
+                    src='/images/samples/studio-05.jpg'
                     alt='Blues in the Waikato'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -267,7 +267,7 @@ const MusicPage = () => {
               <div className={styles.musicPlayer}>
                 <div className={styles.albumArt}>
                   <Image
-                    src='/images/album-4.jpg'
+                    src='/images/samples/studio-05.jpg'
                     alt='Midnight Soul'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -299,7 +299,7 @@ const MusicPage = () => {
               <div className={styles.albumCard}>
                 <div className={styles.albumCover}>
                   <Image
-                    src='/images/album-full-1.jpg'
+                    src='/images/samples/studio-06.jpg'
                     alt='Album cover'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -313,7 +313,7 @@ const MusicPage = () => {
               <div className={styles.albumCard}>
                 <div className={styles.albumCover}>
                   <Image
-                    src='/images/album-full-2.jpg'
+                    src='/images/samples/studio-06.jpg'
                     alt='Album cover'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -327,7 +327,7 @@ const MusicPage = () => {
               <div className={styles.albumCard}>
                 <div className={styles.albumCover}>
                   <Image
-                    src='/images/album-full-3.jpg'
+                    src='/images/samples/studio-06.jpg'
                     alt='Album cover'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -341,7 +341,7 @@ const MusicPage = () => {
               <div className={styles.albumCard}>
                 <div className={styles.albumCover}>
                   <Image
-                    src='/images/album-full-4.jpg'
+                    src='/images/samples/studio-06.jpg'
                     alt='Album cover'
                     fill
                     style={{ objectFit: 'cover' }}
@@ -367,7 +367,7 @@ const MusicPage = () => {
           <div className={styles.photoGallery}>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-session-1.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Recording session'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -375,7 +375,7 @@ const MusicPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-session-2.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Recording session'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -383,7 +383,7 @@ const MusicPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-session-3.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Recording session'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -391,7 +391,7 @@ const MusicPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-session-4.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Recording session'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -399,7 +399,7 @@ const MusicPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-session-5.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Recording session'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -407,7 +407,7 @@ const MusicPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-session-6.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Recording session'
                 fill
                 style={{ objectFit: 'cover' }}

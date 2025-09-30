@@ -61,7 +61,7 @@ const TheStudioPage = () => {
             </div>
             <div className={styles.spaceImage}>
               <Image
-                src='/images/studio-exterior.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Studio exterior'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -74,7 +74,7 @@ const TheStudioPage = () => {
             <div className={styles.roomCard}>
               <div className={styles.roomImage}>
                 <Image
-                  src='/images/studio-live-room.jpg'
+                  src='/images/samples/studio-02.jpg'
                   alt='Live room'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -101,7 +101,7 @@ const TheStudioPage = () => {
             <div className={styles.roomCard}>
               <div className={styles.roomImage}>
                 <Image
-                  src='/images/studio-control-room.jpg'
+                  src='/images/samples/studio-03.jpg'
                   alt='Control room'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -127,7 +127,7 @@ const TheStudioPage = () => {
             <div className={styles.roomCard}>
               <div className={styles.roomImage}>
                 <Image
-                  src='/images/studio-vocal-booth.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Vocal booth'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -160,7 +160,7 @@ const TheStudioPage = () => {
           <div className={styles.gallery}>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-angle-1.jpg'
+                src='/images/samples/studio-05.jpg'
                 alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -168,7 +168,7 @@ const TheStudioPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-angle-2.jpg'
+                src='/images/samples/studio-05.jpg'
                 alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -176,7 +176,7 @@ const TheStudioPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-angle-3.jpg'
+                src='/images/samples/studio-05.jpg'
                 alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -184,7 +184,7 @@ const TheStudioPage = () => {
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src='/images/studio-angle-4.jpg'
+                src='/images/samples/studio-05.jpg'
                 alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}

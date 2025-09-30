@@ -63,7 +63,7 @@ const AboutUsPage = () => {
 
             <div className={styles.storyImage}>
               <Image
-                src='/images/about-founding.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Studio founding'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -74,7 +74,7 @@ const AboutUsPage = () => {
           <div className={styles.storyContent}>
             <div className={styles.storyImage}>
               <Image
-                src='/images/about-mountain.jpg'
+                src='/images/samples/studio-02.jpg'
                 alt='Mount Taupiri'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -152,7 +152,7 @@ const AboutUsPage = () => {
             <div className={styles.teamMemberCard}>
               <div className={styles.memberImageWrapper}>
                 <Image
-                  src='/images/team-member-1.jpg'
+                  src='/images/profiles/profile-01.jpg'
                   alt='John Smith'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -208,7 +208,7 @@ const AboutUsPage = () => {
             <div className={styles.teamMemberCard}>
               <div className={styles.memberImageWrapper}>
                 <Image
-                  src='/images/team-member-2.jpg'
+                  src='/images/profiles/profile-2.jpg'
                   alt='Sarah Williams'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -274,7 +274,7 @@ const AboutUsPage = () => {
             <div className={styles.galleryItem}>
               <div className={styles.galleryImageWrapper}>
                 <Image
-                  src='/images/timeline-2010.jpg'
+                  src='/images/samples/studio-03.jpg'
                   alt='2010 - The beginning'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -289,7 +289,7 @@ const AboutUsPage = () => {
             <div className={styles.galleryItem}>
               <div className={styles.galleryImageWrapper}>
                 <Image
-                  src='/images/timeline-2014.jpg'
+                  src='/images/samples/studio-03.jpg'
                   alt='2014 - Major upgrade'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -304,7 +304,7 @@ const AboutUsPage = () => {
             <div className={styles.galleryItem}>
               <div className={styles.galleryImageWrapper}>
                 <Image
-                  src='/images/timeline-2018.jpg'
+                  src='/images/samples/studio-03.jpg'
                   alt='2018 - Award winning project'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -319,7 +319,7 @@ const AboutUsPage = () => {
             <div className={styles.galleryItem}>
               <div className={styles.galleryImageWrapper}>
                 <Image
-                  src='/images/timeline-2024.jpg'
+                  src='/images/samples/studio-03.jpg'
                   alt='2024 - Today'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -370,7 +370,7 @@ const AboutUsPage = () => {
             <div className={styles.cultureImageGrid}>
               <div className={styles.cultureImage}>
                 <Image
-                  src='/images/culture-1.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Cultural significance'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -378,7 +378,7 @@ const AboutUsPage = () => {
               </div>
               <div className={styles.cultureImage}>
                 <Image
-                  src='/images/culture-2.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Traditional instruments'
                   fill
                   style={{ objectFit: 'cover' }}

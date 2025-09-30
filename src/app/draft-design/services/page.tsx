@@ -85,7 +85,7 @@ const ServicesPage = () => {
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src='/images/service-mixing-detail.jpg'
+                src='/images/samples/studio-01.jpg'
                 alt='Mixing console'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -102,7 +102,7 @@ const ServicesPage = () => {
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src='/images/service-mastering-detail.jpg'
+                src='/images/samples/studio-02.jpg'
                 alt='Mastering equipment'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -111,7 +111,7 @@ const ServicesPage = () => {
             <div className={styles.serviceGallery}>
               <div className={styles.galleryImage}>
                 <Image
-                  src='/images/mastering-1.jpg'
+                  src='/images/samples/studio-03.jpg'
                   alt='Mastering process'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -119,7 +119,7 @@ const ServicesPage = () => {
               </div>
               <div className={styles.galleryImage}>
                 <Image
-                  src='/images/mastering-2.jpg'
+                  src='/images/samples/studio-04.jpg'
                   alt='Mastering detail'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -209,7 +209,7 @@ const ServicesPage = () => {
             <div className={styles.imageShowcase}>
               <div className={styles.showcaseImage}>
                 <Image
-                  src='/images/recording-session-1.jpg'
+                  src='/images/samples/studio-05.jpg'
                   alt='Recording session'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -217,7 +217,7 @@ const ServicesPage = () => {
               </div>
               <div className={styles.showcaseImage}>
                 <Image
-                  src='/images/recording-session-2.jpg'
+                  src='/images/samples/studio-06.jpg'
                   alt='Recording session'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -225,7 +225,7 @@ const ServicesPage = () => {
               </div>
               <div className={styles.showcaseImage}>
                 <Image
-                  src='/images/recording-session-3.jpg'
+                  src='/images/samples/studio-01.jpg'
                   alt='Recording session'
                   fill
                   style={{ objectFit: 'cover' }}
@@ -237,7 +237,7 @@ const ServicesPage = () => {
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src='/images/service-recording-detail.jpg'
+                src='/images/samples/studio-02.jpg'
                 alt='Live recording setup'
                 fill
                 style={{ objectFit: 'cover' }}
@@ -260,7 +260,7 @@ const ServicesPage = () => {
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src='/images/service-production-detail.jpg'
+                src='/images/samples/studio-03.jpg'
                 alt='Production workspace'
                 fill
                 style={{ objectFit: 'cover' }}
