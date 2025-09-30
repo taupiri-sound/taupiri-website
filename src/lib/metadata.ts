@@ -31,15 +31,13 @@ export function generateMetadata({
   canonicalUrl,
   siteSettings,
 }: MetadataConfig): Metadata {
-  const siteTitle = siteSettings?.siteTitle || '07:17 Records';
-  const defaultPageTitle = siteSettings?.defaultPageTitle || 'Thank You For Creating';
+  const siteTitle = siteSettings?.siteTitle || 'Taupiri Sound';
+  const defaultPageTitle = siteSettings?.defaultPageTitle || 'Something here...';
   const siteDescription = siteSettings?.siteDescription || '';
   const seoKeywords = siteSettings?.seoKeywords || '';
 
   // Generate page title
-  const pageTitle = title
-    ? `${siteTitle} | ${title}`
-    : `${siteTitle} | ${defaultPageTitle}`;
+  const pageTitle = title ? `${siteTitle} | ${title}` : `${siteTitle} | ${defaultPageTitle}`;
 
   // Generate description
   const pageDescription = description || siteDescription;

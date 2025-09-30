@@ -10,8 +10,9 @@ export async function generateMetadata() {
   const siteSettings = await getSiteSettings();
   if (!siteSettings) {
     return {
-      title: '07:17 Records | Thank You For Creating',
-      description: 'Welcome to 07:17 Records',
+      title: 'Taupiri Sound | Something here...',
+      description:
+        "Taupiri Sound is a recording studio based in the countryside of northern Waikato. For over a decade we have worked on countless projects from educational resources to some of Aotearoa's best artists.",
     };
   }
 
@@ -72,7 +73,6 @@ const Page = async () => {
           />
         </Container>
       )}
-
     </>
   );
 };

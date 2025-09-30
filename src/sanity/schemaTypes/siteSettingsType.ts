@@ -24,8 +24,7 @@ export const siteSettingsType = defineType({
       type: 'string',
       title: 'Default Page Title',
       description:
-        'The default page title used for the home page and when no specific page title is available (e.g., "Thank You For Creating")',
-      initialValue: 'Thank You For Creating',
+        'The default page title used for the home page and when no specific page title is available',
       validation: (Rule) => Rule.required(),
     }),
     defineField({

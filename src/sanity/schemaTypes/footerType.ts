@@ -32,7 +32,7 @@ export const footerType = defineType({
               name: 'message',
               type: 'string',
               title: 'Message Text',
-              description: 'The main message content (e.g., "Thank you for creating")',
+              description: 'The main message content',
               validation: (Rule) =>
                 Rule.max(200).warning('Keep messages concise for better display'),
             }),
