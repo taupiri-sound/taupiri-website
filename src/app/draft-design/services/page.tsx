@@ -9,21 +9,21 @@ const ServicesPage = () => {
       {/* Header (same as home) */}
       <header className={styles.header}>
         <div className={styles.headerContainer}>
-          <Link href="/draft-design" className={styles.logoLink}>
+          <Link href='/draft-design' className={styles.logoLink}>
             <Image
-              src="/images/logo-old.png"
-              alt="Taupiri Sound"
+              src='/images/logos/logo-old.png'
+              alt='Taupiri Sound'
               width={120}
               height={80}
               className={styles.logo}
             />
           </Link>
           <nav className={styles.nav}>
-            <Link href="/draft-design/services">Services</Link>
-            <Link href="/draft-design/music">Music</Link>
-            <Link href="/draft-design/the-studio">The Studio</Link>
-            <Link href="/draft-design/about-us">About Us</Link>
-            <Link href="/draft-design#contact">Contact</Link>
+            <Link href='/draft-design/services'>Services</Link>
+            <Link href='/draft-design/music'>Music</Link>
+            <Link href='/draft-design/the-studio'>The Studio</Link>
+            <Link href='/draft-design/about-us'>About Us</Link>
+            <Link href='/draft-design#contact'>Contact</Link>
           </nav>
         </div>
       </header>
@@ -39,7 +39,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Mixing Service */}
-      <section className={styles.serviceSection} id="mixing">
+      <section className={styles.serviceSection} id='mixing'>
         <div className={styles.serviceSectionContainer}>
           <div className={styles.serviceContent}>
             <h2 className={styles.serviceTitle}>Mixing</h2>
@@ -75,8 +75,8 @@ const ServicesPage = () => {
 
             <blockquote className={styles.testimonial}>
               <p>
-                "The mix brought our songs to life in ways we never imagined. Every instrument
-                has its place, and the emotional impact is exactly what we were looking for."
+                The mix brought our songs to life in ways we never imagined. Every instrument has
+                its place, and the emotional impact is exactly what we were looking for.
               </p>
               <cite>— Hana Morrison, Folk Artist</cite>
             </blockquote>
@@ -85,27 +85,25 @@ const ServicesPage = () => {
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src="/images/service-mixing-detail.jpg"
-                alt="Mixing console"
+                src='/images/service-mixing-detail.jpg'
+                alt='Mixing console'
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
-            <div className={styles.mediaCaption}>
-              Our hybrid analog/digital mixing setup
-            </div>
+            <div className={styles.mediaCaption}>Our hybrid analog/digital mixing setup</div>
           </div>
         </div>
       </section>
 
       {/* Mastering Service */}
-      <section className={styles.serviceSection} id="mastering">
+      <section className={styles.serviceSection} id='mastering'>
         <div className={styles.serviceSectionContainer}>
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src="/images/service-mastering-detail.jpg"
-                alt="Mastering equipment"
+                src='/images/service-mastering-detail.jpg'
+                alt='Mastering equipment'
                 fill
                 style={{ objectFit: 'cover' }}
               />
@@ -113,16 +111,16 @@ const ServicesPage = () => {
             <div className={styles.serviceGallery}>
               <div className={styles.galleryImage}>
                 <Image
-                  src="/images/mastering-1.jpg"
-                  alt="Mastering process"
+                  src='/images/mastering-1.jpg'
+                  alt='Mastering process'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className={styles.galleryImage}>
                 <Image
-                  src="/images/mastering-2.jpg"
-                  alt="Mastering detail"
+                  src='/images/mastering-2.jpg'
+                  alt='Mastering detail'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -138,9 +136,9 @@ const ServicesPage = () => {
               tracks while maintaining dynamic range and emotional impact.
             </p>
             <p className={styles.serviceDescription}>
-              We prepare your music for all distribution platforms—streaming services, vinyl,
-              CD, and digital downloads—with format-specific optimization to ensure it sounds
-              its best everywhere.
+              We prepare your music for all distribution platforms—streaming services, vinyl, CD,
+              and digital downloads—with format-specific optimization to ensure it sounds its best
+              everywhere.
             </p>
 
             <div className={styles.serviceFeatures}>
@@ -164,8 +162,8 @@ const ServicesPage = () => {
 
             <blockquote className={styles.testimonial}>
               <p>
-                "The mastering made our album sound cohesive and professional. It translates
-                perfectly whether you're listening on headphones, in the car, or on a sound system."
+                The mastering made our album sound cohesive and professional. It translates
+                perfectly whether youre listening on headphones, in the car, or on a sound system.
               </p>
               <cite>— Te Reo Collective</cite>
             </blockquote>
@@ -174,19 +172,19 @@ const ServicesPage = () => {
       </section>
 
       {/* Live Recording Service */}
-      <section className={styles.serviceSection} id="recording">
+      <section className={styles.serviceSection} id='recording'>
         <div className={styles.serviceSectionContainer}>
           <div className={styles.serviceContent}>
             <h2 className={styles.serviceTitle}>Live Recording</h2>
             <p className={styles.serviceDescription}>
               Capture the magic and energy of live performances in our acoustically treated
-              recording space. Whether you're recording a full band, intimate acoustic session,
-              or spoken word, our studio provides the perfect environment.
+              recording space. Whether youre recording a full band, intimate acoustic session, or
+              spoken word, our studio provides the perfect environment.
             </p>
             <p className={styles.serviceDescription}>
-              Our collection of vintage and modern microphones, combined with our expertise in
-              mic placement and room acoustics, ensures we capture the true essence of your
-              performance with warmth and detail.
+              Our collection of vintage and modern microphones, combined with our expertise in mic
+              placement and room acoustics, ensures we capture the true essence of your performance
+              with warmth and detail.
             </p>
 
             <div className={styles.serviceFeatures}>
@@ -211,24 +209,24 @@ const ServicesPage = () => {
             <div className={styles.imageShowcase}>
               <div className={styles.showcaseImage}>
                 <Image
-                  src="/images/recording-session-1.jpg"
-                  alt="Recording session"
+                  src='/images/recording-session-1.jpg'
+                  alt='Recording session'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className={styles.showcaseImage}>
                 <Image
-                  src="/images/recording-session-2.jpg"
-                  alt="Recording session"
+                  src='/images/recording-session-2.jpg'
+                  alt='Recording session'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className={styles.showcaseImage}>
                 <Image
-                  src="/images/recording-session-3.jpg"
-                  alt="Recording session"
+                  src='/images/recording-session-3.jpg'
+                  alt='Recording session'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -239,16 +237,16 @@ const ServicesPage = () => {
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src="/images/service-recording-detail.jpg"
-                alt="Live recording setup"
+                src='/images/service-recording-detail.jpg'
+                alt='Live recording setup'
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
             <blockquote className={styles.testimonial}>
               <p>
-                "Recording at Taupiri Sound felt like home. The space has such great energy
-                and acoustics—we got the best takes we've ever recorded."
+                Recording at Taupiri Sound felt like home. The space has such great energy and
+                acoustics—we got the best takes weve ever recorded.
               </p>
               <cite>— Aotearoa Blues Band</cite>
             </blockquote>
@@ -257,13 +255,13 @@ const ServicesPage = () => {
       </section>
 
       {/* Production Service */}
-      <section className={styles.serviceSection} id="production">
+      <section className={styles.serviceSection} id='production'>
         <div className={styles.serviceSectionContainer}>
           <div className={styles.serviceMedia}>
             <div className={styles.serviceImage}>
               <Image
-                src="/images/service-production-detail.jpg"
-                alt="Production workspace"
+                src='/images/service-production-detail.jpg'
+                alt='Production workspace'
                 fill
                 style={{ objectFit: 'cover' }}
               />
@@ -296,13 +294,13 @@ const ServicesPage = () => {
             <h2 className={styles.serviceTitle}>Production</h2>
             <p className={styles.serviceDescription}>
               From initial concept to final master, we guide you through every stage of the
-              production process. Our production services combine technical expertise with
-              creative vision to help you realize your musical ideas.
+              production process. Our production services combine technical expertise with creative
+              vision to help you realize your musical ideas.
             </p>
             <p className={styles.serviceDescription}>
               We specialize in working with artists to develop their sound, whether that means
-              honoring traditional Māori music styles, blending cultural elements with
-              contemporary production, or exploring entirely new sonic territories.
+              honoring traditional Māori music styles, blending cultural elements with contemporary
+              production, or exploring entirely new sonic territories.
             </p>
 
             <div className={styles.serviceFeatures}>
@@ -326,9 +324,9 @@ const ServicesPage = () => {
 
             <blockquote className={styles.testimonial}>
               <p>
-                "The production team helped us find the perfect balance between honoring our
+                The production team helped us find the perfect balance between honoring our
                 traditional roots and creating a contemporary sound. Their cultural understanding
-                made all the difference."
+                made all the difference.
               </p>
               <cite>— Māori Youth Music Collective</cite>
             </blockquote>
@@ -343,7 +341,7 @@ const ServicesPage = () => {
           <p className={styles.ctaText}>
             Get in touch to discuss your recording needs and receive a custom quote.
           </p>
-          <Link href="/draft-design#contact" className={styles.ctaButton}>
+          <Link href='/draft-design#contact' className={styles.ctaButton}>
             Contact Us
           </Link>
         </div>
@@ -354,35 +352,34 @@ const ServicesPage = () => {
         <div className={styles.footerContainer}>
           <div className={styles.footerTop}>
             <div className={styles.footerBrand}>
-              <Image
-                src="/images/logo-old.png"
-                alt="Taupiri Sound"
-                width={100}
-                height={67}
-              />
-              <p className={styles.footerTagline}>
-                Recording Studio · Waikato · Aotearoa
-              </p>
+              <Image src='/images/logos/logo-old.png' alt='Taupiri Sound' width={100} height={67} />
+              <p className={styles.footerTagline}>Recording Studio · Waikato · Aotearoa</p>
             </div>
 
             <div className={styles.footerLinks}>
               <div className={styles.footerColumn}>
                 <h4>Studio</h4>
-                <Link href="/draft-design/services">Services</Link>
-                <Link href="/draft-design/the-studio">Equipment</Link>
-                <Link href="/draft-design/music">Our Work</Link>
+                <Link href='/draft-design/services'>Services</Link>
+                <Link href='/draft-design/the-studio'>Equipment</Link>
+                <Link href='/draft-design/music'>Our Work</Link>
               </div>
               <div className={styles.footerColumn}>
                 <h4>About</h4>
-                <Link href="/draft-design/about-us">Our Story</Link>
-                <Link href="/draft-design/about-us#team">Team</Link>
-                <Link href="/draft-design#contact">Contact</Link>
+                <Link href='/draft-design/about-us'>Our Story</Link>
+                <Link href='/draft-design/about-us#team'>Team</Link>
+                <Link href='/draft-design#contact'>Contact</Link>
               </div>
               <div className={styles.footerColumn}>
                 <h4>Connect</h4>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
+                  Facebook
+                </a>
+                <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
+                  Instagram
+                </a>
+                <a href='https://youtube.com' target='_blank' rel='noopener noreferrer'>
+                  YouTube
+                </a>
               </div>
             </div>
           </div>
@@ -390,8 +387,8 @@ const ServicesPage = () => {
           <div className={styles.footerBottom}>
             <p>&copy; 2024 Taupiri Sound. All rights reserved.</p>
             <div className={styles.footerLegal}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-and-conditions">Terms & Conditions</Link>
+              <Link href='/privacy-policy'>Privacy Policy</Link>
+              <Link href='/terms-and-conditions'>Terms & Conditions</Link>
             </div>
           </div>
         </div>

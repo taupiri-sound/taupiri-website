@@ -9,21 +9,21 @@ const TheStudioPage = () => {
       {/* Header */}
       <header className={styles.header}>
         <div className={styles.headerContainer}>
-          <Link href="/draft-design" className={styles.logoLink}>
+          <Link href='/draft-design' className={styles.logoLink}>
             <Image
-              src="/images/logo-old.png"
-              alt="Taupiri Sound"
+              src='/images/logos/logo-old.png'
+              alt='Taupiri Sound'
               width={120}
               height={80}
               className={styles.logo}
             />
           </Link>
           <nav className={styles.nav}>
-            <Link href="/draft-design/services">Services</Link>
-            <Link href="/draft-design/music">Music</Link>
-            <Link href="/draft-design/the-studio">The Studio</Link>
-            <Link href="/draft-design/about-us">About Us</Link>
-            <Link href="/draft-design#contact">Contact</Link>
+            <Link href='/draft-design/services'>Services</Link>
+            <Link href='/draft-design/music'>Music</Link>
+            <Link href='/draft-design/the-studio'>The Studio</Link>
+            <Link href='/draft-design/about-us'>About Us</Link>
+            <Link href='/draft-design#contact'>Contact</Link>
           </nav>
         </div>
       </header>
@@ -48,21 +48,21 @@ const TheStudioPage = () => {
             <div className={styles.spaceText}>
               <h3 className={styles.subsectionTitle}>Location & Setting</h3>
               <p className={styles.description}>
-                Nestled in the peaceful countryside of northern Waikato, Taupiri Sound is more
-                than just a recording studio—it's a sanctuary for creativity. Surrounded by
-                rolling hills and native bush, our location provides the perfect escape from
-                the distractions of city life.
+                Nestled in the peaceful countryside of northern Waikato, Taupiri Sound is more than
+                just a recording studio—its a sanctuary for creativity. Surrounded by rolling hills
+                and native bush, our location provides the perfect escape from the distractions of
+                city life.
               </p>
               <p className={styles.description}>
                 The studio sits at the foot of Mount Taupiri, a sacred mountain of immense
-                significance to local Māori. This connection to the land infuses our work with
-                a sense of place and cultural depth that can't be replicated.
+                significance to local Māori. This connection to the land infuses our work with a
+                sense of place and cultural depth that cant be replicated.
               </p>
             </div>
             <div className={styles.spaceImage}>
               <Image
-                src="/images/studio-exterior.jpg"
-                alt="Studio exterior"
+                src='/images/studio-exterior.jpg'
+                alt='Studio exterior'
                 fill
                 style={{ objectFit: 'cover' }}
               />
@@ -74,8 +74,8 @@ const TheStudioPage = () => {
             <div className={styles.roomCard}>
               <div className={styles.roomImage}>
                 <Image
-                  src="/images/studio-live-room.jpg"
-                  alt="Live room"
+                  src='/images/studio-live-room.jpg'
+                  alt='Live room'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -83,10 +83,10 @@ const TheStudioPage = () => {
               <div className={styles.roomInfo}>
                 <h3 className={styles.roomTitle}>Live Recording Room</h3>
                 <p className={styles.roomDescription}>
-                  Our main live room is 35m² of acoustically treated space with a 4-meter
-                  ceiling. Custom-designed bass traps, diffusers, and absorptive panels
-                  create a balanced, natural sound perfect for tracking full bands, orchestral
-                  ensembles, or intimate acoustic sessions.
+                  Our main live room is 35m² of acoustically treated space with a 4-meter ceiling.
+                  Custom-designed bass traps, diffusers, and absorptive panels create a balanced,
+                  natural sound perfect for tracking full bands, orchestral ensembles, or intimate
+                  acoustic sessions.
                 </p>
                 <ul className={styles.roomFeatures}>
                   <li>35m² recording space</li>
@@ -101,8 +101,8 @@ const TheStudioPage = () => {
             <div className={styles.roomCard}>
               <div className={styles.roomImage}>
                 <Image
-                  src="/images/studio-control-room.jpg"
-                  alt="Control room"
+                  src='/images/studio-control-room.jpg'
+                  alt='Control room'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -110,14 +110,14 @@ const TheStudioPage = () => {
               <div className={styles.roomInfo}>
                 <h3 className={styles.roomTitle}>Control Room</h3>
                 <p className={styles.roomDescription}>
-                  The control room is designed to the highest standards for critical listening
-                  and mixing. Featuring professionally calibrated monitoring, ergonomic
-                  workflow, and a comfortable environment for long sessions.
+                  The control room is designed to the highest standards for critical listening and
+                  mixing. Featuring professionally calibrated monitoring, ergonomic workflow, and a
+                  comfortable environment for long sessions.
                 </p>
                 <ul className={styles.roomFeatures}>
                   <li>Calibrated monitoring system</li>
                   <li>Acoustically optimized for mixing</li>
-                  <li>Comfortable producer's couch</li>
+                  <li>Comfortable producers couch</li>
                   <li>Natural daylight views</li>
                   <li>Climate controlled</li>
                 </ul>
@@ -127,8 +127,8 @@ const TheStudioPage = () => {
             <div className={styles.roomCard}>
               <div className={styles.roomImage}>
                 <Image
-                  src="/images/studio-vocal-booth.jpg"
-                  alt="Vocal booth"
+                  src='/images/studio-vocal-booth.jpg'
+                  alt='Vocal booth'
                   fill
                   style={{ objectFit: 'cover' }}
                 />
@@ -136,10 +136,9 @@ const TheStudioPage = () => {
               <div className={styles.roomInfo}>
                 <h3 className={styles.roomTitle}>Isolation Booth</h3>
                 <p className={styles.roomDescription}>
-                  A dedicated isolation booth provides a sonically controlled space for
-                  vocals, intimate instruments, and amplifier isolation. The booth can be
-                  tuned to be either acoustically dead or slightly live depending on the
-                  needs of the recording.
+                  A dedicated isolation booth provides a sonically controlled space for vocals,
+                  intimate instruments, and amplifier isolation. The booth can be tuned to be either
+                  acoustically dead or slightly live depending on the needs of the recording.
                 </p>
                 <ul className={styles.roomFeatures}>
                   <li>6m² isolated space</li>
@@ -161,32 +160,32 @@ const TheStudioPage = () => {
           <div className={styles.gallery}>
             <div className={styles.galleryImage}>
               <Image
-                src="/images/studio-angle-1.jpg"
-                alt="Studio view"
+                src='/images/studio-angle-1.jpg'
+                alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src="/images/studio-angle-2.jpg"
-                alt="Studio view"
+                src='/images/studio-angle-2.jpg'
+                alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src="/images/studio-angle-3.jpg"
-                alt="Studio view"
+                src='/images/studio-angle-3.jpg'
+                alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
             <div className={styles.galleryImage}>
               <Image
-                src="/images/studio-angle-4.jpg"
-                alt="Studio view"
+                src='/images/studio-angle-4.jpg'
+                alt='Studio view'
                 fill
                 style={{ objectFit: 'cover' }}
               />
@@ -200,8 +199,8 @@ const TheStudioPage = () => {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Equipment</h2>
           <p className={styles.sectionIntro}>
-            We've carefully curated a collection of vintage and modern gear to provide the
-            best tools for capturing and shaping sound.
+            Weve carefully curated a collection of vintage and modern gear to provide the best tools
+            for capturing and shaping sound.
           </p>
 
           <div className={styles.equipmentCategories}>
@@ -342,7 +341,7 @@ const TheStudioPage = () => {
               <div className={styles.equipmentGrid}>
                 <div className={styles.equipmentItem}>
                   <h4>Yamaha C3 Grand Piano</h4>
-                  <p>6'1" concert grand</p>
+                  <p>61 concert grand</p>
                 </div>
                 <div className={styles.equipmentItem}>
                   <h4>Fender Stratocaster (1973)</h4>
@@ -427,7 +426,7 @@ const TheStudioPage = () => {
           <p className={styles.ctaText}>
             Book a session or arrange a tour to see our space and equipment firsthand.
           </p>
-          <Link href="/draft-design#contact" className={styles.ctaButton}>
+          <Link href='/draft-design#contact' className={styles.ctaButton}>
             Get In Touch
           </Link>
         </div>
@@ -438,35 +437,34 @@ const TheStudioPage = () => {
         <div className={styles.footerContainer}>
           <div className={styles.footerTop}>
             <div className={styles.footerBrand}>
-              <Image
-                src="/images/logo-old.png"
-                alt="Taupiri Sound"
-                width={100}
-                height={67}
-              />
-              <p className={styles.footerTagline}>
-                Recording Studio · Waikato · Aotearoa
-              </p>
+              <Image src='/images/logos/logo-old.png' alt='Taupiri Sound' width={100} height={67} />
+              <p className={styles.footerTagline}>Recording Studio · Waikato · Aotearoa</p>
             </div>
 
             <div className={styles.footerLinks}>
               <div className={styles.footerColumn}>
                 <h4>Studio</h4>
-                <Link href="/draft-design/services">Services</Link>
-                <Link href="/draft-design/the-studio">Equipment</Link>
-                <Link href="/draft-design/music">Our Work</Link>
+                <Link href='/draft-design/services'>Services</Link>
+                <Link href='/draft-design/the-studio'>Equipment</Link>
+                <Link href='/draft-design/music'>Our Work</Link>
               </div>
               <div className={styles.footerColumn}>
                 <h4>About</h4>
-                <Link href="/draft-design/about-us">Our Story</Link>
-                <Link href="/draft-design/about-us#team">Team</Link>
-                <Link href="/draft-design#contact">Contact</Link>
+                <Link href='/draft-design/about-us'>Our Story</Link>
+                <Link href='/draft-design/about-us#team'>Team</Link>
+                <Link href='/draft-design#contact'>Contact</Link>
               </div>
               <div className={styles.footerColumn}>
                 <h4>Connect</h4>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
+                  Facebook
+                </a>
+                <a href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
+                  Instagram
+                </a>
+                <a href='https://youtube.com' target='_blank' rel='noopener noreferrer'>
+                  YouTube
+                </a>
               </div>
             </div>
           </div>
@@ -474,8 +472,8 @@ const TheStudioPage = () => {
           <div className={styles.footerBottom}>
             <p>&copy; 2024 Taupiri Sound. All rights reserved.</p>
             <div className={styles.footerLegal}>
-              <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-and-conditions">Terms & Conditions</Link>
+              <Link href='/privacy-policy'>Privacy Policy</Link>
+              <Link href='/terms-and-conditions'>Terms & Conditions</Link>
             </div>
           </div>
         </div>
