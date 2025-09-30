@@ -4,7 +4,6 @@ import { SanityLive } from '@/sanity/lib/live';
 import '../globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import FooterSwitcher from '@/components/Footer/FooterSwitcher';
 import DisableDraftMode from '@/components/DisableDraftMode';
 import NavigationScroll from '@/components/NavigationScroll';
 import PageReadyTrigger from '@/components/PageReadyTrigger';
@@ -89,7 +88,7 @@ const FrontendLayout = async ({
           <main id='main-content' className='flex-1'>
             {children}
           </main>
-          <FooterSwitcher
+          <Footer
             footerData={footerData}
             siteSettingsData={siteSettingsData}
             companyLinksData={companyLinksData}
