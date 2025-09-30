@@ -1,0 +1,307 @@
+@import 'tailwindcss';
+
+/*
+  ⚠️  CRITICAL CSS DUPLICATION WARNING ⚠️
+
+  Essential layout styles in this file are duplicated in src/app/layout.tsx as inline critical CSS
+  for performance optimization (faster LCP, reduced render blocking).
+
+  When changing these values, update BOTH locations:
+  1. This file (globals.css) - for full styling and consistency
+  2. src/app/layout.tsx inline styles - for critical performance CSS
+
+  DUPLICATED STYLES (simplified): scroll-padding-top, main padding-top, brand colors (--color-brand-primary/secondary)
+*/
+
+/* Brand Colors and Typography System - Tailwind v4 */
+@theme {
+  --color-brand-primary: #ffea00;
+  --color-brand-secondary: #f4a300;
+  --color-text-subtle: #606774;
+  --background-image-brand-gradient: linear-gradient(to right, #ffea00, #ffc800);
+  --background-image-card-gradient: linear-gradient(
+    135deg,
+    #fffacc90 0%,
+    #fffef0 25%,
+    #ffffff 50%,
+    #fffef0 75%,
+    #fffacc90 100%
+  );
+
+  /* Typography Scale System */
+  --font-scale-base: 1.125rem; /* WARNING: if changing this please change the same in BodyTextPreview.tsx */
+
+  /* Custom Breakpoints */
+  --breakpoint-xs: 500px;
+}
+
+/* Base styles */
+/*
+  ⚠️ HEADER HEIGHT SYNC: These values MUST match:
+  - src/components/Header/Header.tsx (h-18 md:h-20)
+  - src/components/HomeHero/styles.module.css (hero-height calc values)
+*/
+html {
+  scroll-padding-top: 5rem; /* Must match layout.tsx */
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 6rem; /* Must match layout.tsx */
+  }
+}
+
+/* Font variant utilities */
+.font-variant-small-caps {
+  font-variant: small-caps;
+}
+
+.font-variant-normal {
+  font-variant: normal;
+}
+
+/* Brand gradient utility */
+.bg-brand-gradient {
+  background: var(--background-image-brand-gradient);
+}
+
+/* Card gradient utility */
+.bg-card-gradient {
+  background: var(--background-image-card-gradient);
+}
+
+/* Custom Typography Utilities with Responsive Behavior 
+ * 
+ * ⚠️  IMPORTANT: KEEP IN SYNC WITH SANITY PREVIEW COMPONENT ⚠️
+ * These @utility definitions must match the corresponding style values in:
+ * src/sanity/components/BodyTextPreview.tsx
+ * 
+ * When updating typography styles:
+ * 1. Update the @utility definitions below (for frontend rendering)
+ * 2. Update the corresponding values in BodyTextPreview.tsx (for Sanity Studio previews)
+ * 
+ * Both files must have identical font-size, line-height, font-weight, and letter-spacing values
+ * to ensure consistency between Sanity Studio previews and frontend display.
+ */
+
+/* Heading Utilities */
+@utility text-h1 {
+  font-size: calc(var(--font-scale-base) * 2.75);
+  line-height: 1.1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 700;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 3.875);
+  }
+}
+
+@utility text-h2 {
+  font-size: calc(var(--font-scale-base) * 2.25);
+  line-height: 1.1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 700;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 3);
+  }
+}
+
+@utility text-h3 {
+  font-size: calc(var(--font-scale-base) * 1.9375);
+  line-height: 1.25;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 2.5);
+  }
+}
+
+@utility text-h4 {
+  font-size: calc(var(--font-scale-base) * 1.625);
+  line-height: 1.25;
+  letter-spacing: 0;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 2.0625);
+  }
+}
+
+@utility text-h5 {
+  font-size: calc(var(--font-scale-base) * 1.375);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 1.625);
+  }
+}
+
+@utility text-h6 {
+  font-size: calc(var(--font-scale-base) * 1.25);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 1.375);
+  }
+}
+
+/* Body Text Utilities 
+ * ⚠️ These values are also duplicated in src/sanity/components/BodyTextPreview.tsx ⚠️ */
+@utility text-body-xs {
+  font-size: calc(var(--font-scale-base) * 0.6875);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 0.8125);
+  }
+}
+
+@utility text-body-sm {
+  font-size: calc(var(--font-scale-base) * 0.8125);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 0.9375);
+  }
+}
+
+@utility text-body-base {
+  font-size: calc(var(--font-scale-base) * 0.9375);
+  line-height: 1.625;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 1.125);
+  }
+}
+
+@utility text-body-lg {
+  font-size: calc(var(--font-scale-base) * 1.125);
+  line-height: 1.625;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 1.25);
+  }
+}
+
+@utility text-body-xl {
+  font-size: calc(var(--font-scale-base) * 1.25);
+  line-height: 1.625;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 1.375);
+  }
+}
+
+@utility text-body-2xl {
+  font-size: calc(var(--font-scale-base) * 1.375);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 1.625);
+  }
+}
+
+@utility text-body-3xl {
+  font-size: calc(var(--font-scale-base) * 1.625);
+  line-height: 1.25;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 2.0625);
+  }
+}
+
+@utility text-body-4xl {
+  font-size: calc(var(--font-scale-base) * 2.0625);
+  line-height: 1.1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 2.75);
+  }
+}
+
+@utility text-body-5xl {
+  font-size: calc(var(--font-scale-base) * 2.5);
+  line-height: 1.1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 3.875);
+  }
+}
+
+@utility text-body-6xl {
+  font-size: calc(var(--font-scale-base) * 3);
+  line-height: 1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 4.5);
+  }
+}
+
+@utility text-body-7xl {
+  font-size: calc(var(--font-scale-base) * 3.5);
+  line-height: 1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 5.25);
+  }
+}
+
+@utility text-body-8xl {
+  font-size: calc(var(--font-scale-base) * 4);
+  line-height: 1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 6);
+  }
+}
+
+@utility text-body-9xl {
+  font-size: calc(var(--font-scale-base) * 4.5);
+  line-height: 1;
+  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 7);
+  }
+}
+
+/* Custom scrollbar utilities */
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
