@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getAllPages, getAllBlogPostsForSitemap, getCollabsForSitemap, getTermsAndConditions, getPrivacyPolicy } from '@/actions';
 import { SITE_CONFIG } from '@/lib/constants';
+import type { ALL_PAGES_QUERYResult, ALL_BLOG_POSTS_SLUGS_QUERYResult, COLLABS_SITEMAP_QUERYResult } from '@/sanity/types';
 
 // ISR: Cache for 1 hour, but allow immediate updates via webhook
 export const revalidate = 3600;
@@ -55,21 +56,21 @@ export async function GET() {
 
   const dynamicUrls: SitemapUrl[] = [
     // Blog posts
-    ...(blogPosts || []).map(post => ({
+    ...(blogPosts || []).map((post: ALL_BLOG_POSTS_SLUGS_QUERYResult[number]) => ({
       url: `/blog/${post.slug?.current}`,
       lastmod: post._updatedAt,
       changefreq: 'monthly',
       priority: '0.7'
     })),
     // Dynamic pages
-    ...(pages || []).map(page => ({
+    ...(pages || []).map((page: ALL_PAGES_QUERYResult[number]) => ({
       url: `/${page.slug?.current}`,
       lastmod: page._updatedAt,
       changefreq: 'monthly',
       priority: '0.6'
     })),
     // Collabs
-    ...(collabs || []).map(collab => ({
+    ...(collabs || []).map((collab: COLLABS_SITEMAP_QUERYResult[number]) => ({
       url: `/collabs/${collab.slug?.current}`,
       lastmod: collab._updatedAt,
       changefreq: 'monthly',

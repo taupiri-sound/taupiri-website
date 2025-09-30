@@ -1,10 +1,16 @@
 import { sanityFetch } from '@/sanity/lib/live';
 import { client } from '@/sanity/lib/client';
 import { COLLAB_QUERY, COLLABS_SLUGS_QUERY, COLLABS_ALL_QUERY, COLLABS_SITEMAP_QUERY } from '@/sanity/lib/queries';
+import type {
+  COLLAB_QUERYResult,
+  COLLABS_SLUGS_QUERYResult,
+  COLLABS_ALL_QUERYResult,
+  COLLABS_SITEMAP_QUERYResult
+} from '@/sanity/types';
 
 // Server-side function to get a single collaboration by slug
 export async function getCollab(slug: string) {
-  const { data: collab } = await sanityFetch({
+  const { data: collab } = await sanityFetch<COLLAB_QUERYResult | null>({
     query: COLLAB_QUERY,
     params: { slug },
   });
@@ -14,7 +20,7 @@ export async function getCollab(slug: string) {
 
 // Server-side function to get all collaboration slugs (for static generation)
 export async function getCollabSlugs() {
-  const { data: slugs } = await sanityFetch({
+  const { data: slugs } = await sanityFetch<COLLABS_SLUGS_QUERYResult>({
     query: COLLABS_SLUGS_QUERY,
   });
 
@@ -23,7 +29,7 @@ export async function getCollabSlugs() {
 
 // Function for static generation - uses regular client to avoid draftMode issues
 export async function getCollabSlugsForGeneration() {
-  const slugs = await client.fetch(`*[_type == "collab" && defined(slug.current)]{ 
+  const slugs = await client.fetch<Array<{ slug: string }>>(`*[_type == "collab" && defined(slug.current)]{
     "slug": slug.current
   }`);
   return slugs;
@@ -31,7 +37,7 @@ export async function getCollabSlugsForGeneration() {
 
 // Server-side function to get all collaborations
 export async function getCollabs() {
-  const { data: collabs } = await sanityFetch({
+  const { data: collabs } = await sanityFetch<COLLABS_ALL_QUERYResult>({
     query: COLLABS_ALL_QUERY,
   });
 
@@ -40,7 +46,7 @@ export async function getCollabs() {
 
 // Server-side function to get all collaborations for sitemap
 export async function getCollabsForSitemap() {
-  const { data: collabs } = await sanityFetch({
+  const { data: collabs } = await sanityFetch<COLLABS_SITEMAP_QUERYResult>({
     query: COLLABS_SITEMAP_QUERY,
   });
 

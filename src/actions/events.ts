@@ -4,7 +4,7 @@ import type { EVENTS_QUERYResult, EVENTS_INDEX_PAGE_QUERYResult } from '@/sanity
 
 // Server-side function using live queries (for use in server components)
 export async function getAllEvents(): Promise<EVENTS_QUERYResult> {
-  const { data: events } = await sanityFetch({
+  const { data: events } = await sanityFetch<EVENTS_QUERYResult>({
     query: EVENTS_QUERY,
   });
 
@@ -13,7 +13,7 @@ export async function getAllEvents(): Promise<EVENTS_QUERYResult> {
 
 // Server-side function to get events index page data
 export async function getEventsIndexPage(): Promise<EVENTS_INDEX_PAGE_QUERYResult | null> {
-  const { data: page } = await sanityFetch({
+  const { data: page } = await sanityFetch<EVENTS_INDEX_PAGE_QUERYResult | null>({
     query: EVENTS_INDEX_PAGE_QUERY,
   });
 

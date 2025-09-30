@@ -1,6 +1,5 @@
 import React from 'react';
 import { draftMode } from 'next/headers';
-import { VisualEditing } from 'next-sanity';
 import { SanityLive } from '@/sanity/lib/live';
 import '../globals.css';
 import Header from '@/components/Header/Header';
@@ -97,12 +96,7 @@ const FrontendLayout = async ({
             legalPagesVisibilityData={legalPagesVisibilityData}
           />
           <SanityLive />
-          {(await draftMode()).isEnabled && (
-            <>
-              <DisableDraftMode />
-              <VisualEditing />
-            </>
-          )}
+          {(await draftMode()).isEnabled && <DisableDraftMode />}
         </div>
       </SiteDataProvider>
     </PageLoadProvider>
