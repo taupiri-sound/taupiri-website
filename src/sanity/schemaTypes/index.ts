@@ -32,7 +32,6 @@ import { blockListType } from './blocks/blockListType';
 import { siteSettingsType } from './siteSettingsType';
 import { companyLinksType } from './companyLinksType';
 import { companyLinksArrayType } from './shared/socialLinksArrayType';
-import { sideContentBlockType, sideContentType } from './shared/sideContentBlockType';
 import { ctaListType } from './shared/ctaListType';
 import { navLinkType } from './navigation/navLinkType';
 import { verticalNavLinkType } from './navigation/verticalNavLinkType';
@@ -83,8 +82,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blockListType,
     // Shared Components
     companyLinksArrayType,
-    sideContentBlockType,
-    sideContentType,
     ctaListType,
     // Navigation Components
     navLinkType,
