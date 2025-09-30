@@ -21,7 +21,6 @@ export interface WebSiteData {
   };
 }
 
-
 export interface BlogPostData {
   headline: string;
   description?: string;
@@ -112,9 +111,9 @@ export function generateWebSiteSchema(data: WebSiteData) {
 
 export function generateBlogPostSchema(data: BlogPostData) {
   const imageSchema = data.image
-    ? (typeof data.image === 'string'
-        ? data.image
-        : generateImageObjectSchema(data.image))
+    ? typeof data.image === 'string'
+      ? data.image
+      : generateImageObjectSchema(data.image)
     : undefined;
 
   return {
@@ -157,9 +156,9 @@ export function generateEventSchema(data: EventData) {
 
 export function generateArticleSchema(data: ArticleData) {
   const imageSchema = data.image
-    ? (typeof data.image === 'string'
-        ? data.image
-        : generateImageObjectSchema(data.image))
+    ? typeof data.image === 'string'
+      ? data.image
+      : generateImageObjectSchema(data.image)
     : undefined;
 
   return {
@@ -197,7 +196,7 @@ export function getOrganizationDataFromSiteSettings(
   baseUrl: string
 ): OrganizationData {
   return {
-    name: siteSettings?.siteTitle || '07:17 Records',
+    name: siteSettings?.siteTitle || 'Taupiri Sound',
     url: baseUrl,
     ...(siteSettings?.siteDescription && { description: siteSettings.siteDescription }),
     ...(siteSettings?.companyEmail && { email: siteSettings.companyEmail }),
@@ -212,7 +211,7 @@ export function getWebSiteDataFromSiteSettings(
   baseUrl: string
 ): WebSiteData {
   return {
-    name: siteSettings?.siteTitle || '07:17 Records',
+    name: siteSettings?.siteTitle || 'Taupiri Sound',
     url: baseUrl,
     ...(siteSettings?.siteDescription && { description: siteSettings.siteDescription }),
   };
