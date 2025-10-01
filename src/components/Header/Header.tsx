@@ -60,11 +60,11 @@ const Header = ({ headerData }: HeaderProps) => {
   return (
     <>
       <SkipLink href='#main-content'>Skip to main content</SkipLink>
-      <header className='w-full px-4 md:px-8 h-18 md:h-20 flex items-center justify-between gap-8 sticky top-0 z-50 bg-white shadow-md'>
+      <header className='w-full px-4 md:px-8 h-18 md:h-20 flex items-center justify-between gap-8 sticky top-0 z-50 bg-brand-secondary shadow-md'>
         {/* Logo */}
         <Link href='/#home' className='flex items-center gap-2'>
           <UnifiedImage
-            src='/images/logo-text-black.png'
+            src='/images/logos/logo-white.png'
             alt='07:17 Records Logo'
             mode='sized'
             width={200}

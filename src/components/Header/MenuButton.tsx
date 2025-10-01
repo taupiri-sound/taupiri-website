@@ -12,12 +12,18 @@ interface MenuButtonProps {
   ariaControls?: string;
 }
 
-const MenuButton = ({ variant, isMenuOpen = false, onClick, className = '', ariaControls }: MenuButtonProps) => {
+const MenuButton = ({
+  variant,
+  isMenuOpen = false,
+  onClick,
+  className = '',
+  ariaControls,
+}: MenuButtonProps) => {
   if (variant === 'close') {
     return (
       <button
         onClick={onClick}
-        className={`w-8 h-8 flex items-center justify-center cursor-pointer focus:outline-none hover:text-brand-secondary transition-colors ${className}`}
+        className={`w-8 h-8 flex items-center justify-center cursor-pointer text-brand-white focus:outline-none hover:text-brand-primary transition-colors ${className}`}
         aria-label='Close menu'>
         <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
           <path
@@ -40,17 +46,17 @@ const MenuButton = ({ variant, isMenuOpen = false, onClick, className = '', aria
       aria-expanded={isMenuOpen}
       aria-controls={ariaControls}>
       <span
-        className={`block w-6 h-0.5 bg-black group-hover:bg-brand-secondary transition-all duration-300 transform origin-center ${
+        className={`block w-6 h-0.5 bg-brand-white group-hover:bg-brand-primary transition-all duration-300 transform origin-center ${
           isMenuOpen ? 'rotate-45 translate-y-2' : ''
         }`}
       />
       <span
-        className={`block w-6 h-0.5 bg-black group-hover:bg-brand-secondary transition-all duration-300 mt-1.5 ${
+        className={`block w-6 h-0.5 bg-brand-white group-hover:bg-brand-primary transition-all duration-300 mt-1.5 ${
           isMenuOpen ? 'opacity-0' : ''
         }`}
       />
       <span
-        className={`block w-6 h-0.5 bg-black group-hover:bg-brand-secondary transition-all duration-300 mt-1.5 transform origin-center ${
+        className={`block w-6 h-0.5 bg-brand-white group-hover:bg-brand-primary transition-all duration-300 mt-1.5 transform origin-center ${
           isMenuOpen ? '-rotate-45 -translate-y-2' : ''
         }`}
       />
