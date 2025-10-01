@@ -176,7 +176,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                     })}
                 </>
               ) : (
-                <div className='text-body-base text-gray-500 text-center'>
+                <div className='text-body-base text-subtle text-center'>
                   No navigation links configured
                 </div>
               )}
