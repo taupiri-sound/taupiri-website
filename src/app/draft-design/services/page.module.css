@@ -1,9 +1,10 @@
 /* Import shared styles */
 :root {
-  --primary: #430C08;
-  --dark-brown: #0A0000;
+  --primary: #430c08;
+  --dark-brown: #0a0000;
   --main-red: #900000;
-  --bone-white: #FFFBE8;
+  --bone-white: #fffbe8;
+  --bone-white-dark: #fcf3d7;
 }
 
 .page {
@@ -110,14 +111,7 @@
 .serviceSection {
   padding: 5rem 2rem;
   scroll-margin-top: 100px;
-}
-
-.serviceSection:nth-child(odd) {
-  background-color: var(--bone-white);
-}
-
-.serviceSection:nth-child(even) {
-  background-color: white;
+  background: linear-gradient(to bottom, var(--bone-white-dark) 0%, var(--bone-white) 100%);
 }
 
 .serviceSectionContainer {
