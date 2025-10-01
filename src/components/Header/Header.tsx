@@ -7,7 +7,6 @@ import type { HEADER_QUERYResult } from '@/sanity/types';
 import HorizontalNav from './HorizontalNav';
 import MenuButton from './MenuButton';
 import VerticalNav from './VerticalNav/VerticalNav';
-import MenuCallout from './MenuCallout';
 import SkipLink from '@/components/UI/SkipLink';
 
 interface HeaderProps {
@@ -16,13 +15,8 @@ interface HeaderProps {
 
 const Header = ({ headerData }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [calloutHasShown, setCalloutHasShown] = useState(false);
 
   const toggleMenu = () => {
-    // If callout is currently visible and we're opening the menu, mark it as shown
-    if (!isMenuOpen && !calloutHasShown) {
-      setCalloutHasShown(true);
-    }
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -81,24 +75,13 @@ const Header = ({ headerData }: HeaderProps) => {
           <HorizontalNav navLinks={headerData?.horizontalNav || null} />
         </div>
 
-        {/* Hamburger Menu Button with Callout */}
-        <div className='relative'>
-          <MenuButton
-            variant='hamburger'
-            isMenuOpen={isMenuOpen}
-            onClick={toggleMenu}
-            ariaControls='mobile-navigation-menu'
-          />
-
-          {/* Menu Callout - only show when menu is closed and hasn't shown before */}
-          {!isMenuOpen && !calloutHasShown && headerData?.hamburgerCallout?.enabled && (
-            <MenuCallout
-              text={headerData.hamburgerCallout.text || undefined}
-              hideDelay={(headerData.hamburgerCallout.hideDelay || 5) * 1000}
-              onHide={() => setCalloutHasShown(true)}
-            />
-          )}
-        </div>
+        {/* Hamburger Menu Button */}
+        <MenuButton
+          variant='hamburger'
+          isMenuOpen={isMenuOpen}
+          onClick={toggleMenu}
+          ariaControls='mobile-navigation-menu'
+        />
       </header>
 
       {/* Vertical Menu */}

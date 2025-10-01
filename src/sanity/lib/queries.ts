@@ -260,11 +260,6 @@ export const HEADER_QUERY = defineQuery(`*[_id == "header"][0]{
     _key,
     _type == "embeddedCtaButton" => {${fullLinkProjection}},
     _type == "embeddedCtaEmailButton" => {...}
-  },
-  hamburgerCallout{
-    enabled,
-    text,
-    hideDelay
   }
 }`);
 
