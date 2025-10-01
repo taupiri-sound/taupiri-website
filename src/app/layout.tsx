@@ -1,11 +1,11 @@
 import React from 'react';
-import { Signika } from 'next/font/google';
+import { Chau_Philomene_One } from 'next/font/google';
 import '@/app/globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
 
-const signika = Signika({
+const chauPhilomeneOne = Chau_Philomene_One({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400'],
   display: 'swap',
 });
 
@@ -77,7 +77,7 @@ const RootLayout = ({
           }}
         />
       </head>
-      <body className={`${signika.className} text-body-base text-subtle bg-gray-50`}>
+      <body className={`${chauPhilomeneOne.className} text-body-base text-subtle bg-gray-50`}>
         {children}
       </body>
     </html>

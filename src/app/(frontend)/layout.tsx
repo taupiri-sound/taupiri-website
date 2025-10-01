@@ -7,7 +7,6 @@ import Footer from '@/components/Footer/Footer';
 import DisableDraftMode from '@/components/DisableDraftMode';
 import NavigationScroll from '@/components/NavigationScroll';
 import PageReadyTrigger from '@/components/PageReadyTrigger';
-import { Signika } from 'next/font/google';
 import { getHeader, getFooter, getSiteSettings, getCompanyLinks, getLegalPagesVisibility } from '@/actions';
 import { SiteDataProvider } from '@/contexts/SiteDataContext';
 import { PageLoadProvider } from '@/contexts/PageLoadContext';
@@ -20,8 +19,6 @@ import {
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import { SITE_CONFIG } from '@/lib/constants';
-
-const signika = Signika({ subsets: ['latin'] });
 
 export async function generateMetadata() {
   const siteSettings = await getSiteSettings();
@@ -83,7 +80,7 @@ const FrontendLayout = async ({
           />
         )}
 
-        <div className={`min-h-screen flex flex-col ${signika.className} font-variant-small-caps`}>
+        <div className='min-h-screen flex flex-col'>
           <Header headerData={headerData} />
           <main id='main-content' className='flex-1'>
             {children}
