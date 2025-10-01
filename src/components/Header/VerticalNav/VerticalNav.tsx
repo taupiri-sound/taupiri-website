@@ -154,7 +154,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                                   <Link
                                     {...linkProps}
                                     onClick={onClose}
-                                    className='flex items-center justify-between w-full uppercase font-medium text-black hover:text-brand-secondary transition-colors'>
+                                    className='flex items-center justify-between w-full uppercase font-medium text-brand-black hover:text-brand-primary transition-colors'>
                                     <span>{label}</span>
                                     {isExternal && (
                                       <FaExternalLinkAlt className='text-body-xs text-current ml-2 flex-shrink-0' />
@@ -176,9 +176,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                     })}
                 </>
               ) : (
-                <div className='text-body-base text-subtle text-center'>
-                  No navigation links configured
-                </div>
+                <div className='text-body-base text-center'>No navigation links configured</div>
               )}
 
               {/* Navigation CTAs */}

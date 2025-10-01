@@ -77,7 +77,9 @@ const RootLayout = ({
           }}
         />
       </head>
-      <body className={`${signika.className} text-body-base bg-gray-50`}>{children}</body>
+      <body className={`${signika.className} text-body-base text-subtle bg-gray-50`}>
+        {children}
+      </body>
     </html>
   );
 };

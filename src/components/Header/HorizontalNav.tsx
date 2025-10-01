@@ -2,7 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { HorizontalNavData, getHorizontalNavLinkProps, getHorizontalNavLinkLabel } from '@/utils/navigationHelpers';
+import {
+  HorizontalNavData,
+  getHorizontalNavLinkProps,
+  getHorizontalNavLinkLabel,
+} from '@/utils/navigationHelpers';
 
 interface HorizontalNavProps {
   navLinks: HorizontalNavData | null;
@@ -32,7 +36,7 @@ const HorizontalNav = ({ navLinks }: HorizontalNavProps) => {
             <li key={`${link.computedHref}-${index}`}>
               <Link
                 {...linkProps}
-                className='uppercase font-medium hover:text-brand-secondary transition-colors'>
+                className='uppercase font-medium text-brand-white hover:text-brand-primary transition-colors'>
                 {label}
               </Link>
             </li>
