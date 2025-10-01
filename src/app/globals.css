@@ -25,7 +25,7 @@
   --background-image-brand-gradient-red: linear-gradient(135deg, #900000 0%, #430c08 100%);
 
   /* Typography Scale System */
-  --font-scale-base: 1.125rem; /* WARNING: if changing this please change the same in BodyTextPreview.tsx */
+  --font-scale-base: 1rem; /* WARNING: if changing this please change the same in BodyTextPreview.tsx */
 
   /* Custom Breakpoints */
   --breakpoint-xs: 500px;
