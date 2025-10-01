@@ -2,6 +2,7 @@
 :root {
   --primary: #430c08;
   --dark-brown: #0a0000;
+  --text-red: #71221d;
   --main-red: #900000;
   --bone-white: #fffbe8;
   --bone-white-dark: #fcf3d7;
@@ -149,7 +150,7 @@
 .serviceDescription {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--dark-brown);
+  color: var(--text-red);
   margin: 0 0 1.5rem 0;
 }
 
