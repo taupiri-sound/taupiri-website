@@ -63,8 +63,8 @@ const RootLayout = ({
 
             /* Essential brand colors for immediate render */
             :root {
-              --color-brand-primary: #ffea00;
-              --color-brand-secondary: #f4a300;
+              --color-brand-primary: #900000;
+              --color-brand-secondary: #430c08;
             }
           `,
           }}

@@ -15,18 +15,14 @@
 
 /* Brand Colors and Typography System - Tailwind v4 */
 @theme {
-  --color-brand-primary: #ffea00;
-  --color-brand-secondary: #f4a300;
-  --color-text-subtle: #606774;
-  --background-image-brand-gradient: linear-gradient(to right, #ffea00, #ffc800);
-  --background-image-card-gradient: linear-gradient(
-    135deg,
-    #fffacc90 0%,
-    #fffef0 25%,
-    #ffffff 50%,
-    #fffef0 75%,
-    #fffacc90 100%
-  );
+  --color-brand-primary: #900000;
+  --color-brand-secondary: #430c08;
+  --color-text-primary: #71221d;
+  --color-brand-black: #0a0000;
+  --color-brand-white: #fffbe8;
+  --color-brand-white-dark: #fcf3d7;
+  --background-image-brand-gradient-brown: linear-gradient(135deg, #430c08 0%, #0a0000 100%);
+  --background-image-brand-gradient-red: linear-gradient(135deg, #900000 0%, #430c08 100%);
 
   /* Typography Scale System */
   --font-scale-base: 1.125rem; /* WARNING: if changing this please change the same in BodyTextPreview.tsx */
