@@ -3,7 +3,7 @@ import { HOME_PAGE_QUERY, PAGE_QUERY, ALL_PAGES_QUERY } from '@/sanity/lib/queri
 import type { HOME_PAGE_QUERYResult, PAGE_QUERYResult, ALL_PAGES_QUERYResult } from '@/sanity/types';
 
 export async function getHomePage(): Promise<HOME_PAGE_QUERYResult | null> {
-  const { data: page } = await sanityFetch<HOME_PAGE_QUERYResult | null>({
+  const { data: page } = await sanityFetch({
     query: HOME_PAGE_QUERY,
   });
 
@@ -11,7 +11,7 @@ export async function getHomePage(): Promise<HOME_PAGE_QUERYResult | null> {
 }
 
 export async function getPageBySlug(slug: string): Promise<PAGE_QUERYResult | null> {
-  const { data: page } = await sanityFetch<PAGE_QUERYResult | null>({
+  const { data: page } = await sanityFetch({
     query: PAGE_QUERY,
     params: { slug },
   });
@@ -20,7 +20,7 @@ export async function getPageBySlug(slug: string): Promise<PAGE_QUERYResult | nu
 }
 
 export async function getAllPages() {
-  const { data: pages } = await sanityFetch<ALL_PAGES_QUERYResult>({
+  const { data: pages } = await sanityFetch({
     query: ALL_PAGES_QUERY,
   });
 

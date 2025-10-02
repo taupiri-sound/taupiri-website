@@ -4,7 +4,7 @@ import type { FOOTER_QUERYResult, HEADER_QUERYResult, SITE_SETTINGS_QUERYResult,
 
 // Header actions
 export async function getHeader(): Promise<HEADER_QUERYResult | null> {
-  const { data } = await sanityFetch<HEADER_QUERYResult | null>({
+  const { data } = await sanityFetch({
     query: HEADER_QUERY,
   });
 
@@ -13,7 +13,7 @@ export async function getHeader(): Promise<HEADER_QUERYResult | null> {
 
 // Footer actions
 export async function getFooter(): Promise<FOOTER_QUERYResult | null> {
-  const { data } = await sanityFetch<FOOTER_QUERYResult | null>({
+  const { data } = await sanityFetch({
     query: FOOTER_QUERY,
   });
 
@@ -22,7 +22,7 @@ export async function getFooter(): Promise<FOOTER_QUERYResult | null> {
 
 // Site Settings actions
 export async function getSiteSettings(): Promise<SITE_SETTINGS_QUERYResult | null> {
-  const { data } = await sanityFetch<SITE_SETTINGS_QUERYResult | null>({
+  const { data } = await sanityFetch({
     query: SITE_SETTINGS_QUERY,
   });
 
@@ -31,7 +31,7 @@ export async function getSiteSettings(): Promise<SITE_SETTINGS_QUERYResult | nul
 
 // Company Links actions
 export async function getCompanyLinks(): Promise<COMPANY_LINKS_QUERYResult | null> {
-  const { data } = await sanityFetch<COMPANY_LINKS_QUERYResult | null>({
+  const { data } = await sanityFetch({
     query: COMPANY_LINKS_QUERY,
   });
 
@@ -40,7 +40,7 @@ export async function getCompanyLinks(): Promise<COMPANY_LINKS_QUERYResult | nul
 
 // Legal Pages Visibility actions
 export async function getLegalPagesVisibility(): Promise<LEGAL_PAGES_VISIBILITY_QUERYResult | null> {
-  const { data } = await sanityFetch<LEGAL_PAGES_VISIBILITY_QUERYResult | null>({
+  const { data } = await sanityFetch({
     query: LEGAL_PAGES_VISIBILITY_QUERY,
   });
 
