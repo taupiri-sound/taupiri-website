@@ -95,7 +95,7 @@ This prevents the singleton from:
 ```javascript
 export const LINKABLE_PAGE_TYPES = [
   { type: 'homePage' },
-  { type: 'eventsIndexPage' },
+  { type: 'blogIndexPage' },
   // ... existing linkable types
   { type: 'newSingletonName' }, // ADD NEW SINGLETON HERE
 ];
@@ -110,7 +110,7 @@ const internalLinkProjection = `{
   // ... existing fields
   "href": select(
     _type == "homePage" => "/",
-    _type == "eventsIndexPage" => "/events",
+    _type == "blogIndexPage" => "/blog",
     // ... existing URL mappings
     _type == "newSingletonName" => "/your-url-path",
     "/" + slug.current
@@ -245,7 +245,7 @@ The `UnifiedImage` component (`@/components/UI/UnifiedImage`) automatically hand
 ```typescript
 <UnifiedImage
   src={headerData.logo}
-  alt="07:17 Records"
+  alt="Taupiri Sound"
   mode="sized"
   width={180}
   height={125}
@@ -526,61 +526,10 @@ const validImages = images?.filter(item => item.image?.asset?._ref) || [];
 
 **Schema markup is required for:**
 
-- Featured images (blog posts, articles, events)
+- Featured images (blog posts, articles)
 - Gallery images and collections
 - Profile/author images
 - Content images within rich text
-
-## Event Schema Maintenance
-
-**CRITICAL: All event components must include location-specific schema markup for local SEO.**
-
-### Event Schema Implementation
-
-The website includes comprehensive Event schema markup with Place/location data using `src/lib/structuredData.ts`. Event schema generation is enabled in:
-
-- **EventCard component** - Individual event cards with full location data
-- **EventList component** - Event listing pages (passes through to EventCard)
-- **EventBlock component** - Event blocks in page content
-
-### Usage Requirements
-
-**IMPORTANT: When displaying events, you MUST enable schema generation:**
-
-```typescript
-// Event pages (like /events)
-<EventList
-  events={events}
-  filter="upcoming"
-  generateSchema={true}
-  baseUrl={baseUrl}
-  noEventsText="No events message"
-/>
-
-// Event blocks in page content
-<EventBlock
-  events={events}
-  maxEvents={6}
-  generateSchema={true}
-  baseUrl={baseUrl}
-/>
-```
-
-### Location Schema Benefits
-
-Event schema automatically generates:
-
-- **Event structured data** with start/end dates
-- **Place schema** for venue and location information
-- **Organization schema** for event organizer (07:17 Records)
-- **Local SEO benefits** for location-based searches
-
-**Generated schema includes:**
-
-- Event name, description, dates
-- Venue name and full address
-- Event URL and organizer details
-- Proper schema.org Event and Place markup
 
 ## SEO Sitemap Maintenance
 
@@ -590,10 +539,9 @@ Event schema automatically generates:
 
 The XML sitemap is generated dynamically at `/sitemap.xml` using the route handler at `src/app/sitemap.xml/route.ts`. It automatically includes:
 
-- Static pages (home, blog index, events index, collabs index)
+- Static pages (home, blog index)
 - Dynamic pages from Sanity (`page` document type)
 - Blog posts (`blogPost` document type)
-- Collaborations (`collab` document type)
 
 ### When to Update Sitemap
 

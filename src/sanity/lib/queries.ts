@@ -10,7 +10,6 @@ const internalLinkProjection = `{
   "pageType": _type,
   "href": select(
     _type == "homePage" => "/",
-    _type == "eventsIndexPage" => "/events",
     _type == "favouritesIndexPage" => "/favourites",
     _type == "blogIndexPage" => "/blog",
     _type == "blogPost" => "/blog/" + slug.current,
@@ -126,32 +125,6 @@ const contentProjection = `
       },
       hasOverrideDate,
       overrideDate
-    }
-  },
-  _type == "ctaEvents" => {
-    ...,
-    events[]->{
-      _id,
-      title,
-      shortDescription,
-      venue,
-      location,
-      image{
-        asset,
-        alt,
-        hotspot,
-        crop
-      },
-      tags,
-      link,
-      linkLabel,
-      startDate,
-      endDate,
-      timeDescription,
-      pastEventText,
-      pastEventLinkBehavior,
-      pastEventLink,
-      pastEventLinkLabel
     }
   },
   _type == "favouriteBlock" => {
@@ -285,48 +258,6 @@ export const COMPANY_LINKS_QUERY = defineQuery(`*[_id == "companyLinks"][0]{
       hideFromFooter
     }
   }
-}`);
-
-export const EVENTS_QUERY = defineQuery(`*[_type == "event"]|order(startDate desc){
-  _id,
-  title,
-  shortDescription,
-  venue,
-  location,
-  image{
-    asset,
-    alt,
-    hotspot,
-    crop
-  },
-  tags,
-  link,
-  linkLabel,
-  startDate,
-  endDate,
-  timeDescription,
-  pastEventText,
-  pastEventLinkBehavior,
-  pastEventLink,
-  pastEventLinkLabel
-}`);
-
-export const EVENTS_INDEX_PAGE_QUERY = defineQuery(`*[_id == "eventsIndexPage"][0]{
-  _id,
-  _type,
-  title,
-  backgroundImage{
-    asset,
-    alt,
-    hotspot,
-    crop
-  },
-  subtitle,
-  noUpcomingEventsMessage,
-  showEventHelpCTA,
-  eventHelpCTAMessage,
-  hasEventsMessage,
-  eventsMessage${closingCardProjection}
 }`);
 
 // Blog Post Queries

@@ -66,6 +66,6 @@ export const subSectionTitleBottomSpacing = 'mb-4 md:mb-6';
 export const closingCardSpacing = 'mt-16 md:mt-24';
 
 /**
- * Max width for card like components (e.g. Cards, CTA Events, CTA Blog Posts etc)
+ * Max width for card like components (e.g. Cards, CTA Blog Posts etc)
  */
 export const maxCardWidth = 'max-w-[650px]';

@@ -35,20 +35,6 @@ export interface BlogPostData {
   url: string;
 }
 
-export interface EventData {
-  name: string;
-  description?: string;
-  startDate: string;
-  endDate?: string;
-  location?: {
-    name: string;
-    address?: string;
-  };
-  image?: string;
-  url: string;
-  organizer: OrganizationData;
-}
-
 export interface ArticleData {
   headline: string;
   description?: string;
@@ -130,27 +116,6 @@ export function generateBlogPostSchema(data: BlogPostData) {
     },
     publisher: generateOrganizationSchema(data.publisher),
     url: data.url,
-  };
-}
-
-export function generateEventSchema(data: EventData) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Event',
-    name: data.name,
-    ...(data.description && { description: data.description }),
-    startDate: data.startDate,
-    ...(data.endDate && { endDate: data.endDate }),
-    ...(data.location && {
-      location: {
-        '@type': 'Place',
-        name: data.location.name,
-        ...(data.location.address && { address: data.location.address }),
-      },
-    }),
-    ...(data.image && { image: data.image }),
-    url: data.url,
-    organizer: generateOrganizationSchema(data.organizer),
   };
 }
 

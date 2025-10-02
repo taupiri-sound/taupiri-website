@@ -42,13 +42,24 @@ export default defineConfig({
     colorInput(),
   ],
   document: {
-    newDocumentOptions: (prev) => prev.filter((item) =>
-      !['siteSettings', 'header', 'footer', 'homePage', 'blogIndexPage', 'eventsIndexPage', 'favouritesIndexPage', 'companyLinks', 'termsAndConditions', 'privacyPolicy'].includes(item.templateId)
-    ),
+    newDocumentOptions: (prev) =>
+      prev.filter(
+        (item) =>
+          ![
+            'siteSettings',
+            'header',
+            'footer',
+            'homePage',
+            'blogIndexPage',
+            'companyLinks',
+            'termsAndConditions',
+            'privacyPolicy',
+          ].includes(item.templateId)
+      ),
     actions: protectedDocumentActions,
     // Document actions temporarily removed to fix build
     // actions: (prev, { schemaType }) => {
-    //   const pageTypes = ['page', 'homePage', 'eventsIndexPage', 'collab'];
+    //   const pageTypes = ['page', 'homePage', 'collab'];
     //   if (pageTypes.includes(schemaType)) {
     //     return [...prev, UpdateAnchorReferencesAction, DebugAnchorReferencesAction];
     //   }

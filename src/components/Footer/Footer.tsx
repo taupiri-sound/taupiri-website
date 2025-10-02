@@ -28,7 +28,12 @@ interface FooterProps {
   legalPagesVisibilityData: LEGAL_PAGES_VISIBILITY_QUERYResult | null;
 }
 
-const Footer = ({ footerData, siteSettingsData, companyLinksData, legalPagesVisibilityData }: FooterProps) => {
+const Footer = ({
+  footerData,
+  siteSettingsData,
+  companyLinksData,
+  legalPagesVisibilityData,
+}: FooterProps) => {
   const { isPageReady } = usePageLoad();
 
   // Get company links from company links data, filtering out hidden ones and invalid entries
@@ -123,11 +128,6 @@ const Footer = ({ footerData, siteSettingsData, companyLinksData, legalPagesVisi
                 href='/releases'
                 className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
                 Blog
-              </Link>
-              <Link
-                href='/events'
-                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                All Events
               </Link>
               <Link
                 href='/blog'

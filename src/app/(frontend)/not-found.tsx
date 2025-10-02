@@ -9,12 +9,12 @@ import CTA from '@/components/UI/CTA';
 export const metadata: Metadata = {
   title: 'Page Not Found - 07:17 Records',
   description:
-    'Sorry, the page you are looking for could not be found. Explore our music releases, events, blog posts, and artist collaborations at 07:17 Records.',
+    'Sorry, the page you are looking for could not be found. Explore our music releases, blog posts, and artist collaborations at 07:17 Records.',
   robots: 'noindex, nofollow', // Don't index 404 pages
   openGraph: {
     title: 'Page Not Found - 07:17 Records',
     description:
-      'Sorry, the page you are looking for could not be found. Explore our music releases, events, blog posts, and artist collaborations.',
+      'Sorry, the page you are looking for could not be found. Explore our music releases, blog posts, and artist collaborations.',
     type: 'website',
   },
 };
@@ -52,7 +52,7 @@ export default function NotFound() {
               Here are some popular pages to get you back on track:
             </h3>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8'>
               {/* Popular navigation links */}
               <Link
                 href='/'
@@ -73,17 +73,6 @@ export default function NotFound() {
                 </div>
                 <div className='text-body-sm text-gray-600'>
                   Read our latest news, stories, and insights
-                </div>
-              </Link>
-
-              <Link
-                href='/events'
-                className='group bg-white border border-gray-200 rounded-lg p-4 hover:border-brand-primary hover:shadow-md transition-all duration-200'>
-                <div className='text-body-base font-medium text-gray-800 group-hover:text-brand-secondary mb-2'>
-                  🎵 Events
-                </div>
-                <div className='text-body-sm text-gray-600'>
-                  Find upcoming and past shows, concerts, and music events
                 </div>
               </Link>
 
