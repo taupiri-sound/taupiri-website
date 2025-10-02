@@ -23,16 +23,16 @@ interface HeaderData {
  * - Now: Automatic sizing with 'card' context
  */
 export const BlogCardImageExample = ({ post }: { post: BlogPost }) => (
-  <div className="relative w-full aspect-[4/3] bg-gray-900 overflow-hidden">
+  <div className='relative w-full aspect-[4/3] bg-gray-900 overflow-hidden'>
     <UnifiedImage
       src={post.mainImage}
       alt={`${post.title} image`}
-      mode="fill"
-      sizeContext="card"
-      objectFit="cover"
+      mode='fill'
+      sizeContext='card'
+      objectFit='cover'
       priority
       generateSchema
-      schemaContext="blog"
+      schemaContext='blog'
     />
   </div>
 );
@@ -45,16 +45,16 @@ export const BlogCardImageExample = ({ post }: { post: BlogPost }) => (
 export const HeaderLogoExample = ({ headerData }: { headerData: HeaderData }) => (
   <UnifiedImage
     src={headerData.logo}
-    alt="07:17 Records"
-    mode="sized"
+    alt='Taupiri Sound'
+    mode='sized'
     width={180}
     height={125}
-    sizeContext="logo"
-    objectFit="contain"
-    className="w-[160px] md:w-[180px] h-auto"
+    sizeContext='logo'
+    objectFit='contain'
+    className='w-[160px] md:w-[180px] h-auto'
     documentId={headerData._id}
-    documentType="header"
-    fieldPath="logo"
+    documentType='header'
+    fieldPath='logo'
   />
 );
 
@@ -66,23 +66,23 @@ export const HeaderLogoExample = ({ headerData }: { headerData: HeaderData }) =>
 export const ImageGalleryItemExample = ({
   image,
   index,
-  total
+  total,
 }: {
   image: SanityImageSource;
   index: number;
   total: number;
 }) => (
-  <div className="w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] aspect-[4/3]">
+  <div className='w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] aspect-[4/3]'>
     <UnifiedImage
       src={image}
       alt={`Gallery image ${index + 1} of ${total}`}
-      mode="fill"
-      sizeContext="gallery"
-      objectFit="cover"
+      mode='fill'
+      sizeContext='gallery'
+      objectFit='cover'
       enableModal
-      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+      sizes='(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
       generateSchema
-      schemaContext="gallery"
+      schemaContext='gallery'
     />
   </div>
 );
@@ -95,13 +95,13 @@ export const ImageGalleryItemExample = ({
 export const PageHeroImageExample = ({ heroImage }: { heroImage: SanityImageSource | string }) => (
   <UnifiedImage
     src={heroImage}
-    alt=""
-    mode="fill"
-    sizeContext="hero"
-    objectFit="cover"
+    alt=''
+    mode='fill'
+    sizeContext='hero'
+    objectFit='cover'
     priority
-    className="z-10 transition-opacity duration-500 ease-in-out"
-    sizes="100vw"
+    className='z-10 transition-opacity duration-500 ease-in-out'
+    sizes='100vw'
   />
 );
 
@@ -113,13 +113,13 @@ export const PageHeroImageExample = ({ heroImage }: { heroImage: SanityImageSour
 export const IconImageExample = ({ icon }: { icon: SanityImageSource }) => (
   <UnifiedImage
     src={icon}
-    alt="Item icon"
-    mode="sized"
+    alt='Item icon'
+    mode='sized'
     width={24}
     height={24}
-    sizeContext="icon"
-    objectFit="contain"
-    className="p-1"
+    sizeContext='icon'
+    objectFit='contain'
+    className='p-1'
   />
 );
 
@@ -130,23 +130,20 @@ export const IconImageExample = ({ icon }: { icon: SanityImageSource }) => (
  */
 export const FeaturedItemExample = ({
   image,
-  aspectRatio
+  aspectRatio,
 }: {
   image: SanityImageSource;
   aspectRatio: number;
 }) => (
-  <div
-    className="relative w-full landscape:h-[45vh] landscape:w-auto"
-    style={{ aspectRatio }}
-  >
+  <div className='relative w-full landscape:h-[45vh] landscape:w-auto' style={{ aspectRatio }}>
     <UnifiedImage
       src={image}
-      alt="Featured item"
-      mode="fill"
-      objectFit="contain"
+      alt='Featured item'
+      mode='fill'
+      objectFit='contain'
       displaySize={{ width: 2000 }}
       priority
-      sizes="(max-width: 768px) 90vw, 400px"
+      sizes='(max-width: 768px) 90vw, 400px'
     />
   </div>
 );
@@ -157,17 +154,17 @@ export const FeaturedItemExample = ({
  * - Now: Automatic optimization with schema generation
  */
 export const BlogPostMainImageExample = ({ post }: { post: BlogPost }) => (
-  <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg">
+  <div className='relative w-full aspect-[16/9] overflow-hidden rounded-lg'>
     <UnifiedImage
       src={post.mainImage}
       alt={post.title || 'Blog post image'}
-      mode="fill"
-      sizeContext="hero"
-      objectFit="cover"
+      mode='fill'
+      sizeContext='hero'
+      objectFit='cover'
       priority
       generateSchema
-      schemaContext="blog"
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+      schemaContext='blog'
+      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw'
     />
   </div>
 );
@@ -180,7 +177,7 @@ export const BlogPostMainImageExample = ({ post }: { post: BlogPost }) => (
 export const ContentBlockImageExample = ({
   image,
   caption,
-  size = 'full'
+  size = 'full',
 }: {
   image: SanityImageSource;
   caption?: string;
@@ -189,19 +186,19 @@ export const ContentBlockImageExample = ({
   <figure className={size === 'small' ? 'w-full md:w-1/2 mx-auto' : 'w-full'}>
     <UnifiedImage
       src={image}
-      alt="Content image"
-      mode="sized"
+      alt='Content image'
+      mode='sized'
       width={800}
       height={600}
-      sizeContext="full"
-      objectFit="cover"
+      sizeContext='full'
+      objectFit='cover'
       enableModal
       modalCaption={caption}
       rounded
-      className="w-full h-auto"
+      className='w-full h-auto'
     />
     {caption && (
-      <figcaption className="mt-2 text-body-sm text-gray-600 text-center italic">
+      <figcaption className='mt-2 text-body-sm text-gray-600 text-center italic'>
         {caption}
       </figcaption>
     )}
@@ -215,14 +212,14 @@ export const ContentBlockImageExample = ({
 export const ResponsiveImageExample = ({ image }: { image: SanityImageSource }) => (
   <UnifiedImage
     src={image}
-    alt="Responsive image"
-    mode="fill"
+    alt='Responsive image'
+    mode='fill'
     responsiveSizes={{
       mobile: { width: 400, height: 300 },
       tablet: { width: 600, height: 450 },
-      desktop: { width: 800, height: 600 }
+      desktop: { width: 800, height: 600 },
     }}
-    objectFit="cover"
-    sizes="(max-width: 768px) 400px, (max-width: 1024px) 600px, 800px"
+    objectFit='cover'
+    sizes='(max-width: 768px) 400px, (max-width: 1024px) 600px, 800px'
   />
 );

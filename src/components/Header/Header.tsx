@@ -59,7 +59,7 @@ const Header = ({ headerData }: HeaderProps) => {
         <Link href='/#home' className='flex items-center gap-2'>
           <UnifiedImage
             src='/images/logos/logo-white.png'
-            alt='07:17 Records Logo'
+            alt='Taupiri Sound Logo'
             mode='sized'
             width={200}
             height={125}

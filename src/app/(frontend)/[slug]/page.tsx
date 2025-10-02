@@ -11,7 +11,7 @@ import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '
 import {
   generateArticleSchema,
   getOrganizationDataFromSiteSettings,
-  generateStructuredDataScript
+  generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
 import { urlFor } from '@/sanity/lib/image';
@@ -19,21 +19,18 @@ import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [siteSettings, page] = await Promise.all([
-    getSiteSettings(),
-    getPageBySlug(slug),
-  ]);
+  const [siteSettings, page] = await Promise.all([getSiteSettings(), getPageBySlug(slug)]);
 
   if (!siteSettings) {
     return {
-      title: 'Page | 07:17 Records',
+      title: 'Page | Taupiri Sound',
       description: 'Discover more about our content',
     };
   }
 
   if (!page) {
     return {
-      title: 'Page Not Found | 07:17 Records',
+      title: 'Page Not Found | Taupiri Sound',
       description: 'The page you are looking for could not be found.',
     };
   }
@@ -78,7 +75,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       datePublished: page._createdAt,
       dateModified: page._updatedAt,
       author: {
-        name: siteSettings.siteTitle || '07:17 Records',
+        name: siteSettings.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
       publisher: organizationData,

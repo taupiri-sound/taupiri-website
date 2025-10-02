@@ -17,7 +17,7 @@ export async function generateMetadata() {
 
   if (!siteSettings) {
     return {
-      title: 'Terms & Conditions | 07:17 Records',
+      title: 'Terms & Conditions | Taupiri Sound',
       description: 'Terms and conditions for using our website and services',
     };
   }
@@ -64,7 +64,7 @@ const TermsAndConditionsPage = async () => {
       datePublished: termsData._updatedAt,
       dateModified: termsData._updatedAt,
       author: {
-        name: siteSettings.siteTitle || '07:17 Records',
+        name: siteSettings.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
       publisher: organizationData,
@@ -96,9 +96,7 @@ const TermsAndConditionsPage = async () => {
       <Container textAlign='left'>
         {/* Page Content */}
         {termsData.topText && (
-          <p className="text-body-sm text-brand-secondary font-bold mb-8">
-            {termsData.topText}
-          </p>
+          <p className='text-body-sm text-brand-secondary font-bold mb-8'>{termsData.topText}</p>
         )}
         {termsData.content && (
           <PageBuilder

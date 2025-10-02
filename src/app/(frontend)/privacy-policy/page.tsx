@@ -17,7 +17,7 @@ export async function generateMetadata() {
 
   if (!siteSettings) {
     return {
-      title: 'Privacy Policy | 07:17 Records',
+      title: 'Privacy Policy | Taupiri Sound',
       description: 'Privacy policy for our website and how we handle your data',
     };
   }
@@ -64,7 +64,7 @@ const PrivacyPolicyPage = async () => {
       datePublished: privacyData._updatedAt,
       dateModified: privacyData._updatedAt,
       author: {
-        name: siteSettings.siteTitle || '07:17 Records',
+        name: siteSettings.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
       publisher: organizationData,
@@ -96,9 +96,7 @@ const PrivacyPolicyPage = async () => {
       <Container textAlign='left'>
         {/* Page Content */}
         {privacyData.topText && (
-          <p className="text-body-sm text-brand-secondary font-bold mb-8">
-            {privacyData.topText}
-          </p>
+          <p className='text-body-sm text-brand-secondary font-bold mb-8'>{privacyData.topText}</p>
         )}
         {privacyData.content && (
           <PageBuilder

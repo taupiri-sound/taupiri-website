@@ -42,7 +42,8 @@ export const homePageType = defineType({
       name: 'heroBackgroundImages',
       type: 'array',
       title: 'Background Images',
-      description: 'Add one or more background images that will cycle in the hero section. Images can be reordered by dragging.',
+      description:
+        'Add one or more background images that will cycle in the hero section. Images can be reordered by dragging.',
       options: {
         sortable: true,
       },
@@ -57,7 +58,8 @@ export const homePageType = defineType({
               name: 'alt',
               type: 'string',
               title: 'Alternative text',
-              description: 'Helps explain what the image is for SEO and screen readers. Highly recommended to provide something that describes the image; if not provided, the system will try to come up with something.',
+              description:
+                'Helps explain what the image is for SEO and screen readers. Highly recommended to provide something that describes the image; if not provided, the system will try to come up with something.',
             }),
           ],
         },
@@ -77,21 +79,20 @@ export const homePageType = defineType({
       name: 'heroImageTransitionDuration',
       type: 'number',
       title: 'Image Transition Duration (seconds)',
-      description: 'How long each background image displays before transitioning to the next (only applies when multiple images are added). Minimum: 2 seconds, Maximum: 30 seconds.',
+      description:
+        'How long each background image displays before transitioning to the next (only applies when multiple images are added). Minimum: 2 seconds, Maximum: 30 seconds.',
       group: 'hero',
       initialValue: 4,
       hidden: ({ document }) => document?.heroStyle !== 'background-images',
       validation: (Rule) =>
-        Rule.min(2)
-          .max(30)
-          .required()
-          .error('Duration must be between 2 and 30 seconds'),
+        Rule.min(2).max(30).required().error('Duration must be between 2 and 30 seconds'),
     }),
     defineField({
       name: 'heroTextColor',
       type: 'string',
       title: 'Text Color',
-      description: '⚠️ IMPORTANT: When using Background Images style, carefully consider the chosen text color against ALL selected background images to ensure text remains readable across all images in the carousel.',
+      description:
+        '⚠️ IMPORTANT: When using Background Images style, carefully consider the chosen text color against ALL selected background images to ensure text remains readable across all images in the carousel.',
       group: 'hero',
       options: {
         list: [
@@ -129,7 +130,7 @@ export const homePageType = defineType({
       name: 'showHeroLogo',
       type: 'boolean',
       title: 'Show Logo',
-      description: 'Display the 07:17 Records logo above the hero content',
+      description: 'Display the Taupiri Sound logo above the hero content',
       group: 'hero',
       initialValue: true,
     }),
@@ -144,20 +145,23 @@ export const homePageType = defineType({
       name: 'heroSubtitle',
       type: 'blockContent',
       title: 'Hero Subtitle',
-      description: 'Rich text subtitle for the hero section (formatting, links, and styling allowed)',
+      description:
+        'Rich text subtitle for the hero section (formatting, links, and styling allowed)',
       group: 'hero',
     }),
     createCTAListField({
       name: 'heroCallToActionList',
       title: 'Call to Action Buttons',
-      description: 'Add one or multiple call-to-action buttons to the hero section. Leave empty if no CTAs are needed.',
+      description:
+        'Add one or multiple call-to-action buttons to the hero section. Leave empty if no CTAs are needed.',
       group: 'hero',
     }),
     defineField({
       name: 'hideScrollIndicator',
       type: 'boolean',
       title: 'Hide Scroll Indicator',
-      description: 'Turn this switch ON to hide the scroll indicator arrow. By default (OFF), the scroll indicator is visible to guide users to scroll down.',
+      description:
+        'Turn this switch ON to hide the scroll indicator arrow. By default (OFF), the scroll indicator is visible to guide users to scroll down.',
       group: 'hero',
       initialValue: false,
     }),

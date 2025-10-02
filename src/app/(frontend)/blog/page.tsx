@@ -10,14 +10,11 @@ import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '
 import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 
 export async function generateMetadata() {
-  const [siteSettings, blogIndexPage] = await Promise.all([
-    getSiteSettings(),
-    getBlogIndexPage(),
-  ]);
+  const [siteSettings, blogIndexPage] = await Promise.all([getSiteSettings(), getBlogIndexPage()]);
 
   if (!siteSettings) {
     return {
-      title: 'Blog | 07:17 Records',
+      title: 'Blog | Taupiri Sound',
       description: 'Read our latest articles and insights',
     };
   }

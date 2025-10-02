@@ -81,7 +81,7 @@ const Footer = ({
           <Link href='/#home' className='footer-logo'>
             <UnifiedImage
               src='/images/logo-text-white.png'
-              alt='07:17 Records Logo'
+              alt='Taupiri Sound Logo'
               mode='sized'
               width={400}
               height={190}

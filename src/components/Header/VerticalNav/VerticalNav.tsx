@@ -69,7 +69,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
             <div className='relative w-[160px] h-[60px]'>
               <UnifiedImage
                 src='/images/logos/logo-white.png'
-                alt='07:17 Records Logo'
+                alt='Taupiri Sound Logo'
                 mode='fill'
                 sizeContext='logo'
                 objectFit='contain'

@@ -34,7 +34,7 @@ const HeroLogo = ({
       {...createSanityDataAttribute(documentId, documentType, 'showHeroLogo')}>
       <UnifiedImage
         src={logoSrc}
-        alt='07:17 Records Logo'
+        alt='Taupiri Sound Logo'
         mode='sized'
         width={500}
         height={500}

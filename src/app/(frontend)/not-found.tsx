@@ -7,7 +7,7 @@ import NotFoundGraphic from '@/components/UI/Graphics/NotFoundGraphic';
 import CTA from '@/components/UI/CTA';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found - 07:17 Records',
+  title: 'Page Not Found - Taupiri Sound',
   description:
     'Sorry, the page you are looking for could not be found. Explore ....[COMPLETE THIS]..... at Taupiri Sound.',
   robots: 'noindex, nofollow', // Don't index 404 pages
@@ -42,7 +42,7 @@ export default function NotFound() {
             <h2 className='text-h3 md:text-h2 mb-4'>Oops! We can&apos;t find that page</h2>
             <p className='text-body-lg md:text-body-xl text-gray-600 leading-relaxed mb-6'>
               The page you&apos;re looking for doesn&apos;t exist or may have been moved. Don&apos;t
-              worry though - there&apos;s plenty to explore at 07:17 Records!
+              worry though - there&apos;s plenty to explore at Taupiri Sound!
             </p>
           </div>
 

@@ -47,14 +47,14 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
   if (!siteSettings) {
     return {
-      title: 'Blog Post | 07:17 Records',
+      title: 'Blog Post | Taupiri Sound',
       description: 'Read our latest article',
     };
   }
 
   if (!post) {
     return {
-      title: 'Blog Post Not Found | 07:17 Records',
+      title: 'Blog Post Not Found | Taupiri Sound',
       description: 'The blog post you are looking for could not be found.',
     };
   }
@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       datePublished: publishDate,
       dateModified: modifiedDate,
       author: {
-        name: post.author || siteSettings.siteTitle || '07:17 Records',
+        name: post.author || siteSettings.siteTitle || 'Taupiri Sound',
         type: 'Person',
       },
       publisher: organizationData,
