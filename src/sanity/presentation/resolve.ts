@@ -2,8 +2,7 @@ import { defineLocations, PresentationPluginOptions } from 'sanity/presentation'
 
 export const resolve: PresentationPluginOptions['resolve'] = {
   locations: {
-    // Add more locations for other post types
-    post: defineLocations({
+    blogPost: defineLocations({
       select: {
         title: 'title',
         slug: 'slug.current',
@@ -12,9 +11,9 @@ export const resolve: PresentationPluginOptions['resolve'] = {
         locations: [
           {
             title: doc?.title || 'Untitled',
-            href: `/posts/${doc?.slug}`,
+            href: `/blog/${doc?.slug}`,
           },
-          { title: 'Posts index', href: `/posts` },
+          { title: 'Blog index', href: `/blog` },
         ],
       }),
     }),
@@ -28,6 +27,19 @@ export const resolve: PresentationPluginOptions['resolve'] = {
           {
             title: doc?.title || 'Untitled',
             href: `/${doc?.slug}`,
+          },
+        ],
+      }),
+    }),
+    homePage: defineLocations({
+      select: {
+        title: 'title',
+      },
+      resolve: () => ({
+        locations: [
+          {
+            title: 'Home',
+            href: `/`,
           },
         ],
       }),

@@ -1,5 +1,5 @@
 import React from 'react';
-import { stegaClean } from '@sanity/client/stega';
+import { stegaClean } from 'next-sanity';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
 import Heading from '../Typography/Heading/Heading';

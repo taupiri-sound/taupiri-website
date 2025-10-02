@@ -9,7 +9,7 @@ import ScrollIndicator from './ScrollIndicator';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { urlFor } from '@/sanity/lib/image';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
-import { stegaClean } from '@sanity/client/stega';
+import { stegaClean } from 'next-sanity';
 import { homeHeroBottomSpacing } from '@/utils/spacingConstants';
 
 interface HeroProps {

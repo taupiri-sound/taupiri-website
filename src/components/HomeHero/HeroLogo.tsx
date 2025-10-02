@@ -1,6 +1,6 @@
 import React from 'react';
 import UnifiedImage from '@/components/UI/UnifiedImage';
-import { stegaClean } from '@sanity/client/stega';
+import { stegaClean } from 'next-sanity';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
 

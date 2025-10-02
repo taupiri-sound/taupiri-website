@@ -7,6 +7,7 @@ import Footer from '@/components/Footer/Footer';
 import DisableDraftMode from '@/components/DisableDraftMode';
 import NavigationScroll from '@/components/NavigationScroll';
 import PageReadyTrigger from '@/components/PageReadyTrigger';
+import { VisualEditingProvider } from '@/components/VisualEditingProvider';
 import { getHeader, getFooter, getSiteSettings, getCompanyLinks, getLegalPagesVisibility } from '@/actions';
 import { SiteDataProvider } from '@/contexts/SiteDataContext';
 import { PageLoadProvider } from '@/contexts/PageLoadContext';
@@ -92,6 +93,7 @@ const FrontendLayout = async ({
             legalPagesVisibilityData={legalPagesVisibilityData}
           />
           <SanityLive />
+          <VisualEditingProvider />
           {(await draftMode()).isEnabled && <DisableDraftMode />}
         </div>
       </SiteDataProvider>
