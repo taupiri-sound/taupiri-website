@@ -59,7 +59,7 @@ export default defineConfig({
     actions: protectedDocumentActions,
     // Document actions temporarily removed to fix build
     // actions: (prev, { schemaType }) => {
-    //   const pageTypes = ['page', 'homePage', 'collab'];
+    //   const pageTypes = ['page', 'homePage'];
     //   if (pageTypes.includes(schemaType)) {
     //     return [...prev, UpdateAnchorReferencesAction, DebugAnchorReferencesAction];
     //   }

@@ -9,7 +9,7 @@ export const UpdateAnchorReferencesAction: DocumentActionComponent = (props) => 
   const client = useClient()
 
   // Only show this action for documents that contain sections
-  const validTypes = ['page', 'homePage', 'collab']
+  const validTypes = ['page', 'homePage']
   if (!validTypes.includes(type)) {
     return null
   }

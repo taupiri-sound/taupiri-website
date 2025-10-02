@@ -9,12 +9,12 @@ import CTA from '@/components/UI/CTA';
 export const metadata: Metadata = {
   title: 'Page Not Found - 07:17 Records',
   description:
-    'Sorry, the page you are looking for could not be found. Explore our music releases, blog posts, and artist collaborations at 07:17 Records.',
+    'Sorry, the page you are looking for could not be found. Explore ....[COMPLETE THIS]..... at Taupiri Sound.',
   robots: 'noindex, nofollow', // Don't index 404 pages
   openGraph: {
-    title: 'Page Not Found - 07:17 Records',
+    title: 'Page Not Found - Taupiri Sound',
     description:
-      'Sorry, the page you are looking for could not be found. Explore our music releases, blog posts, and artist collaborations.',
+      'Sorry, the page you are looking for could not be found. Explore ....[COMPLETE THIS]..... at Taupiri Sound.',
     type: 'website',
   },
 };
@@ -73,17 +73,6 @@ export default function NotFound() {
                 </div>
                 <div className='text-body-sm text-gray-600'>
                   Read our latest news, stories, and insights
-                </div>
-              </Link>
-
-              <Link
-                href='/#collaborations'
-                className='group bg-white border border-gray-200 rounded-lg p-4 hover:border-brand-primary hover:shadow-md transition-all duration-200'>
-                <div className='text-body-base font-medium text-gray-800 group-hover:text-brand-secondary mb-2'>
-                  🤝 Collaborations
-                </div>
-                <div className='text-body-sm text-gray-600'>
-                  Explore our partnerships and projects
                 </div>
               </Link>
             </div>

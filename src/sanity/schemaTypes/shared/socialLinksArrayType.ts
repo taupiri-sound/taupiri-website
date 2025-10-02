@@ -329,29 +329,3 @@ export const companyLinksArrayType = defineType({
   },
 });
 
-// Collaboration Links Array Type (includes officialWebsite, excludes footer option)
-export const collabLinksArrayType = defineType({
-  name: 'collabLinksArray',
-  title: 'Social Media & Links',
-  type: 'object',
-  icon: LinkIcon,
-  description: 'Manage social media and website links with automatic platform detection',
-  fields: [
-    createSocialLinksArrayField(true, false), // includeOfficialWebsite=true, hideFooterOption=false
-  ],
-  preview: {
-    select: {
-      socialLinksArray: 'socialLinksArray',
-    },
-    prepare({ socialLinksArray }) {
-      const count = Array.isArray(socialLinksArray) ? socialLinksArray.length : 0;
-      const linkText = count === 1 ? 'link' : 'links';
-
-      return {
-        title: 'Social Media & Links',
-        subtitle: `${count} ${linkText} configured`,
-        media: LinkIcon,
-      };
-    },
-  },
-});

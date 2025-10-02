@@ -13,7 +13,6 @@ const internalLinkProjection = `{
     _type == "favouritesIndexPage" => "/favourites",
     _type == "blogIndexPage" => "/blog",
     _type == "blogPost" => "/blog/" + slug.current,
-    _type == "collab" => "/collabs/" + slug.current,
     _type == "termsAndConditions" => "/terms-and-conditions",
     _type == "privacyPolicy" => "/privacy-policy",
     "/" + slug.current
@@ -358,78 +357,6 @@ const sideContentProjection = `sideContent[]{
     _type == "embeddedCtaEmailButton" => {...}
   }
 }`;
-
-// Collab page section projection for main content
-const collabContentProjection = `mainContent[]{
-  _type,
-  _key,
-  title,
-  anchorId,
-  ${recursiveContent}
-}`;
-
-export const COLLAB_QUERY = defineQuery(`*[_type == "collab" && slug.current == $slug][0]{
-  _id,
-  _type,
-  name,
-  slug,
-  category,
-  location,
-  heroImage{
-    asset,
-    alt,
-    hotspot,
-    crop
-  },
-  previewImage{
-    asset,
-    alt,
-    hotspot,
-    crop
-  },
-  shortDescription,
-  bio,
-  ${collabContentProjection},
-  ${sideContentProjection},
-  links{
-    _type,
-    socialLinksArray[]{
-      _key,
-      platform,
-      url,
-      customTitle
-    }
-  }
-}`);
-
-export const COLLABS_SLUGS_QUERY = defineQuery(`*[_type == "collab" && defined(slug.current)]{ 
-  "slug": slug.current
-}`);
-
-export const COLLABS_ALL_QUERY = defineQuery(`*[_type == "collab" && defined(slug.current)]|order(order asc, name asc){
-  _id,
-  name,
-  slug,
-  category,
-  location,
-  order,
-  previewImage{
-    asset,
-    alt,
-    hotspot,
-    crop
-  },
-  shortDescription,
-  useShortDescriptionForCards,
-  cardDescription
-}`);
-
-export const COLLABS_SITEMAP_QUERY = defineQuery(`*[_type == "collab" && defined(slug.current)]{
-  _id,
-  _updatedAt,
-  name,
-  slug
-}`);
 
 export const FAVOURITES_ALL_QUERY = defineQuery(`*[_type == "favourites"]|order(order asc, name asc){
   _id,

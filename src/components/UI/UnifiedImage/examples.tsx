@@ -12,11 +12,6 @@ interface BlogPost {
   title: string;
 }
 
-interface CollabData {
-  previewImage?: SanityImageSource;
-  name: string;
-}
-
 interface HeaderData {
   _id?: string;
   logo?: SanityImageSource;
@@ -64,28 +59,7 @@ export const HeaderLogoExample = ({ headerData }: { headerData: HeaderData }) =>
 );
 
 /**
- * 3. Collaboration Profile Image (replaces CollabCard pattern)
- * - Previously: urlFor(previewImage.asset).width(400).height(400).quality(90).url()
- * - Now: Automatic sizing with proper DPI handling
- */
-export const CollabProfileImageExample = ({ collab }: { collab: CollabData }) => (
-  <div className="relative w-[75%] max-w-[300px] aspect-square rounded-full overflow-hidden">
-    <UnifiedImage
-      src={collab.previewImage}
-      alt={`${collab.name} profile image`}
-      mode="fill"
-      sizeContext="card"
-      objectFit="cover"
-      quality={90}
-      sizes="128px"
-      generateSchema
-      schemaContext="profile"
-    />
-  </div>
-);
-
-/**
- * 4. Image Gallery (replaces ImageGallery pattern)
+ * 3. Image Gallery (replaces ImageGallery pattern)
  * - Previously: urlFor(item.image).url() with fill and manual sizing
  * - Now: Automatic gallery optimization with modal support
  */
@@ -114,7 +88,7 @@ export const ImageGalleryItemExample = ({
 );
 
 /**
- * 5. Page Hero Background (replaces PageHero pattern)
+ * 4. Page Hero Background (replaces PageHero pattern)
  * - Previously: urlFor(heroImage).url() with fill and object-cover
  * - Now: Automatic hero optimization
  */
@@ -132,7 +106,7 @@ export const PageHeroImageExample = ({ heroImage }: { heroImage: SanityImageSour
 );
 
 /**
- * 6. Icon in Lists (replaces ItemList/Icon patterns)
+ * 5. Icon in Lists (replaces ItemList/Icon patterns)
  * - Previously: urlFor(item.icon).width(72).height(72).url()
  * - Now: Automatic icon optimization with proper DPI
  */
@@ -150,7 +124,7 @@ export const IconImageExample = ({ icon }: { icon: SanityImageSource }) => (
 );
 
 /**
- * 7. Featured Items with Dynamic Aspect Ratio (replaces FeaturedItems pattern)
+ * 6. Featured Items with Dynamic Aspect Ratio (replaces FeaturedItems pattern)
  * - Previously: urlFor(image).width(2000).url() with manual aspect ratio calculation
  * - Now: Automatic optimization with aspect ratio preservation
  */
@@ -178,7 +152,7 @@ export const FeaturedItemExample = ({
 );
 
 /**
- * 8. Blog Post Main Image (replaces blog post page pattern)
+ * 7. Blog Post Main Image (replaces blog post page pattern)
  * - Previously: urlFor(post.mainImage).url() with fill and specific sizing
  * - Now: Automatic optimization with schema generation
  */
@@ -199,7 +173,7 @@ export const BlogPostMainImageExample = ({ post }: { post: BlogPost }) => (
 );
 
 /**
- * 9. Content Block Image with Modal (replaces blocks/Image pattern)
+ * 8. Content Block Image with Modal (replaces blocks/Image pattern)
  * - Previously: urlFor(image).url() with width/height and modal support
  * - Now: Automatic optimization with built-in modal
  */
@@ -235,7 +209,7 @@ export const ContentBlockImageExample = ({
 );
 
 /**
- * 10. Responsive Image with Custom Breakpoints
+ * 9. Responsive Image with Custom Breakpoints
  * - For complex responsive scenarios
  */
 export const ResponsiveImageExample = ({ image }: { image: SanityImageSource }) => (

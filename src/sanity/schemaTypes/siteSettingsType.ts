@@ -50,7 +50,7 @@ export const siteSettingsType = defineType({
       type: 'image',
       title: 'Default OG Image',
       description:
-        'The default Open Graph image used for social media sharing. This will be displayed when your website is shared on social platforms like Facebook, Twitter, etc. Recommended size: 1200 × 630 px. This image will be used for the home page and most other pages, except when there is a page-specific image available (e.g., a blog post or collaboration).',
+        'The default Open Graph image used for social media sharing. This will be displayed when your website is shared on social platforms like Facebook, Twitter, etc. Recommended size: 1200 × 630 px. This image will be used for the home page and most other pages, except when there is a page-specific image available (e.g., a blog post).',
       options: {
         hotspot: true,
       },
