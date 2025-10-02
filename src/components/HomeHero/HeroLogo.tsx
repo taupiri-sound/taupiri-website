@@ -25,8 +25,8 @@ const HeroLogo = ({
   const logoSize = 'w-32 min-w-24 max-w-48 sm:w-40 md:w-48 lg:w-56 xl:w-64';
   const logoSrc =
     stegaClean(heroTextColor) === 'white'
-      ? '/images/logo-white-on-transparent.png'
-      : '/images/logo-black-on-transparent.png';
+      ? '/images/logos/logo-white.png'
+      : '/images/logos/logo-black.png';
 
   return (
     <div
