@@ -15,7 +15,7 @@ export const siteSettingsType = defineType({
       name: 'siteTitle',
       type: 'string',
       title: 'Site Title',
-      description: 'The main title/brand name of your website (e.g., "Taupiriri Sound")',
+      description: 'The main title/brand name of your website (e.g., "Taupiri Sound")',
       initialValue: 'Taupiriri Sound',
       validation: (Rule) => Rule.required(),
     }),

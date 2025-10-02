@@ -10,7 +10,6 @@ const internalLinkProjection = `{
   "pageType": _type,
   "href": select(
     _type == "homePage" => "/",
-    _type == "favouritesIndexPage" => "/favourites",
     _type == "blogIndexPage" => "/blog",
     _type == "blogPost" => "/blog/" + slug.current,
     _type == "termsAndConditions" => "/terms-and-conditions",
@@ -124,24 +123,6 @@ const contentProjection = `
       },
       hasOverrideDate,
       overrideDate
-    }
-  },
-  _type == "favouriteBlock" => {
-    ...,
-    favourites[]->{
-      _id,
-      name,
-      category,
-      order,
-      profileImage{
-        asset,
-        alt,
-        hotspot,
-        crop
-      },
-      description,
-      link,
-      linkLabel
     }
   }
 `;
@@ -357,45 +338,6 @@ const sideContentProjection = `sideContent[]{
     _type == "embeddedCtaEmailButton" => {...}
   }
 }`;
-
-export const FAVOURITES_ALL_QUERY = defineQuery(`*[_type == "favourites"]|order(order asc, name asc){
-  _id,
-  name,
-  category,
-  order,
-  profileImage{
-    asset,
-    alt,
-    hotspot,
-    crop
-  },
-  description,
-  link,
-  linkLabel
-}`);
-
-export const FAVOURITES_INDEX_PAGE_QUERY = defineQuery(`*[_id == "favouritesIndexPage"][0]{
-  _id,
-  _type,
-  title,
-  backgroundImage{
-    asset,
-    alt,
-    hotspot,
-    crop
-  },
-  subtitle,
-  showFavouritesMessage,
-  favouritesMessage{
-    ...,
-    ctaList[]{
-      _type,
-      _key,
-      _type == "embeddedCtaButton" => {${fullLinkProjection}},
-      _type == "embeddedCtaEmailButton" => {...}
-    }
-  }
-}`);
 
 export const FOOTER_QUERY = defineQuery(`*[_type == "footer" && _id == "footer"][0]{
   _id,
