@@ -6446,10 +6446,24 @@
         },
         "optional": true
       },
-      "showHeroLogo": {
+      "heroLogoDisplay": {
         "type": "objectAttribute",
         "value": {
-          "type": "boolean"
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "none"
+            },
+            {
+              "type": "string",
+              "value": "with-text"
+            },
+            {
+              "type": "string",
+              "value": "logo-only"
+            }
+          ]
         },
         "optional": true
       },

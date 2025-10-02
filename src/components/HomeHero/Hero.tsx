@@ -15,7 +15,7 @@ import { homeHeroBottomSpacing } from '@/utils/spacingConstants';
 interface HeroProps {
   heroStyle: NonNullable<HOME_PAGE_QUERYResult>['heroStyle'];
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
-  showHeroLogo: NonNullable<HOME_PAGE_QUERYResult>['showHeroLogo'];
+  heroLogoDisplay: NonNullable<HOME_PAGE_QUERYResult>['heroLogoDisplay'];
   heroBackgroundImages: NonNullable<HOME_PAGE_QUERYResult>['heroBackgroundImages'];
   heroImageTransitionDuration: NonNullable<HOME_PAGE_QUERYResult>['heroImageTransitionDuration'];
   heroTitle: NonNullable<HOME_PAGE_QUERYResult>['heroTitle'];
@@ -30,7 +30,7 @@ interface HeroProps {
 const Hero = ({
   heroStyle,
   heroTextColor,
-  showHeroLogo,
+  heroLogoDisplay,
   heroBackgroundImages,
   heroImageTransitionDuration,
   heroTitle,
@@ -118,7 +118,7 @@ const Hero = ({
       <div className='flex-1 flex flex-col relative z-[25] min-h-0'>
         <RegularHeroLayout
           heroTextColor={heroTextColor}
-          showHeroLogo={showHeroLogo}
+          heroLogoDisplay={heroLogoDisplay}
           heroTitle={heroTitle}
           heroSubtitle={heroSubtitle}
           heroCallToActionList={heroCallToActionList}

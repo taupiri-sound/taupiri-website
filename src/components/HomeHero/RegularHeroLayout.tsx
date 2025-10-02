@@ -10,7 +10,7 @@ import { getTextColorClasses } from './heroUtils';
 
 interface RegularHeroLayoutProps {
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
-  showHeroLogo: NonNullable<HOME_PAGE_QUERYResult>['showHeroLogo'];
+  heroLogoDisplay: NonNullable<HOME_PAGE_QUERYResult>['heroLogoDisplay'];
   heroTitle: NonNullable<HOME_PAGE_QUERYResult>['heroTitle'];
   heroSubtitle: NonNullable<HOME_PAGE_QUERYResult>['heroSubtitle'];
   heroCallToActionList: NonNullable<HOME_PAGE_QUERYResult>['heroCallToActionList'];
@@ -27,7 +27,7 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
     heroTextColor,
     heroTitle,
     heroSubtitle,
-    showHeroLogo,
+    heroLogoDisplay,
     heroCallToActionList,
     documentId,
     documentType,
@@ -85,7 +85,7 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
   const componentProps = {
     heroTitle,
     heroTextColor,
-    showHeroLogo,
+    heroLogoDisplay,
     heroCallToActionList,
     documentId,
     documentType,

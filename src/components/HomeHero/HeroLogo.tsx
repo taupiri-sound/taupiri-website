@@ -5,7 +5,7 @@ import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
 
 interface HeroLogoProps {
-  showHeroLogo: NonNullable<HOME_PAGE_QUERYResult>['showHeroLogo'];
+  heroLogoDisplay: NonNullable<HOME_PAGE_QUERYResult>['heroLogoDisplay'];
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
   documentId: string;
   documentType: string;
@@ -13,25 +13,42 @@ interface HeroLogoProps {
 }
 
 const HeroLogo = ({
-  showHeroLogo,
+  heroLogoDisplay,
   heroTextColor,
   documentId,
   documentType,
   showLogoBackColor = false,
 }: HeroLogoProps) => {
-  if (showHeroLogo === false) return null;
+  const cleanLogoDisplay = stegaClean(heroLogoDisplay) || 'with-text';
+
+  // Don't render anything if 'none' is selected
+  if (cleanLogoDisplay === 'none') return null;
 
   // Enhanced responsive logo sizing with better mobile scaling
   const logoSize = 'w-32 min-w-24 max-w-48 sm:w-40 md:w-48 lg:w-56 xl:w-64';
-  const logoSrc =
-    stegaClean(heroTextColor) === 'white'
+
+  // Determine logo source based on logo display type and text color
+  const getLogoSrc = () => {
+    const textColor = stegaClean(heroTextColor);
+
+    if (cleanLogoDisplay === 'logo-only') {
+      // Logo only version - currently same file for both colors
+      // Future: Could be '/images/logos/logo-only-white.png' or '/images/logos/logo-only-black.png'
+      return '/images/logos/logo-only.png';
+    }
+
+    // Logo with text version
+    return textColor === 'white'
       ? '/images/logos/logo-white.png'
       : '/images/logos/logo-black.png';
+  };
+
+  const logoSrc = getLogoSrc();
 
   return (
     <div
       className='flex justify-center items-center relative'
-      {...createSanityDataAttribute(documentId, documentType, 'showHeroLogo')}>
+      {...createSanityDataAttribute(documentId, documentType, 'heroLogoDisplay')}>
       <UnifiedImage
         src={logoSrc}
         alt='Taupiri Sound Logo'

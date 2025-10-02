@@ -7,13 +7,11 @@
  * https://github.com/sanity-io/next-sanity
  */
 
+'use client';
+
 import React from 'react';
 import { NextStudio } from 'next-sanity/studio';
 import config from '../../../../sanity.config';
-
-export const dynamic = 'force-dynamic';
-
-export { metadata, viewport } from 'next-sanity/studio';
 
 const StudioPage = () => {
   return <NextStudio config={config} />;

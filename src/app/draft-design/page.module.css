@@ -1,12 +1,9 @@
 /* Color Variables */
-:root {
+.page {
   --primary: #430C08;
   --dark-brown: #0A0000;
   --main-red: #900000;
   --bone-white: #FFFBE8;
-}
-
-.page {
   background-color: var(--bone-white);
   color: var(--primary);
 }

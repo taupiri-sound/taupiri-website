@@ -1,14 +1,11 @@
 /* Import shared styles */
-:root {
+.page {
   --primary: #430c08;
   --dark-brown: #0a0000;
   --text-red: #71221d;
   --main-red: #900000;
   --bone-white: #fffbe8;
   --bone-white-dark: #fcf3d7;
-}
-
-.page {
   background-color: var(--bone-white);
   color: var(--primary);
 }

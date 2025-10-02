@@ -39,7 +39,7 @@ const Page = async () => {
       <Hero
         heroStyle={page.heroStyle}
         heroTextColor={page.heroTextColor}
-        showHeroLogo={page.showHeroLogo}
+        heroLogoDisplay={page.heroLogoDisplay}
         heroBackgroundImages={page.heroBackgroundImages}
         heroImageTransitionDuration={page.heroImageTransitionDuration}
         heroTitle={page.heroTitle}
