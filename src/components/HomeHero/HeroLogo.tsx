@@ -7,7 +7,6 @@ import { createSanityDataAttribute } from '../../utils/sectionHelpers';
 interface HeroLogoProps {
   showHeroLogo: NonNullable<HOME_PAGE_QUERYResult>['showHeroLogo'];
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
-  enableFeaturedItems: NonNullable<HOME_PAGE_QUERYResult>['enableFeaturedItems'];
   documentId: string;
   documentType: string;
   showLogoBackColor?: boolean;
@@ -16,7 +15,6 @@ interface HeroLogoProps {
 const HeroLogo = ({
   showHeroLogo,
   heroTextColor,
-  enableFeaturedItems,
   documentId,
   documentType,
   showLogoBackColor = false,
@@ -24,9 +22,7 @@ const HeroLogo = ({
   if (showHeroLogo === false) return null;
 
   // Enhanced responsive logo sizing with better mobile scaling
-  const logoSize = enableFeaturedItems
-    ? 'w-16 sm:w-20 md:w-24 lg:w-28'
-    : 'w-32 min-w-24 max-w-48 sm:w-40 md:w-48 lg:w-56 xl:w-64';
+  const logoSize = 'w-32 min-w-24 max-w-48 sm:w-40 md:w-48 lg:w-56 xl:w-64';
   const logoSrc =
     stegaClean(heroTextColor) === 'white'
       ? '/images/logo-white-on-transparent.png'

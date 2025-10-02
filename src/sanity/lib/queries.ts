@@ -211,12 +211,6 @@ export const HOME_PAGE_QUERY = defineQuery(`*[_id == "homePage"][0]{
   heroStyle,
   heroTextColor,
   showHeroLogo,
-  enableFeaturedItems,
-  featuredImages[]{
-    asset,
-    alt,
-    ${fullLinkProjection}
-  },
   heroBackgroundImages[]{
     asset,
     alt,
@@ -232,7 +226,6 @@ export const HOME_PAGE_QUERY = defineQuery(`*[_id == "homePage"][0]{
       marks[]
     }
   },
-  heroFeaturedItemsSubtitle,
   heroCallToActionList[]{
     _type,
     _key,

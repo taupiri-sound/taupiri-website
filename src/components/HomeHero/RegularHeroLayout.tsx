@@ -15,7 +15,6 @@ interface RegularHeroLayoutProps {
   heroSubtitle: NonNullable<HOME_PAGE_QUERYResult>['heroSubtitle'];
   heroCallToActionList: NonNullable<HOME_PAGE_QUERYResult>['heroCallToActionList'];
   heroContentPosition: NonNullable<HOME_PAGE_QUERYResult>['heroContentPosition'];
-  enableFeaturedItems: NonNullable<HOME_PAGE_QUERYResult>['enableFeaturedItems'];
   documentId: string;
   documentType: string;
   showLogoBackColor?: boolean;
@@ -28,7 +27,6 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
     heroTextColor,
     heroTitle,
     heroSubtitle,
-    enableFeaturedItems,
     showHeroLogo,
     heroCallToActionList,
     documentId,
@@ -87,7 +85,6 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
   const componentProps = {
     heroTitle,
     heroTextColor,
-    enableFeaturedItems,
     showHeroLogo,
     heroCallToActionList,
     documentId,

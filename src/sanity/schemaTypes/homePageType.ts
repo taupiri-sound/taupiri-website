@@ -4,7 +4,6 @@
 
 import { HomeIcon } from '@sanity/icons';
 import { defineField, defineType } from 'sanity';
-import { createOptionalLinkFieldSet } from './shared/linkSystem';
 import { createCTAListField } from './shared/ctaListType';
 
 export const homePageType = defineType({
@@ -104,15 +103,6 @@ export const homePageType = defineType({
       initialValue: 'black',
     }),
     defineField({
-      name: 'enableFeaturedItems',
-      type: 'boolean',
-      title: 'Enable Featured Items',
-      description:
-        'Display featured images/posters in the hero section. Perfect for highlighting event posters, announcements, or promotional banners as the first thing visitors see.',
-      group: 'hero',
-      initialValue: false,
-    }),
-    defineField({
       name: 'heroContentPosition',
       type: 'string',
       title: 'Content Position',
@@ -134,7 +124,6 @@ export const homePageType = defineType({
         layout: 'dropdown',
       },
       initialValue: 'center-center',
-      hidden: ({ document }) => !!document?.enableFeaturedItems,
     }),
     defineField({
       name: 'showHeroLogo',
@@ -143,54 +132,6 @@ export const homePageType = defineType({
       description: 'Display the 07:17 Records logo above the hero content',
       group: 'hero',
       initialValue: true,
-    }),
-    defineField({
-      name: 'featuredImages',
-      type: 'array',
-      title: 'Featured Images',
-      description:
-        'Add promotional images, event posters, or banners to showcase in the hero. These images will be prominently displayed to grab visitor attention.',
-      group: 'hero',
-      of: [
-        {
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            defineField({
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative text',
-              description: 'Helps explain what the image is for SEO and screen readers. Highly recommended to provide something that describes the image; if not provided, the system will try to come up with something.',
-            }),
-            ...createOptionalLinkFieldSet({
-              linkTypeConfig: {
-                initialValue: 'none',
-                description: 'Make this image clickable by adding a link (optional)'
-              },
-              internalLinkConfig: {
-                description: 'Select a page to link to when the image is clicked',
-              },
-              externalUrlConfig: {
-                description: 'Enter external URL to link to when the image is clicked',
-              },
-              openInNewTabConfig: {
-                description: 'Open link in new tab (recommended for external links)',
-              },
-            }),
-          ],
-        },
-      ],
-      hidden: ({ document }) => !document?.enableFeaturedItems,
-      validation: (Rule) =>
-        Rule.custom((images, context) => {
-          const document = context.document;
-          if (document?.enableFeaturedItems && (!images || images.length === 0)) {
-            return 'Please add at least one featured image when featured items are enabled';
-          }
-          return true;
-        }),
     }),
     defineField({
       name: 'heroTitle',
@@ -205,15 +146,6 @@ export const homePageType = defineType({
       title: 'Hero Subtitle',
       description: 'Rich text subtitle for the hero section (formatting, links, and styling allowed)',
       group: 'hero',
-      hidden: ({ document }) => !!document?.enableFeaturedItems,
-    }),
-    defineField({
-      name: 'heroFeaturedItemsSubtitle',
-      type: 'text',
-      title: 'Hero Subtitle (for Featured Items)',
-      description: 'Plain text subtitle displayed below featured items when featured items are enabled',
-      group: 'hero',
-      hidden: ({ document }) => !document?.enableFeaturedItems,
     }),
     createCTAListField({
       name: 'heroCallToActionList',

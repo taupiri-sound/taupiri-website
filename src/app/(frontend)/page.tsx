@@ -44,12 +44,9 @@ const Page = async () => {
         heroImageTransitionDuration={page.heroImageTransitionDuration}
         heroTitle={page.heroTitle}
         heroSubtitle={page.heroSubtitle}
-        heroFeaturedItemsSubtitle={page.heroFeaturedItemsSubtitle}
         heroCallToActionList={page.heroCallToActionList}
         hideScrollIndicator={page.hideScrollIndicator}
         heroContentPosition={page.heroContentPosition}
-        enableFeaturedItems={page.enableFeaturedItems}
-        featuredImages={page.featuredImages}
         documentId={page._id}
         documentType={page._type}
       />

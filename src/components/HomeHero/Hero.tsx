@@ -5,7 +5,6 @@ import styles from './styles.module.css';
 import HeroImages from './HeroImages';
 import DefaultHeroBackground from './DefaultHeroBackground';
 import RegularHeroLayout from './RegularHeroLayout';
-import FeaturedItemsHeroLayout from './FeaturedItemsHeroLayout';
 import ScrollIndicator from './ScrollIndicator';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { urlFor } from '@/sanity/lib/image';
@@ -21,12 +20,9 @@ interface HeroProps {
   heroImageTransitionDuration: NonNullable<HOME_PAGE_QUERYResult>['heroImageTransitionDuration'];
   heroTitle: NonNullable<HOME_PAGE_QUERYResult>['heroTitle'];
   heroSubtitle: NonNullable<HOME_PAGE_QUERYResult>['heroSubtitle'];
-  heroFeaturedItemsSubtitle: NonNullable<HOME_PAGE_QUERYResult>['heroFeaturedItemsSubtitle'];
   heroCallToActionList: NonNullable<HOME_PAGE_QUERYResult>['heroCallToActionList'];
   hideScrollIndicator: NonNullable<HOME_PAGE_QUERYResult>['hideScrollIndicator'];
   heroContentPosition: NonNullable<HOME_PAGE_QUERYResult>['heroContentPosition'];
-  enableFeaturedItems: NonNullable<HOME_PAGE_QUERYResult>['enableFeaturedItems'];
-  featuredImages: NonNullable<HOME_PAGE_QUERYResult>['featuredImages'];
   documentId: string;
   documentType: string;
 }
@@ -39,12 +35,9 @@ const Hero = ({
   heroImageTransitionDuration,
   heroTitle,
   heroSubtitle,
-  heroFeaturedItemsSubtitle,
   heroCallToActionList,
   hideScrollIndicator,
   heroContentPosition,
-  enableFeaturedItems,
-  featuredImages,
   documentId,
   documentType,
 }: HeroProps) => {
@@ -123,39 +116,23 @@ const Hero = ({
 
       {/* Main content area - grows to fill available space */}
       <div className='flex-1 flex flex-col relative z-[25] min-h-0'>
-        {enableFeaturedItems ? (
-          <FeaturedItemsHeroLayout
-            heroTextColor={heroTextColor}
-            showHeroLogo={showHeroLogo}
-            heroTitle={heroTitle}
-            heroFeaturedItemsSubtitle={heroFeaturedItemsSubtitle}
-            heroCallToActionList={heroCallToActionList}
-            enableFeaturedItems={enableFeaturedItems}
-            featuredImages={featuredImages}
-            documentId={documentId}
-            documentType={documentType}
-            showLogoBackColor={currentHeroStyle === 'default'}
-          />
-        ) : (
-          <RegularHeroLayout
-            heroTextColor={heroTextColor}
-            showHeroLogo={showHeroLogo}
-            heroTitle={heroTitle}
-            heroSubtitle={heroSubtitle}
-            heroCallToActionList={heroCallToActionList}
-            heroContentPosition={heroContentPosition}
-            enableFeaturedItems={enableFeaturedItems}
-            documentId={documentId}
-            documentType={documentType}
-            showLogoBackColor={currentHeroStyle === 'default'}
-          />
-        )}
+        <RegularHeroLayout
+          heroTextColor={heroTextColor}
+          showHeroLogo={showHeroLogo}
+          heroTitle={heroTitle}
+          heroSubtitle={heroSubtitle}
+          heroCallToActionList={heroCallToActionList}
+          heroContentPosition={heroContentPosition}
+          documentId={documentId}
+          documentType={documentType}
+          showLogoBackColor={currentHeroStyle === 'default'}
+        />
       </div>
 
       {/* Bottom padding with scroll indicator - matches top */}
       <div className='flex-shrink-0 flex flex-col items-center justify-center h-16'>
         {!stegaClean(hideScrollIndicator) && (
-          <div className={`${enableFeaturedItems ? 'hidden sm:block' : 'block'}`}>
+          <div className='block'>
             <ScrollIndicator textColor={stegaClean(heroTextColor) || 'black'} />
           </div>
         )}
