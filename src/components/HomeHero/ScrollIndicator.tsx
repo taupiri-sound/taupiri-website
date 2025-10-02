@@ -1,11 +1,10 @@
 import React from 'react';
 
 interface ScrollIndicatorProps {
-  textColor: 'black' | 'white';
   className?: string;
 }
 
-const ScrollIndicator = ({ textColor, className = '' }: ScrollIndicatorProps) => {
+const ScrollIndicator = ({ className = '' }: ScrollIndicatorProps) => {
   const handleScrollDown = () => {
     // Scroll to the next section after the hero
     const heroElement = document.querySelector('[data-hero]') as HTMLElement;
@@ -20,65 +19,63 @@ const ScrollIndicator = ({ textColor, className = '' }: ScrollIndicatorProps) =>
     }
   };
 
-  const arrowColor = textColor === 'white' ? 'text-white' : 'text-black';
-  const hoverColor = textColor === 'white' ? 'hover:text-gray-200' : 'hover:text-gray-600';
-
   return (
     <button
       onClick={handleScrollDown}
       className={`
         group flex flex-col items-center justify-center
         transition-all duration-300 ease-in-out
-        ${arrowColor} ${hoverColor}
+        text-brand-primary hover:text-brand-white 
         cursor-pointer
         ${className}
       `}
       aria-label='Scroll down to content'>
-      {/* Animated arrow */}
-      <div className='relative z-40'>
+      {/* Stacked chevron arrows */}
+      <div className='relative z-40 flex flex-col -gap-2'>
+        {/* First chevron */}
         <svg
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
+          width='30'
+          height='20'
+          viewBox='0 0 30 20'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
           className='
-            w-6 h-6 sm:w-8 sm:h-8
+            w-8 h-4
             animate-bounce
-            transition-transform duration-300
-            group-hover:scale-110
+            transition-all duration-300
+            group-hover:translate-y-1
           '>
           <path
-            d='M7 10L12 15L17 10'
+            d='M2 2 L16 16 L30 2'
             stroke='currentColor'
-            strokeWidth='2'
+            strokeWidth='8'
             strokeLinecap='round'
             strokeLinejoin='round'
+            fill='none'
           />
         </svg>
 
-        {/* Double arrow effect for emphasis */}
+        {/* Second chevron */}
         <svg
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
+          width='30'
+          height='20'
+          viewBox='0 0 30 20'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
           className='
-            absolute top-0 left-0
-            w-6 h-6 sm:w-8 sm:h-8
+            w-8 h-4
             animate-bounce
-            opacity-50
-            transition-transform duration-300
-            group-hover:scale-110
+            transition-all duration-300
+            group-hover:translate-y-1
           '
           style={{ animationDelay: '0.1s' }}>
           <path
-            d='M7 8L12 13L17 8'
+            d='M2 2 L16 16 L30 2'
             stroke='currentColor'
-            strokeWidth='2'
+            strokeWidth='8'
             strokeLinecap='round'
             strokeLinejoin='round'
+            fill='none'
           />
         </svg>
       </div>

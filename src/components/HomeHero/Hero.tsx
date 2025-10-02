@@ -133,7 +133,7 @@ const Hero = ({
       <div className='flex-shrink-0 flex flex-col items-center justify-center h-16'>
         {!stegaClean(hideScrollIndicator) && (
           <div className='block'>
-            <ScrollIndicator textColor={stegaClean(heroTextColor) || 'black'} />
+            <ScrollIndicator />
           </div>
         )}
       </div>
