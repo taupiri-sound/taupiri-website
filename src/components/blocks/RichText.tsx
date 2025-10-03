@@ -20,15 +20,9 @@ const RichText = ({
   const cleanIsCallout = stegaClean(isCallout) || false;
 
   // Determine the effective text alignment
-  // For callouts, always center (overrides inherited alignment)
-  // For regular text, resolve alignment like CTAButton does
-  let effectiveTextAlign: TextAlignment;
-  if (cleanIsCallout) {
-    effectiveTextAlign = 'center';
-  } else {
-    const resolved = resolveAlignment(cleanTextAlign, inheritAlignment);
-    effectiveTextAlign = resolved || 'center';
-  }
+  // Resolve alignment for both callouts and regular text
+  const resolved = resolveAlignment(cleanTextAlign, inheritAlignment);
+  const effectiveTextAlign: TextAlignment = resolved || 'center';
   if (!content) {
     return null;
   }
@@ -48,7 +42,7 @@ const RichText = ({
   // If it's a callout, wrap in Card-style container
   if (cleanIsCallout) {
     return (
-      <div className='bg-card-gradient border border-gray-200 rounded-lg p-6 md:p-10 max-w-none text-text-subtle'>
+      <div className='bg-brand-white-dark rounded-tr-lg rounded-br-lg px-6 py-4 max-w-none border-l-4 border-brand-primary shadow-sm'>
         {proseContent}
       </div>
     );
