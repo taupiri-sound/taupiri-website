@@ -20,14 +20,17 @@ const HeroImages = ({ images, duration = 4000, onFirstImageLoaded }: HeroImagesP
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
 
   // Track when each image loads
-  const handleImageLoad = useCallback((index: number) => {
-    setLoadedImages(prev => new Set(prev).add(index));
+  const handleImageLoad = useCallback(
+    (index: number) => {
+      setLoadedImages((prev) => new Set(prev).add(index));
 
-    // When first image loads, notify parent
-    if (index === 0 && onFirstImageLoaded) {
-      onFirstImageLoaded();
-    }
-  }, [onFirstImageLoaded]);
+      // When first image loads, notify parent
+      if (index === 0 && onFirstImageLoaded) {
+        onFirstImageLoaded();
+      }
+    },
+    [onFirstImageLoaded]
+  );
 
   // Transition to next image
   useEffect(() => {
@@ -79,17 +82,17 @@ const HeroImages = ({ images, duration = 4000, onFirstImageLoaded }: HeroImagesP
                     animation: `heroZoom ${duration}ms linear forwards`,
                   }
                 : hasMultipleImages
-                ? {
-                    transform: 'scale(1)', // Reset for next cycle
-                  }
-                : undefined
+                  ? {
+                      transform: 'scale(1)', // Reset for next cycle
+                    }
+                  : undefined
             }>
             <Image
               priority={index === 0}
               src={image.imageUrl}
               alt={image.altText || `Hero background image ${index + 1}`}
               fill
-              className='object-center object-cover'
+              className='object-center object-cover opacity-80'
               onLoad={() => handleImageLoad(index)}
             />
           </div>
