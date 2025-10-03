@@ -10,8 +10,14 @@
 'use client';
 
 import React from 'react';
-import { NextStudio } from 'next-sanity/studio';
+import dynamic from 'next/dynamic';
 import config from '../../../../sanity.config';
+
+// Disable SSR for Sanity Studio to prevent hydration mismatches
+// caused by styled-components generating different class names on server/client
+const NextStudio = dynamic(() => import('next-sanity/studio').then(mod => mod.NextStudio), {
+  ssr: false,
+});
 
 const StudioPage = () => {
   return <NextStudio config={config} />;
