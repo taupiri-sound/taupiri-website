@@ -13,6 +13,13 @@ export const twoColumnLayoutType = defineType({
   description: 'Create a two-column layout with independently managed content in each column. On desktop, content displays side-by-side; on mobile, left column content appears before right column content in a vertical stack.',
   fields: [
     defineField({
+      name: 'verticallyCenter',
+      title: 'Vertically Center Content',
+      type: 'boolean',
+      description: 'When enabled, the column with less content will be vertically centered to align with the other column. This creates a more balanced visual appearance when columns have different heights.',
+      initialValue: false,
+    }),
+    defineField({
       name: 'leftColumn',
       title: 'Left Column',
       type: 'array',
@@ -65,12 +72,14 @@ export const twoColumnLayoutType = defineType({
     select: {
       leftColumn: 'leftColumn',
       rightColumn: 'rightColumn',
+      verticallyCenter: 'verticallyCenter',
     },
-    prepare({ leftColumn, rightColumn }) {
+    prepare({ leftColumn, rightColumn, verticallyCenter }) {
       const leftCount = leftColumn?.length || 0;
       const rightCount = rightColumn?.length || 0;
+      const centerText = verticallyCenter ? ' • Centered' : '';
       const title = '2 Column Layout';
-      const subtitle = `Left: ${leftCount} item${leftCount !== 1 ? 's' : ''} • Right: ${rightCount} item${rightCount !== 1 ? 's' : ''}`;
+      const subtitle = `Left: ${leftCount} item${leftCount !== 1 ? 's' : ''} • Right: ${rightCount} item${rightCount !== 1 ? 's' : ''}${centerText}`;
 
       return {
         title,

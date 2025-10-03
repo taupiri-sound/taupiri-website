@@ -1771,6 +1771,13 @@
             "value": "twoColumnLayout"
           }
         },
+        "verticallyCenter": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
         "leftColumn": {
           "type": "objectAttribute",
           "value": {

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { stegaClean } from 'next-sanity';
 import type { NestedBlock, BlockListBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
 import type { COMPANY_LINKS_QUERYResult } from '@/sanity/types';
@@ -26,6 +27,7 @@ import Divider from '../UI/Divider';
 interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' | 'subtitlePath'> {
   leftColumn?: NestedBlock[];
   rightColumn?: NestedBlock[];
+  verticallyCenter?: boolean;
   className?: string;
   pathPrefix?: string;
   siteSettings?: SiteSettingsProps;
@@ -36,6 +38,7 @@ interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' 
 const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   leftColumn = [],
   rightColumn = [],
+  verticallyCenter = false,
   className = '',
   documentId,
   documentType,
@@ -48,6 +51,9 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   if (!leftColumn?.length && !rightColumn?.length) {
     return null;
   }
+
+  // Clean the value to remove Sanity's stega encoding
+  const cleanVerticallyCenter = stegaClean(verticallyCenter);
 
   // Render a single block within a column
   const renderBlock = (block: NestedBlock, columnPath: string, isLastInColumn: boolean) => {
@@ -153,17 +159,20 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
     ? createSanityDataAttribute(documentId, documentType, `${pathPrefix}.rightColumn`)
     : {};
 
+  // Determine column alignment classes
+  const columnAlignmentClass = cleanVerticallyCenter ? 'flex flex-col justify-center' : '';
+
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ${className}`.trim()}>
       {/* Left Column */}
-      <div {...leftColumnDataAttribute}>
+      <div className={columnAlignmentClass} {...leftColumnDataAttribute}>
         {leftColumn.map((block, index) =>
           renderBlock(block, `${pathPrefix}.leftColumn`, index === leftColumn.length - 1)
         )}
       </div>
 
       {/* Right Column */}
-      <div {...rightColumnDataAttribute}>
+      <div className={columnAlignmentClass} {...rightColumnDataAttribute}>
         {rightColumn.map((block, index) =>
           renderBlock(block, `${pathPrefix}.rightColumn`, index === rightColumn.length - 1)
         )}
