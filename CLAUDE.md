@@ -178,6 +178,148 @@ Singletons represent unique pages that should only exist once (like "About Us", 
 
 **These custom classes include responsive behavior and proper line heights. Never use native Tailwind font size classes like `text-xs`, `text-sm`, `text-lg`, `text-xl`, `text-2xl`, etc.**
 
+## Rich Text (Portable Text) Implementation
+
+**CRITICAL: All Rich Text components MUST handle blank lines properly to ensure content editors can add spacing in their content.**
+
+### The Problem
+
+By default, PortableText renders empty blocks without any content, causing blank lines entered by editors in Sanity to disappear in the front-end rendering. This creates frustration for content editors who expect blank lines to create visual spacing.
+
+### The Solution
+
+All PortableText component configurations must check for empty blocks and render a non-breaking space (`&nbsp;`) to preserve blank lines.
+
+### Standard Implementation Pattern
+
+When creating new PortableText components or modifying existing ones, **ALWAYS** include empty block handling for ALL block styles:
+
+```typescript
+import React from 'react';
+import { PortableTextComponents } from 'next-sanity';
+
+export const createComponents = (): PortableTextComponents => {
+  return {
+    block: {
+      normal: ({ children }) => {
+        // Handle empty blocks (empty lines) - render a paragraph with a non-breaking space
+        if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
+          return <p className='text-body-base'>&nbsp;</p>;
+        }
+
+        // Check if children contains only empty spans or text nodes
+        const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
+          if (typeof child === 'string') {
+            return child.trim() === '';
+          }
+          // Check if it's a React element with empty content
+          if (React.isValidElement(child)) {
+            const props = child.props as { children?: unknown };
+            if (props.children) {
+              const childContent = props.children;
+              return typeof childContent === 'string' && childContent.trim() === '';
+            }
+          }
+          return false;
+        });
+
+        if (hasOnlyEmptyContent) {
+          return <p className='text-body-base'>&nbsp;</p>;
+        }
+
+        return <p className='text-body-base'>{children}</p>;
+      },
+
+      // Apply the same pattern to ALL other block styles
+      'body-xs': ({ children }) => {
+        if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
+          return <figcaption className='text-body-xs'>&nbsp;</figcaption>;
+        }
+        return <figcaption className='text-body-xs'>{children}</figcaption>;
+      },
+
+      // ... repeat for body-sm, body-lg, body-xl, body-2xl, body-3xl, standout, etc.
+    },
+    // ... other component configurations
+  };
+};
+```
+
+### Reference Implementations
+
+The codebase has two reference implementations with proper blank line handling:
+
+1. **Standard Rich Text**: `src/sanity/portableTextComponents.tsx`
+   - Used by: RichText blocks, TextImage blocks
+   - Function: `createComponents(alignment)`
+
+2. **Hero Rich Text**: `src/components/HomeHero/heroRichTextComponents.tsx`
+   - Used by: Hero Title component
+   - Function: `createHeroRichTextComponents(alignment)`
+   - Includes font scaling for hero sections
+
+### Checklist for New Rich Text Components
+
+When creating a new PortableText component configuration:
+
+- [ ] Import React: `import React from 'react';`
+- [ ] Check for empty children: `!children || children.length === 0 || children === ''`
+- [ ] Check for whitespace-only content using `React.Children.toArray()`
+- [ ] Render `&nbsp;` for empty blocks in ALL block styles (normal, body-xs, body-sm, body-lg, etc.)
+- [ ] Apply the same pattern to custom block styles (standout, callout, etc.)
+- [ ] Test in Sanity Studio by adding blank lines between paragraphs
+- [ ] Verify blank lines render with proper spacing in the front-end
+
+### Common Mistakes to Avoid
+
+❌ **Wrong - No empty block handling:**
+```typescript
+normal: ({ children }) => <p className='text-body-base'>{children}</p>
+```
+
+❌ **Wrong - Only checking for undefined:**
+```typescript
+normal: ({ children }) => {
+  if (!children) return <p className='text-body-base'>&nbsp;</p>;
+  return <p className='text-body-base'>{children}</p>;
+}
+```
+
+✅ **Correct - Comprehensive empty block detection:**
+```typescript
+normal: ({ children }) => {
+  if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
+    return <p className='text-body-base'>&nbsp;</p>;
+  }
+
+  const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
+    if (typeof child === 'string') return child.trim() === '';
+    if (React.isValidElement(child)) {
+      const props = child.props as { children?: unknown };
+      if (props.children) {
+        return typeof props.children === 'string' && props.children.trim() === '';
+      }
+    }
+    return false;
+  });
+
+  if (hasOnlyEmptyContent) {
+    return <p className='text-body-base'>&nbsp;</p>;
+  }
+
+  return <p className='text-body-base'>{children}</p>;
+}
+```
+
+### Why This Matters
+
+- **Content Editor Experience**: Editors expect blank lines to work like any word processor
+- **Design Flexibility**: Allows editors to control spacing without developer intervention
+- **Consistency**: Ensures all Rich Text fields behave the same way across the site
+- **Maintenance**: Prevents recurring bug reports about "blank lines not working"
+
+**When in doubt, copy the pattern from `src/sanity/portableTextComponents.tsx` - it's the proven reference implementation.**
+
 ## TypeScript Guidelines
 
 **IMPORTANT: Never use `any` type - the ESLint configuration prohibits this.**
