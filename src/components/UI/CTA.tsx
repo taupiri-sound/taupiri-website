@@ -33,7 +33,7 @@ const getVariantStyles = (variant: 'filled' | 'outline' = 'filled') => {
   }
 
   // Default to filled variant with brand gradient
-  return `${baseStyles} bg-brand-primary text-brand-white focus:ring-brand-primary hover:bg-brand-white hover:text-brand-primary`;
+  return `${baseStyles} bg-brand-gradient-subtle text-brand-white focus:ring-brand-primary hover:scale-105`;
 };
 
 const CTA = (props: CTAProps) => {
