@@ -105,12 +105,15 @@ html {
 }
 
 @utility text-h2 {
-  font-size: calc(var(--font-scale-base) * 2.25);
+  font-size: calc(var(--font-scale-base) * 3);
   line-height: 1.1;
   letter-spacing: calc(var(--font-scale-base) * -0.025);
   font-weight: 700;
 
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
+    font-size: calc(var(--font-scale-base) * 4);
+  }
+  @media (min-width: 1024px) {
     font-size: calc(var(--font-scale-base) * 6);
   }
 }

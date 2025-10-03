@@ -90,7 +90,7 @@ const PageSection = ({
         className={`${getBottomPaddingClass()} ${className}`.trim()}>
         {/* Title is now always present since it's required */}
         <div className={getTextAlignClass(effectiveTextAlign)}>
-          <div className='flex justify-center items-end gap-4'>
+          <div className='inline-flex items-end gap-4 sm:gap-8'>
             <UnifiedImage
               src='/images/logos/logo-left.png'
               alt='Taupiri Logo'
@@ -99,13 +99,15 @@ const PageSection = ({
               height={200}
               sizeContext='logo'
               objectFit='contain'
-              className='w-auto h-44'
+              className='w-40 sm:w-60 lg:w-80 h-auto'
             />
-            <div className='text-left ml-6'>
+            <div className='text-left'>
               <Heading level='h2' showMargin={false} className='mb-0' {...titleDataAttribute}>
                 <div>
                   {stegaClean(title)}
-                  <p className='text-[4rem] opacity-70'>Te Reo Translation</p>
+                  <p className='text-[1.5rem] sm:text-[2rem] md:text-[3rem] opacity-70'>
+                    Te Reo Translation
+                  </p>
                 </div>
               </Heading>
             </div>
