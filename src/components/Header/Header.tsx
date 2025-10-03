@@ -83,7 +83,7 @@ const Header = ({ headerData }: HeaderProps) => {
         }}>
         {/* Black gradient overlay - visible when header is transparent, fades out when header background appears */}
         <div
-          className='absolute inset-0 bg-gradient-to-b from-black to-transparent pointer-events-none transition-opacity duration-300 -z-10'
+          className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent pointer-events-none transition-opacity duration-300 -z-10'
           style={{
             opacity: 1 - headerOpacity, // Inverse of header opacity - visible when transparent, hidden when opaque
           }}
