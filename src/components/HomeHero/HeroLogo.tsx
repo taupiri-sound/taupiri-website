@@ -9,23 +9,16 @@ interface HeroLogoProps {
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
   documentId: string;
   documentType: string;
-  showLogoBackColor?: boolean;
 }
 
-const HeroLogo = ({
-  heroLogoDisplay,
-  heroTextColor,
-  documentId,
-  documentType,
-  showLogoBackColor = false,
-}: HeroLogoProps) => {
+const HeroLogo = ({ heroLogoDisplay, heroTextColor, documentId, documentType }: HeroLogoProps) => {
   const cleanLogoDisplay = stegaClean(heroLogoDisplay) || 'with-text';
 
   // Don't render anything if 'none' is selected
   if (cleanLogoDisplay === 'none') return null;
 
   // Enhanced responsive logo sizing with better mobile scaling
-  const logoSize = 'min-w-24 w-80 md:w-120';
+  const logoSize = 'min-w-24 w-80 md:w-110';
 
   // Determine logo source based on logo display type and text color
   const getLogoSrc = () => {
@@ -59,12 +52,6 @@ const HeroLogo = ({
         priority
         sizes='(max-width: 768px) 320px, (max-width: 1024px) 384px, 512px'
       />
-      {showLogoBackColor && (
-        <>
-          <div className='absolute top-1/2 left-1/2 w-60 h-60 md:w-70 md:h-70 lg:w-[20vw] lg:h-[20vw] rounded-full bg-gradient-to-br from-[#ffea00]/20 to-[#ffea00]/10 transform -translate-y-1/2 -translate-x-1/2 blur-md -z-10' />
-          <div className='absolute top-1/2 left-1/2 w-40 h-40 md:w-50 md:h-50 lg:w-[15vw] lg:h-[15vw] rounded-full bg-gradient-to-br from-[#ffea00]/30 to-[#ffea00]/20 transform -translate-y-1/2 -translate-x-1/2 blur-sm -z-10' />
-        </>
-      )}
     </div>
   );
 };

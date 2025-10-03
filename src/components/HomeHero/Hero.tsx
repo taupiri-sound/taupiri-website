@@ -106,8 +106,8 @@ const Hero = ({
 
       {/* Default Hero Style */}
       {currentHeroStyle === 'default' && (
-        <div className='absolute inset-0 z-10 pointer-events-none'>
-          <DefaultHeroBackground />
+        <div className='absolute inset-0 z-10 pointer-events-none bg-brand-black'>
+          {/* <DefaultHeroBackground /> */}
         </div>
       )}
 
@@ -125,7 +125,6 @@ const Hero = ({
           heroContentPosition={heroContentPosition}
           documentId={documentId}
           documentType={documentType}
-          showLogoBackColor={currentHeroStyle === 'default'}
         />
       </div>
 

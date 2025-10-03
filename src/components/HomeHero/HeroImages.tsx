@@ -21,7 +21,7 @@ const HeroImages = ({ images, duration = 4000, onFirstImageLoaded }: HeroImagesP
   // Track when each image loads
   const handleImageLoad = useCallback((index: number) => {
     setLoadedImages(prev => new Set(prev).add(index));
-    
+
     // When first image loads, notify parent
     if (index === 0 && onFirstImageLoaded) {
       onFirstImageLoaded();
@@ -49,13 +49,13 @@ const HeroImages = ({ images, duration = 4000, onFirstImageLoaded }: HeroImagesP
       {images.map((image, index) => {
         const isCurrentImage = index === currentIndex;
         const isImageLoaded = loadedImages.has(index);
-        
+
         // All images use smooth transitions
         const shouldUseTransition = true;
-        
-        // Show image if it's current AND loaded
-        const shouldShow = isCurrentImage && isImageLoaded;
-        
+
+        // Show image if it's current (only fade in first image after load, others show immediately when current)
+        const shouldShow = isCurrentImage && (index === 0 ? isImageLoaded : true);
+
         return (
           <Image
             priority={index === 0}

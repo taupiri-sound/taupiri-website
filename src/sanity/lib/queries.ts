@@ -165,6 +165,8 @@ export const HOME_PAGE_QUERY = defineQuery(`*[_id == "homePage"][0]{
   heroTextColor,
   heroLogoDisplay,
   heroBackgroundImages[]{
+    _key,
+    _type,
     asset,
     alt,
     hotspot,
