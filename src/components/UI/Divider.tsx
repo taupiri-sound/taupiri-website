@@ -5,6 +5,7 @@ interface DividerProps {
   isSmall?: boolean;
   alignment?: 'left' | 'center' | 'right';
   useFixedWidth?: boolean; // Use fixed-width lines instead of full-width extending lines
+  variant?: 'default' | 'cursive' | 'cursive-thin'; // Divider style variant
 }
 
 const getJustifyClass = (alignment: 'left' | 'center' | 'right'): string => {
@@ -18,7 +19,17 @@ const getJustifyClass = (alignment: 'left' | 'center' | 'right'): string => {
   }
 };
 
-const Divider = ({ className = '', isSmall = false, alignment = 'center', useFixedWidth = false }: DividerProps) => {
+const Divider = ({ className = '', isSmall = false, alignment = 'center', useFixedWidth = false, variant = 'default' }: DividerProps) => {
+
+  // Cursive gradient variants - simple centered design
+  if (variant === 'cursive' || variant === 'cursive-thin') {
+    const cursiveClass = variant === 'cursive' ? 'divider-cursive' : 'divider-cursive-thin';
+    return (
+      <div className={`flex items-center ${getJustifyClass(alignment)} ${className}`.trim()}>
+        <div className={`${cursiveClass} ${useFixedWidth ? 'max-w-md' : 'w-full'}`}></div>
+      </div>
+    );
+  }
 
   // For left/right alignment
   if (alignment === 'left' || alignment === 'right') {
