@@ -26,14 +26,14 @@ type CTAProps = LinkCTAProps | ButtonCTAProps;
 const getVariantStyles = (variant: 'filled' | 'outline' = 'filled') => {
   // Note that the min-h-[56px] is so that regular buttons become the same height as the CTA Email Button, which needs more internal space because of the icon.
   const baseStyles =
-    'inline-flex items-center justify-center px-6 py-3 min-h-[56px] font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer active:scale-95 hover:scale-105';
+    'inline-flex items-center justify-center px-6 py-3 min-h-[56px] font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
 
   if (variant === 'outline') {
-    return `${baseStyles} border-2 border-brand-secondary text-brand-secondary bg-transparent hover:bg-brand-secondary hover:text-white hover:border-transparent focus:ring-brand-secondary`;
+    return `${baseStyles} border-2 border-brand-primary text-brand-white bg-transparent  hover:border-brand-white hover:text-brand-primary focus:ring-brand-primary`;
   }
 
   // Default to filled variant with brand gradient
-  return `${baseStyles} bg-brand-gradient text-black focus:ring-brand-primary`;
+  return `${baseStyles} bg-brand-primary text-brand-white focus:ring-brand-primary hover:bg-brand-white hover:text-brand-primary`;
 };
 
 const CTA = (props: CTAProps) => {

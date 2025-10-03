@@ -115,9 +115,11 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
         </div>
 
         {/* CTA buttons - always visible, aligned with content */}
-        <div className='flex-shrink-0'>
-          <HeroCTA {...componentProps} />
-        </div>
+        {heroCallToActionList && heroCallToActionList.length > 0 && (
+          <div className='flex-shrink-0'>
+            <HeroCTA {...componentProps} />
+          </div>
+        )}
       </div>
     </div>
   );
