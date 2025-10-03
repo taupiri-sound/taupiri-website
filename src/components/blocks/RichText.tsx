@@ -42,7 +42,7 @@ const RichText = ({
   // If it's a callout, wrap in Card-style container
   if (cleanIsCallout) {
     return (
-      <div className='bg-brand-white-dark rounded-tr-lg rounded-br-lg px-6 py-4 max-w-none border-l-4 border-brand-primary shadow-sm'>
+      <div className='bg-brand-white-dark rounded-tr-lg rounded-br-lg px-2 py-2 md:px-6 md:py-4 max-w-none border-l-4 border-brand-primary shadow-sm'>
         {proseContent}
       </div>
     );

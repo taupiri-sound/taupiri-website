@@ -121,7 +121,7 @@ const PageSection = ({
           )}
           {subtitle && (
             <p
-              className={`text-body-2xl text-text-subtle max-w-4xl whitespace-pre-line ${sectionTitleBottomSpacing} ${getSubtitleMarginClass(effectiveTextAlign)}`}
+              className={`text-body-xl text-text-subtle max-w-4xl whitespace-pre-line ${sectionTitleBottomSpacing} ${getSubtitleMarginClass(effectiveTextAlign)}`}
               {...subtitleDataAttribute}>
               {subtitle}
             </p>
