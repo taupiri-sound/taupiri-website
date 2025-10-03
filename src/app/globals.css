@@ -111,7 +111,7 @@ html {
   font-weight: 700;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 3);
+    font-size: calc(var(--font-scale-base) * 6);
   }
 }
 

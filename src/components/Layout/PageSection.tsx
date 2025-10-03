@@ -17,6 +17,7 @@ import {
   sectionBottomPadding,
   sectionCompactBottomPadding,
 } from '@/utils/spacingConstants';
+import UnifiedImage from '../UI/UnifiedImage';
 
 // Context to track if PageSection has a title (affects nested section heading levels)
 const PageSectionContext = createContext<{ hasTitle: boolean }>({ hasTitle: false });
@@ -89,13 +90,25 @@ const PageSection = ({
         className={`${getBottomPaddingClass()} ${className}`.trim()}>
         {/* Title is now always present since it's required */}
         <div className={getTextAlignClass(effectiveTextAlign)}>
-          <Heading
-            level='h2'
-            showMargin={false}
-            className={sectionTitleBottomSpacing}
-            {...titleDataAttribute}>
-            {stegaClean(title)}
-          </Heading>
+          <div className='flex items-end gap-4'>
+            <UnifiedImage
+              src='/images/logos/logo-left.png'
+              alt='Taupiri Logo'
+              mode='sized'
+              width={200}
+              height={200}
+              sizeContext='logo'
+              objectFit='contain'
+              className='w-auto h-44'
+            />
+            <Heading
+              level='h2'
+              showMargin={false}
+              className={`${sectionTitleBottomSpacing} text-left mb-0`}
+              {...titleDataAttribute}>
+              {stegaClean(title)}
+            </Heading>
+          </div>
           {topText && (
             <p
               className={`text-body-sm text-brand-secondary font-bold max-w-4xl whitespace-pre-line ${sectionTitleBottomSpacing} ${getSubtitleMarginClass(effectiveTextAlign)}`}
