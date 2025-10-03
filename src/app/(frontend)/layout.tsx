@@ -93,8 +93,12 @@ const FrontendLayout = async ({
             legalPagesVisibilityData={legalPagesVisibilityData}
           />
           <SanityLive />
-          <VisualEditingProvider />
-          {(await draftMode()).isEnabled && <DisableDraftMode />}
+          {(await draftMode()).isEnabled && (
+            <>
+              <VisualEditingProvider />
+              <DisableDraftMode />
+            </>
+          )}
         </div>
       </SiteDataProvider>
     </PageLoadProvider>
