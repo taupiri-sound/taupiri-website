@@ -25,7 +25,7 @@ const HeroLogo = ({
   if (cleanLogoDisplay === 'none') return null;
 
   // Enhanced responsive logo sizing with better mobile scaling
-  const logoSize = 'w-32 min-w-24 max-w-48 sm:w-40 md:w-48 lg:w-56 xl:w-64';
+  const logoSize = 'w-32 min-w-24 sm:w-40 md:w-48 lg:w-100 xl:w-150';
 
   // Determine logo source based on logo display type and text color
   const getLogoSrc = () => {
@@ -38,9 +38,7 @@ const HeroLogo = ({
     }
 
     // Logo with text version
-    return textColor === 'white'
-      ? '/images/logos/logo-white.png'
-      : '/images/logos/logo-black.png';
+    return textColor === 'white' ? '/images/logos/logo-white.png' : '/images/logos/logo-black.png';
   };
 
   const logoSrc = getLogoSrc();

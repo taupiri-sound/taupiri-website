@@ -143,18 +143,19 @@ export const homePageType = defineType({
       initialValue: 'with-text',
     }),
     defineField({
-      name: 'heroTitle',
+      name: 'h1Title',
       type: 'string',
-      title: 'Hero Title',
-      description: 'Main heading for the hero section',
+      title: 'H1 Title (SEO & Accessibility)',
+      description:
+        '⚠️ IMPORTANT: This heading is for SEO and screen readers to understand the page content. It will be hidden from the visual UI. The Hero Title below is what users will see.',
       group: 'hero',
+      validation: (Rule) => Rule.required().error('H1 Title is required for SEO and accessibility'),
     }),
     defineField({
-      name: 'heroSubtitle',
+      name: 'heroTitle',
       type: 'blockContent',
-      title: 'Hero Subtitle',
-      description:
-        'Rich text subtitle for the hero section (formatting, links, and styling allowed)',
+      title: 'Hero Title (Visual Display)',
+      description: 'Main visual heading for the hero section. Use this field for both title and subtitle content - style them using rich text formatting and line breaks as needed.',
       group: 'hero',
     }),
     createCTAListField({

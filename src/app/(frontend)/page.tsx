@@ -42,8 +42,8 @@ const Page = async () => {
         heroLogoDisplay={page.heroLogoDisplay}
         heroBackgroundImages={page.heroBackgroundImages}
         heroImageTransitionDuration={page.heroImageTransitionDuration}
+        h1Title={page.h1Title}
         heroTitle={page.heroTitle}
-        heroSubtitle={page.heroSubtitle}
         heroCallToActionList={page.heroCallToActionList}
         hideScrollIndicator={page.hideScrollIndicator}
         heroContentPosition={page.heroContentPosition}

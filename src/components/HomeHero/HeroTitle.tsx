@@ -1,42 +1,70 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
+import { PortableText } from 'next-sanity';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
-import Heading from '../Typography/Heading/Heading';
 import { getTextColorClasses } from './heroUtils';
+import { createHeroRichTextComponents } from './heroRichTextComponents';
 
 interface HeroTitleProps {
+  h1Title: NonNullable<HOME_PAGE_QUERYResult>['h1Title'];
   heroTitle: NonNullable<HOME_PAGE_QUERYResult>['heroTitle'];
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
   documentId: string;
   documentType: string;
+  textAlignment?: string;
 }
 
 const HeroTitle = ({
+  h1Title,
   heroTitle,
   heroTextColor,
   documentId,
   documentType,
+  textAlignment = 'center',
 }: HeroTitleProps) => {
-  if (!heroTitle) return null;
+  if (!heroTitle || !Array.isArray(heroTitle)) {
+    return (
+      <>
+        {/* SEO and Screen Reader H1 - Hidden from visual UI */}
+        {h1Title && <h1 className='sr-only'>{stegaClean(h1Title)}</h1>}
+      </>
+    );
+  }
 
-  // Enhanced responsive title sizing
-  const titleClasses = `
-    /* Mobile: Start smaller and scale up, allowing for shrinking when needed */
-    text-h5 min-[380px]:text-h4 min-[480px]:text-h3 sm:text-h2 md:text-h1
-    /* Allow text to scale down if content is too long */
-    leading-tight sm:leading-normal
-    font-bold ${getTextColorClasses(heroTextColor)}
-  `.trim();
+  // Use Hero-specific Rich Text components with dynamic alignment
+  const components = createHeroRichTextComponents(textAlignment);
+
+  // Get responsive text alignment class based on the alignment prop
+  const getTextAlignmentClass = (alignment: string) => {
+    switch (alignment) {
+      case 'left':
+        return 'text-center md:text-left'; // center on mobile, left on desktop
+      case 'right':
+        return 'text-center md:text-right'; // center on mobile, right on desktop
+      case 'center':
+      default:
+        return 'text-center';
+    }
+  };
 
   return (
-    <Heading
-      level='h1'
-      showMargin={false}
-      className={titleClasses}
-      {...createSanityDataAttribute(documentId, documentType, 'heroTitle')}>
-      {stegaClean(heroTitle)}
-    </Heading>
+    <>
+      {/* SEO and Screen Reader H1 - Hidden from visual UI */}
+      {h1Title && <h1 className='sr-only'>{stegaClean(h1Title)}</h1>}
+
+      {/* Visual Hero Title - Rich Text with alignment */}
+      <div
+        className={`
+          prose prose-slate max-w-none
+          ${getTextColorClasses(heroTextColor)}
+          overflow-hidden
+          ${getTextAlignmentClass(textAlignment)}
+        `}
+        {...createSanityDataAttribute(documentId, documentType, 'heroTitle')}>
+        <PortableText value={heroTitle} components={components} />
+      </div>
+    </>
   );
 };
 

@@ -80,7 +80,7 @@ const Footer = ({
           {/* Logo */}
           <Link href='/#home' className='footer-logo'>
             <UnifiedImage
-              src='/images/logo-text-white.png'
+              src='/images/logos/logo-white.png'
               alt='Taupiri Sound Logo'
               mode='sized'
               width={400}

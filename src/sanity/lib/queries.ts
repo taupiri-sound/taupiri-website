@@ -171,8 +171,8 @@ export const HOME_PAGE_QUERY = defineQuery(`*[_id == "homePage"][0]{
     crop
   },
   heroImageTransitionDuration,
-  heroTitle,
-  heroSubtitle[]{
+  h1Title,
+  heroTitle[]{
     ...,
     children[]{
       ...,

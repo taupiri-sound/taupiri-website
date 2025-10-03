@@ -6467,14 +6467,14 @@
         },
         "optional": true
       },
-      "heroTitle": {
+      "h1Title": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
         "optional": true
       },
-      "heroSubtitle": {
+      "heroTitle": {
         "type": "objectAttribute",
         "value": {
           "type": "inline",

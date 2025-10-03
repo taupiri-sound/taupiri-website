@@ -3,7 +3,6 @@ import { stegaClean } from 'next-sanity';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
 import HeroTitle from './HeroTitle';
-import HeroSubtitle from './HeroSubtitle';
 import HeroLogo from './HeroLogo';
 import HeroCTA from './HeroCTA';
 import { getTextColorClasses } from './heroUtils';
@@ -11,8 +10,8 @@ import { getTextColorClasses } from './heroUtils';
 interface RegularHeroLayoutProps {
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
   heroLogoDisplay: NonNullable<HOME_PAGE_QUERYResult>['heroLogoDisplay'];
+  h1Title: NonNullable<HOME_PAGE_QUERYResult>['h1Title'];
   heroTitle: NonNullable<HOME_PAGE_QUERYResult>['heroTitle'];
-  heroSubtitle: NonNullable<HOME_PAGE_QUERYResult>['heroSubtitle'];
   heroCallToActionList: NonNullable<HOME_PAGE_QUERYResult>['heroCallToActionList'];
   heroContentPosition: NonNullable<HOME_PAGE_QUERYResult>['heroContentPosition'];
   documentId: string;
@@ -25,8 +24,8 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
   const {
     heroContentPosition,
     heroTextColor,
+    h1Title,
     heroTitle,
-    heroSubtitle,
     heroLogoDisplay,
     heroCallToActionList,
     documentId,
@@ -83,6 +82,7 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
   const horizontalConfig = getHorizontalAlignment(horizontal);
 
   const componentProps = {
+    h1Title,
     heroTitle,
     heroTextColor,
     heroLogoDisplay,
@@ -90,12 +90,6 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
     documentId,
     documentType,
     showLogoBackColor,
-  };
-
-  const heroSubtitleProps = {
-    heroSubtitle,
-    documentId,
-    documentType,
     textAlignment: horizontal,
   };
 
@@ -115,14 +109,9 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
           <HeroLogo {...componentProps} />
         </div>
 
-        {/* Title - priority content */}
+        {/* Title (now includes subtitle content via Rich Text) - priority content */}
         <div className='flex-shrink-0'>
           <HeroTitle {...componentProps} />
-        </div>
-
-        {/* Subtitle - can grow/shrink as needed */}
-        <div className='flex-shrink min-h-0'>
-          <HeroSubtitle {...heroSubtitleProps} />
         </div>
 
         {/* CTA buttons - always visible, aligned with content */}

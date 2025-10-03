@@ -18,8 +18,8 @@ interface HeroProps {
   heroLogoDisplay: NonNullable<HOME_PAGE_QUERYResult>['heroLogoDisplay'];
   heroBackgroundImages: NonNullable<HOME_PAGE_QUERYResult>['heroBackgroundImages'];
   heroImageTransitionDuration: NonNullable<HOME_PAGE_QUERYResult>['heroImageTransitionDuration'];
+  h1Title: NonNullable<HOME_PAGE_QUERYResult>['h1Title'];
   heroTitle: NonNullable<HOME_PAGE_QUERYResult>['heroTitle'];
-  heroSubtitle: NonNullable<HOME_PAGE_QUERYResult>['heroSubtitle'];
   heroCallToActionList: NonNullable<HOME_PAGE_QUERYResult>['heroCallToActionList'];
   hideScrollIndicator: NonNullable<HOME_PAGE_QUERYResult>['hideScrollIndicator'];
   heroContentPosition: NonNullable<HOME_PAGE_QUERYResult>['heroContentPosition'];
@@ -33,8 +33,8 @@ const Hero = ({
   heroLogoDisplay,
   heroBackgroundImages,
   heroImageTransitionDuration,
+  h1Title,
   heroTitle,
-  heroSubtitle,
   heroCallToActionList,
   hideScrollIndicator,
   heroContentPosition,
@@ -119,8 +119,8 @@ const Hero = ({
         <RegularHeroLayout
           heroTextColor={heroTextColor}
           heroLogoDisplay={heroLogoDisplay}
+          h1Title={h1Title}
           heroTitle={heroTitle}
-          heroSubtitle={heroSubtitle}
           heroCallToActionList={heroCallToActionList}
           heroContentPosition={heroContentPosition}
           documentId={documentId}
