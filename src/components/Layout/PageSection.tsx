@@ -90,7 +90,7 @@ const PageSection = ({
         className={`${getBottomPaddingClass()} ${className}`.trim()}>
         {/* Title is now always present since it's required */}
         <div className={getTextAlignClass(effectiveTextAlign)}>
-          <div className='inline-flex items-end gap-4 sm:gap-8'>
+          <div className={`inline-flex items-end gap-4 sm:gap-8 ${sectionTitleBottomSpacing}`}>
             <UnifiedImage
               src='/images/logos/logo-left.png'
               alt='Taupiri Logo'
@@ -121,13 +121,13 @@ const PageSection = ({
           )}
           {subtitle && (
             <p
-              className={`text-body-xl text-text-subtle max-w-4xl whitespace-pre-line ${sectionTitleBottomSpacing} ${getSubtitleMarginClass(effectiveTextAlign)}`}
+              className={`text-body-2xl text-text-subtle max-w-4xl whitespace-pre-line ${sectionTitleBottomSpacing} ${getSubtitleMarginClass(effectiveTextAlign)}`}
               {...subtitleDataAttribute}>
               {subtitle}
             </p>
           )}
           <div className={sectionDividerBottomSpacing}>
-            <Divider alignment={effectiveTextAlign} variant="cursive" />
+            <Divider alignment={effectiveTextAlign} variant='cursive' />
           </div>
         </div>
         {children}
