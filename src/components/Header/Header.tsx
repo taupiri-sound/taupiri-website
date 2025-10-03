@@ -29,8 +29,8 @@ const Header = ({ headerData }: HeaderProps) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      // Fade in background over first 50px of scroll
-      const opacity = Math.min(scrollY / 50, 1);
+      // Fade in background over first xxpx of scroll
+      const opacity = Math.min(scrollY / 30, 1);
       setHeaderOpacity(opacity);
     };
 
@@ -81,6 +81,14 @@ const Header = ({ headerData }: HeaderProps) => {
         style={{
           backgroundColor: `rgba(67, 12, 8, ${headerOpacity})`, // bg-brand-secondary (#430c08) with variable opacity
         }}>
+        {/* Black gradient overlay - visible when header is transparent, fades out when header background appears */}
+        <div
+          className='absolute inset-0 bg-gradient-to-b from-black to-transparent pointer-events-none transition-opacity duration-300 -z-10'
+          style={{
+            opacity: 1 - headerOpacity, // Inverse of header opacity - visible when transparent, hidden when opaque
+          }}
+        />
+
         {/* Logo */}
         <Link href='/#home' className='flex items-center gap-2'>
           <UnifiedImage
