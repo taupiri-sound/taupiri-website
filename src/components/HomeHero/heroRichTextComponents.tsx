@@ -42,8 +42,10 @@ const getAlignmentClasses = (alignment: string = 'left') => {
       };
     default: // 'left' or 'inherit'
       return {
-        bulletClass: 'list-disc pl-6 space-y-2 [&>li::marker]:text-brand-secondary m-6 text-center md:text-left',
-        numberClass: 'list-decimal pl-6 space-y-2 [&>li::marker]:text-brand-secondary m-6 text-center md:text-left',
+        bulletClass:
+          'list-disc pl-6 space-y-2 [&>li::marker]:text-brand-secondary m-6 text-center md:text-left',
+        numberClass:
+          'list-decimal pl-6 space-y-2 [&>li::marker]:text-brand-secondary m-6 text-center md:text-left',
         listItemClass: 'leading-relaxed',
         standoutClass:
           'border-l-4 border-brand-primary bg-gray-50 pl-4 py-3 my-4 rounded-r-lg italic text-center md:text-left',
@@ -128,7 +130,7 @@ export const createHeroRichTextComponents = (
         }
 
         // Check if children contains only empty spans or text nodes
-        const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
+        const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
           if (typeof child === 'string') {
             return child.trim() === '';
           }
@@ -215,6 +217,7 @@ export const createHeroRichTextComponents = (
     marks: {
       strong: ({ children }) => <strong className='font-bold'>{children}</strong>,
       em: ({ children }) => <em className='italic'>{children}</em>,
+      chauPhilomeneOne: ({ children }) => <span className='font-chau'>{children}</span>,
 
       link: ({ value, children }) => {
         // Handle simple external link structure

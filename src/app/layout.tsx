@@ -1,5 +1,5 @@
 import React from 'react';
-import { Saira_Condensed } from 'next/font/google';
+import { Saira_Condensed, Chau_Philomene_One } from 'next/font/google';
 import '@/app/globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
 
@@ -7,6 +7,13 @@ const sairaCondensed = Saira_Condensed({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
+});
+
+const chauPhilomeneOne = Chau_Philomene_One({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-chau',
 });
 
 const RootLayout = ({
@@ -77,7 +84,8 @@ const RootLayout = ({
           }}
         />
       </head>
-      <body className={`${sairaCondensed.className} text-body-base text-subtle bg-gray-50`}>
+      <body
+        className={`${sairaCondensed.className} ${chauPhilomeneOne.variable} text-body-base text-subtle bg-brand-white`}>
         {children}
       </body>
     </html>
