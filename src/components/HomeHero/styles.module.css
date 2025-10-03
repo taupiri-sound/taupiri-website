@@ -1,15 +1,9 @@
 /*
-  ⚠️ HEADER HEIGHT SYNC: These values MUST match:
-  - src/components/Header/Header.tsx (h-18 md:h-20)
-  - src/app/globals.css (scroll-padding-top)
+  Hero now uses full viewport height since header is transparent on page load
+  and positioned over the hero content.
 */
 
 .hero-height {
-  /* Desktop: Minimum height for viewport minus header, can grow with content */
-  min-height: calc(100svh - 5rem);
-
-  @media (max-width: 767px) {
-    /* Mobile: Minimum height for viewport minus header, can grow with content */
-    min-height: calc(100svh - 4.5rem);
-  }
+  /* Full viewport height - hero content extends behind transparent header */
+  min-height: 100svh;
 }

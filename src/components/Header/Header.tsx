@@ -15,6 +15,7 @@ interface HeaderProps {
 
 const Header = ({ headerData }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [headerOpacity, setHeaderOpacity] = useState(0);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,6 +23,27 @@ const Header = ({ headerData }: HeaderProps) => {
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
+  }, []);
+
+  // Handle scroll for header background opacity fade
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Fade in background over first 50px of scroll
+      const opacity = Math.min(scrollY / 50, 1);
+      setHeaderOpacity(opacity);
+    };
+
+    // Set initial state
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // Close menu on Escape key press
@@ -54,7 +76,11 @@ const Header = ({ headerData }: HeaderProps) => {
   return (
     <>
       <SkipLink href='#main-content'>Skip to main content</SkipLink>
-      <header className='w-full px-4 md:px-8 h-18 md:h-20 flex items-center justify-between gap-8 sticky top-0 z-50 bg-brand-secondary shadow-md'>
+      <header
+        className='fixed top-0 left-0 right-0 w-full px-4 md:px-8 h-18 md:h-20 flex items-center justify-between gap-8 z-50 transition-all duration-300'
+        style={{
+          backgroundColor: `rgba(67, 12, 8, ${headerOpacity})`, // bg-brand-secondary (#430c08) with variable opacity
+        }}>
         {/* Logo */}
         <Link href='/#home' className='flex items-center gap-2'>
           <UnifiedImage
