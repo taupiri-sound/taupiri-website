@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { Divider, RichText, Quote, TextImage, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockList } from '@/sanity/types';
+import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockList } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -24,7 +24,7 @@ export type SubSubSectionBlock = Omit<SubSubSection, 'title'> & { _key: string; 
 export type DividerBlock = Divider & { _key: string };
 export type RichTextBlock = RichText & { _key: string };
 export type QuoteBlock = Quote & { _key: string };
-export type TextImageBlock = TextImage & { _key: string };
+export type TwoColumnLayoutBlock = TwoColumnLayout & { _key: string };
 export type CardBlock = Card & { _key: string };
 export type GridLayoutBlock = GridLayout & { _key: string };
 export type IconBlock = Icon & { _key: string };
@@ -49,7 +49,7 @@ export type NestedBlock =
   | DividerBlock
   | RichTextBlock
   | QuoteBlock
-  | TextImageBlock
+  | TwoColumnLayoutBlock
   | CardBlock
   | GridLayoutBlock
   | IconBlock
@@ -100,8 +100,8 @@ export const isQuoteBlock = (block: NestedBlock): block is QuoteBlock => {
   return block._type === 'quote';
 };
 
-export const isTextImageBlock = (block: NestedBlock): block is TextImageBlock => {
-  return block._type === 'textImage';
+export const isTwoColumnLayoutBlock = (block: NestedBlock): block is TwoColumnLayoutBlock => {
+  return block._type === 'twoColumnLayout';
 };
 
 export const isCardBlock = (block: NestedBlock): block is CardBlock => {

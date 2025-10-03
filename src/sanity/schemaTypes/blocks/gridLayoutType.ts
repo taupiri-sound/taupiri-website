@@ -29,6 +29,7 @@ export const gridLayoutType = defineType({
       name: 'content',
       title: 'Grid Content',
       type: 'array',
+      description: 'Grid content items. Note: 2 Column Layout cannot be added inside Grid Layout.',
       of: [
         defineArrayMember({
           type: 'richText',

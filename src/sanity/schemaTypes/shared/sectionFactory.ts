@@ -4,10 +4,10 @@ import { AnchorIdInput } from '../../components/AnchorIdInput';
 // Common content blocks available to all sections
 export const commonContentBlocks = [
   defineArrayMember({ type: 'divider' }),
+  defineArrayMember({ type: 'twoColumnLayout' }),
   defineArrayMember({ type: 'richText' }),
   defineArrayMember({ type: 'blockList' }),
   defineArrayMember({ type: 'quote' }),
-  defineArrayMember({ type: 'textImage' }),
   defineArrayMember({ type: 'imageBlock' }),
   defineArrayMember({ type: 'imageGallery' }),
   defineArrayMember({ type: 'ctaButton' }),

@@ -78,6 +78,51 @@ const contentProjection = `
       _type == "embeddedCtaEmailButton" => {...}
     }
   },
+  _type == "twoColumnLayout" => {
+    ...,
+    leftColumn[]{
+      ...,
+      _type == "card" => {
+        ...,
+        ctaList[]{
+          _type,
+          _key,
+          _type == "embeddedCtaButton" => {${fullLinkProjection}},
+          _type == "embeddedCtaEmailButton" => {...}
+        }
+      },
+      _type == "imageBlock" => {
+        ...,
+        image{
+          asset,
+          alt,
+          hotspot,
+          crop
+        }
+      }
+    },
+    rightColumn[]{
+      ...,
+      _type == "card" => {
+        ...,
+        ctaList[]{
+          _type,
+          _key,
+          _type == "embeddedCtaButton" => {${fullLinkProjection}},
+          _type == "embeddedCtaEmailButton" => {...}
+        }
+      },
+      _type == "imageBlock" => {
+        ...,
+        image{
+          asset,
+          alt,
+          hotspot,
+          crop
+        }
+      }
+    }
+  },
   _type == "gridLayout" => {
     ...,
     content[]{

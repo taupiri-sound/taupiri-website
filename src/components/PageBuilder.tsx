@@ -16,7 +16,7 @@ import SubSection from './Layout/SubSection';
 import SubSubSection from './Layout/SubSubSection';
 import RichText from './blocks/RichText';
 import Quote from './blocks/Quote';
-import TextImage from './blocks/TextImage';
+import TwoColumnLayout from './blocks/TwoColumnLayout';
 import Card from './blocks/Card';
 import CTAButton from './blocks/CTAButton';
 import CTACalloutLinkComponent from './blocks/CTACalloutLink';
@@ -293,14 +293,17 @@ const BlockRenderer = ({
               </BlockWrapper>
             );
 
-          case 'textImage':
+          case 'twoColumnLayout':
             return (
               <BlockWrapper key={block._key}>
-                <TextImage
+                <TwoColumnLayout
                   {...block}
                   documentId={documentId}
                   documentType={documentType}
                   pathPrefix={blockPath}
+                  siteSettings={siteSettings}
+                  companyLinks={companyLinks}
+                  alignment={alignment}
                 />
               </BlockWrapper>
             );

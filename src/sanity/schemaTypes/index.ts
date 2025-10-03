@@ -21,7 +21,7 @@ import { youTubeVideoType } from './blocks/youTubeVideoType';
 import { spotifyWidgetType } from './blocks/spotifyWidgetType';
 import { bandcampWidgetType } from './blocks/bandcampWidgetType';
 import { quoteType } from './blocks/quoteType';
-import { textImageType } from './blocks/textImageType';
+import { twoColumnLayoutType } from './blocks/twoColumnLayoutType';
 import { ctaButtonType } from './blocks/ctaButtonType';
 import { ctaCalloutLinkType } from './blocks/ctaCalloutLinkType';
 import { embeddedCtaButtonType } from './blocks/embeddedCtaButtonType';
@@ -72,7 +72,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     spotifyWidgetType,
     bandcampWidgetType,
     quoteType,
-    textImageType,
+    twoColumnLayoutType,
     ctaButtonType,
     ctaCalloutLinkType,
     embeddedCtaButtonType,
