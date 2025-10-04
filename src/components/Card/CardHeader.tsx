@@ -22,7 +22,7 @@ const CardHeader = ({
   if (!title && !subtitle) return null;
 
   return (
-    <div className='mb-6 text-center'>
+    <div className='mb-2'>
       {title && (
         <p
           className='text-h5 font-bold'

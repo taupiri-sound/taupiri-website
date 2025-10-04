@@ -23,12 +23,14 @@ const CardNoImage = (props: CardNoImageProps) => {
     fieldPathPrefix,
     siteSettings,
     companyLinks,
-    alignment = 'center',
     createDataAttributeConfig,
   } = props;
 
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
+
+  // Determine alignment based on layout style
+  const cardAlignment = layoutStyle === 'stacked' ? 'center' : 'left';
 
   // Render content blocks using shared block renderer
   const renderContent = () => {
@@ -44,7 +46,7 @@ const CardNoImage = (props: CardNoImageProps) => {
         blockPath,
         siteSettings,
         companyLinks,
-        alignment,
+        alignment: cardAlignment,
         config: createDataAttributeConfig,
       });
     });
@@ -56,24 +58,6 @@ const CardNoImage = (props: CardNoImageProps) => {
       <CardContainer
         className={`${className} flex flex-col text-center items-center`}
         isGridChild={isGridChild}>
-        <div className='flex flex-col gap-4 w-full'>
-          <CardHeader
-            title={title}
-            subtitle={subtitle}
-            documentId={documentId}
-            documentType={documentType}
-            fieldPathPrefix={fieldPathPrefix}
-          />
-          {renderContent()}
-        </div>
-      </CardContainer>
-    );
-  }
-
-  // Row layout
-  return (
-    <CardContainer className={`${className} flex flex-col text-left`} isGridChild={isGridChild}>
-      <div className='flex flex-col gap-4 w-full'>
         <CardHeader
           title={title}
           subtitle={subtitle}
@@ -81,8 +65,24 @@ const CardNoImage = (props: CardNoImageProps) => {
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
         />
-        {renderContent()}
-      </div>
+        <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
+      </CardContainer>
+    );
+  }
+
+  // Row layout
+  return (
+    <CardContainer
+      className={`${className} flex flex-col items-start text-left`}
+      isGridChild={isGridChild}>
+      <CardHeader
+        title={title}
+        subtitle={subtitle}
+        documentId={documentId}
+        documentType={documentType}
+        fieldPathPrefix={fieldPathPrefix}
+      />
+      <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
     </CardContainer>
   );
 };

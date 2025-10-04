@@ -34,6 +34,9 @@ const CardIcon = (props: CardIconProps) => {
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
 
+  // Determine alignment based on layout style
+  const cardAlignment = layoutStyle === 'stacked' ? 'center' : 'left';
+
   // Render content blocks using shared block renderer
   const renderContent = () => {
     if (!content) return null;
@@ -48,7 +51,7 @@ const CardIcon = (props: CardIconProps) => {
         blockPath,
         siteSettings,
         companyLinks,
-        alignment,
+        alignment: cardAlignment,
         config: createDataAttributeConfig,
       });
     });
