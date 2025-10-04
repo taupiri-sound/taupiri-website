@@ -11,11 +11,26 @@ export const cardType = defineType({
   type: 'object',
   icon: DocumentIcon,
   groups: [
+    { name: 'header', title: 'Header' },
     { name: 'image', title: 'Image' },
     { name: 'layout', title: 'Layout' },
     { name: 'content', title: 'Content' },
   ],
   fields: [
+    defineField({
+      name: 'title',
+      title: 'Card Title',
+      type: 'string',
+      group: 'header',
+      description: 'Optional title displayed at the top of the card',
+    }),
+    defineField({
+      name: 'subtitle',
+      title: 'Card Subtitle',
+      type: 'string',
+      group: 'header',
+      description: 'Optional subtitle displayed below the title',
+    }),
     defineField({
       name: 'imageType',
       title: 'Image Type',
@@ -94,16 +109,9 @@ export const cardType = defineType({
       },
       initialValue: 'stacked',
       description:
-        'Choose how the card content is arranged:\n\n• Stacked: Image (if present) appears above content, arranged vertically\n\n• Row: Image (if present) appears beside content, arranged horizontally\n\nNote: Row layout is not available for Banner images.',
-      hidden: ({ parent }) => parent?.imageType === 'banner',
-      validation: (Rule) =>
-        Rule.custom((value, context) => {
-          const parent = context.parent as { imageType?: string };
-          if (parent?.imageType === 'banner' && value === 'row') {
-            return 'Row layout is not available for Banner images';
-          }
-          return true;
-        }),
+        'Choose how the card content is arranged:\n\n• Stacked: Image (if present) appears above content, arranged vertically\n\n• Row: Image (if present) appears beside content, arranged horizontally\n\nNote: This field is read-only when Banner image is selected (always uses Stacked layout).',
+      readOnly: ({ parent }) => (parent as { imageType?: string })?.imageType === 'banner',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'content',
@@ -133,12 +141,14 @@ export const cardType = defineType({
   ],
   preview: {
     select: {
+      title: 'title',
+      subtitle: 'subtitle',
       imageType: 'imageType',
       layoutStyle: 'layoutStyle',
       image: 'image',
       content: 'content',
     },
-    prepare({ imageType, layoutStyle, image, content }) {
+    prepare({ title, subtitle, imageType, layoutStyle, image, content }) {
       const imageTypeLabel =
         imageType === 'banner'
           ? 'Banner'
@@ -151,9 +161,14 @@ export const cardType = defineType({
         imageType === 'banner' ? 'Stacked' : layoutStyle === 'row' ? 'Row' : 'Stacked';
       const blockCount = Array.isArray(content) ? content.length : 0;
 
+      const displayTitle = title || `Card: ${imageTypeLabel} • ${layoutLabel}`;
+      const displaySubtitle = title
+        ? `${imageTypeLabel} • ${layoutLabel} • ${blockCount} content block${blockCount !== 1 ? 's' : ''}`
+        : `${blockCount} content block${blockCount !== 1 ? 's' : ''}`;
+
       return {
-        title: `Card: ${imageTypeLabel} • ${layoutLabel}`,
-        subtitle: `${blockCount} content block${blockCount !== 1 ? 's' : ''}`,
+        title: displayTitle,
+        subtitle: displaySubtitle,
         media: image || DocumentIcon,
       };
     },

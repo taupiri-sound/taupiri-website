@@ -49,6 +49,8 @@ const createDataAttributeConfig = {
 
 const Card = (props: CardProps) => {
   const {
+    title,
+    subtitle,
     imageType = 'none',
     image,
     layoutStyle = 'stacked',
@@ -64,8 +66,13 @@ const Card = (props: CardProps) => {
     alignment = 'center',
   } = props;
 
+  const cleanTitle = stegaClean(title);
+  const cleanSubtitle = stegaClean(subtitle);
   const cleanImageType = stegaClean(imageType) || 'none';
-  const cleanLayoutStyle = stegaClean(layoutStyle) || 'stacked';
+
+  // Always use 'stacked' for banner images, regardless of stored value
+  const rawLayoutStyle = stegaClean(layoutStyle) || 'stacked';
+  const cleanLayoutStyle = cleanImageType === 'banner' ? 'stacked' : rawLayoutStyle;
 
   // Don't render empty cards
   if (!content || content.length === 0) {
@@ -74,6 +81,30 @@ const Card = (props: CardProps) => {
 
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
+
+  // Render card header (title and subtitle)
+  const renderHeader = () => {
+    if (!cleanTitle && !cleanSubtitle) return null;
+
+    return (
+      <div className="mb-6 text-center">
+        {cleanTitle && (
+          <p
+            className="text-h3 font-bold mb-2"
+            {...createSanityDataAttribute(documentId, documentType, getFieldPath('title'))}>
+            {cleanTitle}
+          </p>
+        )}
+        {cleanSubtitle && (
+          <p
+            className="text-body-lg text-[#b8956a]"
+            {...createSanityDataAttribute(documentId, documentType, getFieldPath('subtitle'))}>
+            {cleanSubtitle}
+          </p>
+        )}
+      </div>
+    );
+  };
 
   // Render content blocks
   const renderContent = () => {
@@ -251,7 +282,10 @@ const Card = (props: CardProps) => {
         </div>
 
         {/* Content - Center aligned */}
-        <div className="flex flex-col gap-4 p-6 text-center items-center">{renderContent()}</div>
+        <div className="flex flex-col gap-4 p-6 text-center items-center">
+          {renderHeader()}
+          {renderContent()}
+        </div>
       </CardContainer>
     );
   }
@@ -282,8 +316,11 @@ const Card = (props: CardProps) => {
           </div>
         </div>
 
-        {/* Content - Center aligned */}
-        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+        {/* Header and Content - Center aligned */}
+        <div className="flex flex-col gap-4 w-full">
+          {renderHeader()}
+          {renderContent()}
+        </div>
       </CardContainer>
     );
   }
@@ -312,8 +349,11 @@ const Card = (props: CardProps) => {
           </div>
         </div>
 
-        {/* Content - Left aligned */}
-        <div className="flex-1 flex flex-col gap-4 text-left">{renderContent()}</div>
+        {/* Header and Content - Left aligned */}
+        <div className="flex-1 flex flex-col gap-4 text-left">
+          {renderHeader()}
+          {renderContent()}
+        </div>
       </CardContainer>
     );
   }
@@ -345,8 +385,11 @@ const Card = (props: CardProps) => {
           </div>
         </div>
 
-        {/* Content - Center aligned */}
-        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+        {/* Header and Content - Center aligned */}
+        <div className="flex flex-col gap-4 w-full">
+          {renderHeader()}
+          {renderContent()}
+        </div>
       </CardContainer>
     );
   }
@@ -376,8 +419,11 @@ const Card = (props: CardProps) => {
           </div>
         </div>
 
-        {/* Content - Left aligned */}
-        <div className="flex-1 flex flex-col gap-4 text-left">{renderContent()}</div>
+        {/* Header and Content - Left aligned */}
+        <div className="flex-1 flex flex-col gap-4 text-left">
+          {renderHeader()}
+          {renderContent()}
+        </div>
       </CardContainer>
     );
   }
@@ -388,7 +434,10 @@ const Card = (props: CardProps) => {
       <CardContainer
         className={`${className} flex flex-col text-center items-center`}
         isGridChild={isGridChild}>
-        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+        <div className="flex flex-col gap-4 w-full">
+          {renderHeader()}
+          {renderContent()}
+        </div>
       </CardContainer>
     );
   }
@@ -397,7 +446,10 @@ const Card = (props: CardProps) => {
   if (cleanImageType === 'none' && cleanLayoutStyle === 'row') {
     return (
       <CardContainer className={`${className} flex flex-col text-left`} isGridChild={isGridChild}>
-        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+        <div className="flex flex-col gap-4 w-full">
+          {renderHeader()}
+          {renderContent()}
+        </div>
       </CardContainer>
     );
   }
@@ -407,7 +459,10 @@ const Card = (props: CardProps) => {
     <CardContainer
       className={`${className} flex flex-col text-center items-center`}
       isGridChild={isGridChild}>
-      <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+      <div className="flex flex-col gap-4 w-full">
+        {renderHeader()}
+        {renderContent()}
+      </div>
     </CardContainer>
   );
 };
