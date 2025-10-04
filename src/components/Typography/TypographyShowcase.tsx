@@ -18,15 +18,19 @@ const TypographyShowcase = () => {
           All headings automatically scale from mobile to desktop sizes
         </p>
         <div className='space-y-4'>
-          <h1 className='text-h1'>H1 - Main Display Heading (2.5rem → 3.5rem)</h1>
-          <h2 className='text-h2 heading-underline-h2'>H2 - Section Title (2rem → 2.75rem)</h2>
+          <h1 className='text-h1'>H1 - Main Display Heading (3.5rem → 4.5rem → 7rem)</h1>
+          <h2 className='text-h2 heading-underline-h2'>H2 - Section Title (3rem → 4rem → 6rem)</h2>
           <h3 className='text-h3 heading-underline-h3'>
-            H3 - Subsection Heading (1.75rem → 2.25rem)
+            H3 - Subsection Heading (2.25rem → 3rem → 4rem)
           </h3>
-          <h4 className='text-h4 heading-underline-h4'>H4 - Minor Heading (1.5rem → 1.875rem)</h4>
-          <h5 className='text-h5 heading-underline-h5'>H5 - Small Heading (1.25rem → 1.5rem)</h5>
+          <h4 className='text-h4 heading-underline-h4'>
+            H4 - Minor Heading (1.75rem → 2.25rem → 2.75rem)
+          </h4>
+          <h5 className='text-h5 heading-underline-h5'>
+            H5 - Small Heading (1.5rem → 1.75rem → 2rem)
+          </h5>
           <h6 className='text-h6 heading-underline-h6'>
-            H6 - Caption Heading (1.125rem → 1.25rem)
+            H6 - Caption Heading (1.25rem → 1.5rem → 1.75rem)
           </h6>
         </div>
       </div>
@@ -38,16 +42,22 @@ const TypographyShowcase = () => {
           Body text utilities with consistent mobile-to-desktop scaling
         </p>
         <div className='space-y-4'>
-          <p className='text-body-3xl'>Body 3XL - Hero text (1.5rem → 1.875rem)</p>
-          <p className='text-body-2xl'>Body 2XL - Featured content (1.25rem → 1.5rem)</p>
-          <p className='text-body-xl'>Body XL - Standout paragraphs (1.125rem → 1.25rem)</p>
-          <p className='text-body-lg'>Body Large - Emphasized text (1rem → 1.125rem)</p>
+          <p className='text-body-9xl'>Body 9XL - Massive display text (4.5rem → 6rem → 9rem)</p>
+          <p className='text-body-8xl'>Body 8XL - Extra large display (4rem → 5rem → 8rem)</p>
+          <p className='text-body-7xl'>Body 7XL - Large display text (3.5rem → 4.5rem → 7rem)</p>
+          <p className='text-body-6xl'>Body 6XL - Display heading (3rem → 4rem → 6rem)</p>
+          <p className='text-body-5xl'>Body 5XL - Hero heading (2.25rem → 3rem → 4rem)</p>
+          <p className='text-body-4xl'>Body 4XL - Featured heading (1.75rem → 2.25rem → 2.75rem)</p>
+          <p className='text-body-3xl'>Body 3XL - Large text (1.75rem → 2.25rem)</p>
+          <p className='text-body-2xl'>Body 2XL - Featured content (1.5rem → 1.875rem)</p>
+          <p className='text-body-xl'>Body XL - Standout paragraphs (1.375rem → 1.625rem)</p>
+          <p className='text-body-lg'>Body Large - Emphasized text (1.125rem → 1.375rem)</p>
           <p className='text-body-base'>
-            Body Base - Standard paragraph text (0.875rem → 1rem). This is the default reading size
+            Body Base - Standard paragraph text (1rem → 1.125rem). This is the default reading size
             that provides optimal readability across all devices with automatic responsive scaling.
           </p>
-          <p className='text-body-sm'>Body Small - Secondary information (0.75rem → 0.875rem)</p>
-          <p className='text-body-xs'>Body XS - Fine print and footnotes (0.625rem → 0.75rem)</p>
+          <p className='text-body-sm'>Body Small - Secondary information (0.8125rem → 0.9375rem)</p>
+          <p className='text-body-xs'>Body XS - Fine print and footnotes (0.6875rem → 0.8125rem)</p>
         </div>
       </div>
 
@@ -106,7 +116,8 @@ const TypographyShowcase = () => {
               <strong className='text-h6 font-mono'>Body Text (with responsive scaling):</strong>
               <p>
                 text-body-xs, text-body-sm, text-body-base, text-body-lg, text-body-xl,
-                text-body-2xl, text-body-3xl
+                text-body-2xl, text-body-3xl, text-body-4xl, text-body-5xl, text-body-6xl,
+                text-body-7xl, text-body-8xl, text-body-9xl
               </p>
             </div>
             <div className='text-body-xs text-gray-600'>
@@ -138,6 +149,12 @@ const TypographyShowcase = () => {
           <div>
             <h6 className='text-h6 heading-underline-h6'>H6</h6>
           </div>
+          <div className='text-body-9xl block'>Body 9XL</div>
+          <div className='text-body-8xl block'>Body 8XL</div>
+          <div className='text-body-7xl block'>Body 7XL</div>
+          <div className='text-body-6xl block'>Body 6XL</div>
+          <div className='text-body-5xl block'>Body 5XL</div>
+          <div className='text-body-4xl block'>Body 4XL</div>
           <div className='text-body-3xl block'>Body 3XL</div>
           <div className='text-body-2xl block'>Body 2XL</div>
           <div className='text-body-xl block'>Body XL</div>

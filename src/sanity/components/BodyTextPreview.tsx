@@ -35,28 +35,28 @@ const BodyTextPreview = ({ children, value }: BodyTextPreviewProps) => {
     switch (styleType) {
       case 'body-3xl':
         return {
-          fontSize: `${SCALE_PX * 2.0625}px`, // Desktop: calc(var(--font-scale-base) * 2.0625)
-          lineHeight: 1.25, // Unitless line height matches CSS
+          fontSize: `${SCALE_PX * 2.25}px`, // Desktop: calc(var(--font-scale-base) * 2.25)
+          lineHeight: 1.4, // Unitless line height matches CSS
           fontWeight: 400,
           letterSpacing: '0',
         };
       case 'body-2xl':
         return {
-          fontSize: `${SCALE_PX * 1.625}px`, // Desktop: calc(var(--font-scale-base) * 1.625)
+          fontSize: `${SCALE_PX * 1.875}px`, // Desktop: calc(var(--font-scale-base) * 1.875)
           lineHeight: 1.5,
           fontWeight: 400,
           letterSpacing: '0',
         };
       case 'body-xl':
         return {
-          fontSize: `${SCALE_PX * 1.375}px`, // Desktop: calc(var(--font-scale-base) * 1.375)
-          lineHeight: 1.625,
+          fontSize: `${SCALE_PX * 1.625}px`, // Desktop: calc(var(--font-scale-base) * 1.625)
+          lineHeight: 1.5,
           fontWeight: 400,
           letterSpacing: '0',
         };
       case 'body-lg':
         return {
-          fontSize: `${SCALE_PX * 1.25}px`, // Desktop: calc(var(--font-scale-base) * 1.25)
+          fontSize: `${SCALE_PX * 1.375}px`, // Desktop: calc(var(--font-scale-base) * 1.375)
           lineHeight: 1.625,
           fontWeight: 400,
           letterSpacing: '0',

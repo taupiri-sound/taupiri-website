@@ -95,13 +95,16 @@ html {
 
 /* Heading Utilities */
 @utility text-h1 {
-  font-size: calc(var(--font-scale-base) * 2.75);
+  font-size: calc(var(--font-scale-base) * 3.5);
   line-height: 1.1;
   letter-spacing: calc(var(--font-scale-base) * -0.025);
   font-weight: 700;
 
-  @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 3.875);
+  @media (min-width: 640px) {
+    font-size: calc(var(--font-scale-base) * 4.5);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 7);
   }
 }
 
@@ -120,46 +123,58 @@ html {
 }
 
 @utility text-h3 {
-  font-size: calc(var(--font-scale-base) * 1.9375);
-  line-height: 1.25;
-  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-size: calc(var(--font-scale-base) * 2.25);
+  line-height: 1.2;
+  letter-spacing: calc(var(--font-scale-base) * -0.02);
   font-weight: 600;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 2.5);
+    font-size: calc(var(--font-scale-base) * 3);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 4);
   }
 }
 
 @utility text-h4 {
-  font-size: calc(var(--font-scale-base) * 1.625);
+  font-size: calc(var(--font-scale-base) * 1.75);
   line-height: 1.25;
-  letter-spacing: 0;
+  letter-spacing: calc(var(--font-scale-base) * -0.01);
   font-weight: 600;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 2.0625);
+    font-size: calc(var(--font-scale-base) * 2.25);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 2.75);
   }
 }
 
 @utility text-h5 {
-  font-size: calc(var(--font-scale-base) * 1.375);
-  line-height: 1.5;
+  font-size: calc(var(--font-scale-base) * 1.5);
+  line-height: 1.3;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 1.625);
+    font-size: calc(var(--font-scale-base) * 1.75);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 2);
   }
 }
 
 @utility text-h6 {
   font-size: calc(var(--font-scale-base) * 1.25);
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: 0;
-  font-weight: 500;
+  font-weight: 600;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 1.375);
+    font-size: calc(var(--font-scale-base) * 1.5);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 1.75);
   }
 }
 
@@ -188,7 +203,7 @@ html {
 }
 
 @utility text-body-base {
-  font-size: calc(var(--font-scale-base) * 0.9375);
+  font-size: calc(var(--font-scale-base) * 1);
   line-height: 1.625;
   letter-spacing: 0;
   font-weight: 400;
@@ -205,22 +220,11 @@ html {
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 1.25);
-  }
-}
-
-@utility text-body-xl {
-  font-size: calc(var(--font-scale-base) * 1.25);
-  line-height: 1.625;
-  letter-spacing: 0;
-  font-weight: 400;
-
-  @media (min-width: 768px) {
     font-size: calc(var(--font-scale-base) * 1.375);
   }
 }
 
-@utility text-body-2xl {
+@utility text-body-xl {
   font-size: calc(var(--font-scale-base) * 1.375);
   line-height: 1.5;
   letter-spacing: 0;
@@ -231,80 +235,109 @@ html {
   }
 }
 
-@utility text-body-3xl {
-  font-size: calc(var(--font-scale-base) * 1.625);
-  line-height: 1.25;
+@utility text-body-2xl {
+  font-size: calc(var(--font-scale-base) * 1.5);
+  line-height: 1.5;
   letter-spacing: 0;
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 2.0625);
+    font-size: calc(var(--font-scale-base) * 1.875);
+  }
+}
+
+@utility text-body-3xl {
+  font-size: calc(var(--font-scale-base) * 1.75);
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-weight: 400;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 2.25);
   }
 }
 
 @utility text-body-4xl {
-  font-size: calc(var(--font-scale-base) * 2.0625);
-  line-height: 1.1;
-  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-size: calc(var(--font-scale-base) * 1.75);
+  line-height: 1.25;
+  letter-spacing: calc(var(--font-scale-base) * -0.01);
   font-weight: 400;
 
   @media (min-width: 768px) {
+    font-size: calc(var(--font-scale-base) * 2.25);
+  }
+  @media (min-width: 1024px) {
     font-size: calc(var(--font-scale-base) * 2.75);
   }
 }
 
 @utility text-body-5xl {
-  font-size: calc(var(--font-scale-base) * 2.5);
-  line-height: 1.1;
-  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  font-size: calc(var(--font-scale-base) * 2.25);
+  line-height: 1.2;
+  letter-spacing: calc(var(--font-scale-base) * -0.02);
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 3.875);
+    font-size: calc(var(--font-scale-base) * 3);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 4);
   }
 }
 
 @utility text-body-6xl {
   font-size: calc(var(--font-scale-base) * 3);
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: calc(var(--font-scale-base) * -0.025);
   font-weight: 400;
 
-  @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 4.5);
+  @media (min-width: 640px) {
+    font-size: calc(var(--font-scale-base) * 4);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 6);
   }
 }
 
 @utility text-body-7xl {
   font-size: calc(var(--font-scale-base) * 3.5);
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: calc(var(--font-scale-base) * -0.025);
   font-weight: 400;
 
-  @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 5.25);
+  @media (min-width: 640px) {
+    font-size: calc(var(--font-scale-base) * 4.5);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 7);
   }
 }
 
 @utility text-body-8xl {
   font-size: calc(var(--font-scale-base) * 4);
   line-height: 1;
-  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  letter-spacing: calc(var(--font-scale-base) * -0.03);
   font-weight: 400;
 
-  @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 6);
+  @media (min-width: 640px) {
+    font-size: calc(var(--font-scale-base) * 5);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 8);
   }
 }
 
 @utility text-body-9xl {
   font-size: calc(var(--font-scale-base) * 4.5);
   line-height: 1;
-  letter-spacing: calc(var(--font-scale-base) * -0.025);
+  letter-spacing: calc(var(--font-scale-base) * -0.03);
   font-weight: 400;
 
-  @media (min-width: 768px) {
-    font-size: calc(var(--font-scale-base) * 7);
+  @media (min-width: 640px) {
+    font-size: calc(var(--font-scale-base) * 6);
+  }
+  @media (min-width: 1024px) {
+    font-size: calc(var(--font-scale-base) * 9);
   }
 }
 
