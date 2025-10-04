@@ -12,8 +12,8 @@ const CardContainer = ({ children, className = '', isGridChild = false }: CardCo
     <div
       className={`
         w-full 
-        bg-card-gradient 
-        border border-gray-200 
+        bg-brand-white-dark  
+        shadow-sm 
         rounded-lg 
         p-6 md:p-8 
         flex 
