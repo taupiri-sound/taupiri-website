@@ -5,6 +5,7 @@ import CardContainer from '../UI/CardContainer';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import UnifiedImage from '../UI/UnifiedImage';
 import { renderBlock } from '@/utils/blockRenderer';
+import CardHeader from './CardHeader';
 import type { BaseCardProps, CardImage } from './types';
 
 interface CardBannerProps extends BaseCardProps {
@@ -30,30 +31,6 @@ const CardBanner = (props: CardBannerProps) => {
 
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
-
-  // Render card header (title and subtitle)
-  const renderHeader = () => {
-    if (!title && !subtitle) return null;
-
-    return (
-      <div className='mb-6 text-center'>
-        {title && (
-          <p
-            className='text-h3 font-bold mb-2'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('title'))}>
-            {title}
-          </p>
-        )}
-        {subtitle && (
-          <p
-            className='text-body-lg text-[#b8956a]'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('subtitle'))}>
-            {subtitle}
-          </p>
-        )}
-      </div>
-    );
-  };
 
   // Render content blocks using shared block renderer
   const renderContent = () => {
@@ -97,7 +74,13 @@ const CardBanner = (props: CardBannerProps) => {
 
       {/* Content - Center aligned */}
       <div className='flex flex-col gap-4 p-6 text-center items-center'>
-        {renderHeader()}
+        <CardHeader
+          title={title}
+          subtitle={subtitle}
+          documentId={documentId}
+          documentType={documentType}
+          fieldPathPrefix={fieldPathPrefix}
+        />
         {renderContent()}
       </div>
     </CardContainer>

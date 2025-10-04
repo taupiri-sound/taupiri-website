@@ -5,6 +5,7 @@ import CardContainer from '../UI/CardContainer';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import UnifiedImage from '../UI/UnifiedImage';
 import { renderBlock } from '@/utils/blockRenderer';
+import CardHeader from './CardHeader';
 import type { BaseCardProps, CardImage } from './types';
 
 interface CardProfileProps extends BaseCardProps {
@@ -32,30 +33,6 @@ const CardProfile = (props: CardProfileProps) => {
 
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
-
-  // Render card header (title and subtitle)
-  const renderHeader = () => {
-    if (!title && !subtitle) return null;
-
-    return (
-      <div className='mb-6 text-center'>
-        {title && (
-          <p
-            className='text-h3 font-bold mb-2'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('title'))}>
-            {title}
-          </p>
-        )}
-        {subtitle && (
-          <p
-            className='text-body-lg text-[#b8956a]'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('subtitle'))}>
-            {subtitle}
-          </p>
-        )}
-      </div>
-    );
-  };
 
   // Render content blocks using shared block renderer
   const renderContent = () => {
@@ -105,7 +82,13 @@ const CardProfile = (props: CardProfileProps) => {
 
         {/* Header and Content - Center aligned */}
         <div className='flex flex-col gap-4 w-full'>
-          {renderHeader()}
+          <CardHeader
+            title={title}
+            subtitle={subtitle}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={fieldPathPrefix}
+          />
           {renderContent()}
         </div>
       </CardContainer>
@@ -139,7 +122,13 @@ const CardProfile = (props: CardProfileProps) => {
 
       {/* Header and Content - Left aligned */}
       <div className='flex-1 flex flex-col gap-4 text-left'>
-        {renderHeader()}
+        <CardHeader
+          title={title}
+          subtitle={subtitle}
+          documentId={documentId}
+          documentType={documentType}
+          fieldPathPrefix={fieldPathPrefix}
+        />
         {renderContent()}
       </div>
     </CardContainer>

@@ -2,8 +2,8 @@
 
 import React from 'react';
 import CardContainer from '../UI/CardContainer';
-import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import { renderBlock } from '@/utils/blockRenderer';
+import CardHeader from './CardHeader';
 import type { BaseCardProps } from './types';
 
 interface CardNoImageProps extends BaseCardProps {
@@ -29,30 +29,6 @@ const CardNoImage = (props: CardNoImageProps) => {
 
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
-
-  // Render card header (title and subtitle)
-  const renderHeader = () => {
-    if (!title && !subtitle) return null;
-
-    return (
-      <div className='mb-6 text-center'>
-        {title && (
-          <p
-            className='text-h3 font-bold mb-2'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('title'))}>
-            {title}
-          </p>
-        )}
-        {subtitle && (
-          <p
-            className='text-body-lg text-[#b8956a]'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('subtitle'))}>
-            {subtitle}
-          </p>
-        )}
-      </div>
-    );
-  };
 
   // Render content blocks using shared block renderer
   const renderContent = () => {
@@ -81,7 +57,13 @@ const CardNoImage = (props: CardNoImageProps) => {
         className={`${className} flex flex-col text-center items-center`}
         isGridChild={isGridChild}>
         <div className='flex flex-col gap-4 w-full'>
-          {renderHeader()}
+          <CardHeader
+            title={title}
+            subtitle={subtitle}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={fieldPathPrefix}
+          />
           {renderContent()}
         </div>
       </CardContainer>
@@ -92,7 +74,13 @@ const CardNoImage = (props: CardNoImageProps) => {
   return (
     <CardContainer className={`${className} flex flex-col text-left`} isGridChild={isGridChild}>
       <div className='flex flex-col gap-4 w-full'>
-        {renderHeader()}
+        <CardHeader
+          title={title}
+          subtitle={subtitle}
+          documentId={documentId}
+          documentType={documentType}
+          fieldPathPrefix={fieldPathPrefix}
+        />
         {renderContent()}
       </div>
     </CardContainer>

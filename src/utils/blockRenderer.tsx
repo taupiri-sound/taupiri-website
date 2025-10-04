@@ -1,6 +1,22 @@
 import React from 'react';
 import { createDataAttribute } from 'next-sanity';
-import type { COMPANY_LINKS_QUERYResult } from '@/sanity/types';
+import type {
+  COMPANY_LINKS_QUERYResult,
+  RichText as RichTextType,
+  Quote as QuoteType,
+  TwoColumnLayout as TwoColumnLayoutType,
+  CtaButton as CtaButtonType,
+  CtaCalloutLink as CtaCalloutLinkType,
+  CtaBlogPost as CtaBlogPostType,
+  ImageBlock as ImageBlockType,
+  ImageGallery as ImageGalleryType,
+  YouTubeVideo as YouTubeVideoType,
+  SpotifyWidget as SpotifyWidgetType,
+  BandcampWidget as BandcampWidgetType,
+  CompanyLinksBlock as CompanyLinksBlockType,
+  BlockList as BlockListType,
+  Divider as DividerType,
+} from '@/sanity/types';
 import type { SiteSettingsProps } from '@/types/shared';
 
 // Import all block components
@@ -35,11 +51,31 @@ interface RenderBlockOptions {
   config?: RenderBlockConfig;
 }
 
+// Add _key to block types (added by Sanity when blocks are in arrays)
+type WithKey<T> = T & { _key: string };
+
+// Union type of all possible block types with _key
+type BlockType =
+  | WithKey<RichTextType>
+  | WithKey<QuoteType>
+  | WithKey<TwoColumnLayoutType>
+  | WithKey<CtaButtonType>
+  | WithKey<CtaCalloutLinkType>
+  | WithKey<CtaBlogPostType>
+  | WithKey<ImageBlockType>
+  | WithKey<ImageGalleryType>
+  | WithKey<YouTubeVideoType>
+  | WithKey<SpotifyWidgetType>
+  | WithKey<BandcampWidgetType>
+  | WithKey<CompanyLinksBlockType>
+  | WithKey<BlockListType>
+  | WithKey<DividerType>;
+
 /**
  * Shared block rendering logic used by both PageBuilder and Card components.
  * This eliminates duplication and ensures consistent block rendering across the app.
  */
-export const renderBlock = (block: any, options: RenderBlockOptions): React.ReactNode => {
+export const renderBlock = (block: unknown, options: RenderBlockOptions): React.ReactNode => {
   const {
     documentId,
     documentType,
@@ -49,6 +85,9 @@ export const renderBlock = (block: any, options: RenderBlockOptions): React.Reac
     alignment = 'center',
     config,
   } = options;
+
+  // Type narrow to BlockType
+  const typedBlock = block as BlockType;
 
   // Wrapper for Sanity live editing
   const BlockWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -68,33 +107,40 @@ export const renderBlock = (block: any, options: RenderBlockOptions): React.Reac
     return <div>{children}</div>;
   };
 
-  switch (block._type) {
-    case 'divider':
+  switch (typedBlock._type) {
+    case 'divider': {
+      const dividerBlock = typedBlock as WithKey<DividerType>;
       return (
-        <BlockWrapper key={block._key}>
+        <BlockWrapper key={dividerBlock._key}>
           <Divider alignment='center' useFixedWidth={true} />
         </BlockWrapper>
       );
+    }
 
-    case 'richText':
+    case 'richText': {
+      const richTextBlock = typedBlock as WithKey<RichTextType>;
       return (
-        <BlockWrapper key={block._key}>
-          <RichText {...block} inheritAlignment={alignment} />
+        <BlockWrapper key={richTextBlock._key}>
+          <RichText {...richTextBlock} inheritAlignment={alignment} />
         </BlockWrapper>
       );
+    }
 
-    case 'quote':
+    case 'quote': {
+      const quoteBlock = typedBlock as WithKey<QuoteType>;
       return (
-        <BlockWrapper key={block._key}>
-          <Quote {...block} inheritAlignment={alignment} />
+        <BlockWrapper key={quoteBlock._key}>
+          <Quote {...quoteBlock} inheritAlignment={alignment} />
         </BlockWrapper>
       );
+    }
 
-    case 'twoColumnLayout':
+    case 'twoColumnLayout': {
+      const twoColBlock = typedBlock as WithKey<TwoColumnLayoutType>;
       return (
-        <BlockWrapper key={block._key}>
+        <BlockWrapper key={twoColBlock._key}>
           <TwoColumnLayout
-            {...block}
+            {...twoColBlock}
             documentId={documentId}
             documentType={documentType}
             pathPrefix={blockPath}
@@ -104,101 +150,122 @@ export const renderBlock = (block: any, options: RenderBlockOptions): React.Reac
           />
         </BlockWrapper>
       );
+    }
 
-    case 'ctaButton':
+    case 'ctaButton': {
+      const ctaButtonBlock = typedBlock as WithKey<CtaButtonType>;
       return (
-        <BlockWrapper key={block._key}>
-          <CTAButton {...block} inheritAlignment={alignment} />
+        <BlockWrapper key={ctaButtonBlock._key}>
+          <CTAButton {...ctaButtonBlock} inheritAlignment={alignment} />
         </BlockWrapper>
       );
+    }
 
-    case 'ctaCalloutLink':
+    case 'ctaCalloutLink': {
+      const ctaCalloutBlock = typedBlock as WithKey<CtaCalloutLinkType>;
       return (
-        <BlockWrapper key={block._key}>
-          <CTACalloutLinkComponent {...block} />
+        <BlockWrapper key={ctaCalloutBlock._key}>
+          <CTACalloutLinkComponent {...ctaCalloutBlock} />
         </BlockWrapper>
       );
+    }
 
-    case 'ctaBlogPost':
+    case 'ctaBlogPost': {
+      const ctaBlogPostBlock = typedBlock as WithKey<CtaBlogPostType>;
       return (
-        <BlockWrapper key={block._key}>
-          <CTABlogPost {...block} />
+        <BlockWrapper key={ctaBlogPostBlock._key}>
+          <CTABlogPost {...ctaBlogPostBlock} />
         </BlockWrapper>
       );
+    }
 
-    case 'imageBlock':
+    case 'imageBlock': {
+      const imageBlockBlock = typedBlock as WithKey<ImageBlockType>;
       return (
-        <BlockWrapper key={block._key}>
+        <BlockWrapper key={imageBlockBlock._key}>
           <ImageBlock
-            {...block}
+            {...imageBlockBlock}
             documentId={documentId}
             documentType={documentType}
             pathPrefix={blockPath}
           />
         </BlockWrapper>
       );
+    }
 
-    case 'imageGallery':
+    case 'imageGallery': {
+      const imageGalleryBlock = typedBlock as WithKey<ImageGalleryType>;
       return (
-        <BlockWrapper key={block._key}>
+        <BlockWrapper key={imageGalleryBlock._key}>
           <ImageGallery
-            {...block}
+            {...imageGalleryBlock}
             documentId={documentId}
             documentType={documentType}
             pathPrefix={blockPath}
           />
         </BlockWrapper>
       );
+    }
 
-    case 'youTubeVideo':
+    case 'youTubeVideo': {
+      const youTubeBlock = typedBlock as WithKey<YouTubeVideoType>;
       return (
-        <BlockWrapper key={block._key}>
-          <YouTubeVideo {...block} />
+        <BlockWrapper key={youTubeBlock._key}>
+          <YouTubeVideo {...youTubeBlock} />
         </BlockWrapper>
       );
+    }
 
-    case 'spotifyWidget':
+    case 'spotifyWidget': {
+      const spotifyBlock = typedBlock as WithKey<SpotifyWidgetType>;
       return (
-        <BlockWrapper key={block._key}>
+        <BlockWrapper key={spotifyBlock._key}>
           <SpotifyWidget
-            {...block}
+            {...spotifyBlock}
             documentId={documentId}
             documentType={documentType}
             pathPrefix={blockPath}
           />
         </BlockWrapper>
       );
+    }
 
-    case 'bandcampWidget':
+    case 'bandcampWidget': {
+      const bandcampBlock = typedBlock as WithKey<BandcampWidgetType>;
       return (
-        <BlockWrapper key={block._key}>
+        <BlockWrapper key={bandcampBlock._key}>
           <BandcampWidget
-            {...block}
+            {...bandcampBlock}
             documentId={documentId}
             documentType={documentType}
             pathPrefix={blockPath}
           />
         </BlockWrapper>
       );
+    }
 
-    case 'companyLinksBlock':
+    case 'companyLinksBlock': {
+      const companyLinksBlockBlock = typedBlock as WithKey<CompanyLinksBlockType>;
       return (
-        <BlockWrapper key={block._key}>
-          <CompanyLinksBlock {...block} companyLinks={companyLinks?.companyLinks || null} />
+        <BlockWrapper key={companyLinksBlockBlock._key}>
+          <CompanyLinksBlock {...companyLinksBlockBlock} companyLinks={companyLinks?.companyLinks || null} />
         </BlockWrapper>
       );
+    }
 
-    case 'blockList':
+    case 'blockList': {
+      const blockListBlock = typedBlock as WithKey<BlockListType>;
       return (
-        <BlockWrapper key={block._key}>
+        <BlockWrapper key={blockListBlock._key}>
           <BlockList
-            {...block}
+            {...blockListBlock}
             documentId={documentId}
             documentType={documentType}
             fieldPathPrefix={blockPath}
           />
         </BlockWrapper>
       );
+    }
 
     default:
       return null;
