@@ -145,7 +145,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Subtitle */}
           {post.subtitle && (
-            <p className='mb-6 md:mb-8 text-body-2xl text-text-subtle leading-relaxed whitespace-pre-line'>
+            <p className='mb-6 md:mb-8 text-body-2xl leading-relaxed whitespace-pre-line'>
               {post.subtitle}
             </p>
           )}
@@ -154,14 +154,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className='flex flex-wrap items-center gap-4'>
             {/* Author */}
             {post.author && (
-              <div className='flex items-center text-text-subtle text-body-base'>
+              <div className='flex items-center text-body-base'>
                 <FaUser className='mr-2 text-brand-secondary' />
                 <span>{post.author}</span>
               </div>
             )}
 
             {/* Date */}
-            <div className='flex items-center text-text-subtle text-body-base'>
+            <div className='flex items-center text-body-base'>
               <FaCalendar className='mr-2 text-brand-secondary' />
               <span>{formattedDate}</span>
             </div>

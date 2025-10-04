@@ -10,7 +10,13 @@ interface QuoteProps extends BlockProps<QuoteBlock> {
   inheritAlignment?: 'left' | 'center' | 'right';
 }
 
-const Quote = ({ text, attribution, textAlign = 'inherit', className = '', inheritAlignment }: QuoteProps) => {
+const Quote = ({
+  text,
+  attribution,
+  textAlign = 'inherit',
+  className = '',
+  inheritAlignment,
+}: QuoteProps) => {
   // Clean the values to remove Sanity's stega encoding
   const cleanText = stegaClean(text);
   const cleanAttribution = stegaClean(attribution);
@@ -96,9 +102,7 @@ const Quote = ({ text, attribution, textAlign = 'inherit', className = '', inher
         {/* Attribution */}
         {cleanAttribution && (
           <footer className='relative z-10 mt-4 pt-4 border-t border-gray-200'>
-            <cite className='text-body-lg font-medium text-text-subtle not-italic'>
-              — {cleanAttribution}
-            </cite>
+            <cite className='text-body-lg font-medium not-italic'>— {cleanAttribution}</cite>
           </footer>
         )}
       </blockquote>

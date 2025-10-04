@@ -78,14 +78,14 @@ const BlogCard = (props: BlogCardProps) => {
           <div className='flex justify-between mb-6'>
             {/* Author */}
             {author && (
-              <div className='flex items-center text-text-subtle text-body-sm'>
+              <div className='flex items-center text-body-sm'>
                 <FaUser className='mr-2 text-brand-secondary' />
                 <span>{author}</span>
               </div>
             )}
 
             {/* Date */}
-            <div className='flex items-center text-text-subtle text-body-sm'>
+            <div className='flex items-center text-body-sm'>
               <FaCalendar className='mr-2 text-brand-secondary' />
               <span>{formattedDate}</span>
             </div>
@@ -93,9 +93,7 @@ const BlogCard = (props: BlogCardProps) => {
 
           {/* Subtitle */}
           {subtitle && (
-            <div className='text-text-subtle text-body-base leading-snug line-clamp-3 flex-grow'>
-              {subtitle}
-            </div>
+            <div className='text-body-base leading-snug line-clamp-3 flex-grow'>{subtitle}</div>
           )}
         </div>
       </div>

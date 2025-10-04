@@ -35,7 +35,7 @@ export default function BlogPostNavigation({ prevPost, nextPost }: BlogPostNavig
                 </div>
               </div>
               <div className='min-w-0 flex-1'>
-                <p className='text-body-sm text-text-subtle font-medium mb-1'>Previous Post</p>
+                <p className='text-body-sm font-medium mb-1'>Previous Post</p>
                 <h3 className='text-body-lg font-semibold text-gray-900 group-hover:text-brand-secondary transition-colors duration-300 line-clamp-2'>
                   {prevPost.title || 'Untitled Post'}
                 </h3>
@@ -53,7 +53,7 @@ export default function BlogPostNavigation({ prevPost, nextPost }: BlogPostNavig
               href={`/blog/${nextPost.slug.current}`}
               className='group bg-brand-secondary/10 border border-brand-secondary/20 rounded-lg py-6 px-6 w-full hover:bg-brand-secondary/15 hover:border-brand-secondary/30 hover:shadow-md transition-all duration-200 cursor-pointer flex items-start gap-4 text-right'>
               <div className='min-w-0 flex-1'>
-                <p className='text-body-sm text-text-subtle font-medium mb-1'>Next Post</p>
+                <p className='text-body-sm font-medium mb-1'>Next Post</p>
                 <h3 className='text-body-lg font-semibold text-gray-900 group-hover:text-brand-secondary transition-colors duration-300 line-clamp-2'>
                   {nextPost.title || 'Untitled Post'}
                 </h3>

@@ -125,7 +125,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                           {/* Section Heading */}
                           {section.heading && (
                             <div className='mb-4'>
-                              <h3 className='text-text-subtle text-body-sm uppercase tracking-wide'>
+                              <h3 className='text-body-sm uppercase tracking-wide'>
                                 {section.heading}
                               </h3>
                             </div>

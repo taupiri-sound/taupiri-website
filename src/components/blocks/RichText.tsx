@@ -33,8 +33,7 @@ const RichText = ({
   const alignedComponents = createComponents(effectiveTextAlign);
 
   const proseContent = (
-    <div
-      className={`prose prose-slate max-w-none text-text-subtle ${getTextAlignClass(effectiveTextAlign)}`}>
+    <div className={`prose prose-slate max-w-none ${getTextAlignClass(effectiveTextAlign)}`}>
       <PortableText value={content} components={alignedComponents} />
     </div>
   );

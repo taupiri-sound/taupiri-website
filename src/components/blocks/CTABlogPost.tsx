@@ -104,23 +104,21 @@ const CTABlogPost = ({ blogPost, className = '' }: CTABlogPostProps) => {
         <div className='flex justify-between items-center w-full sm:w-auto gap-4 mb-3'>
           {/* Author */}
           {author && (
-            <div className='flex items-center text-text-subtle text-body-sm'>
+            <div className='flex items-center text-body-sm'>
               <FaUser className='mr-2 text-brand-secondary flex-shrink-0' />
               <span>{author}</span>
             </div>
           )}
 
           {/* Date */}
-          <div className='flex items-center text-text-subtle text-body-sm'>
+          <div className='flex items-center text-body-sm'>
             <FaCalendar className='mr-2 text-brand-secondary flex-shrink-0' />
             <span>{formattedDate}</span>
           </div>
         </div>
 
         {/* Subtitle */}
-        {subtitle && (
-          <div className='text-text-subtle leading-snug line-clamp-3 mb-4'>{subtitle}</div>
-        )}
+        {subtitle && <div className='leading-snug line-clamp-3 mb-4'>{subtitle}</div>}
 
         {/* Read More Link */}
         <div className='text-brand-secondary font-semibold text-body-sm group-hover:underline'>

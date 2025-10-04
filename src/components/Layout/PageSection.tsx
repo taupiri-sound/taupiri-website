@@ -105,7 +105,7 @@ const PageSection = ({
               <Heading level='h2' showMargin={false} className='mb-0' {...titleDataAttribute}>
                 <div>
                   {stegaClean(title)}
-                  <p className='text-[1.5rem] sm:text-[2rem] md:text-[3rem] opacity-70'>
+                  <p className='text-[1.5rem] sm:text-[2rem] md:text-[3rem] text-subtle'>
                     Te Reo Translation
                   </p>
                 </div>
@@ -121,7 +121,7 @@ const PageSection = ({
           )}
           {subtitle && (
             <p
-              className={`text-body-xl text-text-subtle max-w-4xl whitespace-pre-line ${sectionTitleBottomSpacing} ${getSubtitleMarginClass(effectiveTextAlign)}`}
+              className={`text-body-xl max-w-4xl whitespace-pre-line ${sectionTitleBottomSpacing} ${getSubtitleMarginClass(effectiveTextAlign)}`}
               {...subtitleDataAttribute}>
               {subtitle}
             </p>
