@@ -157,36 +157,150 @@ export const createHeroRichTextComponents = (
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
           return <figcaption className={scaleTextClass('text-body-xs')}>&nbsp;</figcaption>;
         }
+
+        const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
+          if (typeof child === 'string') {
+            return child.trim() === '';
+          }
+          if (React.isValidElement(child)) {
+            const props = child.props as { children?: unknown };
+            if (props.children) {
+              const childContent = props.children;
+              return typeof childContent === 'string' && childContent.trim() === '';
+            }
+          }
+          return false;
+        });
+
+        if (hasOnlyEmptyContent) {
+          return <figcaption className={scaleTextClass('text-body-xs')}>&nbsp;</figcaption>;
+        }
+
         return <figcaption className={scaleTextClass('text-body-xs')}>{children}</figcaption>;
       },
       'body-sm': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
           return <p className={scaleTextClass('text-body-sm')}>&nbsp;</p>;
         }
+
+        const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
+          if (typeof child === 'string') {
+            return child.trim() === '';
+          }
+          if (React.isValidElement(child)) {
+            const props = child.props as { children?: unknown };
+            if (props.children) {
+              const childContent = props.children;
+              return typeof childContent === 'string' && childContent.trim() === '';
+            }
+          }
+          return false;
+        });
+
+        if (hasOnlyEmptyContent) {
+          return <p className={scaleTextClass('text-body-sm')}>&nbsp;</p>;
+        }
+
         return <p className={scaleTextClass('text-body-sm')}>{children}</p>;
       },
       'body-lg': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
           return <p className={scaleTextClass('text-body-lg')}>&nbsp;</p>;
         }
+
+        const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
+          if (typeof child === 'string') {
+            return child.trim() === '';
+          }
+          if (React.isValidElement(child)) {
+            const props = child.props as { children?: unknown };
+            if (props.children) {
+              const childContent = props.children;
+              return typeof childContent === 'string' && childContent.trim() === '';
+            }
+          }
+          return false;
+        });
+
+        if (hasOnlyEmptyContent) {
+          return <p className={scaleTextClass('text-body-lg')}>&nbsp;</p>;
+        }
+
         return <p className={scaleTextClass('text-body-lg')}>{children}</p>;
       },
       'body-xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
           return <p className={scaleTextClass('text-body-xl')}>&nbsp;</p>;
         }
+
+        const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
+          if (typeof child === 'string') {
+            return child.trim() === '';
+          }
+          if (React.isValidElement(child)) {
+            const props = child.props as { children?: unknown };
+            if (props.children) {
+              const childContent = props.children;
+              return typeof childContent === 'string' && childContent.trim() === '';
+            }
+          }
+          return false;
+        });
+
+        if (hasOnlyEmptyContent) {
+          return <p className={scaleTextClass('text-body-xl')}>&nbsp;</p>;
+        }
+
         return <p className={scaleTextClass('text-body-xl')}>{children}</p>;
       },
       'body-2xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
           return <p className={scaleTextClass('text-body-2xl')}>&nbsp;</p>;
         }
+
+        const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
+          if (typeof child === 'string') {
+            return child.trim() === '';
+          }
+          if (React.isValidElement(child)) {
+            const props = child.props as { children?: unknown };
+            if (props.children) {
+              const childContent = props.children;
+              return typeof childContent === 'string' && childContent.trim() === '';
+            }
+          }
+          return false;
+        });
+
+        if (hasOnlyEmptyContent) {
+          return <p className={scaleTextClass('text-body-2xl')}>&nbsp;</p>;
+        }
+
         return <p className={scaleTextClass('text-body-2xl')}>{children}</p>;
       },
       'body-3xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
           return <p className={scaleTextClass('text-body-3xl')}>&nbsp;</p>;
         }
+
+        const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
+          if (typeof child === 'string') {
+            return child.trim() === '';
+          }
+          if (React.isValidElement(child)) {
+            const props = child.props as { children?: unknown };
+            if (props.children) {
+              const childContent = props.children;
+              return typeof childContent === 'string' && childContent.trim() === '';
+            }
+          }
+          return false;
+        });
+
+        if (hasOnlyEmptyContent) {
+          return <p className={scaleTextClass('text-body-3xl')}>&nbsp;</p>;
+        }
+
         return <p className={scaleTextClass('text-body-3xl')}>{children}</p>;
       },
 
