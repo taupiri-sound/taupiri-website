@@ -969,7 +969,11 @@
               },
               {
                 "type": "string",
-                "value": "outline"
+                "value": "outline-light"
+              },
+              {
+                "type": "string",
+                "value": "outline-dark"
               }
             ]
           },

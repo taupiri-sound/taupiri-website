@@ -26,7 +26,7 @@ const EmbeddedCTAButton = ({
 }: EmbeddedCTAButtonProps) => {
   const cleanText = stegaClean(text);
   const cleanExternalUrl = stegaClean(externalUrl);
-  const cleanVariant = stegaClean(variant || 'filled') as 'filled' | 'outline';
+  const cleanVariant = stegaClean(variant || 'filled') as 'filled' | 'outline-light' | 'outline-dark';
 
   // Don't render if no text
   if (!cleanText) {

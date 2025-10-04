@@ -47,7 +47,8 @@ export const createCTAButtonFields = (options: CTAButtonOptions = {}) => {
         options: {
           list: [
             { title: 'Filled (Default)', value: 'filled' },
-            { title: 'Outline', value: 'outline' },
+            { title: 'Outline on Light Background', value: 'outline-light' },
+            { title: 'Outline on Dark Background', value: 'outline-dark' },
           ],
         },
         initialValue: 'filled',
@@ -112,7 +113,10 @@ export const createCTAButtonPreview = () => ({
     openInNewTab?: boolean;
   }) {
     const buttonText = text || 'Untitled Button';
-    const style = variant === 'outline' ? 'Outline' : 'Filled';
+    const style =
+      variant === 'outline-light' ? 'Outline (Light BG)' :
+      variant === 'outline-dark' ? 'Outline (Dark BG)' :
+      'Filled';
 
     let linkInfo = 'No link';
     if (linkType === 'internal' && internalTitle) {

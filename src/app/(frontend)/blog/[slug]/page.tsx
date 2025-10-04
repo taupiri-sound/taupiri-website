@@ -210,7 +210,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <BlogPostNavigation prevPost={adjacentPosts?.nextPost} nextPost={adjacentPosts?.prevPost} />
 
         <div className='flex justify-center mt-8'>
-          <CTA href='/blog' variant='outline'>
+          <CTA href='/blog' variant='outline-light'>
             Back to blog
           </CTA>
         </div>

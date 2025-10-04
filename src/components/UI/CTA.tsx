@@ -4,7 +4,7 @@ import Link from 'next/link';
 type BaseCTAProps = {
   children: React.ReactNode;
   className?: string;
-  variant?: 'filled' | 'outline';
+  variant?: 'filled' | 'outline-light' | 'outline-dark';
 };
 
 type LinkCTAProps = BaseCTAProps & {
@@ -23,13 +23,19 @@ type ButtonCTAProps = BaseCTAProps & {
 
 type CTAProps = LinkCTAProps | ButtonCTAProps;
 
-const getVariantStyles = (variant: 'filled' | 'outline' = 'filled') => {
+const getVariantStyles = (variant: 'filled' | 'outline-light' | 'outline-dark' = 'filled') => {
   // Note that the min-h-[56px] is so that regular buttons become the same height as the CTA Email Button, which needs more internal space because of the icon.
   const baseStyles =
     'inline-flex items-center justify-center px-6 py-3 min-h-[56px] font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
 
-  if (variant === 'outline') {
-    return `${baseStyles} border-2 border-brand-primary text-brand-white bg-transparent  hover:border-brand-white hover:text-brand-primary focus:ring-brand-primary`;
+  if (variant === 'outline-light') {
+    // Outline button on light background - dark border and text
+    return `${baseStyles} border-2 border-brand-primary text-brand-primary bg-transparent hover:bg-brand-primary hover:text-brand-white focus:ring-brand-primary`;
+  }
+
+  if (variant === 'outline-dark') {
+    // Outline button on dark background - light border and text
+    return `${baseStyles} border-2 border-brand-white text-brand-white bg-transparent hover:bg-brand-white hover:text-brand-primary focus:ring-brand-white`;
   }
 
   // Default to filled variant with brand gradient
