@@ -311,7 +311,15 @@ const BlockRenderer = ({
           case 'card':
             return (
               <BlockWrapper key={block._key}>
-                <Card {...block} documentId={documentId} documentType={documentType} fieldPathPrefix={blockPath} />
+                <Card
+                  {...block}
+                  documentId={documentId}
+                  documentType={documentType}
+                  fieldPathPrefix={blockPath}
+                  siteSettings={siteSettings}
+                  companyLinks={companyLinks}
+                  alignment={alignment}
+                />
               </BlockWrapper>
             );
 

@@ -71,11 +71,44 @@ const contentProjection = `
   _type == "ctaCard" => {${fullLinkProjection}},
   _type == "card" => {
     ...,
-    ctaList[]{
-      _type,
-      _key,
-      _type == "embeddedCtaButton" => {${fullLinkProjection}},
-      _type == "embeddedCtaEmailButton" => {...}
+    image{
+      asset,
+      alt,
+      hotspot,
+      crop
+    },
+    content[]{
+      ...,
+      _type == "ctaButton" => {${fullLinkProjection}},
+      _type == "ctaCalloutLink" => {${fullLinkProjection}},
+      _type == "imageBlock" => {
+        ...,
+        image{
+          asset,
+          alt,
+          hotspot,
+          crop
+        }
+      },
+      _type == "ctaBlogPost" => {
+        ...,
+        blogPost->{
+          _id,
+          _createdAt,
+          title,
+          slug,
+          subtitle,
+          author,
+          mainImage{
+            asset,
+            alt,
+            hotspot,
+            crop
+          },
+          hasOverrideDate,
+          overrideDate
+        }
+      }
     }
   },
   _type == "twoColumnLayout" => {
@@ -84,11 +117,44 @@ const contentProjection = `
       ...,
       _type == "card" => {
         ...,
-        ctaList[]{
-          _type,
-          _key,
-          _type == "embeddedCtaButton" => {${fullLinkProjection}},
-          _type == "embeddedCtaEmailButton" => {...}
+        image{
+          asset,
+          alt,
+          hotspot,
+          crop
+        },
+        content[]{
+          ...,
+          _type == "ctaButton" => {${fullLinkProjection}},
+          _type == "ctaCalloutLink" => {${fullLinkProjection}},
+          _type == "imageBlock" => {
+            ...,
+            image{
+              asset,
+              alt,
+              hotspot,
+              crop
+            }
+          },
+          _type == "ctaBlogPost" => {
+            ...,
+            blogPost->{
+              _id,
+              _createdAt,
+              title,
+              slug,
+              subtitle,
+              author,
+              mainImage{
+                asset,
+                alt,
+                hotspot,
+                crop
+              },
+              hasOverrideDate,
+              overrideDate
+            }
+          }
         }
       },
       _type == "imageBlock" => {
@@ -105,11 +171,44 @@ const contentProjection = `
       ...,
       _type == "card" => {
         ...,
-        ctaList[]{
-          _type,
-          _key,
-          _type == "embeddedCtaButton" => {${fullLinkProjection}},
-          _type == "embeddedCtaEmailButton" => {...}
+        image{
+          asset,
+          alt,
+          hotspot,
+          crop
+        },
+        content[]{
+          ...,
+          _type == "ctaButton" => {${fullLinkProjection}},
+          _type == "ctaCalloutLink" => {${fullLinkProjection}},
+          _type == "imageBlock" => {
+            ...,
+            image{
+              asset,
+              alt,
+              hotspot,
+              crop
+            }
+          },
+          _type == "ctaBlogPost" => {
+            ...,
+            blogPost->{
+              _id,
+              _createdAt,
+              title,
+              slug,
+              subtitle,
+              author,
+              mainImage{
+                asset,
+                alt,
+                hotspot,
+                crop
+              },
+              hasOverrideDate,
+              overrideDate
+            }
+          }
         }
       },
       _type == "imageBlock" => {
@@ -129,11 +228,44 @@ const contentProjection = `
       ...,
       _type == "card" => {
         ...,
-        ctaList[]{
-          _type,
-          _key,
-          _type == "embeddedCtaButton" => {${fullLinkProjection}},
-          _type == "embeddedCtaEmailButton" => {...}
+        image{
+          asset,
+          alt,
+          hotspot,
+          crop
+        },
+        content[]{
+          ...,
+          _type == "ctaButton" => {${fullLinkProjection}},
+          _type == "ctaCalloutLink" => {${fullLinkProjection}},
+          _type == "imageBlock" => {
+            ...,
+            image{
+              asset,
+              alt,
+              hotspot,
+              crop
+            }
+          },
+          _type == "ctaBlogPost" => {
+            ...,
+            blogPost->{
+              _id,
+              _createdAt,
+              title,
+              slug,
+              subtitle,
+              author,
+              mainImage{
+                asset,
+                alt,
+                hotspot,
+                crop
+              },
+              hasOverrideDate,
+              overrideDate
+            }
+          }
         }
       },
       _type == "richText" => {...},

@@ -116,7 +116,17 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
           return <CTABlogPost {...block} />;
 
         case 'card':
-          return <Card {...block} />;
+          return (
+            <Card
+              {...block}
+              documentId={documentId}
+              documentType={documentType}
+              fieldPathPrefix={blockPath}
+              siteSettings={siteSettings}
+              companyLinks={companyLinks}
+              alignment={alignment}
+            />
+          );
 
         case 'youTubeVideo':
           return <YouTubeVideo {...block} />;

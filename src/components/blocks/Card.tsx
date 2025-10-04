@@ -1,229 +1,414 @@
+'use client';
+
 import React from 'react';
 import { stegaClean } from 'next-sanity';
-import type { CardBlock } from '@/types/blocks';
-import CTAList from '../UI/CTAList';
+import type { Card as CardType } from '@/sanity/types';
 import CardContainer from '../UI/CardContainer';
-import Heading from '../Typography/Heading/Heading';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import UnifiedImage from '../UI/UnifiedImage';
+import { client } from '@/sanity/lib/client';
+import { createDataAttribute } from 'next-sanity';
 
-interface CardProps extends Omit<CardBlock, '_type' | '_key'> {
+// Import all block components that can be used in card content
+import RichText from './RichText';
+import Quote from './Quote';
+import TwoColumnLayout from './TwoColumnLayout';
+import CTAButton from './CTAButton';
+import CTACalloutLinkComponent from './CTACalloutLink';
+import CTABlogPost from './CTABlogPost';
+import ImageBlock from './Image';
+import ImageGallery from './ImageGallery';
+import YouTubeVideo from './YouTubeVideo';
+import SpotifyWidget from './SpotifyWidget';
+import BandcampWidget from './BandcampWidget';
+import CompanyLinksBlock from './CompanyLinksBlock';
+import BlockList from './BlockList';
+import Divider from '../UI/Divider';
+
+import type { SiteSettingsProps } from '@/types/shared';
+import type { COMPANY_LINKS_QUERYResult } from '@/sanity/types';
+
+interface CardProps extends Omit<CardType, '_type'> {
+  _key?: string;
   className?: string;
   isGridChild?: boolean;
   documentId?: string;
   documentType?: string;
   fieldPathPrefix?: string;
+  siteSettings?: SiteSettingsProps;
+  companyLinks?: COMPANY_LINKS_QUERYResult;
+  alignment?: 'left' | 'center' | 'right';
 }
+
+const { projectId, dataset, stega } = client.config();
+const createDataAttributeConfig = {
+  projectId,
+  dataset,
+  baseUrl: typeof stega.studioUrl === 'string' ? stega.studioUrl : '',
+};
 
 const Card = (props: CardProps) => {
   const {
-    cardStyle = 'feature',
-    icon,
-    title,
-    bodyText,
-    ctaList,
+    imageType = 'none',
+    image,
+    layoutStyle = 'stacked',
+    content,
     className = '',
     isGridChild = false,
     documentId,
     documentType,
     fieldPathPrefix,
+    _key,
+    siteSettings,
+    companyLinks,
+    alignment = 'center',
   } = props;
-  const cleanTitle = stegaClean(title);
-  const cleanBodyText = stegaClean(bodyText);
-  const cleanCardStyle = stegaClean(cardStyle) || 'feature';
 
-  // Don't render empty cards (but allow cards with just text content and no button)
-  if (!icon?.showIcon && !cleanTitle && !cleanBodyText) {
+  const cleanImageType = stegaClean(imageType) || 'none';
+  const cleanLayoutStyle = stegaClean(layoutStyle) || 'stacked';
+
+  // Don't render empty cards
+  if (!content || content.length === 0) {
     return null;
   }
 
-  // Get field path prefix for live editing
+  // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
 
-  // Feature Card (Style 1) - Current layout
-  if (cleanCardStyle === 'feature') {
+  // Render content blocks
+  const renderContent = () => {
+    if (!content) return null;
+
+    return content.map((block, index) => {
+      const blockPath = `${getFieldPath('content')}[_key=="${block._key}"]`;
+
+      // Wrapper for Sanity live editing
+      const BlockWrapper = ({ children }: { children: React.ReactNode }) => {
+        if (documentId && documentType) {
+          return (
+            <div
+              data-sanity={createDataAttribute({
+                ...createDataAttributeConfig,
+                id: documentId,
+                type: documentType,
+                path: blockPath,
+              }).toString()}>
+              {children}
+            </div>
+          );
+        }
+        return <div>{children}</div>;
+      };
+
+      switch (block._type) {
+        case 'divider':
+          return (
+            <BlockWrapper key={block._key}>
+              <Divider alignment="center" useFixedWidth={true} />
+            </BlockWrapper>
+          );
+
+        case 'richText':
+          return (
+            <BlockWrapper key={block._key}>
+              <RichText {...block} inheritAlignment={alignment} />
+            </BlockWrapper>
+          );
+
+        case 'quote':
+          return (
+            <BlockWrapper key={block._key}>
+              <Quote {...block} inheritAlignment={alignment} />
+            </BlockWrapper>
+          );
+
+        case 'twoColumnLayout':
+          return (
+            <BlockWrapper key={block._key}>
+              <TwoColumnLayout
+                {...block}
+                documentId={documentId}
+                documentType={documentType}
+                pathPrefix={blockPath}
+                siteSettings={siteSettings}
+                companyLinks={companyLinks}
+                alignment={alignment}
+              />
+            </BlockWrapper>
+          );
+
+        case 'ctaButton':
+          return (
+            <BlockWrapper key={block._key}>
+              <CTAButton {...block} inheritAlignment={alignment} />
+            </BlockWrapper>
+          );
+
+        case 'ctaCalloutLink':
+          return (
+            <BlockWrapper key={block._key}>
+              <CTACalloutLinkComponent {...block} />
+            </BlockWrapper>
+          );
+
+        case 'ctaBlogPost':
+          return (
+            <BlockWrapper key={block._key}>
+              <CTABlogPost {...block} />
+            </BlockWrapper>
+          );
+
+        case 'imageBlock':
+          return (
+            <BlockWrapper key={block._key}>
+              <ImageBlock
+                {...block}
+                documentId={documentId}
+                documentType={documentType}
+                pathPrefix={blockPath}
+              />
+            </BlockWrapper>
+          );
+
+        case 'imageGallery':
+          return (
+            <BlockWrapper key={block._key}>
+              <ImageGallery
+                {...block}
+                documentId={documentId}
+                documentType={documentType}
+                pathPrefix={blockPath}
+              />
+            </BlockWrapper>
+          );
+
+        case 'youTubeVideo':
+          return (
+            <BlockWrapper key={block._key}>
+              <YouTubeVideo {...block} />
+            </BlockWrapper>
+          );
+
+        case 'spotifyWidget':
+          return (
+            <BlockWrapper key={block._key}>
+              <SpotifyWidget {...block} />
+            </BlockWrapper>
+          );
+
+        case 'bandcampWidget':
+          return (
+            <BlockWrapper key={block._key}>
+              <BandcampWidget {...block} />
+            </BlockWrapper>
+          );
+
+        case 'companyLinksBlock':
+          return (
+            <BlockWrapper key={block._key}>
+              <CompanyLinksBlock {...block} companyLinks={companyLinks?.companyLinks || null} />
+            </BlockWrapper>
+          );
+
+        case 'blockList':
+          return (
+            <BlockWrapper key={block._key}>
+              <BlockList
+                {...block}
+                documentId={documentId}
+                documentType={documentType}
+                fieldPathPrefix={blockPath}
+              />
+            </BlockWrapper>
+          );
+
+        default:
+          return null;
+      }
+    });
+  };
+
+  // Banner Image - Stacked (only option for banner)
+  if (cleanImageType === 'banner' && image?.asset?._ref) {
+    return (
+      <CardContainer className={`${className} flex flex-col`} isGridChild={isGridChild}>
+        {/* Banner Image - Full width at top */}
+        <div
+          className="relative w-full h-48 min-h-[12rem] max-h-64 overflow-hidden"
+          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+          <UnifiedImage
+            src={image}
+            alt={image.alt || 'Card banner image'}
+            mode="fill"
+            sizeContext="card"
+            objectFit="cover"
+            generateSchema
+            schemaContext="article"
+            documentId={documentId}
+            documentType={documentType}
+            fieldPath={getFieldPath('image')}
+          />
+        </div>
+
+        {/* Content - Center aligned */}
+        <div className="flex flex-col gap-4 p-6 text-center items-center">{renderContent()}</div>
+      </CardContainer>
+    );
+  }
+
+  // Profile Image - Stacked
+  if (cleanImageType === 'profile' && cleanLayoutStyle === 'stacked' && image?.asset?._ref) {
     return (
       <CardContainer
         className={`${className} flex flex-col text-center items-center`}
         isGridChild={isGridChild}>
-        {/* Icon */}
-        {icon && icon.showIcon && (
-          <div className='flex justify-center mb-4'>
-            <Icon
-              image={icon.image}
-              showIcon={icon.showIcon}
-              {...createSanityDataAttribute(documentId, documentType, fieldPathPrefix || '')}
+        {/* Profile Image - Square frame at top center */}
+        <div
+          className="mb-6"
+          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+          <div className="relative w-32 h-32 rounded-lg overflow-hidden">
+            <UnifiedImage
+              src={image}
+              alt={image.alt || 'Profile image'}
+              mode="fill"
+              sizeContext="profile"
+              objectFit="cover"
+              generateSchema
+              schemaContext="profile"
+              documentId={documentId}
+              documentType={documentType}
+              fieldPath={getFieldPath('image')}
             />
           </div>
-        )}
+        </div>
 
-        {/* Title */}
-        {cleanTitle && (
-          <div {...createSanityDataAttribute(documentId, documentType, getFieldPath('title'))}>
-            <Heading className='mb-6' level='h4' showUnderline asDiv>
-              {cleanTitle}
-            </Heading>
-          </div>
-        )}
-
-        {/* Body Text */}
-        {cleanBodyText && (
-          <p
-            className='text-body-lg text-gray-600 leading-relaxed whitespace-pre-line'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('bodyText'))}>
-            {cleanBodyText}
-          </p>
-        )}
-
-        {/* CTA Buttons */}
-        {ctaList && ctaList.length > 0 && (
-          <div
-            className='mt-4'
-            {...createSanityDataAttribute(documentId, documentType, getFieldPath('ctaList'))}>
-            <CTAList ctaList={ctaList} alignment='flex-col' />
-          </div>
-        )}
+        {/* Content - Center aligned */}
+        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
       </CardContainer>
     );
   }
 
-  // Info Card (Style 2) - Horizontal layout with icon on left, content on right
-  if (cleanCardStyle === 'info') {
+  // Profile Image - Row
+  if (cleanImageType === 'profile' && cleanLayoutStyle === 'row' && image?.asset?._ref) {
+    return (
+      <CardContainer className={`${className} flex flex-row gap-6 items-start`} isGridChild={isGridChild}>
+        {/* Profile Image - Left side square frame */}
+        <div
+          className="flex-shrink-0"
+          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+          <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden">
+            <UnifiedImage
+              src={image}
+              alt={image.alt || 'Profile image'}
+              mode="fill"
+              sizeContext="profile"
+              objectFit="cover"
+              generateSchema
+              schemaContext="profile"
+              documentId={documentId}
+              documentType={documentType}
+              fieldPath={getFieldPath('image')}
+            />
+          </div>
+        </div>
+
+        {/* Content - Left aligned */}
+        <div className="flex-1 flex flex-col gap-4 text-left">{renderContent()}</div>
+      </CardContainer>
+    );
+  }
+
+  // Icon - Stacked
+  if (cleanImageType === 'icon' && cleanLayoutStyle === 'stacked' && image?.asset?._ref) {
     return (
       <CardContainer
-        className={`${className} flex flex-row items-start gap-6`}
+        className={`${className} flex flex-col text-center items-center`}
         isGridChild={isGridChild}>
-        {/* Icon - 1/3 width when present */}
-        {icon && icon.showIcon && (
-          <div className='flex-shrink-0 flex justify-center'>
-            <Icon
-              image={icon.image}
-              showIcon={icon.showIcon}
-              {...createSanityDataAttribute(documentId, documentType, fieldPathPrefix || '')}
+        {/* Icon - Circular frame at top center */}
+        <div
+          className="mb-6"
+          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+          <div className="relative w-20 h-20 rounded-full bg-brand-secondary/10 flex items-center justify-center overflow-hidden">
+            <UnifiedImage
+              src={image}
+              alt={image.alt || 'Icon'}
+              mode="sized"
+              width={64}
+              height={64}
+              sizeContext="icon"
+              objectFit="contain"
+              className="w-16 h-16"
+              documentId={documentId}
+              documentType={documentType}
+              fieldPath={getFieldPath('image')}
             />
           </div>
-        )}
-
-        {/* Content */}
-        <div className={`flex flex-col gap-4 ${icon && icon.showIcon ? 'text-left' : ''}`}>
-          {/* Title */}
-          {cleanTitle && (
-            <div
-              className='text-h6 font-bold'
-              {...createSanityDataAttribute(documentId, documentType, getFieldPath('title'))}>
-              {cleanTitle}
-            </div>
-          )}
-
-          {/* Body Text */}
-          {cleanBodyText && (
-            <p
-              className='text-gray-600 leading-relaxed whitespace-pre-line'
-              {...createSanityDataAttribute(documentId, documentType, getFieldPath('bodyText'))}>
-              {cleanBodyText}
-            </p>
-          )}
-
-          {/* CTA Buttons */}
-          {ctaList && ctaList.length > 0 && (
-            <div
-              className='mt-2'
-              {...createSanityDataAttribute(documentId, documentType, getFieldPath('ctaList'))}>
-              <CTAList
-                ctaList={ctaList}
-                alignment={`${icon && icon.showIcon ? 'flex-col-left' : 'flex-col'}`}
-              />
-            </div>
-          )}
         </div>
+
+        {/* Content - Center aligned */}
+        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
       </CardContainer>
     );
   }
 
-  // Statement Card (Style 3) - Decorative layout for core values
-  return (
-    <CardContainer
-      className={`${className} relative overflow-hidden bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100`}
-      isGridChild={isGridChild}>
-      <div className='relative z-10 flex flex-col items-center lg:flex-row lg:items-start gap-8 p-3 lg:p-4'>
-        {/* Left side - Icon */}
-        {icon && icon.showIcon && (
-          <div className='flex-shrink-0 relative'>
-            {/* Icon background circle */}
-            <div className='relative w-24 h-24 lg:w-32 lg:h-32 flex items-center justify-center rounded-full bg-brand-secondary/15'>
-              <Icon
-                image={icon.image}
-                showIcon={icon.showIcon}
-                className='w-16 h-16 lg:w-20 lg:h-20'
-                {...createSanityDataAttribute(documentId, documentType, fieldPathPrefix || '')}
-              />
-            </div>
+  // Icon - Row
+  if (cleanImageType === 'icon' && cleanLayoutStyle === 'row' && image?.asset?._ref) {
+    return (
+      <CardContainer className={`${className} flex flex-row gap-6 items-start`} isGridChild={isGridChild}>
+        {/* Icon - Circular frame on left */}
+        <div
+          className="flex-shrink-0"
+          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+          <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-secondary/10 flex items-center justify-center overflow-hidden">
+            <UnifiedImage
+              src={image}
+              alt={image.alt || 'Icon'}
+              mode="sized"
+              width={64}
+              height={64}
+              sizeContext="icon"
+              objectFit="contain"
+              className="w-12 h-12 md:w-16 md:h-16"
+              documentId={documentId}
+              documentType={documentType}
+              fieldPath={getFieldPath('image')}
+            />
           </div>
-        )}
-
-        {/* Right side - Content */}
-        <div className='flex-1 flex flex-col gap-4 md:gap-8 text-center lg:text-left'>
-          {/* Title */}
-          {cleanTitle && (
-            <div {...createSanityDataAttribute(documentId, documentType, getFieldPath('title'))}>
-              <Heading level='h2' showFullWidthUnderline asDiv>
-                {cleanTitle}
-              </Heading>
-            </div>
-          )}
-
-          {/* Body Text */}
-          {cleanBodyText && (
-            <p
-              className='text-body-xl text-gray-600 leading-relaxed whitespace-pre-line font-medium italic'
-              {...createSanityDataAttribute(documentId, documentType, getFieldPath('bodyText'))}>
-              {cleanBodyText}
-            </p>
-          )}
-
-          {/* CTA Buttons */}
-          {ctaList && ctaList.length > 0 && (
-            <div
-              className='mt-6'
-              {...createSanityDataAttribute(documentId, documentType, getFieldPath('ctaList'))}>
-              <CTAList ctaList={ctaList} alignment='flex-row' />
-            </div>
-          )}
         </div>
-      </div>
-    </CardContainer>
-  );
-};
 
-// Simple inline Icon component for displaying card icons
-interface IconProps {
-  image?: {
-    asset?: { _ref: string };
-    alt?: string;
-  };
-  showIcon: boolean;
-  className?: string;
-}
-
-const Icon: React.FC<IconProps> = ({ image, showIcon, className = '' }) => {
-  if (!showIcon) return null;
-
-  // If no custom image provided, you could use a default icon or just return null
-  if (!image?.asset?._ref) {
-    return null;
+        {/* Content - Left aligned */}
+        <div className="flex-1 flex flex-col gap-4 text-left">{renderContent()}</div>
+      </CardContainer>
+    );
   }
 
+  // No Image - Stacked
+  if (cleanImageType === 'none' && cleanLayoutStyle === 'stacked') {
+    return (
+      <CardContainer
+        className={`${className} flex flex-col text-center items-center`}
+        isGridChild={isGridChild}>
+        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+      </CardContainer>
+    );
+  }
+
+  // No Image - Row
+  if (cleanImageType === 'none' && cleanLayoutStyle === 'row') {
+    return (
+      <CardContainer className={`${className} flex flex-col text-left`} isGridChild={isGridChild}>
+        <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+      </CardContainer>
+    );
+  }
+
+  // Fallback - render content only
   return (
-    <UnifiedImage
-      src={image}
-      alt={image.alt || 'Icon'}
-      mode='sized'
-      width={100}
-      height={100}
-      sizeContext='icon'
-      objectFit='contain'
-      className={className}
-    />
+    <CardContainer
+      className={`${className} flex flex-col text-center items-center`}
+      isGridChild={isGridChild}>
+      <div className="flex flex-col gap-4 w-full">{renderContent()}</div>
+    </CardContainer>
   );
 };
 

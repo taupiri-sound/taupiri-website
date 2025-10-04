@@ -2,9 +2,8 @@
 // When modifying, ensure all fields have appropriate validation, titles, and descriptions for content editors.
 // Follow the existing patterns in other schema files for consistency.
 
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType, defineArrayMember } from 'sanity';
 import { DocumentIcon } from '@sanity/icons';
-import { createCTAListField } from '../shared/ctaListType';
 
 export const cardType = defineType({
   name: 'card',
@@ -12,91 +11,150 @@ export const cardType = defineType({
   type: 'object',
   icon: DocumentIcon,
   groups: [
-    { name: 'style', title: 'Style' },
+    { name: 'image', title: 'Image' },
+    { name: 'layout', title: 'Layout' },
     { name: 'content', title: 'Content' },
-    { name: 'cta', title: 'Call to Action' },
   ],
   fields: [
     defineField({
-      name: 'cardStyle',
-      title: 'Card Style',
+      name: 'imageType',
+      title: 'Image Type',
       type: 'string',
-      group: 'style',
+      group: 'image',
       options: {
         list: [
           {
-            title: 'Info Card',
-            value: 'info',
+            title: 'No Image',
+            value: 'none',
           },
           {
-            title: 'Feature Card',
-            value: 'feature',
+            title: 'Banner Image',
+            value: 'banner',
           },
           {
-            title: 'Statement Card',
-            value: 'statement',
+            title: 'Profile Image',
+            value: 'profile',
+          },
+          {
+            title: 'Icon',
+            value: 'icon',
           },
         ],
         layout: 'radio',
       },
-      initialValue: 'feature',
-      description: 'Choose the card layout style:\n\n• Info Card: Condensed horizontal layout with icon on the left and content on the right. Perfect for compact information displays.\n\n• Feature Card: Standard layout with icon, title, description, and button arranged vertically. Perfect for highlighting services, features, or benefits.\n\n• Statement Card: Decorative layout with larger text and creative arrangement. Ideal for showcasing core values, mission statements, or key principles.',
+      initialValue: 'none',
+      description:
+        'Choose the type of image for this card:\n\n• No Image: Card displays content only\n\n• Banner Image: Full-width image at the top of the card\n\n• Profile Image: Square image displayed prominently\n\n• Icon: Small circular icon image',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'icon',
-      title: 'Icon',
-      type: 'icon',
-      group: 'content',
-      description: 'Optional icon to display in the card',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      group: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessibility',
+        },
+      ],
+      description: 'Upload the image for this card',
+      hidden: ({ parent }) => parent?.imageType === 'none',
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const parent = context.parent as { imageType?: string };
+          if (parent?.imageType && parent.imageType !== 'none' && !value) {
+            return 'Image is required when an image type is selected';
+          }
+          return true;
+        }),
     }),
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'layoutStyle',
+      title: 'Layout Style',
       type: 'string',
-      group: 'content',
-      description: 'Card title (will be styled as h3)',
+      group: 'layout',
+      options: {
+        list: [
+          {
+            title: 'Stacked (Vertical)',
+            value: 'stacked',
+          },
+          {
+            title: 'Row (Horizontal)',
+            value: 'row',
+          },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'stacked',
+      description:
+        'Choose how the card content is arranged:\n\n• Stacked: Image (if present) appears above content, arranged vertically\n\n• Row: Image (if present) appears beside content, arranged horizontally\n\nNote: Row layout is not available for Banner images.',
+      hidden: ({ parent }) => parent?.imageType === 'banner',
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const parent = context.parent as { imageType?: string };
+          if (parent?.imageType === 'banner' && value === 'row') {
+            return 'Row layout is not available for Banner images';
+          }
+          return true;
+        }),
     }),
     defineField({
-      name: 'bodyText',
-      title: 'Body Text',
-      type: 'text',
-      rows: 4,
+      name: 'content',
+      title: 'Card Content',
+      type: 'array',
       group: 'content',
-      description: 'Main content text for the card',
-    }),
-    createCTAListField({
-      name: 'ctaList',
-      title: 'Call to Action Buttons',
-      description: 'Add call-to-action buttons for this card. Leave empty if no CTA is needed.',
-      group: 'cta',
-      maxItems: 2,
+      description:
+        'Add content blocks to your card. You can include text, images, buttons, quotes, and more.',
+      of: [
+        defineArrayMember({ type: 'divider' }),
+        defineArrayMember({ type: 'twoColumnLayout' }),
+        defineArrayMember({ type: 'richText' }),
+        defineArrayMember({ type: 'blockList' }),
+        defineArrayMember({ type: 'quote' }),
+        defineArrayMember({ type: 'imageBlock' }),
+        defineArrayMember({ type: 'imageGallery' }),
+        defineArrayMember({ type: 'ctaButton' }),
+        defineArrayMember({ type: 'ctaCalloutLink' }),
+        defineArrayMember({ type: 'ctaBlogPost' }),
+        defineArrayMember({ type: 'youTubeVideo' }),
+        defineArrayMember({ type: 'spotifyWidget' }),
+        defineArrayMember({ type: 'bandcampWidget' }),
+        defineArrayMember({ type: 'companyLinksBlock' }),
+      ],
+      validation: (Rule) => Rule.min(1).error('Card must have at least one content block'),
     }),
   ],
   preview: {
     select: {
-      title: 'title',
-      icon: 'icon.name',
-      bodyText: 'bodyText',
-      cardStyle: 'cardStyle',
-      ctaList: 'ctaList',
+      imageType: 'imageType',
+      layoutStyle: 'layoutStyle',
+      image: 'image',
+      content: 'content',
     },
-    prepare({ title, icon, bodyText, cardStyle, ctaList }) {
-      const displayTitle = title || 'Untitled Card';
-      const styleLabel = cardStyle === 'statement' ? 'Statement' : cardStyle === 'info' ? 'Info' : 'Feature';
-      const ctaCount = ctaList?.length || 0;
-      const ctaLabel = ctaCount > 0 ? ` • ${ctaCount} CTA${ctaCount !== 1 ? 's' : ''}` : '';
-
-      const subtitle = icon
-        ? `${styleLabel} • Icon: ${icon}${ctaLabel}`
-        : bodyText
-          ? `${styleLabel} • ${bodyText.slice(0, 30)}...${ctaLabel}`
-          : `${styleLabel} • No content${ctaLabel}`;
+    prepare({ imageType, layoutStyle, image, content }) {
+      const imageTypeLabel =
+        imageType === 'banner'
+          ? 'Banner'
+          : imageType === 'profile'
+            ? 'Profile'
+            : imageType === 'icon'
+              ? 'Icon'
+              : 'No Image';
+      const layoutLabel =
+        imageType === 'banner' ? 'Stacked' : layoutStyle === 'row' ? 'Row' : 'Stacked';
+      const blockCount = Array.isArray(content) ? content.length : 0;
 
       return {
-        title: displayTitle,
-        subtitle,
-        media: DocumentIcon,
+        title: `Card: ${imageTypeLabel} • ${layoutLabel}`,
+        subtitle: `${blockCount} content block${blockCount !== 1 ? 's' : ''}`,
+        media: image || DocumentIcon,
       };
     },
   },
