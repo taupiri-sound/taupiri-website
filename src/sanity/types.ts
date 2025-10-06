@@ -464,7 +464,7 @@ export type Icon = {
 
 export type GridLayout = {
   _type: "gridLayout";
-  columns?: "2" | "3";
+  columns?: "2" | "3" | "4";
   content?: Array<{
     _key: string;
   } & RichText | {
@@ -2779,7 +2779,7 @@ export type PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -5747,7 +5747,7 @@ export type PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -8725,7 +8725,7 @@ export type PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -9690,7 +9690,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -16033,7 +16033,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -19001,7 +19001,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -21979,7 +21979,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -22944,7 +22944,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -29334,7 +29334,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -32302,7 +32302,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -35280,7 +35280,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -36245,7 +36245,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -42509,7 +42509,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -45477,7 +45477,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -48455,7 +48455,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -49420,7 +49420,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -55684,7 +55684,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -58652,7 +58652,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -61630,7 +61630,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -62595,7 +62595,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -68901,7 +68901,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -71869,7 +71869,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -74847,7 +74847,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -75812,7 +75812,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -82862,7 +82862,7 @@ export type BLOG_POST_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -85830,7 +85830,7 @@ export type BLOG_POST_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -88808,7 +88808,7 @@ export type BLOG_POST_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -89773,7 +89773,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -96153,7 +96153,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -99121,7 +99121,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -102099,7 +102099,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -103064,7 +103064,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -109346,7 +109346,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -112314,7 +112314,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -115292,7 +115292,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -116257,7 +116257,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -122515,7 +122515,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -125483,7 +125483,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -128461,7 +128461,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -129426,7 +129426,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -135684,7 +135684,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -138652,7 +138652,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -141630,7 +141630,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -142595,7 +142595,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -148877,7 +148877,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -151845,7 +151845,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -154823,7 +154823,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -155788,7 +155788,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -162057,7 +162057,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -165025,7 +165025,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -168003,7 +168003,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -168968,7 +168968,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -175250,7 +175250,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -178218,7 +178218,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -181196,7 +181196,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -182161,7 +182161,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -188419,7 +188419,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -191387,7 +191387,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -194365,7 +194365,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -195330,7 +195330,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -201588,7 +201588,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -204556,7 +204556,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -207534,7 +207534,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -208499,7 +208499,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -214781,7 +214781,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "gridLayout";
-    columns?: "2" | "3";
+    columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -217749,7 +217749,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "gridLayout";
-      columns?: "2" | "3";
+      columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -220727,7 +220727,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "gridLayout";
-        columns?: "2" | "3";
+        columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -221692,7 +221692,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "gridLayout";
-          columns?: "2" | "3";
+          columns?: "2" | "3" | "4";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
