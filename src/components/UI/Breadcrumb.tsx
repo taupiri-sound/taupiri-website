@@ -15,14 +15,14 @@ interface BreadcrumbProps {
 const Breadcrumb = ({ pageTitle, pageTitleClickable = false, pageTitleHref }: BreadcrumbProps) => {
   return (
     <nav
-      className={`flex items-center gap-2 text-brand-secondary px-4 md:px-8 py-2 text-body-sm ${breadcrumbBottomSpacing}`}
+      className={`flex items-center gap-2 text-brand-secondary px-4 md:px-8 py-2 ${breadcrumbBottomSpacing}`}
       aria-label='Breadcrumb'>
       {/* Home Icon */}
       <Link
         href='/'
         className='flex items-center hover:text-brand-primary transition-colors duration-200'
         aria-label='Go to home page'>
-        <FaHome className='text-body-base' />
+        <FaHome />
       </Link>
 
       {/* Separator */}

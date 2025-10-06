@@ -17,7 +17,8 @@ interface HeaderProps {
 const Header = ({ headerData }: HeaderProps) => {
   const { enableOpacityFade } = useHeader();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [headerOpacity, setHeaderOpacity] = useState(enableOpacityFade ? 0 : 1);
+  // Always start transparent - useEffect will set correct value
+  const [headerOpacity, setHeaderOpacity] = useState(0);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,10 +28,15 @@ const Header = ({ headerData }: HeaderProps) => {
     setIsMenuOpen(false);
   }, []);
 
-  // Reset opacity when fade is disabled
+  // Set opacity based on enableOpacityFade state
   useEffect(() => {
     if (!enableOpacityFade) {
-      setHeaderOpacity(1);
+      // Delay setting opacity to allow Hero to mount and update context first
+      const timer = setTimeout(() => {
+        setHeaderOpacity(1);
+      }, 50);
+
+      return () => clearTimeout(timer);
     }
   }, [enableOpacityFade]);
 
@@ -94,7 +100,12 @@ const Header = ({ headerData }: HeaderProps) => {
           backgroundColor: `rgba(67, 12, 8, ${headerOpacity})`, // bg-brand-secondary (#430c08) with variable opacity
         }}>
         {/* Logo */}
-        <Link href='/#home' className='flex items-center gap-2'>
+        <Link
+          href='/#home'
+          className='flex items-center gap-2 transition-opacity duration-300'
+          style={{
+            opacity: headerOpacity,
+          }}>
           <UnifiedImage
             src='/images/logos/logo-white.png'
             alt='Taupiri Sound Logo'
