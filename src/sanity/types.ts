@@ -279,7 +279,7 @@ export type CtaCalloutLink = {
 export type CtaButton = {
   _type: "ctaButton";
   text?: string;
-  variant?: "filled" | "outline";
+  variant?: "filled" | "outline-light" | "outline-dark";
   alignment?: "inherit" | "left" | "center" | "right";
   linkType?: "internal" | "external";
   internalLink?: {
@@ -1349,7 +1349,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -1636,7 +1636,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -1912,7 +1912,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -2159,7 +2159,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -2435,7 +2435,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -2651,7 +2651,7 @@ export type PAGE_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -2857,7 +2857,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -3143,7 +3143,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -3419,7 +3419,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -3666,7 +3666,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -3942,7 +3942,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -4318,7 +4318,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -4604,7 +4604,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -4880,7 +4880,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -5127,7 +5127,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -5403,7 +5403,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -5619,7 +5619,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -5821,7 +5821,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -6099,7 +6099,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -6375,7 +6375,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -6622,7 +6622,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -6898,7 +6898,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -7306,7 +7306,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -7584,7 +7584,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -7860,7 +7860,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -8107,7 +8107,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -8383,7 +8383,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -8597,7 +8597,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -8794,7 +8794,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -9272,7 +9272,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -9565,7 +9565,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -9758,7 +9758,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -10224,7 +10224,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -10500,7 +10500,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -10747,7 +10747,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -11023,7 +11023,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -11282,7 +11282,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -11558,7 +11558,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -11805,7 +11805,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -12081,7 +12081,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -12342,7 +12342,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -12618,7 +12618,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -12865,7 +12865,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -13141,7 +13141,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -13444,7 +13444,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -13720,7 +13720,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -13967,7 +13967,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -14243,7 +14243,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -14603,7 +14603,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -14890,7 +14890,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -15166,7 +15166,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -15413,7 +15413,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -15689,7 +15689,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -15905,7 +15905,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -16111,7 +16111,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -16397,7 +16397,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -16673,7 +16673,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -16920,7 +16920,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -17196,7 +17196,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -17572,7 +17572,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -17858,7 +17858,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -18134,7 +18134,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -18381,7 +18381,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -18657,7 +18657,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -18873,7 +18873,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -19075,7 +19075,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -19353,7 +19353,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -19629,7 +19629,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -19876,7 +19876,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -20152,7 +20152,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -20560,7 +20560,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -20838,7 +20838,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -21114,7 +21114,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -21361,7 +21361,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -21637,7 +21637,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -21851,7 +21851,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -22048,7 +22048,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -22526,7 +22526,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -22819,7 +22819,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -23012,7 +23012,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -23478,7 +23478,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -23754,7 +23754,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -24001,7 +24001,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -24277,7 +24277,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -24536,7 +24536,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -24812,7 +24812,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -25059,7 +25059,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -25335,7 +25335,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -25596,7 +25596,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -25872,7 +25872,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -26119,7 +26119,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -26395,7 +26395,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -26698,7 +26698,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -26974,7 +26974,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -27221,7 +27221,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -27497,7 +27497,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -27904,7 +27904,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -28191,7 +28191,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -28467,7 +28467,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -28714,7 +28714,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -28990,7 +28990,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -29206,7 +29206,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -29412,7 +29412,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -29698,7 +29698,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -29974,7 +29974,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -30221,7 +30221,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -30497,7 +30497,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -30873,7 +30873,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -31159,7 +31159,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -31435,7 +31435,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -31682,7 +31682,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -31958,7 +31958,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -32174,7 +32174,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -32376,7 +32376,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -32654,7 +32654,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -32930,7 +32930,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -33177,7 +33177,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -33453,7 +33453,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -33861,7 +33861,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -34139,7 +34139,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -34415,7 +34415,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -34662,7 +34662,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -34938,7 +34938,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -35152,7 +35152,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -35349,7 +35349,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -35827,7 +35827,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -36120,7 +36120,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -36313,7 +36313,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -36779,7 +36779,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -37055,7 +37055,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -37302,7 +37302,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -37578,7 +37578,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -37837,7 +37837,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -38113,7 +38113,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -38360,7 +38360,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -38636,7 +38636,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -38897,7 +38897,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -39173,7 +39173,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -39420,7 +39420,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -39696,7 +39696,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -39999,7 +39999,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -40275,7 +40275,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -40522,7 +40522,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -40798,7 +40798,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -41079,7 +41079,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -41366,7 +41366,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -41642,7 +41642,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -41889,7 +41889,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -42165,7 +42165,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -42381,7 +42381,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -42587,7 +42587,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -42873,7 +42873,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -43149,7 +43149,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -43396,7 +43396,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -43672,7 +43672,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -44048,7 +44048,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -44334,7 +44334,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -44610,7 +44610,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -44857,7 +44857,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -45133,7 +45133,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -45349,7 +45349,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -45551,7 +45551,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -45829,7 +45829,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -46105,7 +46105,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -46352,7 +46352,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -46628,7 +46628,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -47036,7 +47036,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -47314,7 +47314,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -47590,7 +47590,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -47837,7 +47837,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -48113,7 +48113,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -48327,7 +48327,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -48524,7 +48524,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -49002,7 +49002,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -49295,7 +49295,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -49488,7 +49488,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -49954,7 +49954,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -50230,7 +50230,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -50477,7 +50477,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -50753,7 +50753,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -51012,7 +51012,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -51288,7 +51288,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -51535,7 +51535,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -51811,7 +51811,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -52072,7 +52072,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -52348,7 +52348,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -52595,7 +52595,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -52871,7 +52871,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -53174,7 +53174,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -53450,7 +53450,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -53697,7 +53697,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -53973,7 +53973,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -54254,7 +54254,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -54541,7 +54541,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -54817,7 +54817,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -55064,7 +55064,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -55340,7 +55340,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -55556,7 +55556,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -55762,7 +55762,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -56048,7 +56048,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -56324,7 +56324,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -56571,7 +56571,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -56847,7 +56847,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -57223,7 +57223,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -57509,7 +57509,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -57785,7 +57785,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -58032,7 +58032,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -58308,7 +58308,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -58524,7 +58524,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -58726,7 +58726,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -59004,7 +59004,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -59280,7 +59280,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -59527,7 +59527,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -59803,7 +59803,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -60211,7 +60211,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -60489,7 +60489,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -60765,7 +60765,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -61012,7 +61012,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -61288,7 +61288,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -61502,7 +61502,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -61699,7 +61699,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -62177,7 +62177,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -62470,7 +62470,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -62663,7 +62663,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -63129,7 +63129,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -63405,7 +63405,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -63652,7 +63652,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -63928,7 +63928,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -64187,7 +64187,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -64463,7 +64463,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -64710,7 +64710,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -64986,7 +64986,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -65247,7 +65247,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -65523,7 +65523,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -65770,7 +65770,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -66046,7 +66046,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -66349,7 +66349,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -66625,7 +66625,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -66872,7 +66872,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -67148,7 +67148,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -67471,7 +67471,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -67758,7 +67758,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -68034,7 +68034,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -68281,7 +68281,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -68557,7 +68557,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -68773,7 +68773,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -68979,7 +68979,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -69265,7 +69265,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -69541,7 +69541,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -69788,7 +69788,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -70064,7 +70064,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -70440,7 +70440,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -70726,7 +70726,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -71002,7 +71002,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -71249,7 +71249,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -71525,7 +71525,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -71741,7 +71741,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -71943,7 +71943,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -72221,7 +72221,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -72497,7 +72497,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -72744,7 +72744,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -73020,7 +73020,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -73428,7 +73428,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -73706,7 +73706,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -73982,7 +73982,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -74229,7 +74229,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -74505,7 +74505,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -74719,7 +74719,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -74916,7 +74916,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -75394,7 +75394,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -75687,7 +75687,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -75880,7 +75880,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -76346,7 +76346,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -76622,7 +76622,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -76869,7 +76869,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -77145,7 +77145,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -77404,7 +77404,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -77680,7 +77680,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -77927,7 +77927,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -78203,7 +78203,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -78464,7 +78464,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -78740,7 +78740,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -78987,7 +78987,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -79263,7 +79263,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -79566,7 +79566,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -79842,7 +79842,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -80089,7 +80089,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -80365,7 +80365,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -81432,7 +81432,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -81719,7 +81719,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -81995,7 +81995,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -82242,7 +82242,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -82518,7 +82518,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -82734,7 +82734,7 @@ export type BLOG_POST_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -82940,7 +82940,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -83226,7 +83226,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -83502,7 +83502,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -83749,7 +83749,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -84025,7 +84025,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -84401,7 +84401,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -84687,7 +84687,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -84963,7 +84963,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -85210,7 +85210,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -85486,7 +85486,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -85702,7 +85702,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -85904,7 +85904,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -86182,7 +86182,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -86458,7 +86458,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -86705,7 +86705,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -86981,7 +86981,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -87389,7 +87389,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -87667,7 +87667,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -87943,7 +87943,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -88190,7 +88190,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -88466,7 +88466,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -88680,7 +88680,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -88877,7 +88877,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -89355,7 +89355,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -89648,7 +89648,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -89841,7 +89841,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -90307,7 +90307,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -90583,7 +90583,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -90830,7 +90830,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -91106,7 +91106,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -91365,7 +91365,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -91641,7 +91641,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -91888,7 +91888,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -92164,7 +92164,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -92425,7 +92425,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -92701,7 +92701,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -92948,7 +92948,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -93224,7 +93224,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -93527,7 +93527,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -93803,7 +93803,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -94050,7 +94050,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -94326,7 +94326,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -94723,7 +94723,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -95010,7 +95010,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -95286,7 +95286,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -95533,7 +95533,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -95809,7 +95809,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -96025,7 +96025,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -96231,7 +96231,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -96517,7 +96517,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -96793,7 +96793,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -97040,7 +97040,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -97316,7 +97316,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -97692,7 +97692,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -97978,7 +97978,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -98254,7 +98254,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -98501,7 +98501,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -98777,7 +98777,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -98993,7 +98993,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -99195,7 +99195,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -99473,7 +99473,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -99749,7 +99749,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -99996,7 +99996,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -100272,7 +100272,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -100680,7 +100680,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -100958,7 +100958,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -101234,7 +101234,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -101481,7 +101481,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -101757,7 +101757,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -101971,7 +101971,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -102168,7 +102168,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -102646,7 +102646,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -102939,7 +102939,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -103132,7 +103132,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -103598,7 +103598,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -103874,7 +103874,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -104121,7 +104121,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -104397,7 +104397,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -104656,7 +104656,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -104932,7 +104932,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -105179,7 +105179,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -105455,7 +105455,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -105716,7 +105716,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -105992,7 +105992,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -106239,7 +106239,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -106515,7 +106515,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -106818,7 +106818,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -107094,7 +107094,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -107341,7 +107341,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -107617,7 +107617,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -107916,7 +107916,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -108203,7 +108203,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -108479,7 +108479,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -108726,7 +108726,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -109002,7 +109002,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -109218,7 +109218,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -109424,7 +109424,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -109710,7 +109710,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -109986,7 +109986,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -110233,7 +110233,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -110509,7 +110509,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -110885,7 +110885,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -111171,7 +111171,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -111447,7 +111447,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -111694,7 +111694,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -111970,7 +111970,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -112186,7 +112186,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -112388,7 +112388,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -112666,7 +112666,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -112942,7 +112942,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -113189,7 +113189,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -113465,7 +113465,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -113873,7 +113873,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -114151,7 +114151,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -114427,7 +114427,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -114674,7 +114674,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -114950,7 +114950,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -115164,7 +115164,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -115361,7 +115361,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -115839,7 +115839,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -116132,7 +116132,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -116325,7 +116325,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -116791,7 +116791,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -117067,7 +117067,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -117314,7 +117314,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -117590,7 +117590,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -117849,7 +117849,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -118125,7 +118125,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -118372,7 +118372,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -118648,7 +118648,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -118909,7 +118909,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -119185,7 +119185,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -119432,7 +119432,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -119708,7 +119708,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -120011,7 +120011,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -120287,7 +120287,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -120534,7 +120534,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -120810,7 +120810,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -121085,7 +121085,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -121372,7 +121372,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -121648,7 +121648,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -121895,7 +121895,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -122171,7 +122171,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -122387,7 +122387,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -122593,7 +122593,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -122879,7 +122879,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -123155,7 +123155,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -123402,7 +123402,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -123678,7 +123678,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -124054,7 +124054,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -124340,7 +124340,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -124616,7 +124616,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -124863,7 +124863,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -125139,7 +125139,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -125355,7 +125355,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -125557,7 +125557,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -125835,7 +125835,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -126111,7 +126111,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -126358,7 +126358,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -126634,7 +126634,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -127042,7 +127042,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -127320,7 +127320,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -127596,7 +127596,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -127843,7 +127843,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -128119,7 +128119,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -128333,7 +128333,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -128530,7 +128530,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -129008,7 +129008,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -129301,7 +129301,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -129494,7 +129494,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -129960,7 +129960,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -130236,7 +130236,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -130483,7 +130483,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -130759,7 +130759,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -131018,7 +131018,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -131294,7 +131294,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -131541,7 +131541,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -131817,7 +131817,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -132078,7 +132078,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -132354,7 +132354,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -132601,7 +132601,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -132877,7 +132877,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -133180,7 +133180,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -133456,7 +133456,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -133703,7 +133703,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -133979,7 +133979,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -134254,7 +134254,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -134541,7 +134541,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -134817,7 +134817,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -135064,7 +135064,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -135340,7 +135340,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -135556,7 +135556,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -135762,7 +135762,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -136048,7 +136048,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -136324,7 +136324,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -136571,7 +136571,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -136847,7 +136847,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -137223,7 +137223,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -137509,7 +137509,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -137785,7 +137785,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -138032,7 +138032,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -138308,7 +138308,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -138524,7 +138524,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -138726,7 +138726,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -139004,7 +139004,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -139280,7 +139280,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -139527,7 +139527,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -139803,7 +139803,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -140211,7 +140211,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -140489,7 +140489,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -140765,7 +140765,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -141012,7 +141012,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -141288,7 +141288,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -141502,7 +141502,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -141699,7 +141699,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -142177,7 +142177,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -142470,7 +142470,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -142663,7 +142663,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -143129,7 +143129,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -143405,7 +143405,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -143652,7 +143652,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -143928,7 +143928,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -144187,7 +144187,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -144463,7 +144463,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -144710,7 +144710,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -144986,7 +144986,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -145247,7 +145247,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -145523,7 +145523,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -145770,7 +145770,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -146046,7 +146046,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -146349,7 +146349,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -146625,7 +146625,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -146872,7 +146872,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -147148,7 +147148,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -147447,7 +147447,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -147734,7 +147734,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -148010,7 +148010,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -148257,7 +148257,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -148533,7 +148533,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -148749,7 +148749,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -148955,7 +148955,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -149241,7 +149241,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -149517,7 +149517,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -149764,7 +149764,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -150040,7 +150040,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -150416,7 +150416,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -150702,7 +150702,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -150978,7 +150978,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -151225,7 +151225,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -151501,7 +151501,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -151717,7 +151717,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -151919,7 +151919,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -152197,7 +152197,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -152473,7 +152473,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -152720,7 +152720,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -152996,7 +152996,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -153404,7 +153404,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -153682,7 +153682,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -153958,7 +153958,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -154205,7 +154205,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -154481,7 +154481,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -154695,7 +154695,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -154892,7 +154892,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -155370,7 +155370,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -155663,7 +155663,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -155856,7 +155856,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -156322,7 +156322,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -156598,7 +156598,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -156845,7 +156845,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -157121,7 +157121,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -157380,7 +157380,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -157656,7 +157656,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -157903,7 +157903,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -158179,7 +158179,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -158440,7 +158440,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -158716,7 +158716,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -158963,7 +158963,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -159239,7 +159239,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -159542,7 +159542,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -159818,7 +159818,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -160065,7 +160065,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -160341,7 +160341,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -160627,7 +160627,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -160914,7 +160914,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -161190,7 +161190,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -161437,7 +161437,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -161713,7 +161713,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -161929,7 +161929,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -162135,7 +162135,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -162421,7 +162421,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -162697,7 +162697,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -162944,7 +162944,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -163220,7 +163220,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -163596,7 +163596,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -163882,7 +163882,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -164158,7 +164158,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -164405,7 +164405,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -164681,7 +164681,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -164897,7 +164897,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -165099,7 +165099,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -165377,7 +165377,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -165653,7 +165653,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -165900,7 +165900,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -166176,7 +166176,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -166584,7 +166584,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -166862,7 +166862,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -167138,7 +167138,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -167385,7 +167385,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -167661,7 +167661,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -167875,7 +167875,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -168072,7 +168072,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -168550,7 +168550,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -168843,7 +168843,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -169036,7 +169036,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -169502,7 +169502,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -169778,7 +169778,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -170025,7 +170025,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -170301,7 +170301,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -170560,7 +170560,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -170836,7 +170836,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -171083,7 +171083,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -171359,7 +171359,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -171620,7 +171620,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -171896,7 +171896,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -172143,7 +172143,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -172419,7 +172419,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -172722,7 +172722,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -172998,7 +172998,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -173245,7 +173245,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -173521,7 +173521,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -173820,7 +173820,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -174107,7 +174107,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -174383,7 +174383,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -174630,7 +174630,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -174906,7 +174906,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -175122,7 +175122,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -175328,7 +175328,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -175614,7 +175614,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -175890,7 +175890,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -176137,7 +176137,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -176413,7 +176413,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -176789,7 +176789,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -177075,7 +177075,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -177351,7 +177351,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -177598,7 +177598,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -177874,7 +177874,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -178090,7 +178090,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -178292,7 +178292,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -178570,7 +178570,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -178846,7 +178846,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -179093,7 +179093,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -179369,7 +179369,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -179777,7 +179777,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -180055,7 +180055,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -180331,7 +180331,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -180578,7 +180578,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -180854,7 +180854,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -181068,7 +181068,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -181265,7 +181265,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -181743,7 +181743,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -182036,7 +182036,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -182229,7 +182229,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -182695,7 +182695,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -182971,7 +182971,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -183218,7 +183218,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -183494,7 +183494,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -183753,7 +183753,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -184029,7 +184029,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -184276,7 +184276,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -184552,7 +184552,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -184813,7 +184813,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -185089,7 +185089,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -185336,7 +185336,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -185612,7 +185612,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -185915,7 +185915,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -186191,7 +186191,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -186438,7 +186438,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -186714,7 +186714,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -186989,7 +186989,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -187276,7 +187276,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -187552,7 +187552,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -187799,7 +187799,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -188075,7 +188075,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -188291,7 +188291,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -188497,7 +188497,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -188783,7 +188783,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -189059,7 +189059,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -189306,7 +189306,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -189582,7 +189582,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -189958,7 +189958,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -190244,7 +190244,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -190520,7 +190520,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -190767,7 +190767,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -191043,7 +191043,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -191259,7 +191259,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -191461,7 +191461,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -191739,7 +191739,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -192015,7 +192015,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -192262,7 +192262,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -192538,7 +192538,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -192946,7 +192946,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -193224,7 +193224,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -193500,7 +193500,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -193747,7 +193747,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -194023,7 +194023,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -194237,7 +194237,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -194434,7 +194434,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -194912,7 +194912,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -195205,7 +195205,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -195398,7 +195398,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -195864,7 +195864,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -196140,7 +196140,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -196387,7 +196387,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -196663,7 +196663,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -196922,7 +196922,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -197198,7 +197198,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -197445,7 +197445,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -197721,7 +197721,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -197982,7 +197982,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -198258,7 +198258,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -198505,7 +198505,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -198781,7 +198781,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -199084,7 +199084,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -199360,7 +199360,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -199607,7 +199607,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -199883,7 +199883,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -200158,7 +200158,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -200445,7 +200445,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -200721,7 +200721,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -200968,7 +200968,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -201244,7 +201244,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -201460,7 +201460,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -201666,7 +201666,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -201952,7 +201952,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -202228,7 +202228,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -202475,7 +202475,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -202751,7 +202751,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -203127,7 +203127,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -203413,7 +203413,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -203689,7 +203689,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -203936,7 +203936,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -204212,7 +204212,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -204428,7 +204428,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -204630,7 +204630,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -204908,7 +204908,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -205184,7 +205184,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -205431,7 +205431,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -205707,7 +205707,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -206115,7 +206115,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -206393,7 +206393,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -206669,7 +206669,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -206916,7 +206916,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -207192,7 +207192,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -207406,7 +207406,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -207603,7 +207603,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -208081,7 +208081,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -208374,7 +208374,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -208567,7 +208567,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -209033,7 +209033,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -209309,7 +209309,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -209556,7 +209556,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -209832,7 +209832,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -210091,7 +210091,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -210367,7 +210367,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -210614,7 +210614,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -210890,7 +210890,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -211151,7 +211151,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -211427,7 +211427,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -211674,7 +211674,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -211950,7 +211950,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -212253,7 +212253,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -212529,7 +212529,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -212776,7 +212776,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -213052,7 +213052,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -213351,7 +213351,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -213638,7 +213638,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -213914,7 +213914,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -214161,7 +214161,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -214437,7 +214437,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -214653,7 +214653,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "ctaButton";
     text?: string;
-    variant?: "filled" | "outline";
+    variant?: "filled" | "outline-dark" | "outline-light";
     alignment?: "center" | "inherit" | "left" | "right";
     linkType?: "external" | "internal";
     internalLink: {
@@ -214859,7 +214859,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -215145,7 +215145,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -215421,7 +215421,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -215668,7 +215668,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -215944,7 +215944,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -216320,7 +216320,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -216606,7 +216606,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -216882,7 +216882,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -217129,7 +217129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -217405,7 +217405,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -217621,7 +217621,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink: {
@@ -217823,7 +217823,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -218101,7 +218101,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -218377,7 +218377,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -218624,7 +218624,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -218900,7 +218900,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -219308,7 +219308,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -219586,7 +219586,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -219862,7 +219862,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -220109,7 +220109,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -220385,7 +220385,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -220599,7 +220599,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -220796,7 +220796,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -221274,7 +221274,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -221567,7 +221567,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -221760,7 +221760,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -222226,7 +222226,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -222502,7 +222502,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -222749,7 +222749,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "ctaButton";
               text?: string;
-              variant?: "filled" | "outline";
+              variant?: "filled" | "outline-dark" | "outline-light";
               alignment?: "center" | "inherit" | "left" | "right";
               linkType?: "external" | "internal";
               internalLink: {
@@ -223025,7 +223025,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink?: {
@@ -223284,7 +223284,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -223560,7 +223560,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -223807,7 +223807,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "ctaButton";
             text?: string;
-            variant?: "filled" | "outline";
+            variant?: "filled" | "outline-dark" | "outline-light";
             alignment?: "center" | "inherit" | "left" | "right";
             linkType?: "external" | "internal";
             internalLink: {
@@ -224083,7 +224083,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink?: {
@@ -224344,7 +224344,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -224620,7 +224620,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -224867,7 +224867,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "ctaButton";
           text?: string;
-          variant?: "filled" | "outline";
+          variant?: "filled" | "outline-dark" | "outline-light";
           alignment?: "center" | "inherit" | "left" | "right";
           linkType?: "external" | "internal";
           internalLink: {
@@ -225143,7 +225143,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink?: {
@@ -225446,7 +225446,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -225722,7 +225722,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {
@@ -225969,7 +225969,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "ctaButton";
         text?: string;
-        variant?: "filled" | "outline";
+        variant?: "filled" | "outline-dark" | "outline-light";
         alignment?: "center" | "inherit" | "left" | "right";
         linkType?: "external" | "internal";
         internalLink: {
@@ -226245,7 +226245,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "ctaButton";
       text?: string;
-      variant?: "filled" | "outline";
+      variant?: "filled" | "outline-dark" | "outline-light";
       alignment?: "center" | "inherit" | "left" | "right";
       linkType?: "external" | "internal";
       internalLink?: {

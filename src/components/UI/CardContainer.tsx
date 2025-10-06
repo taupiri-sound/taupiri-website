@@ -5,22 +5,23 @@ interface CardContainerProps {
   children: React.ReactNode;
   className?: string;
   isGridChild?: boolean;
+  noPadding?: boolean;
 }
 
-const CardContainer = ({ children, className = '', isGridChild = false }: CardContainerProps) => {
+const CardContainer = ({ children, className = '', isGridChild = false, noPadding = false }: CardContainerProps) => {
   return (
     <div
       className={`
-        w-full 
-        bg-brand-white-dark  
-        shadow-sm 
-        rounded-lg 
-        p-6 md:p-8 
-        flex 
-        flex-col 
-        items-center 
-        text-center 
-        ${maxCardWidth} 
+        w-full
+        bg-brand-white-dark
+        shadow-sm
+        rounded-lg
+        ${noPadding ? '' : 'p-6 md:p-8'}
+        flex
+        flex-col
+        items-center
+        text-center
+        ${maxCardWidth}
         ${!isGridChild ? 'mx-auto' : ''}
         ${className}
       `.trim()}>

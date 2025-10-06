@@ -27,7 +27,6 @@ const CardIcon = (props: CardIconProps) => {
     fieldPathPrefix,
     siteSettings,
     companyLinks,
-    alignment = 'center',
     createDataAttributeConfig,
   } = props;
 
@@ -67,34 +66,30 @@ const CardIcon = (props: CardIconProps) => {
         <div
           className='mb-6'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div className='relative w-20 h-20 rounded-full bg-brand-secondary/10 flex items-center justify-center overflow-hidden'>
-            <UnifiedImage
-              src={image}
-              alt={image.alt || 'Icon'}
-              mode='sized'
-              width={64}
-              height={64}
-              sizeContext='icon'
-              objectFit='contain'
-              className='w-16 h-16'
-              documentId={documentId}
-              documentType={documentType}
-              fieldPath={getFieldPath('image')}
-            />
-          </div>
+          <UnifiedImage
+            src={image}
+            alt={image.alt || 'Icon'}
+            mode='sized'
+            width={100}
+            height={100}
+            sizeContext='profile'
+            objectFit='contain'
+            className='w-20 h-20 md:w-26 md:h-26'
+            documentId={documentId}
+            documentType={documentType}
+            fieldPath={getFieldPath('image')}
+          />
         </div>
 
         {/* Header and Content - Center aligned */}
-        <div className='flex flex-col gap-4 w-full'>
-          <CardHeader
-            title={title}
-            subtitle={subtitle}
-            documentId={documentId}
-            documentType={documentType}
-            fieldPathPrefix={fieldPathPrefix}
-          />
-          {renderContent()}
-        </div>
+        <CardHeader
+          title={title}
+          subtitle={subtitle}
+          documentId={documentId}
+          documentType={documentType}
+          fieldPathPrefix={fieldPathPrefix}
+        />
+        <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
       </CardContainer>
     );
   }
@@ -108,25 +103,23 @@ const CardIcon = (props: CardIconProps) => {
       <div
         className='flex-shrink-0'
         {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-        <div className='relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-secondary/10 flex items-center justify-center overflow-hidden'>
-          <UnifiedImage
-            src={image}
-            alt={image.alt || 'Icon'}
-            mode='sized'
-            width={64}
-            height={64}
-            sizeContext='icon'
-            objectFit='contain'
-            className='w-12 h-12 md:w-16 md:h-16'
-            documentId={documentId}
-            documentType={documentType}
-            fieldPath={getFieldPath('image')}
-          />
-        </div>
+        <UnifiedImage
+          src={image}
+          alt={image.alt || 'Icon'}
+          mode='sized'
+          width={100}
+          height={100}
+          sizeContext='profile'
+          objectFit='contain'
+          className='w-16 h-16 md:w-18 md:h-18'
+          documentId={documentId}
+          documentType={documentType}
+          fieldPath={getFieldPath('image')}
+        />
       </div>
 
       {/* Header and Content - Left aligned */}
-      <div className='flex-1 flex flex-col gap-4 text-left'>
+      <div className='flex-1 flex flex-col text-left'>
         <CardHeader
           title={title}
           subtitle={subtitle}
@@ -134,7 +127,7 @@ const CardIcon = (props: CardIconProps) => {
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
         />
-        {renderContent()}
+        <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
       </div>
     </CardContainer>
   );

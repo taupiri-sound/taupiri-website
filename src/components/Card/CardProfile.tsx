@@ -27,7 +27,6 @@ const CardProfile = (props: CardProfileProps) => {
     fieldPathPrefix,
     siteSettings,
     companyLinks,
-    alignment = 'center',
     createDataAttributeConfig,
   } = props;
 
@@ -67,7 +66,7 @@ const CardProfile = (props: CardProfileProps) => {
         <div
           className='mb-6'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div className='relative w-32 h-32 rounded-lg overflow-hidden'>
+          <div className='relative aspect-square w-50 md:w-70 rounded-lg overflow-hidden'>
             <UnifiedImage
               src={image}
               alt={image.alt || 'Profile image'}
@@ -84,16 +83,14 @@ const CardProfile = (props: CardProfileProps) => {
         </div>
 
         {/* Header and Content - Center aligned */}
-        <div className='flex flex-col gap-4 w-full'>
-          <CardHeader
-            title={title}
-            subtitle={subtitle}
-            documentId={documentId}
-            documentType={documentType}
-            fieldPathPrefix={fieldPathPrefix}
-          />
-          {renderContent()}
-        </div>
+        <CardHeader
+          title={title}
+          subtitle={subtitle}
+          documentId={documentId}
+          documentType={documentType}
+          fieldPathPrefix={fieldPathPrefix}
+        />
+        <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
       </CardContainer>
     );
   }
@@ -124,7 +121,7 @@ const CardProfile = (props: CardProfileProps) => {
       </div>
 
       {/* Header and Content - Left aligned */}
-      <div className='flex-1 flex flex-col gap-4 text-left'>
+      <div className='flex-1 flex flex-col text-left'>
         <CardHeader
           title={title}
           subtitle={subtitle}
@@ -132,7 +129,7 @@ const CardProfile = (props: CardProfileProps) => {
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
         />
-        {renderContent()}
+        <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
       </div>
     </CardContainer>
   );

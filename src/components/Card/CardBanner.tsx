@@ -53,16 +53,16 @@ const CardBanner = (props: CardBannerProps) => {
   };
 
   return (
-    <CardContainer className={`${className} flex flex-col`} isGridChild={isGridChild}>
+    <CardContainer className={`${className} overflow-hidden`} isGridChild={isGridChild} noPadding>
       {/* Banner Image - Full width at top */}
       <div
-        className='relative w-full h-48 min-h-[12rem] max-h-64 overflow-hidden'
+        className='relative w-full aspect-[16/9]'
         {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
         <UnifiedImage
           src={image}
           alt={image.alt || 'Card banner image'}
           mode='fill'
-          sizeContext='card'
+          sizeContext='full'
           objectFit='cover'
           generateSchema
           schemaContext='article'
@@ -73,7 +73,7 @@ const CardBanner = (props: CardBannerProps) => {
       </div>
 
       {/* Content - Center aligned */}
-      <div className='flex flex-col gap-4 p-6 text-center items-center'>
+      <div className='flex flex-col p-6 text-center items-center'>
         <CardHeader
           title={title}
           subtitle={subtitle}
@@ -81,7 +81,7 @@ const CardBanner = (props: CardBannerProps) => {
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
         />
-        {renderContent()}
+        <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
       </div>
     </CardContainer>
   );
