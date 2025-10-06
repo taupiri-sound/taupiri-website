@@ -27,6 +27,13 @@ const Header = ({ headerData }: HeaderProps) => {
     setIsMenuOpen(false);
   }, []);
 
+  // Reset opacity when fade is disabled
+  useEffect(() => {
+    if (!enableOpacityFade) {
+      setHeaderOpacity(1);
+    }
+  }, [enableOpacityFade]);
+
   // Handle scroll for header background opacity fade
   useEffect(() => {
     // Only add scroll listener if opacity fade is enabled

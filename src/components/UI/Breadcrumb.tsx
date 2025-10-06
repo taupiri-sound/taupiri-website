@@ -15,7 +15,7 @@ interface BreadcrumbProps {
 const Breadcrumb = ({ pageTitle, pageTitleClickable = false, pageTitleHref }: BreadcrumbProps) => {
   return (
     <nav
-      className={`flex items-center gap-2 text-brand-secondary px-3 py-2 text-body-sm ${breadcrumbBottomSpacing}`}
+      className={`flex items-center gap-2 text-brand-secondary px-4 md:px-8 py-2 text-body-sm ${breadcrumbBottomSpacing}`}
       aria-label='Breadcrumb'>
       {/* Home Icon */}
       <Link
