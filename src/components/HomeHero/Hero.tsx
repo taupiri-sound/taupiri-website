@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import HeroImages from './HeroImages';
 import RegularHeroLayout from './RegularHeroLayout';
@@ -10,6 +10,7 @@ import { urlFor } from '@/sanity/lib/image';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
 import { stegaClean } from 'next-sanity';
 import { homeHeroBottomSpacing } from '@/utils/spacingConstants';
+import { useHeader } from '@/contexts/HeaderContext';
 
 interface HeroProps {
   heroStyle: NonNullable<HOME_PAGE_QUERYResult>['heroStyle'];
@@ -40,8 +41,19 @@ const Hero = ({
   documentId,
   documentType,
 }: HeroProps) => {
+  const { setEnableOpacityFade } = useHeader();
   const [firstImageLoaded, setFirstImageLoaded] = useState(false);
   const [shouldUseGradientTransition, setShouldUseGradientTransition] = useState(true);
+
+  // Enable header opacity fade when Hero is mounted
+  useEffect(() => {
+    setEnableOpacityFade(true);
+
+    // Disable it when component unmounts
+    return () => {
+      setEnableOpacityFade(false);
+    };
+  }, [setEnableOpacityFade]);
 
   const handleFirstImageLoaded = () => {
     setFirstImageLoaded(true);
