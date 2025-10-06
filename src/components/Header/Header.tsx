@@ -105,6 +105,7 @@ const Header = ({ headerData }: HeaderProps) => {
           className='flex items-center gap-2 transition-opacity duration-300'
           style={{
             opacity: headerOpacity,
+            filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8))',
           }}>
           <UnifiedImage
             src='/images/logos/logo-white.png'
