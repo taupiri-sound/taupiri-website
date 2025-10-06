@@ -5,7 +5,7 @@
 /**
  * Space under all hero sections (PageHero, HomeHero) before the next content
  */
-export const heroBottomSpacing = 'mb-6 md:mb-8';
+export const heroBottomSpacing = 'mb-14 md:mb-24';
 export const homeHeroBottomSpacing = 'mb-14 md:mb-24';
 
 /**

@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 import HeroImages from './HeroImages';
-import DefaultHeroBackground from './DefaultHeroBackground';
 import RegularHeroLayout from './RegularHeroLayout';
 import ScrollIndicator from './ScrollIndicator';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
