@@ -19,6 +19,7 @@ export const gridLayoutType = defineType({
         list: [
           { title: '2 Columns', value: '2' },
           { title: '3 Columns', value: '3' },
+          { title: '4 Columns', value: '4' },
         ],
         layout: 'radio',
       },

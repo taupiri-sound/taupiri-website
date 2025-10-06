@@ -26,7 +26,7 @@ const GridLayout = ({
   }
 
   const cleanColumns = stegaClean(columns) || '2';
-  const validColumns = ['2', '3'].includes(cleanColumns) ? cleanColumns : '2';
+  const validColumns = ['2', '3', '4'].includes(cleanColumns) ? cleanColumns : '2';
 
   const getGridClasses = (cols: string) => {
     switch (cols) {
@@ -34,6 +34,8 @@ const GridLayout = ({
         return 'w-full md:w-[calc(50%-16px)]';
       case '3':
         return 'w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]';
+      case '4':
+        return 'w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]';
       default:
         return 'w-full md:w-[calc(50%-16px)]';
     }

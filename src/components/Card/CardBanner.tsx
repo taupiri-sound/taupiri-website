@@ -73,7 +73,7 @@ const CardBanner = (props: CardBannerProps) => {
       </div>
 
       {/* Content - Center aligned */}
-      <div className='flex flex-col p-6 text-center items-center'>
+      <div className='flex flex-col px-6 pt-4 pb-6 text-center items-center'>
         <CardHeader
           title={title}
           subtitle={subtitle}
