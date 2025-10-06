@@ -18,7 +18,7 @@ const HeroLogo = ({ heroLogoDisplay, heroTextColor, documentId, documentType }: 
   if (cleanLogoDisplay === 'none') return null;
 
   // Enhanced responsive logo sizing with better mobile scaling
-  const logoSize = 'min-w-24 w-80 md:w-110';
+  const logoSize = 'w-[90%] max-w-70n md:max-w-none md:w-110px';
 
   // Determine logo source based on logo display type and text color
   const getLogoSrc = () => {
