@@ -5,6 +5,7 @@ import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
 import NotFoundGraphic from '@/components/UI/Graphics/NotFoundGraphic';
 import CTA from '@/components/UI/CTA';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Page Not Found - Taupiri Sound',
@@ -23,12 +24,10 @@ export default function NotFound() {
   return (
     <>
       {/* Hero Section */}
-      <PageHero
-        title='Page Not Found'
-        heroImage='/images/hero-bg/hero-bg-option3-2.webp'
-        showBreadcrumb={true}
-        breadcrumbPageTitle='Page Not Found'
-      />
+      <PageHero title='Page Not Found' />
+
+      {/* Breadcrumb */}
+      <Breadcrumb pageTitle='Page Not Found' />
 
       <Container>
         <div className='flex flex-col items-center text-center pb-12 md:pb-16'>

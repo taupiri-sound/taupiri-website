@@ -5,6 +5,7 @@ import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
 import ErrorGraphic from '@/components/UI/Graphics/ErrorGraphic';
 import CTA from '@/components/UI/CTA';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 interface ErrorPageProps {
   error: Error & { digest?: string };
@@ -15,12 +16,10 @@ export default function ErrorPage({ error }: ErrorPageProps) {
   return (
     <>
       {/* Hero Section */}
-      <PageHero
-        title='Something Went Wrong'
-        heroImage='/images/hero-bg/hero-bg-option3-2.webp'
-        showBreadcrumb={true}
-        breadcrumbPageTitle="Error"
-      />
+      <PageHero title='Something Went Wrong' />
+
+      {/* Breadcrumb */}
+      <Breadcrumb pageTitle='Error' />
 
       <Container>
         <div className='flex flex-col items-center text-center pb-12 md:pb-16'>

@@ -44,7 +44,6 @@ const SubSubSection = ({
         <Heading
           level='h4' // Fixed h4 level for SubSubSections
           showMargin={false}
-          showUnderline={false}
           className={subSectionTitleBottomSpacing}
           {...titleDataAttribute}>
           {stegaClean(title)}

@@ -1,8 +1,7 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { FaHome } from 'react-icons/fa';
+import { breadcrumbBottomSpacing } from '@/utils/spacingConstants';
 
 interface BreadcrumbProps {
   /** The current page title */
@@ -16,7 +15,7 @@ interface BreadcrumbProps {
 const Breadcrumb = ({ pageTitle, pageTitleClickable = false, pageTitleHref }: BreadcrumbProps) => {
   return (
     <nav
-      className='flex items-center gap-2 text-white bg-black/30 backdrop-blur-sm rounded-lg px-3 py-2 text-body-sm'
+      className={`flex items-center gap-2 text-white bg-black/30 backdrop-blur-sm rounded-lg px-3 py-2 text-body-sm ${breadcrumbBottomSpacing}`}
       aria-label='Breadcrumb'>
       {/* Home Icon */}
       <Link

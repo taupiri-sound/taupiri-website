@@ -8,6 +8,7 @@ import { closingCardSpacing } from '@/utils/spacingConstants';
 import { getSiteSettings } from '@/actions';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export async function generateMetadata() {
   const [siteSettings, blogIndexPage] = await Promise.all([getSiteSettings(), getBlogIndexPage()]);
@@ -35,12 +36,13 @@ export default async function BlogPage() {
       {/* Page Hero */}
       <PageHero
         title={blogIndexPage?.title || 'Blog'}
-        heroImage={blogIndexPage?.heroImage || '/images/hero-bg/hero-bg-option7-2.webp'}
         documentId={blogIndexPage?._id}
         documentType={blogIndexPage?._type}
-        showBreadcrumb={true}
-        breadcrumbPageTitle={blogIndexPage?.title || 'Blog'}
       />
+
+      {/* Breadcrumb */}
+      <Breadcrumb pageTitle={blogIndexPage?.title || 'Blog'} />
+
       <Container>
         {/* Page Subtitle */}
         {blogIndexPage?.subtitle && <PageSubtitle>{blogIndexPage.subtitle}</PageSubtitle>}

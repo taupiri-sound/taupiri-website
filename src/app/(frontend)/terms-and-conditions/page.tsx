@@ -11,6 +11,7 @@ import {
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export async function generateMetadata() {
   const [siteSettings, termsData] = await Promise.all([getSiteSettings(), getTermsAndConditions()]);
@@ -86,12 +87,12 @@ const TermsAndConditionsPage = async () => {
       {/* Page Hero */}
       <PageHero
         title={termsData.title || 'Terms & Conditions'}
-        heroImage='/images/hero-bg/hero-bg-option2.webp'
         documentId={termsData._id}
         documentType={termsData._type}
-        showBreadcrumb={true}
-        breadcrumbPageTitle={termsData.title || 'Terms & Conditions'}
       />
+
+      {/* Breadcrumb */}
+      <Breadcrumb pageTitle={termsData.title || 'Terms & Conditions'} />
 
       <Container textAlign='left'>
         {/* Page Content */}

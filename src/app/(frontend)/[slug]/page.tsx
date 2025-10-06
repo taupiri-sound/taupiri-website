@@ -16,6 +16,7 @@ import {
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
 import { urlFor } from '@/sanity/lib/image';
 import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -99,9 +100,10 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         title={page.title || 'Untitled Page'}
         documentId={page._id}
         documentType={page._type}
-        showBreadcrumb={true}
-        breadcrumbPageTitle={page.title || 'Untitled Page'}
       />
+
+      {/* Breadcrumb */}
+      <Breadcrumb pageTitle={page.title || 'Untitled Page'} />
 
       <Container>
         {/* Page Subtitle */}
