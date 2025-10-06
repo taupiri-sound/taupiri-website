@@ -8,7 +8,13 @@ import DisableDraftMode from '@/components/DisableDraftMode';
 import NavigationScroll from '@/components/NavigationScroll';
 import PageReadyTrigger from '@/components/PageReadyTrigger';
 import { VisualEditingProvider } from '@/components/VisualEditingProvider';
-import { getHeader, getFooter, getSiteSettings, getCompanyLinks, getLegalPagesVisibility } from '@/actions';
+import {
+  getHeader,
+  getFooter,
+  getSiteSettings,
+  getCompanyLinks,
+  getLegalPagesVisibility,
+} from '@/actions';
 import { SiteDataProvider } from '@/contexts/SiteDataContext';
 import { PageLoadProvider } from '@/contexts/PageLoadContext';
 import { generateMetadata as generateDefaultMetadata } from '@/lib/metadata';
@@ -82,7 +88,7 @@ const FrontendLayout = async ({
         )}
 
         <div className='min-h-screen flex flex-col'>
-          <Header headerData={headerData} />
+          {/* <Header headerData={headerData} /> */}
           <main id='main-content' className='flex-1'>
             {children}
           </main>

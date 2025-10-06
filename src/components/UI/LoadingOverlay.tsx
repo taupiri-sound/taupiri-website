@@ -38,7 +38,7 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ isLoading = false }) =>
       <div className='h-screen'>
         <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[75%] h-[75%] sm:w-[500px] sm:h-[500px]'>
           <UnifiedImage
-            src='/images/logo-black-on-transparent.png'
+            src='/images/logos/logo-black.png'
             alt='Taupiri Sound Logo'
             mode='fill'
             sizeContext='hero'

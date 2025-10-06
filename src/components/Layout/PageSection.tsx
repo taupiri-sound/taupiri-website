@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext } from 'react';
-import Heading from '../Typography/Heading/Heading';
+import Heading from '../Typography/Heading';
 import Divider from '../UI/Divider';
 import { stegaClean } from 'next-sanity';
 import {
