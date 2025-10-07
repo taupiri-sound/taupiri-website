@@ -29,26 +29,31 @@ const CheckList = ({
         return (
           <div
             key={item._key}
-            className={`flex items-center gap-4 mx-auto w-full ${maxCardWidth} px-6 py-4 bg-brand-white border-2 border-brand-primary rounded-lg`}>
+            className={`flex items-center gap-6 mx-auto w-full ${maxCardWidth} px-6 py-4 bg-brand-white-dark shadow-sm rounded-lg`}>
             {/* Checkmark icon */}
-            <div className='flex-shrink-0'>
+            <div className='p-1 rounded-full bg-brand-primary'>
               <svg
-                className='w-6 h-6 text-brand-primary'
+                className='w-4 h-4 text-brand-white'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
                 xmlns='http://www.w3.org/2000/svg'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={3} d='M5 13l4 4L19 7' />
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={3}
+                  d='M5 13l4 4L19 7'
+                />
               </svg>
             </div>
 
             {/* Text content */}
-            <div className='flex-1'>
+            <div className='text-left'>
               <span
                 {...(documentId && documentType
                   ? createSanityDataAttribute(documentId, documentType, `${itemPath}.text`)
                   : {})}
-                className='text-body-lg font-medium text-brand-black'>
+                className='text-body-lg font-medium'>
                 {item.text}
               </span>
             </div>
