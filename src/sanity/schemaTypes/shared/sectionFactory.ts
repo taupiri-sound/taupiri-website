@@ -20,6 +20,7 @@ export const commonContentBlocks = [
   defineArrayMember({ type: 'youTubeVideo' }),
   defineArrayMember({ type: 'spotifyWidget' }),
   defineArrayMember({ type: 'bandcampWidget' }),
+  defineArrayMember({ type: 'audioSamplePlayer' }),
   defineArrayMember({ type: 'companyLinksBlock' }),
 ];
 

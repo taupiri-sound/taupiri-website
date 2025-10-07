@@ -13,6 +13,7 @@ import type {
   YouTubeVideo as YouTubeVideoType,
   SpotifyWidget as SpotifyWidgetType,
   BandcampWidget as BandcampWidgetType,
+  AudioSamplePlayer as AudioSamplePlayerType,
   CompanyLinksBlock as CompanyLinksBlockType,
   BlockListWithStats as BlockListWithStatsType,
   CheckList as CheckListType,
@@ -33,6 +34,7 @@ import ImageGallery from '@/components/blocks/ImageGallery';
 import YouTubeVideo from '@/components/blocks/YouTubeVideo';
 import SpotifyWidget from '@/components/blocks/SpotifyWidget';
 import BandcampWidget from '@/components/blocks/BandcampWidget';
+import AudioSamplePlayer from '@/components/AudioSamplePlayer/AudioSamplePlayer';
 import CompanyLinksBlock from '@/components/blocks/CompanyLinksBlock';
 import BlockListWithStats from '@/components/blocks/BlockListWithStats';
 import CheckList from '@/components/blocks/CheckList';
@@ -71,6 +73,7 @@ type BlockType =
   | WithKey<YouTubeVideoType>
   | WithKey<SpotifyWidgetType>
   | WithKey<BandcampWidgetType>
+  | WithKey<AudioSamplePlayerType>
   | WithKey<CompanyLinksBlockType>
   | WithKey<BlockListWithStatsType>
   | WithKey<CheckListType>
@@ -245,6 +248,58 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             documentId={documentId}
             documentType={documentType}
             pathPrefix={blockPath}
+          />
+        </BlockWrapper>
+      );
+    }
+
+    case 'audioSamplePlayer': {
+      const audioSamplePlayerBlock = typedBlock as WithKey<AudioSamplePlayerType>;
+
+      // Debug: Log the raw block data
+      console.log('BlockRenderer - audioSamplePlayer block:', audioSamplePlayerBlock);
+
+      // The audioSample reference is expanded by GROQ query
+      const audioSample = audioSamplePlayerBlock.audioSample as {
+        _id?: string;
+        _type?: string;
+        songName?: string;
+        artistName?: string;
+        services?: string[];
+        image?: {
+          asset?: { _ref?: string; _type?: string };
+          alt?: string;
+          hotspot?: unknown;
+          crop?: unknown;
+        };
+        audioFile?: {
+          asset?: {
+            _id?: string;
+            url?: string;
+            mimeType?: string;
+            size?: number;
+            originalFilename?: string;
+            duration?: number;
+          };
+        };
+      };
+
+      console.log('BlockRenderer - audioSample after type assertion:', audioSample);
+
+      if (!audioSample) {
+        return null;
+      }
+
+      return (
+        <BlockWrapper key={audioSamplePlayerBlock._key}>
+          <AudioSamplePlayer
+            songName={audioSample.songName || 'Untitled'}
+            artistName={audioSample.artistName || 'Unknown Artist'}
+            services={audioSample.services || []}
+            image={audioSample.image}
+            audioFile={audioSample.audioFile || { asset: undefined }}
+            documentId={audioSample._id}
+            documentType={audioSample._type || 'audioSample'}
           />
         </BlockWrapper>
       );

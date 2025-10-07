@@ -2,7 +2,6 @@
 // When modifying, ensure all fields have appropriate validation, titles, and descriptions for content editors.
 // Follow the existing patterns in other schema files for consistency.
 
-import React from 'react';
 import { PlayIcon } from '@sanity/icons';
 import { defineField, defineType } from 'sanity';
 

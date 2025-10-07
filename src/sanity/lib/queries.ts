@@ -108,6 +108,58 @@ const contentProjection = `
           hasOverrideDate,
           overrideDate
         }
+      },
+      _type == "audioSamplePlayer" => {
+        ...,
+        audioSample->{
+          _id,
+          _type,
+          songName,
+          artistName,
+          services,
+          image{
+            asset,
+            alt,
+            hotspot,
+            crop
+          },
+          audioFile{
+            asset->{
+              _id,
+              url,
+              mimeType,
+              size,
+              originalFilename,
+              "duration": metadata.duration
+            }
+          }
+        }
+      }
+    }
+  },
+  _type == "audioSamplePlayer" => {
+    ...,
+    audioSample->{
+      _id,
+      _type,
+      songName,
+      artistName,
+      services,
+      image{
+        asset,
+        alt,
+        hotspot,
+        crop
+      },
+      audioFile{
+        asset->{
+          _id,
+          url,
+          mimeType,
+          size,
+          originalFilename,
+          "duration": metadata.duration
+        }
       }
     }
   },
@@ -153,6 +205,32 @@ const contentProjection = `
               },
               hasOverrideDate,
               overrideDate
+            }
+          },
+          _type == "audioSamplePlayer" => {
+            ...,
+            audioSample->{
+              _id,
+              _type,
+              songName,
+              artistName,
+              services,
+              image{
+                asset,
+                alt,
+                hotspot,
+                crop
+              },
+              audioFile{
+                asset->{
+                  _id,
+                  url,
+                  mimeType,
+                  size,
+                  originalFilename,
+                  "duration": metadata.duration
+                }
+              }
             }
           }
         }
@@ -207,6 +285,32 @@ const contentProjection = `
               },
               hasOverrideDate,
               overrideDate
+            }
+          },
+          _type == "audioSamplePlayer" => {
+            ...,
+            audioSample->{
+              _id,
+              _type,
+              songName,
+              artistName,
+              services,
+              image{
+                asset,
+                alt,
+                hotspot,
+                crop
+              },
+              audioFile{
+                asset->{
+                  _id,
+                  url,
+                  mimeType,
+                  size,
+                  originalFilename,
+                  "duration": metadata.duration
+                }
+              }
             }
           }
         }
@@ -265,6 +369,32 @@ const contentProjection = `
               hasOverrideDate,
               overrideDate
             }
+          },
+          _type == "audioSamplePlayer" => {
+            ...,
+            audioSample->{
+              _id,
+              _type,
+              songName,
+              artistName,
+              services,
+              image{
+                asset,
+                alt,
+                hotspot,
+                crop
+              },
+              audioFile{
+                asset->{
+                  _id,
+                  url,
+                  mimeType,
+                  size,
+                  originalFilename,
+                  "duration": metadata.duration
+                }
+              }
+            }
           }
         }
       },
@@ -280,7 +410,33 @@ const contentProjection = `
       },
       _type == "youTubeVideo" => {...},
       _type == "spotifyWidget" => {...},
-      _type == "bandcampWidget" => {...}
+      _type == "bandcampWidget" => {...},
+      _type == "audioSamplePlayer" => {
+        ...,
+        audioSample->{
+          _id,
+          _type,
+          songName,
+          artistName,
+          services,
+          image{
+            asset,
+            alt,
+            hotspot,
+            crop
+          },
+          audioFile{
+            asset->{
+              _id,
+              url,
+              mimeType,
+              size,
+              originalFilename,
+              "duration": metadata.duration
+            }
+          }
+        }
+      }
     }
   },
   _type == "ctaBlogPost" => {
