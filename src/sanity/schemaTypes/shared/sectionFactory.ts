@@ -51,6 +51,12 @@ export function createSectionSchema(config: SectionFactoryConfig) {
       validation: (Rule) => Rule.required().error(`${config.title} title is required`),
     }),
     defineField({
+      name: 'titleTranslation',
+      title: 'Title Translation (Te Reo Māori)',
+      type: 'string',
+      description: 'Optional translation of the section title, typically in Te Reo Māori. This will be displayed below the main title in a complementary style. Can also be used for alternative titles or subtitles in any language.',
+    }),
+    defineField({
       name: 'anchorId',
       title: 'Anchor ID',
       type: 'string',
@@ -117,10 +123,10 @@ export function createSectionSchema(config: SectionFactoryConfig) {
     }),
   ];
 
-  // Add subtitle field for PageSection only - insert after anchor ID (position 2)
+  // Add subtitle field for PageSection only - insert after anchor ID (position 3 now, since titleTranslation is at position 2)
   if (config.hasSubtitle) {
     fields.splice(
-      2,
+      3,
       0,
       defineField({
         name: 'subtitle',
@@ -133,7 +139,7 @@ export function createSectionSchema(config: SectionFactoryConfig) {
 
   // Add topText field for PageSection only - insert after subtitle (or after anchor ID if no subtitle)
   if (config.name === 'pageSection') {
-    const insertPosition = config.hasSubtitle ? 3 : 2;
+    const insertPosition = config.hasSubtitle ? 4 : 3;
     fields.splice(
       insertPosition,
       0,
@@ -149,7 +155,7 @@ export function createSectionSchema(config: SectionFactoryConfig) {
 
   // Add compact gap field for PageSection only - insert after topText or at appropriate position
   if (config.name === 'pageSection') {
-    const insertPosition = config.hasSubtitle ? 4 : 3;
+    const insertPosition = config.hasSubtitle ? 5 : 4;
     fields.splice(
       insertPosition,
       0,

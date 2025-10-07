@@ -26,6 +26,7 @@ interface PageSectionProps extends SanityLiveEditingProps {
   children: React.ReactNode;
   className?: string;
   title: string; // Now required since titles are mandatory
+  titleTranslation?: string; // Optional Te Reo Māori translation or alternative title
   subtitle?: string;
   topText?: string;
   anchorId?: string; // ID for anchor linking
@@ -34,18 +35,21 @@ interface PageSectionProps extends SanityLiveEditingProps {
   shouldApplyBottomPadding?: boolean; // Whether to apply bottom padding (omitted for last section if no orphaned content follows)
   useCompactGap?: boolean; // Whether to use compact spacing instead of default spacing
   topTextPath?: string;
+  titleTranslationPath?: string;
 }
 
 const PageSection = ({
   children,
   className = '',
   title,
+  titleTranslation,
   subtitle,
   topText,
   anchorId,
   documentId,
   documentType,
   titlePath,
+  titleTranslationPath,
   subtitlePath,
   topTextPath,
   inheritAlignment,
@@ -55,6 +59,7 @@ const PageSection = ({
 }: PageSectionProps) => {
   // Create data attributes for Sanity live editing
   const titleDataAttribute = createSanityDataAttribute(documentId, documentType, titlePath);
+  const titleTranslationDataAttribute = createSanityDataAttribute(documentId, documentType, titleTranslationPath);
   const subtitleDataAttribute = createSanityDataAttribute(documentId, documentType, subtitlePath);
   const topTextDataAttribute = createSanityDataAttribute(documentId, documentType, topTextPath);
 
@@ -105,9 +110,11 @@ const PageSection = ({
               <Heading level='h2' showMargin={false} className='mb-0' {...titleDataAttribute}>
                 <div>
                   {stegaClean(title)}
-                  <p className='text-[1.5rem] sm:text-[2rem] md:text-[3rem] text-subtle'>
-                    Te Reo Translation
-                  </p>
+                  {titleTranslation && (
+                    <p className='text-[1.5rem] sm:text-[2rem] md:text-[3rem] text-subtle' {...titleTranslationDataAttribute}>
+                      {stegaClean(titleTranslation)}
+                    </p>
+                  )}
                 </div>
               </Heading>
             </div>

@@ -3494,6 +3494,13 @@
           },
           "optional": true
         },
+        "titleTranslation": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
         "anchorId": {
           "type": "objectAttribute",
           "value": {
@@ -3822,6 +3829,13 @@
           "optional": true
         },
         "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "titleTranslation": {
           "type": "objectAttribute",
           "value": {
             "type": "string"
@@ -4171,6 +4185,13 @@
           "optional": true
         },
         "title": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        },
+        "titleTranslation": {
           "type": "objectAttribute",
           "value": {
             "type": "string"

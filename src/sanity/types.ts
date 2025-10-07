@@ -568,6 +568,7 @@ export type SubSubSection = {
   _type: "subSubSection";
   hideSection?: boolean;
   title?: string;
+  titleTranslation?: string;
   anchorId?: string;
   content?: Array<{
     _key: string;
@@ -614,6 +615,7 @@ export type SubSection = {
   _type: "subSection";
   hideSection?: boolean;
   title?: string;
+  titleTranslation?: string;
   anchorId?: string;
   content?: Array<{
     _key: string;
@@ -662,6 +664,7 @@ export type PageSection = {
   _type: "pageSection";
   hideSection?: boolean;
   title?: string;
+  titleTranslation?: string;
   subtitle?: string;
   topText?: string;
   useCompactGap?: boolean;
@@ -4626,6 +4629,7 @@ export type PAGE_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -7883,6 +7887,7 @@ export type PAGE_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -10052,6 +10057,7 @@ export type PAGE_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -19028,6 +19034,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -22285,6 +22292,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -24454,6 +24462,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -33461,6 +33470,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -36718,6 +36728,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -38887,6 +38898,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -47768,6 +47780,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -51025,6 +51038,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -53194,6 +53208,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -62075,6 +62090,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -65332,6 +65348,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -67501,6 +67518,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -76424,6 +76442,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -79681,6 +79700,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -81850,6 +81870,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -91553,6 +91574,7 @@ export type BLOG_POST_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -94810,6 +94832,7 @@ export type BLOG_POST_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -96979,6 +97002,7 @@ export type BLOG_POST_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -105986,6 +106010,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -109243,6 +109268,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -111412,6 +111438,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -120311,6 +120338,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -123568,6 +123596,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -125737,6 +125766,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -134612,6 +134642,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -137869,6 +137900,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -140038,6 +140070,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -148913,6 +148946,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -152170,6 +152204,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -154339,6 +154374,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -163238,6 +163274,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -166495,6 +166532,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -168664,6 +168702,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -177558,6 +177597,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -180815,6 +180855,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -182984,6 +183025,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -191883,6 +191925,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -195140,6 +195183,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -197309,6 +197353,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -206184,6 +206229,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -209441,6 +209487,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -211610,6 +211657,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -220485,6 +220533,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -223742,6 +223791,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -225911,6 +225961,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
@@ -234810,6 +234861,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
+    titleTranslation?: string;
     subtitle?: string;
     topText: string | null;
     useCompactGap?: boolean;
@@ -238067,6 +238119,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "subSection";
       hideSection?: boolean;
       title?: string;
+      titleTranslation?: string;
       anchorId: string | null;
       content: Array<{
         _key: string;
@@ -240236,6 +240289,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "subSubSection";
         hideSection?: boolean;
         title?: string;
+        titleTranslation?: string;
         anchorId: string | null;
         content: Array<{
           _key: string;
