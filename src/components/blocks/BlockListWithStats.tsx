@@ -29,14 +29,14 @@ const BlockListWithStats = ({
         return (
           <div
             key={item._key}
-            className={`flex items-center justify-between mx-auto w-full ${maxCardWidth} px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg`}>
+            className={`flex items-center justify-between mx-auto w-full ${maxCardWidth} px-4 py-3 bg-brand-white-dark shadow-sm rounded-lg`}>
             {/* Left Hand Side (primary) content */}
             <div className='flex-shrink-0'>
               <span
                 {...(documentId && documentType
                   ? createSanityDataAttribute(documentId, documentType, `${itemPath}.leftContent`)
                   : {})}
-                className='text-body-lg font-bold text-gray-900'>
+                className='text-body-lg font-bold'>
                 {item.leftContent}
               </span>
             </div>
@@ -52,7 +52,7 @@ const BlockListWithStats = ({
                         `${itemPath}.rightContent`
                       )
                     : {})}
-                  className='text-body-base text-gray-700'>
+                  className='text-body-base'>
                   {item.rightContent}
                 </span>
               )}
