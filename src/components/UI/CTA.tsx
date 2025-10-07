@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight, FiExternalLink } from 'react-icons/fi';
 
 type BaseCTAProps = {
   children: React.ReactNode;
@@ -54,12 +54,23 @@ const CTA = (props: CTAProps) => {
   const { children, className = '', variant = 'filled', ...restProps } = props;
   const combinedClassName = `${getVariantStyles(variant)} ${className}`.trim();
 
-  // For text-link variant, wrap content with chevron
+  // Determine if this is an external link for text-link variant
+  let isExternal = false;
+  if (props.as !== 'button') {
+    const { href } = restProps as LinkCTAProps;
+    isExternal = href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
+  }
+
+  // For text-link variant, wrap content with appropriate icon
   const content =
     variant === 'text-link' ? (
       <>
         {children}
-        <FiChevronRight className='transition-transform duration-200 group-hover:translate-x-1 text-xl' strokeWidth={3} />
+        {isExternal ? (
+          <FiExternalLink className='transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 text-xl' strokeWidth={2.5} />
+        ) : (
+          <FiChevronRight className='transition-transform duration-200 group-hover:translate-x-1 text-xl' strokeWidth={3} />
+        )}
       </>
     ) : (
       children
@@ -78,8 +89,6 @@ const CTA = (props: CTAProps) => {
   const { href, target, rel } = restProps as LinkCTAProps;
 
   // Use Next.js Link for internal links, regular anchor for external links or when target="_blank"
-  const isExternal =
-    href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
   const shouldUseAnchor = isExternal || target === '_blank';
 
   if (shouldUseAnchor) {

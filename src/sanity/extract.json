@@ -1181,6 +1181,10 @@
               {
                 "type": "string",
                 "value": "outline-dark"
+              },
+              {
+                "type": "string",
+                "value": "text-link"
               }
             ]
           },
@@ -1737,6 +1741,10 @@
               {
                 "type": "string",
                 "value": "outline-dark"
+              },
+              {
+                "type": "string",
+                "value": "text-link"
               }
             ]
           },

@@ -73,7 +73,7 @@ const CTAButton = (props: CTAButtonProps) => {
         target={shouldOpenInNewTab ? '_blank' : undefined}
         rel={shouldOpenInNewTab ? 'noopener noreferrer' : undefined}>
         {cleanText}
-        {shouldOpenInNewTab && <FaExternalLinkAlt className='ml-4' />}
+        {shouldOpenInNewTab && cleanVariant !== 'text-link' && <FaExternalLinkAlt className='ml-4' />}
       </CTA>
     </div>
   );
