@@ -256,9 +256,6 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     case 'audioSamplePlayer': {
       const audioSamplePlayerBlock = typedBlock as WithKey<AudioSamplePlayerType>;
 
-      // Debug: Log the raw block data
-      console.log('BlockRenderer - audioSamplePlayer block:', audioSamplePlayerBlock);
-
       // The audioSample reference is expanded by GROQ query
       const audioSample = audioSamplePlayerBlock.audioSample as {
         _id?: string;
@@ -283,8 +280,6 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
           };
         };
       };
-
-      console.log('BlockRenderer - audioSample after type assertion:', audioSample);
 
       if (!audioSample) {
         return null;

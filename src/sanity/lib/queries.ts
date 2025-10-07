@@ -43,6 +43,34 @@ const closingCardProjection = `{
   }
 }`;
 
+// Audio sample player projection that expands the audio sample reference
+const audioSamplePlayerProjection = `{
+  ...,
+  audioSample->{
+    _id,
+    _type,
+    songName,
+    artistName,
+    services,
+    image{
+      asset,
+      alt,
+      hotspot,
+      crop
+    },
+    audioFile{
+      asset->{
+        _id,
+        url,
+        mimeType,
+        size,
+        originalFilename,
+        "duration": metadata.duration
+      }
+    }
+  }
+}`;
+
 // Single content block projection that recursively handles nested content
 // Add new block types here and they'll work at all nesting levels automatically
 const contentProjection = `
@@ -109,60 +137,10 @@ const contentProjection = `
           overrideDate
         }
       },
-      _type == "audioSamplePlayer" => {
-        ...,
-        audioSample->{
-          _id,
-          _type,
-          songName,
-          artistName,
-          services,
-          image{
-            asset,
-            alt,
-            hotspot,
-            crop
-          },
-          audioFile{
-            asset->{
-              _id,
-              url,
-              mimeType,
-              size,
-              originalFilename,
-              "duration": metadata.duration
-            }
-          }
-        }
-      }
+      _type == "audioSamplePlayer" => ${audioSamplePlayerProjection}
     }
   },
-  _type == "audioSamplePlayer" => {
-    ...,
-    audioSample->{
-      _id,
-      _type,
-      songName,
-      artistName,
-      services,
-      image{
-        asset,
-        alt,
-        hotspot,
-        crop
-      },
-      audioFile{
-        asset->{
-          _id,
-          url,
-          mimeType,
-          size,
-          originalFilename,
-          "duration": metadata.duration
-        }
-      }
-    }
-  },
+  _type == "audioSamplePlayer" => ${audioSamplePlayerProjection},
   _type == "twoColumnLayout" => {
     ...,
     leftColumn[]{
@@ -207,32 +185,7 @@ const contentProjection = `
               overrideDate
             }
           },
-          _type == "audioSamplePlayer" => {
-            ...,
-            audioSample->{
-              _id,
-              _type,
-              songName,
-              artistName,
-              services,
-              image{
-                asset,
-                alt,
-                hotspot,
-                crop
-              },
-              audioFile{
-                asset->{
-                  _id,
-                  url,
-                  mimeType,
-                  size,
-                  originalFilename,
-                  "duration": metadata.duration
-                }
-              }
-            }
-          }
+          _type == "audioSamplePlayer" => ${audioSamplePlayerProjection}
         }
       },
       _type == "imageBlock" => {
@@ -287,32 +240,7 @@ const contentProjection = `
               overrideDate
             }
           },
-          _type == "audioSamplePlayer" => {
-            ...,
-            audioSample->{
-              _id,
-              _type,
-              songName,
-              artistName,
-              services,
-              image{
-                asset,
-                alt,
-                hotspot,
-                crop
-              },
-              audioFile{
-                asset->{
-                  _id,
-                  url,
-                  mimeType,
-                  size,
-                  originalFilename,
-                  "duration": metadata.duration
-                }
-              }
-            }
-          }
+          _type == "audioSamplePlayer" => ${audioSamplePlayerProjection}
         }
       },
       _type == "imageBlock" => {
@@ -370,32 +298,7 @@ const contentProjection = `
               overrideDate
             }
           },
-          _type == "audioSamplePlayer" => {
-            ...,
-            audioSample->{
-              _id,
-              _type,
-              songName,
-              artistName,
-              services,
-              image{
-                asset,
-                alt,
-                hotspot,
-                crop
-              },
-              audioFile{
-                asset->{
-                  _id,
-                  url,
-                  mimeType,
-                  size,
-                  originalFilename,
-                  "duration": metadata.duration
-                }
-              }
-            }
-          }
+          _type == "audioSamplePlayer" => ${audioSamplePlayerProjection}
         }
       },
       _type == "richText" => {...},
@@ -411,32 +314,7 @@ const contentProjection = `
       _type == "youTubeVideo" => {...},
       _type == "spotifyWidget" => {...},
       _type == "bandcampWidget" => {...},
-      _type == "audioSamplePlayer" => {
-        ...,
-        audioSample->{
-          _id,
-          _type,
-          songName,
-          artistName,
-          services,
-          image{
-            asset,
-            alt,
-            hotspot,
-            crop
-          },
-          audioFile{
-            asset->{
-              _id,
-              url,
-              mimeType,
-              size,
-              originalFilename,
-              "duration": metadata.duration
-            }
-          }
-        }
-      }
+      _type == "audioSamplePlayer" => ${audioSamplePlayerProjection}
     }
   },
   _type == "ctaBlogPost" => {

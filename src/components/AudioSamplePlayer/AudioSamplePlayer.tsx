@@ -76,18 +76,6 @@ const AudioSamplePlayer = ({
 
   const audioUrl = audioFile?.asset?.url;
 
-  // Debug logging
-  useEffect(() => {
-    console.log('AudioSamplePlayer Debug:', {
-      songName,
-      artistName,
-      audioFile,
-      audioUrl,
-      hasAsset: !!audioFile?.asset,
-      assetKeys: audioFile?.asset ? Object.keys(audioFile.asset) : [],
-    });
-  }, [songName, artistName, audioFile, audioUrl]);
-
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -170,10 +158,7 @@ const AudioSamplePlayer = ({
         <p className="text-body-base text-body mb-2">{artistName}</p>
         <p className="text-body-sm text-subtle mb-4">{services.join(' • ')}</p>
         <p className="text-body-base text-brand-primary">
-          Audio file not available. Check browser console for debug info.
-        </p>
-        <p className="text-body-sm text-subtle mt-2">
-          Audio file structure: {JSON.stringify(audioFile, null, 2)}
+          Audio file not available
         </p>
       </div>
     );
