@@ -34,7 +34,7 @@ import ImageGallery from '@/components/blocks/ImageGallery';
 import YouTubeVideo from '@/components/blocks/YouTubeVideo';
 import SpotifyWidget from '@/components/blocks/SpotifyWidget';
 import BandcampWidget from '@/components/blocks/BandcampWidget';
-import AudioSamplePlayer from '@/components/AudioSamplePlayer/AudioSamplePlayer';
+import AudioSamplePlayer from '@/components/blocks/AudioSamplePlayer';
 import CompanyLinksBlock from '@/components/blocks/CompanyLinksBlock';
 import BlockListWithStats from '@/components/blocks/BlockListWithStats';
 import CheckList from '@/components/blocks/CheckList';
