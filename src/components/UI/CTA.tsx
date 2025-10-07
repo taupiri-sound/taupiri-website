@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { FiChevronRight } from 'react-icons/fi';
 
 type BaseCTAProps = {
   children: React.ReactNode;
   className?: string;
-  variant?: 'filled' | 'outline-light' | 'outline-dark';
+  variant?: 'filled' | 'outline-light' | 'outline-dark' | 'text-link';
 };
 
 type LinkCTAProps = BaseCTAProps & {
@@ -23,7 +24,14 @@ type ButtonCTAProps = BaseCTAProps & {
 
 type CTAProps = LinkCTAProps | ButtonCTAProps;
 
-const getVariantStyles = (variant: 'filled' | 'outline-light' | 'outline-dark' = 'filled') => {
+const getVariantStyles = (
+  variant: 'filled' | 'outline-light' | 'outline-dark' | 'text-link' = 'filled'
+) => {
+  // Text link variant - no padding/borders, just text styling with chevron
+  if (variant === 'text-link') {
+    return 'inline-flex items-center gap-2 text-body-lg font-semibold hover:text-brand-primary transition-colors duration-200 cursor-pointer group';
+  }
+
   // Note that the min-h-[56px] is so that regular buttons become the same height as the CTA Email Button, which needs more internal space because of the icon.
   const baseStyles =
     'inline-flex items-center justify-center px-6 py-3 min-h-[56px] font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
@@ -46,11 +54,22 @@ const CTA = (props: CTAProps) => {
   const { children, className = '', variant = 'filled', ...restProps } = props;
   const combinedClassName = `${getVariantStyles(variant)} ${className}`.trim();
 
+  // For text-link variant, wrap content with chevron
+  const content =
+    variant === 'text-link' ? (
+      <>
+        {children}
+        <FiChevronRight className='transition-transform duration-200 group-hover:translate-x-1 text-xl' strokeWidth={3} />
+      </>
+    ) : (
+      children
+    );
+
   if (props.as === 'button') {
     const { onClick, type = 'button', disabled } = restProps as ButtonCTAProps;
     return (
       <button type={type} onClick={onClick} disabled={disabled} className={combinedClassName}>
-        {children}
+        {content}
       </button>
     );
   }
@@ -66,14 +85,14 @@ const CTA = (props: CTAProps) => {
   if (shouldUseAnchor) {
     return (
       <a href={href} target={target} rel={rel} className={combinedClassName}>
-        {children}
+        {content}
       </a>
     );
   }
 
   return (
     <Link href={href} className={combinedClassName}>
-      {children}
+      {content}
     </Link>
   );
 };

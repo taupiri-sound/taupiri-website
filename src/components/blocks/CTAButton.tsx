@@ -25,7 +25,7 @@ const CTAButton = (props: CTAButtonProps) => {
 
   const cleanText = stegaClean(text);
   const cleanExternalUrl = stegaClean(externalUrl);
-  const cleanVariant = stegaClean(variant) as 'filled' | 'outline-light' | 'outline-dark';
+  const cleanVariant = stegaClean(variant) as 'filled' | 'outline-light' | 'outline-dark' | 'text-link';
 
   // Don't render if no text or invalid link
   if (!cleanText) {

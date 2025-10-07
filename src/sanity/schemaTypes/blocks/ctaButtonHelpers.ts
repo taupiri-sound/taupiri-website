@@ -49,6 +49,7 @@ export const createCTAButtonFields = (options: CTAButtonOptions = {}) => {
             { title: 'Filled (Default)', value: 'filled' },
             { title: 'Outline on Light Background', value: 'outline-light' },
             { title: 'Outline on Dark Background', value: 'outline-dark' },
+            { title: 'Text Link with Chevron', value: 'text-link' },
           ],
         },
         initialValue: 'filled',
@@ -116,6 +117,7 @@ export const createCTAButtonPreview = () => ({
     const style =
       variant === 'outline-light' ? 'Outline (Light BG)' :
       variant === 'outline-dark' ? 'Outline (Dark BG)' :
+      variant === 'text-link' ? 'Text Link' :
       'Filled';
 
     let linkInfo = 'No link';
