@@ -22,6 +22,14 @@ export const imageGalleryType = defineType({
       description: 'Number of columns for the gallery grid',
     }),
     defineField({
+      name: 'showCaptionsBelowImages',
+      title: 'Show captions below images',
+      type: 'boolean',
+      initialValue: false,
+      description:
+        'When enabled, image captions will be displayed below each image in the gallery. Captions will always appear in the modal viewer regardless of this setting.',
+    }),
+    defineField({
       name: 'images',
       title: 'Images',
       description:

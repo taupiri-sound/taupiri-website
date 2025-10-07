@@ -17,6 +17,7 @@ interface ImageGalleryProps
 const ImageGallery: React.FC<ImageGalleryProps> = ({
   columns = '3',
   images,
+  showCaptionsBelowImages = false,
   className = '',
   documentId,
   documentType,
@@ -65,6 +66,9 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             .slice(0, idx)
             .filter((item) => item.image?.asset).length;
 
+          const caption = item.caption ? stegaClean(item.caption) : null;
+          const showCaption = showCaptionsBelowImages && caption;
+
           return (
             <figure key={item._key || idx} className={gridClasses}>
               <button
@@ -74,7 +78,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                     setIsModalOpen(true);
                   }
                 }}
-                className='relative cursor-pointer transition hover:scale-102 aspect-[4/3] block w-full h-full'
+                className='relative cursor-pointer transition hover:scale-102 aspect-[4/3] block w-full'
                 tabIndex={0}
                 aria-label={hasImage ? `Open image ${idx + 1} of ${images.length} in modal: ${imageAlt}` : `Gallery placeholder ${idx + 1}`}
                 aria-describedby={`gallery-image-${idx}`}
@@ -91,6 +95,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                   className='rounded-lg'
                 />
               </button>
+              {showCaption && (
+                <figcaption className='text-body-xs md:text-body-sm text-gray-700 mt-2 text-center italic'>
+                  {caption}
+                </figcaption>
+              )}
             </figure>
           );
         })}

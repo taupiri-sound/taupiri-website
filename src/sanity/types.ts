@@ -442,6 +442,7 @@ export type YouTubeVideo = {
 export type ImageGallery = {
   _type: "imageGallery";
   columns?: "2" | "3" | "4";
+  showCaptionsBelowImages?: boolean;
   images?: Array<{
     image?: {
       asset?: {
@@ -1575,6 +1576,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -1864,6 +1866,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -2126,6 +2129,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -2407,6 +2411,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -2669,6 +2674,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -3143,6 +3149,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -3431,6 +3438,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -3693,6 +3701,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -3974,6 +3983,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -4236,6 +4246,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -4382,6 +4393,7 @@ export type PAGE_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -4678,6 +4690,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -4966,6 +4979,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -5228,6 +5242,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -5509,6 +5524,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -5771,6 +5787,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -6236,6 +6253,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -6520,6 +6538,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -6782,6 +6801,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -7063,6 +7083,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -7325,6 +7346,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -7468,6 +7490,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -7794,6 +7817,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -8078,6 +8102,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -8340,6 +8365,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -8621,6 +8647,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -8883,6 +8910,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -9338,6 +9366,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -9536,6 +9565,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -9852,6 +9882,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -10359,6 +10390,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -10553,6 +10585,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -10860,6 +10893,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -11122,6 +11156,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -11403,6 +11438,7 @@ export type PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -11665,6 +11701,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -11958,6 +11995,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -12220,6 +12258,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -12501,6 +12540,7 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -12763,6 +12803,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -13058,6 +13099,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -13320,6 +13362,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -13601,6 +13644,7 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -13863,6 +13907,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -14200,6 +14245,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -14462,6 +14508,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -14743,6 +14790,7 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -15005,6 +15053,7 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -15409,6 +15458,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -15698,6 +15748,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -15960,6 +16011,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -16241,6 +16293,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -16503,6 +16556,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -16977,6 +17031,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -17265,6 +17320,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -17527,6 +17583,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -17808,6 +17865,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -18070,6 +18128,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -18216,6 +18275,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -18512,6 +18572,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -18800,6 +18861,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -19062,6 +19124,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -19343,6 +19406,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -19605,6 +19669,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -20070,6 +20135,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -20354,6 +20420,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -20616,6 +20683,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -20897,6 +20965,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -21159,6 +21228,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -21302,6 +21372,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -21628,6 +21699,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -21912,6 +21984,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -22174,6 +22247,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -22455,6 +22529,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -22717,6 +22792,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -23172,6 +23248,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -23370,6 +23447,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -23686,6 +23764,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -24193,6 +24272,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -24387,6 +24467,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -24694,6 +24775,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -24956,6 +25038,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -25237,6 +25320,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -25499,6 +25583,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -25792,6 +25877,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -26054,6 +26140,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -26335,6 +26422,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -26597,6 +26685,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -26892,6 +26981,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -27154,6 +27244,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -27435,6 +27526,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -27697,6 +27789,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -28034,6 +28127,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -28296,6 +28390,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -28577,6 +28672,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -28839,6 +28935,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -29288,6 +29385,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -29577,6 +29675,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -29839,6 +29938,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -30120,6 +30220,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -30382,6 +30483,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -30856,6 +30958,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -31144,6 +31247,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -31406,6 +31510,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -31687,6 +31792,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -31949,6 +32055,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -32095,6 +32202,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -32391,6 +32499,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -32679,6 +32788,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -32941,6 +33051,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -33222,6 +33333,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -33484,6 +33596,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -33949,6 +34062,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -34233,6 +34347,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -34495,6 +34610,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -34776,6 +34892,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -35038,6 +35155,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -35181,6 +35299,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -35507,6 +35626,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -35791,6 +35911,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -36053,6 +36174,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -36334,6 +36456,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -36596,6 +36719,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -37051,6 +37175,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -37249,6 +37374,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -37565,6 +37691,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -38072,6 +38199,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -38266,6 +38394,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -38573,6 +38702,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -38835,6 +38965,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -39116,6 +39247,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -39378,6 +39510,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -39671,6 +39804,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -39933,6 +40067,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -40214,6 +40349,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -40476,6 +40612,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -40771,6 +40908,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -41033,6 +41171,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -41314,6 +41453,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -41576,6 +41716,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -41913,6 +42054,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -42175,6 +42317,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -42456,6 +42599,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -42718,6 +42862,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -43041,6 +43186,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -43330,6 +43476,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -43592,6 +43739,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -43873,6 +44021,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -44135,6 +44284,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -44609,6 +44759,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -44897,6 +45048,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -45159,6 +45311,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -45440,6 +45593,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -45702,6 +45856,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -45848,6 +46003,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -46144,6 +46300,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -46432,6 +46589,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -46694,6 +46852,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -46975,6 +47134,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -47237,6 +47397,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -47702,6 +47863,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -47986,6 +48148,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -48248,6 +48411,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -48529,6 +48693,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -48791,6 +48956,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -48934,6 +49100,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -49260,6 +49427,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -49544,6 +49712,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -49806,6 +49975,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -50087,6 +50257,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -50349,6 +50520,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -50804,6 +50976,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -51002,6 +51175,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -51318,6 +51492,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -51825,6 +52000,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -52019,6 +52195,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -52326,6 +52503,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -52588,6 +52766,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -52869,6 +53048,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -53131,6 +53311,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -53424,6 +53605,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -53686,6 +53868,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -53967,6 +54150,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -54229,6 +54413,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -54524,6 +54709,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -54786,6 +54972,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -55067,6 +55254,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -55329,6 +55517,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -55666,6 +55855,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -55928,6 +56118,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -56209,6 +56400,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -56471,6 +56663,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -56794,6 +56987,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -57083,6 +57277,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -57345,6 +57540,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -57626,6 +57822,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -57888,6 +58085,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -58362,6 +58560,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -58650,6 +58849,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -58912,6 +59112,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -59193,6 +59394,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -59455,6 +59657,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -59601,6 +59804,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -59897,6 +60101,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -60185,6 +60390,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -60447,6 +60653,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -60728,6 +60935,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -60990,6 +61198,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -61455,6 +61664,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -61739,6 +61949,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -62001,6 +62212,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -62282,6 +62494,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -62544,6 +62757,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -62687,6 +62901,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -63013,6 +63228,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -63297,6 +63513,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -63559,6 +63776,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -63840,6 +64058,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -64102,6 +64321,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -64557,6 +64777,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -64755,6 +64976,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -65071,6 +65293,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -65578,6 +65801,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -65772,6 +65996,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -66079,6 +66304,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -66341,6 +66567,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -66622,6 +66849,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -66884,6 +67112,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -67177,6 +67406,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -67439,6 +67669,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -67720,6 +67951,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -67982,6 +68214,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -68277,6 +68510,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -68539,6 +68773,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -68820,6 +69055,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -69082,6 +69318,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -69419,6 +69656,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -69681,6 +69919,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -69962,6 +70201,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -70224,6 +70464,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -70589,6 +70830,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -70878,6 +71120,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -71140,6 +71383,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -71421,6 +71665,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -71683,6 +71928,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -72157,6 +72403,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -72445,6 +72692,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -72707,6 +72955,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -72988,6 +73237,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -73250,6 +73500,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -73396,6 +73647,7 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -73692,6 +73944,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -73980,6 +74233,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -74242,6 +74496,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -74523,6 +74778,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -74785,6 +75041,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -75250,6 +75507,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -75534,6 +75792,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -75796,6 +76055,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -76077,6 +76337,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -76339,6 +76600,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -76482,6 +76744,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -76808,6 +77071,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -77092,6 +77356,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -77354,6 +77619,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -77635,6 +77901,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -77897,6 +78164,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -78352,6 +78620,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -78550,6 +78819,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -78866,6 +79136,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -79373,6 +79644,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -79567,6 +79839,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -79874,6 +80147,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -80136,6 +80410,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -80417,6 +80692,7 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -80679,6 +80955,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -80972,6 +81249,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -81234,6 +81512,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -81515,6 +81794,7 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -81777,6 +82057,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -82072,6 +82353,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -82334,6 +82616,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -82615,6 +82898,7 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -82877,6 +83161,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -83214,6 +83499,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -83476,6 +83762,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -83757,6 +84044,7 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -84019,6 +84307,7 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -85136,6 +85425,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -85425,6 +85715,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -85687,6 +85978,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -85968,6 +86260,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -86230,6 +86523,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -86704,6 +86998,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -86992,6 +87287,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -87254,6 +87550,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -87535,6 +87832,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -87797,6 +88095,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -87943,6 +88242,7 @@ export type BLOG_POST_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -88239,6 +88539,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -88527,6 +88828,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -88789,6 +89091,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -89070,6 +89373,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -89332,6 +89636,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -89797,6 +90102,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -90081,6 +90387,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -90343,6 +90650,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -90624,6 +90932,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -90886,6 +91195,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -91029,6 +91339,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -91355,6 +91666,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -91639,6 +91951,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -91901,6 +92214,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -92182,6 +92496,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -92444,6 +92759,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -92899,6 +93215,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -93097,6 +93414,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -93413,6 +93731,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -93920,6 +94239,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -94114,6 +94434,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -94421,6 +94742,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -94683,6 +95005,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -94964,6 +95287,7 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -95226,6 +95550,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -95519,6 +95844,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -95781,6 +96107,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -96062,6 +96389,7 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -96324,6 +96652,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -96619,6 +96948,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -96881,6 +97211,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -97162,6 +97493,7 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -97424,6 +97756,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -97761,6 +98094,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -98023,6 +98357,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -98304,6 +98639,7 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -98566,6 +98902,7 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -99007,6 +99344,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -99296,6 +99634,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -99558,6 +99897,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -99839,6 +100179,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -100101,6 +100442,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -100575,6 +100917,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -100863,6 +101206,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -101125,6 +101469,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -101406,6 +101751,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -101668,6 +102014,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -101814,6 +102161,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -102110,6 +102458,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -102398,6 +102747,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -102660,6 +103010,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -102941,6 +103292,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -103203,6 +103555,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -103668,6 +104021,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -103952,6 +104306,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -104214,6 +104569,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -104495,6 +104851,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -104757,6 +105114,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -104900,6 +105258,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -105226,6 +105585,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -105510,6 +105870,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -105772,6 +106133,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -106053,6 +106415,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -106315,6 +106678,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -106770,6 +107134,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -106968,6 +107333,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -107284,6 +107650,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -107791,6 +108158,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -107985,6 +108353,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -108292,6 +108661,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -108554,6 +108924,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -108835,6 +109206,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -109097,6 +109469,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -109390,6 +109763,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -109652,6 +110026,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -109933,6 +110308,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -110195,6 +110571,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -110490,6 +110867,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -110752,6 +111130,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -111033,6 +111412,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -111295,6 +111675,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -111632,6 +112013,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -111894,6 +112276,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -112175,6 +112558,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -112437,6 +112821,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -112778,6 +113163,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -113067,6 +113453,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -113329,6 +113716,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -113610,6 +113998,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -113872,6 +114261,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -114346,6 +114736,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -114634,6 +115025,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -114896,6 +115288,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -115177,6 +115570,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -115439,6 +115833,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -115585,6 +115980,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -115881,6 +116277,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -116169,6 +116566,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -116431,6 +116829,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -116712,6 +117111,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -116974,6 +117374,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -117439,6 +117840,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -117723,6 +118125,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -117985,6 +118388,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -118266,6 +118670,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -118528,6 +118933,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -118671,6 +119077,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -118997,6 +119404,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -119281,6 +119689,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -119543,6 +119952,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -119824,6 +120234,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -120086,6 +120497,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -120541,6 +120953,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -120739,6 +121152,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -121055,6 +121469,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -121562,6 +121977,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -121756,6 +122172,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -122063,6 +122480,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -122325,6 +122743,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -122606,6 +123025,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -122868,6 +123288,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -123161,6 +123582,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -123423,6 +123845,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -123704,6 +124127,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -123966,6 +124390,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -124261,6 +124686,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -124523,6 +124949,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -124804,6 +125231,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -125066,6 +125494,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -125403,6 +125832,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -125665,6 +126095,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -125946,6 +126377,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -126208,6 +126640,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -126525,6 +126958,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -126814,6 +127248,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -127076,6 +127511,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -127357,6 +127793,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -127619,6 +128056,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -128093,6 +128531,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -128381,6 +128820,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -128643,6 +129083,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -128924,6 +129365,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -129186,6 +129628,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -129332,6 +129775,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -129628,6 +130072,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -129916,6 +130361,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -130178,6 +130624,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -130459,6 +130906,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -130721,6 +131169,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -131186,6 +131635,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -131470,6 +131920,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -131732,6 +132183,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -132013,6 +132465,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -132275,6 +132728,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -132418,6 +132872,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -132744,6 +133199,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -133028,6 +133484,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -133290,6 +133747,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -133571,6 +134029,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -133833,6 +134292,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -134288,6 +134748,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -134486,6 +134947,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -134802,6 +135264,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -135309,6 +135772,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -135503,6 +135967,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -135810,6 +136275,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -136072,6 +136538,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -136353,6 +136820,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -136615,6 +137083,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -136908,6 +137377,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -137170,6 +137640,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -137451,6 +137922,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -137713,6 +138185,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -138008,6 +138481,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -138270,6 +138744,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -138551,6 +139026,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -138813,6 +139289,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -139150,6 +139627,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -139412,6 +139890,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -139693,6 +140172,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -139955,6 +140435,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -140272,6 +140753,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -140561,6 +141043,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -140823,6 +141306,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -141104,6 +141588,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -141366,6 +141851,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -141840,6 +142326,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -142128,6 +142615,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -142390,6 +142878,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -142671,6 +143160,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -142933,6 +143423,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -143079,6 +143570,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -143375,6 +143867,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -143663,6 +144156,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -143925,6 +144419,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -144206,6 +144701,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -144468,6 +144964,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -144933,6 +145430,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -145217,6 +145715,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -145479,6 +145978,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -145760,6 +146260,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -146022,6 +146523,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -146165,6 +146667,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -146491,6 +146994,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -146775,6 +147279,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -147037,6 +147542,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -147318,6 +147824,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -147580,6 +148087,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -148035,6 +148543,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -148233,6 +148742,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -148549,6 +149059,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -149056,6 +149567,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -149250,6 +149762,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -149557,6 +150070,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -149819,6 +150333,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -150100,6 +150615,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -150362,6 +150878,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -150655,6 +151172,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -150917,6 +151435,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -151198,6 +151717,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -151460,6 +151980,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -151755,6 +152276,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -152017,6 +152539,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -152298,6 +152821,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -152560,6 +153084,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -152897,6 +153422,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -153159,6 +153685,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -153440,6 +153967,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -153702,6 +154230,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -154043,6 +154572,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -154332,6 +154862,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -154594,6 +155125,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -154875,6 +155407,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -155137,6 +155670,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -155611,6 +156145,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -155899,6 +156434,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -156161,6 +156697,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -156442,6 +156979,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -156704,6 +157242,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -156850,6 +157389,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -157146,6 +157686,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -157434,6 +157975,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -157696,6 +158238,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -157977,6 +158520,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -158239,6 +158783,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -158704,6 +159249,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -158988,6 +159534,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -159250,6 +159797,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -159531,6 +160079,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -159793,6 +160342,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -159936,6 +160486,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -160262,6 +160813,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -160546,6 +161098,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -160808,6 +161361,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -161089,6 +161643,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -161351,6 +161906,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -161806,6 +162362,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -162004,6 +162561,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -162320,6 +162878,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -162827,6 +163386,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -163021,6 +163581,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -163328,6 +163889,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -163590,6 +164152,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -163871,6 +164434,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -164133,6 +164697,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -164426,6 +164991,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -164688,6 +165254,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -164969,6 +165536,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -165231,6 +165799,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -165526,6 +166095,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -165788,6 +166358,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -166069,6 +166640,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -166331,6 +166903,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -166668,6 +167241,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -166930,6 +167504,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -167211,6 +167786,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -167473,6 +168049,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -167801,6 +168378,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -168090,6 +168668,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -168352,6 +168931,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -168633,6 +169213,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -168895,6 +169476,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -169369,6 +169951,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -169657,6 +170240,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -169919,6 +170503,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -170200,6 +170785,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -170462,6 +171048,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -170608,6 +171195,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -170904,6 +171492,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -171192,6 +171781,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -171454,6 +172044,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -171735,6 +172326,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -171997,6 +172589,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -172462,6 +173055,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -172746,6 +173340,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -173008,6 +173603,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -173289,6 +173885,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -173551,6 +174148,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -173694,6 +174292,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -174020,6 +174619,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -174304,6 +174904,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -174566,6 +175167,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -174847,6 +175449,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -175109,6 +175712,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -175564,6 +176168,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -175762,6 +176367,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -176078,6 +176684,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -176585,6 +177192,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -176779,6 +177387,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -177086,6 +177695,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -177348,6 +177958,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -177629,6 +178240,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -177891,6 +178503,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -178184,6 +178797,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -178446,6 +179060,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -178727,6 +179342,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -178989,6 +179605,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -179284,6 +179901,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -179546,6 +180164,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -179827,6 +180446,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -180089,6 +180709,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -180426,6 +181047,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -180688,6 +181310,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -180969,6 +181592,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -181231,6 +181855,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -181572,6 +182197,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -181861,6 +182487,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -182123,6 +182750,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -182404,6 +183032,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -182666,6 +183295,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -183140,6 +183770,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -183428,6 +184059,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -183690,6 +184322,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -183971,6 +184604,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -184233,6 +184867,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -184379,6 +185014,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -184675,6 +185311,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -184963,6 +185600,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -185225,6 +185863,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -185506,6 +186145,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -185768,6 +186408,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -186233,6 +186874,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -186517,6 +187159,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -186779,6 +187422,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -187060,6 +187704,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -187322,6 +187967,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -187465,6 +188111,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -187791,6 +188438,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -188075,6 +188723,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -188337,6 +188986,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -188618,6 +189268,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -188880,6 +189531,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -189335,6 +189987,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -189533,6 +190186,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -189849,6 +190503,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -190356,6 +191011,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -190550,6 +191206,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -190857,6 +191514,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -191119,6 +191777,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -191400,6 +192059,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -191662,6 +192322,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -191955,6 +192616,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -192217,6 +192879,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -192498,6 +193161,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -192760,6 +193424,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -193055,6 +193720,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -193317,6 +193983,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -193598,6 +194265,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -193860,6 +194528,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -194197,6 +194866,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -194459,6 +195129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -194740,6 +195411,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -195002,6 +195674,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -195319,6 +195992,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -195608,6 +196282,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -195870,6 +196545,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -196151,6 +196827,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -196413,6 +197090,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -196887,6 +197565,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -197175,6 +197854,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -197437,6 +198117,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -197718,6 +198399,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -197980,6 +198662,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -198126,6 +198809,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -198422,6 +199106,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -198710,6 +199395,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -198972,6 +199658,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -199253,6 +199940,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -199515,6 +200203,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -199980,6 +200669,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -200264,6 +200954,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -200526,6 +201217,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -200807,6 +201499,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -201069,6 +201762,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -201212,6 +201906,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -201538,6 +202233,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -201822,6 +202518,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -202084,6 +202781,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -202365,6 +203063,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -202627,6 +203326,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -203082,6 +203782,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -203280,6 +203981,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -203596,6 +204298,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -204103,6 +204806,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -204297,6 +205001,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -204604,6 +205309,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -204866,6 +205572,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -205147,6 +205854,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -205409,6 +206117,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -205702,6 +206411,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -205964,6 +206674,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -206245,6 +206956,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -206507,6 +207219,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -206802,6 +207515,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -207064,6 +207778,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -207345,6 +208060,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -207607,6 +208323,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -207944,6 +208661,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -208206,6 +208924,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -208487,6 +209206,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -208749,6 +209469,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -209066,6 +209787,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -209355,6 +210077,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -209617,6 +210340,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -209898,6 +210622,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -210160,6 +210885,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -210634,6 +211360,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -210922,6 +211649,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -211184,6 +211912,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -211465,6 +212194,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -211727,6 +212457,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -211873,6 +212604,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -212169,6 +212901,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -212457,6 +213190,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -212719,6 +213453,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -213000,6 +213735,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -213262,6 +213998,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -213727,6 +214464,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -214011,6 +214749,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -214273,6 +215012,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -214554,6 +215294,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -214816,6 +215557,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -214959,6 +215701,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -215285,6 +216028,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -215569,6 +216313,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -215831,6 +216576,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -216112,6 +216858,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -216374,6 +217121,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -216829,6 +217577,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -217027,6 +217776,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -217343,6 +218093,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -217850,6 +218601,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -218044,6 +218796,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -218351,6 +219104,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -218613,6 +219367,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -218894,6 +219649,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -219156,6 +219912,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -219449,6 +220206,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -219711,6 +220469,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -219992,6 +220751,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -220254,6 +221014,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -220549,6 +221310,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -220811,6 +221573,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -221092,6 +221855,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -221354,6 +222118,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -221691,6 +222456,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -221953,6 +222719,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -222234,6 +223001,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -222496,6 +223264,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -222837,6 +223606,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -223126,6 +223896,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -223388,6 +224159,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -223669,6 +224441,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -223931,6 +224704,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -224405,6 +225179,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -224693,6 +225468,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -224955,6 +225731,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -225236,6 +226013,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -225498,6 +226276,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -225644,6 +226423,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "imageGallery";
     columns?: "2" | "3" | "4";
+    showCaptionsBelowImages?: boolean;
     images?: Array<{
       image?: {
         asset?: {
@@ -225940,6 +226720,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -226228,6 +227009,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -226490,6 +227272,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -226771,6 +227554,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -227033,6 +227817,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -227498,6 +228283,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -227782,6 +228568,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -228044,6 +228831,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -228325,6 +229113,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -228587,6 +229376,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -228730,6 +229520,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -229056,6 +229847,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -229340,6 +230132,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -229602,6 +230395,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -229883,6 +230677,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -230145,6 +230940,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -230600,6 +231396,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -230798,6 +231595,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -231114,6 +231912,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -231621,6 +232420,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -231815,6 +232615,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -232122,6 +232923,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -232384,6 +233186,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -232665,6 +233468,7 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
               _type: "imageGallery";
               columns?: "2" | "3" | "4";
+              showCaptionsBelowImages?: boolean;
               images?: Array<{
                 image?: {
                   asset?: {
@@ -232927,6 +233731,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -233220,6 +234025,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -233482,6 +234288,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -233763,6 +234570,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "imageGallery";
             columns?: "2" | "3" | "4";
+            showCaptionsBelowImages?: boolean;
             images?: Array<{
               image?: {
                 asset?: {
@@ -234025,6 +234833,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -234320,6 +235129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -234582,6 +235392,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -234863,6 +235674,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "imageGallery";
           columns?: "2" | "3" | "4";
+          showCaptionsBelowImages?: boolean;
           images?: Array<{
             image?: {
               asset?: {
@@ -235125,6 +235937,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -235462,6 +236275,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -235724,6 +236538,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {
@@ -236005,6 +236820,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "imageGallery";
         columns?: "2" | "3" | "4";
+        showCaptionsBelowImages?: boolean;
         images?: Array<{
           image?: {
             asset?: {
@@ -236267,6 +237083,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "imageGallery";
       columns?: "2" | "3" | "4";
+      showCaptionsBelowImages?: boolean;
       images?: Array<{
         image?: {
           asset?: {

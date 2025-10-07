@@ -2636,6 +2636,13 @@
           },
           "optional": true
         },
+        "showCaptionsBelowImages": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
         "images": {
           "type": "objectAttribute",
           "value": {
