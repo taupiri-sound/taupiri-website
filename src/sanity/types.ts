@@ -116,6 +116,29 @@ export type CtaList = Array<{
   _key: string;
 } & EmbeddedCtaButton>;
 
+export type ItemList = {
+  _type: "itemList";
+  alignment?: "inherit" | "left" | "center" | "right";
+  items?: Array<{
+    text?: string;
+    icon?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      _type: "image";
+    };
+    _type: "listItem";
+    _key: string;
+  }>;
+};
+
 export type BlockList = {
   _type: "blockList";
   items?: Array<{
@@ -526,6 +549,8 @@ export type SubSubSection = {
     _key: string;
   } & BlockList | {
     _key: string;
+  } & ItemList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -567,6 +592,8 @@ export type SubSection = {
   } & RichText | {
     _key: string;
   } & BlockList | {
+    _key: string;
+  } & ItemList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -613,6 +640,8 @@ export type PageSection = {
     _key: string;
   } & BlockList | {
     _key: string;
+  } & ItemList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -649,6 +678,8 @@ export type PageBuilder = Array<{
 } & RichText | {
   _key: string;
 } & BlockList | {
+  _key: string;
+} & ItemList | {
   _key: string;
 } & Quote | {
   _key: string;
@@ -745,6 +776,8 @@ export type PrivacyPolicy = {
     _key: string;
   } & BlockList | {
     _key: string;
+  } & ItemList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -790,6 +823,8 @@ export type TermsAndConditions = {
   } & RichText | {
     _key: string;
   } & BlockList | {
+    _key: string;
+  } & ItemList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -853,6 +888,8 @@ export type BlogPost = {
   } & RichText | {
     _key: string;
   } & BlockList | {
+    _key: string;
+  } & ItemList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -940,6 +977,8 @@ export type Page = {
   } & RichText | {
     _key: string;
   } & BlockList | {
+    _key: string;
+  } & ItemList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -1248,7 +1287,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | BlockList | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ItemList | BlockList | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -4223,6 +4262,30 @@ export type PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -7176,6 +7239,30 @@ export type PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -9149,6 +9236,30 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -10103,6 +10214,29 @@ export type PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -17477,6 +17611,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -20430,6 +20588,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -22403,6 +22585,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -23357,6 +23563,29 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -30778,6 +31007,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -33731,6 +33984,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -35704,6 +35981,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -36658,6 +36959,29 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -43953,6 +44277,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -46906,6 +47254,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -48879,6 +49251,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -49833,6 +50229,29 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -57128,6 +57547,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -60081,6 +60524,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -62054,6 +62521,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -63008,6 +63499,29 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -70345,6 +70859,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -73298,6 +73836,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -75271,6 +75833,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -76225,6 +76811,29 @@ export type HOME_PAGE_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -84306,6 +84915,30 @@ export type BLOG_POST_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -87259,6 +87892,30 @@ export type BLOG_POST_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -89232,6 +89889,30 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -90186,6 +90867,29 @@ export type BLOG_POST_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -97597,6 +98301,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -100550,6 +101278,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -102523,6 +103275,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -103477,6 +104253,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -110790,6 +111589,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -113743,6 +114566,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -115716,6 +116563,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -116670,6 +117541,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -123959,6 +124853,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -126912,6 +127830,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -128885,6 +129827,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -129839,6 +130805,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -137128,6 +138117,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -140081,6 +141094,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -142054,6 +143091,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -143008,6 +144069,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -150321,6 +151405,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -153274,6 +154382,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -155247,6 +156379,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -156201,6 +157357,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -163501,6 +164680,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -166454,6 +167657,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -168427,6 +169654,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -169381,6 +170632,29 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -176694,6 +177968,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -179647,6 +180945,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -181620,6 +182942,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -182574,6 +183920,29 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -189863,6 +191232,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -192816,6 +194209,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -194789,6 +196206,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -195743,6 +197184,29 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -203032,6 +204496,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -205985,6 +207473,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -207958,6 +209470,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -208912,6 +210448,29 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;
@@ -216225,6 +217784,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "itemList";
+    alignment?: "center" | "inherit" | "left" | "right";
+    items?: Array<{
+      text?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "listItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "pageSection";
     hideSection?: boolean;
     title?: string;
@@ -219178,6 +220761,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "itemList";
+      alignment?: "center" | "inherit" | "left" | "right";
+      items?: Array<{
+        text?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "listItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "quote";
       text?: string;
       attribution?: string;
@@ -221151,6 +222758,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "itemList";
+        alignment?: "center" | "inherit" | "left" | "right";
+        items?: Array<{
+          text?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "listItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "quote";
         text?: string;
         attribution?: string;
@@ -222105,6 +223736,29 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "image";
             };
             caption?: string;
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "itemList";
+          alignment?: "center" | "inherit" | "left" | "right";
+          items?: Array<{
+            text?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "listItem";
             _key: string;
           }>;
           image: null;

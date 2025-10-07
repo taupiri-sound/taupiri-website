@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockList } from '@/sanity/types';
+import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockList, ItemList } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -39,6 +39,7 @@ export type EmbeddedCTAButtonBlock = EmbeddedCtaButton & { _key: string };
 export type CTABlogPostBlock = CtaBlogPost & { _key: string };
 export type CompanyLinksBlockType = CompanyLinksBlock & { _key: string };
 export type BlockListBlock = BlockList & { _key: string };
+export type ItemListBlock = ItemList & { _key: string };
 
 // Union of all possible block types (current and future)
 export type NestedBlock =
@@ -62,7 +63,8 @@ export type NestedBlock =
   | CTACalloutLinkBlock
   | CTABlogPostBlock
   | CompanyLinksBlockType
-  | BlockListBlock;
+  | BlockListBlock
+  | ItemListBlock;
 
 // Union of blocks that can contain nested content
 export type BlockWithContent = PageSectionBlock | SubSectionBlock | SubSubSectionBlock | SectionBlock | CardBlock;
@@ -150,4 +152,8 @@ export const isCTABlogPostBlock = (block: NestedBlock): block is CTABlogPostBloc
 
 export const isCompanyLinksBlock = (block: NestedBlock): block is CompanyLinksBlockType => {
   return block._type === 'companyLinksBlock';
+};
+
+export const isItemListBlock = (block: NestedBlock): block is ItemListBlock => {
+  return block._type === 'itemList';
 };

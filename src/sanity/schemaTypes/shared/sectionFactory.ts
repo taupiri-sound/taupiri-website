@@ -7,6 +7,7 @@ export const commonContentBlocks = [
   defineArrayMember({ type: 'twoColumnLayout' }),
   defineArrayMember({ type: 'richText' }),
   defineArrayMember({ type: 'blockList' }),
+  defineArrayMember({ type: 'itemList' }),
   defineArrayMember({ type: 'quote' }),
   defineArrayMember({ type: 'imageBlock' }),
   defineArrayMember({ type: 'imageGallery' }),

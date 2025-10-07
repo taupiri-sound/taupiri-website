@@ -15,6 +15,7 @@ import type {
   BandcampWidget as BandcampWidgetType,
   CompanyLinksBlock as CompanyLinksBlockType,
   BlockList as BlockListType,
+  ItemList as ItemListType,
   Divider as DividerType,
 } from '@/sanity/types';
 import type { SiteSettingsProps } from '@/types/shared';
@@ -33,6 +34,7 @@ import SpotifyWidget from '@/components/blocks/SpotifyWidget';
 import BandcampWidget from '@/components/blocks/BandcampWidget';
 import CompanyLinksBlock from '@/components/blocks/CompanyLinksBlock';
 import BlockList from '@/components/blocks/BlockList';
+import ItemList from '@/components/blocks/ItemList';
 import Divider from '@/components/UI/Divider';
 
 interface RenderBlockConfig {
@@ -69,6 +71,7 @@ type BlockType =
   | WithKey<BandcampWidgetType>
   | WithKey<CompanyLinksBlockType>
   | WithKey<BlockListType>
+  | WithKey<ItemListType>
   | WithKey<DividerType>;
 
 /**
@@ -263,6 +266,15 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             documentType={documentType}
             fieldPathPrefix={blockPath}
           />
+        </BlockWrapper>
+      );
+    }
+
+    case 'itemList': {
+      const itemListBlock = typedBlock as WithKey<ItemListType>;
+      return (
+        <BlockWrapper key={itemListBlock._key}>
+          <ItemList {...itemListBlock} inheritAlignment={alignment} />
         </BlockWrapper>
       );
     }

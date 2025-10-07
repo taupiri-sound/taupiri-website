@@ -29,6 +29,7 @@ import { homeHeroCtaButtonType } from './blocks/homeHeroCtaButtonType';
 import { ctaBlogPostType } from './blocks/ctaBlogPostType';
 import { companyLinksBlockType } from './blocks/companyLinksBlockType';
 import { blockListType } from './blocks/blockListType';
+import { itemListType } from './blocks/itemListType';
 import { siteSettingsType } from './siteSettingsType';
 import { companyLinksType } from './companyLinksType';
 import { companyLinksArrayType } from './shared/socialLinksArrayType';
@@ -80,6 +81,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     ctaBlogPostType,
     companyLinksBlockType,
     blockListType,
+    itemListType,
     // Shared Components
     companyLinksArrayType,
     ctaListType,
