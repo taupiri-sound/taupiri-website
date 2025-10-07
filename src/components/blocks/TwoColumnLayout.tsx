@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { stegaClean } from 'next-sanity';
-import type { NestedBlock, BlockListBlock } from '@/types/blocks';
+import type { NestedBlock, BlockListWithStatsBlock, CheckListBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
 import type { COMPANY_LINKS_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute, type SanityLiveEditingProps } from '../../utils/sectionHelpers';
@@ -21,7 +21,8 @@ import YouTubeVideo from './YouTubeVideo';
 import SpotifyWidget from './SpotifyWidget';
 import BandcampWidget from './BandcampWidget';
 import CompanyLinksBlock from './CompanyLinksBlock';
-import BlockList from './BlockList';
+import BlockListWithStats from './BlockListWithStats';
+import CheckList from './CheckList';
 import Divider from '../UI/Divider';
 
 interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' | 'subtitlePath'> {
@@ -73,10 +74,20 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
             />
           );
 
-        case 'blockList':
+        case 'blockListWithStats':
           return (
-            <BlockList
-              {...(block as BlockListBlock)}
+            <BlockListWithStats
+              {...(block as BlockListWithStatsBlock)}
+              documentId={documentId}
+              documentType={documentType}
+              fieldPathPrefix={blockPath}
+            />
+          );
+
+        case 'checkList':
+          return (
+            <CheckList
+              {...(block as CheckListBlock)}
               documentId={documentId}
               documentType={documentType}
               fieldPathPrefix={blockPath}

@@ -301,15 +301,19 @@ const BlockRenderer = ({
 
           default:
             // Use shared block renderer for all other block types
-            return renderBlock(block, {
-              documentId,
-              documentType,
-              blockPath,
-              siteSettings,
-              companyLinks,
-              alignment,
-              config: createDataAttributeConfig,
-            });
+            return (
+              <BlockWrapper key={block._key}>
+                {renderBlock(block, {
+                  documentId,
+                  documentType,
+                  blockPath,
+                  siteSettings,
+                  companyLinks,
+                  alignment,
+                  config: createDataAttributeConfig,
+                })}
+              </BlockWrapper>
+            );
         }
       })}
     </>

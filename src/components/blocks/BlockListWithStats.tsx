@@ -1,22 +1,22 @@
 import React from 'react';
-import type { BlockListBlock } from '@/types/blocks';
+import type { BlockListWithStatsBlock } from '@/types/blocks';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import { maxCardWidth } from '@/utils/spacingConstants';
 
-interface BlockListProps extends Omit<BlockListBlock, '_type' | '_key'> {
+interface BlockListWithStatsProps extends Omit<BlockListWithStatsBlock, '_type' | '_key'> {
   className?: string;
   documentId?: string;
   documentType?: string;
   fieldPathPrefix?: string;
 }
 
-const BlockList = ({
+const BlockListWithStats = ({
   items = [],
   className = '',
   documentId,
   documentType,
   fieldPathPrefix = '',
-}: BlockListProps) => {
+}: BlockListWithStatsProps) => {
   if (!items || items.length === 0) {
     return null;
   }
@@ -64,4 +64,4 @@ const BlockList = ({
   );
 };
 
-export default BlockList;
+export default BlockListWithStats;

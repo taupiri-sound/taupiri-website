@@ -27,7 +27,8 @@ export const twoColumnLayoutType = defineType({
       of: [
         defineArrayMember({ type: 'divider' }),
         defineArrayMember({ type: 'richText' }),
-        defineArrayMember({ type: 'blockList' }),
+        defineArrayMember({ type: 'blockListWithStats' }),
+        defineArrayMember({ type: 'checkList' }),
         defineArrayMember({ type: 'quote' }),
         defineArrayMember({ type: 'imageBlock' }),
         defineArrayMember({ type: 'imageGallery' }),
@@ -51,7 +52,8 @@ export const twoColumnLayoutType = defineType({
       of: [
         defineArrayMember({ type: 'divider' }),
         defineArrayMember({ type: 'richText' }),
-        defineArrayMember({ type: 'blockList' }),
+        defineArrayMember({ type: 'blockListWithStats' }),
+        defineArrayMember({ type: 'checkList' }),
         defineArrayMember({ type: 'quote' }),
         defineArrayMember({ type: 'imageBlock' }),
         defineArrayMember({ type: 'imageGallery' }),

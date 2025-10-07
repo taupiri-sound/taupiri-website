@@ -14,7 +14,8 @@ import type {
   SpotifyWidget as SpotifyWidgetType,
   BandcampWidget as BandcampWidgetType,
   CompanyLinksBlock as CompanyLinksBlockType,
-  BlockList as BlockListType,
+  BlockListWithStats as BlockListWithStatsType,
+  CheckList as CheckListType,
   ItemList as ItemListType,
   Divider as DividerType,
 } from '@/sanity/types';
@@ -33,7 +34,8 @@ import YouTubeVideo from '@/components/blocks/YouTubeVideo';
 import SpotifyWidget from '@/components/blocks/SpotifyWidget';
 import BandcampWidget from '@/components/blocks/BandcampWidget';
 import CompanyLinksBlock from '@/components/blocks/CompanyLinksBlock';
-import BlockList from '@/components/blocks/BlockList';
+import BlockListWithStats from '@/components/blocks/BlockListWithStats';
+import CheckList from '@/components/blocks/CheckList';
 import ItemList from '@/components/blocks/ItemList';
 import Divider from '@/components/UI/Divider';
 
@@ -70,7 +72,8 @@ type BlockType =
   | WithKey<SpotifyWidgetType>
   | WithKey<BandcampWidgetType>
   | WithKey<CompanyLinksBlockType>
-  | WithKey<BlockListType>
+  | WithKey<BlockListWithStatsType>
+  | WithKey<CheckListType>
   | WithKey<ItemListType>
   | WithKey<DividerType>;
 
@@ -115,7 +118,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const dividerBlock = typedBlock as WithKey<DividerType>;
       return (
         <BlockWrapper key={dividerBlock._key}>
-          <Divider alignment='center' variant='default' useFixedWidth={true} addBottomSpace={true} />
+          <Divider alignment='center' variant='default' useFixedWidth={true} />
         </BlockWrapper>
       );
     }
@@ -251,17 +254,34 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const companyLinksBlockBlock = typedBlock as WithKey<CompanyLinksBlockType>;
       return (
         <BlockWrapper key={companyLinksBlockBlock._key}>
-          <CompanyLinksBlock {...companyLinksBlockBlock} companyLinks={companyLinks?.companyLinks || null} />
+          <CompanyLinksBlock
+            {...companyLinksBlockBlock}
+            companyLinks={companyLinks?.companyLinks || null}
+          />
         </BlockWrapper>
       );
     }
 
-    case 'blockList': {
-      const blockListBlock = typedBlock as WithKey<BlockListType>;
+    case 'blockListWithStats': {
+      const blockListWithStatsBlock = typedBlock as WithKey<BlockListWithStatsType>;
       return (
-        <BlockWrapper key={blockListBlock._key}>
-          <BlockList
-            {...blockListBlock}
+        <BlockWrapper key={blockListWithStatsBlock._key}>
+          <BlockListWithStats
+            {...blockListWithStatsBlock}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={blockPath}
+          />
+        </BlockWrapper>
+      );
+    }
+
+    case 'checkList': {
+      const checkListBlock = typedBlock as WithKey<CheckListType>;
+      return (
+        <BlockWrapper key={checkListBlock._key}>
+          <CheckList
+            {...checkListBlock}
             documentId={documentId}
             documentType={documentType}
             fieldPathPrefix={blockPath}

@@ -139,8 +139,17 @@ export type ItemList = {
   }>;
 };
 
-export type BlockList = {
-  _type: "blockList";
+export type CheckList = {
+  _type: "checkList";
+  items?: Array<{
+    text?: string;
+    _type: "checkListItem";
+    _key: string;
+  }>;
+};
+
+export type BlockListWithStats = {
+  _type: "blockListWithStats";
   items?: Array<{
     leftContent?: string;
     rightContent?: string;
@@ -350,7 +359,9 @@ export type TwoColumnLayout = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -379,7 +390,9 @@ export type TwoColumnLayout = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -547,7 +560,9 @@ export type SubSubSection = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & ItemList | {
     _key: string;
@@ -591,7 +606,9 @@ export type SubSection = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & ItemList | {
     _key: string;
@@ -638,7 +655,9 @@ export type PageSection = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & ItemList | {
     _key: string;
@@ -677,7 +696,9 @@ export type PageBuilder = Array<{
   _key: string;
 } & RichText | {
   _key: string;
-} & BlockList | {
+} & BlockListWithStats | {
+  _key: string;
+} & CheckList | {
   _key: string;
 } & ItemList | {
   _key: string;
@@ -774,7 +795,9 @@ export type PrivacyPolicy = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & ItemList | {
     _key: string;
@@ -822,7 +845,9 @@ export type TermsAndConditions = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & ItemList | {
     _key: string;
@@ -887,7 +912,9 @@ export type BlogPost = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & ItemList | {
     _key: string;
@@ -976,7 +1003,9 @@ export type Page = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & ItemList | {
     _key: string;
@@ -1034,7 +1063,9 @@ export type Card = {
     _key: string;
   } & RichText | {
     _key: string;
-  } & BlockList | {
+  } & BlockListWithStats | {
+    _key: string;
+  } & CheckList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -1287,7 +1318,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ItemList | BlockList | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -1308,7 +1339,7 @@ export type PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -1343,11 +1374,21 @@ export type PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -1605,7 +1646,7 @@ export type PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -1636,11 +1677,19 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -1875,9 +1924,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -1904,9 +1955,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -1934,6 +1987,14 @@ export type PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -2128,7 +2189,7 @@ export type PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -2159,11 +2220,19 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -2398,9 +2467,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -2427,9 +2498,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -2457,6 +2530,14 @@ export type PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -2656,6 +2737,16 @@ export type PAGE_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -2851,11 +2942,21 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -3112,7 +3213,7 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -3143,11 +3244,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -3382,9 +3491,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -3411,9 +3522,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -3441,6 +3554,14 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -3635,7 +3756,7 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -3666,11 +3787,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -3905,9 +4034,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -3934,9 +4065,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -3964,6 +4097,14 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -4301,7 +4442,7 @@ export type PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -4336,11 +4477,21 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -4597,7 +4748,7 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -4628,11 +4779,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -4867,9 +5026,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -4896,9 +5057,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -4926,6 +5089,14 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -5120,7 +5291,7 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -5151,11 +5322,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -5390,9 +5569,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -5419,9 +5600,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -5449,6 +5632,14 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -5648,6 +5839,16 @@ export type PAGE_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -5842,11 +6043,20 @@ export type PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -6092,7 +6302,7 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -6123,11 +6333,19 @@ export type PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -6362,9 +6580,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -6391,9 +6611,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -6421,6 +6643,14 @@ export type PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -6615,7 +6845,7 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -6646,11 +6876,19 @@ export type PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -6885,9 +7123,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -6914,9 +7154,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -6944,6 +7186,14 @@ export type PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -7317,7 +7567,7 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -7351,11 +7601,20 @@ export type PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -7601,7 +7860,7 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -7632,11 +7891,19 @@ export type PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -7871,9 +8138,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -7900,9 +8169,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -7930,6 +8201,14 @@ export type PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -8124,7 +8403,7 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -8155,11 +8434,19 @@ export type PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -8394,9 +8681,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -8423,9 +8712,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -8453,6 +8744,14 @@ export type PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -8650,6 +8949,16 @@ export type PAGE_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -8842,11 +9151,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -9081,9 +9398,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -9110,9 +9429,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -9312,7 +9633,7 @@ export type PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -9344,11 +9665,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -9583,9 +9912,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -9612,9 +9943,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -9642,6 +9975,15 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -9830,11 +10172,19 @@ export type PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -10069,9 +10419,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -10098,9 +10450,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -10288,7 +10642,7 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -10319,11 +10673,19 @@ export type PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -10558,9 +10920,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -10587,9 +10951,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -10617,6 +10983,14 @@ export type PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -10811,7 +11185,7 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -10842,11 +11216,19 @@ export type PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -11081,9 +11463,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -11110,9 +11494,11 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -11140,6 +11526,14 @@ export type PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -11346,7 +11740,7 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -11377,11 +11771,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -11616,9 +12018,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -11645,9 +12049,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -11675,6 +12081,14 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -11869,7 +12283,7 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -11900,11 +12314,19 @@ export type PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -12139,9 +12561,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -12168,9 +12592,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -12198,6 +12624,14 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -12406,7 +12840,7 @@ export type PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -12437,11 +12871,19 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -12676,9 +13118,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -12705,9 +13149,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -12735,6 +13181,14 @@ export type PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -12929,7 +13383,7 @@ export type PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -12960,11 +13414,19 @@ export type PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -13199,9 +13661,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -13228,9 +13692,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -13258,6 +13724,14 @@ export type PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -13508,7 +13982,7 @@ export type PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -13539,11 +14013,19 @@ export type PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -13778,9 +14260,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -13807,9 +14291,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -13837,6 +14323,14 @@ export type PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -14031,7 +14525,7 @@ export type PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -14062,11 +14556,19 @@ export type PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -14301,9 +14803,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -14330,9 +14834,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -14360,6 +14866,14 @@ export type PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -14592,7 +15106,9 @@ export type PAGE_QUERYResult = {
       _key: string;
     } & BandcampWidget | {
       _key: string;
-    } & BlockList | {
+    } & BlockListWithStats | {
+      _key: string;
+    } & CheckList | {
       _key: string;
     } & CompanyLinksBlock | {
       _key: string;
@@ -14657,7 +15173,7 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -14692,11 +15208,21 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -14954,7 +15480,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -14985,11 +15511,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -15224,9 +15758,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -15253,9 +15789,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -15283,6 +15821,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -15477,7 +16023,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -15508,11 +16054,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -15747,9 +16301,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -15776,9 +16332,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -15806,6 +16364,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -16005,6 +16571,16 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -16200,11 +16776,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -16461,7 +17047,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -16492,11 +17078,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -16731,9 +17325,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -16760,9 +17356,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -16790,6 +17388,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -16984,7 +17590,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -17015,11 +17621,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -17254,9 +17868,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -17283,9 +17899,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -17313,6 +17931,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -17650,7 +18276,7 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -17685,11 +18311,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -17946,7 +18582,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -17977,11 +18613,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -18216,9 +18860,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -18245,9 +18891,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -18275,6 +18923,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -18469,7 +19125,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -18500,11 +19156,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -18739,9 +19403,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -18768,9 +19434,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -18798,6 +19466,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -18997,6 +19673,16 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -19191,11 +19877,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -19441,7 +20136,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -19472,11 +20167,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -19711,9 +20414,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -19740,9 +20445,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -19770,6 +20477,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -19964,7 +20679,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -19995,11 +20710,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -20234,9 +20957,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -20263,9 +20988,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -20293,6 +21020,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -20666,7 +21401,7 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -20700,11 +21435,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -20950,7 +21694,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -20981,11 +21725,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -21220,9 +21972,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -21249,9 +22003,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -21279,6 +22035,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -21473,7 +22237,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -21504,11 +22268,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -21743,9 +22515,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -21772,9 +22546,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -21802,6 +22578,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -21999,6 +22783,16 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -22191,11 +22985,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -22430,9 +23232,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -22459,9 +23263,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -22661,7 +23467,7 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -22693,11 +23499,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -22932,9 +23746,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -22961,9 +23777,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -22991,6 +23809,15 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -23179,11 +24006,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -23418,9 +24253,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -23447,9 +24284,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -23637,7 +24476,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -23668,11 +24507,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -23907,9 +24754,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -23936,9 +24785,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -23966,6 +24817,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -24160,7 +25019,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -24191,11 +25050,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -24430,9 +25297,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -24459,9 +25328,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -24489,6 +25360,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -24695,7 +25574,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -24726,11 +25605,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -24965,9 +25852,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -24994,9 +25883,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -25024,6 +25915,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -25218,7 +26117,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -25249,11 +26148,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -25488,9 +26395,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -25517,9 +26426,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -25547,6 +26458,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -25755,7 +26674,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -25786,11 +26705,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -26025,9 +26952,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -26054,9 +26983,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -26084,6 +27015,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -26278,7 +27217,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -26309,11 +27248,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -26548,9 +27495,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -26577,9 +27526,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -26607,6 +27558,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -26857,7 +27816,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -26888,11 +27847,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -27127,9 +28094,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -27156,9 +28125,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -27186,6 +28157,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -27380,7 +28359,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -27411,11 +28390,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -27650,9 +28637,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -27679,9 +28668,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -27709,6 +28700,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -28053,7 +29052,7 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -28088,11 +29087,21 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -28350,7 +29359,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -28381,11 +29390,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -28620,9 +29637,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -28649,9 +29668,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -28679,6 +29700,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -28873,7 +29902,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -28904,11 +29933,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -29143,9 +30180,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -29172,9 +30211,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -29202,6 +30243,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -29401,6 +30450,16 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -29596,11 +30655,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -29857,7 +30926,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -29888,11 +30957,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -30127,9 +31204,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -30156,9 +31235,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -30186,6 +31267,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -30380,7 +31469,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -30411,11 +31500,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -30650,9 +31747,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -30679,9 +31778,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -30709,6 +31810,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -31046,7 +32155,7 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -31081,11 +32190,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -31342,7 +32461,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -31373,11 +32492,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -31612,9 +32739,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -31641,9 +32770,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -31671,6 +32802,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -31865,7 +33004,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -31896,11 +33035,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -32135,9 +33282,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -32164,9 +33313,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -32194,6 +33345,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -32393,6 +33552,16 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -32587,11 +33756,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -32837,7 +34015,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -32868,11 +34046,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -33107,9 +34293,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -33136,9 +34324,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -33166,6 +34356,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -33360,7 +34558,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -33391,11 +34589,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -33630,9 +34836,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -33659,9 +34867,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -33689,6 +34899,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -34062,7 +35280,7 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -34096,11 +35314,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -34346,7 +35573,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -34377,11 +35604,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -34616,9 +35851,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -34645,9 +35882,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -34675,6 +35914,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -34869,7 +36116,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -34900,11 +36147,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -35139,9 +36394,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -35168,9 +36425,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -35198,6 +36457,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -35395,6 +36662,16 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -35587,11 +36864,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -35826,9 +37111,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -35855,9 +37142,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -36057,7 +37346,7 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -36089,11 +37378,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -36328,9 +37625,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -36357,9 +37656,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -36387,6 +37688,15 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -36575,11 +37885,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -36814,9 +38132,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -36843,9 +38163,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -37033,7 +38355,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -37064,11 +38386,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -37303,9 +38633,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -37332,9 +38664,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -37362,6 +38696,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -37556,7 +38898,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -37587,11 +38929,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -37826,9 +39176,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -37855,9 +39207,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -37885,6 +39239,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -38091,7 +39453,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -38122,11 +39484,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -38361,9 +39731,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -38390,9 +39762,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -38420,6 +39794,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -38614,7 +39996,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -38645,11 +40027,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -38884,9 +40274,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -38913,9 +40305,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -38943,6 +40337,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -39151,7 +40553,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -39182,11 +40584,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -39421,9 +40831,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -39450,9 +40862,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -39480,6 +40894,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -39674,7 +41096,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -39705,11 +41127,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -39944,9 +41374,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -39973,9 +41405,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -40003,6 +41437,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -40253,7 +41695,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -40284,11 +41726,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -40523,9 +41973,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -40552,9 +42004,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -40582,6 +42036,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -40776,7 +42238,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -40807,11 +42269,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -41046,9 +42516,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -41075,9 +42547,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -41105,6 +42579,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -41323,7 +42805,7 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -41358,11 +42840,21 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -41620,7 +43112,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -41651,11 +43143,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -41890,9 +43390,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -41919,9 +43421,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -41949,6 +43453,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -42143,7 +43655,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -42174,11 +43686,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -42413,9 +43933,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -42442,9 +43964,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -42472,6 +43996,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -42671,6 +44203,16 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -42866,11 +44408,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -43127,7 +44679,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -43158,11 +44710,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -43397,9 +44957,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -43426,9 +44988,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -43456,6 +45020,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -43650,7 +45222,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -43681,11 +45253,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -43920,9 +45500,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -43949,9 +45531,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -43979,6 +45563,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -44316,7 +45908,7 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -44351,11 +45943,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -44612,7 +46214,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -44643,11 +46245,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -44882,9 +46492,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -44911,9 +46523,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -44941,6 +46555,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -45135,7 +46757,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -45166,11 +46788,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -45405,9 +47035,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -45434,9 +47066,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -45464,6 +47098,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -45663,6 +47305,16 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -45857,11 +47509,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -46107,7 +47768,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -46138,11 +47799,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -46377,9 +48046,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -46406,9 +48077,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -46436,6 +48109,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -46630,7 +48311,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -46661,11 +48342,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -46900,9 +48589,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -46929,9 +48620,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -46959,6 +48652,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -47332,7 +49033,7 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -47366,11 +49067,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -47616,7 +49326,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -47647,11 +49357,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -47886,9 +49604,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -47915,9 +49635,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -47945,6 +49667,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -48139,7 +49869,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -48170,11 +49900,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -48409,9 +50147,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -48438,9 +50178,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -48468,6 +50210,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -48665,6 +50415,16 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -48857,11 +50617,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -49096,9 +50864,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -49125,9 +50895,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -49327,7 +51099,7 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -49359,11 +51131,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -49598,9 +51378,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -49627,9 +51409,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -49657,6 +51441,15 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -49845,11 +51638,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -50084,9 +51885,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -50113,9 +51916,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -50303,7 +52108,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -50334,11 +52139,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -50573,9 +52386,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -50602,9 +52417,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -50632,6 +52449,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -50826,7 +52651,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -50857,11 +52682,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -51096,9 +52929,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -51125,9 +52960,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -51155,6 +52992,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -51361,7 +53206,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -51392,11 +53237,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -51631,9 +53484,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -51660,9 +53515,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -51690,6 +53547,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -51884,7 +53749,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -51915,11 +53780,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -52154,9 +54027,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -52183,9 +54058,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -52213,6 +54090,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -52421,7 +54306,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -52452,11 +54337,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -52691,9 +54584,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -52720,9 +54615,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -52750,6 +54647,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -52944,7 +54849,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -52975,11 +54880,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -53214,9 +55127,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -53243,9 +55158,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -53273,6 +55190,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -53523,7 +55448,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -53554,11 +55479,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -53793,9 +55726,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -53822,9 +55757,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -53852,6 +55789,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -54046,7 +55991,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -54077,11 +56022,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -54316,9 +56269,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -54345,9 +56300,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -54375,6 +56332,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -54593,7 +56558,7 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -54628,11 +56593,21 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -54890,7 +56865,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -54921,11 +56896,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -55160,9 +57143,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -55189,9 +57174,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -55219,6 +57206,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -55413,7 +57408,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -55444,11 +57439,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -55683,9 +57686,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -55712,9 +57717,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -55742,6 +57749,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -55941,6 +57956,16 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -56136,11 +58161,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -56397,7 +58432,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -56428,11 +58463,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -56667,9 +58710,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -56696,9 +58741,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -56726,6 +58773,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -56920,7 +58975,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -56951,11 +59006,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -57190,9 +59253,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -57219,9 +59284,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -57249,6 +59316,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -57586,7 +59661,7 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -57621,11 +59696,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -57882,7 +59967,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -57913,11 +59998,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -58152,9 +60245,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -58181,9 +60276,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -58211,6 +60308,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -58405,7 +60510,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -58436,11 +60541,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -58675,9 +60788,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -58704,9 +60819,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -58734,6 +60851,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -58933,6 +61058,16 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -59127,11 +61262,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -59377,7 +61521,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -59408,11 +61552,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -59647,9 +61799,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -59676,9 +61830,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -59706,6 +61862,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -59900,7 +62064,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -59931,11 +62095,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -60170,9 +62342,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -60199,9 +62373,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -60229,6 +62405,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -60602,7 +62786,7 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -60636,11 +62820,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -60886,7 +63079,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -60917,11 +63110,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -61156,9 +63357,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -61185,9 +63388,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -61215,6 +63420,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -61409,7 +63622,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -61440,11 +63653,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -61679,9 +63900,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -61708,9 +63931,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -61738,6 +63963,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -61935,6 +64168,16 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -62127,11 +64370,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -62366,9 +64617,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -62395,9 +64648,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -62597,7 +64852,7 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -62629,11 +64884,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -62868,9 +65131,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -62897,9 +65162,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -62927,6 +65194,15 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -63115,11 +65391,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -63354,9 +65638,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -63383,9 +65669,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -63573,7 +65861,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -63604,11 +65892,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -63843,9 +66139,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -63872,9 +66170,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -63902,6 +66202,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -64096,7 +66404,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -64127,11 +66435,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -64366,9 +66682,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -64395,9 +66713,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -64425,6 +66745,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -64631,7 +66959,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -64662,11 +66990,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -64901,9 +67237,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -64930,9 +67268,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -64960,6 +67300,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -65154,7 +67502,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -65185,11 +67533,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -65424,9 +67780,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -65453,9 +67811,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -65483,6 +67843,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -65691,7 +68059,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -65722,11 +68090,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -65961,9 +68337,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -65990,9 +68368,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -66020,6 +68400,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -66214,7 +68602,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -66245,11 +68633,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -66484,9 +68880,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -66513,9 +68911,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -66543,6 +68943,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -66793,7 +69201,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -66824,11 +69232,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -67063,9 +69479,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -67092,9 +69510,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -67122,6 +69542,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -67316,7 +69744,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -67347,11 +69775,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -67586,9 +70022,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -67615,9 +70053,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -67645,6 +70085,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -67905,7 +70353,7 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -67940,11 +70388,21 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -68202,7 +70660,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -68233,11 +70691,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -68472,9 +70938,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -68501,9 +70969,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -68531,6 +71001,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -68725,7 +71203,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -68756,11 +71234,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -68995,9 +71481,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -69024,9 +71512,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -69054,6 +71544,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -69253,6 +71751,16 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -69448,11 +71956,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -69709,7 +72227,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -69740,11 +72258,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -69979,9 +72505,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -70008,9 +72536,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -70038,6 +72568,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -70232,7 +72770,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -70263,11 +72801,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -70502,9 +73048,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -70531,9 +73079,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -70561,6 +73111,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -70898,7 +73456,7 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -70933,11 +73491,21 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -71194,7 +73762,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -71225,11 +73793,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -71464,9 +74040,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -71493,9 +74071,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -71523,6 +74103,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -71717,7 +74305,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -71748,11 +74336,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -71987,9 +74583,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -72016,9 +74614,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -72046,6 +74646,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -72245,6 +74853,16 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -72439,11 +75057,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -72689,7 +75316,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -72720,11 +75347,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -72959,9 +75594,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -72988,9 +75625,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -73018,6 +75657,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -73212,7 +75859,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -73243,11 +75890,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -73482,9 +76137,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -73511,9 +76168,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -73541,6 +76200,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -73914,7 +76581,7 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -73948,11 +76615,20 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -74198,7 +76874,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -74229,11 +76905,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -74468,9 +77152,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -74497,9 +77183,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -74527,6 +77215,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -74721,7 +77417,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -74752,11 +77448,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -74991,9 +77695,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -75020,9 +77726,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -75050,6 +77758,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -75247,6 +77963,16 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -75439,11 +78165,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -75678,9 +78412,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -75707,9 +78443,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -75909,7 +78647,7 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -75941,11 +78679,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -76180,9 +78926,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -76209,9 +78957,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -76239,6 +78989,15 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -76427,11 +79186,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -76666,9 +79433,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -76695,9 +79464,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -76885,7 +79656,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -76916,11 +79687,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -77155,9 +79934,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -77184,9 +79965,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -77214,6 +79997,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -77408,7 +80199,7 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -77439,11 +80230,19 @@ export type HOME_PAGE_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -77678,9 +80477,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -77707,9 +80508,11 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -77737,6 +80540,14 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -77943,7 +80754,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -77974,11 +80785,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -78213,9 +81032,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -78242,9 +81063,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -78272,6 +81095,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -78466,7 +81297,7 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -78497,11 +81328,19 @@ export type HOME_PAGE_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -78736,9 +81575,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -78765,9 +81606,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -78795,6 +81638,14 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -79003,7 +81854,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -79034,11 +81885,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -79273,9 +82132,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -79302,9 +82163,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -79332,6 +82195,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -79526,7 +82397,7 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -79557,11 +82428,19 @@ export type HOME_PAGE_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -79796,9 +82675,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -79825,9 +82706,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -79855,6 +82738,14 @@ export type HOME_PAGE_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -80105,7 +82996,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -80136,11 +83027,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -80375,9 +83274,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -80404,9 +83305,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -80434,6 +83337,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -80628,7 +83539,7 @@ export type HOME_PAGE_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -80659,11 +83570,19 @@ export type HOME_PAGE_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -80898,9 +83817,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -80927,9 +83848,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -80957,6 +83880,14 @@ export type HOME_PAGE_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -81623,7 +84554,9 @@ export type BLOG_POSTS_QUERYResult = Array<{
       _key: string;
     } & BandcampWidget | {
       _key: string;
-    } & BlockList | {
+    } & BlockListWithStats | {
+      _key: string;
+    } & CheckList | {
       _key: string;
     } & CompanyLinksBlock | {
       _key: string;
@@ -81694,7 +84627,9 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       _key: string;
     } & BandcampWidget | {
       _key: string;
-    } & BlockList | {
+    } & BlockListWithStats | {
+      _key: string;
+    } & CheckList | {
       _key: string;
     } & CompanyLinksBlock | {
       _key: string;
@@ -81752,7 +84687,9 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       _key: string;
     } & BandcampWidget | {
       _key: string;
-    } & BlockList | {
+    } & BlockListWithStats | {
+      _key: string;
+    } & CheckList | {
       _key: string;
     } & CompanyLinksBlock | {
       _key: string;
@@ -81856,7 +84793,9 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       _key: string;
     } & BandcampWidget | {
       _key: string;
-    } & BlockList | {
+    } & BlockListWithStats | {
+      _key: string;
+    } & CheckList | {
       _key: string;
     } & CompanyLinksBlock | {
       _key: string;
@@ -81961,7 +84900,7 @@ export type BLOG_POST_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -81996,11 +84935,21 @@ export type BLOG_POST_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -82258,7 +85207,7 @@ export type BLOG_POST_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -82289,11 +85238,19 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -82528,9 +85485,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -82557,9 +85516,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -82587,6 +85548,14 @@ export type BLOG_POST_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -82781,7 +85750,7 @@ export type BLOG_POST_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -82812,11 +85781,19 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -83051,9 +86028,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -83080,9 +86059,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -83110,6 +86091,14 @@ export type BLOG_POST_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -83309,6 +86298,16 @@ export type BLOG_POST_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -83504,11 +86503,21 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -83765,7 +86774,7 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -83796,11 +86805,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -84035,9 +87052,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -84064,9 +87083,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -84094,6 +87115,14 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -84288,7 +87317,7 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -84319,11 +87348,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -84558,9 +87595,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -84587,9 +87626,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -84617,6 +87658,14 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -84954,7 +88003,7 @@ export type BLOG_POST_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -84989,11 +88038,21 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -85250,7 +88309,7 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -85281,11 +88340,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -85520,9 +88587,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -85549,9 +88618,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -85579,6 +88650,14 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -85773,7 +88852,7 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -85804,11 +88883,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -86043,9 +89130,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -86072,9 +89161,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -86102,6 +89193,14 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -86301,6 +89400,16 @@ export type BLOG_POST_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -86495,11 +89604,20 @@ export type BLOG_POST_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -86745,7 +89863,7 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -86776,11 +89894,19 @@ export type BLOG_POST_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -87015,9 +90141,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -87044,9 +90172,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -87074,6 +90204,14 @@ export type BLOG_POST_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -87268,7 +90406,7 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -87299,11 +90437,19 @@ export type BLOG_POST_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -87538,9 +90684,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -87567,9 +90715,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -87597,6 +90747,14 @@ export type BLOG_POST_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -87970,7 +91128,7 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -88004,11 +91162,20 @@ export type BLOG_POST_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -88254,7 +91421,7 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -88285,11 +91452,19 @@ export type BLOG_POST_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -88524,9 +91699,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -88553,9 +91730,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -88583,6 +91762,14 @@ export type BLOG_POST_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -88777,7 +91964,7 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -88808,11 +91995,19 @@ export type BLOG_POST_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -89047,9 +92242,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -89076,9 +92273,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -89106,6 +92305,14 @@ export type BLOG_POST_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -89303,6 +92510,16 @@ export type BLOG_POST_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -89495,11 +92712,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -89734,9 +92959,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -89763,9 +92990,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -89965,7 +93194,7 @@ export type BLOG_POST_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -89997,11 +93226,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -90236,9 +93473,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -90265,9 +93504,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -90295,6 +93536,15 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -90483,11 +93733,19 @@ export type BLOG_POST_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -90722,9 +93980,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -90751,9 +94011,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -90941,7 +94203,7 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -90972,11 +94234,19 @@ export type BLOG_POST_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -91211,9 +94481,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -91240,9 +94512,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -91270,6 +94544,14 @@ export type BLOG_POST_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -91464,7 +94746,7 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -91495,11 +94777,19 @@ export type BLOG_POST_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -91734,9 +95024,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -91763,9 +95055,11 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -91793,6 +95087,14 @@ export type BLOG_POST_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -91999,7 +95301,7 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -92030,11 +95332,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -92269,9 +95579,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -92298,9 +95610,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -92328,6 +95642,14 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -92522,7 +95844,7 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -92553,11 +95875,19 @@ export type BLOG_POST_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -92792,9 +96122,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -92821,9 +96153,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -92851,6 +96185,14 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -93059,7 +96401,7 @@ export type BLOG_POST_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -93090,11 +96432,19 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -93329,9 +96679,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -93358,9 +96710,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -93388,6 +96742,14 @@ export type BLOG_POST_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -93582,7 +96944,7 @@ export type BLOG_POST_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -93613,11 +96975,19 @@ export type BLOG_POST_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -93852,9 +97222,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -93881,9 +97253,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -93911,6 +97285,14 @@ export type BLOG_POST_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -94161,7 +97543,7 @@ export type BLOG_POST_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -94192,11 +97574,19 @@ export type BLOG_POST_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -94431,9 +97821,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -94460,9 +97852,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -94490,6 +97884,14 @@ export type BLOG_POST_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -94684,7 +98086,7 @@ export type BLOG_POST_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -94715,11 +98117,19 @@ export type BLOG_POST_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -94954,9 +98364,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -94983,9 +98395,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -95013,6 +98427,14 @@ export type BLOG_POST_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -95234,7 +98656,9 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
     } & BandcampWidget | {
       _key: string;
-    } & BlockList | {
+    } & BlockListWithStats | {
+      _key: string;
+    } & CheckList | {
       _key: string;
     } & CompanyLinksBlock | {
       _key: string;
@@ -95347,7 +98771,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -95382,11 +98806,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -95644,7 +99078,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -95675,11 +99109,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -95914,9 +99356,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -95943,9 +99387,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -95973,6 +99419,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -96167,7 +99621,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -96198,11 +99652,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -96437,9 +99899,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -96466,9 +99930,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -96496,6 +99962,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -96695,6 +100169,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -96890,11 +100374,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -97151,7 +100645,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -97182,11 +100676,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -97421,9 +100923,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -97450,9 +100954,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -97480,6 +100986,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -97674,7 +101188,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -97705,11 +101219,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -97944,9 +101466,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -97973,9 +101497,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -98003,6 +101529,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -98340,7 +101874,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -98375,11 +101909,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -98636,7 +102180,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -98667,11 +102211,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -98906,9 +102458,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -98935,9 +102489,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -98965,6 +102521,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -99159,7 +102723,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -99190,11 +102754,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -99429,9 +103001,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -99458,9 +103032,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -99488,6 +103064,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -99687,6 +103271,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -99881,11 +103475,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -100131,7 +103734,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -100162,11 +103765,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -100401,9 +104012,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -100430,9 +104043,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -100460,6 +104075,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -100654,7 +104277,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -100685,11 +104308,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -100924,9 +104555,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -100953,9 +104586,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -100983,6 +104618,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -101356,7 +104999,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -101390,11 +105033,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -101640,7 +105292,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -101671,11 +105323,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -101910,9 +105570,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -101939,9 +105601,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -101969,6 +105633,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -102163,7 +105835,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -102194,11 +105866,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -102433,9 +106113,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -102462,9 +106144,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -102492,6 +106176,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -102689,6 +106381,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -102881,11 +106583,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -103120,9 +106830,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -103149,9 +106861,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -103351,7 +107065,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -103383,11 +107097,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -103622,9 +107344,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -103651,9 +107375,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -103681,6 +107407,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -103869,11 +107604,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -104108,9 +107851,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -104137,9 +107882,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -104327,7 +108074,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -104358,11 +108105,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -104597,9 +108352,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -104626,9 +108383,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -104656,6 +108415,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -104850,7 +108617,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -104881,11 +108648,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -105120,9 +108895,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -105149,9 +108926,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -105179,6 +108958,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -105385,7 +109172,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -105416,11 +109203,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -105655,9 +109450,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -105684,9 +109481,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -105714,6 +109513,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -105908,7 +109715,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -105939,11 +109746,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -106178,9 +109993,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -106207,9 +110024,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -106237,6 +110056,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -106445,7 +110272,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -106476,11 +110303,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -106715,9 +110550,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -106744,9 +110581,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -106774,6 +110613,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -106968,7 +110815,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -106999,11 +110846,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -107238,9 +111093,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -107267,9 +111124,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -107297,6 +111156,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -107547,7 +111414,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -107578,11 +111445,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -107817,9 +111692,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -107846,9 +111723,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -107876,6 +111755,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -108070,7 +111957,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -108101,11 +111988,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -108340,9 +112235,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -108369,9 +112266,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -108399,6 +112298,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -108635,7 +112542,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -108670,11 +112577,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -108932,7 +112849,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -108963,11 +112880,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -109202,9 +113127,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -109231,9 +113158,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -109261,6 +113190,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -109455,7 +113392,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -109486,11 +113423,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -109725,9 +113670,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -109754,9 +113701,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -109784,6 +113733,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -109983,6 +113940,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -110178,11 +114145,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -110439,7 +114416,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -110470,11 +114447,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -110709,9 +114694,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -110738,9 +114725,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -110768,6 +114757,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -110962,7 +114959,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -110993,11 +114990,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -111232,9 +115237,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -111261,9 +115268,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -111291,6 +115300,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -111628,7 +115645,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -111663,11 +115680,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -111924,7 +115951,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -111955,11 +115982,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -112194,9 +116229,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -112223,9 +116260,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -112253,6 +116292,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -112447,7 +116494,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -112478,11 +116525,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -112717,9 +116772,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -112746,9 +116803,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -112776,6 +116835,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -112975,6 +117042,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -113169,11 +117246,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -113419,7 +117505,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -113450,11 +117536,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -113689,9 +117783,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -113718,9 +117814,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -113748,6 +117846,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -113942,7 +118048,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -113973,11 +118079,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -114212,9 +118326,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -114241,9 +118357,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -114271,6 +118389,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -114644,7 +118770,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -114678,11 +118804,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -114928,7 +119063,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -114959,11 +119094,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -115198,9 +119341,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -115227,9 +119372,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -115257,6 +119404,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -115451,7 +119606,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -115482,11 +119637,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -115721,9 +119884,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -115750,9 +119915,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -115780,6 +119947,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -115977,6 +120152,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -116169,11 +120354,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -116408,9 +120601,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -116437,9 +120632,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -116639,7 +120836,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -116671,11 +120868,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -116910,9 +121115,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -116939,9 +121146,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -116969,6 +121178,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -117157,11 +121375,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -117396,9 +121622,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -117425,9 +121653,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -117615,7 +121845,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -117646,11 +121876,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -117885,9 +122123,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -117914,9 +122154,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -117944,6 +122186,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -118138,7 +122388,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -118169,11 +122419,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -118408,9 +122666,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -118437,9 +122697,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -118467,6 +122729,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -118673,7 +122943,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -118704,11 +122974,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -118943,9 +123221,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -118972,9 +123252,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -119002,6 +123284,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -119196,7 +123486,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -119227,11 +123517,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -119466,9 +123764,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -119495,9 +123795,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -119525,6 +123827,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -119733,7 +124043,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -119764,11 +124074,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -120003,9 +124321,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -120032,9 +124352,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -120062,6 +124384,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -120256,7 +124586,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -120287,11 +124617,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -120526,9 +124864,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -120555,9 +124895,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -120585,6 +124927,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -120835,7 +125185,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -120866,11 +125216,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -121105,9 +125463,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -121134,9 +125494,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -121164,6 +125526,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -121358,7 +125728,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -121389,11 +125759,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -121628,9 +126006,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -121657,9 +126037,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -121687,6 +126069,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -121899,7 +126289,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -121934,11 +126324,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -122196,7 +126596,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -122227,11 +126627,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -122466,9 +126874,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -122495,9 +126905,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -122525,6 +126937,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -122719,7 +127139,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -122750,11 +127170,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -122989,9 +127417,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -123018,9 +127448,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -123048,6 +127480,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -123247,6 +127687,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -123442,11 +127892,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -123703,7 +128163,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -123734,11 +128194,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -123973,9 +128441,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -124002,9 +128472,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -124032,6 +128504,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -124226,7 +128706,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -124257,11 +128737,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -124496,9 +128984,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -124525,9 +129015,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -124555,6 +129047,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -124892,7 +129392,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -124927,11 +129427,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -125188,7 +129698,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -125219,11 +129729,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -125458,9 +129976,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -125487,9 +130007,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -125517,6 +130039,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -125711,7 +130241,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -125742,11 +130272,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -125981,9 +130519,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -126010,9 +130550,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -126040,6 +130582,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -126239,6 +130789,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -126433,11 +130993,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -126683,7 +131252,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -126714,11 +131283,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -126953,9 +131530,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -126982,9 +131561,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -127012,6 +131593,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -127206,7 +131795,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -127237,11 +131826,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -127476,9 +132073,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -127505,9 +132104,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -127535,6 +132136,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -127908,7 +132517,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -127942,11 +132551,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -128192,7 +132810,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -128223,11 +132841,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -128462,9 +133088,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -128491,9 +133119,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -128521,6 +133151,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -128715,7 +133353,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -128746,11 +133384,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -128985,9 +133631,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -129014,9 +133662,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -129044,6 +133694,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -129241,6 +133899,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -129433,11 +134101,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -129672,9 +134348,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -129701,9 +134379,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -129903,7 +134583,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -129935,11 +134615,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -130174,9 +134862,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -130203,9 +134893,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -130233,6 +134925,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -130421,11 +135122,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -130660,9 +135369,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -130689,9 +135400,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -130879,7 +135592,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -130910,11 +135623,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -131149,9 +135870,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -131178,9 +135901,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -131208,6 +135933,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -131402,7 +136135,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -131433,11 +136166,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -131672,9 +136413,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -131701,9 +136444,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -131731,6 +136476,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -131937,7 +136690,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -131968,11 +136721,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -132207,9 +136968,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -132236,9 +136999,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -132266,6 +137031,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -132460,7 +137233,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -132491,11 +137264,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -132730,9 +137511,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -132759,9 +137542,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -132789,6 +137574,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -132997,7 +137790,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -133028,11 +137821,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -133267,9 +138068,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -133296,9 +138099,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -133326,6 +138131,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -133520,7 +138333,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -133551,11 +138364,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -133790,9 +138611,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -133819,9 +138642,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -133849,6 +138674,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -134099,7 +138932,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -134130,11 +138963,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -134369,9 +139210,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -134398,9 +139241,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -134428,6 +139273,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -134622,7 +139475,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -134653,11 +139506,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -134892,9 +139753,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -134921,9 +139784,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -134951,6 +139816,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -135163,7 +140036,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -135198,11 +140071,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -135460,7 +140343,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -135491,11 +140374,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -135730,9 +140621,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -135759,9 +140652,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -135789,6 +140684,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -135983,7 +140886,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -136014,11 +140917,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -136253,9 +141164,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -136282,9 +141195,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -136312,6 +141227,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -136511,6 +141434,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -136706,11 +141639,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -136967,7 +141910,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -136998,11 +141941,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -137237,9 +142188,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -137266,9 +142219,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -137296,6 +142251,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -137490,7 +142453,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -137521,11 +142484,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -137760,9 +142731,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -137789,9 +142762,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -137819,6 +142794,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -138156,7 +143139,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -138191,11 +143174,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -138452,7 +143445,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -138483,11 +143476,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -138722,9 +143723,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -138751,9 +143754,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -138781,6 +143786,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -138975,7 +143988,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -139006,11 +144019,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -139245,9 +144266,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -139274,9 +144297,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -139304,6 +144329,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -139503,6 +144536,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -139697,11 +144740,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -139947,7 +144999,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -139978,11 +145030,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -140217,9 +145277,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -140246,9 +145308,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -140276,6 +145340,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -140470,7 +145542,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -140501,11 +145573,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -140740,9 +145820,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -140769,9 +145851,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -140799,6 +145883,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -141172,7 +146264,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -141206,11 +146298,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -141456,7 +146557,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -141487,11 +146588,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -141726,9 +146835,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -141755,9 +146866,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -141785,6 +146898,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -141979,7 +147100,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -142010,11 +147131,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -142249,9 +147378,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -142278,9 +147409,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -142308,6 +147441,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -142505,6 +147646,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -142697,11 +147848,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -142936,9 +148095,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -142965,9 +148126,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -143167,7 +148330,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -143199,11 +148362,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -143438,9 +148609,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -143467,9 +148640,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -143497,6 +148672,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -143685,11 +148869,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -143924,9 +149116,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -143953,9 +149147,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -144143,7 +149339,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -144174,11 +149370,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -144413,9 +149617,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -144442,9 +149648,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -144472,6 +149680,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -144666,7 +149882,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -144697,11 +149913,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -144936,9 +150160,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -144965,9 +150191,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -144995,6 +150223,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -145201,7 +150437,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -145232,11 +150468,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -145471,9 +150715,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -145500,9 +150746,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -145530,6 +150778,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -145724,7 +150980,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -145755,11 +151011,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -145994,9 +151258,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -146023,9 +151289,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -146053,6 +151321,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -146261,7 +151537,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -146292,11 +151568,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -146531,9 +151815,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -146560,9 +151846,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -146590,6 +151878,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -146784,7 +152080,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -146815,11 +152111,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -147054,9 +152358,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -147083,9 +152389,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -147113,6 +152421,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -147363,7 +152679,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -147394,11 +152710,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -147633,9 +152957,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -147662,9 +152988,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -147692,6 +153020,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -147886,7 +153222,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -147917,11 +153253,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -148156,9 +153500,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -148185,9 +153531,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -148215,6 +153563,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -148451,7 +153807,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -148486,11 +153842,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -148748,7 +154114,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -148779,11 +154145,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -149018,9 +154392,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -149047,9 +154423,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -149077,6 +154455,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -149271,7 +154657,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -149302,11 +154688,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -149541,9 +154935,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -149570,9 +154966,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -149600,6 +154998,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -149799,6 +155205,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -149994,11 +155410,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -150255,7 +155681,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -150286,11 +155712,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -150525,9 +155959,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -150554,9 +155990,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -150584,6 +156022,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -150778,7 +156224,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -150809,11 +156255,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -151048,9 +156502,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -151077,9 +156533,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -151107,6 +156565,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -151444,7 +156910,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -151479,11 +156945,21 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -151740,7 +157216,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -151771,11 +157247,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -152010,9 +157494,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -152039,9 +157525,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -152069,6 +157557,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -152263,7 +157759,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -152294,11 +157790,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -152533,9 +158037,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -152562,9 +158068,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -152592,6 +158100,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -152791,6 +158307,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -152985,11 +158511,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -153235,7 +158770,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -153266,11 +158801,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -153505,9 +159048,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -153534,9 +159079,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -153564,6 +159111,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -153758,7 +159313,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -153789,11 +159344,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -154028,9 +159591,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -154057,9 +159622,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -154087,6 +159654,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -154460,7 +160035,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -154494,11 +160069,20 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -154744,7 +160328,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -154775,11 +160359,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -155014,9 +160606,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -155043,9 +160637,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -155073,6 +160669,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -155267,7 +160871,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -155298,11 +160902,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -155537,9 +161149,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -155566,9 +161180,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -155596,6 +161212,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -155793,6 +161417,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -155985,11 +161619,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -156224,9 +161866,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -156253,9 +161897,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -156455,7 +162101,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -156487,11 +162133,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -156726,9 +162380,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -156755,9 +162411,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -156785,6 +162443,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -156973,11 +162640,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -157212,9 +162887,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -157241,9 +162918,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -157431,7 +163110,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -157462,11 +163141,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -157701,9 +163388,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -157730,9 +163419,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -157760,6 +163451,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -157954,7 +163653,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -157985,11 +163684,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -158224,9 +163931,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -158253,9 +163962,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -158283,6 +163994,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -158489,7 +164208,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -158520,11 +164239,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -158759,9 +164486,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -158788,9 +164517,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -158818,6 +164549,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -159012,7 +164751,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -159043,11 +164782,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -159282,9 +165029,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -159311,9 +165060,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -159341,6 +165092,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -159549,7 +165308,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -159580,11 +165339,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -159819,9 +165586,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -159848,9 +165617,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -159878,6 +165649,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -160072,7 +165851,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -160103,11 +165882,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -160342,9 +166129,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -160371,9 +166160,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -160401,6 +166192,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -160651,7 +166450,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -160682,11 +166481,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -160921,9 +166728,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -160950,9 +166759,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -160980,6 +166791,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -161174,7 +166993,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -161205,11 +167024,19 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -161444,9 +167271,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -161473,9 +167302,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -161503,6 +167334,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -161726,7 +167565,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -161761,11 +167600,21 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -162023,7 +167872,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -162054,11 +167903,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -162293,9 +168150,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -162322,9 +168181,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -162352,6 +168213,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -162546,7 +168415,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -162577,11 +168446,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -162816,9 +168693,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -162845,9 +168724,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -162875,6 +168756,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -163074,6 +168963,16 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -163269,11 +169168,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -163530,7 +169439,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -163561,11 +169470,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -163800,9 +169717,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -163829,9 +169748,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -163859,6 +169780,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -164053,7 +169982,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -164084,11 +170013,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -164323,9 +170260,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -164352,9 +170291,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -164382,6 +170323,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -164719,7 +170668,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -164754,11 +170703,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -165015,7 +170974,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -165046,11 +171005,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -165285,9 +171252,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -165314,9 +171283,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -165344,6 +171315,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -165538,7 +171517,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -165569,11 +171548,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -165808,9 +171795,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -165837,9 +171826,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -165867,6 +171858,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -166066,6 +172065,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -166260,11 +172269,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -166510,7 +172528,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -166541,11 +172559,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -166780,9 +172806,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -166809,9 +172837,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -166839,6 +172869,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -167033,7 +173071,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -167064,11 +173102,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -167303,9 +173349,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -167332,9 +173380,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -167362,6 +173412,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -167735,7 +173793,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -167769,11 +173827,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -168019,7 +174086,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -168050,11 +174117,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -168289,9 +174364,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -168318,9 +174395,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -168348,6 +174427,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -168542,7 +174629,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -168573,11 +174660,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -168812,9 +174907,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -168841,9 +174938,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -168871,6 +174970,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -169068,6 +175175,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -169260,11 +175377,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -169499,9 +175624,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -169528,9 +175655,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -169730,7 +175859,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -169762,11 +175891,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -170001,9 +176138,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -170030,9 +176169,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -170060,6 +176201,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -170248,11 +176398,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -170487,9 +176645,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -170516,9 +176676,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -170706,7 +176868,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -170737,11 +176899,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -170976,9 +177146,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -171005,9 +177177,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -171035,6 +177209,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -171229,7 +177411,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -171260,11 +177442,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -171499,9 +177689,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -171528,9 +177720,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -171558,6 +177752,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -171764,7 +177966,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -171795,11 +177997,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -172034,9 +178244,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -172063,9 +178275,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -172093,6 +178307,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -172287,7 +178509,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -172318,11 +178540,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -172557,9 +178787,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -172586,9 +178818,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -172616,6 +178850,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -172824,7 +179066,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -172855,11 +179097,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -173094,9 +179344,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -173123,9 +179375,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -173153,6 +179407,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -173347,7 +179609,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -173378,11 +179640,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -173617,9 +179887,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -173646,9 +179918,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -173676,6 +179950,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -173926,7 +180208,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -173957,11 +180239,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -174196,9 +180486,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -174225,9 +180517,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -174255,6 +180549,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -174449,7 +180751,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -174480,11 +180782,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -174719,9 +181029,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -174748,9 +181060,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -174778,6 +181092,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -175014,7 +181336,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -175049,11 +181371,21 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -175311,7 +181643,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -175342,11 +181674,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -175581,9 +181921,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -175610,9 +181952,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -175640,6 +181984,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -175834,7 +182186,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -175865,11 +182217,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -176104,9 +182464,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -176133,9 +182495,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -176163,6 +182527,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -176362,6 +182734,16 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -176557,11 +182939,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -176818,7 +183210,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -176849,11 +183241,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -177088,9 +183488,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -177117,9 +183519,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -177147,6 +183551,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -177341,7 +183753,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -177372,11 +183784,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -177611,9 +184031,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -177640,9 +184062,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -177670,6 +184094,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -178007,7 +184439,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -178042,11 +184474,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -178303,7 +184745,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -178334,11 +184776,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -178573,9 +185023,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -178602,9 +185054,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -178632,6 +185086,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -178826,7 +185288,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -178857,11 +185319,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -179096,9 +185566,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -179125,9 +185597,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -179155,6 +185629,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -179354,6 +185836,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -179548,11 +186040,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -179798,7 +186299,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -179829,11 +186330,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -180068,9 +186577,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -180097,9 +186608,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -180127,6 +186640,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -180321,7 +186842,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -180352,11 +186873,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -180591,9 +187120,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -180620,9 +187151,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -180650,6 +187183,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -181023,7 +187564,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -181057,11 +187598,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -181307,7 +187857,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -181338,11 +187888,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -181577,9 +188135,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -181606,9 +188166,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -181636,6 +188198,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -181830,7 +188400,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -181861,11 +188431,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -182100,9 +188678,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -182129,9 +188709,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -182159,6 +188741,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -182356,6 +188946,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -182548,11 +189148,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -182787,9 +189395,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -182816,9 +189426,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -183018,7 +189630,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -183050,11 +189662,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -183289,9 +189909,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -183318,9 +189940,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -183348,6 +189972,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -183536,11 +190169,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -183775,9 +190416,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -183804,9 +190447,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -183994,7 +190639,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -184025,11 +190670,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -184264,9 +190917,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -184293,9 +190948,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -184323,6 +190980,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -184517,7 +191182,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -184548,11 +191213,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -184787,9 +191460,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -184816,9 +191491,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -184846,6 +191523,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -185052,7 +191737,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -185083,11 +191768,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -185322,9 +192015,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -185351,9 +192046,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -185381,6 +192078,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -185575,7 +192280,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -185606,11 +192311,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -185845,9 +192558,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -185874,9 +192589,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -185904,6 +192621,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -186112,7 +192837,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -186143,11 +192868,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -186382,9 +193115,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -186411,9 +193146,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -186441,6 +193178,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -186635,7 +193380,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -186666,11 +193411,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -186905,9 +193658,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -186934,9 +193689,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -186964,6 +193721,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -187214,7 +193979,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -187245,11 +194010,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -187484,9 +194257,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -187513,9 +194288,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -187543,6 +194320,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -187737,7 +194522,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -187768,11 +194553,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -188007,9 +194800,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -188036,9 +194831,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -188066,6 +194863,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -188278,7 +195083,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -188313,11 +195118,21 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -188575,7 +195390,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -188606,11 +195421,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -188845,9 +195668,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -188874,9 +195699,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -188904,6 +195731,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -189098,7 +195933,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -189129,11 +195964,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -189368,9 +196211,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -189397,9 +196242,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -189427,6 +196274,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -189626,6 +196481,16 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -189821,11 +196686,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -190082,7 +196957,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -190113,11 +196988,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -190352,9 +197235,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -190381,9 +197266,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -190411,6 +197298,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -190605,7 +197500,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -190636,11 +197531,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -190875,9 +197778,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -190904,9 +197809,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -190934,6 +197841,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -191271,7 +198186,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -191306,11 +198221,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -191567,7 +198492,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -191598,11 +198523,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -191837,9 +198770,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -191866,9 +198801,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -191896,6 +198833,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -192090,7 +199035,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -192121,11 +199066,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -192360,9 +199313,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -192389,9 +199344,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -192419,6 +199376,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -192618,6 +199583,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -192812,11 +199787,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -193062,7 +200046,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -193093,11 +200077,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -193332,9 +200324,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -193361,9 +200355,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -193391,6 +200387,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -193585,7 +200589,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -193616,11 +200620,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -193855,9 +200867,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -193884,9 +200898,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -193914,6 +200930,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -194287,7 +201311,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -194321,11 +201345,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -194571,7 +201604,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -194602,11 +201635,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -194841,9 +201882,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -194870,9 +201913,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -194900,6 +201945,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -195094,7 +202147,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -195125,11 +202178,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -195364,9 +202425,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -195393,9 +202456,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -195423,6 +202488,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -195620,6 +202693,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -195812,11 +202895,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -196051,9 +203142,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -196080,9 +203173,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -196282,7 +203377,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -196314,11 +203409,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -196553,9 +203656,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -196582,9 +203687,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -196612,6 +203719,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -196800,11 +203916,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -197039,9 +204163,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -197068,9 +204194,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -197258,7 +204386,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -197289,11 +204417,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -197528,9 +204664,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -197557,9 +204695,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -197587,6 +204727,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -197781,7 +204929,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -197812,11 +204960,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -198051,9 +205207,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -198080,9 +205238,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -198110,6 +205270,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -198316,7 +205484,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -198347,11 +205515,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -198586,9 +205762,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -198615,9 +205793,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -198645,6 +205825,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -198839,7 +206027,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -198870,11 +206058,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -199109,9 +206305,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -199138,9 +206336,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -199168,6 +206368,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -199376,7 +206584,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -199407,11 +206615,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -199646,9 +206862,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -199675,9 +206893,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -199705,6 +206925,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -199899,7 +207127,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -199930,11 +207158,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -200169,9 +207405,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -200198,9 +207436,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -200228,6 +207468,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -200478,7 +207726,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -200509,11 +207757,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -200748,9 +208004,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -200777,9 +208035,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -200807,6 +208067,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -201001,7 +208269,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -201032,11 +208300,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -201271,9 +208547,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -201300,9 +208578,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -201330,6 +208610,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -201542,7 +208830,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -201577,11 +208865,21 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -201839,7 +209137,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -201870,11 +209168,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -202109,9 +209415,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -202138,9 +209446,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -202168,6 +209478,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -202362,7 +209680,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -202393,11 +209711,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -202632,9 +209958,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -202661,9 +209989,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -202691,6 +210021,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -202890,6 +210228,16 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -203085,11 +210433,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -203346,7 +210704,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -203377,11 +210735,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -203616,9 +210982,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -203645,9 +211013,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -203675,6 +211045,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -203869,7 +211247,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -203900,11 +211278,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -204139,9 +211525,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -204168,9 +211556,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -204198,6 +211588,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -204535,7 +211933,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -204570,11 +211968,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -204831,7 +212239,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -204862,11 +212270,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -205101,9 +212517,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -205130,9 +212548,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -205160,6 +212580,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -205354,7 +212782,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -205385,11 +212813,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -205624,9 +213060,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -205653,9 +213091,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -205683,6 +213123,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -205882,6 +213330,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -206076,11 +213534,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -206326,7 +213793,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -206357,11 +213824,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -206596,9 +214071,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -206625,9 +214102,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -206655,6 +214134,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -206849,7 +214336,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -206880,11 +214367,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -207119,9 +214614,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -207148,9 +214645,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -207178,6 +214677,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -207551,7 +215058,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -207585,11 +215092,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -207835,7 +215351,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -207866,11 +215382,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -208105,9 +215629,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -208134,9 +215660,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -208164,6 +215692,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -208358,7 +215894,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -208389,11 +215925,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -208628,9 +216172,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -208657,9 +216203,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -208687,6 +216235,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -208884,6 +216440,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -209076,11 +216642,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -209315,9 +216889,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -209344,9 +216920,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -209546,7 +217124,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -209578,11 +217156,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -209817,9 +217403,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -209846,9 +217434,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -209876,6 +217466,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -210064,11 +217663,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -210303,9 +217910,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -210332,9 +217941,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -210522,7 +218133,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -210553,11 +218164,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -210792,9 +218411,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -210821,9 +218442,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -210851,6 +218474,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -211045,7 +218676,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -211076,11 +218707,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -211315,9 +218954,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -211344,9 +218985,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -211374,6 +219017,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -211580,7 +219231,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -211611,11 +219262,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -211850,9 +219509,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -211879,9 +219540,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -211909,6 +219572,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -212103,7 +219774,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -212134,11 +219805,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -212373,9 +220052,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -212402,9 +220083,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -212432,6 +220115,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -212640,7 +220331,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -212671,11 +220362,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -212910,9 +220609,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -212939,9 +220640,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -212969,6 +220672,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -213163,7 +220874,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -213194,11 +220905,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -213433,9 +221152,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -213462,9 +221183,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -213492,6 +221215,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -213742,7 +221473,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -213773,11 +221504,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -214012,9 +221751,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -214041,9 +221782,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -214071,6 +221814,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -214265,7 +222016,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -214296,11 +222047,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -214535,9 +222294,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -214564,9 +222325,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -214594,6 +222357,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -214830,7 +222601,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
-    _type: "blockList";
+    _type: "blockListWithStats";
     items?: Array<{
       leftContent?: string;
       rightContent?: string;
@@ -214865,11 +222636,21 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
         _type: "blockListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
         _key: string;
       }>;
       image: null;
@@ -215127,7 +222908,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -215158,11 +222939,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -215397,9 +223186,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -215426,9 +223217,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -215456,6 +223249,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -215650,7 +223451,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -215681,11 +223482,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -215920,9 +223729,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -215949,9 +223760,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -215979,6 +223792,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -216178,6 +223999,16 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
   } | {
     _key: string;
+    _type: "checkList";
+    items?: Array<{
+      text?: string;
+      _type: "checkListItem";
+      _key: string;
+    }>;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
     image: null;
@@ -216373,11 +224204,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -216634,7 +224475,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -216665,11 +224506,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -216904,9 +224753,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -216933,9 +224784,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -216963,6 +224816,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -217157,7 +225018,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -217188,11 +225049,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -217427,9 +225296,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -217456,9 +225327,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -217486,6 +225359,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -217823,7 +225704,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -217858,11 +225739,21 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
         image: null;
@@ -218119,7 +226010,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -218150,11 +226041,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -218389,9 +226288,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -218418,9 +226319,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -218448,6 +226351,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -218642,7 +226553,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -218673,11 +226584,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -218912,9 +226831,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -218941,9 +226862,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -218971,6 +226894,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -219170,6 +227101,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
     } | {
       _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
       image: null;
@@ -219364,11 +227305,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -219614,7 +227564,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -219645,11 +227595,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -219884,9 +227842,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -219913,9 +227873,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -219943,6 +227905,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -220137,7 +228107,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -220168,11 +228138,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -220407,9 +228385,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -220436,9 +228416,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -220466,6 +228448,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -220839,7 +228829,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -220873,11 +228863,20 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
           image: null;
@@ -221123,7 +229122,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -221154,11 +229153,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -221393,9 +229400,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -221422,9 +229431,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -221452,6 +229463,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -221646,7 +229665,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -221677,11 +229696,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -221916,9 +229943,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -221945,9 +229974,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -221975,6 +230006,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -222172,6 +230211,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
       } | {
         _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "companyLinksBlock";
         blockAdded?: string;
         image: null;
@@ -222364,11 +230413,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -222603,9 +230660,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -222632,9 +230691,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -222834,7 +230895,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -222866,11 +230927,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -223105,9 +231174,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -223134,9 +231205,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -223164,6 +231237,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -223352,11 +231434,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -223591,9 +231681,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -223620,9 +231712,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -223810,7 +231904,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -223841,11 +231935,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -224080,9 +232182,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -224109,9 +232213,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -224139,6 +232245,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -224333,7 +232447,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
@@ -224364,11 +232478,19 @@ export type PRIVACY_POLICY_QUERYResult = {
               embedCode?: string;
             } | {
               _key: string;
-              _type: "blockList";
+              _type: "blockListWithStats";
               items?: Array<{
                 leftContent?: string;
                 rightContent?: string;
                 _type: "blockListItem";
+                _key: string;
+              }>;
+            } | {
+              _key: string;
+              _type: "checkList";
+              items?: Array<{
+                text?: string;
+                _type: "checkListItem";
                 _key: string;
               }>;
             } | {
@@ -224603,9 +232725,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -224632,9 +232756,11 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
-              } & BlockList | {
+              } & BlockListWithStats | {
                 _key: string;
               } & Card | {
+                _key: string;
+              } & CheckList | {
                 _key: string;
               } & CompanyLinksBlock | {
                 _key: string;
@@ -224662,6 +232788,14 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "companyLinksBlock";
@@ -224868,7 +233002,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -224899,11 +233033,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -225138,9 +233280,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -225167,9 +233311,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -225197,6 +233343,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -225391,7 +233545,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
@@ -225422,11 +233576,19 @@ export type PRIVACY_POLICY_QUERYResult = {
             embedCode?: string;
           } | {
             _key: string;
-            _type: "blockList";
+            _type: "blockListWithStats";
             items?: Array<{
               leftContent?: string;
               rightContent?: string;
               _type: "blockListItem";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
+            _type: "checkList";
+            items?: Array<{
+              text?: string;
+              _type: "checkListItem";
               _key: string;
             }>;
           } | {
@@ -225661,9 +233823,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -225690,9 +233854,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & BandcampWidget | {
               _key: string;
-            } & BlockList | {
+            } & BlockListWithStats | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & CheckList | {
               _key: string;
             } & CompanyLinksBlock | {
               _key: string;
@@ -225720,6 +233886,14 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
+            _key: string;
+          }>;
         } | {
           _key: string;
           _type: "companyLinksBlock";
@@ -225928,7 +234102,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -225959,11 +234133,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -226198,9 +234380,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -226227,9 +234411,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -226257,6 +234443,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -226451,7 +234645,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
@@ -226482,11 +234676,19 @@ export type PRIVACY_POLICY_QUERYResult = {
           embedCode?: string;
         } | {
           _key: string;
-          _type: "blockList";
+          _type: "blockListWithStats";
           items?: Array<{
             leftContent?: string;
             rightContent?: string;
             _type: "blockListItem";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
+          _type: "checkList";
+          items?: Array<{
+            text?: string;
+            _type: "checkListItem";
             _key: string;
           }>;
         } | {
@@ -226721,9 +234923,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -226750,9 +234954,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & BandcampWidget | {
             _key: string;
-          } & BlockList | {
+          } & BlockListWithStats | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & CheckList | {
             _key: string;
           } & CompanyLinksBlock | {
             _key: string;
@@ -226780,6 +234986,14 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "youTubeVideo";
           url?: string;
         }> | null;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
+          _key: string;
+        }>;
       } | {
         _key: string;
         _type: "companyLinksBlock";
@@ -227030,7 +235244,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -227061,11 +235275,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -227300,9 +235522,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -227329,9 +235553,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -227359,6 +235585,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";
@@ -227553,7 +235787,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       embedCode?: string;
     } | {
       _key: string;
-      _type: "blockList";
+      _type: "blockListWithStats";
       items?: Array<{
         leftContent?: string;
         rightContent?: string;
@@ -227584,11 +235818,19 @@ export type PRIVACY_POLICY_QUERYResult = {
         embedCode?: string;
       } | {
         _key: string;
-        _type: "blockList";
+        _type: "blockListWithStats";
         items?: Array<{
           leftContent?: string;
           rightContent?: string;
           _type: "blockListItem";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
+        _type: "checkList";
+        items?: Array<{
+          text?: string;
+          _type: "checkListItem";
           _key: string;
         }>;
       } | {
@@ -227823,9 +236065,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -227852,9 +236096,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & BandcampWidget | {
           _key: string;
-        } & BlockList | {
+        } & BlockListWithStats | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & CheckList | {
           _key: string;
         } & CompanyLinksBlock | {
           _key: string;
@@ -227882,6 +236128,14 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "youTubeVideo";
         url?: string;
       }> | null;
+    } | {
+      _key: string;
+      _type: "checkList";
+      items?: Array<{
+        text?: string;
+        _type: "checkListItem";
+        _key: string;
+      }>;
     } | {
       _key: string;
       _type: "companyLinksBlock";

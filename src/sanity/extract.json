@@ -738,7 +738,7 @@
     }
   },
   {
-    "name": "blockList",
+    "name": "checkList",
     "type": "type",
     "value": {
       "type": "object",
@@ -747,7 +747,60 @@
           "type": "objectAttribute",
           "value": {
             "type": "string",
-            "value": "blockList"
+            "value": "checkList"
+          }
+        },
+        "items": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "array",
+            "of": {
+              "type": "object",
+              "attributes": {
+                "text": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  },
+                  "optional": true
+                },
+                "_type": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string",
+                    "value": "checkListItem"
+                  }
+                }
+              },
+              "rest": {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "optional": true
+        }
+      }
+    }
+  },
+  {
+    "name": "blockListWithStats",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "blockListWithStats"
           }
         },
         "items": {
@@ -1989,7 +2042,22 @@
                   },
                   "rest": {
                     "type": "inline",
-                    "name": "blockList"
+                    "name": "blockListWithStats"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "checkList"
                   }
                 },
                 {
@@ -2211,7 +2279,22 @@
                   },
                   "rest": {
                     "type": "inline",
-                    "name": "blockList"
+                    "name": "blockListWithStats"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "checkList"
                   }
                 },
                 {
@@ -3376,7 +3459,22 @@
                   },
                   "rest": {
                     "type": "inline",
-                    "name": "blockList"
+                    "name": "blockListWithStats"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "checkList"
                   }
                 },
                 {
@@ -3695,7 +3793,22 @@
                   },
                   "rest": {
                     "type": "inline",
-                    "name": "blockList"
+                    "name": "blockListWithStats"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "checkList"
                   }
                 },
                 {
@@ -4035,7 +4148,22 @@
                   },
                   "rest": {
                     "type": "inline",
-                    "name": "blockList"
+                    "name": "blockListWithStats"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "checkList"
                   }
                 },
                 {
@@ -4321,7 +4449,22 @@
             },
             "rest": {
               "type": "inline",
-              "name": "blockList"
+              "name": "blockListWithStats"
+            }
+          },
+          {
+            "type": "object",
+            "attributes": {
+              "_key": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "rest": {
+              "type": "inline",
+              "name": "checkList"
             }
           },
           {
@@ -5027,7 +5170,22 @@
                 },
                 "rest": {
                   "type": "inline",
-                  "name": "blockList"
+                  "name": "blockListWithStats"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "checkList"
                 }
               },
               {
@@ -5367,7 +5525,22 @@
                 },
                 "rest": {
                   "type": "inline",
-                  "name": "blockList"
+                  "name": "blockListWithStats"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "checkList"
                 }
               },
               {
@@ -5812,7 +5985,22 @@
                 },
                 "rest": {
                   "type": "inline",
-                  "name": "blockList"
+                  "name": "blockListWithStats"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "checkList"
                 }
               },
               {
@@ -6393,7 +6581,22 @@
                 },
                 "rest": {
                   "type": "inline",
-                  "name": "blockList"
+                  "name": "blockListWithStats"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "checkList"
                 }
               },
               {
@@ -6822,7 +7025,22 @@
                   },
                   "rest": {
                     "type": "inline",
-                    "name": "blockList"
+                    "name": "blockListWithStats"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "checkList"
                   }
                 },
                 {

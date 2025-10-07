@@ -28,7 +28,8 @@ import { embeddedCtaButtonType } from './blocks/embeddedCtaButtonType';
 import { homeHeroCtaButtonType } from './blocks/homeHeroCtaButtonType';
 import { ctaBlogPostType } from './blocks/ctaBlogPostType';
 import { companyLinksBlockType } from './blocks/companyLinksBlockType';
-import { blockListType } from './blocks/blockListType';
+import { blockListWithStatsType } from './blocks/blockListWithStatsType';
+import { checkListType } from './blocks/checkListType';
 import { itemListType } from './blocks/itemListType';
 import { siteSettingsType } from './siteSettingsType';
 import { companyLinksType } from './companyLinksType';
@@ -80,7 +81,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     homeHeroCtaButtonType,
     ctaBlogPostType,
     companyLinksBlockType,
-    blockListType,
+    blockListWithStatsType,
+    checkListType,
     itemListType,
     // Shared Components
     companyLinksArrayType,

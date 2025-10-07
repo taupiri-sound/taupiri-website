@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockList, ItemList } from '@/sanity/types';
+import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -38,7 +38,8 @@ export type CTACalloutLinkBlock = CtaCalloutLink & { _key: string };
 export type EmbeddedCTAButtonBlock = EmbeddedCtaButton & { _key: string };
 export type CTABlogPostBlock = CtaBlogPost & { _key: string };
 export type CompanyLinksBlockType = CompanyLinksBlock & { _key: string };
-export type BlockListBlock = BlockList & { _key: string };
+export type BlockListWithStatsBlock = BlockListWithStats & { _key: string };
+export type CheckListBlock = CheckList & { _key: string };
 export type ItemListBlock = ItemList & { _key: string };
 
 // Union of all possible block types (current and future)
@@ -63,7 +64,8 @@ export type NestedBlock =
   | CTACalloutLinkBlock
   | CTABlogPostBlock
   | CompanyLinksBlockType
-  | BlockListBlock
+  | BlockListWithStatsBlock
+  | CheckListBlock
   | ItemListBlock;
 
 // Union of blocks that can contain nested content

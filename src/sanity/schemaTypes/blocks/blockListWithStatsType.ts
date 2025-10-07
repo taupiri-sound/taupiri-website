@@ -5,9 +5,9 @@
 import { defineField, defineType } from 'sanity';
 import { MenuIcon } from '@sanity/icons';
 
-export const blockListType = defineType({
-  name: 'blockList',
-  title: 'Block List',
+export const blockListWithStatsType = defineType({
+  name: 'blockListWithStats',
+  title: 'Block List with Stats',
   type: 'object',
   icon: MenuIcon,
   fields: [
@@ -63,7 +63,7 @@ export const blockListType = defineType({
     prepare({ items }) {
       const itemCount = items?.length || 0;
       return {
-        title: `Block List (${itemCount} items)`,
+        title: `Block List with Stats (${itemCount} items)`,
         subtitle: itemCount === 1 ? '1 item' : `${itemCount} items`,
         media: MenuIcon,
       };
