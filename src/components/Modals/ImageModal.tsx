@@ -1,6 +1,6 @@
 import React from 'react';
 import NextImage from 'next/image';
-import Heading from '../Typography/Heading/Heading';
+import Heading from '../Typography/Heading';
 import Modal from '../UI/Modal';
 
 interface ImageModalProps {

@@ -8,9 +8,16 @@ import DisableDraftMode from '@/components/DisableDraftMode';
 import NavigationScroll from '@/components/NavigationScroll';
 import PageReadyTrigger from '@/components/PageReadyTrigger';
 import { VisualEditingProvider } from '@/components/VisualEditingProvider';
-import { getHeader, getFooter, getSiteSettings, getCompanyLinks, getLegalPagesVisibility } from '@/actions';
+import {
+  getHeader,
+  getFooter,
+  getSiteSettings,
+  getCompanyLinks,
+  getLegalPagesVisibility,
+} from '@/actions';
 import { SiteDataProvider } from '@/contexts/SiteDataContext';
 import { PageLoadProvider } from '@/contexts/PageLoadContext';
+import { HeaderProvider } from '@/contexts/HeaderContext';
 import { generateMetadata as generateDefaultMetadata } from '@/lib/metadata';
 import {
   generateOrganizationSchema,
@@ -63,44 +70,46 @@ const FrontendLayout = async ({
 
   return (
     <PageLoadProvider>
-      <SiteDataProvider companyEmail={siteSettingsData?.companyEmail || undefined}>
-        <NavigationScroll />
-        <PageReadyTrigger />
+      <HeaderProvider>
+        <SiteDataProvider companyEmail={siteSettingsData?.companyEmail || undefined}>
+          <NavigationScroll />
+          <PageReadyTrigger />
 
-        {/* Structured Data */}
-        {organizationSchema && (
-          <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={generateStructuredDataScript(organizationSchema)}
-          />
-        )}
-        {webSiteSchema && (
-          <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={generateStructuredDataScript(webSiteSchema)}
-          />
-        )}
-
-        <div className='min-h-screen flex flex-col'>
-          <Header headerData={headerData} />
-          <main id='main-content' className='flex-1'>
-            {children}
-          </main>
-          <Footer
-            footerData={footerData}
-            siteSettingsData={siteSettingsData}
-            companyLinksData={companyLinksData}
-            legalPagesVisibilityData={legalPagesVisibilityData}
-          />
-          <SanityLive />
-          {(await draftMode()).isEnabled && (
-            <>
-              <VisualEditingProvider />
-              <DisableDraftMode />
-            </>
+          {/* Structured Data */}
+          {organizationSchema && (
+            <script
+              type='application/ld+json'
+              dangerouslySetInnerHTML={generateStructuredDataScript(organizationSchema)}
+            />
           )}
-        </div>
-      </SiteDataProvider>
+          {webSiteSchema && (
+            <script
+              type='application/ld+json'
+              dangerouslySetInnerHTML={generateStructuredDataScript(webSiteSchema)}
+            />
+          )}
+
+          <div className='min-h-screen flex flex-col'>
+            <Header headerData={headerData} />
+            <main id='main-content' className='flex-1'>
+              {children}
+            </main>
+            <Footer
+              footerData={footerData}
+              siteSettingsData={siteSettingsData}
+              companyLinksData={companyLinksData}
+              legalPagesVisibilityData={legalPagesVisibilityData}
+            />
+            <SanityLive />
+            {(await draftMode()).isEnabled && (
+              <>
+                <VisualEditingProvider />
+                <DisableDraftMode />
+              </>
+            )}
+          </div>
+        </SiteDataProvider>
+      </HeaderProvider>
     </PageLoadProvider>
   );
 };

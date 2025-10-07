@@ -11,6 +11,7 @@ import {
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export async function generateMetadata() {
   const [siteSettings, privacyData] = await Promise.all([getSiteSettings(), getPrivacyPolicy()]);
@@ -86,12 +87,12 @@ const PrivacyPolicyPage = async () => {
       {/* Page Hero */}
       <PageHero
         title={privacyData.title || 'Privacy Policy'}
-        heroImage='/images/hero-bg/hero-bg-option2.webp'
         documentId={privacyData._id}
         documentType={privacyData._type}
-        showBreadcrumb={true}
-        breadcrumbPageTitle={privacyData.title || 'Privacy Policy'}
       />
+
+      {/* Breadcrumb */}
+      <Breadcrumb pageTitle={privacyData.title || 'Privacy Policy'} />
 
       <Container textAlign='left'>
         {/* Page Content */}

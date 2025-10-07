@@ -3,9 +3,13 @@
 // These constants should be imported and used instead of hardcoded spacing classes.
 
 /**
- * Space under all hero sections (PageHero, HomeHero) before the next content
+ * Space under breadcrumb navigation before page content
  */
-export const heroBottomSpacing = 'mb-6 md:mb-8';
+export const breadcrumbBottomSpacing = 'mb-14 md:mb-24';
+
+/**
+ * Space under home hero section before the next content
+ */
 export const homeHeroBottomSpacing = 'mb-14 md:mb-24';
 
 /**

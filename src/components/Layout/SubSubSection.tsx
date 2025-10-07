@@ -1,5 +1,5 @@
 import React from 'react';
-import Heading from '../Typography/Heading/Heading';
+import Heading from '../Typography/Heading';
 import { stegaClean } from 'next-sanity';
 import {
   createSanityDataAttribute,
@@ -38,23 +38,19 @@ const SubSubSection = ({
   const resolved = resolveAlignment(cleanTextAlign, inheritAlignment);
   const effectiveTextAlign = (resolved || 'center') as TextAlignment;
 
-
   return (
-    <section
-      id={anchorId ? stegaClean(anchorId) : undefined}
-      className={className}>
-        <div className={getTextAlignClass(effectiveTextAlign)}>
-          <Heading
-            level='h4' // Fixed h4 level for SubSubSections
-            showMargin={false}
-            showUnderline={false}
-            className={subSectionTitleBottomSpacing}
-            {...titleDataAttribute}>
-            {stegaClean(title)}
-          </Heading>
-        </div>
-        {children}
-      </section>
+    <section id={anchorId ? stegaClean(anchorId) : undefined} className={className}>
+      <div className={getTextAlignClass(effectiveTextAlign)}>
+        <Heading
+          level='h4' // Fixed h4 level for SubSubSections
+          showMargin={false}
+          className={subSectionTitleBottomSpacing}
+          {...titleDataAttribute}>
+          {stegaClean(title)}
+        </Heading>
+      </div>
+      {children}
+    </section>
   );
 };
 

@@ -33,10 +33,52 @@ const BodyTextPreview = ({ children, value }: BodyTextPreviewProps) => {
   // ⚠️ These multipliers and line heights must match the @utility definitions in src/app/globals.css
   const getStyles = (styleType: string) => {
     switch (styleType) {
+      case 'body-9xl':
+        return {
+          fontSize: `${SCALE_PX * 5}px`, // Desktop: calc(var(--font-scale-base) * 5)
+          lineHeight: 1.1,
+          fontWeight: 400,
+          letterSpacing: `${SCALE_PX * -0.025}px`,
+        };
+      case 'body-8xl':
+        return {
+          fontSize: `${SCALE_PX * 4.5}px`, // Desktop: calc(var(--font-scale-base) * 4.5)
+          lineHeight: 1.1,
+          fontWeight: 400,
+          letterSpacing: `${SCALE_PX * -0.025}px`,
+        };
+      case 'body-7xl':
+        return {
+          fontSize: `${SCALE_PX * 4}px`, // Desktop: calc(var(--font-scale-base) * 4)
+          lineHeight: 1.15,
+          fontWeight: 400,
+          letterSpacing: `${SCALE_PX * -0.02}px`,
+        };
+      case 'body-6xl':
+        return {
+          fontSize: `${SCALE_PX * 3.5}px`, // Desktop: calc(var(--font-scale-base) * 3.5)
+          lineHeight: 1.2,
+          fontWeight: 400,
+          letterSpacing: `${SCALE_PX * -0.02}px`,
+        };
+      case 'body-5xl':
+        return {
+          fontSize: `${SCALE_PX * 3}px`, // Desktop: calc(var(--font-scale-base) * 3)
+          lineHeight: 1.25,
+          fontWeight: 400,
+          letterSpacing: `${SCALE_PX * -0.015}px`,
+        };
+      case 'body-4xl':
+        return {
+          fontSize: `${SCALE_PX * 2.625}px`, // Desktop: calc(var(--font-scale-base) * 2.625)
+          lineHeight: 1.3,
+          fontWeight: 400,
+          letterSpacing: `${SCALE_PX * -0.01}px`,
+        };
       case 'body-3xl':
         return {
           fontSize: `${SCALE_PX * 2.25}px`, // Desktop: calc(var(--font-scale-base) * 2.25)
-          lineHeight: 1.4, // Unitless line height matches CSS
+          lineHeight: 1.4,
           fontWeight: 400,
           letterSpacing: '0',
         };

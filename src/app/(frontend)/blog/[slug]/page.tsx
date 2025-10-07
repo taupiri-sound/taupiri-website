@@ -21,6 +21,7 @@ import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStru
 import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 import BlogPostNavigation from '@/components/Blog/BlogPostNavigation';
 import CTA from '@/components/UI/CTA';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -127,15 +128,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       )}
 
       {/* Page Hero - No title, back to blog */}
-      <PageHero
-        heroImage={post.blogIndexHeroImage || '/images/hero-bg/hero-bg-option7-2.webp'}
-        documentId={post._id}
-        documentType={post._type}
-        showBreadcrumb={true}
-        breadcrumbPageTitle='Blog'
-        breadcrumbClickable={true}
-        breadcrumbHref='/blog'
-      />
+      <PageHero documentId={post._id} documentType={post._type} />
+
+      {/* Breadcrumb */}
+      <Breadcrumb pageTitle='Blog' pageTitleClickable={true} pageTitleHref='/blog' />
 
       <Container textAlign='left'>
         {/* Article Header */}

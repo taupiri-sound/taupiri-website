@@ -49,16 +49,19 @@ const MenuButton = ({
         className={`block w-6 h-0.5 bg-brand-white group-hover:bg-brand-primary transition-all duration-300 transform origin-center ${
           isMenuOpen ? 'rotate-45 translate-y-2' : ''
         }`}
+        style={{ filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8))' }}
       />
       <span
         className={`block w-6 h-0.5 bg-brand-white group-hover:bg-brand-primary transition-all duration-300 mt-1.5 ${
           isMenuOpen ? 'opacity-0' : ''
         }`}
+        style={{ filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8))' }}
       />
       <span
         className={`block w-6 h-0.5 bg-brand-white group-hover:bg-brand-primary transition-all duration-300 mt-1.5 transform origin-center ${
           isMenuOpen ? '-rotate-45 -translate-y-2' : ''
         }`}
+        style={{ filter: 'drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8))' }}
       />
     </button>
   );

@@ -7,7 +7,7 @@ import { FaChevronLeft, FaChevronRight, FaSpinner } from 'react-icons/fa';
 import { urlFor } from '@/sanity/lib/image';
 import type { SanityLiveEditingProps } from '../../utils/sectionHelpers';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
-import Heading from '../Typography/Heading/Heading';
+import Heading from '../Typography/Heading';
 import Modal from '../UI/Modal';
 
 type GalleryImage = {

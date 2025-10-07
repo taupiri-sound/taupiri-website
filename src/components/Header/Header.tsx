@@ -8,13 +8,16 @@ import HorizontalNav from './HorizontalNav';
 import MenuButton from './MenuButton';
 import VerticalNav from './VerticalNav/VerticalNav';
 import SkipLink from '@/components/UI/SkipLink';
+import { useHeader } from '@/contexts/HeaderContext';
 
 interface HeaderProps {
   headerData: HEADER_QUERYResult | null;
 }
 
 const Header = ({ headerData }: HeaderProps) => {
+  const { enableOpacityFade } = useHeader();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Always start transparent - useEffect will set correct value
   const [headerOpacity, setHeaderOpacity] = useState(0);
 
   const toggleMenu = () => {
@@ -25,8 +28,23 @@ const Header = ({ headerData }: HeaderProps) => {
     setIsMenuOpen(false);
   }, []);
 
+  // Set opacity based on enableOpacityFade state
+  useEffect(() => {
+    if (!enableOpacityFade) {
+      // Delay setting opacity to allow Hero to mount and update context first
+      const timer = setTimeout(() => {
+        setHeaderOpacity(1);
+      }, 50);
+
+      return () => clearTimeout(timer);
+    }
+  }, [enableOpacityFade]);
+
   // Handle scroll for header background opacity fade
   useEffect(() => {
+    // Only add scroll listener if opacity fade is enabled
+    if (!enableOpacityFade) return;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       // Fade in background over first xxpx of scroll
@@ -44,7 +62,7 @@ const Header = ({ headerData }: HeaderProps) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [enableOpacityFade]);
 
   // Close menu on Escape key press
   useEffect(() => {
@@ -81,16 +99,14 @@ const Header = ({ headerData }: HeaderProps) => {
         style={{
           backgroundColor: `rgba(67, 12, 8, ${headerOpacity})`, // bg-brand-secondary (#430c08) with variable opacity
         }}>
-        {/* Black gradient overlay - visible when header is transparent, fades out when header background appears */}
-        <div
-          className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent pointer-events-none transition-opacity duration-300 -z-10'
-          style={{
-            opacity: 1 - headerOpacity, // Inverse of header opacity - visible when transparent, hidden when opaque
-          }}
-        />
-
         {/* Logo */}
-        <Link href='/#home' className='flex items-center gap-2'>
+        <Link
+          href='/#home'
+          className='flex items-center gap-2 transition-opacity duration-300'
+          style={{
+            opacity: headerOpacity,
+            filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8))',
+          }}>
           <UnifiedImage
             src='/images/logos/logo-white.png'
             alt='Taupiri Sound Logo'
