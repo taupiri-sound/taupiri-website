@@ -1,11 +1,13 @@
 import React from 'react';
+import styles from './Divider.module.css';
 
 interface DividerProps {
   className?: string;
   isSmall?: boolean;
   alignment?: 'left' | 'center' | 'right';
   useFixedWidth?: boolean; // Use fixed-width lines instead of full-width extending lines
-  variant?: 'default' | 'cursive' | 'cursive-thin'; // Divider style variant
+  variant?: 'default' | 'dots' | 'thin'; // Divider style variant
+  addBottomSpace?: boolean; // Add bottom margin after the divider
 }
 
 const getJustifyClass = (alignment: 'left' | 'center' | 'right'): string => {
@@ -19,14 +21,15 @@ const getJustifyClass = (alignment: 'left' | 'center' | 'right'): string => {
   }
 };
 
-const Divider = ({ className = '', isSmall = false, alignment = 'center', useFixedWidth = false, variant = 'default' }: DividerProps) => {
+const Divider = ({ className = '', isSmall = false, alignment = 'center', useFixedWidth = false, variant = 'default', addBottomSpace = false }: DividerProps) => {
+  const bottomSpaceClass = addBottomSpace ? 'mb-6' : '';
 
-  // Cursive gradient variants - simple centered design
-  if (variant === 'cursive' || variant === 'cursive-thin') {
-    const cursiveClass = variant === 'cursive' ? 'divider-cursive' : 'divider-cursive-thin';
+  // Default gradient variant - simple centered design
+  if (variant === 'default' || variant === 'thin') {
+    const gradientClass = variant === 'default' ? styles.gradient : styles.gradientThin;
     return (
-      <div className={`flex items-center ${getJustifyClass(alignment)} ${className}`.trim()}>
-        <div className={`${cursiveClass} ${useFixedWidth ? 'max-w-md' : 'w-full'}`}></div>
+      <div className={`flex items-center ${getJustifyClass(alignment)} ${bottomSpaceClass} ${className}`.trim()}>
+        <div className={`${gradientClass} ${useFixedWidth ? 'max-w-md' : 'w-full'}`}></div>
       </div>
     );
   }
@@ -39,7 +42,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
       // Fixed-width design for pagebuilder usage - matches center alignment outer line lengths
       if (isSmall) {
         return (
-          <div className={`flex items-center ${getJustifyClass(alignment)} ${className}`.trim()}>
+          <div className={`flex items-center ${getJustifyClass(alignment)} ${bottomSpaceClass} ${className}`.trim()}>
             <div className='flex items-center space-x-2'>
               {dotsOnLeft ? (
                 <>
@@ -66,7 +69,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
       }
 
       return (
-        <div className={`flex items-center ${getJustifyClass(alignment)} ${className}`.trim()}>
+        <div className={`flex items-center ${getJustifyClass(alignment)} ${bottomSpaceClass} ${className}`.trim()}>
           <div className='flex items-center space-x-4'>
             {dotsOnLeft ? (
               <>
@@ -95,7 +98,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
     // Full-width design for standalone usage
     if (isSmall) {
       return (
-        <div className={`flex items-center w-full ${className}`.trim()}>
+        <div className={`flex items-center w-full ${bottomSpaceClass} ${className}`.trim()}>
           {dotsOnLeft ? (
             <>
               {/* Left side: dot, line, dot */}
@@ -120,7 +123,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
     }
 
     return (
-      <div className={`flex items-center w-full ${className}`.trim()}>
+      <div className={`flex items-center w-full ${bottomSpaceClass} ${className}`.trim()}>
         {dotsOnLeft ? (
           <>
             {/* Left side: dot, line, dot */}
@@ -149,7 +152,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
     // Original fixed-width design for pagebuilder usage
     if (isSmall) {
       return (
-        <div className={`flex items-center ${getJustifyClass(alignment)} ${className}`.trim()}>
+        <div className={`flex items-center ${getJustifyClass(alignment)} ${bottomSpaceClass} ${className}`.trim()}>
           <div className='flex items-center space-x-2'>
             {/* Left line */}
             <div className='w-8 h-0.5 bg-brand-gradient'></div>
@@ -167,7 +170,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
     }
 
     return (
-      <div className={`flex items-center ${getJustifyClass(alignment)} ${className}`.trim()}>
+      <div className={`flex items-center ${getJustifyClass(alignment)} ${bottomSpaceClass} ${className}`.trim()}>
         <div className='flex items-center space-x-4'>
           {/* Left line */}
           <div className='w-16 md:w-24 h-0.5 bg-brand-gradient'></div>
@@ -187,7 +190,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
   // Full width design for standalone usage
   if (isSmall) {
     return (
-      <div className={`flex items-center w-full ${className}`.trim()}>
+      <div className={`flex items-center w-full ${bottomSpaceClass} ${className}`.trim()}>
         {/* Left line - full width */}
         <div className='flex-1 h-0.5 bg-brand-gradient mr-2'></div>
         {/* Center element: dot, line, dot */}
@@ -201,7 +204,7 @@ const Divider = ({ className = '', isSmall = false, alignment = 'center', useFix
   }
 
   return (
-    <div className={`flex items-center w-full ${className}`.trim()}>
+    <div className={`flex items-center w-full ${bottomSpaceClass} ${className}`.trim()}>
       {/* Left line - full width */}
       <div className='flex-1 h-0.5 bg-brand-gradient mr-4'></div>
       {/* Center element: dot, line, dot */}
