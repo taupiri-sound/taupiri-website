@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList } from '@/sanity/types';
+import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, AudioSamplePlayer, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -33,6 +33,7 @@ export type ImageGalleryBlock = ImageGallery & { _key: string };
 export type YouTubeVideoBlock = YouTubeVideo & { _key: string };
 export type SpotifyWidgetBlock = SpotifyWidget & { _key: string };
 export type BandcampWidgetBlock = BandcampWidget & { _key: string };
+export type AudioSamplePlayerBlock = AudioSamplePlayer & { _key: string };
 export type CTAButtonBlock = CtaButton & { _key: string };
 export type CTACalloutLinkBlock = CtaCalloutLink & { _key: string };
 export type EmbeddedCTAButtonBlock = EmbeddedCtaButton & { _key: string };
@@ -60,6 +61,7 @@ export type NestedBlock =
   | YouTubeVideoBlock
   | SpotifyWidgetBlock
   | BandcampWidgetBlock
+  | AudioSamplePlayerBlock
   | CTAButtonBlock
   | CTACalloutLinkBlock
   | CTABlogPostBlock
@@ -138,6 +140,10 @@ export const isSpotifyWidgetBlock = (block: NestedBlock): block is SpotifyWidget
 
 export const isBandcampWidgetBlock = (block: NestedBlock): block is BandcampWidgetBlock => {
   return block._type === 'bandcampWidget';
+};
+
+export const isAudioSamplePlayerBlock = (block: NestedBlock): block is AudioSamplePlayerBlock => {
+  return block._type === 'audioSamplePlayer';
 };
 
 export const isCTAButtonBlock = (block: NestedBlock): block is CTAButtonBlock => {

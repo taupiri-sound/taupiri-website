@@ -383,6 +383,8 @@ export type TwoColumnLayout = {
     _key: string;
   } & BandcampWidget | {
     _key: string;
+  } & AudioSamplePlayer | {
+    _key: string;
   } & CompanyLinksBlock>;
   rightColumn?: Array<{
     _key: string;
@@ -413,6 +415,8 @@ export type TwoColumnLayout = {
   } & SpotifyWidget | {
     _key: string;
   } & BandcampWidget | {
+    _key: string;
+  } & AudioSamplePlayer | {
     _key: string;
   } & CompanyLinksBlock>;
 };
@@ -524,7 +528,9 @@ export type GridLayout = {
     _key: string;
   } & SpotifyWidget | {
     _key: string;
-  } & BandcampWidget>;
+  } & BandcampWidget | {
+    _key: string;
+  } & AudioSamplePlayer>;
 };
 
 export type RichText = {
@@ -1737,6 +1743,15 @@ export type PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -2018,6 +2033,8 @@ export type PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -2048,6 +2065,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -2282,6 +2301,15 @@ export type PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -2563,6 +2591,8 @@ export type PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -2593,6 +2623,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -3011,6 +3043,39 @@ export type PAGE_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -3309,6 +3374,15 @@ export type PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -3590,6 +3664,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -3620,6 +3696,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -3854,6 +3932,15 @@ export type PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -4135,6 +4222,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -4165,6 +4254,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -4883,6 +4974,15 @@ export type PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -5164,6 +5264,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -5194,6 +5296,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -5428,6 +5532,15 @@ export type PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -5709,6 +5822,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -5739,6 +5854,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -6157,6 +6274,39 @@ export type PAGE_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -6442,6 +6592,15 @@ export type PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -6723,6 +6882,8 @@ export type PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -6753,6 +6914,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -6987,6 +7150,15 @@ export type PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -7268,6 +7440,8 @@ export type PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -7298,6 +7472,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -8039,6 +8215,15 @@ export type PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -8320,6 +8505,8 @@ export type PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -8350,6 +8537,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -8584,6 +8773,15 @@ export type PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -8865,6 +9063,8 @@ export type PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -8895,6 +9095,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -9311,6 +9513,38 @@ export type PAGE_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -9584,6 +9818,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -9614,6 +9850,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -10132,6 +10370,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -10162,6 +10402,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -10367,6 +10609,37 @@ export type PAGE_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -10640,6 +10913,8 @@ export type PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -10670,6 +10945,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -10861,6 +11138,15 @@ export type PAGE_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -11143,6 +11429,8 @@ export type PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -11173,6 +11461,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -11407,6 +11697,15 @@ export type PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -11688,6 +11987,8 @@ export type PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -11718,6 +12019,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -11964,6 +12267,15 @@ export type PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -12245,6 +12557,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -12275,6 +12589,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -12509,6 +12825,15 @@ export type PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -12790,6 +13115,8 @@ export type PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -12820,6 +13147,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -13068,6 +13397,15 @@ export type PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -13349,6 +13687,8 @@ export type PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -13379,6 +13719,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -13613,6 +13955,15 @@ export type PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -13894,6 +14245,8 @@ export type PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -13924,6 +14277,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -14214,6 +14569,15 @@ export type PAGE_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -14495,6 +14859,8 @@ export type PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -14525,6 +14891,8 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -14759,6 +15127,15 @@ export type PAGE_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -15040,6 +15417,8 @@ export type PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -15070,6 +15449,8 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -15764,6 +16145,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -16045,6 +16435,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -16075,6 +16467,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -16309,6 +16703,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -16590,6 +16993,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -16620,6 +17025,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -17038,6 +17445,39 @@ export type HOME_PAGE_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -17336,6 +17776,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -17617,6 +18066,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -17647,6 +18098,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -17881,6 +18334,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -18162,6 +18624,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -18192,6 +18656,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -18910,6 +19376,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -19191,6 +19666,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -19221,6 +19698,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -19455,6 +19934,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -19736,6 +20224,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -19766,6 +20256,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -20184,6 +20676,39 @@ export type HOME_PAGE_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -20469,6 +20994,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -20750,6 +21284,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -20780,6 +21316,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -21014,6 +21552,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -21295,6 +21842,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -21325,6 +21874,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -22066,6 +22617,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -22347,6 +22907,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -22377,6 +22939,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -22611,6 +23175,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -22892,6 +23465,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -22922,6 +23497,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -23338,6 +23915,38 @@ export type HOME_PAGE_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -23611,6 +24220,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -23641,6 +24252,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -24159,6 +24772,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -24189,6 +24804,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -24394,6 +25011,37 @@ export type HOME_PAGE_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -24667,6 +25315,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -24697,6 +25347,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -24888,6 +25540,15 @@ export type HOME_PAGE_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -25170,6 +25831,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -25200,6 +25863,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -25434,6 +26099,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -25715,6 +26389,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -25745,6 +26421,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -25991,6 +26669,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -26272,6 +26959,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -26302,6 +26991,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -26536,6 +27227,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -26817,6 +27517,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -26847,6 +27549,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -27095,6 +27799,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -27376,6 +28089,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -27406,6 +28121,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -27640,6 +28357,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -27921,6 +28647,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -27951,6 +28679,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -28241,6 +28971,15 @@ export type HOME_PAGE_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -28522,6 +29261,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -28552,6 +29293,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -28786,6 +29529,15 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -29067,6 +29819,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -29097,6 +29851,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -29822,6 +30578,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -30103,6 +30868,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -30133,6 +30900,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -30367,6 +31136,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -30648,6 +31426,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -30678,6 +31458,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -31096,6 +31878,39 @@ export type HOME_PAGE_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -31394,6 +32209,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -31675,6 +32499,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -31705,6 +32531,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -31939,6 +32767,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -32220,6 +33057,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -32250,6 +33089,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -32968,6 +33809,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -33249,6 +34099,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -33279,6 +34131,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -33513,6 +34367,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -33794,6 +34657,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -33824,6 +34689,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -34242,6 +35109,39 @@ export type HOME_PAGE_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -34527,6 +35427,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -34808,6 +35717,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -34838,6 +35749,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -35072,6 +35985,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -35353,6 +36275,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -35383,6 +36307,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -36124,6 +37050,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -36405,6 +37340,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -36435,6 +37372,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -36669,6 +37608,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -36950,6 +37898,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -36980,6 +37930,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -37396,6 +38348,38 @@ export type HOME_PAGE_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -37669,6 +38653,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -37699,6 +38685,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -38217,6 +39205,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -38247,6 +39237,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -38452,6 +39444,37 @@ export type HOME_PAGE_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -38725,6 +39748,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -38755,6 +39780,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -38946,6 +39973,15 @@ export type HOME_PAGE_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -39228,6 +40264,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -39258,6 +40296,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -39492,6 +40532,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -39773,6 +40822,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -39803,6 +40854,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -40049,6 +41102,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -40330,6 +41392,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -40360,6 +41424,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -40594,6 +41660,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -40875,6 +41950,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -40905,6 +41982,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -41153,6 +42232,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -41434,6 +42522,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -41464,6 +42554,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -41698,6 +42790,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -41979,6 +43080,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -42009,6 +43112,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -42299,6 +43404,15 @@ export type HOME_PAGE_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -42580,6 +43694,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -42610,6 +43726,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -42844,6 +43962,15 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -43125,6 +44252,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -43155,6 +44284,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -43754,6 +44885,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -44035,6 +45175,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -44065,6 +45207,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -44299,6 +45443,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -44580,6 +45733,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -44610,6 +45765,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -45028,6 +46185,39 @@ export type HOME_PAGE_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -45326,6 +46516,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -45607,6 +46806,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -45637,6 +46838,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -45871,6 +47074,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -46152,6 +47364,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -46182,6 +47396,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -46900,6 +48116,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -47181,6 +48406,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -47211,6 +48438,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -47445,6 +48674,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -47726,6 +48964,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -47756,6 +48996,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -48174,6 +49416,39 @@ export type HOME_PAGE_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -48459,6 +49734,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -48740,6 +50024,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -48770,6 +50056,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -49004,6 +50292,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -49285,6 +50582,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -49315,6 +50614,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -50056,6 +51357,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -50337,6 +51647,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -50367,6 +51679,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -50601,6 +51915,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -50882,6 +52205,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -50912,6 +52237,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -51328,6 +52655,38 @@ export type HOME_PAGE_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -51601,6 +52960,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -51631,6 +52992,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -52149,6 +53512,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -52179,6 +53544,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -52384,6 +53751,37 @@ export type HOME_PAGE_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -52657,6 +54055,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -52687,6 +54087,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -52878,6 +54280,15 @@ export type HOME_PAGE_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -53160,6 +54571,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -53190,6 +54603,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -53424,6 +54839,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -53705,6 +55129,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -53735,6 +55161,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -53981,6 +55409,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -54262,6 +55699,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -54292,6 +55731,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -54526,6 +55967,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -54807,6 +56257,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -54837,6 +56289,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -55085,6 +56539,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -55366,6 +56829,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -55396,6 +56861,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -55630,6 +57097,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -55911,6 +57387,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -55941,6 +57419,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -56231,6 +57711,15 @@ export type HOME_PAGE_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -56512,6 +58001,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -56542,6 +58033,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -56776,6 +58269,15 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -57057,6 +58559,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -57087,6 +58591,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -57686,6 +59192,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -57967,6 +59482,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -57997,6 +59514,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -58231,6 +59750,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -58512,6 +60040,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -58542,6 +60072,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -58960,6 +60492,39 @@ export type HOME_PAGE_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -59258,6 +60823,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -59539,6 +61113,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -59569,6 +61145,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -59803,6 +61381,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -60084,6 +61671,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -60114,6 +61703,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -60832,6 +62423,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -61113,6 +62713,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -61143,6 +62745,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -61377,6 +62981,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -61658,6 +63271,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -61688,6 +63303,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -62106,6 +63723,39 @@ export type HOME_PAGE_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -62391,6 +64041,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -62672,6 +64331,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -62702,6 +64363,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -62936,6 +64599,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -63217,6 +64889,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -63247,6 +64921,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -63988,6 +65664,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -64269,6 +65954,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -64299,6 +65986,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -64533,6 +66222,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -64814,6 +66512,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -64844,6 +66544,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -65260,6 +66962,38 @@ export type HOME_PAGE_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -65533,6 +67267,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -65563,6 +67299,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -66081,6 +67819,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -66111,6 +67851,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -66316,6 +68058,37 @@ export type HOME_PAGE_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -66589,6 +68362,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -66619,6 +68394,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -66810,6 +68587,15 @@ export type HOME_PAGE_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -67092,6 +68878,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -67122,6 +68910,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -67356,6 +69146,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -67637,6 +69436,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -67667,6 +69468,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -67913,6 +69716,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -68194,6 +70006,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -68224,6 +70038,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -68458,6 +70274,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -68739,6 +70564,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -68769,6 +70596,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -69017,6 +70846,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -69298,6 +71136,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -69328,6 +71168,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -69562,6 +71404,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -69843,6 +71694,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -69873,6 +71726,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -70163,6 +72018,15 @@ export type HOME_PAGE_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -70444,6 +72308,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -70474,6 +72340,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -70708,6 +72576,15 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -70989,6 +72866,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -71019,6 +72898,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -71660,6 +73541,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -71941,6 +73831,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -71971,6 +73863,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -72205,6 +74099,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -72486,6 +74389,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -72516,6 +74421,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -72934,6 +74841,39 @@ export type HOME_PAGE_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -73232,6 +75172,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -73513,6 +75462,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -73543,6 +75494,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -73777,6 +75730,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -74058,6 +76020,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -74088,6 +76052,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -74806,6 +76772,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -75087,6 +77062,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -75117,6 +77094,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -75351,6 +77330,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -75632,6 +77620,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -75662,6 +77652,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -76080,6 +78072,39 @@ export type HOME_PAGE_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -76365,6 +78390,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -76646,6 +78680,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -76676,6 +78712,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -76910,6 +78948,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -77191,6 +79238,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -77221,6 +79270,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -77962,6 +80013,15 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -78243,6 +80303,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -78273,6 +80335,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -78507,6 +80571,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -78788,6 +80861,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -78818,6 +80893,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -79234,6 +81311,38 @@ export type HOME_PAGE_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -79507,6 +81616,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -79537,6 +81648,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -80055,6 +82168,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -80085,6 +82200,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -80290,6 +82407,37 @@ export type HOME_PAGE_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -80563,6 +82711,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -80593,6 +82743,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -80784,6 +82936,15 @@ export type HOME_PAGE_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -81066,6 +83227,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -81096,6 +83259,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -81330,6 +83495,15 @@ export type HOME_PAGE_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -81611,6 +83785,8 @@ export type HOME_PAGE_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -81641,6 +83817,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -81887,6 +84065,15 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -82168,6 +84355,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -82198,6 +84387,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -82432,6 +84623,15 @@ export type HOME_PAGE_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -82713,6 +84913,8 @@ export type HOME_PAGE_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -82743,6 +84945,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -82991,6 +85195,15 @@ export type HOME_PAGE_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -83272,6 +85485,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -83302,6 +85517,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -83536,6 +85753,15 @@ export type HOME_PAGE_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -83817,6 +86043,8 @@ export type HOME_PAGE_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -83847,6 +86075,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -84137,6 +86367,15 @@ export type HOME_PAGE_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -84418,6 +86657,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -84448,6 +86689,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -84682,6 +86925,15 @@ export type HOME_PAGE_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -84963,6 +87215,8 @@ export type HOME_PAGE_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -84993,6 +87247,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -86414,6 +88670,15 @@ export type BLOG_POST_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -86695,6 +88960,8 @@ export type BLOG_POST_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -86725,6 +88992,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -86959,6 +89228,15 @@ export type BLOG_POST_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -87240,6 +89518,8 @@ export type BLOG_POST_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -87270,6 +89550,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -87688,6 +89970,39 @@ export type BLOG_POST_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -87986,6 +90301,15 @@ export type BLOG_POST_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -88267,6 +90591,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -88297,6 +90623,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -88531,6 +90859,15 @@ export type BLOG_POST_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -88812,6 +91149,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -88842,6 +91181,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -89560,6 +91901,15 @@ export type BLOG_POST_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -89841,6 +92191,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -89871,6 +92223,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -90105,6 +92459,15 @@ export type BLOG_POST_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -90386,6 +92749,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -90416,6 +92781,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -90834,6 +93201,39 @@ export type BLOG_POST_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -91119,6 +93519,15 @@ export type BLOG_POST_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -91400,6 +93809,8 @@ export type BLOG_POST_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -91430,6 +93841,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -91664,6 +94077,15 @@ export type BLOG_POST_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -91945,6 +94367,8 @@ export type BLOG_POST_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -91975,6 +94399,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -92716,6 +95142,15 @@ export type BLOG_POST_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -92997,6 +95432,8 @@ export type BLOG_POST_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -93027,6 +95464,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -93261,6 +95700,15 @@ export type BLOG_POST_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -93542,6 +95990,8 @@ export type BLOG_POST_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -93572,6 +96022,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -93988,6 +96440,38 @@ export type BLOG_POST_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -94261,6 +96745,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -94291,6 +96777,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -94809,6 +97297,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -94839,6 +97329,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -95044,6 +97536,37 @@ export type BLOG_POST_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -95317,6 +97840,8 @@ export type BLOG_POST_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -95347,6 +97872,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -95538,6 +98065,15 @@ export type BLOG_POST_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -95820,6 +98356,8 @@ export type BLOG_POST_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -95850,6 +98388,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -96084,6 +98624,15 @@ export type BLOG_POST_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -96365,6 +98914,8 @@ export type BLOG_POST_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -96395,6 +98946,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -96641,6 +99194,15 @@ export type BLOG_POST_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -96922,6 +99484,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -96952,6 +99516,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -97186,6 +99752,15 @@ export type BLOG_POST_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -97467,6 +100042,8 @@ export type BLOG_POST_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -97497,6 +100074,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -97745,6 +100324,15 @@ export type BLOG_POST_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -98026,6 +100614,8 @@ export type BLOG_POST_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -98056,6 +100646,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -98290,6 +100882,15 @@ export type BLOG_POST_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -98571,6 +101172,8 @@ export type BLOG_POST_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -98601,6 +101204,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -98891,6 +101496,15 @@ export type BLOG_POST_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -99172,6 +101786,8 @@ export type BLOG_POST_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -99202,6 +101818,8 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -99436,6 +102054,15 @@ export type BLOG_POST_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -99717,6 +102344,8 @@ export type BLOG_POST_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -99747,6 +102376,8 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -100472,6 +103103,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -100753,6 +103393,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -100783,6 +103425,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -101017,6 +103661,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -101298,6 +103951,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -101328,6 +103983,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -101746,6 +104403,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -102044,6 +104734,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -102325,6 +105024,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -102355,6 +105056,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -102589,6 +105292,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -102870,6 +105582,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -102900,6 +105614,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -103618,6 +106334,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -103899,6 +106624,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -103929,6 +106656,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -104163,6 +106892,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -104444,6 +107182,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -104474,6 +107214,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -104892,6 +107634,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -105177,6 +107952,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -105458,6 +108242,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -105488,6 +108274,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -105722,6 +108510,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -106003,6 +108800,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -106033,6 +108832,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -106774,6 +109575,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -107055,6 +109865,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -107085,6 +109897,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -107319,6 +110133,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -107600,6 +110423,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -107630,6 +110455,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -108046,6 +110873,38 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -108319,6 +111178,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -108349,6 +111210,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -108867,6 +111730,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -108897,6 +111762,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -109102,6 +111969,37 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -109375,6 +112273,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -109405,6 +112305,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -109596,6 +112498,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -109878,6 +112789,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -109908,6 +112821,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -110142,6 +113057,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -110423,6 +113347,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -110453,6 +113379,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -110699,6 +113627,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -110980,6 +113917,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -111010,6 +113949,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -111244,6 +114185,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -111525,6 +114475,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -111555,6 +114507,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -111803,6 +114757,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -112084,6 +115047,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -112114,6 +115079,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -112348,6 +115315,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -112629,6 +115605,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -112659,6 +115637,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -112949,6 +115929,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -113230,6 +116219,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -113260,6 +116251,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -113494,6 +116487,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -113775,6 +116777,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -113805,6 +116809,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -114422,6 +117428,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -114703,6 +117718,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -114733,6 +117750,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -114967,6 +117986,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -115248,6 +118276,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -115278,6 +118308,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -115696,6 +118728,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -115994,6 +119059,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -116275,6 +119349,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -116305,6 +119381,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -116539,6 +119617,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -116820,6 +119907,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -116850,6 +119939,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -117568,6 +120659,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -117849,6 +120949,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -117879,6 +120981,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -118113,6 +121217,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -118394,6 +121507,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -118424,6 +121539,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -118842,6 +121959,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -119127,6 +122277,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -119408,6 +122567,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -119438,6 +122599,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -119672,6 +122835,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -119953,6 +123125,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -119983,6 +123157,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -120724,6 +123900,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -121005,6 +124190,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -121035,6 +124222,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -121269,6 +124458,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -121550,6 +124748,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -121580,6 +124780,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -121996,6 +125198,38 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -122269,6 +125503,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -122299,6 +125535,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -122817,6 +126055,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -122847,6 +126087,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -123052,6 +126294,37 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -123325,6 +126598,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -123355,6 +126630,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -123546,6 +126823,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -123828,6 +127114,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -123858,6 +127146,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -124092,6 +127382,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -124373,6 +127672,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -124403,6 +127704,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -124649,6 +127952,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -124930,6 +128242,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -124960,6 +128274,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -125194,6 +128510,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -125475,6 +128800,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -125505,6 +128832,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -125753,6 +129082,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -126034,6 +129372,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -126064,6 +129404,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -126298,6 +129640,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -126579,6 +129930,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -126609,6 +129962,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -126899,6 +130254,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -127180,6 +130544,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -127210,6 +130576,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -127444,6 +130812,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -127725,6 +131102,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -127755,6 +131134,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -128348,6 +131729,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -128629,6 +132019,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -128659,6 +132051,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -128893,6 +132287,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -129174,6 +132577,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -129204,6 +132609,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -129622,6 +133029,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -129920,6 +133360,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -130201,6 +133650,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -130231,6 +133682,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -130465,6 +133918,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -130746,6 +134208,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -130776,6 +134240,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -131494,6 +134960,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -131775,6 +135250,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -131805,6 +135282,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -132039,6 +135518,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -132320,6 +135808,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -132350,6 +135840,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -132768,6 +136260,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -133053,6 +136578,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -133334,6 +136868,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -133364,6 +136900,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -133598,6 +137136,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -133879,6 +137426,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -133909,6 +137458,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -134650,6 +138201,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -134931,6 +138491,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -134961,6 +138523,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -135195,6 +138759,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -135476,6 +139049,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -135506,6 +139081,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -135922,6 +139499,38 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -136195,6 +139804,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -136225,6 +139836,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -136743,6 +140356,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -136773,6 +140388,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -136978,6 +140595,37 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -137251,6 +140899,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -137281,6 +140931,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -137472,6 +141124,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -137754,6 +141415,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -137784,6 +141447,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -138018,6 +141683,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -138299,6 +141973,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -138329,6 +142005,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -138575,6 +142253,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -138856,6 +142543,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -138886,6 +142575,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -139120,6 +142811,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -139401,6 +143101,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -139431,6 +143133,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -139679,6 +143383,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -139960,6 +143673,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -139990,6 +143705,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -140224,6 +143941,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -140505,6 +144231,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -140535,6 +144263,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -140825,6 +144555,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -141106,6 +144845,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -141136,6 +144877,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -141370,6 +145113,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -141651,6 +145403,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -141681,6 +145435,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -142274,6 +146030,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -142555,6 +146320,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -142585,6 +146352,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -142819,6 +146588,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -143100,6 +146878,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -143130,6 +146910,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -143548,6 +147330,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -143846,6 +147661,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -144127,6 +147951,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -144157,6 +147983,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -144391,6 +148219,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -144672,6 +148509,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -144702,6 +148541,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -145420,6 +149261,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -145701,6 +149551,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -145731,6 +149583,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -145965,6 +149819,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -146246,6 +150109,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -146276,6 +150141,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -146694,6 +150561,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -146979,6 +150879,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -147260,6 +151169,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -147290,6 +151201,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -147524,6 +151437,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -147805,6 +151727,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -147835,6 +151759,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -148576,6 +152502,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -148857,6 +152792,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -148887,6 +152824,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -149121,6 +153060,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -149402,6 +153350,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -149432,6 +153382,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -149848,6 +153800,38 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -150121,6 +154105,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -150151,6 +154137,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -150669,6 +154657,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -150699,6 +154689,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -150904,6 +154896,37 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -151177,6 +155200,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -151207,6 +155232,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -151398,6 +155425,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -151680,6 +155716,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -151710,6 +155748,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -151944,6 +155984,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -152225,6 +156274,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -152255,6 +156306,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -152501,6 +156554,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -152782,6 +156844,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -152812,6 +156876,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -153046,6 +157112,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -153327,6 +157402,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -153357,6 +157434,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -153605,6 +157684,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -153886,6 +157974,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -153916,6 +158006,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -154150,6 +158242,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -154431,6 +158532,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -154461,6 +158564,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -154751,6 +158856,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -155032,6 +159146,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -155062,6 +159178,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -155296,6 +159414,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -155577,6 +159704,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -155607,6 +159736,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -156224,6 +160355,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -156505,6 +160645,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -156535,6 +160677,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -156769,6 +160913,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -157050,6 +161203,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -157080,6 +161235,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -157498,6 +161655,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -157796,6 +161986,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -158077,6 +162276,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -158107,6 +162308,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -158341,6 +162544,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -158622,6 +162834,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -158652,6 +162866,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -159370,6 +163586,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -159651,6 +163876,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -159681,6 +163908,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -159915,6 +164144,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -160196,6 +164434,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -160226,6 +164466,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -160644,6 +164886,39 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -160929,6 +165204,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -161210,6 +165494,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -161240,6 +165526,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -161474,6 +165762,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -161755,6 +166052,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -161785,6 +166084,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -162526,6 +166827,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -162807,6 +167117,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -162837,6 +167149,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -163071,6 +167385,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -163352,6 +167675,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -163382,6 +167707,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -163798,6 +168125,38 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -164071,6 +168430,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -164101,6 +168462,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -164619,6 +168982,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -164649,6 +169014,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -164854,6 +169221,37 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -165127,6 +169525,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -165157,6 +169557,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -165348,6 +169750,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -165630,6 +170041,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -165660,6 +170073,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -165894,6 +170309,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -166175,6 +170599,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -166205,6 +170631,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -166451,6 +170879,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -166732,6 +171169,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -166762,6 +171201,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -166996,6 +171437,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -167277,6 +171727,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -167307,6 +171759,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -167555,6 +172009,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -167836,6 +172299,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -167866,6 +172331,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -168100,6 +172567,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -168381,6 +172857,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -168411,6 +172889,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -168701,6 +173181,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -168982,6 +173471,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -169012,6 +173503,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -169246,6 +173739,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -169527,6 +174029,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -169557,6 +174061,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -170169,6 +174675,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -170450,6 +174965,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -170480,6 +174997,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -170714,6 +175233,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -170995,6 +175523,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -171025,6 +175555,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -171443,6 +175975,39 @@ export type PRIVACY_POLICY_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -171741,6 +176306,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -172022,6 +176596,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -172052,6 +176628,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -172286,6 +176864,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -172567,6 +177154,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -172597,6 +177186,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -173315,6 +177906,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -173596,6 +178196,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -173626,6 +178228,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -173860,6 +178464,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -174141,6 +178754,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -174171,6 +178786,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -174589,6 +179206,39 @@ export type PRIVACY_POLICY_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -174874,6 +179524,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -175155,6 +179814,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -175185,6 +179846,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -175419,6 +180082,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -175700,6 +180372,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -175730,6 +180404,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -176471,6 +181147,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -176752,6 +181437,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -176782,6 +181469,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -177016,6 +181705,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -177297,6 +181995,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -177327,6 +182027,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -177743,6 +182445,38 @@ export type PRIVACY_POLICY_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -178016,6 +182750,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -178046,6 +182782,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -178564,6 +183302,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -178594,6 +183334,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -178799,6 +183541,37 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -179072,6 +183845,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -179102,6 +183877,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -179293,6 +184070,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -179575,6 +184361,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -179605,6 +184393,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -179839,6 +184629,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -180120,6 +184919,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -180150,6 +184951,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -180396,6 +185199,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -180677,6 +185489,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -180707,6 +185521,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -180941,6 +185757,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -181222,6 +186047,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -181252,6 +186079,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -181500,6 +186329,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -181781,6 +186619,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -181811,6 +186651,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -182045,6 +186887,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -182326,6 +187177,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -182356,6 +187209,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -182646,6 +187501,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -182927,6 +187791,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -182957,6 +187823,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -183191,6 +188059,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -183472,6 +188349,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -183502,6 +188381,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -184119,6 +189000,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -184400,6 +189290,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -184430,6 +189322,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -184664,6 +189558,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -184945,6 +189848,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -184975,6 +189880,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -185393,6 +190300,39 @@ export type PRIVACY_POLICY_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -185691,6 +190631,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -185972,6 +190921,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -186002,6 +190953,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -186236,6 +191189,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -186517,6 +191479,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -186547,6 +191511,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -187265,6 +192231,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -187546,6 +192521,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -187576,6 +192553,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -187810,6 +192789,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -188091,6 +193079,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -188121,6 +193111,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -188539,6 +193531,39 @@ export type PRIVACY_POLICY_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -188824,6 +193849,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -189105,6 +194139,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -189135,6 +194171,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -189369,6 +194407,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -189650,6 +194697,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -189680,6 +194729,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -190421,6 +195472,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -190702,6 +195762,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -190732,6 +195794,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -190966,6 +196030,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -191247,6 +196320,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -191277,6 +196352,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -191693,6 +196770,38 @@ export type PRIVACY_POLICY_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -191966,6 +197075,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -191996,6 +197107,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -192514,6 +197627,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -192544,6 +197659,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -192749,6 +197866,37 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -193022,6 +198170,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -193052,6 +198202,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -193243,6 +198395,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -193525,6 +198686,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -193555,6 +198718,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -193789,6 +198954,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -194070,6 +199244,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -194100,6 +199276,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -194346,6 +199524,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -194627,6 +199814,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -194657,6 +199846,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -194891,6 +200082,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -195172,6 +200372,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -195202,6 +200404,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -195450,6 +200654,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -195731,6 +200944,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -195761,6 +200976,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -195995,6 +201212,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -196276,6 +201502,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -196306,6 +201534,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -196596,6 +201826,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -196877,6 +202116,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -196907,6 +202148,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -197141,6 +202384,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -197422,6 +202674,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -197452,6 +202706,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -198045,6 +203301,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -198326,6 +203591,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -198356,6 +203623,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -198590,6 +203859,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -198871,6 +204149,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -198901,6 +204181,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -199319,6 +204601,39 @@ export type PRIVACY_POLICY_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -199617,6 +204932,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -199898,6 +205222,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -199928,6 +205254,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -200162,6 +205490,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -200443,6 +205780,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -200473,6 +205812,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -201191,6 +206532,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -201472,6 +206822,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -201502,6 +206854,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -201736,6 +207090,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -202017,6 +207380,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -202047,6 +207412,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -202465,6 +207832,39 @@ export type PRIVACY_POLICY_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -202750,6 +208150,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -203031,6 +208440,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -203061,6 +208472,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -203295,6 +208708,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -203576,6 +208998,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -203606,6 +209030,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -204347,6 +209773,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -204628,6 +210063,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -204658,6 +210095,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -204892,6 +210331,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -205173,6 +210621,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -205203,6 +210653,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -205619,6 +211071,38 @@ export type PRIVACY_POLICY_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -205892,6 +211376,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -205922,6 +211408,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -206440,6 +211928,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -206470,6 +211960,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -206675,6 +212167,37 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -206948,6 +212471,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -206978,6 +212503,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -207169,6 +212696,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -207451,6 +212987,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -207481,6 +213019,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -207715,6 +213255,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -207996,6 +213545,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -208026,6 +213577,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -208272,6 +213825,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -208553,6 +214115,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -208583,6 +214147,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -208817,6 +214383,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -209098,6 +214673,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -209128,6 +214705,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -209376,6 +214955,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -209657,6 +215245,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -209687,6 +215277,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -209921,6 +215513,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -210202,6 +215803,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -210232,6 +215835,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -210522,6 +216127,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -210803,6 +216417,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -210833,6 +216449,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -211067,6 +216685,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -211348,6 +216975,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -211378,6 +217007,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -211971,6 +217602,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -212252,6 +217892,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -212282,6 +217924,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -212516,6 +218160,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -212797,6 +218450,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -212827,6 +218482,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -213245,6 +218902,39 @@ export type PRIVACY_POLICY_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -213543,6 +219233,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -213824,6 +219523,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -213854,6 +219555,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -214088,6 +219791,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -214369,6 +220081,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -214399,6 +220113,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -215117,6 +220833,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -215398,6 +221123,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -215428,6 +221155,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -215662,6 +221391,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -215943,6 +221681,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -215973,6 +221713,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -216391,6 +222133,39 @@ export type PRIVACY_POLICY_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -216676,6 +222451,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -216957,6 +222741,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -216987,6 +222773,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -217221,6 +223009,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -217502,6 +223299,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -217532,6 +223331,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -218273,6 +224074,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -218554,6 +224364,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -218584,6 +224396,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -218818,6 +224632,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -219099,6 +224922,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -219129,6 +224954,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -219545,6 +225372,38 @@ export type PRIVACY_POLICY_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -219818,6 +225677,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -219848,6 +225709,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -220366,6 +226229,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -220396,6 +226261,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -220601,6 +226468,37 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -220874,6 +226772,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -220904,6 +226804,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -221095,6 +226997,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -221377,6 +227288,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -221407,6 +227320,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -221641,6 +227556,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -221922,6 +227846,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -221952,6 +227878,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -222198,6 +228126,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -222479,6 +228416,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -222509,6 +228448,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -222743,6 +228684,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -223024,6 +228974,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -223054,6 +229006,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -223302,6 +229256,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -223583,6 +229546,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -223613,6 +229578,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -223847,6 +229814,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -224128,6 +230104,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -224158,6 +230136,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -224448,6 +230428,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -224729,6 +230718,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -224759,6 +230750,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -224993,6 +230986,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -225274,6 +231276,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -225304,6 +231308,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -225921,6 +231927,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -226202,6 +232217,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -226232,6 +232249,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -226466,6 +232485,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -226747,6 +232775,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -226777,6 +232807,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -227195,6 +233227,39 @@ export type PRIVACY_POLICY_QUERYResult = {
     columns?: "2" | "3" | "4";
     content: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample: {
+        _id: string;
+        _type: "audioSample";
+        songName: string | null;
+        artistName: string | null;
+        services: Array<string> | null;
+        image: {
+          asset: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          } | null;
+          alt: string | null;
+          hotspot: SanityImageHotspot | null;
+          crop: SanityImageCrop | null;
+        } | null;
+        audioFile: {
+          asset: {
+            _id: string;
+            url: string | null;
+            mimeType: string | null;
+            size: number | null;
+            originalFilename: string | null;
+            duration: null;
+          } | null;
+        } | null;
+      } | null;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
       image: null;
@@ -227493,6 +233558,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -227774,6 +233848,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -227804,6 +233880,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -228038,6 +234116,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -228319,6 +234406,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -228349,6 +234438,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -229067,6 +235158,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -229348,6 +235448,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -229378,6 +235480,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -229612,6 +235716,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -229893,6 +236006,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -229923,6 +236038,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -230341,6 +236458,39 @@ export type PRIVACY_POLICY_QUERYResult = {
       columns?: "2" | "3" | "4";
       content: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample: {
+          _id: string;
+          _type: "audioSample";
+          songName: string | null;
+          artistName: string | null;
+          services: Array<string> | null;
+          image: {
+            asset: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            } | null;
+            alt: string | null;
+            hotspot: SanityImageHotspot | null;
+            crop: SanityImageCrop | null;
+          } | null;
+          audioFile: {
+            asset: {
+              _id: string;
+              url: string | null;
+              mimeType: string | null;
+              size: number | null;
+              originalFilename: string | null;
+              duration: null;
+            } | null;
+          } | null;
+        } | null;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
         image: null;
@@ -230626,6 +236776,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -230907,6 +237066,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -230937,6 +237098,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -231171,6 +237334,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -231452,6 +237624,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -231482,6 +237656,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -232223,6 +238399,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -232504,6 +238689,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -232534,6 +238721,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -232768,6 +238957,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -233049,6 +239247,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -233079,6 +239279,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -233495,6 +239697,38 @@ export type PRIVACY_POLICY_QUERYResult = {
         columns?: "2" | "3" | "4";
         content: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample: {
+            _id: string;
+            _type: "audioSample";
+            songName: string | null;
+            artistName: string | null;
+            services: Array<string> | null;
+            image: {
+              asset: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              } | null;
+              alt: string | null;
+              hotspot: SanityImageHotspot | null;
+              crop: SanityImageCrop | null;
+            } | null;
+            audioFile: {
+              asset: {
+                _id: string;
+                url: string | null;
+                mimeType: string | null;
+                size: number | null;
+                originalFilename: string | null;
+                duration: null;
+              } | null;
+            } | null;
+          } | null;
+          image: null;
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
           image: null;
@@ -233768,6 +240002,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -233798,6 +240034,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -234316,6 +240554,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -234346,6 +240586,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -234551,6 +240793,37 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample: {
+              _id: string;
+              _type: "audioSample";
+              songName: string | null;
+              artistName: string | null;
+              services: Array<string> | null;
+              image: {
+                asset: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                } | null;
+                alt: string | null;
+                hotspot: SanityImageHotspot | null;
+                crop: SanityImageCrop | null;
+              } | null;
+              audioFile: {
+                asset: {
+                  _id: string;
+                  url: string | null;
+                  mimeType: string | null;
+                  size: number | null;
+                  originalFilename: string | null;
+                  duration: null;
+                } | null;
+              } | null;
+            } | null;
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -234824,6 +241097,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -234854,6 +241129,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -235045,6 +241322,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
+            _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
             _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
@@ -235327,6 +241613,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -235357,6 +241645,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -235591,6 +241881,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           }> | null;
           rightColumn: Array<{
             _key: string;
+            _type: "audioSamplePlayer";
+            audioSample?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "audioSample";
+            };
+          } | {
+            _key: string;
             _type: "bandcampWidget";
             embedCode?: string;
           } | {
@@ -235872,6 +242171,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               verticallyCenter?: boolean;
               leftColumn?: Array<{
                 _key: string;
+              } & AudioSamplePlayer | {
+                _key: string;
               } & BandcampWidget | {
                 _key: string;
               } & BlockListWithStats | {
@@ -235902,6 +242203,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & YouTubeVideo>;
               rightColumn?: Array<{
+                _key: string;
+              } & AudioSamplePlayer | {
                 _key: string;
               } & BandcampWidget | {
                 _key: string;
@@ -236148,6 +242451,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -236429,6 +242741,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -236459,6 +242773,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -236693,6 +243009,15 @@ export type PRIVACY_POLICY_QUERYResult = {
         }> | null;
         rightColumn: Array<{
           _key: string;
+          _type: "audioSamplePlayer";
+          audioSample?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "audioSample";
+          };
+        } | {
+          _key: string;
           _type: "bandcampWidget";
           embedCode?: string;
         } | {
@@ -236974,6 +243299,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             verticallyCenter?: boolean;
             leftColumn?: Array<{
               _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
             } & BandcampWidget | {
               _key: string;
             } & BlockListWithStats | {
@@ -237004,6 +243331,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & YouTubeVideo>;
             rightColumn?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
               _key: string;
             } & BandcampWidget | {
               _key: string;
@@ -237252,6 +243581,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       verticallyCenter?: boolean;
       leftColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -237533,6 +243871,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -237563,6 +243903,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -237797,6 +244139,15 @@ export type PRIVACY_POLICY_QUERYResult = {
       }> | null;
       rightColumn: Array<{
         _key: string;
+        _type: "audioSamplePlayer";
+        audioSample?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "audioSample";
+        };
+      } | {
+        _key: string;
         _type: "bandcampWidget";
         embedCode?: string;
       } | {
@@ -238078,6 +244429,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           verticallyCenter?: boolean;
           leftColumn?: Array<{
             _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
           } & BandcampWidget | {
             _key: string;
           } & BlockListWithStats | {
@@ -238108,6 +244461,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & YouTubeVideo>;
           rightColumn?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
             _key: string;
           } & BandcampWidget | {
             _key: string;
@@ -238398,6 +244753,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     verticallyCenter?: boolean;
     leftColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -238679,6 +245043,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -238709,6 +245075,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;
@@ -238943,6 +245311,15 @@ export type PRIVACY_POLICY_QUERYResult = {
     }> | null;
     rightColumn: Array<{
       _key: string;
+      _type: "audioSamplePlayer";
+      audioSample?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "audioSample";
+      };
+    } | {
+      _key: string;
       _type: "bandcampWidget";
       embedCode?: string;
     } | {
@@ -239224,6 +245601,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         verticallyCenter?: boolean;
         leftColumn?: Array<{
           _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
         } & BandcampWidget | {
           _key: string;
         } & BlockListWithStats | {
@@ -239254,6 +245633,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & YouTubeVideo>;
         rightColumn?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
           _key: string;
         } & BandcampWidget | {
           _key: string;

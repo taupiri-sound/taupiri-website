@@ -39,6 +39,7 @@ export const twoColumnLayoutType = defineType({
         defineArrayMember({ type: 'youTubeVideo' }),
         defineArrayMember({ type: 'spotifyWidget' }),
         defineArrayMember({ type: 'bandcampWidget' }),
+        defineArrayMember({ type: 'audioSamplePlayer' }),
         defineArrayMember({ type: 'companyLinksBlock' }),
       ],
       validation: (Rule) =>
@@ -64,6 +65,7 @@ export const twoColumnLayoutType = defineType({
         defineArrayMember({ type: 'youTubeVideo' }),
         defineArrayMember({ type: 'spotifyWidget' }),
         defineArrayMember({ type: 'bandcampWidget' }),
+        defineArrayMember({ type: 'audioSamplePlayer' }),
         defineArrayMember({ type: 'companyLinksBlock' }),
       ],
       validation: (Rule) =>

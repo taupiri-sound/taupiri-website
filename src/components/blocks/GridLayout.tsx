@@ -1,12 +1,13 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
-import type { GridLayoutBlock, RichTextBlock, CardBlock, ImageBlock as ImageBlockType, YouTubeVideoBlock, SpotifyWidgetBlock, BandcampWidgetBlock } from '@/types/blocks';
+import type { GridLayoutBlock, RichTextBlock, CardBlock, ImageBlock as ImageBlockType, YouTubeVideoBlock, SpotifyWidgetBlock, BandcampWidgetBlock, AudioSamplePlayerBlock } from '@/types/blocks';
 import Card from './Card';
 import RichText from './RichText';
 import ImageBlock from './Image';
 import YouTubeVideo from './YouTubeVideo';
 import SpotifyWidget from './SpotifyWidget';
 import BandcampWidget from './BandcampWidget';
+import AudioSamplePlayer from './AudioSamplePlayer';
 
 interface GridLayoutProps extends GridLayoutBlock {
   documentId?: string;
@@ -43,7 +44,7 @@ const GridLayout = ({
 
   const itemClasses = getGridClasses(validColumns);
 
-  type GridContentItem = RichTextBlock | CardBlock | ImageBlockType | YouTubeVideoBlock | SpotifyWidgetBlock | BandcampWidgetBlock;
+  type GridContentItem = RichTextBlock | CardBlock | ImageBlockType | YouTubeVideoBlock | SpotifyWidgetBlock | BandcampWidgetBlock | AudioSamplePlayerBlock;
 
   const renderGridItem = (item: GridContentItem, idx: number) => {
     const key = item._key || idx;
@@ -105,6 +106,49 @@ const GridLayout = ({
             <BandcampWidget {...item} {...baseProps} />
           </div>
         );
+
+      case 'audioSamplePlayer': {
+        // Extract the expanded audioSample data from the GROQ query
+        const audioSample = item.audioSample as {
+          _id?: string;
+          _type?: string;
+          songName?: string;
+          artistName?: string;
+          services?: string[];
+          image?: {
+            asset?: { _ref?: string; _type?: string };
+            alt?: string;
+            hotspot?: unknown;
+            crop?: unknown;
+          };
+          audioFile?: {
+            asset?: {
+              _id?: string;
+              url?: string;
+              mimeType?: string;
+              size?: number;
+              originalFilename?: string;
+              duration?: number;
+            };
+          };
+        };
+
+        if (!audioSample) return null;
+
+        return (
+          <div key={key} className={itemClasses}>
+            <AudioSamplePlayer
+              songName={audioSample.songName || 'Untitled'}
+              artistName={audioSample.artistName || 'Unknown Artist'}
+              services={audioSample.services || []}
+              image={audioSample.image}
+              audioFile={audioSample.audioFile || { asset: undefined }}
+              documentId={audioSample._id}
+              documentType={audioSample._type || 'audioSample'}
+            />
+          </div>
+        );
+      }
 
       default:
         console.warn(`Unknown grid item type: ${(item as { _type: string })._type}`);

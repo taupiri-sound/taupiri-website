@@ -1,6 +1,5 @@
 import { defineQuery } from 'next-sanity';
 
-
 // Reusable internal link dereferencing with href computation and section anchor support
 const internalLinkProjection = `{
   _id,
@@ -349,7 +348,6 @@ const recursiveContent = `content[]{${contentProjection},
   }
 }`;
 
-
 export const PAGE_QUERY = defineQuery(`*[_type == "page" && slug.current == $slug][0]{
   _id,
   _type,
@@ -454,7 +452,8 @@ export const COMPANY_LINKS_QUERY = defineQuery(`*[_id == "companyLinks"][0]{
 }`);
 
 // Blog Post Queries
-export const BLOG_POSTS_QUERY = defineQuery(`*[_type == "blogPost"]|order(coalesce(overrideDate, _createdAt) desc){
+export const BLOG_POSTS_QUERY =
+  defineQuery(`*[_type == "blogPost"]|order(coalesce(overrideDate, _createdAt) desc){
   _id,
   _createdAt,
   title,
@@ -537,21 +536,6 @@ export const ADJACENT_BLOG_POSTS_QUERY = defineQuery(`{
   }
 }`);
 
-// Side content projection for sidebar sections
-const sideContentProjection = `sideContent[]{
-  _type,
-  _key,
-  style,
-  title,
-  richText,
-  ctaBlocks[]{
-    _type,
-    _key,
-    _type == "embeddedCtaButton" => {${fullLinkProjection}},
-    _type == "embeddedCtaEmailButton" => {...}
-  }
-}`;
-
 export const FOOTER_QUERY = defineQuery(`*[_type == "footer" && _id == "footer"][0]{
   _id,
   _type,
@@ -571,7 +555,8 @@ export const ALL_PAGES_QUERY = defineQuery(`*[_type == "page" && defined(slug.cu
   slug
 }`);
 
-export const ALL_BLOG_POSTS_SLUGS_QUERY = defineQuery(`*[_type == "blogPost" && defined(slug.current)]{
+export const ALL_BLOG_POSTS_SLUGS_QUERY =
+  defineQuery(`*[_type == "blogPost" && defined(slug.current)]{
   _id,
   _updatedAt,
   title,

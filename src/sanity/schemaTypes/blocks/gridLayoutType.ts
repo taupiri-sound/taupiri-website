@@ -56,6 +56,10 @@ export const gridLayoutType = defineType({
           type: 'bandcampWidget',
           title: 'Bandcamp Widget',
         }),
+        defineArrayMember({
+          type: 'audioSamplePlayer',
+          title: 'Audio Sample Player',
+        }),
       ],
       validation: (Rule) =>
         Rule.required().min(1).error('Grid layout must contain at least one item'),

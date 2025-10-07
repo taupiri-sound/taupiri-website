@@ -2230,6 +2230,21 @@
                   },
                   "rest": {
                     "type": "inline",
+                    "name": "audioSamplePlayer"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
                     "name": "companyLinksBlock"
                   }
                 }
@@ -2453,6 +2468,21 @@
                   "rest": {
                     "type": "inline",
                     "name": "bandcampWidget"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "audioSamplePlayer"
                   }
                 },
                 {
@@ -3142,6 +3172,21 @@
                   "rest": {
                     "type": "inline",
                     "name": "bandcampWidget"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "audioSamplePlayer"
                   }
                 }
               ]
