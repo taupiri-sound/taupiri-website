@@ -8,7 +8,12 @@ interface CardContainerProps {
   noPadding?: boolean;
 }
 
-const CardContainer = ({ children, className = '', isGridChild = false, noPadding = false }: CardContainerProps) => {
+const CardContainer = ({
+  children,
+  className = '',
+  isGridChild = false,
+  noPadding = false,
+}: CardContainerProps) => {
   return (
     <div
       className={`
@@ -16,7 +21,7 @@ const CardContainer = ({ children, className = '', isGridChild = false, noPaddin
         bg-brand-white-dark
         shadow-sm
         rounded-lg
-        ${noPadding ? '' : 'p-6 md:p-8'}
+        ${noPadding ? '' : 'p-6'}
         flex
         flex-col
         items-center

@@ -104,7 +104,7 @@ const CardProfile = (props: CardProfileProps) => {
       <div
         className='flex-shrink-0'
         {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-        <div className='relative w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden'>
+        <div className='relative w-24 h-24 md:w-42 md:h-42 rounded-lg overflow-hidden'>
           <UnifiedImage
             src={image}
             alt={image.alt || 'Profile image'}

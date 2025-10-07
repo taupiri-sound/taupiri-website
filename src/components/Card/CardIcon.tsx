@@ -64,7 +64,7 @@ const CardIcon = (props: CardIconProps) => {
         isGridChild={isGridChild}>
         {/* Icon - Circular frame at top center */}
         <div
-          className='mb-6'
+          className='mb-2'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
           <UnifiedImage
             src={image}
@@ -74,7 +74,7 @@ const CardIcon = (props: CardIconProps) => {
             height={100}
             sizeContext='profile'
             objectFit='contain'
-            className='w-20 h-20 md:w-26 md:h-26'
+            className='w-10 h-10'
             documentId={documentId}
             documentType={documentType}
             fieldPath={getFieldPath('image')}
