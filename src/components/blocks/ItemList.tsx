@@ -22,7 +22,7 @@ const ItemList = ({ items = [], alignment, className = '', inheritAlignment }: I
         {items.map((item) => (
           <div
             key={item._key}
-            className='group flex items-center gap-3 px-3 py-1 rounded-2xl border border-gray-200'>
+            className='group flex items-center gap-3 px-4 py-2 rounded-2xl bg-brand-white-dark shadow-sm'>
             {item.icon && item.icon.asset ? (
               <div className='relative w-6 h-6 flex-shrink-0'>
                 <UnifiedImage
@@ -39,7 +39,7 @@ const ItemList = ({ items = [], alignment, className = '', inheritAlignment }: I
                 <div className='w-3 h-3 bg-gray-300 rounded animate-pulse'></div>
               </div>
             ) : null}
-            <span className='font-medium text-gray-800 whitespace-nowrap'>{item.text}</span>
+            <span className='font-medium whitespace-nowrap'>{item.text}</span>
           </div>
         ))}
       </div>
