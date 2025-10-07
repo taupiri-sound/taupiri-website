@@ -24,6 +24,7 @@ import CompanyLinksBlock from './CompanyLinksBlock';
 import BlockListWithStats from './BlockListWithStats';
 import CheckList from './CheckList';
 import Divider from '../UI/Divider';
+import GridLayout from './GridLayout';
 
 interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' | 'subtitlePath'> {
   leftColumn?: NestedBlock[];
@@ -136,6 +137,16 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
               siteSettings={siteSettings}
               companyLinks={companyLinks}
               alignment={alignment}
+            />
+          );
+
+        case 'gridLayout':
+          return (
+            <GridLayout
+              {...block}
+              documentId={documentId}
+              documentType={documentType}
+              fieldPathPrefix={blockPath}
             />
           );
 

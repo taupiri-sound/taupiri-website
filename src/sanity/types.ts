@@ -377,6 +377,8 @@ export type TwoColumnLayout = {
     _key: string;
   } & Card | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & YouTubeVideo | {
     _key: string;
   } & SpotifyWidget | {
@@ -409,6 +411,8 @@ export type TwoColumnLayout = {
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
+    _key: string;
+  } & GridLayout | {
     _key: string;
   } & YouTubeVideo | {
     _key: string;
@@ -576,6 +580,8 @@ export type SubSubSection = {
     _key: string;
   } & TwoColumnLayout | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & RichText | {
     _key: string;
   } & BlockListWithStats | {
@@ -597,8 +603,6 @@ export type SubSubSection = {
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
-    _key: string;
-  } & GridLayout | {
     _key: string;
   } & YouTubeVideo | {
     _key: string;
@@ -625,6 +629,8 @@ export type SubSection = {
     _key: string;
   } & TwoColumnLayout | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & RichText | {
     _key: string;
   } & BlockListWithStats | {
@@ -646,8 +652,6 @@ export type SubSection = {
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
-    _key: string;
-  } & GridLayout | {
     _key: string;
   } & YouTubeVideo | {
     _key: string;
@@ -677,6 +681,8 @@ export type PageSection = {
     _key: string;
   } & TwoColumnLayout | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & RichText | {
     _key: string;
   } & BlockListWithStats | {
@@ -699,8 +705,6 @@ export type PageSection = {
     _key: string;
   } & Card | {
     _key: string;
-  } & GridLayout | {
-    _key: string;
   } & YouTubeVideo | {
     _key: string;
   } & SpotifyWidget | {
@@ -719,6 +723,8 @@ export type PageBuilder = Array<{
 } & Divider | {
   _key: string;
 } & TwoColumnLayout | {
+  _key: string;
+} & GridLayout | {
   _key: string;
 } & RichText | {
   _key: string;
@@ -741,8 +747,6 @@ export type PageBuilder = Array<{
 } & CtaBlogPost | {
   _key: string;
 } & Card | {
-  _key: string;
-} & GridLayout | {
   _key: string;
 } & YouTubeVideo | {
   _key: string;
@@ -821,6 +825,8 @@ export type PrivacyPolicy = {
     _key: string;
   } & TwoColumnLayout | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & RichText | {
     _key: string;
   } & BlockListWithStats | {
@@ -842,8 +848,6 @@ export type PrivacyPolicy = {
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
-    _key: string;
-  } & GridLayout | {
     _key: string;
   } & YouTubeVideo | {
     _key: string;
@@ -873,6 +877,8 @@ export type TermsAndConditions = {
     _key: string;
   } & TwoColumnLayout | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & RichText | {
     _key: string;
   } & BlockListWithStats | {
@@ -894,8 +900,6 @@ export type TermsAndConditions = {
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
-    _key: string;
-  } & GridLayout | {
     _key: string;
   } & YouTubeVideo | {
     _key: string;
@@ -976,6 +980,8 @@ export type BlogPost = {
     _key: string;
   } & TwoColumnLayout | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & RichText | {
     _key: string;
   } & BlockListWithStats | {
@@ -997,8 +1003,6 @@ export type BlogPost = {
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
-    _key: string;
-  } & GridLayout | {
     _key: string;
   } & YouTubeVideo | {
     _key: string;
@@ -1069,6 +1073,8 @@ export type Page = {
     _key: string;
   } & TwoColumnLayout | {
     _key: string;
+  } & GridLayout | {
+    _key: string;
   } & RichText | {
     _key: string;
   } & BlockListWithStats | {
@@ -1090,8 +1096,6 @@ export type Page = {
   } & CtaBlogPost | {
     _key: string;
   } & Card | {
-    _key: string;
-  } & GridLayout | {
     _key: string;
   } & YouTubeVideo | {
     _key: string;
@@ -2056,6 +2060,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -2088,6 +2094,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -2224,6 +2232,25 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -2614,6 +2641,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -2646,6 +2675,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -2782,6 +2813,25 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -3687,6 +3737,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -3719,6 +3771,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -3855,6 +3909,25 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -4245,6 +4318,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -4277,6 +4352,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -4413,6 +4490,25 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -5288,6 +5384,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -5320,6 +5418,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -5456,6 +5556,25 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -5846,6 +5965,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -5878,6 +5999,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -6014,6 +6137,25 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -6906,6 +7048,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -6938,6 +7082,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -7074,6 +7220,25 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -7464,6 +7629,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -7496,6 +7663,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -7632,6 +7801,25 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -8530,6 +8718,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -8562,6 +8752,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -8698,6 +8890,25 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -9088,6 +9299,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -9120,6 +9333,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -9256,6 +9471,25 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -9843,6 +10077,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -9875,6 +10111,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -10396,6 +10634,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -10428,6 +10668,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -10939,6 +11181,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -10971,6 +11215,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -11455,6 +11701,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -11487,6 +11735,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -11623,6 +11873,25 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -12013,6 +12282,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -12045,6 +12316,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -12181,6 +12454,25 @@ export type PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -12583,6 +12875,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -12615,6 +12909,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -12751,6 +13047,25 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -13141,6 +13456,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -13173,6 +13490,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -13309,6 +13628,25 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -13713,6 +14051,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -13745,6 +14085,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -13881,6 +14223,25 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -14271,6 +14632,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -14303,6 +14666,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -14439,6 +14804,25 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -14885,6 +15269,8 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -14917,6 +15303,8 @@ export type PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -15053,6 +15441,25 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -15443,6 +15850,8 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -15475,6 +15884,8 @@ export type PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -15611,6 +16022,25 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -16461,6 +16891,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -16493,6 +16925,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -16629,6 +17063,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -17019,6 +17472,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -17051,6 +17506,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -17187,6 +17644,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -18092,6 +18568,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -18124,6 +18602,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -18260,6 +18740,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -18650,6 +19149,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -18682,6 +19183,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -18818,6 +19321,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -19693,6 +20215,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -19725,6 +20249,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -19861,6 +20387,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -20251,6 +20796,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -20283,6 +20830,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -20419,6 +20968,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -21311,6 +21879,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -21343,6 +21913,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -21479,6 +22051,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -21869,6 +22460,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -21901,6 +22494,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -22037,6 +22632,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -22935,6 +23549,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -22967,6 +23583,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -23103,6 +23721,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -23493,6 +24130,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -23525,6 +24164,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -23661,6 +24302,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -24248,6 +24908,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -24280,6 +24942,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -24801,6 +25465,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -24833,6 +25499,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -25344,6 +26012,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -25376,6 +26046,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -25860,6 +26532,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -25892,6 +26566,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -26028,6 +26704,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -26418,6 +27113,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -26450,6 +27147,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -26586,6 +27285,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -26988,6 +27706,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -27020,6 +27740,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -27156,6 +27878,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -27546,6 +28287,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -27578,6 +28321,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -27714,6 +28459,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -28118,6 +28882,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -28150,6 +28916,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -28286,6 +29054,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -28676,6 +29463,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -28708,6 +29497,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -28844,6 +29635,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -29290,6 +30100,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -29322,6 +30134,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -29458,6 +30272,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -29848,6 +30681,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -29880,6 +30715,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -30016,6 +30853,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -30897,6 +31753,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -30929,6 +31787,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -31065,6 +31925,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -31455,6 +32334,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -31487,6 +32368,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -31623,6 +32506,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -32528,6 +33430,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -32560,6 +33464,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -32696,6 +33602,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -33086,6 +34011,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -33118,6 +34045,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -33254,6 +34183,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -34129,6 +35077,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -34161,6 +35111,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -34297,6 +35249,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -34687,6 +35658,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -34719,6 +35692,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -34855,6 +35830,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -35747,6 +36741,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -35779,6 +36775,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -35915,6 +36913,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -36305,6 +37322,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -36337,6 +37356,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -36473,6 +37494,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -37371,6 +38411,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -37403,6 +38445,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -37539,6 +38583,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -37929,6 +38992,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -37961,6 +39026,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -38097,6 +39164,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -38684,6 +39770,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -38716,6 +39804,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -39237,6 +40327,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -39269,6 +40361,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -39780,6 +40874,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -39812,6 +40908,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -40296,6 +41394,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -40328,6 +41428,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -40464,6 +41566,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -40854,6 +41975,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -40886,6 +42009,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -41022,6 +42147,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -41424,6 +42568,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -41456,6 +42602,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -41592,6 +42740,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -41982,6 +43149,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -42014,6 +43183,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -42150,6 +43321,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -42554,6 +43744,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -42586,6 +43778,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -42722,6 +43916,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -43112,6 +44325,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -43144,6 +44359,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -43280,6 +44497,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -43726,6 +44962,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -43758,6 +44996,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -43894,6 +45134,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -44284,6 +45543,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -44316,6 +45577,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -44452,6 +45715,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -45207,6 +46489,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -45239,6 +46523,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -45375,6 +46661,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -45765,6 +47070,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -45797,6 +47104,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -45933,6 +47242,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -46838,6 +48166,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -46870,6 +48200,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -47006,6 +48338,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -47396,6 +48747,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -47428,6 +48781,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -47564,6 +48919,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -48439,6 +49813,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -48471,6 +49847,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -48607,6 +49985,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -48997,6 +50394,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -49029,6 +50428,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -49165,6 +50566,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -50057,6 +51477,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -50089,6 +51511,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -50225,6 +51649,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -50615,6 +52058,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -50647,6 +52092,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -50783,6 +52230,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -51681,6 +53147,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -51713,6 +53181,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -51849,6 +53319,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -52239,6 +53728,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -52271,6 +53762,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -52407,6 +53900,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -52994,6 +54506,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -53026,6 +54540,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -53547,6 +55063,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -53579,6 +55097,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -54090,6 +55610,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -54122,6 +55644,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -54606,6 +56130,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -54638,6 +56164,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -54774,6 +56302,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -55164,6 +56711,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -55196,6 +56745,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -55332,6 +56883,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -55734,6 +57304,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -55766,6 +57338,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -55902,6 +57476,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -56292,6 +57885,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -56324,6 +57919,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -56460,6 +58057,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -56864,6 +58480,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -56896,6 +58514,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -57032,6 +58652,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -57422,6 +59061,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -57454,6 +59095,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -57590,6 +59233,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -58036,6 +59698,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -58068,6 +59732,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -58204,6 +59870,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -58594,6 +60279,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -58626,6 +60313,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -58762,6 +60451,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -59517,6 +61225,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -59549,6 +61259,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -59685,6 +61397,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -60075,6 +61806,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -60107,6 +61840,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -60243,6 +61978,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -61148,6 +62902,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -61180,6 +62936,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -61316,6 +63074,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -61706,6 +63483,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -61738,6 +63517,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -61874,6 +63655,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -62749,6 +64549,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -62781,6 +64583,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -62917,6 +64721,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -63307,6 +65130,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -63339,6 +65164,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -63475,6 +65302,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -64367,6 +66213,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -64399,6 +66247,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -64535,6 +66385,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -64925,6 +66794,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -64957,6 +66828,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -65093,6 +66966,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -65991,6 +67883,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -66023,6 +67917,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -66159,6 +68055,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -66549,6 +68464,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -66581,6 +68498,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -66717,6 +68636,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -67304,6 +69242,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -67336,6 +69276,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -67857,6 +69799,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -67889,6 +69833,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -68400,6 +70346,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -68432,6 +70380,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -68916,6 +70866,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -68948,6 +70900,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -69084,6 +71038,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -69474,6 +71447,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -69506,6 +71481,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -69642,6 +71619,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -70044,6 +72040,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -70076,6 +72074,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -70212,6 +72212,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -70602,6 +72621,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -70634,6 +72655,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -70770,6 +72793,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -71174,6 +73216,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -71206,6 +73250,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -71342,6 +73388,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -71732,6 +73797,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -71764,6 +73831,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -71900,6 +73969,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -72346,6 +74434,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -72378,6 +74468,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -72514,6 +74606,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -72904,6 +75015,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -72936,6 +75049,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -73072,6 +75187,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -73869,6 +76003,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -73901,6 +76037,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -74037,6 +76175,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -74427,6 +76584,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -74459,6 +76618,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -74595,6 +76756,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -75500,6 +77680,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -75532,6 +77714,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -75668,6 +77852,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -76058,6 +78261,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -76090,6 +78295,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -76226,6 +78433,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -77101,6 +79327,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -77133,6 +79361,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -77269,6 +79499,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -77659,6 +79908,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -77691,6 +79942,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -77827,6 +80080,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -78719,6 +80991,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -78751,6 +81025,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -78887,6 +81163,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -79277,6 +81572,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -79309,6 +81606,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -79445,6 +81744,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -80343,6 +82661,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -80375,6 +82695,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -80511,6 +82833,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -80901,6 +83242,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -80933,6 +83276,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -81069,6 +83414,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -81656,6 +84020,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -81688,6 +84054,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -82209,6 +84577,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -82241,6 +84611,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -82752,6 +85124,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -82784,6 +85158,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -83268,6 +85644,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -83300,6 +85678,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -83436,6 +85816,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -83826,6 +86225,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -83858,6 +86259,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -83994,6 +86397,25 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -84396,6 +86818,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -84428,6 +86852,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -84564,6 +86990,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -84954,6 +87399,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -84986,6 +87433,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -85122,6 +87571,25 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -85526,6 +87994,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -85558,6 +88028,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -85694,6 +88166,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -86084,6 +88575,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -86116,6 +88609,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -86252,6 +88747,25 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -86698,6 +89212,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -86730,6 +89246,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -86866,6 +89384,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -87256,6 +89793,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -87288,6 +89827,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -87424,6 +89965,25 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -89001,6 +91561,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -89033,6 +91595,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -89169,6 +91733,25 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -89559,6 +92142,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -89591,6 +92176,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -89727,6 +92314,25 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -90632,6 +93238,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -90664,6 +93272,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -90800,6 +93410,25 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -91190,6 +93819,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -91222,6 +93853,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -91358,6 +93991,25 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -92233,6 +94885,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -92265,6 +94919,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -92401,6 +95057,25 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -92791,6 +95466,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -92823,6 +95500,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -92959,6 +95638,25 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -93851,6 +96549,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -93883,6 +96583,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -94019,6 +96721,25 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -94409,6 +97130,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -94441,6 +97164,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -94577,6 +97302,25 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -95475,6 +98219,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -95507,6 +98253,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -95643,6 +98391,25 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -96033,6 +98800,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -96065,6 +98834,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -96201,6 +98972,25 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -96788,6 +99578,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -96820,6 +99612,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -97341,6 +100135,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -97373,6 +100169,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -97884,6 +100682,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -97916,6 +100716,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -98400,6 +101202,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -98432,6 +101236,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -98568,6 +101374,25 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -98958,6 +101783,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -98990,6 +101817,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -99126,6 +101955,25 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -99528,6 +102376,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -99560,6 +102410,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -99696,6 +102548,25 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -100086,6 +102957,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -100118,6 +102991,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -100254,6 +103129,25 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -100658,6 +103552,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -100690,6 +103586,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -100826,6 +103724,25 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -101216,6 +104133,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -101248,6 +104167,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -101384,6 +104305,25 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -101830,6 +104770,8 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -101862,6 +104804,8 @@ export type BLOG_POST_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -101998,6 +104942,25 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -102388,6 +105351,8 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -102420,6 +105385,8 @@ export type BLOG_POST_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -102556,6 +105523,25 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -103437,6 +106423,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -103469,6 +106457,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -103605,6 +106595,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -103995,6 +107004,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -104027,6 +107038,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -104163,6 +107176,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -105068,6 +108100,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -105100,6 +108134,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -105236,6 +108272,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -105626,6 +108681,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -105658,6 +108715,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -105794,6 +108853,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -106669,6 +109747,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -106701,6 +109781,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -106837,6 +109919,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -107227,6 +110328,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -107259,6 +110362,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -107395,6 +110500,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -108287,6 +111411,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -108319,6 +111445,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -108455,6 +111583,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -108845,6 +111992,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -108877,6 +112026,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -109013,6 +112164,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -109911,6 +113081,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -109943,6 +113115,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -110079,6 +113253,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -110469,6 +113662,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -110501,6 +113696,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -110637,6 +113834,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -111224,6 +114440,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -111256,6 +114474,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -111777,6 +114997,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -111809,6 +115031,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -112320,6 +115544,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -112352,6 +115578,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -112836,6 +116064,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -112868,6 +116098,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -113004,6 +116236,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -113394,6 +116645,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -113426,6 +116679,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -113562,6 +116817,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -113964,6 +117238,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -113996,6 +117272,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -114132,6 +117410,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -114522,6 +117819,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -114554,6 +117853,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -114690,6 +117991,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -115094,6 +118414,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -115126,6 +118448,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -115262,6 +118586,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -115652,6 +118995,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -115684,6 +119029,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -115820,6 +119167,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -116266,6 +119632,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -116298,6 +119666,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -116434,6 +119804,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -116824,6 +120213,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -116856,6 +120247,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -116992,6 +120385,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -117765,6 +121177,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -117797,6 +121211,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -117933,6 +121349,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -118323,6 +121758,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -118355,6 +121792,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -118491,6 +121930,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -119396,6 +122854,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -119428,6 +122888,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -119564,6 +123026,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -119954,6 +123435,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -119986,6 +123469,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -120122,6 +123607,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -120997,6 +124501,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -121029,6 +124535,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -121165,6 +124673,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -121555,6 +125082,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -121587,6 +125116,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -121723,6 +125254,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -122615,6 +126165,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -122647,6 +126199,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -122783,6 +126337,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -123173,6 +126746,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -123205,6 +126780,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -123341,6 +126918,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -124239,6 +127835,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -124271,6 +127869,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -124407,6 +128007,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -124797,6 +128416,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -124829,6 +128450,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -124965,6 +128588,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -125552,6 +129194,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -125584,6 +129228,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -126105,6 +129751,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -126137,6 +129785,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -126648,6 +130298,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -126680,6 +130332,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -127164,6 +130818,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -127196,6 +130852,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -127332,6 +130990,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -127722,6 +131399,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -127754,6 +131433,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -127890,6 +131571,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -128292,6 +131992,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -128324,6 +132026,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -128460,6 +132164,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -128850,6 +132573,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -128882,6 +132607,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -129018,6 +132745,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -129422,6 +133168,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -129454,6 +133202,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -129590,6 +133340,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -129980,6 +133749,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -130012,6 +133783,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -130148,6 +133921,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -130594,6 +134386,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -130626,6 +134420,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -130762,6 +134558,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -131152,6 +134967,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -131184,6 +135001,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -131320,6 +135139,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -132069,6 +135907,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -132101,6 +135941,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -132237,6 +136079,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -132627,6 +136488,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -132659,6 +136522,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -132795,6 +136660,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -133700,6 +137584,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -133732,6 +137618,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -133868,6 +137756,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -134258,6 +138165,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -134290,6 +138199,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -134426,6 +138337,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -135301,6 +139231,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -135333,6 +139265,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -135469,6 +139403,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -135859,6 +139812,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -135891,6 +139846,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -136027,6 +139984,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -136919,6 +140895,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -136951,6 +140929,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -137087,6 +141067,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -137477,6 +141476,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -137509,6 +141510,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -137645,6 +141648,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -138543,6 +142565,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -138575,6 +142599,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -138711,6 +142737,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -139101,6 +143146,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -139133,6 +143180,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -139269,6 +143318,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -139856,6 +143924,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -139888,6 +143958,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -140409,6 +144481,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -140441,6 +144515,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -140952,6 +145028,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -140984,6 +145062,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -141468,6 +145548,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -141500,6 +145582,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -141636,6 +145720,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -142026,6 +146129,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -142058,6 +146163,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -142194,6 +146301,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -142596,6 +146722,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -142628,6 +146756,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -142764,6 +146894,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -143154,6 +147303,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -143186,6 +147337,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -143322,6 +147475,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -143726,6 +147898,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -143758,6 +147932,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -143894,6 +148070,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -144284,6 +148479,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -144316,6 +148513,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -144452,6 +148651,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -144898,6 +149116,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -144930,6 +149150,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -145066,6 +149288,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -145456,6 +149697,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -145488,6 +149731,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -145624,6 +149869,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -146373,6 +150637,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -146405,6 +150671,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -146541,6 +150809,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -146931,6 +151218,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -146963,6 +151252,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -147099,6 +151390,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -148004,6 +152314,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -148036,6 +152348,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -148172,6 +152486,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -148562,6 +152895,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -148594,6 +152929,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -148730,6 +153067,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -149605,6 +153961,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -149637,6 +153995,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -149773,6 +154133,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -150163,6 +154542,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -150195,6 +154576,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -150331,6 +154714,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -151223,6 +155625,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -151255,6 +155659,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -151391,6 +155797,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -151781,6 +156206,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -151813,6 +156240,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -151949,6 +156378,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -152847,6 +157295,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -152879,6 +157329,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -153015,6 +157467,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -153405,6 +157876,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -153437,6 +157910,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -153573,6 +158048,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -154160,6 +158654,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -154192,6 +158688,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -154713,6 +159211,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -154745,6 +159245,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -155256,6 +159758,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -155288,6 +159792,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -155772,6 +160278,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -155804,6 +160312,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -155940,6 +160450,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -156330,6 +160859,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -156362,6 +160893,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -156498,6 +161031,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -156900,6 +161452,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -156932,6 +161486,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -157068,6 +161624,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -157458,6 +162033,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -157490,6 +162067,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -157626,6 +162205,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -158030,6 +162628,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -158062,6 +162662,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -158198,6 +162800,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -158588,6 +163209,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -158620,6 +163243,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -158756,6 +163381,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -159202,6 +163846,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -159234,6 +163880,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -159370,6 +164018,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -159760,6 +164427,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -159792,6 +164461,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -159928,6 +164599,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -160701,6 +165391,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -160733,6 +165425,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -160869,6 +165563,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -161259,6 +165972,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -161291,6 +166006,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -161427,6 +166144,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -162332,6 +167068,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -162364,6 +167102,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -162500,6 +167240,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -162890,6 +167649,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -162922,6 +167683,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -163058,6 +167821,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -163933,6 +168715,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -163965,6 +168749,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -164101,6 +168887,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -164491,6 +169296,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -164523,6 +169330,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -164659,6 +169468,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -165551,6 +170379,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -165583,6 +170413,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -165719,6 +170551,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -166109,6 +170960,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -166141,6 +170994,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -166277,6 +171132,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -167175,6 +172049,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -167207,6 +172083,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -167343,6 +172221,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -167733,6 +172630,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -167765,6 +172664,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -167901,6 +172802,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -168488,6 +173408,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -168520,6 +173442,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -169041,6 +173965,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -169073,6 +173999,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -169584,6 +174512,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -169616,6 +174546,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -170100,6 +175032,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -170132,6 +175066,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -170268,6 +175204,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -170658,6 +175613,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -170690,6 +175647,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -170826,6 +175785,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -171228,6 +176206,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -171260,6 +176240,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -171396,6 +176378,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -171786,6 +176787,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -171818,6 +176821,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -171954,6 +176959,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -172358,6 +177382,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -172390,6 +177416,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -172526,6 +177554,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -172916,6 +177963,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -172948,6 +177997,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -173084,6 +178135,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -173530,6 +178600,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -173562,6 +178634,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -173698,6 +178772,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -174088,6 +179181,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -174120,6 +179215,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -174256,6 +179353,25 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -175024,6 +180140,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -175056,6 +180174,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -175192,6 +180312,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -175582,6 +180721,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -175614,6 +180755,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -175750,6 +180893,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -176655,6 +181817,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -176687,6 +181851,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -176823,6 +181989,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -177213,6 +182398,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -177245,6 +182432,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -177381,6 +182570,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -178256,6 +183464,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -178288,6 +183498,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -178424,6 +183636,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -178814,6 +184045,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -178846,6 +184079,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -178982,6 +184217,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -179874,6 +185128,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -179906,6 +185162,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -180042,6 +185300,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -180432,6 +185709,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -180464,6 +185743,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -180600,6 +185881,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -181498,6 +186798,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -181530,6 +186832,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -181666,6 +186970,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -182056,6 +187379,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -182088,6 +187413,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -182224,6 +187551,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -182811,6 +188157,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -182843,6 +188191,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -183364,6 +188714,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -183396,6 +188748,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -183907,6 +189261,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -183939,6 +189295,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -184423,6 +189781,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -184455,6 +189815,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -184591,6 +189953,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -184981,6 +190362,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -185013,6 +190396,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -185149,6 +190534,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -185551,6 +190955,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -185583,6 +190989,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -185719,6 +191127,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -186109,6 +191536,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -186141,6 +191570,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -186277,6 +191708,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -186681,6 +192131,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -186713,6 +192165,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -186849,6 +192303,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -187239,6 +192712,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -187271,6 +192746,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -187407,6 +192884,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -187853,6 +193349,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -187885,6 +193383,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -188021,6 +193521,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -188411,6 +193930,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -188443,6 +193964,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -188579,6 +194102,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -189352,6 +194894,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -189384,6 +194928,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -189520,6 +195066,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -189910,6 +195475,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -189942,6 +195509,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -190078,6 +195647,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -190983,6 +196571,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -191015,6 +196605,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -191151,6 +196743,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -191541,6 +197152,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -191573,6 +197186,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -191709,6 +197324,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -192584,6 +198218,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -192616,6 +198252,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -192752,6 +198390,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -193142,6 +198799,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -193174,6 +198833,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -193310,6 +198971,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -194202,6 +199882,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -194234,6 +199916,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -194370,6 +200054,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -194760,6 +200463,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -194792,6 +200497,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -194928,6 +200635,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -195826,6 +201552,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -195858,6 +201586,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -195994,6 +201724,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -196384,6 +202133,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -196416,6 +202167,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -196552,6 +202305,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -197139,6 +202911,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -197171,6 +202945,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -197692,6 +203468,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -197724,6 +203502,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -198235,6 +204015,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -198267,6 +204049,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -198751,6 +204535,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -198783,6 +204569,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -198919,6 +204707,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -199309,6 +205116,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -199341,6 +205150,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -199477,6 +205288,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -199879,6 +205709,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -199911,6 +205743,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -200047,6 +205881,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -200437,6 +206290,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -200469,6 +206324,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -200605,6 +206462,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -201009,6 +206885,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -201041,6 +206919,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -201177,6 +207057,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -201567,6 +207466,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -201599,6 +207500,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -201735,6 +207638,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -202181,6 +208103,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -202213,6 +208137,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -202349,6 +208275,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -202739,6 +208684,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -202771,6 +208718,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -202907,6 +208856,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -203656,6 +209624,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -203688,6 +209658,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -203824,6 +209796,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -204214,6 +210205,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -204246,6 +210239,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -204382,6 +210377,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -205287,6 +211301,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -205319,6 +211335,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -205455,6 +211473,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -205845,6 +211882,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -205877,6 +211916,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -206013,6 +212054,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -206888,6 +212948,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -206920,6 +212982,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -207056,6 +213120,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -207446,6 +213529,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -207478,6 +213563,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -207614,6 +213701,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -208506,6 +214612,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -208538,6 +214646,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -208674,6 +214784,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -209064,6 +215193,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -209096,6 +215227,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -209232,6 +215365,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -210130,6 +216282,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -210162,6 +216316,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -210298,6 +216454,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -210688,6 +216863,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -210720,6 +216897,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -210856,6 +217035,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -211443,6 +217641,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -211475,6 +217675,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -211996,6 +218198,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -212028,6 +218232,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -212539,6 +218745,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -212571,6 +218779,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -213055,6 +219265,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -213087,6 +219299,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -213223,6 +219437,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -213613,6 +219846,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -213645,6 +219880,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -213781,6 +220018,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -214183,6 +220439,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -214215,6 +220473,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -214351,6 +220611,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -214741,6 +221020,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -214773,6 +221054,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -214909,6 +221192,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -215313,6 +221615,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -215345,6 +221649,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -215481,6 +221787,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -215871,6 +222196,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -215903,6 +222230,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -216039,6 +222368,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -216485,6 +222833,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -216517,6 +222867,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -216653,6 +223005,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -217043,6 +223414,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -217075,6 +223448,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -217211,6 +223586,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -217960,6 +224354,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -217992,6 +224388,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -218128,6 +224526,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -218518,6 +224935,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -218550,6 +224969,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -218686,6 +225107,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -219591,6 +226031,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -219623,6 +226065,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -219759,6 +226203,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -220149,6 +226612,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -220181,6 +226646,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -220317,6 +226784,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -221192,6 +227678,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -221224,6 +227712,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -221360,6 +227850,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -221750,6 +228259,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -221782,6 +228293,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -221918,6 +228431,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -222810,6 +229342,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -222842,6 +229376,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -222978,6 +229514,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -223368,6 +229923,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -223400,6 +229957,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -223536,6 +230095,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -224434,6 +231012,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -224466,6 +231046,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -224602,6 +231184,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -224992,6 +231593,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -225024,6 +231627,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -225160,6 +231765,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -225747,6 +232371,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -225779,6 +232405,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -226300,6 +232928,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -226332,6 +232962,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -226843,6 +233475,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -226875,6 +233509,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -227359,6 +233995,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -227391,6 +234029,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -227527,6 +234167,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -227917,6 +234576,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -227949,6 +234610,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -228085,6 +234748,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -228487,6 +235169,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -228519,6 +235203,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -228655,6 +235341,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -229045,6 +235750,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -229077,6 +235784,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -229213,6 +235922,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -229617,6 +236345,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -229649,6 +236379,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -229785,6 +236517,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -230175,6 +236926,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -230207,6 +236960,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -230343,6 +237098,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -230789,6 +237563,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -230821,6 +237597,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -230957,6 +237735,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -231347,6 +238144,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -231379,6 +238178,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -231515,6 +238316,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -232288,6 +239108,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -232320,6 +239142,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -232456,6 +239280,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -232846,6 +239689,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -232878,6 +239723,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -233014,6 +239861,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -233919,6 +240785,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -233951,6 +240819,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -234087,6 +240957,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -234477,6 +241366,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -234509,6 +241400,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -234645,6 +241538,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -235520,6 +242432,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -235552,6 +242466,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -235688,6 +242604,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -236078,6 +243013,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -236110,6 +243047,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -236246,6 +243185,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -237138,6 +244096,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -237170,6 +244130,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -237306,6 +244268,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -237696,6 +244677,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -237728,6 +244711,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -237864,6 +244849,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -238762,6 +245766,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -238794,6 +245800,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -238930,6 +245938,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -239320,6 +246347,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -239352,6 +246381,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -239488,6 +246519,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -240075,6 +247125,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -240107,6 +247159,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -240628,6 +247682,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -240660,6 +247716,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -241171,6 +248229,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -241203,6 +248263,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -241687,6 +248749,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -241719,6 +248783,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -241855,6 +248921,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -242245,6 +249330,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & GridLayout | {
+                _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
@@ -242277,6 +249364,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
@@ -242413,6 +249502,25 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
             _type: "divider";
             style?: string;
+          } | {
+            _key: string;
+            _type: "gridLayout";
+            columns?: "2" | "3" | "4";
+            content?: Array<{
+              _key: string;
+            } & AudioSamplePlayer | {
+              _key: string;
+            } & BandcampWidget | {
+              _key: string;
+            } & Card | {
+              _key: string;
+            } & ImageBlock | {
+              _key: string;
+            } & RichText | {
+              _key: string;
+            } & SpotifyWidget | {
+              _key: string;
+            } & YouTubeVideo>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -242815,6 +249923,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -242847,6 +249957,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -242983,6 +250095,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -243373,6 +250504,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & GridLayout | {
+              _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
@@ -243405,6 +250538,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -243541,6 +250676,25 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+        } | {
+          _key: string;
+          _type: "gridLayout";
+          columns?: "2" | "3" | "4";
+          content?: Array<{
+            _key: string;
+          } & AudioSamplePlayer | {
+            _key: string;
+          } & BandcampWidget | {
+            _key: string;
+          } & Card | {
+            _key: string;
+          } & ImageBlock | {
+            _key: string;
+          } & RichText | {
+            _key: string;
+          } & SpotifyWidget | {
+            _key: string;
+          } & YouTubeVideo>;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -243945,6 +251099,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -243977,6 +251133,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -244113,6 +251271,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -244503,6 +251680,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & GridLayout | {
+            _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
@@ -244535,6 +251714,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -244671,6 +251852,25 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+      } | {
+        _key: string;
+        _type: "gridLayout";
+        columns?: "2" | "3" | "4";
+        content?: Array<{
+          _key: string;
+        } & AudioSamplePlayer | {
+          _key: string;
+        } & BandcampWidget | {
+          _key: string;
+        } & Card | {
+          _key: string;
+        } & ImageBlock | {
+          _key: string;
+        } & RichText | {
+          _key: string;
+        } & SpotifyWidget | {
+          _key: string;
+        } & YouTubeVideo>;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -245117,6 +252317,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -245149,6 +252351,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -245285,6 +252489,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -245675,6 +252898,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & GridLayout | {
+          _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
@@ -245707,6 +252932,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -245843,6 +253070,25 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+    } | {
+      _key: string;
+      _type: "gridLayout";
+      columns?: "2" | "3" | "4";
+      content?: Array<{
+        _key: string;
+      } & AudioSamplePlayer | {
+        _key: string;
+      } & BandcampWidget | {
+        _key: string;
+      } & Card | {
+        _key: string;
+      } & ImageBlock | {
+        _key: string;
+      } & RichText | {
+        _key: string;
+      } & SpotifyWidget | {
+        _key: string;
+      } & YouTubeVideo>;
     } | {
       _key: string;
       _type: "imageBlock";
