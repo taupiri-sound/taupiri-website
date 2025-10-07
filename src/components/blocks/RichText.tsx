@@ -32,8 +32,22 @@ const RichText = ({
   // Create components with alignment context
   const alignedComponents = createComponents(effectiveTextAlign);
 
+  // Get container positioning classes based on alignment
+  const getContainerAlignClass = (align: TextAlignment) => {
+    switch (align) {
+      case 'left':
+        return 'mr-auto'; // Push container to the left
+      case 'right':
+        return 'ml-auto'; // Push container to the right
+      case 'center':
+        return 'mx-auto'; // Center the container
+      default:
+        return 'mx-auto'; // Default to center
+    }
+  };
+
   const proseContent = (
-    <div className={`prose prose-slate max-w-none ${getTextAlignClass(effectiveTextAlign)}`}>
+    <div className={`prose prose-slate max-w-xl ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}>
       <PortableText value={content} components={alignedComponents} />
     </div>
   );
