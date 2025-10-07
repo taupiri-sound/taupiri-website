@@ -66,6 +66,20 @@ export const structure: StructureResolver = (S) =>
 
       S.divider(),
 
+      // === AUDIO SAMPLES ===
+      S.listItem()
+        .id('audioSamples')
+        .title('🎵 Audio Samples')
+        .child(
+          S.documentTypeList('audioSample')
+            .title('Audio Samples')
+            .defaultOrdering([
+              { field: '_createdAt', direction: 'desc' }
+            ])
+        ),
+
+      S.divider(),
+
       // === SITE MANAGEMENT ===
       S.listItem()
         .title('⚙️ Site Management')

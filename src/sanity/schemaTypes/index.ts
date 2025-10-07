@@ -41,6 +41,7 @@ import { verticalNavDividerType } from './navigation/verticalNavDividerType';
 import { navSectionType } from './navigation/navSectionType';
 import { blogIndexPageType } from './blogIndexPageType';
 import { blogPostType } from './blogPostType';
+import { audioSampleType } from './audioSampleType';
 import { termsAndConditionsType } from './termsAndConditionsType';
 import { privacyPolicyType } from './privacyPolicyType';
 
@@ -53,6 +54,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     pageType,
     blogIndexPageType,
     blogPostType,
+    audioSampleType,
     termsAndConditionsType,
     privacyPolicyType,
     blockContentType,
