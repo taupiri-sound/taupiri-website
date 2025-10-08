@@ -135,11 +135,21 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio) {
+      console.log('AudioSamplePlayer: No audio ref');
+      return;
+    }
 
-    const updateTime = () => setCurrentTime(audio.currentTime);
-    const updateDuration = () => setDuration(audio.duration);
+    const updateTime = () => {
+      console.log('AudioSamplePlayer: Time update', audio.currentTime, 'Duration:', audio.duration);
+      setCurrentTime(audio.currentTime);
+    };
+    const updateDuration = () => {
+      console.log('AudioSamplePlayer: Duration loaded', audio.duration);
+      setDuration(audio.duration);
+    };
     const handleEnded = () => {
+      console.log('AudioSamplePlayer: Track ended');
       if (!isSingleTrack && currentTrackIndex < validSamples.length - 1) {
         // Auto-advance to next track
         setCurrentTrackIndex(prev => prev + 1);
@@ -152,6 +162,8 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
     audio.addEventListener('loadedmetadata', updateDuration);
     audio.addEventListener('ended', handleEnded);
 
+    console.log('AudioSamplePlayer: Event listeners added, audio src:', audio.src);
+
     return () => {
       audio.removeEventListener('timeupdate', updateTime);
       audio.removeEventListener('loadedmetadata', updateDuration);
@@ -159,14 +171,15 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
     };
   }, [currentTrackIndex, validSamples.length, isSingleTrack]);
 
-  // Reset playback when track changes
+  // Reset playback when track changes (NOT when play state changes)
   useEffect(() => {
     setCurrentTime(0);
     setDuration(0);
-    if (isPlaying && audioRef.current) {
-      audioRef.current.play().catch(() => setIsPlaying(false));
+    // Load the new track's metadata
+    if (audioRef.current) {
+      audioRef.current.load();
     }
-  }, [currentTrackIndex, isPlaying]);
+  }, [currentTrackIndex]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -178,23 +191,38 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
     if (!audioRef.current) return;
 
     if (isPlaying) {
+      console.log('AudioSamplePlayer: Pausing');
       audioRef.current.pause();
     } else {
-      audioRef.current.play().catch(() => setIsPlaying(false));
+      console.log('AudioSamplePlayer: Playing');
+      audioRef.current.play().catch((err) => {
+        console.error('AudioSamplePlayer: Play failed', err);
+        setIsPlaying(false);
+      });
     }
     setIsPlaying(!isPlaying);
   };
 
   const playTrack = (index: number) => {
+    console.log('AudioSamplePlayer: playTrack called with index', index);
     // Stop current track if playing
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
-    // Switch to new track and start playing
+    // Switch to new track
     setCurrentTrackIndex(index);
     setCurrentTime(0);
-    setIsPlaying(true);
+    // Start playing after a brief delay to let the track load
+    setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.play().catch((err) => {
+          console.error('AudioSamplePlayer: Play failed in playTrack', err);
+          setIsPlaying(false);
+        });
+        setIsPlaying(true);
+      }
+    }, 50);
   };
 
   const skipToNext = () => {
@@ -211,6 +239,7 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
 
   const handleTimelineChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTime = parseFloat(e.target.value);
+    console.log('AudioSamplePlayer: Timeline changed to', newTime);
     setCurrentTime(newTime);
     if (audioRef.current) {
       audioRef.current.currentTime = newTime;
@@ -247,6 +276,11 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
   };
 
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  // Debug logging for progress
+  useEffect(() => {
+    console.log('AudioSamplePlayer: Progress update - currentTime:', currentTime, 'duration:', duration, 'percentage:', progressPercentage);
+  }, [currentTime, duration, progressPercentage]);
 
   if (!currentTrack) {
     return (
@@ -303,31 +337,29 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
 
         {/* Timeline bar - full width at bottom */}
         <div className='bg-brand-white-dark px-6 py-4 border-t border-brand-primary/10'>
-          <div className='flex items-center justify-end gap-3 mb-2 text-body-sm font-medium text-brand-secondary'>
-            <span>{formatTime(currentTime)}</span>
-            <span>/</span>
-            <span>{formatTime(duration)}</span>
-          </div>
-          <div className='relative h-2 group cursor-pointer'>
-            <div className='absolute inset-0 bg-brand-primary/20 rounded-full pointer-events-none' />
-            <div
-              className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150 pointer-events-none'
-              style={{ width: `${progressPercentage}%` }}
-            />
-            <input
-              type='range'
-              min='0'
-              max={duration || 0}
-              value={currentTime}
-              onChange={handleTimelineChange}
-              className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
-              style={{ zIndex: 10 }}
-              aria-label='Audio timeline'
-            />
-            <div
-              className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 pointer-events-none'
-              style={{ left: `calc(${progressPercentage}% - 0.5rem)` }}
-            />
+          <div className='flex items-center gap-3 mb-2'>
+            <span className='text-body-sm font-medium'>{formatTime(currentTime)}</span>
+            <div className='relative flex-1 h-2 group'>
+              <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
+              <div
+                className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
+                style={{ width: `${progressPercentage}%` }}
+              />
+              <input
+                type='range'
+                min='0'
+                max={duration || 0}
+                value={currentTime}
+                onChange={handleTimelineChange}
+                className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
+                aria-label='Audio timeline'
+              />
+              <div
+                className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
+                style={{ left: `calc(${progressPercentage}% - 0.5rem)` }}
+              />
+            </div>
+            <span className='text-body-sm font-medium'>{formatTime(duration)}</span>
           </div>
 
           {/* Volume control */}
@@ -478,31 +510,29 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
 
       {/* Timeline bar - full width at bottom */}
       <div className='bg-brand-white-dark px-6 py-4 border-t border-brand-primary/10'>
-        <div className='flex items-center justify-end gap-3 mb-2 text-body-sm font-medium text-brand-secondary'>
-          <span>{formatTime(currentTime)}</span>
-          <span>/</span>
-          <span>{formatTime(duration)}</span>
-        </div>
-        <div className='relative h-2 group cursor-pointer'>
-          <div className='absolute inset-0 bg-brand-primary/20 rounded-full pointer-events-none' />
-          <div
-            className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150 pointer-events-none'
-            style={{ width: `${progressPercentage}%` }}
-          />
-          <input
-            type='range'
-            min='0'
-            max={duration || 0}
-            value={currentTime}
-            onChange={handleTimelineChange}
-            className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
-            style={{ zIndex: 10 }}
-            aria-label='Audio timeline'
-          />
-          <div
-            className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 pointer-events-none'
-            style={{ left: `calc(${progressPercentage}% - 0.5rem)` }}
-          />
+        <div className='flex items-center gap-3 mb-2'>
+          <span className='text-body-sm font-medium'>{formatTime(currentTime)}</span>
+          <div className='relative flex-1 h-2 group'>
+            <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
+            <div
+              className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
+              style={{ width: `${progressPercentage}%` }}
+            />
+            <input
+              type='range'
+              min='0'
+              max={duration || 0}
+              value={currentTime}
+              onChange={handleTimelineChange}
+              className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
+              aria-label='Audio timeline'
+            />
+            <div
+              className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
+              style={{ left: `calc(${progressPercentage}% - 0.5rem)` }}
+            />
+          </div>
+          <span className='text-body-sm font-medium'>{formatTime(duration)}</span>
         </div>
 
         {/* Volume control */}
