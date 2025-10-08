@@ -2,28 +2,35 @@ import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { SanityLiveEditingProps } from '../../utils/sectionHelpers';
 import type { CLIENTS_QUERYResult } from '@/sanity/types';
+import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 
 interface ClientListProps extends Omit<SanityLiveEditingProps, 'titlePath' | 'subtitlePath'> {
   className?: string;
   clientsData?: CLIENTS_QUERYResult | null;
 }
 
-const ClientList: React.FC<ClientListProps> = ({ className = '', clientsData }) => {
+const ClientList: React.FC<ClientListProps> = ({
+  className = '',
+  clientsData,
+  documentId,
+  documentType,
+}) => {
   if (!clientsData) {
     return null;
   }
 
-  // Combine all levels into a single array with their level info
-  const allClients: Array<{ name: string; level: number }> = [];
+  // Combine all levels into a single array with their level info and array index
+  const allClients: Array<{ name: string; level: number; levelKey: string; arrayIndex: number }> =
+    [];
 
   // Add clients from each level
   [1, 2, 3, 4, 5].forEach((level) => {
     const levelKey = `level${level}` as 'level1' | 'level2' | 'level3' | 'level4' | 'level5';
     const levelClients = clientsData[levelKey];
     if (levelClients && Array.isArray(levelClients)) {
-      levelClients.forEach((client) => {
+      levelClients.forEach((client, arrayIndex) => {
         if (client && typeof client === 'string') {
-          allClients.push({ name: stegaClean(client), level });
+          allClients.push({ name: stegaClean(client), level, levelKey, arrayIndex });
         }
       });
     }
@@ -59,7 +66,17 @@ const ClientList: React.FC<ClientListProps> = ({ className = '', clientsData }) 
       <div className='flex flex-wrap items-baseline justify-center gap-x-1 md:gap-x-2'>
         {allClients.map((client, index) => (
           <React.Fragment key={`${client.name}-${index}`}>
-            <div className={`${getFontSizeClass(client.level)} text-center`}>{client.name}</div>
+            <div
+              {...(documentId && documentType
+                ? createSanityDataAttribute(
+                    documentId,
+                    documentType,
+                    `${client.levelKey}[${client.arrayIndex}]`
+                  )
+                : {})}
+              className={`${getFontSizeClass(client.level)} text-center cursor-pointer hover:opacity-80 transition-opacity`}>
+              {client.name}
+            </div>
             {index < allClients.length - 1 && (
               <span className={`${getFontSizeClass(client.level)}`}>•</span>
             )}

@@ -356,8 +356,8 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       return (
         <BlockWrapper key={clientListBlock._key}>
           <ClientList
-            documentId={documentId}
-            documentType={documentType}
+            documentId={clientsData?._id || 'clients'}
+            documentType="clients"
             clientsData={clientsData}
           />
         </BlockWrapper>
