@@ -186,7 +186,14 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
   };
 
   const playTrack = (index: number) => {
+    // Stop current track if playing
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    // Switch to new track and start playing
     setCurrentTrackIndex(index);
+    setCurrentTime(0);
     setIsPlaying(true);
   };
 
@@ -301,10 +308,10 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
             <span>/</span>
             <span>{formatTime(duration)}</span>
           </div>
-          <div className='relative h-2 group'>
-            <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
+          <div className='relative h-2 group cursor-pointer'>
+            <div className='absolute inset-0 bg-brand-primary/20 rounded-full pointer-events-none' />
             <div
-              className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
+              className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150 pointer-events-none'
               style={{ width: `${progressPercentage}%` }}
             />
             <input
@@ -314,10 +321,11 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
               value={currentTime}
               onChange={handleTimelineChange}
               className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
+              style={{ zIndex: 10 }}
               aria-label='Audio timeline'
             />
             <div
-              className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
+              className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 pointer-events-none'
               style={{ left: `calc(${progressPercentage}% - 0.5rem)` }}
             />
           </div>
@@ -331,10 +339,10 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
                 aria-label={isMuted ? 'Unmute' : 'Mute'}>
                 {getVolumeIcon()}
               </button>
-              <div className='relative w-32 h-2 group'>
-                <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
+              <div className='relative w-32 h-2 group cursor-pointer'>
+                <div className='absolute inset-0 bg-brand-primary/20 rounded-full pointer-events-none' />
                 <div
-                  className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
+                  className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150 pointer-events-none'
                   style={{ width: `${volume * 100}%` }}
                 />
                 <input
@@ -345,10 +353,11 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
                   value={volume}
                   onChange={handleVolumeChange}
                   className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
+                  style={{ zIndex: 10 }}
                   aria-label='Volume'
                 />
                 <div
-                  className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
+                  className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 pointer-events-none'
                   style={{ left: `calc(${volume * 100}% - 0.5rem)` }}
                 />
               </div>
@@ -451,12 +460,6 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
               ) : (
                 <PlaceholderImage />
               )}
-              {/* Playing indicator */}
-              {index === currentTrackIndex && isPlaying && (
-                <div className='absolute inset-0 bg-black/40 flex items-center justify-center'>
-                  <PauseIcon className='w-6 h-6 text-white' />
-                </div>
-              )}
             </div>
 
             {/* Track info */}
@@ -480,10 +483,10 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
           <span>/</span>
           <span>{formatTime(duration)}</span>
         </div>
-        <div className='relative h-2 group'>
-          <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
+        <div className='relative h-2 group cursor-pointer'>
+          <div className='absolute inset-0 bg-brand-primary/20 rounded-full pointer-events-none' />
           <div
-            className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
+            className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150 pointer-events-none'
             style={{ width: `${progressPercentage}%` }}
           />
           <input
@@ -493,10 +496,11 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
             value={currentTime}
             onChange={handleTimelineChange}
             className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
+            style={{ zIndex: 10 }}
             aria-label='Audio timeline'
           />
           <div
-            className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
+            className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 pointer-events-none'
             style={{ left: `calc(${progressPercentage}% - 0.5rem)` }}
           />
         </div>
@@ -510,10 +514,10 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
               aria-label={isMuted ? 'Unmute' : 'Mute'}>
               {getVolumeIcon()}
             </button>
-            <div className='relative w-32 h-2 group'>
-              <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
+            <div className='relative w-32 h-2 group cursor-pointer'>
+              <div className='absolute inset-0 bg-brand-primary/20 rounded-full pointer-events-none' />
               <div
-                className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
+                className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150 pointer-events-none'
                 style={{ width: `${volume * 100}%` }}
               />
               <input
@@ -524,10 +528,11 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
                 value={volume}
                 onChange={handleVolumeChange}
                 className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
+                style={{ zIndex: 10 }}
                 aria-label='Volume'
               />
               <div
-                className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
+                className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 pointer-events-none'
                 style={{ left: `calc(${volume * 100}% - 0.5rem)` }}
               />
             </div>
