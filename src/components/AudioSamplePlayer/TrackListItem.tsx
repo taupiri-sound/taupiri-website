@@ -15,7 +15,7 @@ const TrackListItem = ({ sample, index, isCurrentTrack, onPlayTrack }: TrackList
   return (
     <button
       onClick={() => onPlayTrack(index)}
-      className={`w-full p-4 hover:bg-brand-primary/5 transition-colors text-left flex items-center gap-4 ${
+      className={`w-full p-4 hover:bg-brand-primary/5 transition-colors text-left flex items-center cursor-pointer gap-4 ${
         isCurrentTrack ? 'bg-brand-primary/10' : ''
       }`}>
       {/* Track image */}

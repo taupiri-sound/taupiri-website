@@ -41,44 +41,47 @@ const SingleTrackPlayer = ({
 }: SingleTrackPlayerProps) => {
   return (
     <div
-      className='relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-lg text-left'
+      className='relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left'
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
-      {/* Main content area */}
-      <div className='relative p-6'>
-        {/* Image with overlaid play button */}
-        <div className='relative w-full aspect-square mb-4 rounded-lg overflow-hidden group'>
-          {track.image?.asset ? (
-            <UnifiedImage
-              src={track.image}
-              alt={`${track.songName} artwork`}
-              mode='fill'
-              sizeContext='hero'
-              objectFit='cover'
-              documentId={track._id}
-              documentType={track._type || 'audioSample'}
-              fieldPath='image'
-            />
-          ) : (
-            <PlaceholderImage />
-          )}
-          {/* Large play/pause button overlay */}
-          <div className='absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors'>
+      {/* Header */}
+      <div className='bg-brand-white-dark border-b border-brand-primary/10 p-4'>
+        <div className='flex items-center gap-4'>
+          {/* Current track image */}
+          <div className='relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0'>
+            {track.image?.asset ? (
+              <UnifiedImage
+                src={track.image}
+                alt={`${track.songName} artwork`}
+                mode='fill'
+                sizeContext='thumbnail'
+                objectFit='cover'
+                documentId={track._id}
+                documentType={track._type || 'audioSample'}
+                fieldPath='image'
+              />
+            ) : (
+              <PlaceholderImage />
+            )}
+          </div>
+
+          {/* Current track info */}
+          <div className='flex-1 min-w-0'>
+            <p className='text-h5 truncate'>{track.songName}</p>
+            <p className='text-body-lg text-brand-secondary truncate'>{track.artistName}</p>
+            {track.services && track.services.length > 0 && (
+              <p className='text-body-base text-subtle truncate'>{track.services.join(' • ')}</p>
+            )}
+          </div>
+
+          {/* Playback controls */}
+          <div className='flex items-center gap-2 flex-shrink-0'>
             <button
               onClick={onPlayPause}
-              className='w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/90 hover:bg-white border-4 border-brand-primary hover:scale-110 transition-all duration-200 flex items-center justify-center text-brand-primary shadow-2xl'
+              className='w-12 h-12 rounded-full border-2 border-brand-primary bg-white hover:bg-brand-primary hover:text-white transition-all duration-200 flex items-center justify-center text-brand-primary'
               aria-label={isPlaying ? 'Pause' : 'Play'}>
-              {isPlaying ? <PauseIcon className='w-10 h-10 md:w-12 md:h-12' /> : <PlayIcon className='w-10 h-10 md:w-12 md:h-12' />}
+              {isPlaying ? <PauseIcon /> : <PlayIcon />}
             </button>
           </div>
-        </div>
-
-        {/* Track info */}
-        <div className='text-center mb-4'>
-          <h3 className='text-h3 mb-2'>{track.songName}</h3>
-          <p className='text-body-lg text-brand-secondary mb-2'>{track.artistName}</p>
-          {track.services && track.services.length > 0 && (
-            <p className='text-body-sm text-subtle'>{track.services.join(' • ')}</p>
-          )}
         </div>
       </div>
 

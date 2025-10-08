@@ -52,7 +52,7 @@ const MultiTrackPlayer = ({
 }: MultiTrackPlayerProps) => {
   return (
     <div
-      className='relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-lg text-left'
+      className='relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left'
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
       {/* Currently playing track header */}
       <div className='bg-brand-white-dark border-b border-brand-primary/10 p-4'>
@@ -77,10 +77,12 @@ const MultiTrackPlayer = ({
 
           {/* Current track info */}
           <div className='flex-1 min-w-0'>
-            <h3 className='text-h5 truncate'>{currentTrack.songName}</h3>
-            <p className='text-body-base text-brand-secondary truncate'>{currentTrack.artistName}</p>
+            <p className='text-h5 truncate'>{currentTrack.songName}</p>
+            <p className='text-body-lg text-brand-secondary truncate'>{currentTrack.artistName}</p>
             {currentTrack.services && currentTrack.services.length > 0 && (
-              <p className='text-body-sm text-subtle truncate'>{currentTrack.services.join(' • ')}</p>
+              <p className='text-body-base text-subtle truncate'>
+                {currentTrack.services.join(' • ')}
+              </p>
             )}
           </div>
 
@@ -110,19 +112,6 @@ const MultiTrackPlayer = ({
         </div>
       </div>
 
-      {/* Playlist */}
-      <div className='divide-y divide-brand-primary/10'>
-        {tracks.map((sample, index) => (
-          <TrackListItem
-            key={sample._id || index}
-            sample={sample}
-            index={index}
-            isCurrentTrack={index === currentTrackIndex}
-            onPlayTrack={onPlayTrack}
-          />
-        ))}
-      </div>
-
       {/* Timeline bar - full width at bottom */}
       <div className='bg-brand-white-dark px-6 py-4 border-t border-brand-primary/10'>
         <TimelineBar
@@ -141,6 +130,19 @@ const MultiTrackPlayer = ({
             onToggleMute={onToggleMute}
           />
         )}
+      </div>
+
+      {/* Playlist */}
+      <div className='divide-y divide-brand-primary/10'>
+        {tracks.map((sample, index) => (
+          <TrackListItem
+            key={sample._id || index}
+            sample={sample}
+            index={index}
+            isCurrentTrack={index === currentTrackIndex}
+            onPlayTrack={onPlayTrack}
+          />
+        ))}
       </div>
     </div>
   );

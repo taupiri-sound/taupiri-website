@@ -45,7 +45,7 @@ const VolumeControl = ({ volume, isMuted, onVolumeChange, onToggleMute }: Volume
           style={{ left: `calc(${volume * 100}% - 0.5rem)` }}
         />
       </div>
-      <span className='text-body-sm text-brand-secondary font-medium min-w-[3rem]'>
+      <span className='text-body-sm text-brand-secondary font-medium'>
         {Math.round(volume * 100)}%
       </span>
     </div>
