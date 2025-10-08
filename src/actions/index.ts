@@ -5,7 +5,7 @@ export { getHomePage, getPageBySlug, getAllPages } from './pages';
 export { getAllBlogPosts, getBlogIndexPage, getBlogPostBySlug, getAllBlogPostsForSitemap } from './blog';
 
 // Site data actions
-export { getHeader, getFooter, getSiteSettings, getCompanyLinks, getLegalPagesVisibility } from './siteData';
+export { getHeader, getFooter, getSiteSettings, getCompanyLinks, getLegalPagesVisibility, getClients } from './siteData';
 
 // Legal actions
 export { getTermsAndConditions, getPrivacyPolicy } from './legal';

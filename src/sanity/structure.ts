@@ -66,6 +66,21 @@ export const structure: StructureResolver = (S) =>
 
       S.divider(),
 
+      // === CLIENTS ===
+      S.listItem()
+        .id('clients')
+        .schemaType('clients')
+        .title('👥 Clients')
+        .child(
+          S.editor()
+            .id('clients')
+            .schemaType('clients')
+            .documentId('clients')
+            .title('Clients')
+        ),
+
+      S.divider(),
+
       // === AUDIO SAMPLES ===
       S.listItem()
         .id('audioSamples')

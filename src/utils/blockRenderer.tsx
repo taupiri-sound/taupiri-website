@@ -2,6 +2,7 @@ import React from 'react';
 import { createDataAttribute } from 'next-sanity';
 import type {
   COMPANY_LINKS_QUERYResult,
+  CLIENTS_QUERYResult,
   RichText as RichTextType,
   Quote as QuoteType,
   TwoColumnLayout as TwoColumnLayoutType,
@@ -18,6 +19,7 @@ import type {
   BlockListWithStats as BlockListWithStatsType,
   CheckList as CheckListType,
   ItemList as ItemListType,
+  ClientList as ClientListType,
   Divider as DividerType,
 } from '@/sanity/types';
 import type { SiteSettingsProps } from '@/types/shared';
@@ -39,6 +41,7 @@ import CompanyLinksBlock from '@/components/_blocks/CompanyLinksBlock';
 import BlockListWithStats from '@/components/_blocks/BlockListWithStats';
 import CheckList from '@/components/_blocks/CheckList';
 import ItemList from '@/components/_blocks/ItemList';
+import ClientList from '@/components/_blocks/ClientList';
 import Divider from '@/components/UI/Divider';
 
 interface RenderBlockConfig {
@@ -53,6 +56,7 @@ interface RenderBlockOptions {
   blockPath: string;
   siteSettings?: SiteSettingsProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
+  clientsData?: CLIENTS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
   config?: RenderBlockConfig;
 }
@@ -78,6 +82,7 @@ type BlockType =
   | WithKey<BlockListWithStatsType>
   | WithKey<CheckListType>
   | WithKey<ItemListType>
+  | WithKey<ClientListType>
   | WithKey<DividerType>;
 
 /**
@@ -91,6 +96,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     blockPath,
     siteSettings,
     companyLinks,
+    clientsData,
     alignment = 'center',
     config,
   } = options;
@@ -341,6 +347,19 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       return (
         <BlockWrapper key={itemListBlock._key}>
           <ItemList {...itemListBlock} inheritAlignment={alignment} />
+        </BlockWrapper>
+      );
+    }
+
+    case 'clientList': {
+      const clientListBlock = typedBlock as WithKey<ClientListType>;
+      return (
+        <BlockWrapper key={clientListBlock._key}>
+          <ClientList
+            documentId={documentId}
+            documentType={documentType}
+            clientsData={clientsData}
+          />
         </BlockWrapper>
       );
     }

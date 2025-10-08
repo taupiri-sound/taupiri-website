@@ -32,6 +32,7 @@ import { companyLinksBlockType } from './blocks/companyLinksBlockType';
 import { blockListWithStatsType } from './blocks/blockListWithStatsType';
 import { checkListType } from './blocks/checkListType';
 import { itemListType } from './blocks/itemListType';
+import { clientListType } from './blocks/clientListType';
 import { siteSettingsType } from './siteSettingsType';
 import { companyLinksType } from './companyLinksType';
 import { companyLinksArrayType } from './shared/socialLinksArrayType';
@@ -43,6 +44,7 @@ import { navSectionType } from './navigation/navSectionType';
 import { blogIndexPageType } from './blogIndexPageType';
 import { blogPostType } from './blogPostType';
 import { audioSampleType } from './audioSampleType';
+import { clientsType } from './singletons/clients';
 import { termsAndConditionsType } from './termsAndConditionsType';
 import { privacyPolicyType } from './privacyPolicyType';
 
@@ -56,6 +58,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blogIndexPageType,
     blogPostType,
     audioSampleType,
+    clientsType,
     termsAndConditionsType,
     privacyPolicyType,
     blockContentType,
@@ -88,6 +91,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blockListWithStatsType,
     checkListType,
     itemListType,
+    clientListType,
     // Shared Components
     companyLinksArrayType,
     ctaListType,

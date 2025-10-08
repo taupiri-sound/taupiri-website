@@ -2,7 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
-import { getPrivacyPolicy, getSiteSettings, getCompanyLinks } from '@/actions';
+import { getPrivacyPolicy, getSiteSettings, getCompanyLinks, getClients } from '@/actions';
 import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 import {
@@ -35,10 +35,11 @@ export async function generateMetadata() {
 }
 
 const PrivacyPolicyPage = async () => {
-  const [privacyData, siteSettings, companyLinks] = await Promise.all([
+  const [privacyData, siteSettings, companyLinks, clientsData] = await Promise.all([
     getPrivacyPolicy(),
     getSiteSettings(),
     getCompanyLinks(),
+    getClients(),
   ]);
 
   // If the page is hidden or doesn't exist, show 404
@@ -112,6 +113,7 @@ const PrivacyPolicyPage = async () => {
                 : undefined
             }
             companyLinks={companyLinks}
+            clientsData={clientsData}
             alignment='left'
           />
         )}

@@ -10,6 +10,7 @@ export const commonContentBlocks = [
   defineArrayMember({ type: 'blockListWithStats' }),
   defineArrayMember({ type: 'checkList' }),
   defineArrayMember({ type: 'itemList' }),
+  defineArrayMember({ type: 'clientList' }),
   defineArrayMember({ type: 'quote' }),
   defineArrayMember({ type: 'imageBlock' }),
   defineArrayMember({ type: 'imageGallery' }),

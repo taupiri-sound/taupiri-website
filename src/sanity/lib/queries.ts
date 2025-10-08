@@ -590,3 +590,14 @@ export const LEGAL_PAGES_VISIBILITY_QUERY = defineQuery(`{
   "termsAndConditions": *[_id == "termsAndConditions"][0]{_id, hide},
   "privacyPolicy": *[_id == "privacyPolicy"][0]{_id, hide}
 }`);
+
+// Clients query
+export const CLIENTS_QUERY = defineQuery(`*[_id == "clients"][0]{
+  _id,
+  _type,
+  level1,
+  level2,
+  level3,
+  level4,
+  level5
+}`);

@@ -52,6 +52,7 @@ export default defineConfig({
             'homePage',
             'blogIndexPage',
             'companyLinks',
+            'clients',
             'termsAndConditions',
             'privacyPolicy',
           ].includes(item.templateId)
@@ -78,7 +79,10 @@ export default defineConfig({
             document.head.appendChild(link);
           }
         }
-        return props.renderDefault(props);
+        // Filter out non-DOM props to avoid React warnings
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { disableTransition, ...safeProps } = props as typeof props & { disableTransition?: boolean };
+        return props.renderDefault(safeProps);
       },
     },
   },

@@ -1,7 +1,7 @@
 import React from 'react';
 import PageBuilder from '@/components/PageBuilder';
 import Hero from '@/components/HomeHero/Hero';
-import { getHomePage, getSiteSettings, getCompanyLinks } from '@/actions';
+import { getHomePage, getSiteSettings, getCompanyLinks, getClients } from '@/actions';
 import type { PAGE_QUERYResult } from '@/sanity/types';
 import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
@@ -23,10 +23,11 @@ export async function generateMetadata() {
 }
 
 const Page = async () => {
-  const [page, siteSettings, companyLinks] = await Promise.all([
+  const [page, siteSettings, companyLinks, clientsData] = await Promise.all([
     getHomePage(),
     getSiteSettings(),
     getCompanyLinks(),
+    getClients(),
   ]);
 
   if (!page) {
@@ -66,6 +67,7 @@ const Page = async () => {
                 : undefined
             }
             companyLinks={companyLinks}
+            clientsData={clientsData}
             alignment='center'
           />
         </Container>
