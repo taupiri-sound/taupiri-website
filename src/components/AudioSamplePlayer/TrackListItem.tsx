@@ -2,6 +2,7 @@ import React from 'react';
 import UnifiedImage from '@/components/UI/UnifiedImage';
 import PlaceholderImage from './PlaceholderImage';
 import { formatTime } from './utils';
+import { useAudioDuration } from './useAudioDuration';
 import type { AudioSample } from './types';
 
 interface TrackListItemProps {
@@ -12,6 +13,10 @@ interface TrackListItemProps {
 }
 
 const TrackListItem = ({ sample, index, isCurrentTrack, onPlayTrack }: TrackListItemProps) => {
+  const duration = useAudioDuration(
+    sample.audioFile?.asset?.url,
+    sample.audioFile?.asset?.duration
+  );
   return (
     <button
       onClick={() => onPlayTrack(index)}
@@ -44,7 +49,7 @@ const TrackListItem = ({ sample, index, isCurrentTrack, onPlayTrack }: TrackList
 
       {/* Duration */}
       <div className='text-body-sm text-subtle flex-shrink-0'>
-        {formatTime(sample.audioFile?.asset?.duration || 0)}
+        {duration > 0 ? formatTime(duration) : '—'}
       </div>
     </button>
   );
