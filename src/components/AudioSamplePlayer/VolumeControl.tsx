@@ -19,7 +19,7 @@ const VolumeControl = ({ volume, isMuted, onVolumeChange, onToggleMute }: Volume
     <div className='flex items-center gap-2 justify-center'>
       <button
         onClick={onToggleMute}
-        className='text-brand-primary hover:text-brand-secondary transition-colors'
+        className='text-brand-primary hover:text-brand-secondary transition-colors cursor-pointer'
         aria-label={isMuted ? 'Unmute' : 'Mute'}>
         {getVolumeIcon()}
       </button>

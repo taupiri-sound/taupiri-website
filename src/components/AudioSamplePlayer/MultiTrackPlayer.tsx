@@ -59,7 +59,7 @@ const MultiTrackPlayer = ({
         <div className='flex flex-col md:flex-row items-start md:items-center gap-4'>
           <div className='flex items-center gap-4 w-full md:w-auto'>
             {/* Current track image with play button overlay */}
-            <div className='relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 group'>
+            <div className='relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 group cursor-pointer'>
               <div className='absolute inset-0 z-0'>
                 {currentTrack.image?.asset ? (
                   <UnifiedImage
@@ -81,7 +81,7 @@ const MultiTrackPlayer = ({
               {/* Play/Pause button */}
               <button
                 onClick={onPlayPause}
-                className='absolute inset-0 z-20 flex items-center justify-center text-white hover:scale-110 transition-transform'
+                className='absolute inset-0 z-20 flex items-center justify-center text-white hover:scale-110 transition-transform cursor-pointer'
                 aria-label={isPlaying ? 'Pause' : 'Play'}>
                 {isPlaying ? <PauseIcon /> : <PlayIcon />}
               </button>
@@ -107,14 +107,14 @@ const MultiTrackPlayer = ({
               <button
                 onClick={onSkipPrevious}
                 disabled={currentTrackIndex === 0}
-                className='p-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+                className='p-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors cursor-pointer'
                 aria-label='Previous track'>
                 <SkipPreviousIcon />
               </button>
               <button
                 onClick={onSkipNext}
                 disabled={currentTrackIndex === tracks.length - 1}
-                className='p-2 mr-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+                className='p-2 mr-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors cursor-pointer'
                 aria-label='Next track'>
                 <SkipNextIcon />
               </button>
@@ -144,14 +144,14 @@ const MultiTrackPlayer = ({
             <button
               onClick={onSkipPrevious}
               disabled={currentTrackIndex === 0}
-              className='p-1 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+              className='p-1 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors cursor-pointer'
               aria-label='Previous track'>
               <SkipPreviousIcon />
             </button>
             <button
               onClick={onSkipNext}
               disabled={currentTrackIndex === tracks.length - 1}
-              className='p-1 mr-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+              className='p-1 mr-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors cursor-pointer'
               aria-label='Next track'>
               <SkipNextIcon />
             </button>
