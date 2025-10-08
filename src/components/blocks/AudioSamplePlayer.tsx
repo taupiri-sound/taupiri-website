@@ -93,8 +93,16 @@ const AudioSamplePlayer = ({
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(0.7);
   const [isMuted, setIsMuted] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
 
   const audioUrl = audioFile?.asset?.url;
+
+  // Detect iOS devices where volume control doesn't work
+  useEffect(() => {
+    const checkIsIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    setIsIOS(checkIsIOS);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -251,39 +259,41 @@ const AudioSamplePlayer = ({
               {isPlaying ? <PauseIcon /> : <PlayIcon />}
             </button>
 
-            {/* Volume Control */}
-            <div className='flex items-center gap-2 flex-1 max-w-xs'>
-              <button
-                onClick={toggleMute}
-                className='text-brand-primary hover:text-brand-secondary transition-colors'
-                aria-label={isMuted ? 'Unmute' : 'Mute'}>
-                {getVolumeIcon()}
-              </button>
-              <div className='relative flex-1 h-2 group'>
-                <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
-                <div
-                  className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
-                  style={{ width: `${volume * 100}%` }}
-                />
-                <input
-                  type='range'
-                  min='0'
-                  max='1'
-                  step='0.01'
-                  value={volume}
-                  onChange={handleVolumeChange}
-                  className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
-                  aria-label='Volume'
-                />
-                <div
-                  className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
-                  style={{ left: `calc(${volume * 100}% - 0.5rem)` }}
-                />
+            {/* Volume Control - Hidden on iOS where it doesn't work */}
+            {!isIOS && (
+              <div className='flex items-center gap-2 flex-1 max-w-xs'>
+                <button
+                  onClick={toggleMute}
+                  className='text-brand-primary hover:text-brand-secondary transition-colors'
+                  aria-label={isMuted ? 'Unmute' : 'Mute'}>
+                  {getVolumeIcon()}
+                </button>
+                <div className='relative flex-1 h-2 group'>
+                  <div className='absolute inset-0 bg-brand-primary/20 rounded-full' />
+                  <div
+                    className='absolute left-0 top-0 h-full bg-brand-primary rounded-full transition-all duration-150'
+                    style={{ width: `${volume * 100}%` }}
+                  />
+                  <input
+                    type='range'
+                    min='0'
+                    max='1'
+                    step='0.01'
+                    value={volume}
+                    onChange={handleVolumeChange}
+                    className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
+                    aria-label='Volume'
+                  />
+                  <div
+                    className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100'
+                    style={{ left: `calc(${volume * 100}% - 0.5rem)` }}
+                  />
+                </div>
+                <span className='text-body-sm text-brand-secondary font-medium min-w-[3rem]'>
+                  {Math.round(volume * 100)}%
+                </span>
               </div>
-              <span className='text-body-sm text-brand-secondary font-medium min-w-[3rem]'>
-                {Math.round(volume * 100)}%
-              </span>
-            </div>
+            )}
           </div>
         </div>
       </div>
