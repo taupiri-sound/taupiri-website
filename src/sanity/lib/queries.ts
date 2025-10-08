@@ -45,9 +45,10 @@ const closingCardProjection = `{
 // Audio sample player projection that expands the audio sample reference
 const audioSamplePlayerProjection = `{
   ...,
-  audioSample->{
+  audioSamples[]->{
     _id,
     _type,
+    _key,
     songName,
     artistName,
     services,

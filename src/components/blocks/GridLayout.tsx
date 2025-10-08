@@ -108,8 +108,8 @@ const GridLayout = ({
         );
 
       case 'audioSamplePlayer': {
-        // Extract the expanded audioSample data from the GROQ query
-        const audioSample = item.audioSample as {
+        // Extract the expanded audioSamples data from the GROQ query
+        const audioSamples = (item.audioSamples || []) as Array<{
           _id?: string;
           _type?: string;
           songName?: string;
@@ -131,20 +131,16 @@ const GridLayout = ({
               duration?: number;
             };
           };
-        };
+        }>;
 
-        if (!audioSample) return null;
+        if (!audioSamples || audioSamples.length === 0) return null;
 
         return (
           <div key={key} className={itemClasses}>
             <AudioSamplePlayer
-              songName={audioSample.songName || 'Untitled'}
-              artistName={audioSample.artistName || 'Unknown Artist'}
-              services={audioSample.services || []}
-              image={audioSample.image}
-              audioFile={audioSample.audioFile || { asset: undefined }}
-              documentId={audioSample._id}
-              documentType={audioSample._type || 'audioSample'}
+              audioSamples={audioSamples}
+              documentId={documentId}
+              documentType={documentType}
             />
           </div>
         );

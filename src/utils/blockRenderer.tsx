@@ -256,8 +256,8 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     case 'audioSamplePlayer': {
       const audioSamplePlayerBlock = typedBlock as WithKey<AudioSamplePlayerType>;
 
-      // The audioSample reference is expanded by GROQ query
-      const audioSample = audioSamplePlayerBlock.audioSample as {
+      // The audioSamples references are expanded by GROQ query
+      const audioSamples = (audioSamplePlayerBlock.audioSamples || []) as Array<{
         _id?: string;
         _type?: string;
         songName?: string;
@@ -279,22 +279,18 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             duration?: number;
           };
         };
-      };
+      }>;
 
-      if (!audioSample) {
+      if (!audioSamples || audioSamples.length === 0) {
         return null;
       }
 
       return (
         <BlockWrapper key={audioSamplePlayerBlock._key}>
           <AudioSamplePlayer
-            songName={audioSample.songName || 'Untitled'}
-            artistName={audioSample.artistName || 'Unknown Artist'}
-            services={audioSample.services || []}
-            image={audioSample.image}
-            audioFile={audioSample.audioFile || { asset: undefined }}
-            documentId={audioSample._id}
-            documentType={audioSample._type || 'audioSample'}
+            audioSamples={audioSamples}
+            documentId={documentId}
+            documentType={documentType}
           />
         </BlockWrapper>
       );

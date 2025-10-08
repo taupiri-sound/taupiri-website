@@ -8,25 +8,38 @@ export const audioSamplePlayerType = defineType({
   icon: PlayIcon,
   fields: [
     defineField({
-      name: 'audioSample',
-      title: 'Select Audio Sample',
-      type: 'reference',
-      to: [{ type: 'audioSample' }],
-      description: 'Select an audio sample to display with a custom player',
-      validation: (Rule) => Rule.required().error('Please select an audio sample'),
+      name: 'audioSamples',
+      title: 'Audio Samples',
+      type: 'array',
+      description: 'Add one or more audio samples. Drag to reorder. Single sample shows compact player, multiple samples show playlist view.',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'audioSample' }],
+        },
+      ],
+      validation: (Rule) => Rule.required().min(1).error('Please add at least one audio sample'),
     }),
   ],
   preview: {
     select: {
-      songName: 'audioSample.songName',
-      artistName: 'audioSample.artistName',
-      image: 'audioSample.image',
+      samples: 'audioSamples',
     },
-    prepare({ songName, artistName, image }) {
+    prepare({ samples }) {
+      const count = samples?.length || 0;
+
+      if (count === 0) {
+        return {
+          title: 'Audio Sample Player',
+          subtitle: 'No audio samples',
+          media: PlayIcon,
+        };
+      }
+
       return {
-        title: songName || 'Audio Sample Player',
-        subtitle: artistName ? `Artist: ${artistName}` : 'No audio sample selected',
-        media: image || PlayIcon,
+        title: count === 1 ? 'Audio Sample Player' : `Audio Sample Player (${count} tracks)`,
+        subtitle: `${count} audio ${count === 1 ? 'sample' : 'samples'}`,
+        media: PlayIcon,
       };
     },
   },
