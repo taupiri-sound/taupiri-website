@@ -38,9 +38,9 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
   block: {
     // Default style (what users get when they just start typing)
     normal: ({ children }) => {
-      // Handle empty blocks (empty lines) - render a paragraph with a non-breaking space
+      // Handle empty blocks (empty lines) - render truly empty paragraph for CSS :empty selector
       if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-        return <p className='text-body-base'>&nbsp;</p>;
+        return <p className='text-body-base'></p>;
       }
 
       // Check if children contains only empty spans or text nodes
@@ -60,7 +60,7 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       });
 
       if (hasOnlyEmptyContent) {
-        return <p className='text-body-base'>&nbsp;</p>;
+        return <p className='text-body-base'></p>;
       }
 
       return <p className='text-body-base'>{children}</p>;
@@ -68,9 +68,9 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
 
     // Body text styles - using appropriate semantic tags with typography utilities
     'body-xs': ({ children }) => {
-      // Handle empty blocks (empty lines)
+      // Handle empty blocks (empty lines) - render truly empty for CSS :empty selector
       if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-        return <figcaption className='text-body-xs'>&nbsp;</figcaption>;
+        return <figcaption className='text-body-xs'></figcaption>;
       }
 
       // Check if children contains only empty spans or text nodes
@@ -89,14 +89,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       });
 
       if (hasOnlyEmptyContent) {
-        return <figcaption className='text-body-xs'>&nbsp;</figcaption>;
+        return <figcaption className='text-body-xs'></figcaption>;
       }
 
       return <figcaption className='text-body-xs'>{children}</figcaption>;
     },
     'body-sm': ({ children }) => {
       if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-        return <p className='text-body-sm'>&nbsp;</p>;
+        return <p className='text-body-sm'></p>;
       }
 
       const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
@@ -114,14 +114,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       });
 
       if (hasOnlyEmptyContent) {
-        return <p className='text-body-sm'>&nbsp;</p>;
+        return <p className='text-body-sm'></p>;
       }
 
       return <p className='text-body-sm'>{children}</p>;
     },
     'body-lg': ({ children }) => {
       if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-        return <p className='text-body-lg'>&nbsp;</p>;
+        return <p className='text-body-lg'></p>;
       }
 
       const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
@@ -139,14 +139,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       });
 
       if (hasOnlyEmptyContent) {
-        return <p className='text-body-lg'>&nbsp;</p>;
+        return <p className='text-body-lg'></p>;
       }
 
       return <p className='text-body-lg'>{children}</p>;
     },
     'body-xl': ({ children }) => {
       if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-        return <p className='text-body-xl'>&nbsp;</p>;
+        return <p className='text-body-xl'></p>;
       }
 
       const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
@@ -164,14 +164,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       });
 
       if (hasOnlyEmptyContent) {
-        return <p className='text-body-xl'>&nbsp;</p>;
+        return <p className='text-body-xl'></p>;
       }
 
       return <p className='text-body-xl'>{children}</p>;
     },
     'body-2xl': ({ children }) => {
       if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-        return <p className='text-body-2xl'>&nbsp;</p>;
+        return <p className='text-body-2xl'></p>;
       }
 
       const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
@@ -189,14 +189,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       });
 
       if (hasOnlyEmptyContent) {
-        return <p className='text-body-2xl'>&nbsp;</p>;
+        return <p className='text-body-2xl'></p>;
       }
 
       return <p className='text-body-2xl'>{children}</p>;
     },
     'body-3xl': ({ children }) => {
       if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-        return <p className='text-body-3xl'>&nbsp;</p>;
+        return <p className='text-body-3xl'></p>;
       }
 
       const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
@@ -214,7 +214,7 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       });
 
       if (hasOnlyEmptyContent) {
-        return <p className='text-body-3xl'>&nbsp;</p>;
+        return <p className='text-body-3xl'></p>;
       }
 
       return <p className='text-body-3xl'>{children}</p>;

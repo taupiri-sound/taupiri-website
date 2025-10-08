@@ -1,10 +1,10 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
-import { PortableText } from 'next-sanity';
 import type { HOME_PAGE_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '../../utils/sectionHelpers';
 import { getTextColorClasses } from './heroUtils';
 import { createHeroRichTextComponents } from './heroRichTextComponents';
+import PortableTextWrapper from '@/components/UI/PortableTextWrapper';
 
 interface HeroTitleProps {
   h1Title: NonNullable<HOME_PAGE_QUERYResult>['h1Title'];
@@ -54,16 +54,17 @@ const HeroTitle = ({
       {h1Title && <h1 className='sr-only'>{stegaClean(h1Title)}</h1>}
 
       {/* Visual Hero Title - Rich Text with alignment */}
-      <div
+      <PortableTextWrapper
+        value={heroTitle}
+        components={components}
         className={`
           prose prose-slate max-w-none
           ${getTextColorClasses(heroTextColor)}
           overflow-hidden
           ${getTextAlignmentClass(textAlignment)}
         `}
-        {...createSanityDataAttribute(documentId, documentType, 'heroTitle')}>
-        <PortableText value={heroTitle} components={components} />
-      </div>
+        dataAttributes={createSanityDataAttribute(documentId, documentType, 'heroTitle')}
+      />
     </>
   );
 };

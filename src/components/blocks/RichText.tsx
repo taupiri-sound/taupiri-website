@@ -1,9 +1,10 @@
 import React from 'react';
-import { PortableText, stegaClean } from 'next-sanity';
+import { stegaClean } from 'next-sanity';
 import { createComponents } from '@/sanity/portableTextComponents';
 import type { RichTextBlock } from '@/types/blocks';
 import { getTextAlignClass, type TextAlignment } from '../../utils/sectionHelpers';
 import { resolveAlignment } from './shared/alignmentUtils';
+import PortableTextWrapper from '@/components/UI/PortableTextWrapper';
 
 type RichTextProps = RichTextBlock & {
   inheritAlignment?: 'left' | 'center' | 'right';
@@ -47,9 +48,11 @@ const RichText = ({
   };
 
   const proseContent = (
-    <div className={`prose prose-slate max-w-xl ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}>
-      <PortableText value={content} components={alignedComponents} />
-    </div>
+    <PortableTextWrapper
+      value={content}
+      components={alignedComponents}
+      className={`prose prose-slate max-w-xl ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}
+    />
   );
 
   // If it's a callout, wrap in Card-style container

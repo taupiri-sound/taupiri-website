@@ -245,6 +245,51 @@ export const createComponents = (): PortableTextComponents => {
 };
 ```
 
+### Rendering Rich Text with PortableTextWrapper
+
+**CRITICAL: Always use the `PortableTextWrapper` component to render PortableText content.**
+
+The `PortableTextWrapper` component (`src/components/UI/PortableTextWrapper.tsx`) provides:
+
+- **Intelligent paragraph spacing**: Uses `[&>:not(:empty)+:not(:empty)]:mt-2` for smart spacing
+- **Centralized spacing logic**: Single source of truth for Rich Text spacing
+- **Smart spacing behavior**:
+  - Shift+Return (soft break): No extra spacing (same paragraph)
+  - Return (new paragraph): `mt-2` spacing between consecutive paragraphs
+  - Return twice (blank line): Empty `<p></p>` provides spacing, **no margin added after**
+
+**Implementation Details:**
+
+Empty blocks are rendered as truly empty `<p></p>` elements (no `&nbsp;`), which allows the CSS `:empty` selector to work correctly. Two CSS rules work together:
+1. `[&>:empty]:min-h-[1lh]` - Gives empty elements a minimum height of one line-height
+2. `[&>:not(:empty)+:not(:empty)]:mt-2` - Only adds `mt-2` between non-empty elements
+
+This prevents double-spacing after blank lines while ensuring blank lines create visible vertical space.
+
+**Spacing Logic:**
+```
+<p>First paragraph</p>      ← No margin (first element)
+<p>Second paragraph</p>      ← mt-2 (non-empty after non-empty)
+<p></p>                      ← No margin added (blank line is the spacing)
+<p>After blank line</p>      ← No margin (after empty element)
+```
+
+**Usage:**
+
+```typescript
+import PortableTextWrapper from '@/components/UI/PortableTextWrapper';
+import { createComponents } from '@/sanity/portableTextComponents';
+
+const components = createComponents('center');
+
+<PortableTextWrapper
+  value={content}
+  components={components}
+  className="prose prose-slate max-w-xl text-center"
+  dataAttributes={createSanityDataAttribute(id, type, 'field')}
+/>
+```
+
 ### Reference Implementations
 
 The codebase has two reference implementations with proper blank line handling:
@@ -252,23 +297,28 @@ The codebase has two reference implementations with proper blank line handling:
 1. **Standard Rich Text**: `src/sanity/portableTextComponents.tsx`
    - Used by: RichText blocks, TextImage blocks
    - Function: `createComponents(alignment)`
+   - Rendered via: `PortableTextWrapper`
 
 2. **Hero Rich Text**: `src/components/HomeHero/heroRichTextComponents.tsx`
    - Used by: Hero Title component
    - Function: `createHeroRichTextComponents(alignment)`
    - Includes font scaling for hero sections
+   - Rendered via: `PortableTextWrapper`
 
 ### Checklist for New Rich Text Components
 
 When creating a new PortableText component configuration:
 
+- [ ] **Use PortableTextWrapper**: Always render with `PortableTextWrapper` instead of raw `PortableText`
 - [ ] Import React: `import React from 'react';`
 - [ ] Check for empty children: `!children || children.length === 0 || children === ''`
 - [ ] Check for whitespace-only content using `React.Children.toArray()`
-- [ ] Render `&nbsp;` for empty blocks in ALL block styles (normal, body-xs, body-sm, body-lg, etc.)
+- [ ] **Render truly empty elements** `<p></p>` for empty blocks (NOT `<p>&nbsp;</p>`) to enable CSS `:empty` selector
 - [ ] Apply the same pattern to custom block styles (standout, callout, etc.)
 - [ ] Test in Sanity Studio by adding blank lines between paragraphs
 - [ ] Verify blank lines render with proper spacing in the front-end
+- [ ] Verify paragraph spacing works correctly (Return creates spacing, Shift+Return doesn't)
+- [ ] Verify NO extra margin appears after blank lines
 
 ### Common Mistakes to Avoid
 
@@ -277,19 +327,19 @@ When creating a new PortableText component configuration:
 normal: ({ children }) => <p className='text-body-base'>{children}</p>
 ```
 
-❌ **Wrong - Only checking for undefined:**
+❌ **Wrong - Using &nbsp; instead of truly empty:**
 ```typescript
 normal: ({ children }) => {
-  if (!children) return <p className='text-body-base'>&nbsp;</p>;
+  if (!children) return <p className='text-body-base'>&nbsp;</p>; // ❌ Breaks :empty selector
   return <p className='text-body-base'>{children}</p>;
 }
 ```
 
-✅ **Correct - Comprehensive empty block detection:**
+✅ **Correct - Truly empty elements for CSS :empty selector:**
 ```typescript
 normal: ({ children }) => {
   if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-    return <p className='text-body-base'>&nbsp;</p>;
+    return <p className='text-body-base'></p>; // ✅ Truly empty for :empty selector
   }
 
   const hasOnlyEmptyContent = React.Children.toArray(children).every(child => {
@@ -304,7 +354,7 @@ normal: ({ children }) => {
   });
 
   if (hasOnlyEmptyContent) {
-    return <p className='text-body-base'>&nbsp;</p>;
+    return <p className='text-body-base'></p>; // ✅ Truly empty
   }
 
   return <p className='text-body-base'>{children}</p>;

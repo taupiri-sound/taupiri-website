@@ -124,9 +124,9 @@ export const createHeroRichTextComponents = (
     block: {
       // Default style (what users get when they just start typing)
       normal: ({ children }) => {
-        // Handle empty blocks (empty lines) - render a paragraph with a non-breaking space
+        // Handle empty blocks (empty lines) - render truly empty paragraph for CSS :empty selector
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className={scaleTextClass('text-body-base')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-base')}></p>;
         }
 
         // Check if children contains only empty spans or text nodes
@@ -146,7 +146,7 @@ export const createHeroRichTextComponents = (
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className={scaleTextClass('text-body-base')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-base')}></p>;
         }
 
         return <p className={scaleTextClass('text-body-base')}>{children}</p>;
@@ -155,7 +155,7 @@ export const createHeroRichTextComponents = (
       // Body text styles - using appropriate semantic tags with scaled typography utilities
       'body-xs': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <figcaption className={scaleTextClass('text-body-xs')}>&nbsp;</figcaption>;
+          return <figcaption className={scaleTextClass('text-body-xs')}></figcaption>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -173,14 +173,14 @@ export const createHeroRichTextComponents = (
         });
 
         if (hasOnlyEmptyContent) {
-          return <figcaption className={scaleTextClass('text-body-xs')}>&nbsp;</figcaption>;
+          return <figcaption className={scaleTextClass('text-body-xs')}></figcaption>;
         }
 
         return <figcaption className={scaleTextClass('text-body-xs')}>{children}</figcaption>;
       },
       'body-sm': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className={scaleTextClass('text-body-sm')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-sm')}></p>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -198,14 +198,14 @@ export const createHeroRichTextComponents = (
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className={scaleTextClass('text-body-sm')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-sm')}></p>;
         }
 
         return <p className={scaleTextClass('text-body-sm')}>{children}</p>;
       },
       'body-lg': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className={scaleTextClass('text-body-lg')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-lg')}></p>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -223,14 +223,14 @@ export const createHeroRichTextComponents = (
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className={scaleTextClass('text-body-lg')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-lg')}></p>;
         }
 
         return <p className={scaleTextClass('text-body-lg')}>{children}</p>;
       },
       'body-xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className={scaleTextClass('text-body-xl')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-xl')}></p>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -248,14 +248,14 @@ export const createHeroRichTextComponents = (
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className={scaleTextClass('text-body-xl')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-xl')}></p>;
         }
 
         return <p className={scaleTextClass('text-body-xl')}>{children}</p>;
       },
       'body-2xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className={scaleTextClass('text-body-2xl')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-2xl')}></p>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -273,14 +273,14 @@ export const createHeroRichTextComponents = (
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className={scaleTextClass('text-body-2xl')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-2xl')}></p>;
         }
 
         return <p className={scaleTextClass('text-body-2xl')}>{children}</p>;
       },
       'body-3xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className={scaleTextClass('text-body-3xl')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-3xl')}></p>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -298,7 +298,7 @@ export const createHeroRichTextComponents = (
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className={scaleTextClass('text-body-3xl')}>&nbsp;</p>;
+          return <p className={scaleTextClass('text-body-3xl')}></p>;
         }
 
         return <p className={scaleTextClass('text-body-3xl')}>{children}</p>;
