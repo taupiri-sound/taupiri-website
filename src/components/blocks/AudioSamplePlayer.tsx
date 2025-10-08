@@ -135,24 +135,19 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio) {
-      console.log('AudioSamplePlayer: No audio ref');
-      return;
-    }
+    if (!audio) return;
 
-    const updateTime = () => {
-      console.log('AudioSamplePlayer: Time update', audio.currentTime, 'Duration:', audio.duration);
-      setCurrentTime(audio.currentTime);
-    };
-    const updateDuration = () => {
-      console.log('AudioSamplePlayer: Duration loaded', audio.duration);
-      setDuration(audio.duration);
-    };
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    const updateDuration = () => setDuration(audio.duration);
     const handleEnded = () => {
-      console.log('AudioSamplePlayer: Track ended');
       if (!isSingleTrack && currentTrackIndex < validSamples.length - 1) {
-        // Auto-advance to next track
+        // Auto-advance to next track and keep playing
         setCurrentTrackIndex(prev => prev + 1);
+        setTimeout(() => {
+          if (audioRef.current) {
+            audioRef.current.play().catch(() => setIsPlaying(false));
+          }
+        }, 100);
       } else {
         setIsPlaying(false);
       }
@@ -161,8 +156,6 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
     audio.addEventListener('timeupdate', updateTime);
     audio.addEventListener('loadedmetadata', updateDuration);
     audio.addEventListener('ended', handleEnded);
-
-    console.log('AudioSamplePlayer: Event listeners added, audio src:', audio.src);
 
     return () => {
       audio.removeEventListener('timeupdate', updateTime);
@@ -191,20 +184,14 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
     if (!audioRef.current) return;
 
     if (isPlaying) {
-      console.log('AudioSamplePlayer: Pausing');
       audioRef.current.pause();
     } else {
-      console.log('AudioSamplePlayer: Playing');
-      audioRef.current.play().catch((err) => {
-        console.error('AudioSamplePlayer: Play failed', err);
-        setIsPlaying(false);
-      });
+      audioRef.current.play().catch(() => setIsPlaying(false));
     }
     setIsPlaying(!isPlaying);
   };
 
   const playTrack = (index: number) => {
-    console.log('AudioSamplePlayer: playTrack called with index', index);
     // Stop current track if playing
     if (audioRef.current) {
       audioRef.current.pause();
@@ -216,10 +203,7 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
     // Start playing after a brief delay to let the track load
     setTimeout(() => {
       if (audioRef.current) {
-        audioRef.current.play().catch((err) => {
-          console.error('AudioSamplePlayer: Play failed in playTrack', err);
-          setIsPlaying(false);
-        });
+        audioRef.current.play().catch(() => setIsPlaying(false));
         setIsPlaying(true);
       }
     }, 50);
@@ -227,19 +211,34 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
 
   const skipToNext = () => {
     if (currentTrackIndex < validSamples.length - 1) {
+      const wasPlaying = isPlaying;
       setCurrentTrackIndex(prev => prev + 1);
+      if (wasPlaying) {
+        setTimeout(() => {
+          if (audioRef.current) {
+            audioRef.current.play().catch(() => setIsPlaying(false));
+          }
+        }, 100);
+      }
     }
   };
 
   const skipToPrevious = () => {
     if (currentTrackIndex > 0) {
+      const wasPlaying = isPlaying;
       setCurrentTrackIndex(prev => prev - 1);
+      if (wasPlaying) {
+        setTimeout(() => {
+          if (audioRef.current) {
+            audioRef.current.play().catch(() => setIsPlaying(false));
+          }
+        }, 100);
+      }
     }
   };
 
   const handleTimelineChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTime = parseFloat(e.target.value);
-    console.log('AudioSamplePlayer: Timeline changed to', newTime);
     setCurrentTime(newTime);
     if (audioRef.current) {
       audioRef.current.currentTime = newTime;
@@ -276,11 +275,6 @@ const AudioSamplePlayer = ({ audioSamples, documentId, documentType }: AudioSamp
   };
 
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
-
-  // Debug logging for progress
-  useEffect(() => {
-    console.log('AudioSamplePlayer: Progress update - currentTime:', currentTime, 'duration:', duration, 'percentage:', progressPercentage);
-  }, [currentTime, duration, progressPercentage]);
 
   if (!currentTrack) {
     return (
