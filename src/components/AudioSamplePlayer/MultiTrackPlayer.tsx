@@ -56,64 +56,81 @@ const MultiTrackPlayer = ({
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
       {/* Currently playing track header */}
       <div className='bg-brand-white-dark border-b border-brand-primary/10 p-4'>
-        <div className='flex items-center gap-4'>
-          {/* Current track image */}
-          <div className='relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0'>
-            {currentTrack.image?.asset ? (
-              <UnifiedImage
-                src={currentTrack.image}
-                alt={`${currentTrack.songName} artwork`}
-                mode='fill'
-                sizeContext='thumbnail'
-                objectFit='cover'
-                documentId={currentTrack._id}
-                documentType={currentTrack._type || 'audioSample'}
-                fieldPath='image'
-              />
-            ) : (
-              <PlaceholderImage />
-            )}
-          </div>
+        <div className='flex flex-col md:flex-row items-start md:items-center gap-4'>
+          <div className='flex items-center gap-4 w-full md:w-auto'>
+            {/* Current track image with play button overlay */}
+            <div className='relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 group'>
+              <div className='absolute inset-0 z-0'>
+                {currentTrack.image?.asset ? (
+                  <UnifiedImage
+                    src={currentTrack.image}
+                    alt={`${currentTrack.songName} artwork`}
+                    mode='fill'
+                    sizeContext='thumbnail'
+                    objectFit='cover'
+                    documentId={currentTrack._id}
+                    documentType={currentTrack._type || 'audioSample'}
+                    fieldPath='image'
+                  />
+                ) : (
+                  <PlaceholderImage />
+                )}
+              </div>
+              {/* Darkening overlay */}
+              <div className='absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors z-10' />
+              {/* Play/Pause button */}
+              <button
+                onClick={onPlayPause}
+                className='absolute inset-0 z-20 flex items-center justify-center text-white hover:scale-110 transition-transform'
+                aria-label={isPlaying ? 'Pause' : 'Play'}>
+                {isPlaying ? <PauseIcon /> : <PlayIcon />}
+              </button>
+            </div>
 
-          {/* Current track info */}
-          <div className='flex-1 min-w-0'>
-            <p className='text-h5 truncate'>{currentTrack.songName}</p>
-            <p className='text-body-lg text-brand-secondary truncate'>{currentTrack.artistName}</p>
-            {currentTrack.services && currentTrack.services.length > 0 && (
-              <p className='text-body-base text-subtle truncate'>
-                {currentTrack.services.join(' • ')}
+            {/* Current track info */}
+            <div className='flex-1 min-w-0'>
+              <p className='text-h5 truncate'>{currentTrack.songName}</p>
+              <p className='text-body-lg text-brand-secondary truncate'>
+                {currentTrack.artistName}
               </p>
-            )}
+              {currentTrack.services && currentTrack.services.length > 0 && (
+                <p className='text-body-base text-subtle truncate'>
+                  {currentTrack.services.join(' • ')}
+                </p>
+              )}
+            </div>
           </div>
 
-          {/* Playback controls */}
-          <div className='flex items-center gap-2 flex-shrink-0'>
-            <button
-              onClick={onSkipPrevious}
-              disabled={currentTrackIndex === 0}
-              className='p-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
-              aria-label='Previous track'>
-              <SkipPreviousIcon />
-            </button>
-            <button
-              onClick={onPlayPause}
-              className='w-12 h-12 rounded-full border-2 border-brand-primary bg-white hover:bg-brand-primary hover:text-white transition-all duration-200 flex items-center justify-center text-brand-primary'
-              aria-label={isPlaying ? 'Pause' : 'Play'}>
-              {isPlaying ? <PauseIcon /> : <PlayIcon />}
-            </button>
-            <button
-              onClick={onSkipNext}
-              disabled={currentTrackIndex === tracks.length - 1}
-              className='p-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
-              aria-label='Next track'>
-              <SkipNextIcon />
-            </button>
-          </div>
+          {/* Playback controls - desktop only, aligned to right */}
+          {!isIOS && (
+            <div className='hidden md:flex items-center md:ml-auto flex-shrink-0'>
+              <button
+                onClick={onSkipPrevious}
+                disabled={currentTrackIndex === 0}
+                className='p-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+                aria-label='Previous track'>
+                <SkipPreviousIcon />
+              </button>
+              <button
+                onClick={onSkipNext}
+                disabled={currentTrackIndex === tracks.length - 1}
+                className='p-2 mr-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+                aria-label='Next track'>
+                <SkipNextIcon />
+              </button>
+              <VolumeControl
+                volume={volume}
+                isMuted={isMuted}
+                onVolumeChange={onVolumeChange}
+                onToggleMute={onToggleMute}
+              />
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Timeline bar - full width at bottom */}
-      <div className='bg-brand-white-dark px-6 py-4 border-t border-brand-primary/10'>
+      {/* Timeline bar */}
+      <div className='bg-brand-white-dark p-4 border-t border-brand-primary/10'>
         <TimelineBar
           currentTime={currentTime}
           duration={duration}
@@ -121,14 +138,30 @@ const MultiTrackPlayer = ({
           onTimelineChange={onTimelineChange}
         />
 
-        {/* Volume control */}
+        {/* Playback controls - mobile only, below timeline */}
         {!isIOS && (
-          <VolumeControl
-            volume={volume}
-            isMuted={isMuted}
-            onVolumeChange={onVolumeChange}
-            onToggleMute={onToggleMute}
-          />
+          <div className='md:hidden mt-4 flex justify-center items-center'>
+            <button
+              onClick={onSkipPrevious}
+              disabled={currentTrackIndex === 0}
+              className='p-1 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+              aria-label='Previous track'>
+              <SkipPreviousIcon />
+            </button>
+            <button
+              onClick={onSkipNext}
+              disabled={currentTrackIndex === tracks.length - 1}
+              className='p-1 mr-2 rounded-full hover:bg-brand-primary/10 disabled:opacity-30 disabled:cursor-not-allowed text-brand-primary transition-colors'
+              aria-label='Next track'>
+              <SkipNextIcon />
+            </button>
+            <VolumeControl
+              volume={volume}
+              isMuted={isMuted}
+              onVolumeChange={onVolumeChange}
+              onToggleMute={onToggleMute}
+            />
+          </div>
         )}
       </div>
 

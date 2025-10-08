@@ -45,47 +45,62 @@ const SingleTrackPlayer = ({
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
       {/* Header */}
       <div className='bg-brand-white-dark border-b border-brand-primary/10 p-4'>
-        <div className='flex items-center gap-4'>
-          {/* Current track image */}
-          <div className='relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0'>
-            {track.image?.asset ? (
-              <UnifiedImage
-                src={track.image}
-                alt={`${track.songName} artwork`}
-                mode='fill'
-                sizeContext='thumbnail'
-                objectFit='cover'
-                documentId={track._id}
-                documentType={track._type || 'audioSample'}
-                fieldPath='image'
+        <div className='flex flex-col md:flex-row items-start md:items-center gap-4'>
+          <div className='flex items-center gap-4 w-full md:w-auto'>
+            {/* Current track image with play button overlay */}
+            <div className='relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 group'>
+              <div className='absolute inset-0 z-0'>
+                {track.image?.asset ? (
+                  <UnifiedImage
+                    src={track.image}
+                    alt={`${track.songName} artwork`}
+                    mode='fill'
+                    sizeContext='thumbnail'
+                    objectFit='cover'
+                    documentId={track._id}
+                    documentType={track._type || 'audioSample'}
+                    fieldPath='image'
+                  />
+                ) : (
+                  <PlaceholderImage />
+                )}
+              </div>
+              {/* Darkening overlay */}
+              <div className='absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors z-10' />
+              {/* Play/Pause button */}
+              <button
+                onClick={onPlayPause}
+                className='absolute inset-0 z-20 flex items-center justify-center text-white hover:scale-110 transition-transform'
+                aria-label={isPlaying ? 'Pause' : 'Play'}>
+                {isPlaying ? <PauseIcon /> : <PlayIcon />}
+              </button>
+            </div>
+
+            {/* Current track info */}
+            <div className='flex-1 min-w-0'>
+              <p className='text-h5 truncate'>{track.songName}</p>
+              <p className='text-body-lg text-brand-secondary truncate'>{track.artistName}</p>
+              {track.services && track.services.length > 0 && (
+                <p className='text-body-base text-subtle truncate'>{track.services.join(' • ')}</p>
+              )}
+            </div>
+          </div>
+
+          {/* Volume control - desktop only, aligned to right */}
+          {!isIOS && (
+            <div className='hidden md:block md:ml-auto'>
+              <VolumeControl
+                volume={volume}
+                isMuted={isMuted}
+                onVolumeChange={onVolumeChange}
+                onToggleMute={onToggleMute}
               />
-            ) : (
-              <PlaceholderImage />
-            )}
-          </div>
-
-          {/* Current track info */}
-          <div className='flex-1 min-w-0'>
-            <p className='text-h5 truncate'>{track.songName}</p>
-            <p className='text-body-lg text-brand-secondary truncate'>{track.artistName}</p>
-            {track.services && track.services.length > 0 && (
-              <p className='text-body-base text-subtle truncate'>{track.services.join(' • ')}</p>
-            )}
-          </div>
-
-          {/* Playback controls */}
-          <div className='flex items-center gap-2 flex-shrink-0'>
-            <button
-              onClick={onPlayPause}
-              className='w-12 h-12 rounded-full border-2 border-brand-primary bg-white hover:bg-brand-primary hover:text-white transition-all duration-200 flex items-center justify-center text-brand-primary'
-              aria-label={isPlaying ? 'Pause' : 'Play'}>
-              {isPlaying ? <PauseIcon /> : <PlayIcon />}
-            </button>
-          </div>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Timeline bar - full width at bottom */}
+      {/* Timeline bar */}
       <div className='bg-brand-white-dark px-6 py-4 border-t border-brand-primary/10'>
         <TimelineBar
           currentTime={currentTime}
@@ -94,14 +109,16 @@ const SingleTrackPlayer = ({
           onTimelineChange={onTimelineChange}
         />
 
-        {/* Volume control */}
+        {/* Volume control - mobile only, below timeline */}
         {!isIOS && (
-          <VolumeControl
-            volume={volume}
-            isMuted={isMuted}
-            onVolumeChange={onVolumeChange}
-            onToggleMute={onToggleMute}
-          />
+          <div className='md:hidden mt-4'>
+            <VolumeControl
+              volume={volume}
+              isMuted={isMuted}
+              onVolumeChange={onVolumeChange}
+              onToggleMute={onToggleMute}
+            />
+          </div>
         )}
       </div>
     </div>

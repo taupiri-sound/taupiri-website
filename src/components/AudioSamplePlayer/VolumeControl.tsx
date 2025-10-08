@@ -16,7 +16,7 @@ const VolumeControl = ({ volume, isMuted, onVolumeChange, onToggleMute }: Volume
   };
 
   return (
-    <div className='flex items-center gap-3 mt-4 justify-center'>
+    <div className='flex items-center gap-2 justify-center'>
       <button
         onClick={onToggleMute}
         className='text-brand-primary hover:text-brand-secondary transition-colors'
