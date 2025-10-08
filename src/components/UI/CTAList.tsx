@@ -1,5 +1,5 @@
 import React from 'react';
-import CTAButton from '../blocks/CTAButton';
+import CTAButton from '../_blocks/CTAButton';
 import type { CTAButtonBlock } from '@/types/blocks';
 
 interface CTAListItem {

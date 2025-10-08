@@ -7,7 +7,7 @@ import {
   getTextAlignClass,
   type TextAlignment,
 } from '../../utils/sectionHelpers';
-import { resolveAlignment } from '../blocks/shared/alignmentUtils';
+import { resolveAlignment } from '../_blocks/shared/alignmentUtils';
 import { subSectionTitleBottomSpacing } from '@/utils/spacingConstants';
 
 interface SubSubSectionProps extends SanityLiveEditingProps {

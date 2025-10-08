@@ -23,22 +23,22 @@ import type {
 import type { SiteSettingsProps } from '@/types/shared';
 
 // Import all block components
-import RichText from '@/components/blocks/RichText';
-import Quote from '@/components/blocks/Quote';
-import TwoColumnLayout from '@/components/blocks/TwoColumnLayout';
-import CTAButton from '@/components/blocks/CTAButton';
-import CTACalloutLinkComponent from '@/components/blocks/CTACalloutLink';
-import CTABlogPost from '@/components/blocks/CTABlogPost';
-import ImageBlock from '@/components/blocks/Image';
-import ImageGallery from '@/components/blocks/ImageGallery';
-import YouTubeVideo from '@/components/blocks/YouTubeVideo';
-import SpotifyWidget from '@/components/blocks/SpotifyWidget';
-import BandcampWidget from '@/components/blocks/BandcampWidget';
-import AudioSamplePlayer from '@/components/blocks/AudioSamplePlayer';
-import CompanyLinksBlock from '@/components/blocks/CompanyLinksBlock';
-import BlockListWithStats from '@/components/blocks/BlockListWithStats';
-import CheckList from '@/components/blocks/CheckList';
-import ItemList from '@/components/blocks/ItemList';
+import RichText from '@/components/_blocks/RichText';
+import Quote from '@/components/_blocks/Quote';
+import TwoColumnLayout from '@/components/_blocks/TwoColumnLayout';
+import CTAButton from '@/components/_blocks/CTAButton';
+import CTACalloutLinkComponent from '@/components/_blocks/CTACalloutLink';
+import CTABlogPost from '@/components/_blocks/CTABlogPost';
+import ImageBlock from '@/components/_blocks/Image';
+import ImageGallery from '@/components/_blocks/ImageGallery';
+import YouTubeVideo from '@/components/_blocks/YouTubeVideo';
+import SpotifyWidget from '@/components/_blocks/SpotifyWidget';
+import BandcampWidget from '@/components/_blocks/BandcampWidget';
+import AudioSamplePlayer from '@/components/_blocks/AudioSamplePlayer';
+import CompanyLinksBlock from '@/components/_blocks/CompanyLinksBlock';
+import BlockListWithStats from '@/components/_blocks/BlockListWithStats';
+import CheckList from '@/components/_blocks/CheckList';
+import ItemList from '@/components/_blocks/ItemList';
 import Divider from '@/components/UI/Divider';
 
 interface RenderBlockConfig {

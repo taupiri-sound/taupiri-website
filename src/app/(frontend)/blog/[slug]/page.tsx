@@ -4,7 +4,7 @@ import { getBlogPostBySlug, getAdjacentBlogPosts } from '@/actions/blog';
 import { getCompanyLinks, getSiteSettings } from '@/actions';
 import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
-import Card from '@/components/blocks/Card';
+import Card from '@/components/_blocks/Card';
 import PageBuilder from '@/components/PageBuilder';
 import { FaUser, FaCalendar } from 'react-icons/fa6';
 import UnifiedImage from '@/components/UI/UnifiedImage';

@@ -2,7 +2,7 @@ import BlogList from '@/components/Blog/BlogList';
 import { getAllBlogPosts, getBlogIndexPage } from '@/actions/blog';
 import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
-import Card from '@/components/blocks/Card';
+import Card from '@/components/_blocks/Card';
 import PageSubtitle from '@/components/Typography/PageSubtitle';
 import { closingCardSpacing } from '@/utils/spacingConstants';
 import { getSiteSettings } from '@/actions';

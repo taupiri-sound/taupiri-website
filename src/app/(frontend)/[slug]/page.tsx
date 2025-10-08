@@ -4,7 +4,7 @@ import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
 import { getPageBySlug, getSiteSettings, getCompanyLinks } from '@/actions';
 import Container from '@/components/Layout/Container';
-import Card from '@/components/blocks/Card';
+import Card from '@/components/_blocks/Card';
 import { pageSubtitleBottomSpacing, closingCardSpacing } from '@/utils/spacingConstants';
 import PageSubtitle from '@/components/Typography/PageSubtitle';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';

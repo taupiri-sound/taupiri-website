@@ -15,8 +15,8 @@ import {
 import PageSection from './Layout/PageSection';
 import SubSection from './Layout/SubSection';
 import SubSubSection from './Layout/SubSubSection';
-import Card from './blocks/Card';
-import GridLayout from './blocks/GridLayout';
+import Card from './_blocks/Card';
+import GridLayout from './_blocks/GridLayout';
 import { renderBlock } from '@/utils/blockRenderer';
 
 // Shared interface for common props used across PageBuilder components
