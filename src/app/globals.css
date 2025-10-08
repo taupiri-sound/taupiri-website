@@ -328,31 +328,35 @@ input[type='range']:focus {
   outline: none;
 }
 
-/* Webkit (Chrome, Safari, Edge) - make the thumb invisible but clickable */
+/* Webkit (Chrome, Safari, Edge) - make the thumb large for easy dragging but invisible */
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 0;
-  height: 0;
+  width: 20px;
+  height: 20px;
   background: transparent;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 input[type='range']::-webkit-slider-runnable-track {
   background: transparent;
   cursor: pointer;
+  height: 100%;
 }
 
-/* Firefox - make the thumb invisible but clickable */
+/* Firefox - make the thumb large for easy dragging but invisible */
 input[type='range']::-moz-range-thumb {
-  width: 0;
-  height: 0;
+  width: 20px;
+  height: 20px;
   background: transparent;
   border: none;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 input[type='range']::-moz-range-track {
   background: transparent;
   cursor: pointer;
+  height: 100%;
 }
