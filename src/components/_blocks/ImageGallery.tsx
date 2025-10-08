@@ -80,25 +80,27 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                 }}
                 className='relative cursor-pointer transition hover:scale-102 aspect-[4/3] block w-full'
                 tabIndex={0}
-                aria-label={hasImage ? `Open image ${idx + 1} of ${images.length} in modal: ${imageAlt}` : `Gallery placeholder ${idx + 1}`}
+                aria-label={
+                  hasImage
+                    ? `Open image ${idx + 1} of ${images.length} in modal: ${imageAlt}`
+                    : `Gallery placeholder ${idx + 1}`
+                }
                 aria-describedby={`gallery-image-${idx}`}
                 disabled={!hasImage}>
                 <UnifiedImage
                   src={item.image}
                   alt={imageAlt}
-                  mode="fill"
-                  sizeContext="gallery"
-                  objectFit="cover"
+                  mode='fill'
+                  sizeContext='gallery'
+                  objectFit='cover'
                   generateSchema
-                  schemaContext="gallery"
+                  schemaContext='gallery'
                   sizes='(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw'
                   className='rounded-lg'
                 />
               </button>
               {showCaption && (
-                <figcaption className='text-body-xs md:text-body-sm text-gray-700 mt-2 text-center italic'>
-                  {caption}
-                </figcaption>
+                <figcaption className='mt-2 text-center font-bold'>{caption}</figcaption>
               )}
             </figure>
           );
