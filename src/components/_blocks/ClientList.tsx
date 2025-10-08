@@ -37,35 +37,35 @@ const ClientList: React.FC<ClientListProps> = ({ className = '', clientsData }) 
   const getFontSizeClass = (level: number): string => {
     switch (level) {
       case 1:
-        return 'text-body-6xl md:text-body-8xl font-bold';
+        return 'text-body-6xl font-bold';
       case 2:
-        return 'text-body-4xl md:text-body-6xl font-bold';
+        return 'text-body-5xl font-bold';
       case 3:
-        return 'text-body-2xl md:text-body-4xl font-semibold';
+        return 'text-body-4xl font-semibold';
       case 4:
-        return 'text-body-lg md:text-body-2xl font-medium';
+        return 'text-body-3xl font-medium';
       case 5:
-        return 'text-body-base md:text-body-lg';
+        return 'text-body-2xl font-medium';
       default:
-        return 'text-body-base';
+        return 'text-body-lg';
     }
   };
 
   return (
     <div
-      className={`w-full ${className}`}
+      className={`w-full ${className} mx-auto`}
       role='region'
       aria-label='Client list in lineup format'>
-      <div className='flex flex-wrap items-baseline justify-center gap-x-3 gap-y-2 md:gap-x-6 md:gap-y-3'>
+      <div className='flex flex-wrap items-baseline justify-center gap-x-2'>
         {allClients.map((client, index) => (
-          <div
-            key={`${client.name}-${index}`}
-            className={`${getFontSizeClass(client.level)} text-center transition-colors hover:text-brand-primary`}
-            style={{
-              textShadow: client.level <= 2 ? '2px 2px 4px rgba(0, 0, 0, 0.1)' : 'none',
-            }}>
-            {client.name}
-          </div>
+          <React.Fragment key={`${client.name}-${index}`}>
+            <div className={`${getFontSizeClass(client.level)} text-center`}>
+              {client.name}
+            </div>
+            {index < allClients.length - 1 && (
+              <span className={`${getFontSizeClass(client.level)}`}>•</span>
+            )}
+          </React.Fragment>
         ))}
       </div>
     </div>
