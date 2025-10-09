@@ -9,6 +9,7 @@ import MenuButton from './MenuButton';
 import VerticalNav from './VerticalNav/VerticalNav';
 import SkipLink from '@/components/UI/SkipLink';
 import { useHeader } from '@/contexts/HeaderContext';
+import { headerHeight } from '@/utils/spacingConstants';
 
 interface HeaderProps {
   headerData: HEADER_QUERYResult | null;
@@ -83,19 +84,20 @@ const Header = ({ headerData }: HeaderProps) => {
     };
   }, [isMenuOpen, closeMenu]);
 
-  /* 
+  /*
     HEADER HEIGHT DEFINITION:
-    -> look for "h-18 md:h-20" or similar in the header className below
-    
-    ⚠️ IMPORTANT: If these heights are changed, update the corresponding values in:
-    src/components/HomeHero/styles.module.css
-    and in the vertical nav
+    -> Imported from spacingConstants.ts as headerHeight constant
+
+    ⚠️ IMPORTANT: If these heights are changed, update:
+    - src/utils/spacingConstants.ts (headerHeight and headerHeightCalc)
+    - src/components/HomeHero/styles.module.css
+    - src/components/Header/VerticalNav/VerticalNav.tsx
   */
   return (
     <>
       <SkipLink href='#main-content'>Skip to main content</SkipLink>
       <header
-        className='fixed top-0 left-0 right-0 w-full px-4 md:px-8 h-18 md:h-20 flex items-center justify-between gap-8 z-50 transition-all duration-300'
+        className={`fixed top-0 left-0 right-0 w-full px-4 md:px-8 ${headerHeight} flex items-center justify-between gap-8 z-50 transition-all duration-300`}
         style={{
           backgroundColor: `rgba(67, 12, 8, ${headerOpacity})`, // bg-brand-secondary (#430c08) with variable opacity
         }}>

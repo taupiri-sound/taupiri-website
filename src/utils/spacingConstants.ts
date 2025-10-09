@@ -72,3 +72,15 @@ export const closingCardSpacing = 'mt-16 md:mt-24';
  * Max width for card like components (e.g. Cards, CTA Blog Posts etc)
  */
 export const maxCardWidth = 'max-w-[650px]';
+
+/**
+ * Header height (must match Header.tsx and VerticalNav.tsx)
+ * Mobile: 72px (18 * 4), Desktop: 80px (20 * 4)
+ */
+export const headerHeight = 'h-18 md:h-20';
+
+/**
+ * Header height in CSS calc format for use in max-height calculations
+ * Uses small viewport height (svh) units to account for mobile browser UI
+ */
+export const headerHeightCalc = 'calc(80svh - 5rem)'; // 80svh minus 80px (desktop header)

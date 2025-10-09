@@ -18,6 +18,7 @@ import {
 import CTAList from '@/components/UI/CTAList';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import styles from './VerticalNav.module.css';
+import { headerHeight } from '@/utils/spacingConstants';
 
 interface VerticalNavProps {
   isMenuOpen: boolean;
@@ -63,7 +64,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
         {/* Menu Header */}
-        <div className='flex items-center justify-between px-4 h-18 md:h-20 transition-all duration-300 shadow-md relative z-10 bg-brand-secondary'>
+        <div className={`flex items-center justify-between px-4 ${headerHeight} transition-all duration-300 shadow-md relative z-10 bg-brand-secondary`}>
           {/* Logo in Menu */}
           <Link href='/' onClick={onClose} className='flex items-center gap-2'>
             <div className='relative w-[160px] h-[60px]'>

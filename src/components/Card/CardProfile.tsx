@@ -62,16 +62,18 @@ const CardProfile = (props: CardProfileProps) => {
       <CardContainer
         className={`${className} flex flex-col text-center items-center`}
         isGridChild={isGridChild}>
-        {/* Profile Image - Portrait aspect ratio at top center */}
+        {/* Profile Image - Square aspect ratio at top center */}
         <div
-          className='mb-6 w-full'
+          className='mb-6 w-full flex justify-center'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div className='relative aspect-square w-full rounded-lg overflow-hidden'>
+          <div
+            className='relative aspect-square w-full rounded-lg overflow-hidden'
+            style={{ maxHeight: 'calc(80svh - 5rem)', maxWidth: 'calc(80svh - 5rem)' }}>
             <UnifiedImage
               src={image}
               alt={image.alt || 'Profile image'}
               mode='fill'
-              sizeContext='full'
+              sizeContext='profile'
               objectFit='cover'
               generateSchema
               schemaContext='profile'
