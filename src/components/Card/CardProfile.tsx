@@ -7,7 +7,6 @@ import UnifiedImage from '../UI/UnifiedImage';
 import { renderBlock } from '@/utils/blockRenderer';
 import CardHeader from './CardHeader';
 import type { BaseCardProps, CardImage, CardLayoutStyle } from './types';
-import { maxHeightViewport } from '@/utils/spacingConstants';
 
 interface CardProfileProps extends BaseCardProps {
   image: CardImage;
@@ -35,7 +34,7 @@ const CardProfile = (props: CardProfileProps) => {
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
 
   // Determine alignment based on layout style
-  const cardAlignment = layoutStyle === 'stacked' ? 'center' : 'left';
+  const cardAlignment = layoutStyle === 'stacked' ? 'left' : 'left';
 
   // Render content blocks using shared block renderer
   const renderContent = () => {
@@ -60,73 +59,28 @@ const CardProfile = (props: CardProfileProps) => {
   // Stacked layout
   if (layoutStyle === 'stacked') {
     return (
-      <CardContainer
-        className={`${className} flex flex-col text-center items-center`}
-        isGridChild={isGridChild}>
-        {/* Profile Image - Square aspect ratio at top center */}
+      <div className='flex flex-col items-center max-w-full w-[30rem] mx-auto'>
+        {/* Profile Image */}
         <div
-          className='mb-6 w-full flex justify-center'
+          className='relative aspect-square w-full mb-2 rounded-lg overflow-hidden'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div
-            className='relative aspect-square w-full rounded-lg overflow-hidden'
-            style={maxHeightViewport}>
-            <UnifiedImage
-              src={image}
-              alt={image.alt || 'Profile image'}
-              mode='fill'
-              sizeContext='full'
-              objectFit='cover'
-              generateSchema
-              schemaContext='profile'
-              documentId={documentId}
-              documentType={documentType}
-              fieldPath={getFieldPath('image')}
-            />
-          </div>
+          <UnifiedImage
+            src={image}
+            alt={image.alt || 'Profile image'}
+            mode='fill'
+            sizeContext='full'
+            objectFit='cover'
+            generateSchema
+            schemaContext='profile'
+            documentId={documentId}
+            documentType={documentType}
+            fieldPath={getFieldPath('image')}
+          />
         </div>
-
-        {/* Header and Content - Center aligned */}
-        <CardHeader
-          title={title}
-          subtitle={subtitle}
-          documentId={documentId}
-          documentType={documentType}
-          fieldPathPrefix={fieldPathPrefix}
-        />
-        <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
-      </CardContainer>
-    );
-  }
-
-  // Row Large layout - Full width, image takes ~1/3, stacks on mobile
-  if (layoutStyle === 'rowLarge') {
-    return (
-      <CardContainer
-        className={`${className} flex flex-col md:flex-row gap-6 items-start text-left`}
-        isGridChild={isGridChild}
-        noMaxWidth={true}>
-        {/* Profile Image - Portrait aspect ratio, ~1/3 width on desktop, full width stacked on mobile */}
-        <div
-          className='w-full md:w-1/2 flex-shrink-0'
-          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div className='relative aspect-square w-full rounded-lg overflow-hidden'>
-            <UnifiedImage
-              src={image}
-              alt={image.alt || 'Profile image'}
-              mode='fill'
-              sizeContext='full'
-              objectFit='cover'
-              generateSchema
-              schemaContext='profile'
-              documentId={documentId}
-              documentType={documentType}
-              fieldPath={getFieldPath('image')}
-            />
-          </div>
-        </div>
-
-        {/* Header and Content - Left aligned, takes remaining width */}
-        <div className='flex-1 flex flex-col'>
+        {/* Header and Content */}
+        <CardContainer
+          className={`${className} flex flex-col text-left items-start`}
+          isGridChild={isGridChild}>
           <CardHeader
             title={title}
             subtitle={subtitle}
@@ -134,9 +88,81 @@ const CardProfile = (props: CardProfileProps) => {
             documentType={documentType}
             fieldPathPrefix={fieldPathPrefix}
           />
-          <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
+          <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
+        </CardContainer>
+      </div>
+    );
+  }
+
+  // Row Large layout
+  if (layoutStyle === 'rowLarge') {
+    return (
+      <div className='flex flex-col lg:flex-row gap-0 md:gap-4 w-full'>
+        {/* Profile Image */}
+        <div className='w-full md:w-1/2'>
+          <div
+            className='relative aspect-square w-full rounded-lg overflow-hidden'
+            {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+            <UnifiedImage
+              src={image}
+              alt={image.alt || 'Profile image'}
+              mode='fill'
+              sizeContext='full'
+              objectFit='cover'
+              generateSchema
+              schemaContext='profile'
+              documentId={documentId}
+              documentType={documentType}
+              fieldPath={getFieldPath('image')}
+            />
+          </div>
         </div>
-      </CardContainer>
+        {/* Header and Content */}
+        {/* <div className='flex flex-col w-full text-left items-start p-4 md:p-8'>
+          <CardHeader
+            title={title}
+            subtitle={subtitle}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={fieldPathPrefix}
+          />
+          <div className='flex flex-col gap-4 w-full text-center md:text-left'>
+            {renderContent()}
+          </div>
+        </div> */}
+        <CardContainer
+          className={`${className} flex flex-col text-left items-start justify-center p-8 w-1/2`}
+          isGridChild={isGridChild}
+          noPadding
+          noMaxWidth>
+          <CardHeader
+            title={title}
+            subtitle={subtitle}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={fieldPathPrefix}
+          />
+          <div className='flex flex-col gap-4 w-full text-center md:text-left'>
+            {renderContent()}
+          </div>
+        </CardContainer>
+        {/* <CardContainer
+          className={`${className} flex flex-col text-center md:text-left items-center md:items-start p-8`}
+          isGridChild={isGridChild}
+          noPadding
+          noMaxWidth>
+          <CardHeader
+            title={title}
+            subtitle={subtitle}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={fieldPathPrefix}
+          />
+          <div className='flex flex-col gap-4 w-full text-center md:text-left'>
+            {renderContent()}
+          </div>
+        </CardContainer> */}
+      </div>
     );
   }
 
