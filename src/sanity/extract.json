@@ -7569,32 +7569,7 @@
               },
               {
                 "type": "string",
-                "value": "profile"
-              },
-              {
-                "type": "string",
                 "value": "icon"
-              }
-            ]
-          },
-          "optional": true
-        },
-        "profileLayoutStyle": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "union",
-            "of": [
-              {
-                "type": "string",
-                "value": "stacked"
-              },
-              {
-                "type": "string",
-                "value": "rowLarge"
-              },
-              {
-                "type": "string",
-                "value": "rowSmall"
               }
             ]
           },

@@ -1149,8 +1149,7 @@ export type Card = {
   _type: "card";
   title?: string;
   subtitle?: string;
-  imageType?: "none" | "banner" | "profile" | "icon";
-  profileLayoutStyle?: "stacked" | "rowLarge" | "rowSmall";
+  imageType?: "none" | "banner" | "icon";
   iconNoImageLayoutStyle?: "stacked" | "row";
   image?: {
     asset?: {
@@ -1497,8 +1496,7 @@ export type PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -1814,8 +1812,7 @@ export type PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -2397,8 +2394,7 @@ export type PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -3187,8 +3183,7 @@ export type PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -3503,8 +3498,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -4086,8 +4080,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -4840,8 +4833,7 @@ export type PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -5156,8 +5148,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -5739,8 +5730,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -6529,8 +6519,7 @@ export type PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -6832,8 +6821,7 @@ export type PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -7415,8 +7403,7 @@ export type PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -8205,8 +8192,7 @@ export type PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -8508,8 +8494,7 @@ export type PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -9091,8 +9076,7 @@ export type PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -9877,8 +9861,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -10436,8 +10419,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -10990,8 +10972,7 @@ export type PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -11512,8 +11493,7 @@ export type PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -12095,8 +12075,7 @@ export type PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -12690,8 +12669,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -13273,8 +13251,7 @@ export type PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -13870,8 +13847,7 @@ export type PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -14453,8 +14429,7 @@ export type PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -15092,8 +15067,7 @@ export type PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -15675,8 +15649,7 @@ export type PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -16255,8 +16228,7 @@ export type PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
@@ -16404,8 +16376,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -16721,8 +16692,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -17304,8 +17274,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -18094,8 +18063,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -18410,8 +18378,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -18993,8 +18960,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -19747,8 +19713,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -20063,8 +20028,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -20646,8 +20610,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -21436,8 +21399,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -21739,8 +21701,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -22322,8 +22283,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -23112,8 +23072,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -23415,8 +23374,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -23998,8 +23956,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -24784,8 +24741,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -25343,8 +25299,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -25897,8 +25852,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -26419,8 +26373,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -27002,8 +26955,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -27597,8 +27549,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -28180,8 +28131,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -28777,8 +28727,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -29360,8 +29309,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -29999,8 +29947,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -30582,8 +30529,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -31355,8 +31301,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -31672,8 +31617,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -32255,8 +32199,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -33045,8 +32988,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -33361,8 +33303,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -33944,8 +33885,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -34698,8 +34638,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -35014,8 +34953,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -35597,8 +35535,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -36387,8 +36324,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -36690,8 +36626,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -37273,8 +37208,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -38063,8 +37997,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -38366,8 +38299,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -38949,8 +38881,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -39735,8 +39666,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -40294,8 +40224,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -40848,8 +40777,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -41370,8 +41298,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -41953,8 +41880,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -42548,8 +42474,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -43131,8 +43056,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -43728,8 +43652,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -44311,8 +44234,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -44950,8 +44872,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -45533,8 +45454,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -46166,8 +46086,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -46483,8 +46402,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -47066,8 +46984,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -47856,8 +47773,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -48172,8 +48088,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -48755,8 +48670,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -49509,8 +49423,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -49825,8 +49738,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -50408,8 +50320,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -51198,8 +51109,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -51501,8 +51411,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -52084,8 +51993,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -52874,8 +52782,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -53177,8 +53084,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -53760,8 +53666,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -54546,8 +54451,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -55105,8 +55009,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -55659,8 +55562,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -56181,8 +56083,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -56764,8 +56665,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -57359,8 +57259,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -57942,8 +57841,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -58539,8 +58437,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -59122,8 +59019,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -59761,8 +59657,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -60344,8 +60239,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -60977,8 +60871,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -61294,8 +61187,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -61877,8 +61769,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -62667,8 +62558,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -62983,8 +62873,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -63566,8 +63455,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -64320,8 +64208,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -64636,8 +64523,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -65219,8 +65105,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -66009,8 +65894,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -66312,8 +66196,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -66895,8 +66778,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -67685,8 +67567,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -67988,8 +67869,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -68571,8 +68451,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -69357,8 +69236,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -69916,8 +69794,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -70470,8 +70347,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -70992,8 +70868,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -71575,8 +71450,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -72170,8 +72044,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -72753,8 +72626,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -73350,8 +73222,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -73933,8 +73804,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -74572,8 +74442,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -75155,8 +75024,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -75830,8 +75698,7 @@ export type HOME_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -76147,8 +76014,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -76730,8 +76596,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -77520,8 +77385,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -77836,8 +77700,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -78419,8 +78282,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -79173,8 +79035,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -79489,8 +79350,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -80072,8 +79932,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -80862,8 +80721,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -81165,8 +81023,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -81748,8 +81605,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -82538,8 +82394,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -82841,8 +82696,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -83424,8 +83278,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -84210,8 +84063,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -84769,8 +84621,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -85323,8 +85174,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -85845,8 +85695,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -86428,8 +86277,7 @@ export type HOME_PAGE_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -87023,8 +86871,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -87606,8 +87453,7 @@ export type HOME_PAGE_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -88203,8 +88049,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -88786,8 +88631,7 @@ export type HOME_PAGE_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -89425,8 +89269,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -90008,8 +89851,7 @@ export type HOME_PAGE_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -91060,8 +90902,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
@@ -91143,8 +90984,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
@@ -91204,8 +91044,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
@@ -91320,8 +91159,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
@@ -91495,8 +91333,7 @@ export type BLOG_POST_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -91812,8 +91649,7 @@ export type BLOG_POST_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -92395,8 +92231,7 @@ export type BLOG_POST_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -93185,8 +93020,7 @@ export type BLOG_POST_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -93501,8 +93335,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -94084,8 +93917,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -94838,8 +94670,7 @@ export type BLOG_POST_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -95154,8 +94985,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -95737,8 +95567,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -96527,8 +96356,7 @@ export type BLOG_POST_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -96830,8 +96658,7 @@ export type BLOG_POST_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -97413,8 +97240,7 @@ export type BLOG_POST_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -98203,8 +98029,7 @@ export type BLOG_POST_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -98506,8 +98331,7 @@ export type BLOG_POST_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -99089,8 +98913,7 @@ export type BLOG_POST_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -99875,8 +99698,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -100434,8 +100256,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -100988,8 +100809,7 @@ export type BLOG_POST_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -101510,8 +101330,7 @@ export type BLOG_POST_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -102093,8 +101912,7 @@ export type BLOG_POST_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -102688,8 +102506,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -103271,8 +103088,7 @@ export type BLOG_POST_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -103868,8 +103684,7 @@ export type BLOG_POST_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -104451,8 +104266,7 @@ export type BLOG_POST_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -105090,8 +104904,7 @@ export type BLOG_POST_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -105673,8 +105486,7 @@ export type BLOG_POST_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -106242,8 +106054,7 @@ export type BLOG_POST_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
@@ -106433,8 +106244,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -106750,8 +106560,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -107333,8 +107142,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -108123,8 +107931,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -108439,8 +108246,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -109022,8 +108828,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -109776,8 +109581,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -110092,8 +109896,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -110675,8 +110478,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -111465,8 +111267,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -111768,8 +111569,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -112351,8 +112151,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -113141,8 +112940,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -113444,8 +113242,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -114027,8 +113824,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -114813,8 +114609,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -115372,8 +115167,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -115926,8 +115720,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -116448,8 +116241,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -117031,8 +116823,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -117626,8 +117417,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -118209,8 +117999,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -118806,8 +118595,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -119389,8 +119177,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -120028,8 +119815,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -120611,8 +120397,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -121270,8 +121055,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -121587,8 +121371,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -122170,8 +121953,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -122960,8 +122742,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -123276,8 +123057,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -123859,8 +123639,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -124613,8 +124392,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -124929,8 +124707,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -125512,8 +125289,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -126302,8 +126078,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -126605,8 +126380,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -127188,8 +126962,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -127978,8 +127751,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -128281,8 +128053,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -128864,8 +128635,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -129650,8 +129420,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -130209,8 +129978,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -130763,8 +130531,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -131285,8 +131052,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -131868,8 +131634,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -132463,8 +132228,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -133046,8 +132810,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -133643,8 +133406,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -134226,8 +133988,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -134865,8 +134626,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -135448,8 +135208,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -136075,8 +135834,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -136392,8 +136150,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -136975,8 +136732,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -137765,8 +137521,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -138081,8 +137836,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -138664,8 +138418,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -139418,8 +139171,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -139734,8 +139486,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -140317,8 +140068,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -141107,8 +140857,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -141410,8 +141159,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -141993,8 +141741,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -142783,8 +142530,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -143086,8 +142832,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -143669,8 +143414,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -144455,8 +144199,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -145014,8 +144757,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -145568,8 +145310,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -146090,8 +145831,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -146673,8 +146413,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -147268,8 +147007,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -147851,8 +147589,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -148448,8 +148185,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -149031,8 +148767,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -149670,8 +149405,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -150253,8 +149987,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -150880,8 +150613,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -151197,8 +150929,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -151780,8 +151511,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -152570,8 +152300,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -152886,8 +152615,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -153469,8 +153197,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -154223,8 +153950,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -154539,8 +154265,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -155122,8 +154847,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -155912,8 +155636,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -156215,8 +155938,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -156798,8 +156520,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -157588,8 +157309,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -157891,8 +157611,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -158474,8 +158193,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -159260,8 +158978,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -159819,8 +159536,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -160373,8 +160089,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -160895,8 +160610,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -161478,8 +161192,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -162073,8 +161786,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -162656,8 +162368,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -163253,8 +162964,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -163836,8 +163546,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -164475,8 +164184,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -165058,8 +164766,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -165709,8 +165416,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -166026,8 +165732,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -166609,8 +166314,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -167399,8 +167103,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -167715,8 +167418,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -168298,8 +168000,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -169052,8 +168753,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -169368,8 +169068,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -169951,8 +169650,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -170741,8 +170439,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -171044,8 +170741,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -171627,8 +171323,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -172417,8 +172112,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -172720,8 +172414,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -173303,8 +172996,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -174089,8 +173781,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -174648,8 +174339,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -175202,8 +174892,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -175724,8 +175413,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -176307,8 +175995,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -176902,8 +176589,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -177485,8 +177171,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -178082,8 +177767,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -178665,8 +178349,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -179304,8 +178987,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -179887,8 +179569,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -180533,8 +180214,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -180850,8 +180530,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -181433,8 +181112,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -182223,8 +181901,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -182539,8 +182216,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -183122,8 +182798,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -183876,8 +183551,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -184192,8 +183866,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -184775,8 +184448,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -185565,8 +185237,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -185868,8 +185539,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -186451,8 +186121,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -187241,8 +186910,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -187544,8 +187212,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -188127,8 +187794,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -188913,8 +188579,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -189472,8 +189137,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -190026,8 +189690,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -190548,8 +190211,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -191131,8 +190793,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -191726,8 +191387,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -192309,8 +191969,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -192906,8 +192565,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -193489,8 +193147,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -194128,8 +193785,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -194711,8 +194367,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -195370,8 +195025,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -195687,8 +195341,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -196270,8 +195923,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -197060,8 +196712,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -197376,8 +197027,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -197959,8 +197609,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -198713,8 +198362,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -199029,8 +198677,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -199612,8 +199259,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -200402,8 +200048,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -200705,8 +200350,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -201288,8 +200932,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -202078,8 +201721,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -202381,8 +202023,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -202964,8 +202605,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -203750,8 +203390,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -204309,8 +203948,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -204863,8 +204501,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -205385,8 +205022,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -205968,8 +205604,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -206563,8 +206198,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -207146,8 +206780,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -207743,8 +207376,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -208326,8 +207958,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -208965,8 +208596,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -209548,8 +209178,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -210175,8 +209804,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -210492,8 +210120,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -211075,8 +210702,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -211865,8 +211491,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -212181,8 +211806,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -212764,8 +212388,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -213518,8 +213141,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -213834,8 +213456,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -214417,8 +214038,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -215207,8 +214827,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -215510,8 +215129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -216093,8 +215711,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -216883,8 +216500,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -217186,8 +216802,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -217769,8 +217384,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -218555,8 +218169,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -219114,8 +218727,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -219668,8 +219280,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -220190,8 +219801,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -220773,8 +220383,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -221368,8 +220977,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -221951,8 +221559,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -222548,8 +222155,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -223131,8 +222737,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -223770,8 +223375,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -224353,8 +223957,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -224980,8 +224583,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -225297,8 +224899,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -225880,8 +225481,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -226670,8 +226270,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -226986,8 +226585,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -227569,8 +227167,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -228323,8 +227920,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -228639,8 +228235,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -229222,8 +228817,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -230012,8 +229606,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -230315,8 +229908,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -230898,8 +230490,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -231688,8 +231279,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -231991,8 +231581,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -232574,8 +232163,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -233360,8 +232948,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -233919,8 +233506,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -234473,8 +234059,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -234995,8 +234580,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -235578,8 +235162,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -236173,8 +235756,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -236756,8 +236338,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -237353,8 +236934,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -237936,8 +237516,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -238575,8 +238154,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -239158,8 +238736,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -239809,8 +239386,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     _type: "card";
     title?: string;
     subtitle?: string;
-    imageType?: "banner" | "icon" | "none" | "profile";
-    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
@@ -240126,8 +239702,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -240709,8 +240284,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -241499,8 +241073,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -241815,8 +241388,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -242398,8 +241970,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -243152,8 +242723,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -243468,8 +243038,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -244051,8 +243620,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -244841,8 +244409,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -245144,8 +244711,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -245727,8 +245293,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -246517,8 +246082,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -246820,8 +246384,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -247403,8 +246966,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -248189,8 +247751,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -248748,8 +248309,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -249302,8 +248862,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -249824,8 +249383,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -250407,8 +249965,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "card";
             title?: string;
             subtitle?: string;
-            imageType?: "banner" | "icon" | "none" | "profile";
-            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
@@ -251002,8 +250559,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -251585,8 +251141,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "card";
           title?: string;
           subtitle?: string;
-          imageType?: "banner" | "icon" | "none" | "profile";
-          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
@@ -252182,8 +251737,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -252765,8 +252319,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "card";
         title?: string;
         subtitle?: string;
-        imageType?: "banner" | "icon" | "none" | "profile";
-        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
@@ -253404,8 +252957,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
@@ -253987,8 +253539,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       _type: "card";
       title?: string;
       subtitle?: string;
-      imageType?: "banner" | "icon" | "none" | "profile";
-      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {

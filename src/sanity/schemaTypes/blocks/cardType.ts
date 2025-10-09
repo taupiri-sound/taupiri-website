@@ -47,10 +47,6 @@ export const cardType = defineType({
             value: 'banner',
           },
           {
-            title: 'Profile Image',
-            value: 'profile',
-          },
-          {
             title: 'Icon',
             value: 'icon',
           },
@@ -59,28 +55,8 @@ export const cardType = defineType({
       },
       initialValue: 'none',
       description:
-        'Choose the type of image for this card:\n\n• No Image: Card displays content only\n\n• Banner Image: Full-width image at the top of the card\n\n• Profile Image: Square image displayed prominently\n\n• Icon: Small circular icon image',
+        'Choose the type of image for this card:\n\n• No Image: Card displays content only\n\n• Banner Image: Full-width image at the top of the card\n\n• Icon: Small circular icon image',
       validation: (Rule) => Rule.required(),
-    }),
-    // Layout Style for Profile Images
-    defineField({
-      name: 'profileLayoutStyle',
-      title: 'Layout Style',
-      type: 'string',
-      group: 'image',
-      options: {
-        list: [
-          { title: 'Stacked', value: 'stacked' },
-          { title: 'Row Large', value: 'rowLarge' },
-          { title: 'Row Small', value: 'rowSmall' },
-        ],
-        layout: 'radio',
-      },
-      initialValue: 'stacked',
-      description:
-        'Choose how the card is arranged:\n\n• Stacked: Image at top, content below (max-width, portrait aspect)\n\n• Row Large: Image ~1/3 width, full container width, stacks on mobile\n\n• Row Small: Image fixed width, max-width applied, always horizontal',
-      hidden: ({ parent }) =>
-        (parent as { imageType?: string })?.imageType !== 'profile',
     }),
     // Layout Style for Icon and No Image
     defineField({
@@ -162,30 +138,21 @@ export const cardType = defineType({
       title: 'title',
       subtitle: 'subtitle',
       imageType: 'imageType',
-      profileLayoutStyle: 'profileLayoutStyle',
       iconNoImageLayoutStyle: 'iconNoImageLayoutStyle',
       image: 'image',
       content: 'content',
     },
-    prepare({ title, subtitle, imageType, profileLayoutStyle, iconNoImageLayoutStyle, image, content }) {
+    prepare({ title, subtitle, imageType, iconNoImageLayoutStyle, image, content }) {
       const imageTypeLabel =
         imageType === 'banner'
           ? 'Banner'
-          : imageType === 'profile'
-            ? 'Profile'
-            : imageType === 'icon'
-              ? 'Icon'
-              : 'No Image';
+          : imageType === 'icon'
+            ? 'Icon'
+            : 'No Image';
 
       // Determine layout label based on image type
       let layoutLabel = 'Stacked';
-      if (imageType === 'profile') {
-        layoutLabel = profileLayoutStyle === 'rowLarge'
-          ? 'Row Large'
-          : profileLayoutStyle === 'rowSmall'
-            ? 'Row Small'
-            : 'Stacked';
-      } else if (imageType === 'icon' || imageType === 'none') {
+      if (imageType === 'icon' || imageType === 'none') {
         layoutLabel = iconNoImageLayoutStyle === 'row' ? 'Row' : 'Stacked';
       }
 

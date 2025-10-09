@@ -6,7 +6,6 @@ import type { Card as CardType } from '@/sanity/types';
 import { client } from '@/sanity/lib/client';
 import CardNoImage from '../Card/CardNoImage';
 import CardBanner from '../Card/CardBanner';
-import CardProfile from '../Card/CardProfile';
 import CardIcon from '../Card/CardIcon';
 
 import type { SiteSettingsProps } from '@/types/shared';
@@ -37,7 +36,6 @@ const Card = (props: CardProps) => {
     subtitle,
     imageType = 'none',
     image,
-    profileLayoutStyle,
     iconNoImageLayoutStyle,
     content,
     className = '',
@@ -55,11 +53,8 @@ const Card = (props: CardProps) => {
   const cleanImageType = stegaClean(imageType) || 'none';
 
   // Determine layout style based on image type
-  let cleanLayoutStyle: 'stacked' | 'row' | 'rowLarge' | 'rowSmall' = 'stacked';
-  if (cleanImageType === 'profile') {
-    const profileLayout = stegaClean(profileLayoutStyle);
-    cleanLayoutStyle = (profileLayout as 'stacked' | 'rowLarge' | 'rowSmall') || 'stacked';
-  } else if (cleanImageType === 'icon' || cleanImageType === 'none') {
+  let cleanLayoutStyle: 'stacked' | 'row' = 'stacked';
+  if (cleanImageType === 'icon' || cleanImageType === 'none') {
     const iconLayout = stegaClean(iconNoImageLayoutStyle);
     cleanLayoutStyle = (iconLayout as 'stacked' | 'row') || 'stacked';
   }
@@ -89,11 +84,6 @@ const Card = (props: CardProps) => {
   // Banner Image - Stacked (only option for banner)
   if (cleanImageType === 'banner' && image?.asset?._ref) {
     return <CardBanner {...commonProps} image={image} />;
-  }
-
-  // Profile Image
-  if (cleanImageType === 'profile' && image?.asset?._ref) {
-    return <CardProfile {...commonProps} image={image} layoutStyle={cleanLayoutStyle} />;
   }
 
   // Icon
