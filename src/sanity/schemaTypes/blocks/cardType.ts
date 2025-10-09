@@ -62,6 +62,47 @@ export const cardType = defineType({
         'Choose the type of image for this card:\n\n• No Image: Card displays content only\n\n• Banner Image: Full-width image at the top of the card\n\n• Profile Image: Square image displayed prominently\n\n• Icon: Small circular icon image',
       validation: (Rule) => Rule.required(),
     }),
+    // Layout Style for Profile Images
+    defineField({
+      name: 'profileLayoutStyle',
+      title: 'Layout Style',
+      type: 'string',
+      group: 'image',
+      options: {
+        list: [
+          { title: 'Stacked', value: 'stacked' },
+          { title: 'Row Large', value: 'rowLarge' },
+          { title: 'Row Small', value: 'rowSmall' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'stacked',
+      description:
+        'Choose how the card is arranged:\n\n• Stacked: Image at top, content below (max-width, portrait aspect)\n\n• Row Large: Image ~1/3 width, full container width, stacks on mobile\n\n• Row Small: Image fixed width, max-width applied, always horizontal',
+      hidden: ({ parent }) =>
+        (parent as { imageType?: string })?.imageType !== 'profile',
+    }),
+    // Layout Style for Icon and No Image
+    defineField({
+      name: 'iconNoImageLayoutStyle',
+      title: 'Layout Style',
+      type: 'string',
+      group: 'image',
+      options: {
+        list: [
+          { title: 'Stacked', value: 'stacked' },
+          { title: 'Row', value: 'row' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'stacked',
+      description:
+        'Choose how the card is arranged:\n\n• Stacked: Content arranged vertically\n\n• Row: Content arranged horizontally',
+      hidden: ({ parent }) => {
+        const imageType = (parent as { imageType?: string })?.imageType;
+        return imageType !== 'icon' && imageType !== 'none';
+      },
+    }),
     defineField({
       name: 'image',
       title: 'Image',
@@ -88,38 +129,6 @@ export const cardType = defineType({
           }
           return true;
         }),
-    }),
-    defineField({
-      name: 'layoutStyle',
-      title: 'Layout Style',
-      type: 'string',
-      group: 'layout',
-      options: {
-        list: [
-          {
-            title: 'Stacked (Vertical)',
-            value: 'stacked',
-          },
-          {
-            title: 'Row (Horizontal)',
-            value: 'row',
-          },
-          {
-            title: 'Row Large (Profile only)',
-            value: 'rowLarge',
-          },
-          {
-            title: 'Row Small (Profile only)',
-            value: 'rowSmall',
-          },
-        ],
-        layout: 'radio',
-      },
-      initialValue: 'stacked',
-      description:
-        'Choose how the card content is arranged:\n\n• Stacked: Image (if present) appears above content, arranged vertically\n\n• Row: Image (if present) appears beside content, arranged horizontally\n\n• Row Large (Profile only): Image takes ~1/3 width in portrait aspect ratio, full container width, stacks on mobile\n\n• Row Small (Profile only): Image in portrait aspect ratio with fixed width, max-width applied, same layout on all screens\n\nNote: Row Large and Row Small options only apply to Profile image type. This field is read-only when Banner image is selected (always uses Stacked layout).',
-      readOnly: ({ parent }) => (parent as { imageType?: string })?.imageType === 'banner',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'content',
@@ -153,11 +162,12 @@ export const cardType = defineType({
       title: 'title',
       subtitle: 'subtitle',
       imageType: 'imageType',
-      layoutStyle: 'layoutStyle',
+      profileLayoutStyle: 'profileLayoutStyle',
+      iconNoImageLayoutStyle: 'iconNoImageLayoutStyle',
       image: 'image',
       content: 'content',
     },
-    prepare({ title, subtitle, imageType, layoutStyle, image, content }) {
+    prepare({ title, subtitle, imageType, profileLayoutStyle, iconNoImageLayoutStyle, image, content }) {
       const imageTypeLabel =
         imageType === 'banner'
           ? 'Banner'
@@ -166,8 +176,19 @@ export const cardType = defineType({
             : imageType === 'icon'
               ? 'Icon'
               : 'No Image';
-      const layoutLabel =
-        imageType === 'banner' ? 'Stacked' : layoutStyle === 'row' ? 'Row' : 'Stacked';
+
+      // Determine layout label based on image type
+      let layoutLabel = 'Stacked';
+      if (imageType === 'profile') {
+        layoutLabel = profileLayoutStyle === 'rowLarge'
+          ? 'Row Large'
+          : profileLayoutStyle === 'rowSmall'
+            ? 'Row Small'
+            : 'Stacked';
+      } else if (imageType === 'icon' || imageType === 'none') {
+        layoutLabel = iconNoImageLayoutStyle === 'row' ? 'Row' : 'Stacked';
+      }
+
       const blockCount = Array.isArray(content) ? content.length : 0;
 
       const displayTitle = title || `Card: ${imageTypeLabel} • ${layoutLabel}`;

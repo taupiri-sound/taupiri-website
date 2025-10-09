@@ -1150,6 +1150,8 @@ export type Card = {
   title?: string;
   subtitle?: string;
   imageType?: "none" | "banner" | "profile" | "icon";
+  profileLayoutStyle?: "stacked" | "rowLarge" | "rowSmall";
+  iconNoImageLayoutStyle?: "stacked" | "row";
   image?: {
     asset?: {
       _ref: string;
@@ -1163,7 +1165,6 @@ export type Card = {
     alt?: string;
     _type: "image";
   };
-  layoutStyle?: "stacked" | "row" | "rowLarge" | "rowSmall";
   content?: Array<{
     _key: string;
   } & Divider | {
@@ -1497,6 +1498,8 @@ export type PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -1508,7 +1511,6 @@ export type PAGE_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -1813,6 +1815,8 @@ export type PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -1824,7 +1828,6 @@ export type PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -2395,6 +2398,8 @@ export type PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -2406,7 +2411,6 @@ export type PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -3184,6 +3188,8 @@ export type PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -3195,7 +3201,6 @@ export type PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -3499,6 +3504,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -3510,7 +3517,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -4081,6 +4087,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -4092,7 +4100,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -4834,6 +4841,8 @@ export type PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -4845,7 +4854,6 @@ export type PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -5149,6 +5157,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -5160,7 +5170,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -5731,6 +5740,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -5742,7 +5753,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -6520,6 +6530,8 @@ export type PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -6531,7 +6543,6 @@ export type PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -6822,6 +6833,8 @@ export type PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -6833,7 +6846,6 @@ export type PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -7404,6 +7416,8 @@ export type PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -7415,7 +7429,6 @@ export type PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -8193,6 +8206,8 @@ export type PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -8204,7 +8219,6 @@ export type PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -8495,6 +8509,8 @@ export type PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -8506,7 +8522,6 @@ export type PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -9077,6 +9092,8 @@ export type PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -9088,7 +9105,6 @@ export type PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -9862,6 +9878,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -9873,7 +9891,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -10420,6 +10437,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -10431,7 +10450,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -10973,6 +10991,8 @@ export type PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -10984,7 +11004,6 @@ export type PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -11494,6 +11513,8 @@ export type PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -11505,7 +11526,6 @@ export type PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -12076,6 +12096,8 @@ export type PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -12087,7 +12109,6 @@ export type PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -12670,6 +12691,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -12681,7 +12704,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -13252,6 +13274,8 @@ export type PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -13263,7 +13287,6 @@ export type PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -13848,6 +13871,8 @@ export type PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -13859,7 +13884,6 @@ export type PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -14430,6 +14454,8 @@ export type PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -14441,7 +14467,6 @@ export type PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -15068,6 +15093,8 @@ export type PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -15079,7 +15106,6 @@ export type PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -15650,6 +15676,8 @@ export type PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -15661,7 +15689,6 @@ export type PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -16229,6 +16256,8 @@ export type PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
         _ref: string;
@@ -16242,7 +16271,6 @@ export type PAGE_QUERYResult = {
       alt?: string;
       _type: "image";
     };
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content?: Array<{
       _key: string;
     } & BandcampWidget | {
@@ -16377,6 +16405,8 @@ export type HOME_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -16388,7 +16418,6 @@ export type HOME_PAGE_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -16693,6 +16722,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -16704,7 +16735,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -17275,6 +17305,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -17286,7 +17318,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -18064,6 +18095,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -18075,7 +18108,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -18379,6 +18411,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -18390,7 +18424,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -18961,6 +18994,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -18972,7 +19007,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -19714,6 +19748,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -19725,7 +19761,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -20029,6 +20064,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -20040,7 +20077,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -20611,6 +20647,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -20622,7 +20660,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -21400,6 +21437,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -21411,7 +21450,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -21702,6 +21740,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -21713,7 +21753,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -22284,6 +22323,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -22295,7 +22336,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -23073,6 +23113,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -23084,7 +23126,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -23375,6 +23416,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -23386,7 +23429,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -23957,6 +23999,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -23968,7 +24012,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -24742,6 +24785,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -24753,7 +24798,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -25300,6 +25344,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -25311,7 +25357,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -25853,6 +25898,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -25864,7 +25911,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -26374,6 +26420,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -26385,7 +26433,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -26956,6 +27003,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -26967,7 +27016,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -27550,6 +27598,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -27561,7 +27611,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -28132,6 +28181,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -28143,7 +28194,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -28728,6 +28778,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -28739,7 +28791,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -29310,6 +29361,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -29321,7 +29374,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -29948,6 +30000,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -29959,7 +30013,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -30530,6 +30583,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -30541,7 +30596,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -31302,6 +31356,8 @@ export type HOME_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -31313,7 +31369,6 @@ export type HOME_PAGE_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -31618,6 +31673,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -31629,7 +31686,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -32200,6 +32256,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -32211,7 +32269,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -32989,6 +33046,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -33000,7 +33059,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -33304,6 +33362,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -33315,7 +33375,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -33886,6 +33945,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -33897,7 +33958,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -34639,6 +34699,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -34650,7 +34712,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -34954,6 +35015,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -34965,7 +35028,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -35536,6 +35598,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -35547,7 +35611,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -36325,6 +36388,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -36336,7 +36401,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -36627,6 +36691,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -36638,7 +36704,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -37209,6 +37274,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -37220,7 +37287,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -37998,6 +38064,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -38009,7 +38077,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -38300,6 +38367,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -38311,7 +38380,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -38882,6 +38950,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -38893,7 +38963,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -39667,6 +39736,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -39678,7 +39749,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -40225,6 +40295,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -40236,7 +40308,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -40778,6 +40849,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -40789,7 +40862,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -41299,6 +41371,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -41310,7 +41384,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -41881,6 +41954,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -41892,7 +41967,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -42475,6 +42549,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -42486,7 +42562,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -43057,6 +43132,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -43068,7 +43145,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -43653,6 +43729,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -43664,7 +43742,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -44235,6 +44312,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -44246,7 +44325,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -44873,6 +44951,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -44884,7 +44964,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -45455,6 +45534,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -45466,7 +45547,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -46087,6 +46167,8 @@ export type HOME_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -46098,7 +46180,6 @@ export type HOME_PAGE_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -46403,6 +46484,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -46414,7 +46497,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -46985,6 +47067,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -46996,7 +47080,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -47774,6 +47857,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -47785,7 +47870,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -48089,6 +48173,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -48100,7 +48186,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -48671,6 +48756,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -48682,7 +48769,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -49424,6 +49510,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -49435,7 +49523,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -49739,6 +49826,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -49750,7 +49839,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -50321,6 +50409,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -50332,7 +50422,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -51110,6 +51199,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -51121,7 +51212,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -51412,6 +51502,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -51423,7 +51515,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -51994,6 +52085,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -52005,7 +52098,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -52783,6 +52875,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -52794,7 +52888,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -53085,6 +53178,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -53096,7 +53191,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -53667,6 +53761,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -53678,7 +53774,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -54452,6 +54547,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -54463,7 +54560,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -55010,6 +55106,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -55021,7 +55119,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -55563,6 +55660,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -55574,7 +55673,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -56084,6 +56182,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -56095,7 +56195,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -56666,6 +56765,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -56677,7 +56778,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -57260,6 +57360,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -57271,7 +57373,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -57842,6 +57943,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -57853,7 +57956,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -58438,6 +58540,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -58449,7 +58553,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -59020,6 +59123,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -59031,7 +59136,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -59658,6 +59762,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -59669,7 +59775,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -60240,6 +60345,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -60251,7 +60358,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -60872,6 +60978,8 @@ export type HOME_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -60883,7 +60991,6 @@ export type HOME_PAGE_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -61188,6 +61295,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -61199,7 +61308,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -61770,6 +61878,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -61781,7 +61891,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -62559,6 +62668,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -62570,7 +62681,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -62874,6 +62984,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -62885,7 +62997,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -63456,6 +63567,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -63467,7 +63580,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -64209,6 +64321,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -64220,7 +64334,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -64524,6 +64637,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -64535,7 +64650,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -65106,6 +65220,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -65117,7 +65233,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -65895,6 +66010,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -65906,7 +66023,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -66197,6 +66313,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -66208,7 +66326,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -66779,6 +66896,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -66790,7 +66909,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -67568,6 +67686,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -67579,7 +67699,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -67870,6 +67989,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -67881,7 +68002,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -68452,6 +68572,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -68463,7 +68585,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -69237,6 +69358,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -69248,7 +69371,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -69795,6 +69917,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -69806,7 +69930,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -70348,6 +70471,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -70359,7 +70484,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -70869,6 +70993,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -70880,7 +71006,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -71451,6 +71576,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -71462,7 +71589,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -72045,6 +72171,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -72056,7 +72184,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -72627,6 +72754,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -72638,7 +72767,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -73223,6 +73351,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -73234,7 +73364,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -73805,6 +73934,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -73816,7 +73947,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -74443,6 +74573,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -74454,7 +74586,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -75025,6 +75156,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -75036,7 +75169,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -75699,6 +75831,8 @@ export type HOME_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -75710,7 +75844,6 @@ export type HOME_PAGE_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -76015,6 +76148,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -76026,7 +76161,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -76597,6 +76731,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -76608,7 +76744,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -77386,6 +77521,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -77397,7 +77534,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -77701,6 +77837,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -77712,7 +77850,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -78283,6 +78420,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -78294,7 +78433,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -79036,6 +79174,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -79047,7 +79187,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -79351,6 +79490,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -79362,7 +79503,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -79933,6 +80073,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -79944,7 +80086,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -80722,6 +80863,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -80733,7 +80876,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -81024,6 +81166,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -81035,7 +81179,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -81606,6 +81749,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -81617,7 +81762,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -82395,6 +82539,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -82406,7 +82552,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -82697,6 +82842,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -82708,7 +82855,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -83279,6 +83425,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -83290,7 +83438,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -84064,6 +84211,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -84075,7 +84224,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -84622,6 +84770,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -84633,7 +84783,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -85175,6 +85324,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -85186,7 +85337,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -85696,6 +85846,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -85707,7 +85859,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -86278,6 +86429,8 @@ export type HOME_PAGE_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -86289,7 +86442,6 @@ export type HOME_PAGE_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -86872,6 +87024,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -86883,7 +87037,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -87454,6 +87607,8 @@ export type HOME_PAGE_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -87465,7 +87620,6 @@ export type HOME_PAGE_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -88050,6 +88204,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -88061,7 +88217,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -88632,6 +88787,8 @@ export type HOME_PAGE_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -88643,7 +88800,6 @@ export type HOME_PAGE_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -89270,6 +89426,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -89281,7 +89439,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -89852,6 +90009,8 @@ export type HOME_PAGE_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -89863,7 +90022,6 @@ export type HOME_PAGE_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -90903,6 +91061,8 @@ export type BLOG_POSTS_QUERYResult = Array<{
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
         _ref: string;
@@ -90916,7 +91076,6 @@ export type BLOG_POSTS_QUERYResult = Array<{
       alt?: string;
       _type: "image";
     };
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content?: Array<{
       _key: string;
     } & BandcampWidget | {
@@ -90985,6 +91144,8 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
         _ref: string;
@@ -90998,7 +91159,6 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       alt?: string;
       _type: "image";
     };
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content?: Array<{
       _key: string;
     } & BandcampWidget | {
@@ -91045,6 +91205,8 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
         _ref: string;
@@ -91058,7 +91220,6 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       alt?: string;
       _type: "image";
     };
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content?: Array<{
       _key: string;
     } & BandcampWidget | {
@@ -91160,6 +91321,8 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
         _ref: string;
@@ -91173,7 +91336,6 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
       alt?: string;
       _type: "image";
     };
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content?: Array<{
       _key: string;
     } & BandcampWidget | {
@@ -91334,6 +91496,8 @@ export type BLOG_POST_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -91345,7 +91509,6 @@ export type BLOG_POST_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -91650,6 +91813,8 @@ export type BLOG_POST_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -91661,7 +91826,6 @@ export type BLOG_POST_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -92232,6 +92396,8 @@ export type BLOG_POST_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -92243,7 +92409,6 @@ export type BLOG_POST_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -93021,6 +93186,8 @@ export type BLOG_POST_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -93032,7 +93199,6 @@ export type BLOG_POST_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -93336,6 +93502,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -93347,7 +93515,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -93918,6 +94085,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -93929,7 +94098,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -94671,6 +94839,8 @@ export type BLOG_POST_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -94682,7 +94852,6 @@ export type BLOG_POST_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -94986,6 +95155,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -94997,7 +95168,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -95568,6 +95738,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -95579,7 +95751,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -96357,6 +96528,8 @@ export type BLOG_POST_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -96368,7 +96541,6 @@ export type BLOG_POST_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -96659,6 +96831,8 @@ export type BLOG_POST_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -96670,7 +96844,6 @@ export type BLOG_POST_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -97241,6 +97414,8 @@ export type BLOG_POST_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -97252,7 +97427,6 @@ export type BLOG_POST_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -98030,6 +98204,8 @@ export type BLOG_POST_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -98041,7 +98217,6 @@ export type BLOG_POST_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -98332,6 +98507,8 @@ export type BLOG_POST_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -98343,7 +98520,6 @@ export type BLOG_POST_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -98914,6 +99090,8 @@ export type BLOG_POST_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -98925,7 +99103,6 @@ export type BLOG_POST_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -99699,6 +99876,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -99710,7 +99889,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -100257,6 +100435,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -100268,7 +100448,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -100810,6 +100989,8 @@ export type BLOG_POST_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -100821,7 +101002,6 @@ export type BLOG_POST_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -101331,6 +101511,8 @@ export type BLOG_POST_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -101342,7 +101524,6 @@ export type BLOG_POST_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -101913,6 +102094,8 @@ export type BLOG_POST_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -101924,7 +102107,6 @@ export type BLOG_POST_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -102507,6 +102689,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -102518,7 +102702,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -103089,6 +103272,8 @@ export type BLOG_POST_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -103100,7 +103285,6 @@ export type BLOG_POST_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -103685,6 +103869,8 @@ export type BLOG_POST_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -103696,7 +103882,6 @@ export type BLOG_POST_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -104267,6 +104452,8 @@ export type BLOG_POST_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -104278,7 +104465,6 @@ export type BLOG_POST_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -104905,6 +105091,8 @@ export type BLOG_POST_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -104916,7 +105104,6 @@ export type BLOG_POST_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -105487,6 +105674,8 @@ export type BLOG_POST_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -105498,7 +105687,6 @@ export type BLOG_POST_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -106055,6 +106243,8 @@ export type BLOG_POST_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image?: {
       asset?: {
         _ref: string;
@@ -106068,7 +106258,6 @@ export type BLOG_POST_QUERYResult = {
       alt?: string;
       _type: "image";
     };
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content?: Array<{
       _key: string;
     } & BandcampWidget | {
@@ -106245,6 +106434,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -106256,7 +106447,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -106561,6 +106751,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -106572,7 +106764,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -107143,6 +107334,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -107154,7 +107347,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -107932,6 +108124,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -107943,7 +108137,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -108247,6 +108440,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -108258,7 +108453,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -108829,6 +109023,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -108840,7 +109036,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -109582,6 +109777,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -109593,7 +109790,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -109897,6 +110093,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -109908,7 +110106,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -110479,6 +110676,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -110490,7 +110689,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -111268,6 +111466,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -111279,7 +111479,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -111570,6 +111769,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -111581,7 +111782,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -112152,6 +112352,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -112163,7 +112365,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -112941,6 +113142,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -112952,7 +113155,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -113243,6 +113445,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -113254,7 +113458,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -113825,6 +114028,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -113836,7 +114041,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -114610,6 +114814,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -114621,7 +114827,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -115168,6 +115373,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -115179,7 +115386,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -115721,6 +115927,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -115732,7 +115940,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -116242,6 +116449,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -116253,7 +116462,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -116824,6 +117032,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -116835,7 +117045,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -117418,6 +117627,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -117429,7 +117640,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -118000,6 +118210,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -118011,7 +118223,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -118596,6 +118807,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -118607,7 +118820,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -119178,6 +119390,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -119189,7 +119403,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -119816,6 +120029,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -119827,7 +120042,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -120398,6 +120612,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -120409,7 +120625,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -121056,6 +121271,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -121067,7 +121284,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -121372,6 +121588,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -121383,7 +121601,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -121954,6 +122171,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -121965,7 +122184,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -122743,6 +122961,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -122754,7 +122974,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -123058,6 +123277,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -123069,7 +123290,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -123640,6 +123860,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -123651,7 +123873,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -124393,6 +124614,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -124404,7 +124627,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -124708,6 +124930,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -124719,7 +124943,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -125290,6 +125513,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -125301,7 +125526,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -126079,6 +126303,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -126090,7 +126316,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -126381,6 +126606,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -126392,7 +126619,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -126963,6 +127189,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -126974,7 +127202,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -127752,6 +127979,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -127763,7 +127992,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -128054,6 +128282,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -128065,7 +128295,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -128636,6 +128865,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -128647,7 +128878,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -129421,6 +129651,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -129432,7 +129664,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -129979,6 +130210,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -129990,7 +130223,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -130532,6 +130764,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -130543,7 +130777,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -131053,6 +131286,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -131064,7 +131299,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -131635,6 +131869,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -131646,7 +131882,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -132229,6 +132464,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -132240,7 +132477,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -132811,6 +133047,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -132822,7 +133060,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -133407,6 +133644,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -133418,7 +133657,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -133989,6 +134227,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -134000,7 +134240,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -134627,6 +134866,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -134638,7 +134879,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -135209,6 +135449,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -135220,7 +135462,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -135835,6 +136076,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -135846,7 +136089,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -136151,6 +136393,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -136162,7 +136406,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -136733,6 +136976,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -136744,7 +136989,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -137522,6 +137766,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -137533,7 +137779,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -137837,6 +138082,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -137848,7 +138095,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -138419,6 +138665,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -138430,7 +138678,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -139172,6 +139419,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -139183,7 +139432,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -139487,6 +139735,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -139498,7 +139748,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -140069,6 +140318,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -140080,7 +140331,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -140858,6 +141108,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -140869,7 +141121,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -141160,6 +141411,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -141171,7 +141424,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -141742,6 +141994,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -141753,7 +142007,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -142531,6 +142784,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -142542,7 +142797,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -142833,6 +143087,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -142844,7 +143100,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -143415,6 +143670,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -143426,7 +143683,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -144200,6 +144456,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -144211,7 +144469,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -144758,6 +145015,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -144769,7 +145028,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -145311,6 +145569,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -145322,7 +145582,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -145832,6 +146091,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -145843,7 +146104,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -146414,6 +146674,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -146425,7 +146687,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -147008,6 +147269,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -147019,7 +147282,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -147590,6 +147852,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -147601,7 +147865,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -148186,6 +148449,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -148197,7 +148462,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -148768,6 +149032,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -148779,7 +149045,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -149406,6 +149671,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -149417,7 +149684,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -149988,6 +150254,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -149999,7 +150267,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -150614,6 +150881,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -150625,7 +150894,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -150930,6 +151198,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -150941,7 +151211,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -151512,6 +151781,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -151523,7 +151794,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -152301,6 +152571,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -152312,7 +152584,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -152616,6 +152887,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -152627,7 +152900,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -153198,6 +153470,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -153209,7 +153483,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -153951,6 +154224,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -153962,7 +154237,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -154266,6 +154540,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -154277,7 +154553,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -154848,6 +155123,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -154859,7 +155136,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -155637,6 +155913,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -155648,7 +155926,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -155939,6 +156216,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -155950,7 +156229,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -156521,6 +156799,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -156532,7 +156812,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -157310,6 +157589,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -157321,7 +157602,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -157612,6 +157892,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -157623,7 +157905,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -158194,6 +158475,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -158205,7 +158488,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -158979,6 +159261,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -158990,7 +159274,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -159537,6 +159820,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -159548,7 +159833,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -160090,6 +160374,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -160101,7 +160387,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -160611,6 +160896,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -160622,7 +160909,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -161193,6 +161479,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -161204,7 +161492,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -161787,6 +162074,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -161798,7 +162087,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -162369,6 +162657,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -162380,7 +162670,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -162965,6 +163254,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -162976,7 +163267,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -163547,6 +163837,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -163558,7 +163850,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -164185,6 +164476,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -164196,7 +164489,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -164767,6 +165059,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -164778,7 +165072,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -165417,6 +165710,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -165428,7 +165723,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -165733,6 +166027,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -165744,7 +166040,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -166315,6 +166610,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -166326,7 +166623,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -167104,6 +167400,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -167115,7 +167413,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -167419,6 +167716,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -167430,7 +167729,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -168001,6 +168299,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -168012,7 +168312,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -168754,6 +169053,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -168765,7 +169066,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -169069,6 +169369,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -169080,7 +169382,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -169651,6 +169952,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -169662,7 +169965,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -170440,6 +170742,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -170451,7 +170755,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -170742,6 +171045,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -170753,7 +171058,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -171324,6 +171628,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -171335,7 +171641,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -172113,6 +172418,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -172124,7 +172431,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -172415,6 +172721,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -172426,7 +172734,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -172997,6 +173304,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -173008,7 +173317,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -173782,6 +174090,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -173793,7 +174103,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -174340,6 +174649,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -174351,7 +174662,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -174893,6 +175203,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -174904,7 +175216,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -175414,6 +175725,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -175425,7 +175738,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -175996,6 +176308,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -176007,7 +176321,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -176590,6 +176903,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -176601,7 +176916,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -177172,6 +177486,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -177183,7 +177499,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -177768,6 +178083,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -177779,7 +178096,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -178350,6 +178666,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -178361,7 +178679,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -178988,6 +179305,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -178999,7 +179318,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -179570,6 +179888,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -179581,7 +179901,6 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -180215,6 +180534,8 @@ export type PRIVACY_POLICY_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -180226,7 +180547,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -180531,6 +180851,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -180542,7 +180864,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -181113,6 +181434,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -181124,7 +181447,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -181902,6 +182224,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -181913,7 +182237,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -182217,6 +182540,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -182228,7 +182553,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -182799,6 +183123,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -182810,7 +183136,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -183552,6 +183877,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -183563,7 +183890,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -183867,6 +184193,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -183878,7 +184206,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -184449,6 +184776,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -184460,7 +184789,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -185238,6 +185566,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -185249,7 +185579,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -185540,6 +185869,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -185551,7 +185882,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -186122,6 +186452,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -186133,7 +186465,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -186911,6 +187242,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -186922,7 +187255,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -187213,6 +187545,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -187224,7 +187558,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -187795,6 +188128,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -187806,7 +188141,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -188580,6 +188914,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -188591,7 +188927,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -189138,6 +189473,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -189149,7 +189486,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -189691,6 +190027,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -189702,7 +190040,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -190212,6 +190549,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -190223,7 +190562,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -190794,6 +191132,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -190805,7 +191145,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -191388,6 +191727,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -191399,7 +191740,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -191970,6 +192310,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -191981,7 +192323,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -192566,6 +192907,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -192577,7 +192920,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -193148,6 +193490,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -193159,7 +193503,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -193786,6 +194129,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -193797,7 +194142,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -194368,6 +194712,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -194379,7 +194725,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -195026,6 +195371,8 @@ export type PRIVACY_POLICY_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -195037,7 +195384,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -195342,6 +195688,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -195353,7 +195701,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -195924,6 +196271,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -195935,7 +196284,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -196713,6 +197061,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -196724,7 +197074,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -197028,6 +197377,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -197039,7 +197390,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -197610,6 +197960,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -197621,7 +197973,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -198363,6 +198714,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -198374,7 +198727,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -198678,6 +199030,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -198689,7 +199043,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -199260,6 +199613,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -199271,7 +199626,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -200049,6 +200403,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -200060,7 +200416,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -200351,6 +200706,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -200362,7 +200719,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -200933,6 +201289,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -200944,7 +201302,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -201722,6 +202079,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -201733,7 +202092,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -202024,6 +202382,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -202035,7 +202395,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -202606,6 +202965,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -202617,7 +202978,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -203391,6 +203751,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -203402,7 +203764,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -203949,6 +204310,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -203960,7 +204323,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -204502,6 +204864,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -204513,7 +204877,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -205023,6 +205386,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -205034,7 +205399,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -205605,6 +205969,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -205616,7 +205982,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -206199,6 +206564,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -206210,7 +206577,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -206781,6 +207147,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -206792,7 +207160,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -207377,6 +207744,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -207388,7 +207757,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -207959,6 +208327,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -207970,7 +208340,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -208597,6 +208966,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -208608,7 +208979,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -209179,6 +209549,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -209190,7 +209562,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -209805,6 +210176,8 @@ export type PRIVACY_POLICY_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -209816,7 +210189,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -210121,6 +210493,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -210132,7 +210506,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -210703,6 +211076,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -210714,7 +211089,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -211492,6 +211866,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -211503,7 +211879,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -211807,6 +212182,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -211818,7 +212195,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -212389,6 +212765,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -212400,7 +212778,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -213142,6 +213519,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -213153,7 +213532,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -213457,6 +213835,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -213468,7 +213848,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -214039,6 +214418,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -214050,7 +214431,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -214828,6 +215208,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -214839,7 +215221,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -215130,6 +215511,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -215141,7 +215524,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -215712,6 +216094,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -215723,7 +216107,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -216501,6 +216884,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -216512,7 +216897,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -216803,6 +217187,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -216814,7 +217200,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -217385,6 +217770,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -217396,7 +217783,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -218170,6 +218556,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -218181,7 +218569,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -218728,6 +219115,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -218739,7 +219128,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -219281,6 +219669,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -219292,7 +219682,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -219802,6 +220191,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -219813,7 +220204,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -220384,6 +220774,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -220395,7 +220787,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -220978,6 +221369,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -220989,7 +221382,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -221560,6 +221952,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -221571,7 +221965,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -222156,6 +222549,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -222167,7 +222562,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -222738,6 +223132,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -222749,7 +223145,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -223376,6 +223771,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -223387,7 +223784,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -223958,6 +224354,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -223969,7 +224367,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -224584,6 +224981,8 @@ export type PRIVACY_POLICY_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -224595,7 +224994,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -224900,6 +225298,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -224911,7 +225311,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -225482,6 +225881,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -225493,7 +225894,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -226271,6 +226671,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -226282,7 +226684,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -226586,6 +226987,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -226597,7 +227000,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -227168,6 +227570,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -227179,7 +227583,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -227921,6 +228324,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -227932,7 +228337,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -228236,6 +228640,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -228247,7 +228653,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -228818,6 +229223,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -228829,7 +229236,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -229607,6 +230013,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -229618,7 +230026,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -229909,6 +230316,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -229920,7 +230329,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -230491,6 +230899,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -230502,7 +230912,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -231280,6 +231689,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -231291,7 +231702,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -231582,6 +231992,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -231593,7 +232005,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -232164,6 +232575,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -232175,7 +232588,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -232949,6 +233361,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -232960,7 +233374,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -233507,6 +233920,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -233518,7 +233933,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -234060,6 +234474,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -234071,7 +234487,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -234581,6 +234996,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -234592,7 +235009,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -235163,6 +235579,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -235174,7 +235592,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -235757,6 +236174,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -235768,7 +236187,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -236339,6 +236757,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -236350,7 +236770,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -236935,6 +237354,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -236946,7 +237367,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -237517,6 +237937,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -237528,7 +237950,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -238155,6 +238576,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -238166,7 +238589,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -238737,6 +239159,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -238748,7 +239172,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -239387,6 +239810,8 @@ export type PRIVACY_POLICY_QUERYResult = {
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none" | "profile";
+    profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+    iconNoImageLayoutStyle?: "row" | "stacked";
     image: {
       asset: {
         _ref: string;
@@ -239398,7 +239823,6 @@ export type PRIVACY_POLICY_QUERYResult = {
       hotspot: SanityImageHotspot | null;
       crop: SanityImageCrop | null;
     } | null;
-    layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
     content: Array<{
       _key: string;
       _type: "bandcampWidget";
@@ -239703,6 +240127,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -239714,7 +240140,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -240285,6 +240710,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -240296,7 +240723,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -241074,6 +241500,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -241085,7 +241513,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -241389,6 +241816,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -241400,7 +241829,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -241971,6 +242399,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -241982,7 +242412,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -242724,6 +243153,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -242735,7 +243166,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -243039,6 +243469,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -243050,7 +243482,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -243621,6 +244052,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -243632,7 +244065,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -244410,6 +244842,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -244421,7 +244855,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -244712,6 +245145,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -244723,7 +245158,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -245294,6 +245728,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -245305,7 +245741,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -246083,6 +246518,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -246094,7 +246531,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -246385,6 +246821,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -246396,7 +246834,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -246967,6 +247404,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -246978,7 +247417,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -247752,6 +248190,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -247763,7 +248203,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -248310,6 +248749,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -248321,7 +248762,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -248863,6 +249303,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -248874,7 +249316,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -249384,6 +249825,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -249395,7 +249838,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -249966,6 +250408,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none" | "profile";
+            profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+            iconNoImageLayoutStyle?: "row" | "stacked";
             image: {
               asset: {
                 _ref: string;
@@ -249977,7 +250421,6 @@ export type PRIVACY_POLICY_QUERYResult = {
               hotspot: SanityImageHotspot | null;
               crop: SanityImageCrop | null;
             } | null;
-            layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
             content: Array<{
               _key: string;
               _type: "bandcampWidget";
@@ -250560,6 +251003,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -250571,7 +251016,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -251142,6 +251586,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none" | "profile";
+          profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+          iconNoImageLayoutStyle?: "row" | "stacked";
           image: {
             asset: {
               _ref: string;
@@ -251153,7 +251599,6 @@ export type PRIVACY_POLICY_QUERYResult = {
             hotspot: SanityImageHotspot | null;
             crop: SanityImageCrop | null;
           } | null;
-          layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
           content: Array<{
             _key: string;
             _type: "bandcampWidget";
@@ -251738,6 +252183,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -251749,7 +252196,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -252320,6 +252766,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none" | "profile";
+        profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+        iconNoImageLayoutStyle?: "row" | "stacked";
         image: {
           asset: {
             _ref: string;
@@ -252331,7 +252779,6 @@ export type PRIVACY_POLICY_QUERYResult = {
           hotspot: SanityImageHotspot | null;
           crop: SanityImageCrop | null;
         } | null;
-        layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
         content: Array<{
           _key: string;
           _type: "bandcampWidget";
@@ -252958,6 +253405,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -252969,7 +253418,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";
@@ -253540,6 +253988,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none" | "profile";
+      profileLayoutStyle?: "rowLarge" | "rowSmall" | "stacked";
+      iconNoImageLayoutStyle?: "row" | "stacked";
       image: {
         asset: {
           _ref: string;
@@ -253551,7 +254001,6 @@ export type PRIVACY_POLICY_QUERYResult = {
         hotspot: SanityImageHotspot | null;
         crop: SanityImageCrop | null;
       } | null;
-      layoutStyle?: "row" | "rowLarge" | "rowSmall" | "stacked";
       content: Array<{
         _key: string;
         _type: "bandcampWidget";

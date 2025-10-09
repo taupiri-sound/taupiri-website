@@ -7579,6 +7579,44 @@
           },
           "optional": true
         },
+        "profileLayoutStyle": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "stacked"
+              },
+              {
+                "type": "string",
+                "value": "rowLarge"
+              },
+              {
+                "type": "string",
+                "value": "rowSmall"
+              }
+            ]
+          },
+          "optional": true
+        },
+        "iconNoImageLayoutStyle": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "stacked"
+              },
+              {
+                "type": "string",
+                "value": "row"
+              }
+            ]
+          },
+          "optional": true
+        },
         "image": {
           "type": "objectAttribute",
           "value": {
@@ -7652,31 +7690,6 @@
                 }
               }
             }
-          },
-          "optional": true
-        },
-        "layoutStyle": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "union",
-            "of": [
-              {
-                "type": "string",
-                "value": "stacked"
-              },
-              {
-                "type": "string",
-                "value": "row"
-              },
-              {
-                "type": "string",
-                "value": "rowLarge"
-              },
-              {
-                "type": "string",
-                "value": "rowSmall"
-              }
-            ]
           },
           "optional": true
         },

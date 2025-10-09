@@ -37,7 +37,8 @@ const Card = (props: CardProps) => {
     subtitle,
     imageType = 'none',
     image,
-    layoutStyle = 'stacked',
+    profileLayoutStyle,
+    iconNoImageLayoutStyle,
     content,
     className = '',
     isGridChild = false,
@@ -53,9 +54,16 @@ const Card = (props: CardProps) => {
   const cleanSubtitle = stegaClean(subtitle);
   const cleanImageType = stegaClean(imageType) || 'none';
 
-  // Always use 'stacked' for banner images, regardless of stored value
-  const rawLayoutStyle = stegaClean(layoutStyle) || 'stacked';
-  const cleanLayoutStyle = cleanImageType === 'banner' ? 'stacked' : rawLayoutStyle;
+  // Determine layout style based on image type
+  let cleanLayoutStyle: 'stacked' | 'row' | 'rowLarge' | 'rowSmall' = 'stacked';
+  if (cleanImageType === 'profile') {
+    const profileLayout = stegaClean(profileLayoutStyle);
+    cleanLayoutStyle = (profileLayout as 'stacked' | 'rowLarge' | 'rowSmall') || 'stacked';
+  } else if (cleanImageType === 'icon' || cleanImageType === 'none') {
+    const iconLayout = stegaClean(iconNoImageLayoutStyle);
+    cleanLayoutStyle = (iconLayout as 'stacked' | 'row') || 'stacked';
+  }
+  // Banner is always stacked
 
   // Don't render empty cards
   if (!content || content.length === 0) {

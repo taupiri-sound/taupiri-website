@@ -64,14 +64,14 @@ const CardProfile = (props: CardProfileProps) => {
         isGridChild={isGridChild}>
         {/* Profile Image - Portrait aspect ratio at top center */}
         <div
-          className='mb-6'
+          className='mb-6 w-full'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div className='relative aspect-[3/4] w-50 md:w-70 rounded-lg overflow-hidden'>
+          <div className='relative aspect-square w-full rounded-lg overflow-hidden'>
             <UnifiedImage
               src={image}
               alt={image.alt || 'Profile image'}
               mode='fill'
-              sizeContext='profile'
+              sizeContext='full'
               objectFit='cover'
               generateSchema
               schemaContext='profile'
