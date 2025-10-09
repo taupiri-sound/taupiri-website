@@ -6,11 +6,11 @@ import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import UnifiedImage from '../UI/UnifiedImage';
 import { renderBlock } from '@/utils/blockRenderer';
 import CardHeader from './CardHeader';
-import type { BaseCardProps, CardImage } from './types';
+import type { BaseCardProps, CardImage, CardLayoutStyle } from './types';
 
 interface CardProfileProps extends BaseCardProps {
   image: CardImage;
-  layoutStyle: 'stacked' | 'row';
+  layoutStyle: CardLayoutStyle;
 }
 
 const CardProfile = (props: CardProfileProps) => {
@@ -62,11 +62,11 @@ const CardProfile = (props: CardProfileProps) => {
       <CardContainer
         className={`${className} flex flex-col text-center items-center`}
         isGridChild={isGridChild}>
-        {/* Profile Image - Square frame at top center */}
+        {/* Profile Image - Portrait aspect ratio at top center */}
         <div
           className='mb-6'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div className='relative aspect-square w-50 md:w-70 rounded-lg overflow-hidden'>
+          <div className='relative aspect-[3/4] w-50 md:w-70 rounded-lg overflow-hidden'>
             <UnifiedImage
               src={image}
               alt={image.alt || 'Profile image'}
@@ -95,7 +95,90 @@ const CardProfile = (props: CardProfileProps) => {
     );
   }
 
-  // Row layout
+  // Row Large layout - Full width, image takes ~1/3, stacks on mobile
+  if (layoutStyle === 'rowLarge') {
+    return (
+      <CardContainer
+        className={`${className} flex flex-col md:flex-row gap-6 items-start text-left`}
+        isGridChild={isGridChild}
+        noMaxWidth={true}>
+        {/* Profile Image - Portrait aspect ratio, ~1/3 width on desktop, full width stacked on mobile */}
+        <div
+          className='w-full md:w-1/3 flex-shrink-0'
+          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+          <div className='relative aspect-[3/4] w-full rounded-lg overflow-hidden'>
+            <UnifiedImage
+              src={image}
+              alt={image.alt || 'Profile image'}
+              mode='fill'
+              sizeContext='profile'
+              objectFit='cover'
+              generateSchema
+              schemaContext='profile'
+              documentId={documentId}
+              documentType={documentType}
+              fieldPath={getFieldPath('image')}
+            />
+          </div>
+        </div>
+
+        {/* Header and Content - Left aligned, takes remaining width */}
+        <div className='flex-1 flex flex-col'>
+          <CardHeader
+            title={title}
+            subtitle={subtitle}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={fieldPathPrefix}
+          />
+          <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
+        </div>
+      </CardContainer>
+    );
+  }
+
+  // Row Small layout - Fixed width with maxCardWidth, same layout on all screens
+  if (layoutStyle === 'rowSmall') {
+    return (
+      <CardContainer
+        className={`${className} flex flex-row gap-6 items-start`}
+        isGridChild={isGridChild}>
+        {/* Profile Image - Portrait aspect ratio with fixed width */}
+        <div
+          className='flex-shrink-0'
+          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
+          <div className='relative aspect-[3/4] w-50 rounded-lg overflow-hidden'>
+            <UnifiedImage
+              src={image}
+              alt={image.alt || 'Profile image'}
+              mode='fill'
+              sizeContext='profile'
+              objectFit='cover'
+              generateSchema
+              schemaContext='profile'
+              documentId={documentId}
+              documentType={documentType}
+              fieldPath={getFieldPath('image')}
+            />
+          </div>
+        </div>
+
+        {/* Header and Content - Left aligned */}
+        <div className='flex-1 flex flex-col text-left'>
+          <CardHeader
+            title={title}
+            subtitle={subtitle}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={fieldPathPrefix}
+          />
+          <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
+        </div>
+      </CardContainer>
+    );
+  }
+
+  // Default Row layout (for backwards compatibility)
   return (
     <CardContainer
       className={`${className} flex flex-row gap-6 items-start`}

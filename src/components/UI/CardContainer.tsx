@@ -6,6 +6,7 @@ interface CardContainerProps {
   className?: string;
   isGridChild?: boolean;
   noPadding?: boolean;
+  noMaxWidth?: boolean;
 }
 
 const CardContainer = ({
@@ -13,6 +14,7 @@ const CardContainer = ({
   className = '',
   isGridChild = false,
   noPadding = false,
+  noMaxWidth = false,
 }: CardContainerProps) => {
   return (
     <div
@@ -26,8 +28,8 @@ const CardContainer = ({
         flex-col
         items-center
         text-center
-        ${maxCardWidth}
-        ${!isGridChild ? 'mx-auto' : ''}
+        ${noMaxWidth ? '' : maxCardWidth}
+        ${!isGridChild && !noMaxWidth ? 'mx-auto' : ''}
         ${className}
       `.trim()}>
       {children}

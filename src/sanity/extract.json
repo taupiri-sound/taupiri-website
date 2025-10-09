@@ -7667,6 +7667,14 @@
               {
                 "type": "string",
                 "value": "row"
+              },
+              {
+                "type": "string",
+                "value": "rowLarge"
+              },
+              {
+                "type": "string",
+                "value": "rowSmall"
               }
             ]
           },

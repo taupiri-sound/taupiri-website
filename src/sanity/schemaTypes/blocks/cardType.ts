@@ -104,12 +104,20 @@ export const cardType = defineType({
             title: 'Row (Horizontal)',
             value: 'row',
           },
+          {
+            title: 'Row Large (Profile only)',
+            value: 'rowLarge',
+          },
+          {
+            title: 'Row Small (Profile only)',
+            value: 'rowSmall',
+          },
         ],
         layout: 'radio',
       },
       initialValue: 'stacked',
       description:
-        'Choose how the card content is arranged:\n\n• Stacked: Image (if present) appears above content, arranged vertically\n\n• Row: Image (if present) appears beside content, arranged horizontally\n\nNote: This field is read-only when Banner image is selected (always uses Stacked layout).',
+        'Choose how the card content is arranged:\n\n• Stacked: Image (if present) appears above content, arranged vertically\n\n• Row: Image (if present) appears beside content, arranged horizontally\n\n• Row Large (Profile only): Image takes ~1/3 width in portrait aspect ratio, full container width, stacks on mobile\n\n• Row Small (Profile only): Image in portrait aspect ratio with fixed width, max-width applied, same layout on all screens\n\nNote: Row Large and Row Small options only apply to Profile image type. This field is read-only when Banner image is selected (always uses Stacked layout).',
       readOnly: ({ parent }) => (parent as { imageType?: string })?.imageType === 'banner',
       validation: (Rule) => Rule.required(),
     }),

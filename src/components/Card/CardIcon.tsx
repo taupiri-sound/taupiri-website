@@ -6,11 +6,11 @@ import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import UnifiedImage from '../UI/UnifiedImage';
 import { renderBlock } from '@/utils/blockRenderer';
 import CardHeader from './CardHeader';
-import type { BaseCardProps, CardImage } from './types';
+import type { BaseCardProps, CardImage, CardLayoutStyle } from './types';
 
 interface CardIconProps extends BaseCardProps {
   image: CardImage;
-  layoutStyle: 'stacked' | 'row';
+  layoutStyle: CardLayoutStyle;
 }
 
 const CardIcon = (props: CardIconProps) => {
@@ -34,6 +34,7 @@ const CardIcon = (props: CardIconProps) => {
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
 
   // Determine alignment based on layout style
+  // Note: rowLarge and rowSmall are treated as 'row' for Icon cards
   const cardAlignment = layoutStyle === 'stacked' ? 'center' : 'left';
 
   // Render content blocks using shared block renderer

@@ -4,10 +4,10 @@ import React from 'react';
 import CardContainer from '../UI/CardContainer';
 import { renderBlock } from '@/utils/blockRenderer';
 import CardHeader from './CardHeader';
-import type { BaseCardProps } from './types';
+import type { BaseCardProps, CardLayoutStyle } from './types';
 
 interface CardNoImageProps extends BaseCardProps {
-  layoutStyle: 'stacked' | 'row';
+  layoutStyle: CardLayoutStyle;
 }
 
 const CardNoImage = (props: CardNoImageProps) => {
@@ -30,6 +30,7 @@ const CardNoImage = (props: CardNoImageProps) => {
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
 
   // Determine alignment based on layout style
+  // Note: rowLarge and rowSmall are treated as 'row' for No Image cards
   const cardAlignment = layoutStyle === 'stacked' ? 'center' : 'left';
 
   // Render content blocks using shared block renderer

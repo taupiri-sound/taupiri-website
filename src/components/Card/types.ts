@@ -4,6 +4,9 @@ import type { COMPANY_LINKS_QUERYResult, Card } from '@/sanity/types';
 // Extract the image type from the Card type
 export type CardImage = NonNullable<Card['image']>;
 
+// Layout style type shared by all card components
+export type CardLayoutStyle = 'stacked' | 'row' | 'rowLarge' | 'rowSmall';
+
 // Shared config type
 export interface DataAttributeConfig {
   projectId: string | undefined;
