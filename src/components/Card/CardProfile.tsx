@@ -104,14 +104,14 @@ const CardProfile = (props: CardProfileProps) => {
         noMaxWidth={true}>
         {/* Profile Image - Portrait aspect ratio, ~1/3 width on desktop, full width stacked on mobile */}
         <div
-          className='w-full md:w-1/3 flex-shrink-0'
+          className='w-full md:w-1/2 flex-shrink-0'
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <div className='relative aspect-[3/4] w-full rounded-lg overflow-hidden'>
+          <div className='relative aspect-square w-full rounded-lg overflow-hidden'>
             <UnifiedImage
               src={image}
               alt={image.alt || 'Profile image'}
               mode='fill'
-              sizeContext='profile'
+              sizeContext='full'
               objectFit='cover'
               generateSchema
               schemaContext='profile'
