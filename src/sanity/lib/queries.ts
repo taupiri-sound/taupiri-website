@@ -601,3 +601,20 @@ export const CLIENTS_QUERY = defineQuery(`*[_id == "clients"][0]{
   level4,
   level5
 }`);
+
+export const TEAM_MEMBERS_QUERY = defineQuery(`*[_type == "teamMember"] | order(displayOrder asc, name asc) {
+  _id,
+  _type,
+  _key,
+  name,
+  role,
+  category,
+  profilePicture{
+    asset,
+    alt,
+    hotspot,
+    crop
+  },
+  displayOrder,
+  description
+}`);

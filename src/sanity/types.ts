@@ -116,6 +116,12 @@ export type CtaList = Array<{
   _key: string;
 } & EmbeddedCtaButton>;
 
+export type TeamMemberList = {
+  _type: "teamMemberList";
+  category?: "primary" | "secondary";
+  displayStyle?: "detailed" | "condensed";
+};
+
 export type ClientList = {
   _type: "clientList";
   placeholder?: string;
@@ -598,6 +604,8 @@ export type SubSubSection = {
     _key: string;
   } & ClientList | {
     _key: string;
+  } & TeamMemberList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -648,6 +656,8 @@ export type SubSection = {
   } & ItemList | {
     _key: string;
   } & ClientList | {
+    _key: string;
+  } & TeamMemberList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -703,6 +713,8 @@ export type PageSection = {
     _key: string;
   } & ClientList | {
     _key: string;
+  } & TeamMemberList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -747,6 +759,8 @@ export type PageBuilder = Array<{
 } & ItemList | {
   _key: string;
 } & ClientList | {
+  _key: string;
+} & TeamMemberList | {
   _key: string;
 } & Quote | {
   _key: string;
@@ -851,6 +865,8 @@ export type PrivacyPolicy = {
     _key: string;
   } & ClientList | {
     _key: string;
+  } & TeamMemberList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -905,6 +921,8 @@ export type TermsAndConditions = {
     _key: string;
   } & ClientList | {
     _key: string;
+  } & TeamMemberList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -928,6 +946,48 @@ export type TermsAndConditions = {
   } & AudioSamplePlayer | {
     _key: string;
   } & CompanyLinksBlock>;
+};
+
+export type TeamMember = {
+  _id: string;
+  _type: "teamMember";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  role?: string;
+  category?: "primary" | "secondary";
+  profilePicture?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  displayOrder?: number;
+  description?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "body-xs" | "body-sm" | "body-lg" | "body-xl" | "body-2xl" | "body-3xl" | "standout";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
 };
 
 export type Clients = {
@@ -1023,6 +1083,8 @@ export type BlogPost = {
     _key: string;
   } & ClientList | {
     _key: string;
+  } & TeamMemberList | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -1117,6 +1179,8 @@ export type Page = {
   } & ItemList | {
     _key: string;
   } & ClientList | {
+    _key: string;
+  } & TeamMemberList | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -1427,7 +1491,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ClientList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | TeamMemberList | ClientList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | TeamMember | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -11463,6 +11527,12 @@ export type PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -12637,6 +12707,13 @@ export type PAGE_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -13815,6 +13892,13 @@ export type PAGE_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -15033,6 +15117,13 @@ export type PAGE_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -26343,6 +26434,12 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -27517,6 +27614,13 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -28695,6 +28799,13 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -29913,6 +30024,13 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -41268,6 +41386,12 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -42442,6 +42566,13 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -43620,6 +43751,13 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -44838,6 +44976,13 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -56053,6 +56198,12 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -57227,6 +57378,13 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -58405,6 +58563,13 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -59623,6 +59788,13 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -70838,6 +71010,12 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -72012,6 +72190,13 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -73190,6 +73375,13 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -74412,6 +74604,13 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "twoColumnLayout";
     verticallyCenter?: boolean;
     leftColumn: Array<{
@@ -75618,6 +75817,20 @@ export type HOME_PAGE_QUERYResult = {
 } | {
   _id: string;
   _type: "siteSettings";
+  heroStyle: null;
+  heroTextColor: null;
+  heroLogoDisplay: null;
+  heroBackgroundImages: null;
+  heroImageTransitionDuration: null;
+  h1Title: null;
+  heroTitle: null;
+  heroCallToActionList: null;
+  hideScrollIndicator: null;
+  heroContentPosition: null;
+  content: null;
+} | {
+  _id: string;
+  _type: "teamMember";
   heroStyle: null;
   heroTextColor: null;
   heroLogoDisplay: null;
@@ -85665,6 +85878,12 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -86839,6 +87058,13 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -88017,6 +88243,13 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -89235,6 +89468,13 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -90663,6 +90903,12 @@ export type HEADER_QUERYResult = {
   verticalNavCtas: null;
 } | {
   _id: string;
+  _type: "teamMember";
+  horizontalNav: null;
+  verticalNav: null;
+  verticalNavCtas: null;
+} | {
+  _id: string;
   _type: "termsAndConditions";
   horizontalNav: null;
   verticalNav: null;
@@ -90799,6 +91045,15 @@ export type SITE_SETTINGS_QUERYResult = {
   companyEmail: string | null;
 } | {
   _id: string;
+  _type: "teamMember";
+  siteTitle: null;
+  defaultPageTitle: null;
+  siteDescription: null;
+  seoKeywords: null;
+  defaultOgImage: null;
+  companyEmail: null;
+} | {
+  _id: string;
   _type: "termsAndConditions";
   siteTitle: null;
   defaultPageTitle: null;
@@ -90869,6 +91124,10 @@ export type COMPANY_LINKS_QUERYResult = {
 } | {
   _id: string;
   _type: "siteSettings";
+  companyLinks: null;
+} | {
+  _id: string;
+  _type: "teamMember";
   companyLinks: null;
 } | {
   _id: string;
@@ -91237,6 +91496,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
 } | {
   _id: string;
   _type: "siteSettings";
+  title: null;
+  heroImage: null;
+  subtitle: null;
+  noArticlesMessage: null;
+  hasClosingCard: null;
+  closingCard: null;
+} | {
+  _id: string;
+  _type: "teamMember";
   title: null;
   heroImage: null;
   subtitle: null;
@@ -101300,6 +101568,12 @@ export type BLOG_POST_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -102474,6 +102748,13 @@ export type BLOG_POST_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -103652,6 +103933,13 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -104870,6 +105158,13 @@ export type BLOG_POST_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -116211,6 +116506,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -117385,6 +117686,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -118563,6 +118871,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -119781,6 +120096,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -131022,6 +131344,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -132196,6 +132524,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -133374,6 +133709,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -134592,6 +134934,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -145801,6 +146150,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -146975,6 +147330,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -148153,6 +148515,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -149371,6 +149740,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -160580,6 +160956,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -161754,6 +162136,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -162932,6 +163321,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -164154,6 +164550,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "twoColumnLayout";
     verticallyCenter?: boolean;
     leftColumn: Array<{
@@ -165348,6 +165751,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
 } | {
   _id: string;
   _type: "siteSettings";
+  _updatedAt: string;
+  hide: null;
+  title: null;
+  topText: null;
+  content: null;
+} | {
+  _id: string;
+  _type: "teamMember";
   _updatedAt: string;
   hide: null;
   title: null;
@@ -175383,6 +175794,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -176557,6 +176974,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -177735,6 +178159,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -178953,6 +179384,13 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -190181,6 +190619,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -191355,6 +191799,13 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -192533,6 +192984,13 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -193751,6 +194209,13 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -204992,6 +205457,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -206166,6 +206637,13 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -207344,6 +207822,13 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -208562,6 +209047,13 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -219771,6 +220263,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -220945,6 +221443,13 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -222123,6 +222628,13 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -223341,6 +223853,13 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -234550,6 +235069,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -235724,6 +236249,13 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -236902,6 +237434,13 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -238124,6 +238663,13 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "twoColumnLayout";
     verticallyCenter?: boolean;
     leftColumn: Array<{
@@ -239318,6 +239864,14 @@ export type PRIVACY_POLICY_QUERYResult = {
 } | {
   _id: string;
   _type: "siteSettings";
+  _updatedAt: string;
+  hide: null;
+  title: null;
+  topText: null;
+  content: null;
+} | {
+  _id: string;
+  _type: "teamMember";
   _updatedAt: string;
   hide: null;
   title: null;
@@ -249353,6 +249907,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "teamMemberList";
+          category?: "primary" | "secondary";
+          displayStyle?: "condensed" | "detailed";
+          image: null;
+        } | {
+          _key: string;
           _type: "twoColumnLayout";
           verticallyCenter?: boolean;
           leftColumn: Array<{
@@ -250527,6 +251087,13 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         }> | null;
         image: null;
+      } | {
+        _key: string;
+        _type: "teamMemberList";
+        category?: "primary" | "secondary";
+        displayStyle?: "condensed" | "detailed";
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "twoColumnLayout";
@@ -251705,6 +252272,13 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       }> | null;
       image: null;
+    } | {
+      _key: string;
+      _type: "teamMemberList";
+      category?: "primary" | "secondary";
+      displayStyle?: "condensed" | "detailed";
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "twoColumnLayout";
@@ -252923,6 +253497,13 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "spotifyWidget";
     embedCode?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "teamMemberList";
+    category?: "primary" | "secondary";
+    displayStyle?: "condensed" | "detailed";
     image: null;
     content: null;
   } | {
@@ -254229,6 +254810,14 @@ export type CLIENTS_QUERYResult = {
   level5: null;
 } | {
   _id: string;
+  _type: "teamMember";
+  level1: null;
+  level2: null;
+  level3: null;
+  level4: null;
+  level5: null;
+} | {
+  _id: string;
   _type: "termsAndConditions";
   level1: null;
   level2: null;
@@ -254236,6 +254825,46 @@ export type CLIENTS_QUERYResult = {
   level4: null;
   level5: null;
 } | null;
+// Variable: TEAM_MEMBERS_QUERY
+// Query: *[_type == "teamMember"] | order(displayOrder asc, name asc) {  _id,  _type,  _key,  name,  role,  category,  profilePicture{    asset,    alt,    hotspot,    crop  },  displayOrder,  description}
+export type TEAM_MEMBERS_QUERYResult = Array<{
+  _id: string;
+  _type: "teamMember";
+  _key: null;
+  name: string | null;
+  role: string | null;
+  category: "primary" | "secondary" | null;
+  profilePicture: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    } | null;
+    alt: null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+  } | null;
+  displayOrder: number | null;
+  description: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "body-2xl" | "body-3xl" | "body-lg" | "body-sm" | "body-xl" | "body-xs" | "normal" | "standout";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }> | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -254257,5 +254886,6 @@ declare module "@sanity/client" {
     "*[_id == \"privacyPolicy\"][0]{\n  _id,\n  _type,\n  _updatedAt,\n  hide,\n  title,\n  topText,\n  content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  }\n,\n  \"content\": content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  }\n,\n    \"content\": content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  }\n,\n      \"content\": content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  }\n\n      }\n    }\n  }\n}\n}": PRIVACY_POLICY_QUERYResult;
     "{\n  \"termsAndConditions\": *[_id == \"termsAndConditions\"][0]{_id, hide},\n  \"privacyPolicy\": *[_id == \"privacyPolicy\"][0]{_id, hide}\n}": LEGAL_PAGES_VISIBILITY_QUERYResult;
     "*[_id == \"clients\"][0]{\n  _id,\n  _type,\n  level1,\n  level2,\n  level3,\n  level4,\n  level5\n}": CLIENTS_QUERYResult;
+    "*[_type == \"teamMember\"] | order(displayOrder asc, name asc) {\n  _id,\n  _type,\n  _key,\n  name,\n  role,\n  category,\n  profilePicture{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  displayOrder,\n  description\n}": TEAM_MEMBERS_QUERYResult;
   }
 }

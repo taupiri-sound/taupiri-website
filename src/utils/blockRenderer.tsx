@@ -3,6 +3,7 @@ import { createDataAttribute } from 'next-sanity';
 import type {
   COMPANY_LINKS_QUERYResult,
   CLIENTS_QUERYResult,
+  TEAM_MEMBERS_QUERYResult,
   RichText as RichTextType,
   Quote as QuoteType,
   TwoColumnLayout as TwoColumnLayoutType,
@@ -20,6 +21,7 @@ import type {
   CheckList as CheckListType,
   ItemList as ItemListType,
   ClientList as ClientListType,
+  TeamMemberList as TeamMemberListType,
   Divider as DividerType,
 } from '@/sanity/types';
 import type { SiteSettingsProps } from '@/types/shared';
@@ -42,6 +44,7 @@ import BlockListWithStats from '@/components/_blocks/BlockListWithStats';
 import CheckList from '@/components/_blocks/CheckList';
 import ItemList from '@/components/_blocks/ItemList';
 import ClientList from '@/components/_blocks/ClientList';
+import TeamMemberListComponent from '@/components/_blocks/TeamMemberList';
 import Divider from '@/components/UI/Divider';
 
 interface RenderBlockConfig {
@@ -57,6 +60,7 @@ interface RenderBlockOptions {
   siteSettings?: SiteSettingsProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
+  teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
   config?: RenderBlockConfig;
 }
@@ -83,6 +87,7 @@ type BlockType =
   | WithKey<CheckListType>
   | WithKey<ItemListType>
   | WithKey<ClientListType>
+  | WithKey<TeamMemberListType>
   | WithKey<DividerType>;
 
 /**
@@ -97,6 +102,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     siteSettings,
     companyLinks,
     clientsData,
+    teamMembersData,
     alignment = 'center',
     config,
   } = options;
@@ -359,6 +365,24 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             documentId={clientsData?._id || 'clients'}
             documentType="clients"
             clientsData={clientsData}
+          />
+        </BlockWrapper>
+      );
+    }
+
+    case 'teamMemberList': {
+      const teamMemberListBlock = typedBlock as WithKey<TeamMemberListType>;
+      return (
+        <BlockWrapper key={teamMemberListBlock._key}>
+          <TeamMemberListComponent
+            category={teamMemberListBlock.category as 'primary' | 'secondary'}
+            displayStyle={teamMemberListBlock.displayStyle as 'detailed' | 'condensed'}
+            teamMembers={teamMembersData || []}
+            createDataAttributeConfig={{
+              projectId: config?.projectId,
+              dataset: config?.dataset,
+              baseUrl: config?.baseUrl || '',
+            }}
           />
         </BlockWrapper>
       );

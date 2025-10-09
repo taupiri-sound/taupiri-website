@@ -33,7 +33,9 @@ import { blockListWithStatsType } from './blocks/blockListWithStatsType';
 import { checkListType } from './blocks/checkListType';
 import { itemListType } from './blocks/itemListType';
 import { clientListType } from './blocks/clientListType';
+import { teamMemberListType } from './blocks/teamMemberListType';
 import { siteSettingsType } from './siteSettingsType';
+import { teamMemberType } from './teamMemberType';
 import { companyLinksType } from './companyLinksType';
 import { companyLinksArrayType } from './shared/socialLinksArrayType';
 import { ctaListType } from './shared/ctaListType';
@@ -59,6 +61,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blogPostType,
     audioSampleType,
     clientsType,
+    teamMemberType,
     termsAndConditionsType,
     privacyPolicyType,
     blockContentType,
@@ -92,6 +95,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     checkListType,
     itemListType,
     clientListType,
+    teamMemberListType,
     // Shared Components
     companyLinksArrayType,
     ctaListType,

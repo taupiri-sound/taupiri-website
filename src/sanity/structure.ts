@@ -69,14 +69,36 @@ export const structure: StructureResolver = (S) =>
       // === CLIENTS ===
       S.listItem()
         .id('clients')
-        .schemaType('clients')
         .title('👥 Clients')
         .child(
-          S.editor()
-            .id('clients')
-            .schemaType('clients')
-            .documentId('clients')
-            .title('Clients')
+          S.list()
+            .title('Clients Management')
+            .items([
+              // Clients - Singleton
+              S.listItem()
+                .id('clients')
+                .schemaType('clients')
+                .title('Client List')
+                .child(
+                  S.editor()
+                    .id('clients')
+                    .schemaType('clients')
+                    .documentId('clients')
+                    .title('Clients')
+                ),
+              // Team Members
+              S.listItem()
+                .id('teamMembers')
+                .title('Team Members')
+                .child(
+                  S.documentTypeList('teamMember')
+                    .title('Team Members')
+                    .defaultOrdering([
+                      { field: 'displayOrder', direction: 'asc' },
+                      { field: 'name', direction: 'asc' }
+                    ])
+                ),
+            ])
         ),
 
       S.divider(),

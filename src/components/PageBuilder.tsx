@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import type { PAGE_QUERYResult, COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult } from '@/sanity/types';
+import type { PAGE_QUERYResult, COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, TEAM_MEMBERS_QUERYResult } from '@/sanity/types';
 import type { NestedBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
 import { client } from '@/sanity/lib/client';
@@ -26,6 +26,7 @@ interface SharedPageBuilderProps {
   siteSettings?: SiteSettingsProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
+  teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
 }
 
@@ -57,6 +58,7 @@ const BlockRenderer = ({
   siteSettings,
   companyLinks,
   clientsData,
+  teamMembersData,
   alignment = 'center',
 }: BlockRendererProps) => {
   if (!Array.isArray(blocks)) {
@@ -189,6 +191,7 @@ const BlockRenderer = ({
               siteSettings={siteSettings}
               companyLinks={companyLinks}
               clientsData={clientsData}
+              teamMembersData={teamMembersData}
               alignment={alignment}
             />
           );
@@ -315,6 +318,7 @@ const BlockRenderer = ({
                   siteSettings,
                   companyLinks,
                   clientsData,
+                  teamMembersData,
                   alignment,
                   config: createDataAttributeConfig,
                 })}
@@ -334,6 +338,7 @@ const PageBuilder = ({
   siteSettings,
   companyLinks,
   clientsData,
+  teamMembersData,
   alignment = 'center',
 }: PageBuilderProps) => {
   const [sections] = useOptimistic<NonNullable<PAGE_QUERYResult>['content']>(content);
@@ -359,6 +364,7 @@ const PageBuilder = ({
         siteSettings={siteSettings}
         companyLinks={companyLinks}
         clientsData={clientsData}
+        teamMembersData={teamMembersData}
         alignment={alignment}
       />
     </div>
