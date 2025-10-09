@@ -33,12 +33,17 @@ const CardIcon = (props: CardIconProps) => {
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
 
-  // Determine alignment based on layout style
-  // Note: rowLarge and rowSmall are treated as 'row' for Icon cards
-  const cardAlignment = layoutStyle === 'stacked' ? 'center' : 'left';
+  // Layout configuration
+  // Stacked: Mobile is row (horizontal), Desktop is column (vertical, centered)
+  // Row: Always row (horizontal) for all screen sizes
+  const isStacked = layoutStyle === 'stacked';
+  const flexDirection = isStacked ? 'flex-row md:flex-col' : 'flex-row';
+  const textAlignment = isStacked ? 'text-left md:text-center' : 'text-left';
+  const itemsAlignment = isStacked ? 'items-start md:items-center' : 'items-start';
 
   // Render content blocks using shared block renderer
-  const renderContent = () => {
+  // Note: We render content twice (mobile and desktop) for stacked to handle different alignments
+  const renderContent = (alignment: 'left' | 'center' | 'right') => {
     if (!content) return null;
 
     return content.map((block) => {
@@ -51,56 +56,17 @@ const CardIcon = (props: CardIconProps) => {
         blockPath,
         siteSettings,
         companyLinks,
-        alignment: cardAlignment,
+        alignment,
         config: createDataAttributeConfig,
       });
     });
   };
 
-  // Stacked layout
-  if (layoutStyle === 'stacked') {
-    return (
-      <CardContainer
-        className={`${className} flex flex-col text-center items-center`}
-        isGridChild={isGridChild}>
-        {/* Icon - Circular frame at top center */}
-        <div
-          className='mb-2'
-          {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-          <UnifiedImage
-            src={image}
-            alt={image.alt || 'Icon'}
-            mode='sized'
-            width={100}
-            height={100}
-            sizeContext='profile'
-            objectFit='contain'
-            className='w-10 h-10'
-            documentId={documentId}
-            documentType={documentType}
-            fieldPath={getFieldPath('image')}
-          />
-        </div>
-
-        {/* Header and Content - Center aligned */}
-        <CardHeader
-          title={title}
-          subtitle={subtitle}
-          documentId={documentId}
-          documentType={documentType}
-          fieldPathPrefix={fieldPathPrefix}
-        />
-        <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
-      </CardContainer>
-    );
-  }
-
-  // Row layout
   return (
     <CardContainer
-      className={`${className} flex flex-row gap-6 items-start`}
+      className={`${className} flex ${flexDirection} gap-6 ${itemsAlignment}`}
       isGridChild={isGridChild}>
-      {/* Icon - Circular frame on left */}
+      {/* Icon */}
       <div
         className='flex-shrink-0'
         {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
@@ -112,15 +78,15 @@ const CardIcon = (props: CardIconProps) => {
           height={100}
           sizeContext='profile'
           objectFit='contain'
-          className='w-16 h-16 md:w-18 md:h-18'
+          className='w-10 h-10'
           documentId={documentId}
           documentType={documentType}
           fieldPath={getFieldPath('image')}
         />
       </div>
 
-      {/* Header and Content - Left aligned */}
-      <div className='flex-1 flex flex-col text-left'>
+      {/* Header and Content */}
+      <div className={`flex-1 flex flex-col ${textAlignment}`}>
         <CardHeader
           title={title}
           subtitle={subtitle}
@@ -128,7 +94,17 @@ const CardIcon = (props: CardIconProps) => {
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
         />
-        <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
+        {/* Render content with responsive alignment for stacked, or always left for row */}
+        {isStacked ? (
+          <>
+            {/* Mobile: left-aligned */}
+            <div className='flex flex-col items-start gap-4 w-full md:hidden'>{renderContent('left')}</div>
+            {/* Desktop: center-aligned */}
+            <div className='hidden md:flex md:flex-col md:items-center gap-4 w-full'>{renderContent('center')}</div>
+          </>
+        ) : (
+          <div className='flex flex-col items-start gap-4 w-full'>{renderContent('left')}</div>
+        )}
       </div>
     </CardContainer>
   );
