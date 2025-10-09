@@ -7,6 +7,7 @@ import UnifiedImage from '../UI/UnifiedImage';
 import { renderBlock } from '@/utils/blockRenderer';
 import CardHeader from './CardHeader';
 import type { BaseCardProps, CardImage, CardLayoutStyle } from './types';
+import { maxHeightViewport } from '@/utils/spacingConstants';
 
 interface CardProfileProps extends BaseCardProps {
   image: CardImage;
@@ -68,12 +69,12 @@ const CardProfile = (props: CardProfileProps) => {
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
           <div
             className='relative aspect-square w-full rounded-lg overflow-hidden'
-            style={{ maxHeight: 'calc(80svh - 5rem)', maxWidth: 'calc(80svh - 5rem)' }}>
+            style={maxHeightViewport}>
             <UnifiedImage
               src={image}
               alt={image.alt || 'Profile image'}
               mode='fill'
-              sizeContext='profile'
+              sizeContext='full'
               objectFit='cover'
               generateSchema
               schemaContext='profile'

@@ -84,3 +84,8 @@ export const headerHeight = 'h-18 md:h-20';
  * Uses small viewport height (svh) units to account for mobile browser UI
  */
 export const headerHeightCalc = 'calc(80svh - 5rem)'; // 80svh minus 80px (desktop header)
+export const maxHeightViewport = {
+  // Max height of 80svh - 5rem (header height)
+  maxHeight: 'calc(80svh - 5rem)',
+  maxWidth: 'calc(80svh - 5rem)',
+};
