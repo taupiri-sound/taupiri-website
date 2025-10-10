@@ -76,13 +76,13 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
       // Secondary
       if (displayStyle === 'condensed') {
         // Condensed: Flexible grid
-        return 'w-auto';
+        return 'w-full md:w-[calc(25%-3*0.25rem)]';
       } else {
         if (isSingleMember) {
           return 'w-full';
         }
         // Multiple detailed: 3 per row on desktop
-        return 'w-full md:w-[calc(33.333%-1.5rem)]';
+        return 'w-full md:w-[calc(25%-3*0.25rem)]';
       }
     }
   };
@@ -93,7 +93,14 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
         <div key={member._id} className={getMemberWrapperClasses()}>
           <TeamMember
             member={member}
-            layout={layoutType as 'primary-detailed' | 'primary-condensed' | 'secondary-detailed-single' | 'secondary-detailed-multiple' | 'secondary-condensed'}
+            layout={
+              layoutType as
+                | 'primary-detailed'
+                | 'primary-condensed'
+                | 'secondary-detailed-single'
+                | 'secondary-detailed-multiple'
+                | 'secondary-condensed'
+            }
           />
         </div>
       ))}

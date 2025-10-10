@@ -34,7 +34,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
 
   // Card container styling - only for primary members
   const containerClass = isPrimary
-    ? 'bg-brand-white-dark p-6 md:p-10 rounded-lg shadow-sm overflow-hidden'
+    ? 'bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden'
     : '';
 
   // Layout classes
@@ -45,17 +45,17 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
     isPrimary || !isSingleSecondary ? 'items-center text-center' : 'items-start text-left';
 
   // Content wrapper padding - only for primary (card-style)
-  const contentPaddingClass = isPrimary ? 'mt-6' : '';
+  const contentPaddingClass = isPrimary ? 'mt-6 px-6 pb-6 md:pb-0' : 'mt-6 px-6 pb-6 md:pb-0';
 
   // Photo size classes
   const photoSizeClass =
     layout === 'secondary-condensed'
-      ? 'w-24 h-24 md:w-32 md:h-32'
+      ? 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg'
       : isPrimary
-        ? 'w-full aspect-square'
+        ? 'w-full aspect-square md:rounded-lg'
         : isSingleSecondary
-          ? 'w-48 h-48 flex-shrink-0'
-          : 'w-full aspect-square';
+          ? 'w-48 h-48 flex-shrink-0 rounded-lg'
+          : 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
 
   // Render rich text components with appropriate alignment
   const textAlignment = isPrimary || !isSingleSecondary ? 'center' : 'left';
@@ -65,7 +65,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
     <div className={`${containerClass} ${layoutClass} ${alignmentClass}`}>
       {/* Profile Picture */}
       <div
-        className={`relative ${photoSizeClass} rounded-lg overflow-hidden flex-shrink-0`}
+        className={`relative ${photoSizeClass} overflow-hidden flex-shrink-0`}
         {...createSanityDataAttribute(member._id, member._type, getFieldPath('profilePicture'))}
         style={maxHeightViewport}>
         {profilePicture?.asset ? (
