@@ -378,11 +378,6 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             category={teamMemberListBlock.category as 'primary' | 'secondary'}
             displayStyle={teamMemberListBlock.displayStyle as 'detailed' | 'condensed'}
             teamMembers={teamMembersData || []}
-            createDataAttributeConfig={{
-              projectId: config?.projectId,
-              dataset: config?.dataset,
-              baseUrl: config?.baseUrl || '',
-            }}
           />
         </BlockWrapper>
       );

@@ -7,17 +7,15 @@ import { createComponents } from '@/sanity/portableTextComponents';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import ProfilePlaceholder from './ProfilePlaceholder';
 import type { TEAM_MEMBERS_QUERYResult } from '@/sanity/types';
-import type { DataAttributeConfig } from '@/components/Card/types';
 
 type TeamMember = NonNullable<TEAM_MEMBERS_QUERYResult>[number];
 
 interface TeamMemberProps {
   member: TeamMember;
   layout: 'primary-detailed' | 'primary-condensed' | 'secondary-detailed-single' | 'secondary-detailed-multiple' | 'secondary-condensed';
-  createDataAttributeConfig?: DataAttributeConfig;
 }
 
-const TeamMember = ({ member, layout, createDataAttributeConfig }: TeamMemberProps) => {
+const TeamMember = ({ member, layout }: TeamMemberProps) => {
   const { name, role, profilePicture, description } = member;
 
   // Get field path for live editing
@@ -27,7 +25,6 @@ const TeamMember = ({ member, layout, createDataAttributeConfig }: TeamMemberPro
   const isPrimary = layout.startsWith('primary');
   const isDetailed = layout.includes('detailed');
   const isSingleSecondary = layout === 'secondary-detailed-single';
-  const isCondensed = layout.includes('condensed');
 
   // Card container styling - only for primary members
   const containerClass = isPrimary

@@ -4,18 +4,14 @@ import React from 'react';
 import TeamMember from './TeamMember';
 import { maxCardWidth } from '@/utils/spacingConstants';
 import type { TEAM_MEMBERS_QUERYResult } from '@/sanity/types';
-import type { DataAttributeConfig } from '@/components/Card/types';
-
-type TeamMemberData = NonNullable<TEAM_MEMBERS_QUERYResult>[number];
 
 interface TeamMemberListProps {
   category: 'primary' | 'secondary';
   displayStyle: 'detailed' | 'condensed';
   teamMembers: TEAM_MEMBERS_QUERYResult;
-  createDataAttributeConfig: DataAttributeConfig;
 }
 
-const TeamMemberList = ({ category, displayStyle, teamMembers, createDataAttributeConfig }: TeamMemberListProps) => {
+const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListProps) => {
   // Filter team members by category
   const filteredMembers = teamMembers?.filter((member) => member.category === category) || [];
 
@@ -98,7 +94,6 @@ const TeamMemberList = ({ category, displayStyle, teamMembers, createDataAttribu
           <TeamMember
             member={member}
             layout={layoutType as 'primary-detailed' | 'primary-condensed' | 'secondary-detailed-single' | 'secondary-detailed-multiple' | 'secondary-condensed'}
-            createDataAttributeConfig={createDataAttributeConfig}
           />
         </div>
       ))}
