@@ -7,7 +7,6 @@ import { createComponents } from '@/sanity/portableTextComponents';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import ProfilePlaceholder from './ProfilePlaceholder';
 import type { TEAM_MEMBERS_QUERYResult } from '@/sanity/types';
-import { maxHeightViewport } from '@/utils/spacingConstants';
 
 type TeamMember = NonNullable<TEAM_MEMBERS_QUERYResult>[number];
 
@@ -34,7 +33,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
 
   // Card container styling - only for primary members
   const containerClass = isPrimary
-    ? `bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden ${layout === 'primary-condensed' ? '' : 'md:flex md:flex-row md:gap-6 md:items-center'}`
+    ? `bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden ${layout === 'primary-condensed' ? '' : 'flex lg:flex-row lg:gap-6 lg:items-center'}`
     : '';
 
   // Layout classes
@@ -52,7 +51,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
     layout === 'secondary-condensed'
       ? 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg'
       : isPrimary
-        ? `${layout === 'primary-condensed' ? '' : 'md:w-1/2 md:self-start'} w-full aspect-square md:rounded-lg`
+        ? `${layout === 'primary-condensed' ? '' : 'md:w-1/2 md:self-start mx-auto'} w-full aspect-square md:rounded-lg`
         : isSingleSecondary
           ? 'w-48 h-48 flex-shrink-0 rounded-lg'
           : 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
@@ -65,9 +64,8 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
     <div className={`${containerClass} ${layoutClass} ${alignmentClass}`}>
       {/* Profile Picture */}
       <div
-        className={`relative ${photoSizeClass} overflow-hidden flex-shrink-0`}
-        {...createSanityDataAttribute(member._id, member._type, getFieldPath('profilePicture'))}
-        style={maxHeightViewport}>
+        className={`relative ${photoSizeClass} overflow-hidden flex-shrink-0 md:max-h-[calc(80svh-5rem)] md:max-w-[calc(80svh-5rem)]`}
+        {...createSanityDataAttribute(member._id, member._type, getFieldPath('profilePicture'))}>
         {profilePicture?.asset ? (
           <UnifiedImage
             src={profilePicture}
