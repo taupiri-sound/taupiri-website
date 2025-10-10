@@ -44,7 +44,7 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
     if (isPrimary) {
       // Primary: 2 per row on desktop, 1 on mobile, center last row if odd
       if (isSingleMember) {
-        return `flex justify-center ${maxCardWidth} mx-auto`;
+        return `flex justify-center ${displayStyle === 'condensed' ? maxCardWidth : ''} mx-auto`;
       }
       return 'flex flex-wrap justify-center gap-6 md:gap-8';
     } else {

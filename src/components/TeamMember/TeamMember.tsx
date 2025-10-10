@@ -34,7 +34,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
 
   // Card container styling - only for primary members
   const containerClass = isPrimary
-    ? 'bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden'
+    ? `bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden ${layout === 'primary-condensed' ? '' : 'md:flex md:flex-row md:gap-6 md:items-center'}`
     : '';
 
   // Layout classes
@@ -52,7 +52,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
     layout === 'secondary-condensed'
       ? 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg'
       : isPrimary
-        ? 'w-full aspect-square md:rounded-lg'
+        ? `${layout === 'primary-condensed' ? '' : 'md:w-1/2 md:self-start'} w-full aspect-square md:rounded-lg`
         : isSingleSecondary
           ? 'w-48 h-48 flex-shrink-0 rounded-lg'
           : 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
