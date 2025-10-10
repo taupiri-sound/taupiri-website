@@ -7,12 +7,18 @@ import { createComponents } from '@/sanity/portableTextComponents';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import ProfilePlaceholder from './ProfilePlaceholder';
 import type { TEAM_MEMBERS_QUERYResult } from '@/sanity/types';
+import { maxHeightViewport } from '@/utils/spacingConstants';
 
 type TeamMember = NonNullable<TEAM_MEMBERS_QUERYResult>[number];
 
 interface TeamMemberProps {
   member: TeamMember;
-  layout: 'primary-detailed' | 'primary-condensed' | 'secondary-detailed-single' | 'secondary-detailed-multiple' | 'secondary-condensed';
+  layout:
+    | 'primary-detailed'
+    | 'primary-condensed'
+    | 'secondary-detailed-single'
+    | 'secondary-detailed-multiple'
+    | 'secondary-condensed';
 }
 
 const TeamMember = ({ member, layout }: TeamMemberProps) => {
@@ -28,30 +34,28 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
 
   // Card container styling - only for primary members
   const containerClass = isPrimary
-    ? 'bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden'
+    ? 'bg-brand-white-dark p-6 md:p-10 rounded-lg shadow-sm overflow-hidden'
     : '';
 
   // Layout classes
-  const layoutClass = isSingleSecondary
-    ? 'flex flex-row gap-6 items-start'
-    : 'flex flex-col';
+  const layoutClass = isSingleSecondary ? 'flex flex-row gap-6 items-start' : 'flex flex-col';
 
   // Alignment classes
-  const alignmentClass = isPrimary || !isSingleSecondary
-    ? 'items-center text-center'
-    : 'items-start text-left';
+  const alignmentClass =
+    isPrimary || !isSingleSecondary ? 'items-center text-center' : 'items-start text-left';
 
   // Content wrapper padding - only for primary (card-style)
-  const contentPaddingClass = isPrimary ? 'p-6' : '';
+  const contentPaddingClass = isPrimary ? 'mt-6' : '';
 
   // Photo size classes
-  const photoSizeClass = layout === 'secondary-condensed'
-    ? 'w-24 h-24 md:w-32 md:h-32'
-    : isPrimary
-      ? 'w-full aspect-square'
-      : isSingleSecondary
-        ? 'w-48 h-48 flex-shrink-0'
-        : 'w-full aspect-square';
+  const photoSizeClass =
+    layout === 'secondary-condensed'
+      ? 'w-24 h-24 md:w-32 md:h-32'
+      : isPrimary
+        ? 'w-full aspect-square'
+        : isSingleSecondary
+          ? 'w-48 h-48 flex-shrink-0'
+          : 'w-full aspect-square';
 
   // Render rich text components with appropriate alignment
   const textAlignment = isPrimary || !isSingleSecondary ? 'center' : 'left';
@@ -62,13 +66,14 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
       {/* Profile Picture */}
       <div
         className={`relative ${photoSizeClass} rounded-lg overflow-hidden flex-shrink-0`}
-        {...createSanityDataAttribute(member._id, member._type, getFieldPath('profilePicture'))}>
+        {...createSanityDataAttribute(member._id, member._type, getFieldPath('profilePicture'))}
+        style={maxHeightViewport}>
         {profilePicture?.asset ? (
           <UnifiedImage
             src={profilePicture}
             alt={profilePicture.alt || `${name} profile picture`}
             mode='fill'
-            sizeContext='profile'
+            sizeContext='full'
             objectFit='cover'
             generateSchema
             schemaContext='profile'
@@ -85,17 +90,17 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
       <div className={`${contentPaddingClass} ${isSingleSecondary ? 'flex-1' : 'w-full'}`}>
         {/* Name */}
         {name && (
-          <h3
-            className='text-h4 font-semibold mb-1'
+          <p
+            className='text-h3 md:text-h4 mb-1'
             {...createSanityDataAttribute(member._id, member._type, getFieldPath('name'))}>
             {name}
-          </h3>
+          </p>
         )}
 
         {/* Role */}
         {role && (
           <p
-            className='text-body-sm text-gray-600 dark:text-gray-400 mb-3'
+            className='text-subtle text-body-lg mb-3'
             {...createSanityDataAttribute(member._id, member._type, getFieldPath('role'))}>
             {role}
           </p>
@@ -110,7 +115,11 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
               value={description}
               components={components}
               className='text-body-base'
-              dataAttributes={createSanityDataAttribute(member._id, member._type, getFieldPath('description'))}
+              dataAttributes={createSanityDataAttribute(
+                member._id,
+                member._type,
+                getFieldPath('description')
+              )}
             />
           </div>
         )}
