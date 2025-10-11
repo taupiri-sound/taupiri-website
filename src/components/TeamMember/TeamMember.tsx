@@ -13,7 +13,8 @@ type TeamMember = NonNullable<TEAM_MEMBERS_QUERYResult>[number];
 interface TeamMemberProps {
   member: TeamMember;
   layout:
-    | 'primary-detailed'
+    | 'primary-detailed-single'
+    | 'primary-detailed-multiple'
     | 'primary-condensed'
     | 'secondary-detailed-single'
     | 'secondary-detailed-multiple'
@@ -33,29 +34,33 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
 
   // Card container styling - only for primary members
   const containerClass = isPrimary
-    ? `bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden ${layout === 'primary-condensed' ? '' : 'flex lg:flex-row lg:gap-6 lg:items-center'}`
+    ? `bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden ${layout === 'primary-condensed' || layout === 'primary-detailed-multiple' ? '' : 'flex lg:flex-row lg:gap-6 lg:items-center'}`
     : '';
 
   // Layout classes
-  const layoutClass = isSingleSecondary ? 'flex flex-row gap-6 items-start' : 'flex flex-col';
+  const layoutClass = isSingleSecondary
+    ? 'flex flex-col sm:flex-row gap-6 items-start'
+    : 'flex flex-col';
 
   // Alignment classes
   const alignmentClass =
-    isPrimary || !isSingleSecondary ? 'items-center text-center' : 'items-start text-left';
+    isPrimary || !isSingleSecondary
+      ? 'items-center text-center'
+      : 'items-center text-center sm:items-start sm:text-left';
 
   // Content wrapper padding - only for primary (card-style)
   const contentPaddingClass = isPrimary
-    ? `mt-6 ${layout === 'primary-condensed' ? '' : 'lg:mt-0 px-6'} pb-6 md:pb-0`
-    : 'mt-4 px-2 sm:px-0';
+    ? `mt-6 ${layout === 'primary-condensed' || layout === 'primary-detailed-multiple' ? 'px-6' : 'lg:mt-0 px-6'} pb-6 md:pb-0`
+    : `${isSingleSecondary ? '' : 'mt-4'} px-2 sm:px-0`;
 
   // Photo size classes
   const photoSizeClass =
     layout === 'secondary-condensed'
       ? 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg'
       : isPrimary
-        ? `${layout === 'primary-condensed' ? '' : 'md:w-1/2 md:self-start mx-auto'} w-full aspect-square md:rounded-lg`
+        ? `${layout === 'primary-condensed' || layout === 'primary-detailed-multiple' ? '' : 'md:w-1/2 md:self-start mx-auto'} w-full aspect-square md:rounded-lg`
         : isSingleSecondary
-          ? 'w-48 h-48 flex-shrink-0 rounded-lg'
+          ? 'w-48 h-48 flex-shrink-0 rounded-lg mx-auto'
           : 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
 
   // Render rich text components with appropriate alignment

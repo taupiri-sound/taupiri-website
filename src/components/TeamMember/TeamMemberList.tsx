@@ -14,19 +14,24 @@ interface TeamMemberListProps {
 const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListProps) => {
   // Filter team members by category
   const filteredMembers = teamMembers?.filter((member) => member.category === category) || [];
-
   if (filteredMembers.length === 0) {
     return null;
   }
 
+  // FOR TESTING: force single member view
+  // const filteredMembers =
+  //   teamMembers?.filter((member) => member.category === category).slice(0, 1) || [];
+
   const isPrimary = category === 'primary';
-  const isDetailed = displayStyle === 'detailed';
   const isSingleMember = filteredMembers.length === 1;
 
   // Determine layout type for each member
   const getLayoutType = () => {
     if (isPrimary) {
-      return isDetailed ? 'primary-detailed' : 'primary-condensed';
+      if (displayStyle === 'condensed') {
+        return 'primary-condensed';
+      }
+      return isSingleMember ? 'primary-detailed-single' : 'primary-detailed-multiple';
     } else {
       // Secondary
       if (displayStyle === 'condensed') {
@@ -95,7 +100,8 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
             member={member}
             layout={
               layoutType as
-                | 'primary-detailed'
+                | 'primary-detailed-single'
+                | 'primary-detailed-multiple'
                 | 'primary-condensed'
                 | 'secondary-detailed-single'
                 | 'secondary-detailed-multiple'
