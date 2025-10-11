@@ -9,62 +9,114 @@ import ProfilePlaceholder from './ProfilePlaceholder';
 import type { TEAM_MEMBERS_QUERYResult } from '@/sanity/types';
 
 type TeamMember = NonNullable<TEAM_MEMBERS_QUERYResult>[number];
+type LayoutType =
+  | 'primary-detailed-single'
+  | 'primary-detailed-multiple'
+  | 'primary-condensed'
+  | 'secondary-detailed-single'
+  | 'secondary-detailed-multiple'
+  | 'secondary-condensed';
 
 interface TeamMemberProps {
   member: TeamMember;
-  layout:
-    | 'primary-detailed-single'
-    | 'primary-detailed-multiple'
-    | 'primary-condensed'
-    | 'secondary-detailed-single'
-    | 'secondary-detailed-multiple'
-    | 'secondary-condensed';
+  layout: LayoutType;
 }
 
 const TeamMember = ({ member, layout }: TeamMemberProps) => {
   const { name, role, profilePicture, description } = member;
 
-  // Get field path for live editing
-  const getFieldPath = (field: string) => `${field}`;
-
-  // Determine styling based on layout
+  // Layout flags
   const isPrimary = layout.startsWith('primary');
   const isDetailed = layout.includes('detailed');
   const isSingleSecondary = layout === 'secondary-detailed-single';
+  const isPrimaryMultiColumn = layout === 'primary-condensed' || layout === 'primary-detailed-multiple';
 
-  // Card container styling - only for primary members
-  const containerClass = isPrimary
-    ? `bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden ${layout === 'primary-condensed' || layout === 'primary-detailed-multiple' ? '' : 'flex lg:flex-row lg:gap-6 lg:items-center'}`
-    : '';
+  /**
+   * Get Sanity field path for live editing
+   */
+  const getFieldPath = (field: string): string => field;
 
-  // Layout classes
-  const layoutClass = isSingleSecondary
-    ? 'flex flex-col sm:flex-row gap-6 items-start'
-    : 'flex flex-col';
+  /**
+   * Card container styling - only for primary members
+   * Primary members have a white card background with shadow
+   */
+  const getContainerClass = (): string => {
+    if (!isPrimary) return '';
 
-  // Alignment classes
-  const alignmentClass =
-    isPrimary || !isSingleSecondary
-      ? 'items-center text-center'
-      : 'items-center text-center sm:items-start sm:text-left';
+    const baseCardStyles = 'bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden';
+    const singleCardLayout = 'flex lg:flex-row lg:gap-6 lg:items-center';
 
-  // Content wrapper padding - only for primary (card-style)
-  const contentPaddingClass = isPrimary
-    ? `mt-6 ${layout === 'primary-condensed' || layout === 'primary-detailed-multiple' ? 'px-6' : 'lg:mt-0 px-6'} pb-6 md:pb-0`
-    : `${isSingleSecondary ? '' : 'mt-4'} px-2 sm:px-0`;
+    return isPrimaryMultiColumn ? baseCardStyles : `${baseCardStyles} ${singleCardLayout}`;
+  };
 
-  // Photo size classes
-  const photoSizeClass =
-    layout === 'secondary-condensed'
-      ? 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg'
-      : isPrimary
-        ? `${layout === 'primary-condensed' || layout === 'primary-detailed-multiple' ? '' : 'md:w-1/2 md:self-start mx-auto'} w-full aspect-square md:rounded-lg`
-        : isSingleSecondary
-          ? 'w-48 h-48 flex-shrink-0 rounded-lg mx-auto'
-          : 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
+  /**
+   * Layout classes - controls flex direction and spacing
+   */
+  const getLayoutClass = (): string => {
+    return isSingleSecondary ? 'flex flex-col sm:flex-row gap-6 items-start' : 'flex flex-col';
+  };
 
-  // Render rich text components with appropriate alignment
-  const textAlignment = isPrimary || !isSingleSecondary ? 'center' : 'left';
+  /**
+   * Alignment classes - controls text and item alignment
+   */
+  const getAlignmentClass = (): string => {
+    if (isPrimary || !isSingleSecondary) {
+      return 'items-center text-center';
+    }
+    return 'items-center text-center sm:items-start sm:text-left';
+  };
+
+  /**
+   * Content wrapper padding - only for primary (card-style)
+   */
+  const getContentPaddingClass = (): string => {
+    if (isPrimary) {
+      const basePadding = 'mt-6 pb-6 md:pb-0';
+      const horizontalPadding = isPrimaryMultiColumn ? 'px-6' : 'lg:mt-0 px-6';
+      return `${basePadding} ${horizontalPadding}`;
+    }
+
+    return isSingleSecondary ? '' : 'mt-4 px-2 sm:px-0';
+  };
+
+  /**
+   * Photo size and shape classes
+   */
+  const getPhotoSizeClass = (): string => {
+    // Secondary condensed: smaller photo
+    if (layout === 'secondary-condensed') {
+      return 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
+    }
+
+    // Primary layouts
+    if (isPrimary) {
+      const baseClasses = 'w-full aspect-square md:rounded-lg';
+      const singleCardClasses = 'md:w-1/2 md:self-start mx-auto';
+      return isPrimaryMultiColumn ? baseClasses : `${singleCardClasses} ${baseClasses}`;
+    }
+
+    // Secondary detailed single: fixed size on left
+    if (isSingleSecondary) {
+      return 'w-48 h-48 flex-shrink-0 rounded-lg mx-auto';
+    }
+
+    // Secondary detailed multiple: responsive
+    return 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
+  };
+
+  /**
+   * Get text alignment for rich text components
+   */
+  const getTextAlignment = (): 'center' | 'left' => {
+    return isPrimary || !isSingleSecondary ? 'center' : 'left';
+  };
+
+  const containerClass = getContainerClass();
+  const layoutClass = getLayoutClass();
+  const alignmentClass = getAlignmentClass();
+  const contentPaddingClass = getContentPaddingClass();
+  const photoSizeClass = getPhotoSizeClass();
+  const textAlignment = getTextAlignment();
   const components = createComponents(textAlignment);
 
   return (
