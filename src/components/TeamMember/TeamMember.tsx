@@ -46,8 +46,11 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
 
     const baseCardStyles = 'bg-brand-white-dark p-0 md:p-10 rounded-lg shadow-sm overflow-hidden';
     const singleCardLayout = 'flex lg:flex-row lg:gap-6 lg:items-center';
+    const multiColumnHeight = 'h-full'; // Stretch to fill wrapper height
 
-    return isPrimaryMultiColumn ? baseCardStyles : `${baseCardStyles} ${singleCardLayout}`;
+    return isPrimaryMultiColumn
+      ? `${baseCardStyles} ${multiColumnHeight}`
+      : `${baseCardStyles} ${singleCardLayout}`;
   };
 
   /**

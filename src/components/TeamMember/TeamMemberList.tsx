@@ -59,7 +59,7 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
       if (isSingleMember) {
         return `flex justify-center ${isCondensed ? maxCardWidth : ''} mx-auto`;
       }
-      // Primary multiple: 2 per row on desktop, 1 on mobile
+      // Primary multiple: Flex layout with 2 per row on desktop, centered last row
       return 'flex flex-wrap justify-center gap-6 md:gap-8';
     }
 
@@ -73,13 +73,14 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
   };
 
   /**
-   * Returns individual member wrapper width classes for grid layout
+   * Returns individual member wrapper width classes for flex layout
    */
   const getMemberWrapperClasses = (): string => {
     if (isPrimary) {
       if (isSingleMember) return 'w-full';
-      // Primary multiple: 2 per row on desktop
-      return 'w-full md:w-[calc((100%-1.5rem)/2)]';
+      // Primary multiple: Use flex-basis with max-width to maintain consistent widths
+      // This allows centering of last row while keeping equal heights via flex
+      return 'w-full md:flex-[0_0_calc(50%-1rem)] md:max-w-[calc(50%-1rem)] flex flex-col';
     }
 
     // Secondary category
