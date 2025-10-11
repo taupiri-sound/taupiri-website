@@ -44,7 +44,9 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
     isPrimary || !isSingleSecondary ? 'items-center text-center' : 'items-start text-left';
 
   // Content wrapper padding - only for primary (card-style)
-  const contentPaddingClass = isPrimary ? 'mt-6 px-6 pb-6 md:pb-0' : 'mt-6 px-6 pb-6 md:pb-0';
+  const contentPaddingClass = isPrimary
+    ? `mt-6 ${layout === 'primary-condensed' ? '' : 'lg:mt-0 px-6'} pb-6 md:pb-0`
+    : 'mt-4 px-2 sm:px-0';
 
   // Photo size classes
   const photoSizeClass =
@@ -89,7 +91,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
         {/* Name */}
         {name && (
           <p
-            className='text-h3 md:text-h4 mb-1'
+            className={`${isPrimary ? 'text-h3 md:text-h5 lg:text-h4' : 'text-h5'} mb-1`}
             {...createSanityDataAttribute(member._id, member._type, getFieldPath('name'))}>
             {name}
           </p>
@@ -98,7 +100,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
         {/* Role */}
         {role && (
           <p
-            className='text-subtle text-body-lg mb-3'
+            className={`text-subtle ${isPrimary ? 'text-body-xl' : 'text-body-lg'}`}
             {...createSanityDataAttribute(member._id, member._type, getFieldPath('role'))}>
             {role}
           </p>
@@ -107,7 +109,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
         {/* Description - only for detailed views */}
         {isDetailed && description && description.length > 0 && (
           <div
-            className='mt-4'
+            className={`${isPrimary ? 'mt-4' : 'mt-1'}`}
             {...createSanityDataAttribute(member._id, member._type, getFieldPath('description'))}>
             <PortableTextWrapper
               value={description}

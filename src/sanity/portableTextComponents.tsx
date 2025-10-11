@@ -9,9 +9,9 @@ const getAlignmentClasses = (alignment: string = 'left') => {
     case 'right':
       return {
         bulletClass:
-          'list-disc space-y-2 [&>li::marker]:text-brand-secondary m-6 text-right [&>li]:list-inside',
+          'list-disc space-y-2 [&>li::marker]:text-brand-secondary text-right [&>li]:list-inside',
         numberClass:
-          'list-decimal space-y-2 [&>li::marker]:text-brand-secondary m-6 text-right [&>li]:list-inside',
+          'list-decimal space-y-2 [&>li::marker]:text-brand-secondary text-right [&>li]:list-inside',
         listItemClass: 'leading-relaxed',
         standoutClass:
           'border-r-4 border-brand-primary bg-gray-50 pr-4 py-3 my-4 rounded-l-lg italic text-body-xl text-right',
@@ -19,17 +19,17 @@ const getAlignmentClasses = (alignment: string = 'left') => {
     case 'center':
       return {
         bulletClass:
-          'list-disc list-inside space-y-2 [&>li::marker]:text-brand-secondary m-6 text-center',
+          'list-disc list-inside space-y-2 [&>li::marker]:text-brand-secondary text-center',
         numberClass:
-          'list-decimal list-inside space-y-2 [&>li::marker]:text-brand-secondary m-6 text-center',
+          'list-decimal list-inside space-y-2 [&>li::marker]:text-brand-secondary text-center',
         listItemClass: 'leading-relaxed text-center',
         standoutClass:
           'border-l-4 border-brand-primary bg-gray-50 pl-4 py-3 my-4 rounded-r-lg italic text-body-xl text-center',
       };
     default: // 'left' or 'inherit'
       return {
-        bulletClass: 'list-disc pl-6 space-y-2 [&>li::marker]:text-brand-secondary m-6',
-        numberClass: 'list-decimal pl-6 space-y-2 [&>li::marker]:text-brand-secondary m-6',
+        bulletClass: 'list-disc pl-6 space-y-2 [&>li::marker]:text-brand-secondary',
+        numberClass: 'list-decimal pl-6 space-y-2 [&>li::marker]:text-brand-secondary',
         listItemClass: 'leading-relaxed',
         standoutClass:
           'border-l-4 border-brand-primary bg-gray-50 pl-4 py-3 my-4 rounded-r-lg italic text-body-xl',

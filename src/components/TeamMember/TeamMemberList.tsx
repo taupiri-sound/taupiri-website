@@ -51,7 +51,7 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
       // Secondary
       if (displayStyle === 'condensed') {
         // Condensed: Grid of photos with name/role underneath
-        return 'flex flex-wrap justify-center gap-6 md:gap-8';
+        return 'flex flex-wrap justify-center gap-6 lg:gap-8';
       } else {
         // Secondary detailed
         if (isSingleMember) {
@@ -59,7 +59,7 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
           return `${maxCardWidth} mx-auto`;
         }
         // Multiple: 3 per row on desktop, 1 on mobile, center last row
-        return 'flex flex-wrap justify-center gap-6 md:gap-8';
+        return 'flex flex-wrap justify-center gap-6 lg:gap-8';
       }
     }
   };
@@ -71,18 +71,18 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
         return 'w-full';
       }
       // Primary: 2 per row on desktop
-      return 'w-full md:w-[calc(50%-1rem)]';
+      return 'w-full md:w-[calc(50%-1.5rem)]';
     } else {
       // Secondary
       if (displayStyle === 'condensed') {
         // Condensed: Flexible grid
-        return 'w-full md:w-[calc(25%-3*0.25rem)]';
+        return 'w-1/2 md:w-[calc(50%-1*1.5rem)] lg:w-[calc(33.333%-2*2rem)]';
       } else {
         if (isSingleMember) {
           return 'w-full';
         }
         // Multiple detailed: 3 per row on desktop
-        return 'w-full md:w-[calc(25%-3*0.25rem)]';
+        return 'w-full md:w-[calc(50%-1*1.5rem)] lg:w-[calc(33.333%-2*2rem)]';
       }
     }
   };
