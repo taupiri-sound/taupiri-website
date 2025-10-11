@@ -1,4 +1,14 @@
 import type { StructureResolver } from 'sanity/structure';
+import {
+  HomeIcon,
+  DocumentIcon,
+  EditIcon,
+  UsersIcon,
+  HeartIcon,
+  PlayIcon,
+  CogIcon,
+  DocumentTextIcon,
+} from '@sanity/icons';
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure: StructureResolver = (S) =>
@@ -9,13 +19,10 @@ export const structure: StructureResolver = (S) =>
       S.listItem()
         .id('homePage')
         .schemaType('homePage')
-        .title('🏠 Home Page')
+        .title('Home Page')
+        .icon(HomeIcon)
         .child(
-          S.editor()
-            .id('homePage')
-            .schemaType('homePage')
-            .documentId('homePage')
-            .title('Home Page')
+          S.editor().id('homePage').schemaType('homePage').documentId('homePage').title('Home Page')
         ),
 
       S.divider(),
@@ -23,9 +30,50 @@ export const structure: StructureResolver = (S) =>
       // === PAGES ===
       S.listItem()
         .id('pages')
-        .title('📄 Pages')
+        .title('Pages')
+        .icon(DocumentIcon)
         .child(
           S.documentTypeList('page').title('Pages').filter('_type == "page" && _id != "homePage"')
+        ),
+
+      S.divider(),
+
+      // === CLIENTS ===
+      S.listItem()
+        .id('clients')
+        .title('Clients')
+        .icon(HeartIcon)
+        .child(
+          S.editor().id('clients').schemaType('clients').documentId('clients').title('Clients')
+        ),
+
+      S.divider(),
+
+      // === TEAM MEMBERS ===
+      S.listItem()
+        .id('teamMembers')
+        .title('Team Members')
+        .icon(UsersIcon)
+        .child(
+          S.documentTypeList('teamMember')
+            .title('Team Members')
+            .defaultOrdering([
+              { field: 'displayOrder', direction: 'asc' },
+              { field: 'name', direction: 'asc' },
+            ])
+        ),
+
+      S.divider(),
+
+      // === AUDIO SAMPLES ===
+      S.listItem()
+        .id('audioSamples')
+        .title('Audio Samples')
+        .icon(PlayIcon)
+        .child(
+          S.documentTypeList('audioSample')
+            .title('Audio Samples')
+            .defaultOrdering([{ field: '_createdAt', direction: 'desc' }])
         ),
 
       S.divider(),
@@ -33,7 +81,8 @@ export const structure: StructureResolver = (S) =>
       // === BLOG ===
       S.listItem()
         .id('blog')
-        .title('📝 Blog')
+        .title('Blog')
+        .icon(EditIcon)
         .child(
           S.list()
             .title('Blog Management')
@@ -57,53 +106,8 @@ export const structure: StructureResolver = (S) =>
                 .child(
                   S.documentTypeList('blogPost')
                     .title('Blog Posts')
-                    .defaultOrdering([
-                      { field: '_createdAt', direction: 'desc' }
-                    ])
+                    .defaultOrdering([{ field: '_createdAt', direction: 'desc' }])
                 ),
-            ])
-        ),
-
-      S.divider(),
-
-      // === TEAM MEMBERS ===
-      S.listItem()
-        .id('teamMembers')
-        .title('👥 Team Members')
-        .child(
-          S.documentTypeList('teamMember')
-            .title('Team Members')
-            .defaultOrdering([
-              { field: 'displayOrder', direction: 'asc' },
-              { field: 'name', direction: 'asc' }
-            ])
-        ),
-
-      S.divider(),
-
-      // === CLIENTS ===
-      S.listItem()
-        .id('clients')
-        .title('🤝 Clients')
-        .child(
-          S.editor()
-            .id('clients')
-            .schemaType('clients')
-            .documentId('clients')
-            .title('Clients')
-        ),
-
-      S.divider(),
-
-      // === AUDIO SAMPLES ===
-      S.listItem()
-        .id('audioSamples')
-        .title('🎵 Audio Samples')
-        .child(
-          S.documentTypeList('audioSample')
-            .title('Audio Samples')
-            .defaultOrdering([
-              { field: '_createdAt', direction: 'desc' }
             ])
         ),
 
@@ -111,7 +115,8 @@ export const structure: StructureResolver = (S) =>
 
       // === SITE MANAGEMENT ===
       S.listItem()
-        .title('⚙️ Site Management')
+        .title('Site Management')
+        .icon(CogIcon)
         .child(
           S.list()
             .title('Site Management')
@@ -162,7 +167,8 @@ export const structure: StructureResolver = (S) =>
               // Legal - Menu for Terms & Conditions and Privacy Policy
               S.listItem()
                 .id('legal')
-                .title('⚖️ Legal')
+                .title('Legal')
+                .icon(DocumentTextIcon)
                 .child(
                   S.list()
                     .title('Legal Documents')
