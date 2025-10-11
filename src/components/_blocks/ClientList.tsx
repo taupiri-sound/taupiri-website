@@ -74,7 +74,7 @@ const ClientList: React.FC<ClientListProps> = ({
                     `${client.levelKey}[${client.arrayIndex}]`
                   )
                 : {})}
-              className={`${getFontSizeClass(client.level)} text-center cursor-pointer hover:opacity-80 transition-opacity`}>
+              className={`${getFontSizeClass(client.level)} uppercase text-justify`}>
               {client.name}
             </div>
             {index < allClients.length - 1 && (
