@@ -29,6 +29,9 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
     return null;
   }
 
+  // TEST CODE: single member scenario
+  // const filteredMembers = teamMembers?.filter((member) => member.category === category).slice(0, 1);
+
   const isPrimary = category === 'primary';
   const isSingleMember = filteredMembers.length === 1;
   const isCondensed = displayStyle === 'condensed';
@@ -76,14 +79,14 @@ const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListP
     if (isPrimary) {
       if (isSingleMember) return 'w-full';
       // Primary multiple: 2 per row on desktop
-      return 'w-full md:w-[calc(50%-1.5rem)]';
+      return 'w-full md:w-[calc((100%-1.5rem)/2)]';
     }
 
     // Secondary category
     if (isSingleMember) return 'w-full';
 
     // Secondary multiple (both condensed and detailed): 2 per row on tablet, 3 on desktop
-    return 'w-1/2 md:w-[calc(50%-1*1.5rem)] lg:w-[calc(33.333%-2*2rem)]';
+    return 'w-full md:w-[calc((100%-1*1.5rem)/2)] lg:w-[calc((100%-2*2rem)/3)]';
   };
 
   const layoutType = getLayoutType();

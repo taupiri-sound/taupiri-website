@@ -29,7 +29,8 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
   const isPrimary = layout.startsWith('primary');
   const isDetailed = layout.includes('detailed');
   const isSingleSecondary = layout === 'secondary-detailed-single';
-  const isPrimaryMultiColumn = layout === 'primary-condensed' || layout === 'primary-detailed-multiple';
+  const isPrimaryMultiColumn =
+    layout === 'primary-condensed' || layout === 'primary-detailed-multiple';
 
   /**
    * Get Sanity field path for live editing
@@ -85,7 +86,7 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
   const getPhotoSizeClass = (): string => {
     // Secondary condensed: smaller photo
     if (layout === 'secondary-condensed') {
-      return 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
+      return 'w-full max-w-80 sm:max-w-none sm:w-2/3 md:w-full aspect-square rounded-lg';
     }
 
     // Primary layouts
@@ -97,11 +98,11 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
 
     // Secondary detailed single: fixed size on left
     if (isSingleSecondary) {
-      return 'w-48 h-48 flex-shrink-0 rounded-lg mx-auto';
+      return 'w-full max-w-80 sm:w-48 sm:h-48 aspect-square flex-shrink-0 rounded-lg mx-auto';
     }
 
     // Secondary detailed multiple: responsive
-    return 'w-48 h-48 md:w-full md:h-auto aspect-square rounded-lg';
+    return 'w-full max-w-80 sm:max-w-none sm:w-2/3 md:w-full aspect-square rounded-lg';
   };
 
   /**
