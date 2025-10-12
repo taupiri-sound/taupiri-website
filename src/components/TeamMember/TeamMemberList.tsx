@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { stegaClean } from 'next-sanity';
 import TeamMember from './TeamMember';
 import { maxCardWidth } from '@/utils/spacingConstants';
 import type { TEAM_MEMBERS_QUERYResult } from '@/sanity/types';
@@ -23,7 +24,8 @@ interface TeamMemberListProps {
 
 const TeamMemberList = ({ category, displayStyle, teamMembers }: TeamMemberListProps) => {
   // Filter team members by category
-  const filteredMembers = teamMembers?.filter((member) => member.category === category) || [];
+  // Use stegaClean to strip Sanity's invisible stega encoding for reliable string comparison in draft mode
+  const filteredMembers = teamMembers?.filter((member) => stegaClean(member.category) === stegaClean(category)) || [];
 
   if (filteredMembers.length === 0) {
     return null;
