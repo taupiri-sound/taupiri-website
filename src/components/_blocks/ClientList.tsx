@@ -44,17 +44,17 @@ const ClientList: React.FC<ClientListProps> = ({
   const getFontSizeClass = (level: number): string => {
     switch (level) {
       case 1:
-        return 'text-body-4xl font-bold';
-      case 2:
         return 'text-body-3xl font-bold';
+      case 2:
+        return 'text-body-2xl font-bold';
       case 3:
-        return 'text-body-2xl font-semibold';
+        return 'text-body-xl font-semibold';
       case 4:
-        return 'text-body-xl font-medium';
-      case 5:
         return 'text-body-lg font-medium';
+      case 5:
+        return 'text-body-base font-medium';
       default:
-        return 'text-body-base';
+        return 'md:text-body-base';
     }
   };
 
