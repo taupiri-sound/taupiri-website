@@ -5,6 +5,7 @@ import PlaceholderImage from './PlaceholderImage';
 import TimelineBar from './TimelineBar';
 import VolumeControl from './VolumeControl';
 import type { AudioSample } from './types';
+import { maxCardWidth } from '@/utils/spacingConstants';
 
 interface SingleTrackPlayerProps {
   track: AudioSample;
@@ -41,7 +42,7 @@ const SingleTrackPlayer = ({
 }: SingleTrackPlayerProps) => {
   return (
     <div
-      className='relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left'
+      className={`${maxCardWidth} mx-auto relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left`}
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
       {/* Header */}
       <div className='bg-brand-white-dark border-b border-brand-primary/10 p-4'>

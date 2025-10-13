@@ -6,6 +6,7 @@ import TimelineBar from './TimelineBar';
 import VolumeControl from './VolumeControl';
 import TrackListItem from './TrackListItem';
 import type { AudioSample } from './types';
+import { maxCardWidth } from '@/utils/spacingConstants';
 
 interface MultiTrackPlayerProps {
   tracks: AudioSample[];
@@ -52,7 +53,7 @@ const MultiTrackPlayer = ({
 }: MultiTrackPlayerProps) => {
   return (
     <div
-      className='relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left'
+      className={`${maxCardWidth} mx-auto relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left`}
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
       {/* Currently playing track header */}
       <div className='bg-brand-white-dark border-b border-brand-primary/10 p-4'>
