@@ -64,7 +64,7 @@ const CardIcon = (props: CardIconProps) => {
 
   return (
     <CardContainer
-      className={`${className} flex ${flexDirection} gap-6 ${itemsAlignment}`}
+      className={`${className} flex ${flexDirection} gap-y-2 gap-x-4 ${itemsAlignment}`}
       isGridChild={isGridChild}>
       {/* Icon */}
       <div
@@ -98,9 +98,13 @@ const CardIcon = (props: CardIconProps) => {
         {isStacked ? (
           <>
             {/* Mobile: left-aligned */}
-            <div className='flex flex-col items-start gap-4 w-full md:hidden'>{renderContent('left')}</div>
+            <div className='flex flex-col items-start gap-4 w-full md:hidden'>
+              {renderContent('left')}
+            </div>
             {/* Desktop: center-aligned */}
-            <div className='hidden md:flex md:flex-col md:items-center gap-4 w-full'>{renderContent('center')}</div>
+            <div className='hidden md:flex md:flex-col md:items-center gap-4 w-full'>
+              {renderContent('center')}
+            </div>
           </>
         ) : (
           <div className='flex flex-col items-start gap-4 w-full'>{renderContent('left')}</div>
