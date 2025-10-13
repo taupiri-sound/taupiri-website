@@ -161,8 +161,11 @@ export async function POST(request: Request) {
     }
 
     // Send confirmation email to the sender
+    // NOTE: On Resend free tier (without domain verification), confirmation emails can only
+    // be sent to the email address you signed up with. Once you verify a domain, this will
+    // work for any recipient email address.
     try {
-      await resend.emails.send({
+      const confirmationEmailResult = await resend.emails.send({
         from: fromEmail,
         to: sanitizedEmail,
         subject: 'Thank you for contacting Taupiri Sound',
@@ -182,9 +185,24 @@ export async function POST(request: Request) {
           <p style="color: #666; font-size: 12px;">This is an automated confirmation email from Taupiri Sound.</p>
         `,
       });
+
+      if (confirmationEmailResult.error) {
+        // Check if it's the domain verification error
+        const errorObj = confirmationEmailResult.error as { statusCode?: number; message?: string };
+        if (errorObj.statusCode === 403) {
+          console.warn(
+            'Confirmation email skipped - domain not verified. This is expected in development.',
+            'The admin notification email was sent successfully.'
+          );
+        } else {
+          console.error('Error sending confirmation email:', confirmationEmailResult.error);
+        }
+      } else {
+        console.log('✓ Confirmation email sent successfully to:', sanitizedEmail);
+      }
     } catch (confirmationError) {
       // Log error but don't fail the request if confirmation email fails
-      console.warn('Failed to send confirmation email to sender:', confirmationError);
+      console.error('Failed to send confirmation email to sender:', confirmationError);
     }
 
     return NextResponse.json(
