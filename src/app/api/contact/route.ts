@@ -189,6 +189,7 @@ export async function POST(request: Request) {
       const confirmationEmailResult = await resend.emails.send({
         from: fromEmail,
         to: sanitizedEmail,
+        replyTo: companyEmail,
         subject: 'Thank you for contacting Taupiri Sound',
         html: confirmationEmailHtml,
       });

@@ -142,8 +142,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
 
                         <!-- Footer Text -->
                         <p style="margin: 0; color: #b8956a; font-size: 12px; text-align: center; line-height: 1.5;">
-                          This is an automated confirmation email from Taupiri Sound.<br>
-                          Please do not reply directly to this email.
+                          This is an automated confirmation email from Taupiri Sound.
                         </p>
                       </td>
                     </tr>
