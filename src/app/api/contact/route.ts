@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { sanityFetch } from '@/sanity/lib/live';
+import { SITE_SETTINGS_QUERY } from '@/sanity/lib/queries';
+import { generateConfirmationEmail } from '@/lib/email-templates/confirmationEmail';
+import { generateAdminNotificationEmail } from '@/lib/email-templates/adminNotificationEmail';
 
 // Initialize Resend with API key from environment variable
 // IMPORTANT: Add RESEND_API_KEY to your .env.local file
@@ -121,9 +125,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid input detected.' }, { status: 400 });
     }
 
-    // Get contact email from environment variable
+    // Get contact email from Sanity and environment variables
+    const { data: siteSettings } = await sanityFetch({ query: SITE_SETTINGS_QUERY });
     const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@yourdomain.com';
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+
+    // Get company email from Sanity (fallback to env variable)
+    const companyEmail = siteSettings?.companyEmail || contactEmail || 'info@taupiri.co.nz';
 
     if (!contactEmail) {
       console.error('NEXT_PUBLIC_CONTACT_EMAIL environment variable is not set');
@@ -137,22 +145,26 @@ export async function POST(request: Request) {
       );
     }
 
-    // Send email to business owner
+    // Construct logo URL for email using NEXT_PUBLIC_BASE_URL
+    // Note: In development (localhost), the image won't display in emails - this is expected
+    // In production, ensure NEXT_PUBLIC_BASE_URL is set to your live domain in Vercel
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const logoUrl = `${baseUrl}/images/logos/logo-black.png`;
+
+    // Send email to business owner using styled template
+    const adminEmailHtml = generateAdminNotificationEmail({
+      name: sanitizedName,
+      email: sanitizedEmail,
+      phone: sanitizedPhone,
+      message: sanitizedMessage,
+    });
+
     const adminEmailResult = await resend.emails.send({
       from: fromEmail,
       to: contactEmail,
       replyTo: sanitizedEmail,
       subject: `New Contact Form Submission from ${sanitizedName}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${sanitizedName}</p>
-        <p><strong>Email:</strong> ${sanitizedEmail}</p>
-        ${sanitizedPhone ? `<p><strong>Phone:</strong> ${sanitizedPhone}</p>` : ''}
-        <p><strong>Message:</strong></p>
-        <p>${sanitizedMessage.replace(/\n/g, '<br>')}</p>
-        <hr>
-        <p style="color: #666; font-size: 12px;">This message was sent via the contact form on your website.</p>
-      `,
+      html: adminEmailHtml,
     });
 
     if (adminEmailResult.error) {
@@ -160,30 +172,25 @@ export async function POST(request: Request) {
       throw new Error('Failed to send notification email');
     }
 
-    // Send confirmation email to the sender
+    // Send confirmation email to the sender using styled template
     // NOTE: On Resend free tier (without domain verification), confirmation emails can only
     // be sent to the email address you signed up with. Once you verify a domain, this will
     // work for any recipient email address.
     try {
+      const confirmationEmailHtml = generateConfirmationEmail({
+        name: sanitizedName,
+        email: sanitizedEmail,
+        phone: sanitizedPhone,
+        message: sanitizedMessage,
+        companyEmail,
+        logoUrl,
+      });
+
       const confirmationEmailResult = await resend.emails.send({
         from: fromEmail,
         to: sanitizedEmail,
         subject: 'Thank you for contacting Taupiri Sound',
-        html: `
-          <h2>Thank you for your message!</h2>
-          <p>Hi ${sanitizedName},</p>
-          <p>We have successfully received your message and will aim to get back to you as soon as possible.</p>
-
-          <h3>Your Message Details:</h3>
-          <p><strong>Name:</strong> ${sanitizedName}</p>
-          <p><strong>Email:</strong> ${sanitizedEmail}</p>
-          ${sanitizedPhone ? `<p><strong>Phone:</strong> ${sanitizedPhone}</p>` : ''}
-          <p><strong>Message:</strong></p>
-          <p>${sanitizedMessage.replace(/\n/g, '<br>')}</p>
-
-          <hr>
-          <p style="color: #666; font-size: 12px;">This is an automated confirmation email from Taupiri Sound.</p>
-        `,
+        html: confirmationEmailHtml,
       });
 
       if (confirmationEmailResult.error) {
