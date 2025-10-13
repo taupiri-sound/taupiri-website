@@ -30,13 +30,13 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
             <!-- Main Container -->
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 
-              <!-- Header with Logo and Brand Gradient -->
+              <!-- Header with Logo and Brand Secondary Color -->
               <tr>
-                <td style="background: linear-gradient(135deg, #900000 0%, #5d1611 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                <td style="background: #430c08; padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
                   <img
                     src="${logoUrl}"
                     alt="Taupiri Sound"
-                    width="180"
+                    width="200"
                     height="auto"
                     style="display: block; margin: 0 auto; max-width: 180px;"
                   />
@@ -105,7 +105,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
 
               <!-- Signature Section -->
               <tr>
-                <td style="background-color: #0a0000; padding: 30px; border-radius: 0 0 8px 8px;">
+                <td style="background: #0a0000; padding: 30px; border-radius: 0 0 8px 8px;">
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                       <td align="center">
