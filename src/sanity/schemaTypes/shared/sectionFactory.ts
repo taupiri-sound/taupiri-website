@@ -12,6 +12,7 @@ export const commonContentBlocks = [
   defineArrayMember({ type: 'itemList' }),
   defineArrayMember({ type: 'clientList' }),
   defineArrayMember({ type: 'teamMemberList' }),
+  defineArrayMember({ type: 'contactForm' }),
   defineArrayMember({ type: 'quote' }),
   defineArrayMember({ type: 'imageBlock' }),
   defineArrayMember({ type: 'imageGallery' }),

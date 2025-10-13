@@ -22,6 +22,7 @@ import type {
   ItemList as ItemListType,
   ClientList as ClientListType,
   TeamMemberList as TeamMemberListType,
+  ContactForm as ContactFormType,
   Divider as DividerType,
 } from '@/sanity/types';
 import type { SiteSettingsProps } from '@/types/shared';
@@ -45,6 +46,7 @@ import CheckList from '@/components/_blocks/CheckList';
 import ItemList from '@/components/_blocks/ItemList';
 import ClientList from '@/components/_blocks/ClientList';
 import TeamMemberListComponent from '@/components/_blocks/TeamMemberList';
+import ContactFormComponent from '@/components/_blocks/ContactForm';
 import Divider from '@/components/UI/Divider';
 
 interface RenderBlockConfig {
@@ -88,6 +90,7 @@ type BlockType =
   | WithKey<ItemListType>
   | WithKey<ClientListType>
   | WithKey<TeamMemberListType>
+  | WithKey<ContactFormType>
   | WithKey<DividerType>;
 
 /**
@@ -379,6 +382,15 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             displayStyle={teamMemberListBlock.displayStyle as 'detailed' | 'condensed'}
             teamMembers={teamMembersData || []}
           />
+        </BlockWrapper>
+      );
+    }
+
+    case 'contactForm': {
+      const contactFormBlock = typedBlock as WithKey<ContactFormType>;
+      return (
+        <BlockWrapper key={contactFormBlock._key}>
+          <ContactFormComponent />
         </BlockWrapper>
       );
     }

@@ -116,6 +116,11 @@ export type CtaList = Array<{
   _key: string;
 } & EmbeddedCtaButton>;
 
+export type ContactForm = {
+  _type: "contactForm";
+  placeholder?: string;
+};
+
 export type TeamMemberList = {
   _type: "teamMemberList";
   category?: "primary" | "secondary";
@@ -606,6 +611,8 @@ export type SubSubSection = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ContactForm | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -658,6 +665,8 @@ export type SubSection = {
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
+    _key: string;
+  } & ContactForm | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -715,6 +724,8 @@ export type PageSection = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ContactForm | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -761,6 +772,8 @@ export type PageBuilder = Array<{
 } & ClientList | {
   _key: string;
 } & TeamMemberList | {
+  _key: string;
+} & ContactForm | {
   _key: string;
 } & Quote | {
   _key: string;
@@ -867,6 +880,8 @@ export type PrivacyPolicy = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ContactForm | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -922,6 +937,8 @@ export type TermsAndConditions = {
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
+    _key: string;
+  } & ContactForm | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -1085,6 +1102,8 @@ export type BlogPost = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ContactForm | {
+    _key: string;
   } & Quote | {
     _key: string;
   } & ImageBlock | {
@@ -1181,6 +1200,8 @@ export type Page = {
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
+    _key: string;
+  } & ContactForm | {
     _key: string;
   } & Quote | {
     _key: string;
@@ -1491,7 +1512,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | TeamMemberList | ClientList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | TeamMember | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ContactForm | TeamMemberList | ClientList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | TeamMember | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -3041,6 +3062,12 @@ export type PAGE_QUERYResult = {
     _key: string;
     _type: "companyLinksBlock";
     blockAdded?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "contactForm";
+    placeholder?: string;
     image: null;
     content: null;
   } | {
@@ -6377,6 +6404,12 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -9725,6 +9758,12 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -10839,6 +10878,11 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -17952,6 +17996,12 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -21284,6 +21334,12 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -24632,6 +24688,12 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -25746,6 +25808,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -32904,6 +32971,12 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -36236,6 +36309,12 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -39584,6 +39663,12 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -40698,6 +40783,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -47716,6 +47806,12 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -51048,6 +51144,12 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -54396,6 +54498,12 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -55510,6 +55618,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -62528,6 +62641,12 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -65860,6 +65979,12 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -69208,6 +69333,12 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -70322,6 +70453,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -77396,6 +77532,12 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -80728,6 +80870,12 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -84076,6 +84224,12 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -85190,6 +85344,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -93086,6 +93245,12 @@ export type BLOG_POST_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -96418,6 +96583,12 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -99766,6 +99937,12 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -100880,6 +101057,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -108024,6 +108206,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -111356,6 +111544,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -114704,6 +114898,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -115818,6 +116018,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -122862,6 +123067,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -126194,6 +126405,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -129542,6 +129759,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -130656,6 +130879,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -137668,6 +137896,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -141000,6 +141234,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -144348,6 +144588,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -145462,6 +145708,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -152474,6 +152725,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -155806,6 +156063,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -159154,6 +159417,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -160268,6 +160537,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -167312,6 +167586,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -170644,6 +170924,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -173992,6 +174278,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -175106,6 +175398,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -182137,6 +182434,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -185469,6 +185772,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -188817,6 +189126,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -189931,6 +190246,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -196975,6 +197295,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -200307,6 +200633,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -203655,6 +203987,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -204769,6 +205107,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -211781,6 +212124,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -215113,6 +215462,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -218461,6 +218816,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -219575,6 +219936,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -226587,6 +226953,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -229919,6 +230291,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -233267,6 +233645,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -234381,6 +234765,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -241425,6 +241814,12 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "contactForm";
+    placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "ctaBlogPost";
     blogPost: {
       _id: string;
@@ -244757,6 +245152,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "companyLinksBlock";
       blockAdded?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "contactForm";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -248105,6 +248506,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "contactForm";
+        placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "ctaBlogPost";
         blogPost: {
           _id: string;
@@ -249219,6 +249626,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "companyLinksBlock";
           blockAdded?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "contactForm";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;

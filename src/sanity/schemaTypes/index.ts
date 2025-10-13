@@ -34,6 +34,7 @@ import { checkListType } from './blocks/checkListType';
 import { itemListType } from './blocks/itemListType';
 import { clientListType } from './blocks/clientListType';
 import { teamMemberListType } from './blocks/teamMemberListType';
+import { contactFormType } from './blocks/contactFormType';
 import { siteSettingsType } from './siteSettingsType';
 import { teamMemberType } from './teamMemberType';
 import { companyLinksType } from './companyLinksType';
@@ -96,6 +97,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     itemListType,
     clientListType,
     teamMemberListType,
+    contactFormType,
     // Shared Components
     companyLinksArrayType,
     ctaListType,
