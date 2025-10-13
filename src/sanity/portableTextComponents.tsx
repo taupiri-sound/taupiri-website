@@ -77,7 +77,7 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       'body-xs': ({ children }) => {
         // Handle empty blocks (empty lines) - render truly empty for CSS :empty selector
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <figcaption className='text-body-xs'></figcaption>;
+          return <span className='block text-body-xs'></span>;
         }
 
         // Check if children contains only empty spans or text nodes
@@ -96,14 +96,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
         });
 
         if (hasOnlyEmptyContent) {
-          return <figcaption className='text-body-xs'></figcaption>;
+          return <span className='block text-body-xs'></span>;
         }
 
-        return <figcaption className='text-body-xs'>{children}</figcaption>;
+        return <span className='block text-body-xs'>{children}</span>;
       },
       'body-sm': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className='text-body-sm'></p>;
+          return <span className='block text-body-sm'></span>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -121,14 +121,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className='text-body-sm'></p>;
+          return <span className='block text-body-sm'></span>;
         }
 
-        return <p className='text-body-sm'>{children}</p>;
+        return <span className='block text-body-sm'>{children}</span>;
       },
       'body-lg': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className='text-body-lg'></p>;
+          return <span className='block text-body-lg'></span>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -146,14 +146,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className='text-body-lg'></p>;
+          return <span className='block text-body-lg'></span>;
         }
 
-        return <p className='text-body-lg'>{children}</p>;
+        return <span className='block text-body-lg'>{children}</span>;
       },
       'body-xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className='text-body-xl'></p>;
+          return <span className='block text-body-xl'></span>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -171,14 +171,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className='text-body-xl'></p>;
+          return <span className='block text-body-xl'></span>;
         }
 
-        return <p className='text-body-xl'>{children}</p>;
+        return <span className='block text-body-xl'>{children}</span>;
       },
       'body-2xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className='text-body-2xl'></p>;
+          return <span className='block text-body-2xl'></span>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -196,14 +196,14 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className='text-body-2xl'></p>;
+          return <span className='block text-body-2xl'></span>;
         }
 
-        return <p className='text-body-2xl'>{children}</p>;
+        return <span className='block text-body-2xl'>{children}</span>;
       },
       'body-3xl': ({ children }) => {
         if (!children || (Array.isArray(children) && children.length === 0) || children === '') {
-          return <p className='text-body-3xl'></p>;
+          return <span className='block text-body-3xl'></span>;
         }
 
         const hasOnlyEmptyContent = React.Children.toArray(children).every((child) => {
@@ -221,10 +221,10 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
         });
 
         if (hasOnlyEmptyContent) {
-          return <p className='text-body-3xl'></p>;
+          return <span className='block text-body-3xl'></span>;
         }
 
-        return <p className='text-body-3xl'>{children}</p>;
+        return <span className='block text-body-3xl'>{children}</span>;
       },
 
       // Special styles
@@ -241,7 +241,11 @@ export const createComponents = (alignment: string = 'left'): PortableTextCompon
       number: ({ children }) => <ol className={alignmentClasses.numberClass}>{children}</ol>,
     },
 
-    listItem: ({ children }) => <li className={alignmentClasses.listItemClass}>{children}</li>,
+    listItem: ({ children }) => (
+      <li className={`${alignmentClasses.listItemClass} [&>span]:inline [&>span]:leading-[inherit]`}>
+        {children}
+      </li>
+    ),
 
     marks: {
       strong: ({ children }) => <strong className='font-bold'>{children}</strong>,

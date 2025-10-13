@@ -26,7 +26,7 @@ export const blockContentType = defineType({
       // you want, and decide how you want to deal with it where you want to
       // use your content.
       styles: [
-        // Default paragraph style  
+        // Default paragraph style
         { title: 'Normal', value: 'normal' },
 
         // Body Text Styles with custom previews

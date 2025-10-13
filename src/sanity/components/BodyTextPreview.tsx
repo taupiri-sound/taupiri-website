@@ -31,7 +31,7 @@ const BodyTextPreview = ({ children, value }: BodyTextPreviewProps) => {
   const SCALE_PX = FONT_SCALE_BASE * BASE_PX;
 
   // ⚠️ These multipliers and line heights must match the @utility definitions in src/app/globals.css
-  const getStyles = (styleType: string) => {
+  const getStyles = (styleType: string): React.CSSProperties => {
     switch (styleType) {
       case 'body-9xl':
         return {
