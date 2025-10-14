@@ -99,7 +99,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                     </tr>
                   </table>
 
-                  <p style="margin: 0; color: #666666; font-size: 14px; line-height: 1.6;">
+                  <p style="margin: 0; color: #666666; font-size: 16px; line-height: 1.6;">
                     If you have any urgent questions, feel free to reach out to us directly.
                   </p>
                 </td>

@@ -133,7 +133,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            'Contact form is not properly configured. Please contact us directly via phone or email.',
+            'Contact form is currently unavailable. Please contact us directly via phone or email.',
           configError: true,
         },
         { status: 500 }

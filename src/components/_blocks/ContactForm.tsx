@@ -88,7 +88,7 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
     <div className={`max-w-2xl mx-auto ${className}`.trim()}>
       {status === 'success' ? (
         <div className='bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center'>
-          <h3 className='text-h4 text-green-800 mb-2'>Thank you for your message!</h3>
+          <p className='text-h4 text-green-800 mb-2'>Thank you for your message!</p>
           <p className='text-body-base text-green-700 mb-4'>
             We have received your message and will get back to you as soon as possible. You should
             also receive a confirmation email shortly.
