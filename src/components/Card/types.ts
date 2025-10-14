@@ -18,7 +18,7 @@ export interface DataAttributeConfig {
 export interface BaseCardProps {
   title?: string;
   subtitle?: string;
-  content: unknown[];
+  content?: unknown[]; // Optional to support cards with just title/subtitle
   className?: string;
   isGridChild?: boolean;
   documentId?: string;

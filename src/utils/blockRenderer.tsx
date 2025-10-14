@@ -25,6 +25,8 @@ import type {
   TeamMemberList as TeamMemberListType,
   ContactForm as ContactFormType,
   Divider as DividerType,
+  Card as CardType,
+  GridLayout as GridLayoutType,
 } from '@/sanity/types';
 import type { SiteSettingsProps } from '@/types/shared';
 
@@ -49,6 +51,8 @@ import ClientList from '@/components/_blocks/ClientList';
 import TeamMemberListComponent from '@/components/_blocks/TeamMemberList';
 import ContactFormComponent from '@/components/_blocks/ContactForm';
 import Divider from '@/components/UI/Divider';
+import Card from '@/components/_blocks/Card';
+import GridLayout from '@/components/_blocks/GridLayout';
 
 interface RenderBlockConfig {
   projectId?: string;
@@ -93,7 +97,9 @@ type BlockType =
   | WithKey<ClientListType>
   | WithKey<TeamMemberListType>
   | WithKey<ContactFormType>
-  | WithKey<DividerType>;
+  | WithKey<DividerType>
+  | WithKey<CardType>
+  | WithKey<GridLayoutType>;
 
 /**
  * Shared block rendering logic used by both PageBuilder and Card components.
@@ -401,7 +407,52 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       );
     }
 
-    default:
+    case 'card': {
+      const cardBlock = typedBlock as WithKey<CardType>;
+      return (
+        <BlockWrapper key={cardBlock._key}>
+          <Card
+            {...cardBlock}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={blockPath}
+            siteSettings={siteSettings}
+            companyLinks={companyLinks}
+            alignment={alignment}
+          />
+        </BlockWrapper>
+      );
+    }
+
+    case 'gridLayout': {
+      const gridLayoutBlock = typedBlock as WithKey<GridLayoutType>;
+      return (
+        <BlockWrapper key={gridLayoutBlock._key}>
+          <GridLayout
+            {...gridLayoutBlock}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={blockPath}
+          />
+        </BlockWrapper>
+      );
+    }
+
+    default: {
+      // TypeScript exhaustiveness check - this ensures all BlockType cases are handled
+      // If you get a TypeScript error here, you're missing a case in the switch statement
+      const exhaustiveCheck: never = typedBlock;
+
+      if (process.env.NODE_ENV === 'development') {
+        const unknownBlock = exhaustiveCheck as { _type?: string };
+        console.warn(
+          `[blockRenderer] Unhandled block type: "${unknownBlock._type || 'unknown'}"`,
+          '\nBlock data:',
+          exhaustiveCheck,
+          '\nThis block type may need to be added to the renderBlock switch statement in src/utils/blockRenderer.tsx'
+        );
+      }
       return null;
+    }
   }
 };

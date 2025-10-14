@@ -2,6 +2,116 @@
 
 This file contains instructions for AI assistants working on this project.
 
+## Block Renderer Maintenance
+
+**CRITICAL: The `blockRenderer.tsx` utility is the single source of truth for rendering all content blocks. Missing block types will silently fail to render.**
+
+### The Problem
+
+The `src/utils/blockRenderer.tsx` file contains a centralized `renderBlock()` function used by:
+- PageBuilder (main page content)
+- TwoColumnLayout (left/right columns)
+- GridLayout (grid items)
+- Card components (nested content)
+
+**If a block type is missing from the switch statement, it will not render anywhere in the application.** The default case returns `null`, so there's no error - the content just doesn't appear.
+
+### Adding New Block Types - Checklist
+
+When creating a new block type that should be renderable, you **MUST** update `blockRenderer.tsx`:
+
+1. **Add type import:**
+   ```typescript
+   import type {
+     // ... existing imports
+     NewBlockType as NewBlockTypeType,
+   } from '@/sanity/types';
+   ```
+
+2. **Add component import:**
+   ```typescript
+   import NewBlockComponent from '@/components/_blocks/NewBlock';
+   ```
+
+3. **Add to BlockType union:**
+   ```typescript
+   type BlockType =
+     | WithKey<RichTextType>
+     // ... existing types
+     | WithKey<NewBlockTypeType>;
+   ```
+
+4. **Add switch case:**
+   ```typescript
+   case 'newBlockType': {
+     const newBlock = typedBlock as WithKey<NewBlockTypeType>;
+     return (
+       <BlockWrapper key={newBlock._key}>
+         <NewBlockComponent
+           {...newBlock}
+           documentId={documentId}
+           documentType={documentType}
+           fieldPathPrefix={blockPath}
+           // Pass other props as needed
+         />
+       </BlockWrapper>
+     );
+   }
+   ```
+
+5. **Add to schemas** where the block should be allowed (e.g., `twoColumnLayoutType.ts`, `gridLayoutType.ts`)
+
+6. **Test the block in all contexts:**
+   - [ ] PageBuilder (main content)
+   - [ ] TwoColumnLayout (if allowed)
+   - [ ] GridLayout (if allowed)
+   - [ ] Card content (if allowed)
+
+### Exhaustiveness Check System
+
+The `blockRenderer.tsx` includes **two layers of protection** against missing block types:
+
+#### 1. Compile-Time TypeScript Exhaustiveness Check
+
+The switch statement includes an exhaustiveness check in the default case:
+
+```typescript
+default: {
+  const exhaustiveCheck: never = typedBlock;
+  // ... rest of default case
+}
+```
+
+**How it works:**
+- If all cases in the `BlockType` union are handled, TypeScript knows the default case is unreachable
+- Assigning `typedBlock` to `never` type will **cause a TypeScript error** if any case is missing
+- This catches missing block types at **compile time**, before you even run the code
+
+**What you'll see if a case is missing:**
+```
+Type 'WithKey<SomeBlockType>' is not assignable to type 'never'
+```
+
+This error means you've added a type to the `BlockType` union but haven't added a case for it in the switch statement.
+
+#### 2. Runtime Development Warning
+
+The blockRenderer also includes development-mode warnings for blocks that slip through (e.g., from dynamic content):
+
+```
+[blockRenderer] Unhandled block type: "someType"
+```
+
+**Important:** This runtime warning only fires if a block actually reaches the renderer. The compile-time exhaustiveness check is the primary safeguard.
+
+### Common Mistake: Refactoring Block Rendering
+
+When refactoring block rendering logic, **carefully check the git diff** to ensure no switch cases are accidentally removed. This has caused issues in the past where working blocks (like `card`) stopped rendering after refactoring.
+
+### Reference Implementation
+
+See [blockRenderer.tsx](src/utils/blockRenderer.tsx) for the complete implementation with all supported block types.
+
 ## Sanity Live Preview and Stega Encoding
 
 **CRITICAL: String comparisons in Sanity live preview mode require special handling.**

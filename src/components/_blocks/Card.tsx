@@ -60,8 +60,10 @@ const Card = (props: CardProps) => {
   }
   // Banner is always stacked
 
-  // Don't render empty cards
-  if (!content || content.length === 0) {
+  // Don't render completely empty cards (no title, subtitle, or content)
+  if ((!cleanTitle || cleanTitle.trim() === '') &&
+      (!cleanSubtitle || cleanSubtitle.trim() === '') &&
+      (!content || content.length === 0)) {
     return null;
   }
 

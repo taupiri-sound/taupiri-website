@@ -93,7 +93,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
     return `${baseStyles} ${hasError ? errorStyles : normalStyles}`;
   };
 
-  const labelStyles = 'block text-body-base font-medium mb-2 text-gray-700';
+  const labelStyles = 'block text-body-base font-medium mb-2';
 
   return (
     <div
@@ -101,8 +101,8 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
       {/* Optional Title and Subtitle */}
       {(title || subtitle) && (
         <div className='mb-6'>
-          {title && <p className='text-h5 mb-2'>{title}</p>}
-          {subtitle && <p className='text-subtle'>{subtitle}</p>}
+          {title && <p className='text-h5 font-bold mb-2'>{title}</p>}
+          {subtitle && <p className='text-body-lg text-subtle'>{subtitle}</p>}
         </div>
       )}
 
