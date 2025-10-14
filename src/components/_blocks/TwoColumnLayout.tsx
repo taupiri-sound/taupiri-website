@@ -2,29 +2,20 @@
 
 import React from 'react';
 import { stegaClean } from 'next-sanity';
-import type { NestedBlock, BlockListWithStatsBlock, CheckListBlock } from '@/types/blocks';
+import type { NestedBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
-import type { COMPANY_LINKS_QUERYResult } from '@/sanity/types';
+import type { COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, TEAM_MEMBERS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute, type SanityLiveEditingProps } from '../../utils/sectionHelpers';
 import { contentBlockBottomSpacing } from '@/utils/spacingConstants';
+import { renderBlock } from '@/utils/blockRenderer';
+import { client } from '@/sanity/lib/client';
 
-// Import all block components
-import RichText from './RichText';
-import Quote from './Quote';
-import Card from './Card';
-import CTAButton from './CTAButton';
-import CTACalloutLinkComponent from './CTACalloutLink';
-import CTABlogPost from './CTABlogPost';
-import ImageBlock from './Image';
-import ImageGallery from './ImageGallery';
-import YouTubeVideo from './YouTubeVideo';
-import SpotifyWidget from './SpotifyWidget';
-import BandcampWidget from './BandcampWidget';
-import CompanyLinksBlock from './CompanyLinksBlock';
-import BlockListWithStats from './BlockListWithStats';
-import CheckList from './CheckList';
-import Divider from '../UI/Divider';
-import GridLayout from './GridLayout';
+const { projectId, dataset, stega } = client.config();
+const createDataAttributeConfig = {
+  projectId,
+  dataset,
+  baseUrl: typeof stega.studioUrl === 'string' ? stega.studioUrl : '',
+};
 
 interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' | 'subtitlePath'> {
   leftColumn?: NestedBlock[];
@@ -34,6 +25,9 @@ interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' 
   pathPrefix?: string;
   siteSettings?: SiteSettingsProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
+  clientsData?: CLIENTS_QUERYResult | null;
+  teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
+  contactFormSettings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
 }
 
@@ -47,6 +41,9 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   pathPrefix,
   siteSettings,
   companyLinks,
+  clientsData,
+  teamMembersData,
+  contactFormSettings,
   alignment = 'center',
 }) => {
   // Don't render if both columns are empty
@@ -57,127 +54,30 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   // Clean the value to remove Sanity's stega encoding
   const cleanVerticallyCenter = stegaClean(verticallyCenter);
 
-  // Render a single block within a column
-  const renderBlock = (block: NestedBlock, columnPath: string, isLastInColumn: boolean) => {
+  // Render a single block within a column using shared renderBlock utility
+  const renderColumnBlock = (block: NestedBlock, columnPath: string, isLastInColumn: boolean) => {
     const blockPath = `${columnPath}[_key=="${block._key}"]`;
     const marginClass = !isLastInColumn ? contentBlockBottomSpacing : '';
 
-    const blockElement = (() => {
-      switch (block._type) {
-        case 'divider':
-          return <Divider />;
-
-        case 'richText':
-          return (
-            <RichText
-              {...block}
-              inheritAlignment={alignment}
-            />
-          );
-
-        case 'blockListWithStats':
-          return (
-            <BlockListWithStats
-              {...(block as BlockListWithStatsBlock)}
-              documentId={documentId}
-              documentType={documentType}
-              fieldPathPrefix={blockPath}
-            />
-          );
-
-        case 'checkList':
-          return (
-            <CheckList
-              {...(block as CheckListBlock)}
-              documentId={documentId}
-              documentType={documentType}
-              fieldPathPrefix={blockPath}
-            />
-          );
-
-        case 'quote':
-          return <Quote {...block} inheritAlignment={alignment} />;
-
-        case 'imageBlock':
-          return (
-            <ImageBlock
-              {...block}
-              documentId={documentId}
-              documentType={documentType}
-              pathPrefix={blockPath}
-            />
-          );
-
-        case 'imageGallery':
-          return (
-            <ImageGallery
-              {...block}
-              documentId={documentId}
-              documentType={documentType}
-              pathPrefix={blockPath}
-            />
-          );
-
-        case 'ctaButton':
-          return <CTAButton {...block} />;
-
-        case 'ctaCalloutLink':
-          return <CTACalloutLinkComponent {...block} />;
-
-        case 'ctaBlogPost':
-          return <CTABlogPost {...block} />;
-
-        case 'card':
-          return (
-            <Card
-              {...block}
-              documentId={documentId}
-              documentType={documentType}
-              fieldPathPrefix={blockPath}
-              siteSettings={siteSettings}
-              companyLinks={companyLinks}
-              alignment={alignment}
-            />
-          );
-
-        case 'gridLayout':
-          return (
-            <GridLayout
-              {...block}
-              documentId={documentId}
-              documentType={documentType}
-              fieldPathPrefix={blockPath}
-            />
-          );
-
-        case 'youTubeVideo':
-          return <YouTubeVideo {...block} />;
-
-        case 'spotifyWidget':
-          return <SpotifyWidget {...block} />;
-
-        case 'bandcampWidget':
-          return <BandcampWidget {...block} />;
-
-        case 'companyLinksBlock':
-          return companyLinks ? (
-            <CompanyLinksBlock
-              companyLinks={companyLinks.companyLinks || null}
-            />
-          ) : null;
-
-        default:
-          return null;
-      }
-    })();
+    const blockElement = renderBlock(block, {
+      documentId,
+      documentType,
+      blockPath,
+      siteSettings,
+      companyLinks,
+      clientsData,
+      teamMembersData,
+      contactFormSettings,
+      alignment,
+      config: createDataAttributeConfig,
+    });
 
     if (!blockElement) return null;
 
     return (
       <div
         key={block._key}
-        className={marginClass}
-        {...createSanityDataAttribute(documentId, documentType, blockPath)}>
+        className={marginClass}>
         {blockElement}
       </div>
     );
@@ -199,14 +99,14 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
       {/* Left Column */}
       <div className={columnAlignmentClass} {...leftColumnDataAttribute}>
         {leftColumn.map((block, index) =>
-          renderBlock(block, `${pathPrefix}.leftColumn`, index === leftColumn.length - 1)
+          renderColumnBlock(block, `${pathPrefix}.leftColumn`, index === leftColumn.length - 1)
         )}
       </div>
 
       {/* Right Column */}
       <div className={columnAlignmentClass} {...rightColumnDataAttribute}>
         {rightColumn.map((block, index) =>
-          renderBlock(block, `${pathPrefix}.rightColumn`, index === rightColumn.length - 1)
+          renderColumnBlock(block, `${pathPrefix}.rightColumn`, index === rightColumn.length - 1)
         )}
       </div>
     </div>

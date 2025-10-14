@@ -173,6 +173,9 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             pathPrefix={blockPath}
             siteSettings={siteSettings}
             companyLinks={companyLinks}
+            clientsData={clientsData}
+            teamMembersData={teamMembersData}
+            contactFormSettings={contactFormSettings}
             alignment={alignment}
           />
         </BlockWrapper>
