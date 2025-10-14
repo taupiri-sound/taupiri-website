@@ -27,6 +27,21 @@ export const contactFormSettingsType = defineType({
   fields: [
     // Form Fields Group
     defineField({
+      name: 'title',
+      type: 'string',
+      title: 'Form Title',
+      description: 'Optional title displayed at the top of the contact form',
+      group: 'formFields',
+    }),
+    defineField({
+      name: 'subtitle',
+      type: 'text',
+      title: 'Form Subtitle',
+      description: 'Optional subtitle/description displayed below the title',
+      rows: 2,
+      group: 'formFields',
+    }),
+    defineField({
       name: 'messagePlaceholder',
       type: 'string',
       title: 'Message Field Placeholder',

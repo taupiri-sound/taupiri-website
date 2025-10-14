@@ -36,6 +36,8 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
   });
 
   // Fallback values if settings are not provided
+  const title = settings?.title;
+  const subtitle = settings?.subtitle;
   const messagePlaceholder = settings?.messagePlaceholder || 'Tell us how we can help you...';
   const successHeading = settings?.successHeading || 'Thank you for your message!';
   const successMessage =
@@ -96,6 +98,14 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
   return (
     <div
       className={`max-w-2xl bg-brand-white-dark rounded-lg px-6 md:px-8 py-8 shadow-sm text-left ${className}`.trim()}>
+      {/* Optional Title and Subtitle */}
+      {(title || subtitle) && (
+        <div className='mb-6'>
+          {title && <p className='text-h5 mb-2'>{title}</p>}
+          {subtitle && <p className='text-subtle'>{subtitle}</p>}
+        </div>
+      )}
+
       {status === 'success' ? (
         <div className='bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center'>
           <p className='text-h4 text-green-800 mb-2'>{successHeading}</p>
