@@ -1,31 +1,42 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import CTA from '../UI/CTA';
 
 interface ContactFormProps {
   className?: string;
 }
 
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  honeypot: string;
+}
+
 const ContactForm = ({ className = '' }: ContactFormProps) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    honeypot: '', // Hidden field for bot detection
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    mode: 'onTouched', // Validate when user leaves field
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      honeypot: '',
+    },
   });
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
     setStatus('loading');
     setErrorMessage('');
 
@@ -35,25 +46,18 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       });
 
-      const data = await response.json();
+      const responseData = await response.json();
 
       if (response.ok) {
         setStatus('success');
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: '',
-          honeypot: '',
-        });
+        reset(); // Reset form using react-hook-form
       } else {
         setStatus('error');
         setErrorMessage(
-          data.error ||
+          responseData.error ||
             'We encountered an issue sending your message. Please try contacting us directly via email or phone.'
         );
       }
@@ -66,8 +70,18 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
     }
   };
 
-  const inputBaseStyles =
-    'w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-opacity-20 transition-all duration-200 text-body-base';
+  const getInputStyles = (fieldName: keyof ContactFormData) => {
+    const hasError = errors[fieldName];
+    const baseStyles =
+      'w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 text-body-base';
+    const normalStyles =
+      'border-gray-300 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-opacity-20';
+    const errorStyles =
+      'border-red-500 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-20';
+
+    return `${baseStyles} ${hasError ? errorStyles : normalStyles}`;
+  };
+
   const labelStyles = 'block text-body-base font-medium mb-2 text-gray-700';
 
   return (
@@ -89,16 +103,14 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
           </CTA>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className='space-y-6'>
+        <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
           {/* Honeypot field - hidden from users, only bots will fill it */}
           <div className='hidden' aria-hidden='true'>
             <label htmlFor='honeypot'>Leave this field empty</label>
             <input
               type='text'
               id='honeypot'
-              name='honeypot'
-              value={formData.honeypot}
-              onChange={handleChange}
+              {...register('honeypot')}
               tabIndex={-1}
               autoComplete='off'
             />
@@ -112,14 +124,23 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
             <input
               type='text'
               id='name'
-              name='name'
-              value={formData.name}
-              onChange={handleChange}
-              required
+              {...register('name', {
+                required: 'Please enter your name',
+                minLength: {
+                  value: 2,
+                  message: 'Name must be at least 2 characters',
+                },
+              })}
               disabled={status === 'loading'}
-              className={inputBaseStyles}
+              className={getInputStyles('name')}
               placeholder='Your name'
+              aria-invalid={errors.name ? 'true' : 'false'}
             />
+            {errors.name && (
+              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+                {errors.name.message}
+              </p>
+            )}
           </div>
 
           {/* Email field */}
@@ -130,14 +151,23 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
             <input
               type='email'
               id='email'
-              name='email'
-              value={formData.email}
-              onChange={handleChange}
-              required
+              {...register('email', {
+                required: 'Please enter your email address',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Please enter a valid email address',
+                },
+              })}
               disabled={status === 'loading'}
-              className={inputBaseStyles}
+              className={getInputStyles('email')}
               placeholder='your.email@example.com'
+              aria-invalid={errors.email ? 'true' : 'false'}
             />
+            {errors.email && (
+              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
           {/* Phone field (optional) */}
@@ -148,11 +178,9 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
             <input
               type='tel'
               id='phone'
-              name='phone'
-              value={formData.phone}
-              onChange={handleChange}
+              {...register('phone')}
               disabled={status === 'loading'}
-              className={inputBaseStyles}
+              className={getInputStyles('phone')}
               placeholder='+64 21 123 4567'
             />
           </div>
@@ -164,15 +192,24 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
             </label>
             <textarea
               id='message'
-              name='message'
-              value={formData.message}
-              onChange={handleChange}
-              required
+              {...register('message', {
+                required: 'Please enter a message',
+                minLength: {
+                  value: 10,
+                  message: 'Message must be at least 10 characters',
+                },
+              })}
               disabled={status === 'loading'}
               rows={6}
-              className={inputBaseStyles}
+              className={getInputStyles('message')}
               placeholder='Tell us how we can help you...'
+              aria-invalid={errors.message ? 'true' : 'false'}
             />
+            {errors.message && (
+              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+                {errors.message.message}
+              </p>
+            )}
           </div>
 
           {/* Error message display */}
