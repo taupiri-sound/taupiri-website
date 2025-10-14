@@ -2176,6 +2176,21 @@
                   },
                   "rest": {
                     "type": "inline",
+                    "name": "contactForm"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
                     "name": "quote"
                   }
                 },
@@ -2429,6 +2444,21 @@
                   "rest": {
                     "type": "inline",
                     "name": "checkList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "contactForm"
                   }
                 },
                 {

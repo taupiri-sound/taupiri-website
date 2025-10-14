@@ -82,7 +82,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
   const getInputStyles = (fieldName: keyof ContactFormData) => {
     const hasError = errors[fieldName];
     const baseStyles =
-      'w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 text-body-base';
+      'w-full px-4 py-3 rounded-lg border-2 bg-brand-white transition-all duration-200 text-body-base';
     const normalStyles =
       'border-gray-300 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-opacity-20';
     const errorStyles =
@@ -94,7 +94,8 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
   const labelStyles = 'block text-body-base font-medium mb-2 text-gray-700';
 
   return (
-    <div className={`max-w-2xl mx-auto ${className}`.trim()}>
+    <div
+      className={`max-w-2xl bg-brand-white-dark rounded-lg px-6 md:px-8 py-8 shadow-sm text-left ${className}`.trim()}>
       {status === 'success' ? (
         <div className='bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center'>
           <p className='text-h4 text-green-800 mb-2'>{successHeading}</p>
@@ -232,7 +233,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               type='submit'
               variant='filled'
               disabled={status === 'loading'}
-              className='w-full sm:w-auto'>
+              className='w-full'>
               {status === 'loading' ? 'Sending...' : 'Send Message'}
             </CTA>
           </div>
