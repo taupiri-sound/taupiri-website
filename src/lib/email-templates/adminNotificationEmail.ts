@@ -33,8 +33,8 @@ export function generateAdminNotificationEmail(data: AdminNotificationEmailData)
 
               <!-- Header with Brand Gradient -->
               <tr>
-                <td style="background: linear-gradient(135deg, #900000 0%, #430c08 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
-                  <h1 style="margin: 0; color: #fffbe8; font-size: 24px; font-weight: 600; letter-spacing: 0.5px;">
+                <td style="background: linear-gradient(135deg, #430c08 0%, #0a0000 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                  <h1 style="margin: 0; color: #cfae6b; font-size: 24px; font-weight: 600; letter-spacing: 0.5px;">
                     New Contact Form Submission
                   </h1>
                 </td>
@@ -94,23 +94,18 @@ export function generateAdminNotificationEmail(data: AdminNotificationEmailData)
                         <h2 style="margin: 0 0 15px 0; color: #430c08; font-size: 16px; font-weight: 600;">
                           Message:
                         </h2>
-                        <p style="margin: 0; color: #333333; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">
-                          ${message.replace(/\n/g, '<br>')}
-                        </p>
+                        <p style="margin: 0; color: #333333; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message.replace(/\n/g, '<br>')}</p>
                       </td>
                     </tr>
                   </table>
 
-                  <!-- Quick Reply Button -->
+                  <!-- Quick Reply -->
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                       <td align="center" style="padding: 20px 0;">
-                        <a
-                          href="mailto:${email}?subject=Re: Your enquiry to Taupiri Sound"
-                          style="display: inline-block; background: linear-gradient(135deg, #900000 0%, #5d1611 100%); color: #fffbe8; text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: 600; font-size: 14px;"
-                        >
-                          Reply to ${name}
-                        </a>
+                        <p style="font-size: 16px; color: #333333;">
+                          You can reply directly to this email to get back to ${name}.
+                        </p>
                       </td>
                     </tr>
                   </table>

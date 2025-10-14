@@ -41,7 +41,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                     alt="taupiri sound"
                     width="250"
                     height="auto"
-                    style="display: block; margin: 0 auto; max-width: 180px; font-family: 'Chau Philomene One', serif; color: #fffbe8; font-size: 24px; letter-spacing: 0.25rem;"
+                    style="display: block; margin: 0 auto; font-family: 'Chau Philomene One', serif; color: #cfae6b; font-size: 24px; letter-spacing: 0.25rem;"
                   />
                 </td>
               </tr>
@@ -91,9 +91,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                             </td>
                           </tr>
                           <tr>
-                            <td style="padding: 8px 0 0 0; color: #71221d; font-size: 14px; line-height: 1.6;">
-                              ${message.replace(/\n/g, '<br>')}
-                            </td>
+                            <td style="padding: 8px 0 0 0; color: #71221d; font-size: 14px; line-height: 1.6;">${message.replace(/\n/g, '<br>')}</td>
                           </tr>
                         </table>
                       </td>
@@ -106,17 +104,20 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                 </td>
               </tr>
 
-              <!-- Signature Section -->
+              <!-- Signature Section --> 
               <tr>
                 <td style="background: linear-gradient(135deg, #430c08 0%, #0a0000 100%); padding: 30px; border-radius: 0 0 8px 8px;">
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                       <td align="center">
-                        <!-- Company Name -->
-                        <h3 style="margin: 0 0 15px 0; color: #fffbe8; font-size: 20px; font-weight: 600; text-align: center; font-family: 'Chau Philomene One', serif; letter-spacing: 0.25rem;">
-                          taupiri sound
-                        </h3>
-
+                        <!-- Company Logo -->
+                        <img
+                          src="${logoUrl}"
+                          alt="taupiri sound"
+                          width="200"
+                          height="auto"
+                          style="display: block; margin: 0 auto 8px auto; font-family: 'Chau Philomene One', serif; color: #cfae6b; font-size: 16px; letter-spacing: 0.25rem;"
+                        />
                         <!-- Contact Info -->
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                           <tr>
