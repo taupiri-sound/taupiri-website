@@ -451,6 +451,17 @@ export const COMPANY_LINKS_QUERY = defineQuery(`*[_id == "companyLinks"][0]{
   }
 }`);
 
+export const CONTACT_FORM_SETTINGS_QUERY = defineQuery(`*[_id == "contactFormSettings"][0]{
+  _id,
+  _type,
+  messagePlaceholder,
+  successHeading,
+  successMessage,
+  emailGreeting,
+  emailIntroMessage,
+  emailOutroMessage
+}`);
+
 // Blog Post Queries
 export const BLOG_POSTS_QUERY =
   defineQuery(`*[_type == "blogPost"]|order(coalesce(overrideDate, _createdAt) desc){

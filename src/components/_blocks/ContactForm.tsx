@@ -3,9 +3,11 @@
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import CTA from '../UI/CTA';
+import type { CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
 
 interface ContactFormProps {
   className?: string;
+  settings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
 }
 
 interface ContactFormData {
@@ -16,7 +18,7 @@ interface ContactFormData {
   honeypot: string;
 }
 
-const ContactForm = ({ className = '' }: ContactFormProps) => {
+const ContactForm = ({ className = '', settings }: ContactFormProps) => {
   const {
     register,
     handleSubmit,
@@ -32,6 +34,13 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
       honeypot: '',
     },
   });
+
+  // Fallback values if settings are not provided
+  const messagePlaceholder = settings?.messagePlaceholder || 'Tell us how we can help you...';
+  const successHeading = settings?.successHeading || 'Thank you for your message!';
+  const successMessage =
+    settings?.successMessage ||
+    'We have received your message and will get back to you as soon as possible. You should also receive a confirmation email shortly.';
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -88,11 +97,8 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
     <div className={`max-w-2xl mx-auto ${className}`.trim()}>
       {status === 'success' ? (
         <div className='bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center'>
-          <p className='text-h4 text-green-800 mb-2'>Thank you for your message!</p>
-          <p className='text-body-base text-green-700 mb-4'>
-            We have received your message and will get back to you as soon as possible. You should
-            also receive a confirmation email shortly.
-          </p>
+          <p className='text-h4 text-green-800 mb-2'>{successHeading}</p>
+          <p className='text-body-base text-green-700 mb-4'>{successMessage}</p>
           <CTA
             as='button'
             type='button'
@@ -202,7 +208,7 @@ const ContactForm = ({ className = '' }: ContactFormProps) => {
               disabled={status === 'loading'}
               rows={6}
               className={getInputStyles('message')}
-              placeholder='Tell us how we can help you...'
+              placeholder={messagePlaceholder}
               aria-invalid={errors.message ? 'true' : 'false'}
             />
             {errors.message && (

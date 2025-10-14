@@ -11,10 +11,22 @@ interface ConfirmationEmailData {
   phone?: string;
   message: string;
   logoUrl: string;
+  emailGreeting?: string;
+  emailIntroMessage?: string;
+  emailOutroMessage?: string;
 }
 
 export function generateConfirmationEmail(data: ConfirmationEmailData): string {
-  const { name, email, phone, message, logoUrl } = data;
+  const {
+    name,
+    email,
+    phone,
+    message,
+    logoUrl,
+    emailGreeting = 'Hi',
+    emailIntroMessage = 'We have successfully received your message and will aim to get back to you as soon as possible.',
+    emailOutroMessage = 'If you have any urgent questions, feel free to reach out to us directly.',
+  } = data;
 
   return `
     <!DOCTYPE html>
@@ -51,10 +63,10 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
               <tr>
                 <td style="padding: 40px 30px;">
                   <p style="margin: 0 0 20px 0; color: #333333; font-size: 16px; line-height: 1.6;">
-                    Hi <strong>${name}</strong>,
+                    ${emailGreeting} <strong>${name}</strong>,
                   </p>
                   <p style="margin: 0 0 30px 0; color: #333333; font-size: 16px; line-height: 1.6;">
-                    We have successfully received your message and will aim to get back to you as soon as possible.
+                    ${emailIntroMessage}
                   </p>
 
                   <!-- Message Details Box -->
@@ -100,7 +112,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                   </table>
 
                   <p style="margin: 0; color: #666666; font-size: 16px; line-height: 1.6;">
-                    If you have any urgent questions, feel free to reach out to us directly.
+                    ${emailOutroMessage}
                   </p>
                 </td>
               </tr>

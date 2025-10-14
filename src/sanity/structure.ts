@@ -161,6 +161,18 @@ export const structure: StructureResolver = (S) =>
                     .documentId('siteSettings')
                     .title('Site Settings')
                 ),
+              // Contact Form Settings - Singleton
+              S.listItem()
+                .id('contactFormSettings')
+                .schemaType('contactFormSettings')
+                .title('Contact Form')
+                .child(
+                  S.editor()
+                    .id('contactFormSettings')
+                    .schemaType('contactFormSettings')
+                    .documentId('contactFormSettings')
+                    .title('Contact Form Settings')
+                ),
 
               S.divider(),
 

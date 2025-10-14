@@ -50,12 +50,14 @@ import { audioSampleType } from './audioSampleType';
 import { clientsType } from './singletons/clients';
 import { termsAndConditionsType } from './termsAndConditionsType';
 import { privacyPolicyType } from './privacyPolicyType';
+import { contactFormSettingsType } from './contactFormSettingsType';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     // Documents
     siteSettingsType,
     companyLinksType,
+    contactFormSettingsType,
     homePageType,
     pageType,
     blogIndexPageType,

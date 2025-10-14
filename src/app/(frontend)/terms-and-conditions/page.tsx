@@ -2,7 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
-import { getTermsAndConditions, getSiteSettings, getCompanyLinks, getClients } from '@/actions';
+import { getTermsAndConditions, getSiteSettings, getCompanyLinks, getContactFormSettings, getClients } from '@/actions';
 import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 import {
@@ -35,10 +35,11 @@ export async function generateMetadata() {
 }
 
 const TermsAndConditionsPage = async () => {
-  const [termsData, siteSettings, companyLinks, clientsData] = await Promise.all([
+  const [termsData, siteSettings, companyLinks, contactFormSettings, clientsData] = await Promise.all([
     getTermsAndConditions(),
     getSiteSettings(),
     getCompanyLinks(),
+    getContactFormSettings(),
     getClients(),
   ]);
 
@@ -108,6 +109,7 @@ const TermsAndConditionsPage = async () => {
             siteSettings={siteSettings || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
+            contactFormSettings={contactFormSettings}
             alignment='left'
           />
         )}

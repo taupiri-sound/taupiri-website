@@ -4,6 +4,7 @@ import type {
   COMPANY_LINKS_QUERYResult,
   CLIENTS_QUERYResult,
   TEAM_MEMBERS_QUERYResult,
+  CONTACT_FORM_SETTINGS_QUERYResult,
   RichText as RichTextType,
   Quote as QuoteType,
   TwoColumnLayout as TwoColumnLayoutType,
@@ -63,6 +64,7 @@ interface RenderBlockOptions {
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
   teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
+  contactFormSettings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
   config?: RenderBlockConfig;
 }
@@ -106,6 +108,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     companyLinks,
     clientsData,
     teamMembersData,
+    contactFormSettings,
     alignment = 'center',
     config,
   } = options;
@@ -390,7 +393,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const contactFormBlock = typedBlock as WithKey<ContactFormType>;
       return (
         <BlockWrapper key={contactFormBlock._key}>
-          <ContactFormComponent />
+          <ContactFormComponent settings={contactFormSettings} />
         </BlockWrapper>
       );
     }
