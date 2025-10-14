@@ -25,11 +25,17 @@ type ButtonCTAProps = BaseCTAProps & {
 type CTAProps = LinkCTAProps | ButtonCTAProps;
 
 const getVariantStyles = (
-  variant: 'filled' | 'outline-light' | 'outline-dark' | 'text-link' = 'filled'
+  variant: 'filled' | 'outline-light' | 'outline-dark' | 'text-link' = 'filled',
+  disabled: boolean = false
 ) => {
+  // Disabled/read-only styling - applies to all variants
+  const disabledStyles = disabled
+    ? 'opacity-50 cursor-not-allowed pointer-events-none'
+    : '';
+
   // Text link variant - no padding/borders, just text styling with chevron
   if (variant === 'text-link') {
-    return 'inline-flex items-center gap-2 text-body-lg font-semibold hover:text-brand-primary transition-colors duration-200 cursor-pointer group';
+    return `inline-flex items-center gap-2 text-body-lg font-semibold hover:text-brand-primary transition-colors duration-200 cursor-pointer group ${disabledStyles}`.trim();
   }
 
   // Note that the min-h-[56px] is so that regular buttons become the same height as the CTA Email Button, which needs more internal space because of the icon.
@@ -38,21 +44,25 @@ const getVariantStyles = (
 
   if (variant === 'outline-light') {
     // Outline button on light background - dark border and text
-    return `${baseStyles} border-2 border-brand-primary text-brand-primary bg-transparent hover:bg-brand-primary hover:text-brand-white focus:ring-brand-primary`;
+    return `${baseStyles} border-2 border-brand-primary text-brand-primary bg-transparent hover:bg-brand-primary hover:text-brand-white focus:ring-brand-primary ${disabledStyles}`.trim();
   }
 
   if (variant === 'outline-dark') {
     // Outline button on dark background - light border and text
-    return `${baseStyles} border-2 border-brand-white text-brand-white bg-transparent hover:bg-brand-white hover:text-brand-primary focus:ring-brand-white`;
+    return `${baseStyles} border-2 border-brand-white text-brand-white bg-transparent hover:bg-brand-white hover:text-brand-primary focus:ring-brand-white ${disabledStyles}`.trim();
   }
 
   // Default to filled variant with brand gradient
-  return `${baseStyles} bg-brand-gradient-subtle text-brand-white focus:ring-brand-primary hover:scale-105`;
+  return `${baseStyles} bg-brand-gradient-subtle text-brand-white focus:ring-brand-primary hover:scale-105 ${disabledStyles}`.trim();
 };
 
 const CTA = (props: CTAProps) => {
   const { children, className = '', variant = 'filled', ...restProps } = props;
-  const combinedClassName = `${getVariantStyles(variant)} ${className}`.trim();
+
+  // Check if button is disabled (only applicable for button type)
+  const isDisabled = props.as === 'button' ? (restProps as ButtonCTAProps).disabled || false : false;
+
+  const combinedClassName = `${getVariantStyles(variant, isDisabled)} ${className}`.trim();
 
   // Determine if this is an external link for text-link variant
   let isExternal = false;
