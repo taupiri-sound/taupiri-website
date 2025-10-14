@@ -20,6 +20,9 @@ export function generateAdminNotificationEmail(data: AdminNotificationEmailData)
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>New Contact Form Submission</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
     </head>
     <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
       <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5; padding: 40px 20px;">
@@ -32,7 +35,7 @@ export function generateAdminNotificationEmail(data: AdminNotificationEmailData)
               <tr>
                 <td style="background: linear-gradient(135deg, #900000 0%, #430c08 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
                   <h1 style="margin: 0; color: #fffbe8; font-size: 24px; font-weight: 600; letter-spacing: 0.5px;">
-                    📧 New Contact Form Submission
+                    New Contact Form Submission
                   </h1>
                 </td>
               </tr>

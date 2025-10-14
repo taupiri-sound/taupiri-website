@@ -22,6 +22,9 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Thank you for contacting Taupiri Sound</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
     </head>
     <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
       <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5; padding: 40px 20px;">
@@ -32,13 +35,13 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
 
               <!-- Header with Logo and Brand Secondary Color -->
               <tr>
-                <td style="background: #430c08; padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
+                <td style="background: linear-gradient(135deg, #430c08 0%, #0a0000 100%); padding: 40px 30px; text-align: center; border-radius: 8px 8px 0 0;">
                   <img
                     src="${logoUrl}"
-                    alt="Taupiri Sound"
-                    width="200"
+                    alt="taupiri sound"
+                    width="250"
                     height="auto"
-                    style="display: block; margin: 0 auto; max-width: 180px;"
+                    style="display: block; margin: 0 auto; max-width: 180px; font-family: 'Chau Philomene One', serif; color: #fffbe8; font-size: 24px; letter-spacing: 0.25rem;"
                   />
                 </td>
               </tr>
@@ -105,13 +108,13 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
 
               <!-- Signature Section -->
               <tr>
-                <td style="background: #0a0000; padding: 30px; border-radius: 0 0 8px 8px;">
+                <td style="background: linear-gradient(135deg, #430c08 0%, #0a0000 100%); padding: 30px; border-radius: 0 0 8px 8px;">
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
                       <td align="center">
                         <!-- Company Name -->
-                        <h3 style="margin: 0 0 15px 0; color: #fffbe8; font-size: 20px; font-weight: 600; text-align: center;">
-                          Taupiri Sound
+                        <h3 style="margin: 0 0 15px 0; color: #fffbe8; font-size: 20px; font-weight: 600; text-align: center; font-family: 'Chau Philomene One', serif; letter-spacing: 0.25rem;">
+                          taupiri sound
                         </h3>
 
                         <!-- Contact Info -->
