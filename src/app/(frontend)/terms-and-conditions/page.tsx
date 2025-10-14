@@ -105,13 +105,7 @@ const TermsAndConditionsPage = async () => {
             content={termsData.content}
             documentId={termsData._id}
             documentType={termsData._type}
-            siteSettings={
-              siteSettings
-                ? {
-                    companyEmail: siteSettings.companyEmail || undefined,
-                  }
-                : undefined
-            }
+            siteSettings={siteSettings || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
             alignment='left'

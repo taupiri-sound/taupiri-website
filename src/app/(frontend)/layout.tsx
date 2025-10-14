@@ -15,7 +15,6 @@ import {
   getCompanyLinks,
   getLegalPagesVisibility,
 } from '@/actions';
-import { SiteDataProvider } from '@/contexts/SiteDataContext';
 import { PageLoadProvider } from '@/contexts/PageLoadContext';
 import { HeaderProvider } from '@/contexts/HeaderContext';
 import { generateMetadata as generateDefaultMetadata } from '@/lib/metadata';
@@ -71,9 +70,8 @@ const FrontendLayout = async ({
   return (
     <PageLoadProvider>
       <HeaderProvider>
-        <SiteDataProvider companyEmail={siteSettingsData?.companyEmail || undefined}>
-          <NavigationScroll />
-          <PageReadyTrigger />
+        <NavigationScroll />
+        <PageReadyTrigger />
 
           {/* Structured Data */}
           {organizationSchema && (
@@ -108,7 +106,6 @@ const FrontendLayout = async ({
               </>
             )}
           </div>
-        </SiteDataProvider>
       </HeaderProvider>
     </PageLoadProvider>
   );

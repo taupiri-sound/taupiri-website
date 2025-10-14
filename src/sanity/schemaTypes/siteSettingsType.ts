@@ -55,13 +55,6 @@ export const siteSettingsType = defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: 'companyEmail',
-      type: 'string',
-      title: 'Company Email',
-      description: 'Primary contact email for your company',
-      validation: (Rule) => Rule.email(),
-    }),
   ],
   preview: {
     prepare() {

@@ -3,17 +3,18 @@
  * Uses brand colors and includes professional signature
  */
 
+import { SITE_CONFIG } from '@/lib/constants';
+
 interface ConfirmationEmailData {
   name: string;
   email: string;
   phone?: string;
   message: string;
-  companyEmail: string;
   logoUrl: string;
 }
 
 export function generateConfirmationEmail(data: ConfirmationEmailData): string {
-  const { name, email, phone, message, companyEmail, logoUrl } = data;
+  const { name, email, phone, message, logoUrl } = data;
 
   return `
     <!DOCTYPE html>
@@ -122,21 +123,21 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                           <tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="mailto:${companyEmail}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${companyEmail}
+                              <a href="mailto:${SITE_CONFIG.ORGANIZATION_EMAIL}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${SITE_CONFIG.ORGANIZATION_EMAIL}
                               </a>
                             </td>
                           </tr>
                           <tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="tel:+6478254894" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                +64 7 825 4894
+                              <a href="tel:${SITE_CONFIG.ORGANIZATION_PHONE.replace(/\s/g, '')}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${SITE_CONFIG.ORGANIZATION_PHONE}
                               </a>
                             </td>
                           </tr>
                           <tr>
                             <td align="center" style="padding: 5px 0; color: #b8956a; font-size: 14px;">
-                              Taupiri, Waikato, New Zealand
+                              ${SITE_CONFIG.ORGANIZATION_ADDRESS}
                             </td>
                           </tr>
                         </table>

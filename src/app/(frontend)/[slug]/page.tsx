@@ -121,13 +121,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             content={page.content}
             documentId={page._id}
             documentType={page._type}
-            siteSettings={
-              siteSettings
-                ? {
-                    companyEmail: siteSettings.companyEmail || undefined,
-                  }
-                : undefined
-            }
+            siteSettings={siteSettings || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
             teamMembersData={teamMembersData}

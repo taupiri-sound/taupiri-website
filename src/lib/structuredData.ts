@@ -1,6 +1,7 @@
 import { urlFor } from '@/sanity/lib/image';
 import type { SITE_SETTINGS_QUERYResult } from '@/sanity/types';
 import type { ImageObjectData } from '@/lib/imageUtils';
+import { SITE_CONFIG } from '@/lib/constants';
 
 export interface OrganizationData {
   name: string;
@@ -8,6 +9,8 @@ export interface OrganizationData {
   logo?: string;
   description?: string;
   email?: string;
+  telephone?: string;
+  address?: string;
   sameAs?: string[];
 }
 
@@ -74,6 +77,8 @@ export function generateOrganizationSchema(data: OrganizationData) {
     ...(data.logo && { logo: data.logo }),
     ...(data.description && { description: data.description }),
     ...(data.email && { email: `mailto:${data.email}` }),
+    ...(data.telephone && { telephone: data.telephone }),
+    ...(data.address && { address: data.address }),
     ...(data.sameAs && data.sameAs.length > 0 && { sameAs: data.sameAs }),
   };
 }
@@ -161,10 +166,12 @@ export function getOrganizationDataFromSiteSettings(
   baseUrl: string
 ): OrganizationData {
   return {
-    name: siteSettings?.siteTitle || 'Taupiri Sound',
+    name: siteSettings?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
     url: baseUrl,
+    email: SITE_CONFIG.ORGANIZATION_EMAIL,
+    telephone: SITE_CONFIG.ORGANIZATION_PHONE,
+    address: SITE_CONFIG.ORGANIZATION_ADDRESS,
     ...(siteSettings?.siteDescription && { description: siteSettings.siteDescription }),
-    ...(siteSettings?.companyEmail && { email: siteSettings.companyEmail }),
     ...(siteSettings?.defaultOgImage && {
       logo: urlFor(siteSettings.defaultOgImage).width(512).height(512).url(),
     }),

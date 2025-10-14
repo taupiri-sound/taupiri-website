@@ -105,13 +105,7 @@ const PrivacyPolicyPage = async () => {
             content={privacyData.content}
             documentId={privacyData._id}
             documentType={privacyData._type}
-            siteSettings={
-              siteSettings
-                ? {
-                    companyEmail: siteSettings.companyEmail || undefined,
-                  }
-                : undefined
-            }
+            siteSettings={siteSettings || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
             alignment='left'

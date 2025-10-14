@@ -9079,13 +9079,6 @@
           }
         },
         "optional": true
-      },
-      "companyEmail": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        },
-        "optional": true
       }
     }
   },

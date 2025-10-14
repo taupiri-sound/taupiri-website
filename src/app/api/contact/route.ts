@@ -1,9 +1,8 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { sanityFetch } from '@/sanity/lib/live';
-import { SITE_SETTINGS_QUERY } from '@/sanity/lib/queries';
 import { generateConfirmationEmail } from '@/lib/email-templates/confirmationEmail';
 import { generateAdminNotificationEmail } from '@/lib/email-templates/adminNotificationEmail';
+import { SITE_CONFIG } from '@/lib/constants';
 
 // Initialize Resend with API key from environment variable
 // IMPORTANT: Add RESEND_API_KEY to your .env.local file
@@ -125,13 +124,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid input detected.' }, { status: 400 });
     }
 
-    // Get contact email from Sanity and environment variables
-    const { data: siteSettings } = await sanityFetch({ query: SITE_SETTINGS_QUERY });
+    // Get contact email from environment variable
     const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
     const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
-
-    // Get company email from Sanity (fallback to env variable)
-    const companyEmail = siteSettings?.companyEmail || contactEmail || 'info@taupiri.co.nz';
 
     if (!contactEmail) {
       console.error('NEXT_PUBLIC_CONTACT_EMAIL environment variable is not set');
@@ -182,14 +177,13 @@ export async function POST(request: Request) {
         email: sanitizedEmail,
         phone: sanitizedPhone,
         message: sanitizedMessage,
-        companyEmail,
         logoUrl,
       });
 
       const confirmationEmailResult = await resend.emails.send({
         from: fromEmail,
         to: sanitizedEmail,
-        replyTo: companyEmail,
+        replyTo: SITE_CONFIG.ORGANIZATION_EMAIL,
         subject: 'Thank you for contacting Taupiri Sound',
         html: confirmationEmailHtml,
       });

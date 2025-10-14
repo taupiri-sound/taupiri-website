@@ -433,8 +433,7 @@ export const SITE_SETTINGS_QUERY = defineQuery(`*[_id == "siteSettings"][0]{
     alt,
     hotspot,
     crop
-  },
-  companyEmail
+  }
 }`);
 
 export const COMPANY_LINKS_QUERY = defineQuery(`*[_id == "companyLinks"][0]{
