@@ -34,6 +34,7 @@ const Card = (props: CardProps) => {
   const {
     title,
     subtitle,
+    visualStyle = 'light',
     imageType = 'none',
     image,
     iconNoImageLayoutStyle,
@@ -50,7 +51,13 @@ const Card = (props: CardProps) => {
 
   const cleanTitle = stegaClean(title);
   const cleanSubtitle = stegaClean(subtitle);
+  const cleanVisualStyle = (stegaClean(visualStyle) as 'light' | 'dark') || 'light';
   const cleanImageType = stegaClean(imageType) || 'none';
+
+  // Debug: Log visualStyle to check what's being received from Sanity
+  if (process.env.NODE_ENV === 'development' && visualStyle) {
+    console.log('Card visualStyle:', { raw: visualStyle, clean: cleanVisualStyle, title: cleanTitle });
+  }
 
   // Determine layout style based on image type
   let cleanLayoutStyle: 'stacked' | 'row' = 'stacked';
@@ -74,6 +81,7 @@ const Card = (props: CardProps) => {
     content,
     className,
     isGridChild,
+    visualStyle: cleanVisualStyle,
     documentId,
     documentType,
     fieldPathPrefix,

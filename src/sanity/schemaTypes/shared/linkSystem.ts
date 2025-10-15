@@ -127,7 +127,7 @@ export const createLinkFieldSet = (
       type: 'url',
       group,
       description:
-        externalUrlConfig.description || 'Enter the full URL (e.g., https://example.com)',
+        externalUrlConfig.description || 'Enter the full URL (e.g., https://example.com, tel:+61400123456, mailto:hello@example.com)',
       placeholder: externalUrlConfig.placeholder || 'https://example.com',
       hidden: externalUrlConfig.hidden || (({ parent }) => parent?.linkType !== 'external'),
       validation: (Rule) =>
@@ -137,11 +137,16 @@ export const createLinkFieldSet = (
             if (!value) {
               return externalUrlConfig.validationMessage || 'Please enter an external URL';
             }
+            const urlString = value as string;
+            // Check for special protocols (tel:, mailto:) or standard URLs
+            if (urlString.startsWith('tel:') || urlString.startsWith('mailto:')) {
+              return true;
+            }
             try {
-              new URL(value as string);
+              new URL(urlString);
               return true;
             } catch {
-              return 'Please enter a valid URL';
+              return 'Please enter a valid URL, tel: link (e.g., tel:+61400123456), or mailto: link (e.g., mailto:someone@example.com)';
             }
           }
           return true;
@@ -329,7 +334,7 @@ export const createOptionalLinkFieldSet = (
       type: 'url',
       group,
       description:
-        externalUrlConfig.description || 'Enter the full URL (e.g., https://example.com)',
+        externalUrlConfig.description || 'Enter the full URL (e.g., https://example.com, tel:+61400123456, mailto:hello@example.com)',
       placeholder: externalUrlConfig.placeholder || 'https://example.com',
       hidden: externalUrlConfig.hidden || (({ parent }) => parent?.linkType !== 'external'),
       validation: (Rule) =>
@@ -339,11 +344,16 @@ export const createOptionalLinkFieldSet = (
             if (!value) {
               return externalUrlConfig.validationMessage || 'Please enter an external URL';
             }
+            const urlString = value as string;
+            // Check for special protocols (tel:, mailto:) or standard URLs
+            if (urlString.startsWith('tel:') || urlString.startsWith('mailto:')) {
+              return true;
+            }
             try {
-              new URL(value as string);
+              new URL(urlString);
               return true;
             } catch {
-              return 'Please enter a valid URL';
+              return 'Please enter a valid URL, tel: link (e.g., tel:+61400123456), or mailto: link (e.g., mailto:someone@example.com)';
             }
           }
           return true;

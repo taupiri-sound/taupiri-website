@@ -14,9 +14,26 @@ export const cardType = defineType({
     { name: 'header', title: 'Header' },
     { name: 'image', title: 'Image' },
     { name: 'layout', title: 'Layout' },
+    { name: 'styling', title: 'Styling' },
     { name: 'content', title: 'Content' },
   ],
   fields: [
+    defineField({
+      name: 'visualStyle',
+      title: 'Visual Style',
+      type: 'string',
+      group: 'styling',
+      options: {
+        list: [
+          { title: 'Light (Default)', value: 'light' },
+          { title: 'Dark', value: 'dark' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'light',
+      description:
+        'Choose the visual style for this card:\n\n• Light: Light background with dark text (default)\n\n• Dark: Dark brand-secondary background with light text',
+    }),
     defineField({
       name: 'title',
       title: 'Card Title',
@@ -137,12 +154,13 @@ export const cardType = defineType({
     select: {
       title: 'title',
       subtitle: 'subtitle',
+      visualStyle: 'visualStyle',
       imageType: 'imageType',
       iconNoImageLayoutStyle: 'iconNoImageLayoutStyle',
       image: 'image',
       content: 'content',
     },
-    prepare({ title, subtitle, imageType, iconNoImageLayoutStyle, image, content }) {
+    prepare({ title, subtitle, visualStyle, imageType, iconNoImageLayoutStyle, image, content }) {
       const imageTypeLabel =
         imageType === 'banner'
           ? 'Banner'
@@ -156,11 +174,12 @@ export const cardType = defineType({
         layoutLabel = iconNoImageLayoutStyle === 'row' ? 'Row' : 'Stacked';
       }
 
+      const styleLabel = visualStyle === 'dark' ? 'Dark' : 'Light';
       const blockCount = Array.isArray(content) ? content.length : 0;
 
-      const displayTitle = title || `Card: ${imageTypeLabel} • ${layoutLabel}`;
+      const displayTitle = title || `Card: ${styleLabel} • ${imageTypeLabel} • ${layoutLabel}`;
       const displaySubtitle = title
-        ? `${imageTypeLabel} • ${layoutLabel} • ${blockCount} content block${blockCount !== 1 ? 's' : ''}`
+        ? `${styleLabel} • ${imageTypeLabel} • ${layoutLabel} • ${blockCount} content block${blockCount !== 1 ? 's' : ''}`
         : `${blockCount} content block${blockCount !== 1 ? 's' : ''}`;
 
       return {

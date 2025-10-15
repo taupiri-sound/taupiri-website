@@ -18,6 +18,7 @@ const CardNoImage = (props: CardNoImageProps) => {
     layoutStyle,
     className = '',
     isGridChild = false,
+    visualStyle = 'light',
     documentId,
     documentType,
     fieldPathPrefix,
@@ -58,13 +59,15 @@ const CardNoImage = (props: CardNoImageProps) => {
     return (
       <CardContainer
         className={`${className} flex flex-col text-center items-center`}
-        isGridChild={isGridChild}>
+        isGridChild={isGridChild}
+        visualStyle={visualStyle}>
         <CardHeader
           title={title}
           subtitle={subtitle}
           documentId={documentId}
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
+          visualStyle={visualStyle}
         />
         <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
       </CardContainer>
@@ -75,13 +78,15 @@ const CardNoImage = (props: CardNoImageProps) => {
   return (
     <CardContainer
       className={`${className} flex flex-col items-start text-left`}
-      isGridChild={isGridChild}>
+      isGridChild={isGridChild}
+      visualStyle={visualStyle}>
       <CardHeader
         title={title}
         subtitle={subtitle}
         documentId={documentId}
         documentType={documentType}
         fieldPathPrefix={fieldPathPrefix}
+        visualStyle={visualStyle}
       />
       <div className='flex flex-col items-start gap-4 w-full'>{renderContent()}</div>
     </CardContainer>

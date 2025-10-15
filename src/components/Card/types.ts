@@ -21,6 +21,7 @@ export interface BaseCardProps {
   content?: unknown[]; // Optional to support cards with just title/subtitle
   className?: string;
   isGridChild?: boolean;
+  visualStyle?: 'light' | 'dark';
   documentId?: string;
   documentType?: string;
   fieldPathPrefix?: string;

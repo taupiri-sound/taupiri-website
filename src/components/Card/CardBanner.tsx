@@ -19,6 +19,7 @@ const CardBanner = (props: CardBannerProps) => {
     image,
     content,
     className = '',
+    visualStyle = 'light',
     isGridChild = false,
     documentId,
     documentType,
@@ -53,7 +54,7 @@ const CardBanner = (props: CardBannerProps) => {
   };
 
   return (
-    <CardContainer className={`${className} overflow-hidden`} isGridChild={isGridChild} noPadding>
+    <CardContainer className={`${className} overflow-hidden`} isGridChild={isGridChild} noPadding visualStyle={visualStyle}>
       {/* Banner Image - Full width at top */}
       <div
         className='relative w-full aspect-[16/9]'
@@ -80,6 +81,7 @@ const CardBanner = (props: CardBannerProps) => {
           documentId={documentId}
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
+          visualStyle={visualStyle}
         />
         <div className='flex flex-col gap-4 w-full'>{renderContent()}</div>
       </div>

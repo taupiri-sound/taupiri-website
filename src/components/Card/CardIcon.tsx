@@ -21,6 +21,7 @@ const CardIcon = (props: CardIconProps) => {
     content,
     layoutStyle,
     className = '',
+    visualStyle = 'light',
     isGridChild = false,
     documentId,
     documentType,
@@ -65,7 +66,8 @@ const CardIcon = (props: CardIconProps) => {
   return (
     <CardContainer
       className={`${className} flex ${flexDirection} gap-y-2 gap-x-4 ${itemsAlignment}`}
-      isGridChild={isGridChild}>
+      isGridChild={isGridChild}
+      visualStyle={visualStyle}>
       {/* Icon */}
       <div
         className='flex-shrink-0'
@@ -93,6 +95,7 @@ const CardIcon = (props: CardIconProps) => {
           documentId={documentId}
           documentType={documentType}
           fieldPathPrefix={fieldPathPrefix}
+          visualStyle={visualStyle}
         />
         {/* Render content with responsive alignment for stacked, or always left for row */}
         {isStacked ? (

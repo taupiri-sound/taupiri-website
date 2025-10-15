@@ -1236,6 +1236,7 @@ export type Page = {
 
 export type Card = {
   _type: "card";
+  visualStyle?: "light" | "dark";
   title?: string;
   subtitle?: string;
   imageType?: "none" | "banner" | "icon";
@@ -1598,6 +1599,7 @@ export type PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -1914,6 +1916,7 @@ export type PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -2504,6 +2507,7 @@ export type PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -3307,6 +3311,7 @@ export type PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -3622,6 +3627,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -4212,6 +4218,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -4973,6 +4980,7 @@ export type PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -5288,6 +5296,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -5878,6 +5887,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -6681,6 +6691,7 @@ export type PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -6983,6 +6994,7 @@ export type PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -7573,6 +7585,7 @@ export type PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -8370,6 +8383,7 @@ export type PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -8672,6 +8686,7 @@ export type PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -9262,6 +9277,7 @@ export type PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -10061,6 +10077,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -10623,6 +10640,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -11185,6 +11203,7 @@ export type PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -11716,6 +11735,7 @@ export type PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -12306,6 +12326,7 @@ export type PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -12915,6 +12936,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -13505,6 +13527,7 @@ export type PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -14116,6 +14139,7 @@ export type PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -14706,6 +14730,7 @@ export type PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -15359,6 +15384,7 @@ export type PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -15949,6 +15975,7 @@ export type PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -16536,6 +16563,7 @@ export type PAGE_QUERYResult = {
   hasClosingCard: boolean | null;
   closingCard: {
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -16684,6 +16712,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -17000,6 +17029,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -17590,6 +17620,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -18393,6 +18424,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -18708,6 +18740,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -19298,6 +19331,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -20059,6 +20093,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -20374,6 +20409,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -20964,6 +21000,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -21767,6 +21804,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -22069,6 +22107,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -22659,6 +22698,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -23456,6 +23496,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -23758,6 +23799,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -24348,6 +24390,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -25147,6 +25190,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -25709,6 +25753,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -26271,6 +26316,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -26802,6 +26848,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -27392,6 +27439,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -28001,6 +28049,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -28591,6 +28640,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -29202,6 +29252,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -29792,6 +29843,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -30445,6 +30497,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -31035,6 +31088,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -31829,6 +31883,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -32145,6 +32200,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -32735,6 +32791,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -33538,6 +33595,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -33853,6 +33911,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -34443,6 +34502,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -35204,6 +35264,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -35519,6 +35580,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -36109,6 +36171,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -36912,6 +36975,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -37214,6 +37278,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -37804,6 +37869,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -38601,6 +38667,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -38903,6 +38970,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -39493,6 +39561,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -40292,6 +40361,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -40854,6 +40924,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -41416,6 +41487,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -41947,6 +42019,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -42537,6 +42610,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -43146,6 +43220,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -43736,6 +43811,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -44347,6 +44423,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -44937,6 +45014,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -45590,6 +45668,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -46180,6 +46259,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -46820,6 +46900,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -47136,6 +47217,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -47726,6 +47808,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -48529,6 +48612,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -48844,6 +48928,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -49434,6 +49519,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -50195,6 +50281,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -50510,6 +50597,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -51100,6 +51188,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -51903,6 +51992,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -52205,6 +52295,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -52795,6 +52886,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -53592,6 +53684,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -53894,6 +53987,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -54484,6 +54578,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -55283,6 +55378,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -55845,6 +55941,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -56407,6 +56504,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -56938,6 +57036,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -57528,6 +57627,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -58137,6 +58237,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -58727,6 +58828,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -59338,6 +59440,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -59928,6 +60031,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -60581,6 +60685,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -61171,6 +61276,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -61811,6 +61917,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -62127,6 +62234,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -62717,6 +62825,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -63520,6 +63629,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -63835,6 +63945,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -64425,6 +64536,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -65186,6 +65298,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -65501,6 +65614,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -66091,6 +66205,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -66894,6 +67009,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -67196,6 +67312,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -67786,6 +67903,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -68583,6 +68701,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -68885,6 +69004,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -69475,6 +69595,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -70274,6 +70395,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -70836,6 +70958,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -71398,6 +71521,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -71929,6 +72053,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -72519,6 +72644,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -73128,6 +73254,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -73718,6 +73845,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -74329,6 +74457,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -74919,6 +75048,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -75572,6 +75702,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -76162,6 +76293,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -76858,6 +76990,7 @@ export type HOME_PAGE_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -77174,6 +77307,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -77764,6 +77898,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -78567,6 +78702,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -78882,6 +79018,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -79472,6 +79609,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -80233,6 +80371,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -80548,6 +80687,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -81138,6 +81278,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -81941,6 +82082,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -82243,6 +82385,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -82833,6 +82976,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -83630,6 +83774,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -83932,6 +84077,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -84522,6 +84668,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -85321,6 +85468,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -85883,6 +86031,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -86445,6 +86594,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -86976,6 +87126,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -87566,6 +87717,7 @@ export type HOME_PAGE_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -88175,6 +88327,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -88765,6 +88918,7 @@ export type HOME_PAGE_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -89376,6 +89530,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -89966,6 +90121,7 @@ export type HOME_PAGE_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -90619,6 +90775,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -91209,6 +91366,7 @@ export type HOME_PAGE_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -92469,6 +92627,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
   hasClosingCard: boolean | null;
   closingCard: {
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -92551,6 +92710,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
   hasClosingCard: boolean | null;
   closingCard: {
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -92611,6 +92771,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
   hasClosingCard: boolean | null;
   closingCard: {
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -92735,6 +92896,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
   hasClosingCard: boolean | null;
   closingCard: {
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -92918,6 +93080,7 @@ export type BLOG_POST_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -93234,6 +93397,7 @@ export type BLOG_POST_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -93824,6 +93988,7 @@ export type BLOG_POST_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -94627,6 +94792,7 @@ export type BLOG_POST_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -94942,6 +95108,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -95532,6 +95699,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -96293,6 +96461,7 @@ export type BLOG_POST_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -96608,6 +96777,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -97198,6 +97368,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -98001,6 +98172,7 @@ export type BLOG_POST_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -98303,6 +98475,7 @@ export type BLOG_POST_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -98893,6 +99066,7 @@ export type BLOG_POST_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -99690,6 +99864,7 @@ export type BLOG_POST_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -99992,6 +100167,7 @@ export type BLOG_POST_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -100582,6 +100758,7 @@ export type BLOG_POST_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -101381,6 +101558,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -101943,6 +102121,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -102505,6 +102684,7 @@ export type BLOG_POST_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -103036,6 +103216,7 @@ export type BLOG_POST_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -103626,6 +103807,7 @@ export type BLOG_POST_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -104235,6 +104417,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -104825,6 +105008,7 @@ export type BLOG_POST_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -105436,6 +105620,7 @@ export type BLOG_POST_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -106026,6 +106211,7 @@ export type BLOG_POST_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -106679,6 +106865,7 @@ export type BLOG_POST_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -107269,6 +107456,7 @@ export type BLOG_POST_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -107845,6 +108033,7 @@ export type BLOG_POST_QUERYResult = {
   hasClosingCard: boolean | null;
   closingCard: {
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -108035,6 +108224,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -108351,6 +108541,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -108941,6 +109132,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -109744,6 +109936,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -110059,6 +110252,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -110649,6 +110843,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -111410,6 +111605,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -111725,6 +111921,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -112315,6 +112512,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -113118,6 +113316,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -113420,6 +113619,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -114010,6 +114210,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -114807,6 +115008,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -115109,6 +115311,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -115699,6 +115902,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -116498,6 +116702,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -117060,6 +117265,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -117622,6 +117828,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -118153,6 +118360,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -118743,6 +118951,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -119352,6 +119561,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -119942,6 +120152,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -120553,6 +120764,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -121143,6 +121355,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -121796,6 +122009,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -122386,6 +122600,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -123060,6 +123275,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -123376,6 +123592,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -123966,6 +124183,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -124769,6 +124987,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -125084,6 +125303,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -125674,6 +125894,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -126435,6 +126656,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -126750,6 +126972,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -127340,6 +127563,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -128143,6 +128367,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -128445,6 +128670,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -129035,6 +129261,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -129832,6 +130059,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -130134,6 +130362,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -130724,6 +130953,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -131523,6 +131753,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -132085,6 +132316,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -132647,6 +132879,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -133178,6 +133411,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -133768,6 +134002,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -134377,6 +134612,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -134967,6 +135203,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -135578,6 +135815,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -136168,6 +136406,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -136821,6 +137060,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -137411,6 +137651,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -138045,6 +138286,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -138361,6 +138603,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -138951,6 +139194,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -139754,6 +139998,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -140069,6 +140314,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -140659,6 +140905,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -141420,6 +141667,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -141735,6 +141983,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -142325,6 +142574,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -143128,6 +143378,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -143430,6 +143681,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -144020,6 +144272,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -144817,6 +145070,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -145119,6 +145373,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -145709,6 +145964,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -146508,6 +146764,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -147070,6 +147327,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -147632,6 +147890,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -148163,6 +148422,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -148753,6 +149013,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -149362,6 +149623,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -149952,6 +150214,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -150563,6 +150826,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -151153,6 +151417,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -151806,6 +152071,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -152396,6 +152662,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -153030,6 +153297,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -153346,6 +153614,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -153936,6 +154205,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -154739,6 +155009,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -155054,6 +155325,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -155644,6 +155916,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -156405,6 +156678,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -156720,6 +156994,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -157310,6 +157585,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -158113,6 +158389,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -158415,6 +158692,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -159005,6 +159283,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -159802,6 +160081,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -160104,6 +160384,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -160694,6 +160975,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -161493,6 +161775,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -162055,6 +162338,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -162617,6 +162901,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -163148,6 +163433,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -163738,6 +164024,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -164347,6 +164634,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -164937,6 +165225,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -165548,6 +165837,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -166138,6 +166428,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -166791,6 +167082,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -167381,6 +167673,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -168047,6 +168340,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -168363,6 +168657,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -168953,6 +169248,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -169756,6 +170052,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -170071,6 +170368,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -170661,6 +170959,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -171422,6 +171721,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -171737,6 +172037,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -172327,6 +172628,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -173130,6 +173432,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -173432,6 +173735,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -174022,6 +174326,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -174819,6 +175124,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -175121,6 +175427,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -175711,6 +176018,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -176510,6 +176818,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -177072,6 +177381,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -177634,6 +177944,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -178165,6 +178476,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -178755,6 +179067,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -179364,6 +179677,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -179954,6 +180268,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -180565,6 +180880,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -181155,6 +181471,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -181808,6 +182125,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -182398,6 +182716,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -183051,6 +183370,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -183367,6 +183687,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -183957,6 +184278,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -184760,6 +185082,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -185075,6 +185398,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -185665,6 +185989,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -186426,6 +186751,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -186741,6 +187067,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -187331,6 +187658,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -188134,6 +188462,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -188436,6 +188765,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -189026,6 +189356,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -189823,6 +190154,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -190125,6 +190457,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -190715,6 +191048,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -191514,6 +191848,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -192076,6 +192411,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -192638,6 +192974,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -193169,6 +193506,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -193759,6 +194097,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -194368,6 +194707,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -194958,6 +195298,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -195569,6 +195910,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -196159,6 +196501,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -196812,6 +197155,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -197402,6 +197746,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -198076,6 +198421,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -198392,6 +198738,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -198982,6 +199329,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -199785,6 +200133,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -200100,6 +200449,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -200690,6 +201040,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -201451,6 +201802,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -201766,6 +202118,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -202356,6 +202709,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -203159,6 +203513,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -203461,6 +203816,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -204051,6 +204407,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -204848,6 +205205,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -205150,6 +205508,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -205740,6 +206099,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -206539,6 +206899,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -207101,6 +207462,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -207663,6 +208025,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -208194,6 +208557,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -208784,6 +209148,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -209393,6 +209758,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -209983,6 +210349,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -210594,6 +210961,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -211184,6 +211552,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -211837,6 +212206,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -212427,6 +212797,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -213061,6 +213432,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -213377,6 +213749,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -213967,6 +214340,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -214770,6 +215144,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -215085,6 +215460,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -215675,6 +216051,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -216436,6 +216813,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -216751,6 +217129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -217341,6 +217720,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -218144,6 +218524,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -218446,6 +218827,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -219036,6 +219418,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -219833,6 +220216,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -220135,6 +220519,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -220725,6 +221110,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -221524,6 +221910,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -222086,6 +222473,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -222648,6 +223036,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -223179,6 +223568,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -223769,6 +224159,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -224378,6 +224769,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -224968,6 +225360,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -225579,6 +225972,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -226169,6 +226563,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -226822,6 +227217,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -227412,6 +227808,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -228046,6 +228443,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -228362,6 +228760,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -228952,6 +229351,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -229755,6 +230155,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -230070,6 +230471,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -230660,6 +231062,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -231421,6 +231824,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -231736,6 +232140,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -232326,6 +232731,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -233129,6 +233535,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -233431,6 +233838,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -234021,6 +234429,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -234818,6 +235227,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -235120,6 +235530,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -235710,6 +236121,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -236509,6 +236921,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -237071,6 +237484,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -237633,6 +238047,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -238164,6 +238579,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -238754,6 +239170,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -239363,6 +239780,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -239953,6 +240371,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -240564,6 +240983,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -241154,6 +241574,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -241807,6 +242228,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -242397,6 +242819,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -243063,6 +243486,7 @@ export type PRIVACY_POLICY_QUERYResult = {
   } | {
     _key: string;
     _type: "card";
+    visualStyle?: "dark" | "light";
     title?: string;
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
@@ -243379,6 +243803,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -243969,6 +244394,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -244772,6 +245198,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -245087,6 +245514,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -245677,6 +246105,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -246438,6 +246867,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -246753,6 +247183,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -247343,6 +247774,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -248146,6 +248578,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -248448,6 +248881,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -249038,6 +249472,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -249835,6 +250270,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -250137,6 +250573,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -250727,6 +251164,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -251526,6 +251964,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -252088,6 +252527,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -252650,6 +253090,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -253181,6 +253622,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -253771,6 +254213,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | {
             _key: string;
             _type: "card";
+            visualStyle?: "dark" | "light";
             title?: string;
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
@@ -254380,6 +254823,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -254970,6 +255414,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | {
           _key: string;
           _type: "card";
+          visualStyle?: "dark" | "light";
           title?: string;
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
@@ -255581,6 +256026,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -256171,6 +256617,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | {
         _key: string;
         _type: "card";
+        visualStyle?: "dark" | "light";
         title?: string;
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
@@ -256824,6 +257271,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
@@ -257414,6 +257862,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     } | {
       _key: string;
       _type: "card";
+      visualStyle?: "dark" | "light";
       title?: string;
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
