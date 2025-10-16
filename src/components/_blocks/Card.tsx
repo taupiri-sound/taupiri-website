@@ -54,11 +54,6 @@ const Card = (props: CardProps) => {
   const cleanVisualStyle = (stegaClean(visualStyle) as 'light' | 'dark') || 'light';
   const cleanImageType = stegaClean(imageType) || 'none';
 
-  // Debug: Log visualStyle to check what's being received from Sanity
-  if (process.env.NODE_ENV === 'development' && visualStyle) {
-    console.log('Card visualStyle:', { raw: visualStyle, clean: cleanVisualStyle, title: cleanTitle });
-  }
-
   // Determine layout style based on image type
   let cleanLayoutStyle: 'stacked' | 'row' = 'stacked';
   if (cleanImageType === 'icon' || cleanImageType === 'none') {
@@ -68,9 +63,11 @@ const Card = (props: CardProps) => {
   // Banner is always stacked
 
   // Don't render completely empty cards (no title, subtitle, or content)
-  if ((!cleanTitle || cleanTitle.trim() === '') &&
-      (!cleanSubtitle || cleanSubtitle.trim() === '') &&
-      (!content || content.length === 0)) {
+  if (
+    (!cleanTitle || cleanTitle.trim() === '') &&
+    (!cleanSubtitle || cleanSubtitle.trim() === '') &&
+    (!content || content.length === 0)
+  ) {
     return null;
   }
 
