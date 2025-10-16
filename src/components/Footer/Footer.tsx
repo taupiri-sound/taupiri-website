@@ -213,7 +213,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
           <div className='flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0'>
             {/* Copyright */}
             {footerData?._type === 'footer' && footerData.copyrightText && (
-              <div className='text-white text-body-sm'>{footerData.copyrightText}</div>
+              <div className='text-brand-white text-body-sm'>{footerData.copyrightText}</div>
             )}
 
             {/* Legal Links */}
@@ -221,14 +221,14 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
               {!legalPagesVisibilityData?.termsAndConditions?.hide && (
                 <Link
                   href='/terms-and-conditions'
-                  className='text-white hover:text-brand-secondary transition-colors duration-200 text-body-sm'>
+                  className='text-brand-white hover:text-brand-primary transition-colors duration-200 text-body-sm'>
                   Terms & Conditions
                 </Link>
               )}
               {!legalPagesVisibilityData?.privacyPolicy?.hide && (
                 <Link
                   href='/privacy-policy'
-                  className='text-white hover:text-brand-secondary transition-colors duration-200 text-body-sm'>
+                  className='text-brand-white hover:text-brand-primary transition-colors duration-200 text-body-sm'>
                   Privacy Policy
                 </Link>
               )}
