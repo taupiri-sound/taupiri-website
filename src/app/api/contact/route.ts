@@ -190,7 +190,7 @@ export async function POST(request: Request) {
       const confirmationEmailResult = await resend.emails.send({
         from: fromEmail,
         to: sanitizedEmail,
-        replyTo: SITE_CONFIG.ORGANIZATION_EMAIL,
+        replyTo: SITE_CONFIG.ORGANIZATION_EMAIL.value,
         subject: 'Thank you for contacting Taupiri Sound',
         html: confirmationEmailHtml,
       });

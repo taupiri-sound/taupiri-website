@@ -94,7 +94,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
 
   return (
     <footer
-      className={`bg-brand-gradient-brown text-white py-10 px-6 md:px-16 w-full transition-opacity duration-500 ease-in-out ${
+      className={`bg-brand-gradient-brown text-brand-white py-10 px-6 md:px-16 w-full transition-opacity duration-500 ease-in-out ${
         isPageReady ? 'opacity-100' : 'opacity-0'
       }`}
       aria-label='Site Footer'>
@@ -208,7 +208,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
         </div>
 
         {/* BOTTOM ROW */}
-        <div className='mt-20'>
+        <div className='mt-12'>
           {/* Separator Line */}
           <div className='w-full h-px bg-gray-600 mb-6'></div>
 

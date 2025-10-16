@@ -135,21 +135,21 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                           <tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="mailto:${SITE_CONFIG.ORGANIZATION_EMAIL}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                              <a href="mailto:${SITE_CONFIG.ORGANIZATION_EMAIL.value}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
                                 ${SITE_CONFIG.ORGANIZATION_EMAIL}
                               </a>
                             </td>
                           </tr>
                           <tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="tel:${SITE_CONFIG.ORGANIZATION_PHONE.replace(/\s/g, '')}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${SITE_CONFIG.ORGANIZATION_PHONE}
+                              <a href="tel:${SITE_CONFIG.ORGANIZATION_PHONE.value.replace(/\s/g, '')}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${SITE_CONFIG.ORGANIZATION_PHONE.value}
                               </a>
                             </td>
                           </tr>
                           <tr>
                             <td align="center" style="padding: 5px 0; color: #b8956a; font-size: 14px;">
-                              ${SITE_CONFIG.ORGANIZATION_ADDRESS}
+                              ${SITE_CONFIG.ORGANIZATION_ADDRESS.value}
                             </td>
                           </tr>
                         </table>

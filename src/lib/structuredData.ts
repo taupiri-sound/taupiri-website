@@ -168,9 +168,9 @@ export function getOrganizationDataFromSiteSettings(
   return {
     name: siteSettings?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
     url: baseUrl,
-    email: SITE_CONFIG.ORGANIZATION_EMAIL,
-    telephone: SITE_CONFIG.ORGANIZATION_PHONE,
-    address: SITE_CONFIG.ORGANIZATION_ADDRESS,
+    email: SITE_CONFIG.ORGANIZATION_EMAIL.value,
+    telephone: SITE_CONFIG.ORGANIZATION_PHONE.value,
+    address: SITE_CONFIG.ORGANIZATION_ADDRESS.value,
     ...(siteSettings?.siteDescription && { description: siteSettings.siteDescription }),
     ...(siteSettings?.defaultOgImage && {
       logo: urlFor(siteSettings.defaultOgImage).width(512).height(512).url(),
