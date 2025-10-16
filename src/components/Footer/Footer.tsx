@@ -102,7 +102,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
         {/* TOP ROW */}
         <div className='flex flex-col lg:flex-row gap-x-10 gap-y-18 justify-between'>
           {/* LOGO & MESSAGE */}
-          <div className='flex flex-col items-center lg:items-start text-center lg:text-left max-w-[90%] mx-auto lg:mx-0 lg:max-w-1/3'>
+          <div className='flex flex-col items-center lg:items-start text-center lg:text-left mx-auto lg:mx-0 lg:max-w-1/3'>
             {/* Logo */}
             <Link href='/#home'>
               <UnifiedImage
