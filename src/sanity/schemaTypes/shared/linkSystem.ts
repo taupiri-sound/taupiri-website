@@ -124,7 +124,7 @@ export const createLinkFieldSet = (
     defineField({
       name: externalUrlConfig.name || 'externalUrl',
       title: externalUrlConfig.title || 'External URL',
-      type: 'url',
+      type: 'string',
       group,
       description:
         externalUrlConfig.description || 'Enter the full URL (e.g., https://example.com, tel:+61400123456, mailto:hello@example.com)',
@@ -331,7 +331,7 @@ export const createOptionalLinkFieldSet = (
     defineField({
       name: externalUrlConfig.name || 'externalUrl',
       title: externalUrlConfig.title || 'External URL',
-      type: 'url',
+      type: 'string',
       group,
       description:
         externalUrlConfig.description || 'Enter the full URL (e.g., https://example.com, tel:+61400123456, mailto:hello@example.com)',
