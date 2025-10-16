@@ -98,7 +98,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
         isPageReady ? 'opacity-100' : 'opacity-0'
       }`}
       aria-label='Site Footer'>
-      <div className=''>
+      <div className='container mx-auto'>
         {/* TOP ROW */}
         <div className='flex flex-col lg:flex-row gap-x-10 gap-y-18 justify-between'>
           {/* LOGO & MESSAGE */}
