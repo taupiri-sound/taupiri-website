@@ -12,9 +12,15 @@ export const SITE_CONFIG = {
     "Taupiri Sound is a recording studio based in the countryside of northern Waikato. For over a decade we have worked on countless projects from educational resources to some of Aotearoa's best artists.",
 
   // Contact information - single source of truth for all company contact details
-  ORGANIZATION_EMAIL: 'lance@taupirisound.co.nz',
-  ORGANIZATION_PHONE: '+64 21 311 903',
-  ORGANIZATION_ADDRESS: 'Topview Road, Taupiri 3792, New Zealand',
+  ORGANIZATION_EMAIL: {
+    value: 'lance@taupirisound.co.nz',
+    link: 'mailto:lance@taupirisound.co.nz',
+  },
+  ORGANIZATION_PHONE: { value: '+64 21 311 903', link: 'tel:+6421311903' },
+  ORGANIZATION_ADDRESS: {
+    value: 'Topview Road, Taupiri 3792, New Zealand',
+    link: 'https://maps.app.goo.gl/AXFyaZad32c1c2sx6',
+  },
 } as const;
 
 // Type-safe access to configuration values

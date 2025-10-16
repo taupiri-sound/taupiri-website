@@ -13,6 +13,10 @@ import type {
   COMPANY_LINKS_QUERYResult,
   LEGAL_PAGES_VISIBILITY_QUERYResult,
 } from '@/sanity/types';
+import { SITE_CONFIG } from '@/lib/constants';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { GoLocation } from 'react-icons/go';
 
 interface FooterMessage {
   _key: string;
@@ -28,6 +32,33 @@ interface FooterProps {
 
 const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: FooterProps) => {
   const { isPageReady } = usePageLoad();
+
+  const contactDetails = [
+    {
+      icon: <FaPhoneAlt />,
+      value: SITE_CONFIG.ORGANIZATION_PHONE.value,
+      link: SITE_CONFIG.ORGANIZATION_PHONE.link,
+    },
+    {
+      icon: <MdEmail />,
+      value: SITE_CONFIG.ORGANIZATION_EMAIL.value,
+      link: SITE_CONFIG.ORGANIZATION_EMAIL.link,
+    },
+    {
+      icon: <GoLocation />,
+      value: SITE_CONFIG.ORGANIZATION_ADDRESS.value,
+      link: SITE_CONFIG.ORGANIZATION_ADDRESS.link,
+    },
+  ];
+
+  // REPLACE THIS WITH CMS DATA WHEN READY
+  const quickLinks = [
+    { label: 'Home', url: '/' },
+    { label: 'Services', url: '/' },
+    { label: 'Music', url: '/' },
+    { label: 'The Studio', url: '/' },
+    { label: 'About Us', url: '/' },
+  ];
 
   // Get company links from company links data, filtering out hidden ones and invalid entries
   const companyLinks =
@@ -67,139 +98,139 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
         isPageReady ? 'opacity-100' : 'opacity-0'
       }`}
       aria-label='Site Footer'>
-      <div className='container md:grid grid-cols-3 grid-rows-[auto_auto] mx-auto'>
-        {/* LEFT COLUMN */}
-        <div className='flex flex-col items-center md:items-start col-start-1 row-start-1 text-center md:text-left'>
-          {/* Logo */}
-          <Link href='/#home' className='footer-logo'>
-            <UnifiedImage
-              src='/images/logos/logo-white.png'
-              alt='Taupiri Sound Logo'
-              mode='sized'
-              width={400}
-              height={190}
-              sizeContext='logo'
-              objectFit='contain'
-              className='w-[200px] md:w-[300px] h-auto footer-logo'
-            />
-          </Link>
+      <div className='container'>
+        {/* TOP ROW */}
+        <div className='flex flex-col md:flex-row gap-y-18 justify-between'>
+          {/* LOGO & MESSAGE */}
+          <div className='flex flex-col items-center md:items-start text-center md:text-left'>
+            {/* Logo */}
+            <Link href='/#home'>
+              <UnifiedImage
+                src='/images/logos/logo-white.png'
+                alt='Taupiri Sound Logo'
+                mode='sized'
+                width={400}
+                height={190}
+                sizeContext='logo'
+                objectFit='contain'
+                className='w-[200px] md:w-[300px] h-auto'
+              />
+            </Link>
 
-          {/* Messages */}
-          {footerMessages && footerMessages.length > 0 && (
-            <div className='space-y-4 mt-8 footer-messages'>
-              {footerMessages.map((message) => (
-                <div key={message._key} className='space-y-1'>
-                  {message.title && (
-                    <div className='font-bold text-brand-secondary footer-message-title'>
-                      {message.title}
-                    </div>
-                  )}
-                  {message.message && (
-                    <div className='text-white text-body-lg footer-message-text'>
-                      {message.message}
-                    </div>
-                  )}
-                </div>
-              ))}
+            {/* Messages */}
+            {footerMessages && footerMessages.length > 0 && (
+              <div className='space-y-4 mt-8'>
+                {footerMessages.map((message) => (
+                  <div key={message._key} className='space-y-1'>
+                    {message.title && (
+                      <div className='font-bold text-brand-secondary'>{message.title}</div>
+                    )}
+                    {message.message && (
+                      <div className='text-white text-body-lg'>{message.message}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* LINKS */}
+          <div className='flex flex-col md:flex-row gap-x-24 gap-y-16 text-center md:text-left'>
+            {/* Contact Details */}
+            <div>
+              <p className='text-h6 mb-6'>Contact Details</p>
+              <div className='flex flex-col items-center md:items-start gap-4'>
+                {contactDetails.map((detail, index) => (
+                  <a
+                    key={index}
+                    href={detail.link}
+                    className='flex items-center gap-4 hover:text-brand-primary transition-colors duration-200'
+                    target={detail.link.startsWith('http') ? '_blank' : undefined}
+                    rel={detail.link.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                    <span className='text-subtle'>{detail.icon}</span> {detail.value}
+                  </a>
+                ))}
+              </div>
             </div>
-          )}
-        </div>
 
-        {/* CENTER COLUMN - Quick Links */}
-        <div className='flex flex-col justify-start items-center col-start-2 row-start-1 mt-10 md:mt-0'>
-          <div className='footer-quick-links'>
-            <h3 className='text-white text-body-lg font-semibold mb-4 footer-quick-links-title'>
-              Quick Links
-            </h3>
-            <div className='space-y-2'>
-              <Link
-                href='/'
-                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                Home
-              </Link>
-              <Link
-                href='/'
-                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                Services
-              </Link>
-              <Link
-                href='/'
-                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                Music
-              </Link>
-              <Link
-                href='/'
-                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                The Studio
-              </Link>
-              <Link
-                href='/'
-                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                About Us
-              </Link>
+            <div className='flex flex-row justify-around md:justify-start gap-x-0 md:gap-x-24'>
+              {/*  Quick Links */}
+              {quickLinks.length > 0 && (
+                <div>
+                  <p className='text-h6 mb-6'>Quick Links</p>
+                  <div className='flex flex-col items-center md:items-start gap-4'>
+                    {quickLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        href={link.url}
+                        className='block text-white hover:text-brand-primary transition-colors duration-200'>
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {/* Company Links */}
+              {transformedLinks.length > 0 && (
+                <div className=''>
+                  <p className='text-h6 mb-6'>Connect</p>
+                  <div
+                    className='flex flex-col items-center md:items-start gap-4'
+                    {...createSanityDataAttribute('companyLinks', 'companyLinks', 'companyLinks')}>
+                    {transformedLinks.map((link) => (
+                      <Link
+                        key={link._key}
+                        href={link.url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        aria-label={link.label}
+                        title={link.label} // Hover text
+                        className='transition-all duration-200 hover:text-brand-primary'
+                        {...createSanityDataAttribute(
+                          'companyLinks',
+                          'companyLinks',
+                          `companyLinks.socialLinksArray[_key=="${link._key}"]`
+                        )}>
+                        <div className='rounded-full flex items-center justify-center gap-x-4 transition-transform duration-200'>
+                          <SocialIcon
+                            platform={link.platform}
+                            className='text-body-xl text-subtle'
+                          />
+                          <p>{link.label}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
-        {/* RIGHT COLUMN */}
-        <div className='flex flex-col justify-start items-center md:items-end col-start-3 row-start-1 mt-10 md:mt-0'>
-          {/* Company Links */}
-          {transformedLinks.length > 0 && (
-            <div
-              className='flex flex-wrap justify-center md:justify-end gap-6 max-w-full mt-8 footer-social-links'
-              {...createSanityDataAttribute('companyLinks', 'companyLinks', 'companyLinks')}>
-              {transformedLinks.map((link) => (
-                <Link
-                  key={link._key}
-                  href={link.url}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  aria-label={link.label}
-                  title={link.label} // Hover text
-                  className='group transition-transform duration-200 hover:scale-105'
-                  {...createSanityDataAttribute(
-                    'companyLinks',
-                    'companyLinks',
-                    `companyLinks.socialLinksArray[_key=="${link._key}"]`
-                  )}>
-                  <div className='w-16 h-16 md:w-18 md:h-18 rounded-full bg-brand-gradient flex items-center justify-center footer-social-icon'>
-                    <SocialIcon
-                      platform={link.platform}
-                      className='text-black text-body-3xl transition-transform duration-200 group-hover:scale-110'
-                    />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* BOTTOM ROW - Copyright and Legal Links */}
-        <div className='col-start-1 col-span-3 row-start-2 mt-20'>
+        {/* BOTTOM ROW */}
+        <div className='mt-20'>
           {/* Separator Line */}
-          <div className='w-full h-px bg-gray-600 mb-6 footer-separator'></div>
+          <div className='w-full h-px bg-gray-600 mb-6'></div>
 
           <div className='flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0'>
             {/* Copyright */}
             {footerData?._type === 'footer' && footerData.copyrightText && (
-              <div className='text-white text-body-sm footer-copyright'>
-                {footerData.copyrightText}
-              </div>
+              <div className='text-white text-body-sm'>{footerData.copyrightText}</div>
             )}
 
             {/* Legal Links */}
-            <div className='flex flex-wrap justify-center gap-6 footer-legal-links'>
+            <div className='flex flex-wrap justify-center gap-6'>
               {!legalPagesVisibilityData?.termsAndConditions?.hide && (
                 <Link
                   href='/terms-and-conditions'
-                  className='text-white hover:text-brand-secondary transition-colors duration-200 text-body-sm footer-legal-link'>
+                  className='text-white hover:text-brand-secondary transition-colors duration-200 text-body-sm'>
                   Terms & Conditions
                 </Link>
               )}
               {!legalPagesVisibilityData?.privacyPolicy?.hide && (
                 <Link
                   href='/privacy-policy'
-                  className='text-white hover:text-brand-secondary transition-colors duration-200 text-body-sm footer-legal-link'>
+                  className='text-white hover:text-brand-secondary transition-colors duration-200 text-body-sm'>
                   Privacy Policy
                 </Link>
               )}
