@@ -10,7 +10,6 @@ import { detectPlatformFromUrl } from '@/sanity/schemaTypes/shared/platformsConf
 import { usePageLoad } from '@/contexts/PageLoadContext';
 import type {
   FOOTER_QUERYResult,
-  SITE_SETTINGS_QUERYResult,
   COMPANY_LINKS_QUERYResult,
   LEGAL_PAGES_VISIBILITY_QUERYResult,
 } from '@/sanity/types';
@@ -23,17 +22,11 @@ interface FooterMessage {
 
 interface FooterProps {
   footerData: FOOTER_QUERYResult | null;
-  siteSettingsData: SITE_SETTINGS_QUERYResult | null;
   companyLinksData: COMPANY_LINKS_QUERYResult | null;
   legalPagesVisibilityData: LEGAL_PAGES_VISIBILITY_QUERYResult | null;
 }
 
-const Footer = ({
-  footerData,
-  siteSettingsData,
-  companyLinksData,
-  legalPagesVisibilityData,
-}: FooterProps) => {
+const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: FooterProps) => {
   const { isPageReady } = usePageLoad();
 
   // Get company links from company links data, filtering out hidden ones and invalid entries
@@ -70,7 +63,7 @@ const Footer = ({
 
   return (
     <footer
-      className={`bg-black text-white py-10 px-6 md:px-16 w-full transition-opacity duration-500 ease-in-out ${
+      className={`bg-brand-gradient-brown text-white py-10 px-6 md:px-16 w-full transition-opacity duration-500 ease-in-out ${
         isPageReady ? 'opacity-100' : 'opacity-0'
       }`}
       aria-label='Site Footer'>
@@ -120,24 +113,29 @@ const Footer = ({
             </h3>
             <div className='space-y-2'>
               <Link
-                href='/artists'
+                href='/'
                 className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
                 Home
               </Link>
               <Link
-                href='/releases'
-                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                Blog
-              </Link>
-              <Link
-                href='/blog'
+                href='/'
                 className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
                 Services
               </Link>
               <Link
-                href='/blog'
+                href='/'
                 className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
-                Our Story
+                Music
+              </Link>
+              <Link
+                href='/'
+                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
+                The Studio
+              </Link>
+              <Link
+                href='/'
+                className='block text-white hover:text-brand-secondary transition-colors duration-200 footer-quick-link'>
+                About Us
               </Link>
             </div>
           </div>

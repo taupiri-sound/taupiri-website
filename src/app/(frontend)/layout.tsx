@@ -73,39 +73,38 @@ const FrontendLayout = async ({
         <NavigationScroll />
         <PageReadyTrigger />
 
-          {/* Structured Data */}
-          {organizationSchema && (
-            <script
-              type='application/ld+json'
-              dangerouslySetInnerHTML={generateStructuredDataScript(organizationSchema)}
-            />
-          )}
-          {webSiteSchema && (
-            <script
-              type='application/ld+json'
-              dangerouslySetInnerHTML={generateStructuredDataScript(webSiteSchema)}
-            />
-          )}
+        {/* Structured Data */}
+        {organizationSchema && (
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={generateStructuredDataScript(organizationSchema)}
+          />
+        )}
+        {webSiteSchema && (
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={generateStructuredDataScript(webSiteSchema)}
+          />
+        )}
 
-          <div className='min-h-screen flex flex-col'>
-            <Header headerData={headerData} />
-            <main id='main-content' className='flex-1'>
-              {children}
-            </main>
-            <Footer
-              footerData={footerData}
-              siteSettingsData={siteSettingsData}
-              companyLinksData={companyLinksData}
-              legalPagesVisibilityData={legalPagesVisibilityData}
-            />
-            <SanityLive />
-            {(await draftMode()).isEnabled && (
-              <>
-                <VisualEditingProvider />
-                <DisableDraftMode />
-              </>
-            )}
-          </div>
+        <div className='min-h-screen flex flex-col'>
+          <Header headerData={headerData} />
+          <main id='main-content' className='flex-1'>
+            {children}
+          </main>
+          <Footer
+            footerData={footerData}
+            companyLinksData={companyLinksData}
+            legalPagesVisibilityData={legalPagesVisibilityData}
+          />
+          <SanityLive />
+          {(await draftMode()).isEnabled && (
+            <>
+              <VisualEditingProvider />
+              <DisableDraftMode />
+            </>
+          )}
+        </div>
       </HeaderProvider>
     </PageLoadProvider>
   );
