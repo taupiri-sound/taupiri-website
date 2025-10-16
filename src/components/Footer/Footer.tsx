@@ -98,11 +98,11 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
         isPageReady ? 'opacity-100' : 'opacity-0'
       }`}
       aria-label='Site Footer'>
-      <div className='container'>
+      <div className=''>
         {/* TOP ROW */}
-        <div className='flex flex-col md:flex-row gap-y-18 justify-between'>
+        <div className='flex flex-col lg:flex-row gap-x-10 gap-y-18 justify-between'>
           {/* LOGO & MESSAGE */}
-          <div className='flex flex-col items-center md:items-start text-center md:text-left'>
+          <div className='flex flex-col items-center lg:items-start text-center lg:text-left max-w-[90%] mx-auto lg:mx-0 lg:max-w-1/3'>
             {/* Logo */}
             <Link href='/#home'>
               <UnifiedImage
@@ -122,11 +122,9 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
               <div className='space-y-4 mt-8'>
                 {footerMessages.map((message) => (
                   <div key={message._key} className='space-y-1'>
-                    {message.title && (
-                      <div className='font-bold text-brand-secondary'>{message.title}</div>
-                    )}
+                    {message.title && <div className='font-bold text-subtle'>{message.title}</div>}
                     {message.message && (
-                      <div className='text-white text-body-lg'>{message.message}</div>
+                      <div className='text-brand-white text-body-lg'>{message.message}</div>
                     )}
                   </div>
                 ))}
@@ -135,7 +133,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
           </div>
 
           {/* LINKS */}
-          <div className='flex flex-col md:flex-row gap-x-24 gap-y-16 text-center md:text-left'>
+          <div className='flex flex-col md:flex-row md:justify-between lg:justify-start gap-x-8 gap-y-16 text-center md:text-left'>
             {/* Contact Details */}
             <div>
               <p className='text-h6 mb-6'>Contact Details</p>
@@ -153,7 +151,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
               </div>
             </div>
 
-            <div className='flex flex-row justify-around md:justify-start gap-x-0 md:gap-x-24'>
+            <div className='flex flex-row justify-around md:justify-between lg:justify-start gap-x-8 md:gap-x-16'>
               {/*  Quick Links */}
               {quickLinks.length > 0 && (
                 <div>
