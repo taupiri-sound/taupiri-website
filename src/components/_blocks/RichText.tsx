@@ -5,6 +5,7 @@ import type { RichTextBlock } from '@/types/blocks';
 import { getTextAlignClass, type TextAlignment } from '../../utils/sectionHelpers';
 import { resolveAlignment } from './shared/alignmentUtils';
 import PortableTextWrapper from '@/components/UI/PortableTextWrapper';
+import { maxCardWidth } from '@/utils/spacingConstants';
 
 type RichTextProps = RichTextBlock & {
   inheritAlignment?: 'left' | 'center' | 'right';
@@ -51,14 +52,15 @@ const RichText = ({
     <PortableTextWrapper
       value={content}
       components={alignedComponents}
-      className={`prose prose-slate max-w-xl ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}
+      className={`prose prose-slate ${maxCardWidth} ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}
     />
   );
 
   // If it's a callout, wrap in Card-style container
   if (cleanIsCallout) {
     return (
-      <div className='bg-brand-white-dark rounded-tr-lg rounded-br-lg px-2 py-2 md:px-6 md:py-4 max-w-none border-l-4 border-brand-primary shadow-sm'>
+      <div
+        className={`bg-brand-white-dark rounded-tr-lg rounded-br-lg px-2 py-2 md:px-6 md:py-4 ${maxCardWidth} border-l-4 border-brand-primary shadow-sm ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}>
         {proseContent}
       </div>
     );
