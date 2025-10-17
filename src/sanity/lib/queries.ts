@@ -31,17 +31,6 @@ const fullLinkProjection = `
   )
 `;
 
-// Closing card projection that properly expands CTA data
-const closingCardProjection = `{
-  ...,
-  ctaList[]{
-    _type,
-    _key,
-    _type == "embeddedCtaButton" => {${fullLinkProjection}},
-    _type == "embeddedCtaEmailButton" => {...}
-  }
-}`;
-
 // Audio sample player projection that expands the audio sample reference
 const audioSamplePlayerProjection = `{
   ...,
@@ -68,6 +57,51 @@ const audioSamplePlayerProjection = `{
         "duration": metadata.duration
       }
     }
+  }
+}`;
+
+// Closing card projection that properly expands card content including CTAs
+const closingCardProjection = `{
+  ...,
+  image{
+    asset,
+    alt,
+    hotspot,
+    crop
+  },
+  content[]{
+    ...,
+    _type == "ctaButton" => {${fullLinkProjection}},
+    _type == "ctaCalloutLink" => {${fullLinkProjection}},
+    _type == "imageBlock" => {
+      ...,
+      image{
+        asset,
+        alt,
+        hotspot,
+        crop
+      }
+    },
+    _type == "ctaBlogPost" => {
+      ...,
+      blogPost->{
+        _id,
+        _createdAt,
+        title,
+        slug,
+        subtitle,
+        author,
+        mainImage{
+          asset,
+          alt,
+          hotspot,
+          crop
+        },
+        hasOverrideDate,
+        overrideDate
+      }
+    },
+    _type == "audioSamplePlayer" => ${audioSamplePlayerProjection}
   }
 }`;
 

@@ -16,6 +16,7 @@ import {
   sectionDividerBottomSpacing,
   sectionBottomPadding,
   sectionCompactBottomPadding,
+  anchorLinkScrollMarginTop,
 } from '@/utils/spacingConstants';
 import UnifiedImage from '../UI/UnifiedImage';
 
@@ -59,7 +60,11 @@ const PageSection = ({
 }: PageSectionProps) => {
   // Create data attributes for Sanity live editing
   const titleDataAttribute = createSanityDataAttribute(documentId, documentType, titlePath);
-  const titleTranslationDataAttribute = createSanityDataAttribute(documentId, documentType, titleTranslationPath);
+  const titleTranslationDataAttribute = createSanityDataAttribute(
+    documentId,
+    documentType,
+    titleTranslationPath
+  );
   const subtitleDataAttribute = createSanityDataAttribute(documentId, documentType, subtitlePath);
   const topTextDataAttribute = createSanityDataAttribute(documentId, documentType, topTextPath);
 
@@ -92,7 +97,7 @@ const PageSection = ({
     <PageSectionContext.Provider value={{ hasTitle }}>
       <section
         id={anchorId ? stegaClean(anchorId) : undefined}
-        className={`${getBottomPaddingClass()} ${className}`.trim()}>
+        className={`${getBottomPaddingClass()} ${className} ${anchorLinkScrollMarginTop}`.trim()}>
         {/* Title is now always present since it's required */}
         <div className={getTextAlignClass(effectiveTextAlign)}>
           <div className={`inline-flex items-end gap-4 sm:gap-8 ${sectionTitleBottomSpacing}`}>
@@ -111,7 +116,9 @@ const PageSection = ({
                 <div>
                   {stegaClean(title)}
                   {titleTranslation && (
-                    <p className='text-[1.5rem] sm:text-[2rem] md:text-[3rem] text-subtle' {...titleTranslationDataAttribute}>
+                    <p
+                      className='text-[1.5rem] sm:text-[2rem] md:text-[3rem] text-subtle'
+                      {...titleTranslationDataAttribute}>
                       {stegaClean(titleTranslation)}
                     </p>
                   )}

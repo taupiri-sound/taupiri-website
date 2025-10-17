@@ -8,7 +8,7 @@ import {
   type TextAlignment,
 } from '../../utils/sectionHelpers';
 import { resolveAlignment } from '../_blocks/shared/alignmentUtils';
-import { subSectionTitleBottomSpacing } from '@/utils/spacingConstants';
+import { anchorLinkScrollMarginTop, subSectionTitleBottomSpacing } from '@/utils/spacingConstants';
 
 interface SubSectionProps extends SanityLiveEditingProps {
   children: React.ReactNode;
@@ -39,7 +39,9 @@ const SubSection = ({
   const effectiveTextAlign = (resolved || 'center') as TextAlignment;
 
   return (
-    <section id={anchorId ? stegaClean(anchorId) : undefined} className={className}>
+    <section
+      id={anchorId ? stegaClean(anchorId) : undefined}
+      className={`${className} ${anchorLinkScrollMarginTop}`.trim()}>
       <div className={getTextAlignClass(effectiveTextAlign)}>
         <Heading
           level='h3' // Fixed h3 level for SubSections

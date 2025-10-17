@@ -5,9 +5,8 @@ import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
 import PageSubtitle from '@/components/Typography/PageSubtitle';
 import { closingCardSpacing } from '@/utils/spacingConstants';
-import { getSiteSettings } from '@/actions';
+import { getSiteSettings, getCompanyLinks } from '@/actions';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
-import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export async function generateMetadata() {
@@ -29,7 +28,12 @@ export async function generateMetadata() {
 }
 
 export default async function BlogPage() {
-  const [blogPosts, blogIndexPage] = await Promise.all([getAllBlogPosts(), getBlogIndexPage()]);
+  const [blogPosts, blogIndexPage, siteSettings, companyLinks] = await Promise.all([
+    getAllBlogPosts(),
+    getBlogIndexPage(),
+    getSiteSettings(),
+    getCompanyLinks(),
+  ]);
 
   return (
     <>
@@ -62,10 +66,12 @@ export default async function BlogPage() {
         {blogIndexPage?.hasClosingCard && blogIndexPage?.closingCard && (
           <div className={closingCardSpacing}>
             <Card
-              {...normalizeClosingCardForCard(blogIndexPage.closingCard)}
+              {...blogIndexPage.closingCard}
               documentId={blogIndexPage._id}
               documentType={blogIndexPage._type}
               fieldPathPrefix='closingCard'
+              siteSettings={siteSettings || undefined}
+              companyLinks={companyLinks}
             />
           </div>
         )}

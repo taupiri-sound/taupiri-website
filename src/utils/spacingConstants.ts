@@ -89,3 +89,8 @@ export const maxHeightViewport = {
   maxHeight: 'calc(80svh - 5rem)',
   maxWidth: 'calc(80svh - 5rem)',
 };
+
+/**
+ *  * Scroll margin top for anchor links to account for fixed header
+ */
+export const anchorLinkScrollMarginTop = 'scroll-mt-8 md:scroll-mt-12';
