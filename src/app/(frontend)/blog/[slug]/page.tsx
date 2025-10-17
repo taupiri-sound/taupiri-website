@@ -18,6 +18,7 @@ import {
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
+import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 import BlogPostNavigation from '@/components/Blog/BlogPostNavigation';
 import CTA from '@/components/UI/CTA';
 import Breadcrumb from '@/components/UI/Breadcrumb';
@@ -218,7 +219,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {post.hasClosingCard && post.closingCard && (
           <div className={closingCardSpacing}>
             <Card
-              {...post.closingCard}
+              {...normalizeClosingCardForCard(post.closingCard)}
               documentId={post._id}
               documentType={post._type}
               fieldPathPrefix='closingCard'
