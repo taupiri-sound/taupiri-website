@@ -1,6 +1,6 @@
 import { sanityFetch } from '@/sanity/lib/live';
 import { HOME_PAGE_QUERY, PAGE_QUERY, ALL_PAGES_QUERY } from '@/sanity/lib/queries';
-import type { HOME_PAGE_QUERYResult, PAGE_QUERYResult, ALL_PAGES_QUERYResult } from '@/sanity/types';
+import type { HOME_PAGE_QUERYResult, PAGE_QUERYResult } from '@/sanity/types';
 
 export async function getHomePage(): Promise<HOME_PAGE_QUERYResult | null> {
   const { data: page } = await sanityFetch({

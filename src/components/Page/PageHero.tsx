@@ -1,23 +1,28 @@
 import React from 'react';
 import Heading from '../Typography/Heading';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
+import { headerHeight } from '@/utils/spacingConstants';
 
 interface PageHeroProps {
   title?: string | null;
+  subtTitle?: string | null;
   documentId?: string;
   documentType?: string;
 }
 
-const PageHero = ({ title = null, documentId, documentType }: PageHeroProps) => {
+const PageHero = ({ title = null, subtTitle = null, documentId, documentType }: PageHeroProps) => {
   return (
     <div {...createSanityDataAttribute(documentId, documentType, 'heroImage')}>
-      <section
-        data-hero
-        className='h-44 md:h-72 bg-brand-secondary flex items-center justify-center overflow-hidden px-5'>
+      <section data-hero className='bg-brand-secondary text-center overflow-hidden px-5'>
+        {/* Header spacer */}
+        <div className={`${headerHeight}`}></div>
         {title && (
-          <Heading level='h1' className='text-h2 md:text-h1 font-bold text-brand-white mt-16'>
+          <Heading level='h1' className='text-h1 font-bold text-brand-white mt-4'>
             {title}
           </Heading>
+        )}
+        {subtTitle && (
+          <p className='text-body-2xl text-brand-white mt-4 mb-12 max-w-4xl mx-auto'>{subtTitle}</p>
         )}
       </section>
     </div>
