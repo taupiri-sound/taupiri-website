@@ -13,6 +13,7 @@ const PROTECTED_DOCUMENT_TYPES = [
   'companyLinks',
   'contactFormSettings',
   'clients',
+  'equipmentListSingleton',
   'termsAndConditions',
   'privacyPolicy'
 ];

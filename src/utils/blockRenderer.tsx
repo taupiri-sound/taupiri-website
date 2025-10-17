@@ -3,6 +3,7 @@ import { createDataAttribute } from 'next-sanity';
 import type {
   COMPANY_LINKS_QUERYResult,
   CLIENTS_QUERYResult,
+  EQUIPMENT_LIST_QUERYResult,
   TEAM_MEMBERS_QUERYResult,
   CONTACT_FORM_SETTINGS_QUERYResult,
   RichText as RichTextType,
@@ -69,6 +70,7 @@ interface RenderBlockOptions {
   siteSettings?: SiteSettingsProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
+  equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
   teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
   contactFormSettings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
@@ -116,6 +118,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     siteSettings,
     companyLinks,
     clientsData,
+    equipmentListData,
     teamMembersData,
     contactFormSettings,
     alignment = 'center',
@@ -183,6 +186,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             siteSettings={siteSettings}
             companyLinks={companyLinks}
             clientsData={clientsData}
+            equipmentListData={equipmentListData}
             teamMembersData={teamMembersData}
             contactFormSettings={contactFormSettings}
             alignment={alignment}
@@ -379,12 +383,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const equipmentListBlock = typedBlock as WithKey<EquipmentListType>;
       return (
         <BlockWrapper key={equipmentListBlock._key}>
-          <EquipmentList
-            {...equipmentListBlock}
-            documentId={documentId}
-            documentType={documentType}
-            fieldPathPrefix={blockPath}
-          />
+          <EquipmentList equipmentListData={equipmentListData} />
         </BlockWrapper>
       );
     }
@@ -450,6 +449,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             documentId={documentId}
             documentType={documentType}
             fieldPathPrefix={blockPath}
+            equipmentListData={equipmentListData}
           />
         </BlockWrapper>
       );

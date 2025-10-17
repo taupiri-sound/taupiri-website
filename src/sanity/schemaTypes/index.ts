@@ -49,6 +49,7 @@ import { blogIndexPageType } from './blogIndexPageType';
 import { blogPostType } from './blogPostType';
 import { audioSampleType } from './audioSampleType';
 import { clientsType } from './singletons/clients';
+import { equipmentListSingletonType } from './singletons/equipmentList';
 import { termsAndConditionsType } from './termsAndConditionsType';
 import { privacyPolicyType } from './privacyPolicyType';
 import { contactFormSettingsType } from './contactFormSettingsType';
@@ -65,6 +66,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blogPostType,
     audioSampleType,
     clientsType,
+    equipmentListSingletonType,
     teamMemberType,
     termsAndConditionsType,
     privacyPolicyType,

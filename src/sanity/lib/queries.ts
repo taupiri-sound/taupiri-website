@@ -614,6 +614,28 @@ export const CLIENTS_QUERY = defineQuery(`*[_id == "clients"][0]{
   level5
 }`);
 
+// Equipment List query
+export const EQUIPMENT_LIST_QUERY = defineQuery(`*[_id == "equipmentListSingleton"][0]{
+  _id,
+  _type,
+  categories[]{
+    _key,
+    name,
+    icon{
+      asset,
+      alt,
+      hotspot,
+      crop
+    },
+    items[]{
+      _key,
+      name,
+      isTemporarilyUnavailable,
+      unavailableReason
+    }
+  }
+}`);
+
 export const TEAM_MEMBERS_QUERY = defineQuery(`*[_type == "teamMember"] | order(displayOrder asc, name asc) {
   _id,
   _type,

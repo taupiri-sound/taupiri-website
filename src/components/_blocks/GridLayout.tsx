@@ -1,6 +1,7 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { GridLayoutBlock, RichTextBlock, EquipmentListBlock, CardBlock, ImageBlock as ImageBlockType, YouTubeVideoBlock, SpotifyWidgetBlock, BandcampWidgetBlock, AudioSamplePlayerBlock } from '@/types/blocks';
+import type { EQUIPMENT_LIST_QUERYResult } from '@/sanity/types';
 import Card from './Card';
 import RichText from './RichText';
 import EquipmentList from './EquipmentList';
@@ -14,6 +15,7 @@ interface GridLayoutProps extends GridLayoutBlock {
   documentId?: string;
   documentType?: string;
   fieldPathPrefix?: string;
+  equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
 }
 
 const GridLayout = ({
@@ -22,6 +24,7 @@ const GridLayout = ({
   documentId,
   documentType,
   fieldPathPrefix,
+  equipmentListData,
 }: GridLayoutProps) => {
   if (!content || !Array.isArray(content) || content.length === 0) {
     return null;
@@ -68,7 +71,7 @@ const GridLayout = ({
       case 'equipmentList':
         return (
           <div key={key} className={itemClasses}>
-            <EquipmentList {...item} {...baseProps} />
+            <EquipmentList equipmentListData={equipmentListData} />
           </div>
         );
 

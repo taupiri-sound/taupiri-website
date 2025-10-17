@@ -2,7 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
-import { getPageBySlug, getSiteSettings, getCompanyLinks, getContactFormSettings, getClients, getTeamMembers } from '@/actions';
+import { getPageBySlug, getSiteSettings, getCompanyLinks, getContactFormSettings, getClients, getEquipmentList, getTeamMembers } from '@/actions';
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
 import { pageSubtitleBottomSpacing, closingCardSpacing } from '@/utils/spacingConstants';
@@ -46,12 +46,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-  const [page, siteSettings, companyLinks, contactFormSettings, clientsData, teamMembersData] = await Promise.all([
+  const [page, siteSettings, companyLinks, contactFormSettings, clientsData, equipmentListData, teamMembersData] = await Promise.all([
     getPageBySlug(slug),
     getSiteSettings(),
     getCompanyLinks(),
     getContactFormSettings(),
     getClients(),
+    getEquipmentList(),
     getTeamMembers(),
   ]);
 
@@ -125,6 +126,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             siteSettings={siteSettings || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
+            equipmentListData={equipmentListData}
             teamMembersData={teamMembersData}
             contactFormSettings={contactFormSettings}
           />

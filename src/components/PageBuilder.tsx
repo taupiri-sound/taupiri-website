@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import type { PAGE_QUERYResult, COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, TEAM_MEMBERS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
+import type { PAGE_QUERYResult, COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
 import type { NestedBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
 import { client } from '@/sanity/lib/client';
@@ -26,6 +26,7 @@ interface SharedPageBuilderProps {
   siteSettings?: SiteSettingsProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
+  equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
   teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
   contactFormSettings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
@@ -59,6 +60,7 @@ const BlockRenderer = ({
   siteSettings,
   companyLinks,
   clientsData,
+  equipmentListData,
   teamMembersData,
   contactFormSettings,
   alignment = 'center',
@@ -193,6 +195,7 @@ const BlockRenderer = ({
               siteSettings={siteSettings}
               companyLinks={companyLinks}
               clientsData={clientsData}
+              equipmentListData={equipmentListData}
               teamMembersData={teamMembersData}
               contactFormSettings={contactFormSettings}
               alignment={alignment}
@@ -321,6 +324,7 @@ const BlockRenderer = ({
                   siteSettings,
                   companyLinks,
                   clientsData,
+                  equipmentListData,
                   teamMembersData,
                   contactFormSettings,
                   alignment,
@@ -342,6 +346,7 @@ const PageBuilder = ({
   siteSettings,
   companyLinks,
   clientsData,
+  equipmentListData,
   teamMembersData,
   contactFormSettings,
   alignment = 'center',
@@ -369,6 +374,7 @@ const PageBuilder = ({
         siteSettings={siteSettings}
         companyLinks={companyLinks}
         clientsData={clientsData}
+        equipmentListData={equipmentListData}
         teamMembersData={teamMembersData}
         contactFormSettings={contactFormSettings}
         alignment={alignment}

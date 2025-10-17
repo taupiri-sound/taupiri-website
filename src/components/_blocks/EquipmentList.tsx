@@ -1,26 +1,24 @@
 'use client';
 
 import React, { useState } from 'react';
-import type { EquipmentList as EquipmentListType } from '@/sanity/types';
+import type { EQUIPMENT_LIST_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import { maxCardWidth } from '@/utils/spacingConstants';
 import UnifiedImage from '@/components/UI/UnifiedImage';
 import { ChevronDownIcon } from '@sanity/icons';
 
-interface EquipmentListProps extends Omit<EquipmentListType, '_type'> {
+interface EquipmentListProps {
   className?: string;
-  documentId?: string;
-  documentType?: string;
-  fieldPathPrefix?: string;
+  equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
 }
 
 const EquipmentList = ({
-  categories = [],
   className = '',
-  documentId,
-  documentType,
-  fieldPathPrefix = '',
+  equipmentListData,
 }: EquipmentListProps) => {
+  const documentId = equipmentListData?._id || 'equipmentListSingleton';
+  const documentType = 'equipmentListSingleton';
+  const categories = equipmentListData?.categories || [];
   const [openCategoryIndex, setOpenCategoryIndex] = useState<number | null>(null);
   const [hoveredItemKey, setHoveredItemKey] = useState<string | null>(null);
 
@@ -32,12 +30,14 @@ const EquipmentList = ({
     setOpenCategoryIndex(openCategoryIndex === index ? null : index);
   };
 
+  if (!equipmentListData) {
+    return null;
+  }
+
   return (
     <div className={`space-y-4 ${className}`.trim()}>
       {categories.map((category, categoryIndex) => {
-        const categoryPath = fieldPathPrefix
-          ? `${fieldPathPrefix}.categories[${categoryIndex}]`
-          : `categories[${categoryIndex}]`;
+        const categoryPath = `categories[${categoryIndex}]`;
         const isOpen = openCategoryIndex === categoryIndex;
 
         return (
@@ -88,8 +88,10 @@ const EquipmentList = ({
             {/* Category Items */}
             <div
               id={`category-content-${category._key}`}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-3 px-6 overflow-hidden transition-all duration-300 ${
-                isOpen ? 'max-h-[2000px] py-4 opacity-100' : 'max-h-0 py-0 opacity-0'
+              className={`grid grid-cols-1 md:grid-cols-2 gap-3 px-6 transition-all duration-300 ease-in-out ${
+                isOpen
+                  ? 'max-h-[2000px] py-4 opacity-100 overflow-visible'
+                  : 'max-h-0 py-0 opacity-0 overflow-hidden'
               }`}
               aria-hidden={!isOpen}>
               {category.items?.map((item, itemIndex) => {
@@ -127,7 +129,7 @@ const EquipmentList = ({
 
                     {/* Tooltip for unavailable items */}
                     {item.isTemporarilyUnavailable && item.unavailableReason && isHovered && (
-                      <div className='absolute z-10 left-0 top-full mt-1 px-3 py-2 bg-slate-800 text-brand-white text-body-sm rounded-md shadow-lg max-w-xs whitespace-normal'>
+                      <div className='absolute z-50 left-0 top-full mt-1 px-3 py-2 bg-slate-800 text-brand-white text-body-sm rounded-md shadow-lg max-w-xs whitespace-normal pointer-events-none'>
                         <div className='relative'>
                           {/* Tooltip arrow */}
                           <div className='absolute -top-3 left-4 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-slate-800' />
