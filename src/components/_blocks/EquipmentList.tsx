@@ -88,11 +88,16 @@ const EquipmentList = ({
             {/* Category Items */}
             <div
               id={`category-content-${category._key}`}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-3 px-6 transition-all duration-300 ease-in-out ${
+              className={`grid grid-cols-1 md:grid-cols-2 gap-3 px-6 transition-[max-height,padding,opacity] duration-300 ease-in-out ${
                 isOpen
                   ? 'max-h-[2000px] py-4 opacity-100 overflow-visible'
                   : 'max-h-0 py-0 opacity-0 overflow-hidden'
               }`}
+              style={{
+                transitionProperty: 'max-height, padding, opacity',
+                transitionTimingFunction: 'ease-in-out',
+                transitionDuration: '300ms',
+              }}
               aria-hidden={!isOpen}>
               {category.items?.map((item, itemIndex) => {
                 const itemPath = `${categoryPath}.items[${itemIndex}]`;
@@ -129,10 +134,10 @@ const EquipmentList = ({
 
                     {/* Tooltip for unavailable items */}
                     {item.isTemporarilyUnavailable && item.unavailableReason && isHovered && (
-                      <div className='absolute z-50 left-0 top-full mt-1 px-3 py-2 bg-slate-800 text-brand-white text-body-sm rounded-md shadow-lg max-w-xs whitespace-normal pointer-events-none'>
+                      <div className='absolute z-50 left-0 bottom-full mb-2 px-3 py-2 bg-slate-800 text-brand-white text-body-sm rounded-md shadow-xl max-w-xs whitespace-normal pointer-events-none'>
                         <div className='relative'>
-                          {/* Tooltip arrow */}
-                          <div className='absolute -top-3 left-4 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-slate-800' />
+                          {/* Tooltip arrow pointing down */}
+                          <div className='absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800' />
                           <p
                             {...(documentId && documentType
                               ? createSanityDataAttribute(

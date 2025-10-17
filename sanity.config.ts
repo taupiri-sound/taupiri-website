@@ -53,6 +53,7 @@ export default defineConfig({
             'blogIndexPage',
             'companyLinks',
             'clients',
+            'equipmentListSingleton',
             'termsAndConditions',
             'privacyPolicy',
           ].includes(item.templateId)
