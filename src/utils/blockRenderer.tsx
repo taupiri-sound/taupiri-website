@@ -21,6 +21,7 @@ import type {
   BlockListWithStats as BlockListWithStatsType,
   CheckList as CheckListType,
   ItemList as ItemListType,
+  EquipmentList as EquipmentListType,
   ClientList as ClientListType,
   TeamMemberList as TeamMemberListType,
   ContactForm as ContactFormType,
@@ -47,6 +48,7 @@ import CompanyLinksBlock from '@/components/_blocks/CompanyLinksBlock';
 import BlockListWithStats from '@/components/_blocks/BlockListWithStats';
 import CheckList from '@/components/_blocks/CheckList';
 import ItemList from '@/components/_blocks/ItemList';
+import EquipmentList from '@/components/_blocks/EquipmentList';
 import ClientList from '@/components/_blocks/ClientList';
 import TeamMemberListComponent from '@/components/_blocks/TeamMemberList';
 import ContactFormComponent from '@/components/_blocks/ContactForm';
@@ -94,6 +96,7 @@ type BlockType =
   | WithKey<BlockListWithStatsType>
   | WithKey<CheckListType>
   | WithKey<ItemListType>
+  | WithKey<EquipmentListType>
   | WithKey<ClientListType>
   | WithKey<TeamMemberListType>
   | WithKey<ContactFormType>
@@ -368,6 +371,20 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       return (
         <BlockWrapper key={itemListBlock._key}>
           <ItemList {...itemListBlock} inheritAlignment={alignment} />
+        </BlockWrapper>
+      );
+    }
+
+    case 'equipmentList': {
+      const equipmentListBlock = typedBlock as WithKey<EquipmentListType>;
+      return (
+        <BlockWrapper key={equipmentListBlock._key}>
+          <EquipmentList
+            {...equipmentListBlock}
+            documentId={documentId}
+            documentType={documentType}
+            fieldPathPrefix={blockPath}
+          />
         </BlockWrapper>
       );
     }

@@ -37,6 +37,10 @@ export const gridLayoutType = defineType({
           title: 'Rich Text',
         }),
         defineArrayMember({
+          type: 'equipmentList',
+          title: 'Equipment List',
+        }),
+        defineArrayMember({
           type: 'card',
           title: 'Card',
         }),

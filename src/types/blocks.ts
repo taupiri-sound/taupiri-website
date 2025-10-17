@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, AudioSamplePlayer, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList, ClientList, TeamMemberList, ContactForm } from '@/sanity/types';
+import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, AudioSamplePlayer, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList, EquipmentList, ClientList, TeamMemberList, ContactForm } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -42,6 +42,7 @@ export type CompanyLinksBlockType = CompanyLinksBlock & { _key: string };
 export type BlockListWithStatsBlock = BlockListWithStats & { _key: string };
 export type CheckListBlock = CheckList & { _key: string };
 export type ItemListBlock = ItemList & { _key: string };
+export type EquipmentListBlock = EquipmentList & { _key: string };
 export type ClientListBlock = ClientList & { _key: string };
 export type TeamMemberListBlock = TeamMemberList & { _key: string };
 export type ContactFormBlock = ContactForm & { _key: string };
@@ -72,6 +73,7 @@ export type NestedBlock =
   | BlockListWithStatsBlock
   | CheckListBlock
   | ItemListBlock
+  | EquipmentListBlock
   | ClientListBlock
   | TeamMemberListBlock
   | ContactFormBlock;
@@ -170,6 +172,10 @@ export const isCompanyLinksBlock = (block: NestedBlock): block is CompanyLinksBl
 
 export const isItemListBlock = (block: NestedBlock): block is ItemListBlock => {
   return block._type === 'itemList';
+};
+
+export const isEquipmentListBlock = (block: NestedBlock): block is EquipmentListBlock => {
+  return block._type === 'equipmentList';
 };
 
 export const isClientListBlock = (block: NestedBlock): block is ClientListBlock => {

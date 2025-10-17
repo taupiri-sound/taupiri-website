@@ -1,8 +1,9 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
-import type { GridLayoutBlock, RichTextBlock, CardBlock, ImageBlock as ImageBlockType, YouTubeVideoBlock, SpotifyWidgetBlock, BandcampWidgetBlock, AudioSamplePlayerBlock } from '@/types/blocks';
+import type { GridLayoutBlock, RichTextBlock, EquipmentListBlock, CardBlock, ImageBlock as ImageBlockType, YouTubeVideoBlock, SpotifyWidgetBlock, BandcampWidgetBlock, AudioSamplePlayerBlock } from '@/types/blocks';
 import Card from './Card';
 import RichText from './RichText';
+import EquipmentList from './EquipmentList';
 import ImageBlock from './Image';
 import YouTubeVideo from './YouTubeVideo';
 import SpotifyWidget from './SpotifyWidget';
@@ -44,7 +45,7 @@ const GridLayout = ({
 
   const itemClasses = getGridClasses(validColumns);
 
-  type GridContentItem = RichTextBlock | CardBlock | ImageBlockType | YouTubeVideoBlock | SpotifyWidgetBlock | BandcampWidgetBlock | AudioSamplePlayerBlock;
+  type GridContentItem = RichTextBlock | EquipmentListBlock | CardBlock | ImageBlockType | YouTubeVideoBlock | SpotifyWidgetBlock | BandcampWidgetBlock | AudioSamplePlayerBlock;
 
   const renderGridItem = (item: GridContentItem, idx: number) => {
     const key = item._key || idx;
@@ -61,6 +62,13 @@ const GridLayout = ({
         return (
           <div key={key} className={itemClasses}>
             <RichText {...item} {...baseProps} />
+          </div>
+        );
+
+      case 'equipmentList':
+        return (
+          <div key={key} className={itemClasses}>
+            <EquipmentList {...item} {...baseProps} />
           </div>
         );
 

@@ -132,6 +132,35 @@ export type ClientList = {
   placeholder?: string;
 };
 
+export type EquipmentList = {
+  _type: "equipmentList";
+  categories?: Array<{
+    name?: string;
+    icon?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      _type: "image";
+    };
+    items?: Array<{
+      name?: string;
+      isTemporarilyUnavailable?: boolean;
+      unavailableReason?: string;
+      _type: "equipmentItem";
+      _key: string;
+    }>;
+    _type: "equipmentCategory";
+    _key: string;
+  }>;
+};
+
 export type ItemList = {
   _type: "itemList";
   alignment?: "inherit" | "left" | "center" | "right";
@@ -379,6 +408,8 @@ export type TwoColumnLayout = {
     _key: string;
   } & CheckList | {
     _key: string;
+  } & EquipmentList | {
+    _key: string;
   } & ContactForm | {
     _key: string;
   } & Quote | {
@@ -415,6 +446,8 @@ export type TwoColumnLayout = {
   } & BlockListWithStats | {
     _key: string;
   } & CheckList | {
+    _key: string;
+  } & EquipmentList | {
     _key: string;
   } & ContactForm | {
     _key: string;
@@ -545,6 +578,8 @@ export type GridLayout = {
     _key: string;
   } & RichText | {
     _key: string;
+  } & EquipmentList | {
+    _key: string;
   } & Card | {
     _key: string;
   } & ImageBlock | {
@@ -611,6 +646,8 @@ export type SubSubSection = {
     _key: string;
   } & ItemList | {
     _key: string;
+  } & EquipmentList | {
+    _key: string;
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
@@ -665,6 +702,8 @@ export type SubSection = {
   } & CheckList | {
     _key: string;
   } & ItemList | {
+    _key: string;
+  } & EquipmentList | {
     _key: string;
   } & ClientList | {
     _key: string;
@@ -724,6 +763,8 @@ export type PageSection = {
     _key: string;
   } & ItemList | {
     _key: string;
+  } & EquipmentList | {
+    _key: string;
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
@@ -772,6 +813,8 @@ export type PageBuilder = Array<{
 } & CheckList | {
   _key: string;
 } & ItemList | {
+  _key: string;
+} & EquipmentList | {
   _key: string;
 } & ClientList | {
   _key: string;
@@ -880,6 +923,8 @@ export type PrivacyPolicy = {
     _key: string;
   } & ItemList | {
     _key: string;
+  } & EquipmentList | {
+    _key: string;
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
@@ -937,6 +982,8 @@ export type TermsAndConditions = {
   } & CheckList | {
     _key: string;
   } & ItemList | {
+    _key: string;
+  } & EquipmentList | {
     _key: string;
   } & ClientList | {
     _key: string;
@@ -1102,6 +1149,8 @@ export type BlogPost = {
     _key: string;
   } & ItemList | {
     _key: string;
+  } & EquipmentList | {
+    _key: string;
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
@@ -1200,6 +1249,8 @@ export type Page = {
   } & CheckList | {
     _key: string;
   } & ItemList | {
+    _key: string;
+  } & EquipmentList | {
     _key: string;
   } & ClientList | {
     _key: string;
@@ -1532,7 +1583,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ContactForm | TeamMemberList | ClientList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | TeamMember | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | ContactFormSettings | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ContactForm | TeamMemberList | ClientList | EquipmentList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | TeamMember | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | ContactFormSettings | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -2206,6 +2257,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -2242,6 +2295,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -2386,6 +2441,34 @@ export type PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -2395,6 +2478,8 @@ export type PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -2797,6 +2882,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -2833,6 +2920,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -2977,6 +3066,34 @@ export type PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -2986,6 +3103,8 @@ export type PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -3262,6 +3381,36 @@ export type PAGE_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -3917,6 +4066,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -3953,6 +4104,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -4097,6 +4250,34 @@ export type PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -4106,6 +4287,8 @@ export type PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -4508,6 +4691,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -4544,6 +4729,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -4688,6 +4875,34 @@ export type PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -4697,6 +4912,8 @@ export type PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -4792,6 +5009,36 @@ export type PAGE_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -5586,6 +5833,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -5622,6 +5871,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -5766,6 +6017,34 @@ export type PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -5775,6 +6054,8 @@ export type PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -6177,6 +6458,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -6213,6 +6496,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -6357,6 +6642,34 @@ export type PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -6366,6 +6679,8 @@ export type PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -6642,6 +6957,36 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -7284,6 +7629,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -7320,6 +7667,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -7464,6 +7813,34 @@ export type PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -7473,6 +7850,8 @@ export type PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -7875,6 +8254,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -7911,6 +8292,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -8055,6 +8438,34 @@ export type PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -8064,6 +8475,8 @@ export type PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -8157,6 +8570,36 @@ export type PAGE_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -8976,6 +9419,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -9012,6 +9457,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -9156,6 +9603,34 @@ export type PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -9165,6 +9640,8 @@ export type PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -9567,6 +10044,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -9603,6 +10082,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -9747,6 +10228,34 @@ export type PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -9756,6 +10265,8 @@ export type PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -10030,6 +10541,36 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -10367,6 +10908,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -10404,6 +10947,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -10422,6 +10967,35 @@ export type PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -10930,6 +11504,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -10966,6 +11542,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -11159,6 +11737,35 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -11493,6 +12100,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -11530,6 +12139,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -11548,6 +12159,34 @@ export type PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -12025,6 +12664,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -12061,6 +12702,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -12205,6 +12848,34 @@ export type PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -12214,6 +12885,8 @@ export type PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -12616,6 +13289,8 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -12652,6 +13327,8 @@ export type PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -12796,6 +13473,34 @@ export type PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -12805,6 +13510,8 @@ export type PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -13226,6 +13933,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -13262,6 +13971,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -13406,6 +14117,34 @@ export type PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -13415,6 +14154,8 @@ export type PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -13817,6 +14558,8 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -13853,6 +14596,8 @@ export type PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -13997,6 +14742,34 @@ export type PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -14006,6 +14779,8 @@ export type PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -14429,6 +15204,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -14465,6 +15242,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -14609,6 +15388,34 @@ export type PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -14618,6 +15425,8 @@ export type PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -15020,6 +15829,8 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -15056,6 +15867,8 @@ export type PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -15200,6 +16013,34 @@ export type PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -15209,6 +16050,8 @@ export type PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -15674,6 +16517,8 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -15710,6 +16555,8 @@ export type PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -15854,6 +16701,34 @@ export type PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -15863,6 +16738,8 @@ export type PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -16265,6 +17142,8 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -16301,6 +17180,8 @@ export type PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -16445,6 +17326,34 @@ export type PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -16454,6 +17363,8 @@ export type PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -17319,6 +18230,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -17355,6 +18268,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -17499,6 +18414,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -17508,6 +18451,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -17910,6 +18855,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -17946,6 +18893,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -18090,6 +19039,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -18099,6 +19076,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -18375,6 +19354,36 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -19030,6 +20039,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -19066,6 +20077,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -19210,6 +20223,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -19219,6 +20260,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -19621,6 +20664,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -19657,6 +20702,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -19801,6 +20848,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -19810,6 +20885,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -19905,6 +20982,36 @@ export type HOME_PAGE_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -20699,6 +21806,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -20735,6 +21844,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -20879,6 +21990,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -20888,6 +22027,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -21290,6 +22431,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -21326,6 +22469,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -21470,6 +22615,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -21479,6 +22652,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -21755,6 +22930,36 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -22397,6 +23602,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -22433,6 +23640,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -22577,6 +23786,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -22586,6 +23823,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -22988,6 +24227,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -23024,6 +24265,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -23168,6 +24411,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -23177,6 +24448,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -23270,6 +24543,36 @@ export type HOME_PAGE_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -24089,6 +25392,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -24125,6 +25430,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -24269,6 +25576,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -24278,6 +25613,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -24680,6 +26017,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -24716,6 +26055,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -24860,6 +26201,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -24869,6 +26238,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -25143,6 +26514,36 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -25480,6 +26881,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -25517,6 +26920,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -25535,6 +26940,35 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -26043,6 +27477,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -26079,6 +27515,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -26272,6 +27710,35 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -26606,6 +28073,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -26643,6 +28112,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -26661,6 +28132,34 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -27138,6 +28637,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -27174,6 +28675,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -27318,6 +28821,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -27327,6 +28858,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -27729,6 +29262,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -27765,6 +29300,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -27909,6 +29446,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -27918,6 +29483,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -28339,6 +29906,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -28375,6 +29944,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -28519,6 +30090,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -28528,6 +30127,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -28930,6 +30531,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -28966,6 +30569,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -29110,6 +30715,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -29119,6 +30752,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -29542,6 +31177,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -29578,6 +31215,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -29722,6 +31361,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -29731,6 +31398,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -30133,6 +31802,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -30169,6 +31840,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -30313,6 +31986,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -30322,6 +32023,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -30787,6 +32490,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -30823,6 +32528,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -30967,6 +32674,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -30976,6 +32711,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -31378,6 +33115,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -31414,6 +33153,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -31558,6 +33299,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -31567,6 +33336,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -32490,6 +34261,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -32526,6 +34299,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -32670,6 +34445,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -32679,6 +34482,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -33081,6 +34886,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -33117,6 +34924,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -33261,6 +35070,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -33270,6 +35107,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -33546,6 +35385,36 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -34201,6 +36070,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -34237,6 +36108,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -34381,6 +36254,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -34390,6 +36291,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -34792,6 +36695,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -34828,6 +36733,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -34972,6 +36879,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -34981,6 +36916,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -35076,6 +37013,36 @@ export type HOME_PAGE_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -35870,6 +37837,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -35906,6 +37875,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -36050,6 +38021,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -36059,6 +38058,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -36461,6 +38462,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -36497,6 +38500,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -36641,6 +38646,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -36650,6 +38683,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -36926,6 +38961,36 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -37568,6 +39633,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -37604,6 +39671,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -37748,6 +39817,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -37757,6 +39854,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -38159,6 +40258,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -38195,6 +40296,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -38339,6 +40442,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -38348,6 +40479,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -38441,6 +40574,36 @@ export type HOME_PAGE_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -39260,6 +41423,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -39296,6 +41461,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -39440,6 +41607,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -39449,6 +41644,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -39851,6 +42048,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -39887,6 +42086,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -40031,6 +42232,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -40040,6 +42269,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -40314,6 +42545,36 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -40651,6 +42912,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -40688,6 +42951,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -40706,6 +42971,35 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -41214,6 +43508,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -41250,6 +43546,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -41443,6 +43741,35 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -41777,6 +44104,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -41814,6 +44143,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -41832,6 +44163,34 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -42309,6 +44668,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -42345,6 +44706,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -42489,6 +44852,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -42498,6 +44889,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -42900,6 +45293,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -42936,6 +45331,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -43080,6 +45477,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -43089,6 +45514,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -43510,6 +45937,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -43546,6 +45975,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -43690,6 +46121,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -43699,6 +46158,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -44101,6 +46562,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -44137,6 +46600,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -44281,6 +46746,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -44290,6 +46783,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -44713,6 +47208,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -44749,6 +47246,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -44893,6 +47392,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -44902,6 +47429,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -45304,6 +47833,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -45340,6 +47871,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -45484,6 +48017,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -45493,6 +48054,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -45958,6 +48521,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -45994,6 +48559,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -46138,6 +48705,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -46147,6 +48742,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -46549,6 +49146,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -46585,6 +49184,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -46729,6 +49330,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -46738,6 +49367,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -47507,6 +50138,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -47543,6 +50176,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -47687,6 +50322,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -47696,6 +50359,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -48098,6 +50763,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -48134,6 +50801,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -48278,6 +50947,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -48287,6 +50984,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -48563,6 +51262,36 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -49218,6 +51947,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -49254,6 +51985,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -49398,6 +52131,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -49407,6 +52168,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -49809,6 +52572,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -49845,6 +52610,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -49989,6 +52756,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -49998,6 +52793,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -50093,6 +52890,36 @@ export type HOME_PAGE_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -50887,6 +53714,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -50923,6 +53752,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -51067,6 +53898,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -51076,6 +53935,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -51478,6 +54339,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -51514,6 +54377,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -51658,6 +54523,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -51667,6 +54560,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -51943,6 +54838,36 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -52585,6 +55510,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -52621,6 +55548,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -52765,6 +55694,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -52774,6 +55731,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -53176,6 +56135,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -53212,6 +56173,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -53356,6 +56319,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -53365,6 +56356,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -53458,6 +56451,36 @@ export type HOME_PAGE_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -54277,6 +57300,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -54313,6 +57338,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -54457,6 +57484,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -54466,6 +57521,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -54868,6 +57925,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -54904,6 +57963,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -55048,6 +58109,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -55057,6 +58146,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -55331,6 +58422,36 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -55668,6 +58789,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -55705,6 +58828,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -55723,6 +58848,35 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -56231,6 +59385,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -56267,6 +59423,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -56460,6 +59618,35 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -56794,6 +59981,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -56831,6 +60020,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -56849,6 +60040,34 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -57326,6 +60545,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -57362,6 +60583,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -57506,6 +60729,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -57515,6 +60766,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -57917,6 +61170,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -57953,6 +61208,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -58097,6 +61354,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -58106,6 +61391,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -58527,6 +61814,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -58563,6 +61852,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -58707,6 +61998,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -58716,6 +62035,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -59118,6 +62439,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -59154,6 +62477,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -59298,6 +62623,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -59307,6 +62660,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -59730,6 +63085,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -59766,6 +63123,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -59910,6 +63269,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -59919,6 +63306,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -60321,6 +63710,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -60357,6 +63748,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -60501,6 +63894,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -60510,6 +63931,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -60975,6 +64398,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -61011,6 +64436,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -61155,6 +64582,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -61164,6 +64619,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -61566,6 +65023,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -61602,6 +65061,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -61746,6 +65207,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -61755,6 +65244,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -62524,6 +66015,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -62560,6 +66053,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -62704,6 +66199,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -62713,6 +66236,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -63115,6 +66640,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -63151,6 +66678,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -63295,6 +66824,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -63304,6 +66861,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -63580,6 +67139,36 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -64235,6 +67824,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -64271,6 +67862,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -64415,6 +68008,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -64424,6 +68045,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -64826,6 +68449,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -64862,6 +68487,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -65006,6 +68633,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -65015,6 +68670,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -65110,6 +68767,36 @@ export type HOME_PAGE_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -65904,6 +69591,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -65940,6 +69629,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -66084,6 +69775,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -66093,6 +69812,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -66495,6 +70216,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -66531,6 +70254,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -66675,6 +70400,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -66684,6 +70437,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -66960,6 +70715,36 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -67602,6 +71387,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -67638,6 +71425,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -67782,6 +71571,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -67791,6 +71608,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -68193,6 +72012,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -68229,6 +72050,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -68373,6 +72196,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -68382,6 +72233,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -68475,6 +72328,36 @@ export type HOME_PAGE_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -69294,6 +73177,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -69330,6 +73215,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -69474,6 +73361,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -69483,6 +73398,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -69885,6 +73802,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -69921,6 +73840,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -70065,6 +73986,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -70074,6 +74023,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -70348,6 +74299,36 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -70685,6 +74666,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -70722,6 +74705,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -70740,6 +74725,35 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -71248,6 +75262,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -71284,6 +75300,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -71477,6 +75495,35 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -71811,6 +75858,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -71848,6 +75897,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -71866,6 +75917,34 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -72343,6 +76422,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -72379,6 +76460,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -72523,6 +76606,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -72532,6 +76643,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -72934,6 +77047,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -72970,6 +77085,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -73114,6 +77231,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -73123,6 +77268,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -73544,6 +77691,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -73580,6 +77729,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -73724,6 +77875,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -73733,6 +77912,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -74135,6 +78316,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -74171,6 +78354,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -74315,6 +78500,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -74324,6 +78537,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -74747,6 +78962,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -74783,6 +79000,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -74927,6 +79146,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -74936,6 +79183,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -75338,6 +79587,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -75374,6 +79625,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -75518,6 +79771,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -75527,6 +79808,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -75992,6 +80275,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -76028,6 +80313,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -76172,6 +80459,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -76181,6 +80496,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -76583,6 +80900,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -76619,6 +80938,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -76763,6 +81084,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -76772,6 +81121,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -77597,6 +81948,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -77633,6 +81986,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -77777,6 +82132,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -77786,6 +82169,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -78188,6 +82573,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -78224,6 +82611,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -78368,6 +82757,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -78377,6 +82794,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -78653,6 +83072,36 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -79308,6 +83757,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -79344,6 +83795,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -79488,6 +83941,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -79497,6 +83978,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -79899,6 +84382,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -79935,6 +84420,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -80079,6 +84566,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -80088,6 +84603,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -80183,6 +84700,36 @@ export type HOME_PAGE_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -80977,6 +85524,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -81013,6 +85562,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -81157,6 +85708,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -81166,6 +85745,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -81568,6 +86149,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -81604,6 +86187,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -81748,6 +86333,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -81757,6 +86370,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -82033,6 +86648,36 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -82675,6 +87320,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -82711,6 +87358,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -82855,6 +87504,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -82864,6 +87541,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -83266,6 +87945,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -83302,6 +87983,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -83446,6 +88129,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -83455,6 +88166,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -83548,6 +88261,36 @@ export type HOME_PAGE_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -84367,6 +89110,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -84403,6 +89148,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -84547,6 +89294,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -84556,6 +89331,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -84958,6 +89735,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -84994,6 +89773,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -85138,6 +89919,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -85147,6 +89956,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -85421,6 +90232,36 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -85758,6 +90599,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -85795,6 +90638,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -85813,6 +90658,35 @@ export type HOME_PAGE_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -86321,6 +91195,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -86357,6 +91233,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -86550,6 +91428,35 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -86884,6 +91791,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -86921,6 +91830,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -86939,6 +91850,34 @@ export type HOME_PAGE_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -87416,6 +92355,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -87452,6 +92393,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -87596,6 +92539,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -87605,6 +92576,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -88007,6 +92980,8 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -88043,6 +93018,8 @@ export type HOME_PAGE_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -88187,6 +93164,34 @@ export type HOME_PAGE_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -88196,6 +93201,8 @@ export type HOME_PAGE_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -88617,6 +93624,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -88653,6 +93662,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -88797,6 +93808,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -88806,6 +93845,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -89208,6 +94249,8 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -89244,6 +94287,8 @@ export type HOME_PAGE_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -89388,6 +94433,34 @@ export type HOME_PAGE_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -89397,6 +94470,8 @@ export type HOME_PAGE_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -89820,6 +94895,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -89856,6 +94933,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -90000,6 +95079,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -90009,6 +95116,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -90411,6 +95520,8 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -90447,6 +95558,8 @@ export type HOME_PAGE_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -90591,6 +95704,34 @@ export type HOME_PAGE_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -90600,6 +95741,8 @@ export type HOME_PAGE_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -91065,6 +96208,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -91101,6 +96246,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -91245,6 +96392,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -91254,6 +96429,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -91656,6 +96833,8 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -91692,6 +96871,8 @@ export type HOME_PAGE_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -91836,6 +97017,34 @@ export type HOME_PAGE_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -91845,6 +97054,8 @@ export type HOME_PAGE_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -93687,6 +98898,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -93723,6 +98936,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -93867,6 +99082,34 @@ export type BLOG_POST_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -93876,6 +99119,8 @@ export type BLOG_POST_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -94278,6 +99523,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -94314,6 +99561,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -94458,6 +99707,34 @@ export type BLOG_POST_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -94467,6 +99744,8 @@ export type BLOG_POST_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -94743,6 +100022,36 @@ export type BLOG_POST_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -95398,6 +100707,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -95434,6 +100745,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -95578,6 +100891,34 @@ export type BLOG_POST_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -95587,6 +100928,8 @@ export type BLOG_POST_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -95989,6 +101332,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -96025,6 +101370,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -96169,6 +101516,34 @@ export type BLOG_POST_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -96178,6 +101553,8 @@ export type BLOG_POST_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -96273,6 +101650,36 @@ export type BLOG_POST_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -97067,6 +102474,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -97103,6 +102512,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -97247,6 +102658,34 @@ export type BLOG_POST_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -97256,6 +102695,8 @@ export type BLOG_POST_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -97658,6 +103099,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -97694,6 +103137,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -97838,6 +103283,34 @@ export type BLOG_POST_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -97847,6 +103320,8 @@ export type BLOG_POST_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -98123,6 +103598,36 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -98765,6 +104270,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -98801,6 +104308,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -98945,6 +104454,34 @@ export type BLOG_POST_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -98954,6 +104491,8 @@ export type BLOG_POST_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -99356,6 +104895,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -99392,6 +104933,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -99536,6 +105079,34 @@ export type BLOG_POST_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -99545,6 +105116,8 @@ export type BLOG_POST_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -99638,6 +105211,36 @@ export type BLOG_POST_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -100457,6 +106060,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -100493,6 +106098,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -100637,6 +106244,34 @@ export type BLOG_POST_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -100646,6 +106281,8 @@ export type BLOG_POST_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -101048,6 +106685,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -101084,6 +106723,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -101228,6 +106869,34 @@ export type BLOG_POST_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -101237,6 +106906,8 @@ export type BLOG_POST_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -101511,6 +107182,36 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -101848,6 +107549,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -101885,6 +107588,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -101903,6 +107608,35 @@ export type BLOG_POST_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -102411,6 +108145,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -102447,6 +108183,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -102640,6 +108378,35 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -102974,6 +108741,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -103011,6 +108780,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -103029,6 +108800,34 @@ export type BLOG_POST_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -103506,6 +109305,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -103542,6 +109343,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -103686,6 +109489,34 @@ export type BLOG_POST_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -103695,6 +109526,8 @@ export type BLOG_POST_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -104097,6 +109930,8 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -104133,6 +109968,8 @@ export type BLOG_POST_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -104277,6 +110114,34 @@ export type BLOG_POST_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -104286,6 +110151,8 @@ export type BLOG_POST_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -104707,6 +110574,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -104743,6 +110612,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -104887,6 +110758,34 @@ export type BLOG_POST_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -104896,6 +110795,8 @@ export type BLOG_POST_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -105298,6 +111199,8 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -105334,6 +111237,8 @@ export type BLOG_POST_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -105478,6 +111383,34 @@ export type BLOG_POST_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -105487,6 +111420,8 @@ export type BLOG_POST_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -105910,6 +111845,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -105946,6 +111883,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -106090,6 +112029,34 @@ export type BLOG_POST_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -106099,6 +112066,8 @@ export type BLOG_POST_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -106501,6 +112470,8 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -106537,6 +112508,8 @@ export type BLOG_POST_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -106681,6 +112654,34 @@ export type BLOG_POST_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -106690,6 +112691,8 @@ export type BLOG_POST_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -107155,6 +113158,8 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -107191,6 +113196,8 @@ export type BLOG_POST_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -107335,6 +113342,34 @@ export type BLOG_POST_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -107344,6 +113379,8 @@ export type BLOG_POST_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -107746,6 +113783,8 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -107782,6 +113821,8 @@ export type BLOG_POST_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -107926,6 +113967,34 @@ export type BLOG_POST_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -107935,6 +114004,8 @@ export type BLOG_POST_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -108831,6 +114902,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -108867,6 +114940,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -109011,6 +115086,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -109020,6 +115123,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -109422,6 +115527,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -109458,6 +115565,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -109602,6 +115711,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -109611,6 +115748,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -109887,6 +116026,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -110542,6 +116711,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -110578,6 +116749,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -110722,6 +116895,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -110731,6 +116932,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -111133,6 +117336,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -111169,6 +117374,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -111313,6 +117520,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -111322,6 +117557,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -111417,6 +117654,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -112211,6 +118478,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -112247,6 +118516,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -112391,6 +118662,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -112400,6 +118699,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -112802,6 +119103,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -112838,6 +119141,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -112982,6 +119287,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -112991,6 +119324,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -113267,6 +119602,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -113909,6 +120274,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -113945,6 +120312,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -114089,6 +120458,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -114098,6 +120495,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -114500,6 +120899,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -114536,6 +120937,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -114680,6 +121083,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -114689,6 +121120,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -114782,6 +121215,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -115601,6 +122064,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -115637,6 +122102,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -115781,6 +122248,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -115790,6 +122285,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -116192,6 +122689,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -116228,6 +122727,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -116372,6 +122873,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -116381,6 +122910,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -116655,6 +123186,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -116992,6 +123553,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -117029,6 +123592,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -117047,6 +123612,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -117555,6 +124149,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -117591,6 +124187,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -117784,6 +124382,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -118118,6 +124745,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -118155,6 +124784,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -118173,6 +124804,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -118650,6 +125309,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -118686,6 +125347,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -118830,6 +125493,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -118839,6 +125530,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -119241,6 +125934,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -119277,6 +125972,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -119421,6 +126118,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -119430,6 +126155,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -119851,6 +126578,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -119887,6 +126616,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -120031,6 +126762,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -120040,6 +126799,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -120442,6 +127203,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -120478,6 +127241,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -120622,6 +127387,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -120631,6 +127424,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -121054,6 +127849,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -121090,6 +127887,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -121234,6 +128033,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -121243,6 +128070,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -121645,6 +128474,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -121681,6 +128512,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -121825,6 +128658,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -121834,6 +128695,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -122299,6 +129162,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -122335,6 +129200,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -122479,6 +129346,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -122488,6 +129383,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -122890,6 +129787,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -122926,6 +129825,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -123070,6 +129971,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -123079,6 +130008,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -123882,6 +130813,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -123918,6 +130851,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -124062,6 +130997,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -124071,6 +131034,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -124473,6 +131438,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -124509,6 +131476,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -124653,6 +131622,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -124662,6 +131659,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -124938,6 +131937,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -125593,6 +132622,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -125629,6 +132660,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -125773,6 +132806,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -125782,6 +132843,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -126184,6 +133247,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -126220,6 +133285,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -126364,6 +133431,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -126373,6 +133468,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -126468,6 +133565,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -127262,6 +134389,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -127298,6 +134427,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -127442,6 +134573,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -127451,6 +134610,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -127853,6 +135014,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -127889,6 +135052,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -128033,6 +135198,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -128042,6 +135235,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -128318,6 +135513,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -128960,6 +136185,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -128996,6 +136223,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -129140,6 +136369,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -129149,6 +136406,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -129551,6 +136810,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -129587,6 +136848,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -129731,6 +136994,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -129740,6 +137031,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -129833,6 +137126,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -130652,6 +137975,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -130688,6 +138013,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -130832,6 +138159,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -130841,6 +138196,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -131243,6 +138600,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -131279,6 +138638,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -131423,6 +138784,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -131432,6 +138821,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -131706,6 +139097,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -132043,6 +139464,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -132080,6 +139503,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -132098,6 +139523,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -132606,6 +140060,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -132642,6 +140098,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -132835,6 +140293,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -133169,6 +140656,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -133206,6 +140695,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -133224,6 +140715,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -133701,6 +141220,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -133737,6 +141258,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -133881,6 +141404,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -133890,6 +141441,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -134292,6 +141845,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -134328,6 +141883,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -134472,6 +142029,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -134481,6 +142066,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -134902,6 +142489,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -134938,6 +142527,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -135082,6 +142673,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -135091,6 +142710,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -135493,6 +143114,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -135529,6 +143152,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -135673,6 +143298,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -135682,6 +143335,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -136105,6 +143760,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -136141,6 +143798,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -136285,6 +143944,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -136294,6 +143981,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -136696,6 +144385,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -136732,6 +144423,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -136876,6 +144569,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -136885,6 +144606,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -137350,6 +145073,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -137386,6 +145111,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -137530,6 +145257,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -137539,6 +145294,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -137941,6 +145698,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -137977,6 +145736,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -138121,6 +145882,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -138130,6 +145919,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -138893,6 +146684,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -138929,6 +146722,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -139073,6 +146868,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -139082,6 +146905,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -139484,6 +147309,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -139520,6 +147347,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -139664,6 +147493,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -139673,6 +147530,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -139949,6 +147808,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -140604,6 +148493,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -140640,6 +148531,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -140784,6 +148677,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -140793,6 +148714,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -141195,6 +149118,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -141231,6 +149156,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -141375,6 +149302,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -141384,6 +149339,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -141479,6 +149436,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -142273,6 +150260,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -142309,6 +150298,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -142453,6 +150444,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -142462,6 +150481,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -142864,6 +150885,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -142900,6 +150923,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -143044,6 +151069,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -143053,6 +151106,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -143329,6 +151384,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -143971,6 +152056,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -144007,6 +152094,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -144151,6 +152240,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -144160,6 +152277,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -144562,6 +152681,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -144598,6 +152719,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -144742,6 +152865,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -144751,6 +152902,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -144844,6 +152997,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -145663,6 +153846,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -145699,6 +153884,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -145843,6 +154030,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -145852,6 +154067,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -146254,6 +154471,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -146290,6 +154509,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -146434,6 +154655,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -146443,6 +154692,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -146717,6 +154968,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -147054,6 +155335,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -147091,6 +155374,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -147109,6 +155394,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -147617,6 +155931,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -147653,6 +155969,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -147846,6 +156164,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -148180,6 +156527,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -148217,6 +156566,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -148235,6 +156586,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -148712,6 +157091,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -148748,6 +157129,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -148892,6 +157275,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -148901,6 +157312,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -149303,6 +157716,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -149339,6 +157754,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -149483,6 +157900,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -149492,6 +157937,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -149913,6 +158360,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -149949,6 +158398,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -150093,6 +158544,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -150102,6 +158581,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -150504,6 +158985,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -150540,6 +159023,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -150684,6 +159169,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -150693,6 +159206,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -151116,6 +159631,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -151152,6 +159669,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -151296,6 +159815,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -151305,6 +159852,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -151707,6 +160256,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -151743,6 +160294,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -151887,6 +160440,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -151896,6 +160477,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -152361,6 +160944,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -152397,6 +160982,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -152541,6 +161128,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -152550,6 +161165,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -152952,6 +161569,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -152988,6 +161607,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -153132,6 +161753,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -153141,6 +161790,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -153904,6 +162555,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -153940,6 +162593,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -154084,6 +162739,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -154093,6 +162776,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -154495,6 +163180,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -154531,6 +163218,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -154675,6 +163364,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -154684,6 +163401,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -154960,6 +163679,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -155615,6 +164364,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -155651,6 +164402,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -155795,6 +164548,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -155804,6 +164585,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -156206,6 +164989,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -156242,6 +165027,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -156386,6 +165173,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -156395,6 +165210,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -156490,6 +165307,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -157284,6 +166131,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -157320,6 +166169,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -157464,6 +166315,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -157473,6 +166352,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -157875,6 +166756,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -157911,6 +166794,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -158055,6 +166940,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -158064,6 +166977,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -158340,6 +167255,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -158982,6 +167927,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -159018,6 +167965,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -159162,6 +168111,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -159171,6 +168148,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -159573,6 +168552,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -159609,6 +168590,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -159753,6 +168736,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -159762,6 +168773,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -159855,6 +168868,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -160674,6 +169717,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -160710,6 +169755,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -160854,6 +169901,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -160863,6 +169938,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -161265,6 +170342,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -161301,6 +170380,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -161445,6 +170526,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -161454,6 +170563,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -161728,6 +170839,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -162065,6 +171206,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -162102,6 +171245,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -162120,6 +171265,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -162628,6 +171802,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -162664,6 +171840,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -162857,6 +172035,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -163191,6 +172398,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -163228,6 +172437,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -163246,6 +172457,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -163723,6 +172962,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -163759,6 +173000,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -163903,6 +173146,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -163912,6 +173183,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -164314,6 +173587,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -164350,6 +173625,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -164494,6 +173771,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -164503,6 +173808,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -164924,6 +174231,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -164960,6 +174269,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -165104,6 +174415,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -165113,6 +174452,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -165515,6 +174856,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -165551,6 +174894,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -165695,6 +175040,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -165704,6 +175077,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -166127,6 +175502,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -166163,6 +175540,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -166307,6 +175686,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -166316,6 +175723,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -166718,6 +176127,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -166754,6 +176165,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -166898,6 +176311,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -166907,6 +176348,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -167372,6 +176815,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -167408,6 +176853,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -167552,6 +176999,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -167561,6 +177036,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -167963,6 +177440,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -167999,6 +177478,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -168143,6 +177624,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -168152,6 +177661,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -168947,6 +178458,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -168983,6 +178496,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -169127,6 +178642,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -169136,6 +178679,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -169538,6 +179083,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -169574,6 +179121,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -169718,6 +179267,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -169727,6 +179304,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -170003,6 +179582,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -170658,6 +180267,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -170694,6 +180305,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -170838,6 +180451,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -170847,6 +180488,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -171249,6 +180892,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -171285,6 +180930,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -171429,6 +181076,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -171438,6 +181113,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -171533,6 +181210,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -172327,6 +182034,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -172363,6 +182072,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -172507,6 +182218,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -172516,6 +182255,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -172918,6 +182659,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -172954,6 +182697,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -173098,6 +182843,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -173107,6 +182880,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -173383,6 +183158,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -174025,6 +183830,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -174061,6 +183868,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -174205,6 +184014,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -174214,6 +184051,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -174616,6 +184455,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -174652,6 +184493,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -174796,6 +184639,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -174805,6 +184676,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -174898,6 +184771,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -175717,6 +185620,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -175753,6 +185658,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -175897,6 +185804,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -175906,6 +185841,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -176308,6 +186245,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -176344,6 +186283,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -176488,6 +186429,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -176497,6 +186466,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -176771,6 +186742,36 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -177108,6 +187109,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -177145,6 +187148,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -177163,6 +187168,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -177671,6 +187705,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -177707,6 +187743,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -177900,6 +187938,35 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -178234,6 +188301,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -178271,6 +188340,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -178289,6 +188360,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -178766,6 +188865,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -178802,6 +188903,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -178946,6 +189049,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -178955,6 +189086,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -179357,6 +189490,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -179393,6 +189528,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -179537,6 +189674,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -179546,6 +189711,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -179967,6 +190134,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -180003,6 +190172,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -180147,6 +190318,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -180156,6 +190355,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -180558,6 +190759,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -180594,6 +190797,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -180738,6 +190943,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -180747,6 +190980,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -181170,6 +191405,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -181206,6 +191443,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -181350,6 +191589,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -181359,6 +191626,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -181761,6 +192030,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -181797,6 +192068,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -181941,6 +192214,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -181950,6 +192251,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -182415,6 +192718,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -182451,6 +192756,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -182595,6 +192902,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -182604,6 +192939,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -183006,6 +193343,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -183042,6 +193381,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -183186,6 +193527,34 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -183195,6 +193564,8 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -183977,6 +194348,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -184013,6 +194386,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -184157,6 +194532,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -184166,6 +194569,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -184568,6 +194973,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -184604,6 +195011,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -184748,6 +195157,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -184757,6 +195194,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -185033,6 +195472,36 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -185688,6 +196157,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -185724,6 +196195,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -185868,6 +196341,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -185877,6 +196378,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -186279,6 +196782,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -186315,6 +196820,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -186459,6 +196966,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -186468,6 +197003,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -186563,6 +197100,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -187357,6 +197924,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -187393,6 +197962,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -187537,6 +198108,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -187546,6 +198145,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -187948,6 +198549,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -187984,6 +198587,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -188128,6 +198733,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -188137,6 +198770,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -188413,6 +199048,36 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -189055,6 +199720,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -189091,6 +199758,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -189235,6 +199904,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -189244,6 +199941,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -189646,6 +200345,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -189682,6 +200383,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -189826,6 +200529,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -189835,6 +200566,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -189928,6 +200661,36 @@ export type PRIVACY_POLICY_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -190747,6 +201510,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -190783,6 +201548,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -190927,6 +201694,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -190936,6 +201731,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -191338,6 +202135,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -191374,6 +202173,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -191518,6 +202319,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -191527,6 +202356,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -191801,6 +202632,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -192138,6 +202999,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -192175,6 +203038,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -192193,6 +203058,35 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -192701,6 +203595,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -192737,6 +203633,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -192930,6 +203828,35 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -193264,6 +204191,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -193301,6 +204230,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -193319,6 +204250,34 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -193796,6 +204755,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -193832,6 +204793,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -193976,6 +204939,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -193985,6 +204976,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -194387,6 +205380,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -194423,6 +205418,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -194567,6 +205564,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -194576,6 +205601,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -194997,6 +206024,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -195033,6 +206062,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -195177,6 +206208,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -195186,6 +206245,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -195588,6 +206649,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -195624,6 +206687,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -195768,6 +206833,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -195777,6 +206870,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -196200,6 +207295,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -196236,6 +207333,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -196380,6 +207479,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -196389,6 +207516,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -196791,6 +207920,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -196827,6 +207958,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -196971,6 +208104,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -196980,6 +208141,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -197445,6 +208608,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -197481,6 +208646,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -197625,6 +208792,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -197634,6 +208829,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -198036,6 +209233,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -198072,6 +209271,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -198216,6 +209417,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -198225,6 +209454,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -199028,6 +210259,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -199064,6 +210297,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -199208,6 +210443,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -199217,6 +210480,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -199619,6 +210884,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -199655,6 +210922,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -199799,6 +211068,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -199808,6 +211105,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -200084,6 +211383,36 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -200739,6 +212068,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -200775,6 +212106,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -200919,6 +212252,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -200928,6 +212289,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -201330,6 +212693,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -201366,6 +212731,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -201510,6 +212877,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -201519,6 +212914,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -201614,6 +213011,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -202408,6 +213835,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -202444,6 +213873,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -202588,6 +214019,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -202597,6 +214056,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -202999,6 +214460,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -203035,6 +214498,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -203179,6 +214644,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -203188,6 +214681,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -203464,6 +214959,36 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -204106,6 +215631,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -204142,6 +215669,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -204286,6 +215815,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -204295,6 +215852,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -204697,6 +216256,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -204733,6 +216294,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -204877,6 +216440,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -204886,6 +216477,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -204979,6 +216572,36 @@ export type PRIVACY_POLICY_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -205798,6 +217421,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -205834,6 +217459,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -205978,6 +217605,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -205987,6 +217642,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -206389,6 +218046,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -206425,6 +218084,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -206569,6 +218230,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -206578,6 +218267,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -206852,6 +218543,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -207189,6 +218910,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -207226,6 +218949,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -207244,6 +218969,35 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -207752,6 +219506,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -207788,6 +219544,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -207981,6 +219739,35 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -208315,6 +220102,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -208352,6 +220141,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -208370,6 +220161,34 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -208847,6 +220666,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -208883,6 +220704,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -209027,6 +220850,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -209036,6 +220887,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -209438,6 +221291,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -209474,6 +221329,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -209618,6 +221475,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -209627,6 +221512,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -210048,6 +221935,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -210084,6 +221973,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -210228,6 +222119,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -210237,6 +222156,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -210639,6 +222560,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -210675,6 +222598,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -210819,6 +222744,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -210828,6 +222781,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -211251,6 +223206,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -211287,6 +223244,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -211431,6 +223390,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -211440,6 +223427,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -211842,6 +223831,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -211878,6 +223869,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -212022,6 +224015,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -212031,6 +224052,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -212496,6 +224519,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -212532,6 +224557,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -212676,6 +224703,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -212685,6 +224740,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -213087,6 +225144,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -213123,6 +225182,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -213267,6 +225328,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -213276,6 +225365,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -214039,6 +226130,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -214075,6 +226168,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -214219,6 +226314,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -214228,6 +226351,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -214630,6 +226755,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -214666,6 +226793,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -214810,6 +226939,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -214819,6 +226976,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -215095,6 +227254,36 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -215750,6 +227939,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -215786,6 +227977,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -215930,6 +228123,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -215939,6 +228160,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -216341,6 +228564,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -216377,6 +228602,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -216521,6 +228748,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -216530,6 +228785,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -216625,6 +228882,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -217419,6 +229706,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -217455,6 +229744,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -217599,6 +229890,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -217608,6 +229927,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -218010,6 +230331,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -218046,6 +230369,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -218190,6 +230515,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -218199,6 +230552,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -218475,6 +230830,36 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -219117,6 +231502,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -219153,6 +231540,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -219297,6 +231686,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -219306,6 +231723,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -219708,6 +232127,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -219744,6 +232165,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -219888,6 +232311,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -219897,6 +232348,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -219990,6 +232443,36 @@ export type PRIVACY_POLICY_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -220809,6 +233292,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -220845,6 +233330,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -220989,6 +233476,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -220998,6 +233513,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -221400,6 +233917,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -221436,6 +233955,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -221580,6 +234101,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -221589,6 +234138,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -221863,6 +234414,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -222200,6 +234781,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -222237,6 +234820,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -222255,6 +234840,35 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -222763,6 +235377,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -222799,6 +235415,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -222992,6 +235610,35 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -223326,6 +235973,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -223363,6 +236012,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -223381,6 +236032,34 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -223858,6 +236537,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -223894,6 +236575,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -224038,6 +236721,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -224047,6 +236758,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -224449,6 +237162,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -224485,6 +237200,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -224629,6 +237346,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -224638,6 +237383,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -225059,6 +237806,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -225095,6 +237844,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -225239,6 +237990,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -225248,6 +238027,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -225650,6 +238431,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -225686,6 +238469,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -225830,6 +238615,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -225839,6 +238652,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -226262,6 +239077,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -226298,6 +239115,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -226442,6 +239261,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -226451,6 +239298,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -226853,6 +239702,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -226889,6 +239740,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -227033,6 +239886,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -227042,6 +239923,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -227507,6 +240390,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -227543,6 +240428,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -227687,6 +240574,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -227696,6 +240611,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -228098,6 +241015,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -228134,6 +241053,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -228278,6 +241199,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -228287,6 +241236,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -229050,6 +242001,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -229086,6 +242039,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -229230,6 +242185,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -229239,6 +242222,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -229641,6 +242626,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -229677,6 +242664,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -229821,6 +242810,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -229830,6 +242847,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -230106,6 +243125,36 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -230761,6 +243810,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -230797,6 +243848,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -230941,6 +243994,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -230950,6 +244031,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -231352,6 +244435,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -231388,6 +244473,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -231532,6 +244619,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -231541,6 +244656,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -231636,6 +244753,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -232430,6 +245577,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -232466,6 +245615,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -232610,6 +245761,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -232619,6 +245798,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -233021,6 +246202,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -233057,6 +246240,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -233201,6 +246386,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -233210,6 +246423,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -233486,6 +246701,36 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -234128,6 +247373,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -234164,6 +247411,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -234308,6 +247557,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -234317,6 +247594,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -234719,6 +247998,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -234755,6 +248036,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -234899,6 +248182,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -234908,6 +248219,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -235001,6 +248314,36 @@ export type PRIVACY_POLICY_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -235820,6 +249163,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -235856,6 +249201,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -236000,6 +249347,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -236009,6 +249384,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -236411,6 +249788,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -236447,6 +249826,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -236591,6 +249972,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -236600,6 +250009,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -236874,6 +250285,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -237211,6 +250652,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -237248,6 +250691,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -237266,6 +250711,35 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -237774,6 +251248,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -237810,6 +251286,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -238003,6 +251481,35 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -238337,6 +251844,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -238374,6 +251883,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -238392,6 +251903,34 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -238869,6 +252408,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -238905,6 +252446,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -239049,6 +252592,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -239058,6 +252629,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -239460,6 +253033,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -239496,6 +253071,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -239640,6 +253217,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -239649,6 +253254,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -240070,6 +253677,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -240106,6 +253715,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -240250,6 +253861,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -240259,6 +253898,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -240661,6 +254302,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -240697,6 +254340,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -240841,6 +254486,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -240850,6 +254523,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -241273,6 +254948,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -241309,6 +254986,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -241453,6 +255132,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -241462,6 +255169,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -241864,6 +255573,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -241900,6 +255611,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -242044,6 +255757,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -242053,6 +255794,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -242518,6 +256261,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -242554,6 +256299,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -242698,6 +256445,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -242707,6 +256482,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -243109,6 +256886,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -243145,6 +256924,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -243289,6 +257070,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -243298,6 +257107,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -244093,6 +257904,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -244129,6 +257942,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -244273,6 +258088,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -244282,6 +258125,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -244684,6 +258529,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -244720,6 +258567,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -244864,6 +258713,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -244873,6 +258750,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -245149,6 +259028,36 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "divider";
     style?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "equipmentList";
+    categories?: Array<{
+      name?: string;
+      icon?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      items?: Array<{
+        name?: string;
+        isTemporarilyUnavailable?: boolean;
+        unavailableReason?: string;
+        _type: "equipmentItem";
+        _key: string;
+      }>;
+      _type: "equipmentCategory";
+      _key: string;
+    }>;
     image: null;
     content: null;
   } | {
@@ -245804,6 +259713,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -245840,6 +259751,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -245984,6 +259897,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -245993,6 +259934,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -246395,6 +260338,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -246431,6 +260376,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -246575,6 +260522,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -246584,6 +260559,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -246679,6 +260656,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         image: null;
         content: null;
       }> | null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+      image: null;
+      content: null;
     } | {
       _key: string;
       _type: "imageBlock";
@@ -247473,6 +261480,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -247509,6 +261518,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -247653,6 +261664,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -247662,6 +261701,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -248064,6 +262105,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -248100,6 +262143,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -248244,6 +262289,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -248253,6 +262326,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -248529,6 +262604,36 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "divider";
       style?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
       image: null;
       content: null;
     } | {
@@ -249171,6 +263276,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -249207,6 +263314,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -249351,6 +263460,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -249360,6 +263497,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -249762,6 +263901,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -249798,6 +263939,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -249942,6 +264085,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -249951,6 +264122,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -250044,6 +264217,36 @@ export type PRIVACY_POLICY_QUERYResult = {
           url?: string;
           image: null;
         }> | null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+        image: null;
+        content: null;
       } | {
         _key: string;
         _type: "imageBlock";
@@ -250863,6 +265066,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -250899,6 +265104,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -251043,6 +265250,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -251052,6 +265287,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -251454,6 +265691,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -251490,6 +265729,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -251634,6 +265875,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -251643,6 +265912,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -251917,6 +266188,36 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "divider";
         style?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
         image: null;
         content: null;
       } | {
@@ -252254,6 +266555,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -252291,6 +266594,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -252309,6 +266614,35 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "youTubeVideo";
             url?: string;
           }> | null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+          image: null;
         } | {
           _key: string;
           _type: "imageBlock";
@@ -252817,6 +267151,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -252853,6 +267189,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -253046,6 +267384,35 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "divider";
           style?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
           image: null;
         } | {
           _key: string;
@@ -253380,6 +267747,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -253417,6 +267786,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -253435,6 +267806,34 @@ export type PRIVACY_POLICY_QUERYResult = {
               _type: "youTubeVideo";
               url?: string;
             }> | null;
+          } | {
+            _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
           } | {
             _key: string;
             _type: "imageBlock";
@@ -253912,6 +268311,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -253948,6 +268349,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -254092,6 +268495,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -254101,6 +268532,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -254503,6 +268936,8 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & Divider | {
                 _key: string;
+              } & EquipmentList | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
@@ -254539,6 +268974,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               } & CtaCalloutLink | {
                 _key: string;
               } & Divider | {
+                _key: string;
+              } & EquipmentList | {
                 _key: string;
               } & GridLayout | {
                 _key: string;
@@ -254683,6 +269120,34 @@ export type PRIVACY_POLICY_QUERYResult = {
             style?: string;
           } | {
             _key: string;
+            _type: "equipmentList";
+            categories?: Array<{
+              name?: string;
+              icon?: {
+                asset?: {
+                  _ref: string;
+                  _type: "reference";
+                  _weak?: boolean;
+                  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+                };
+                media?: unknown;
+                hotspot?: SanityImageHotspot;
+                crop?: SanityImageCrop;
+                alt?: string;
+                _type: "image";
+              };
+              items?: Array<{
+                name?: string;
+                isTemporarilyUnavailable?: boolean;
+                unavailableReason?: string;
+                _type: "equipmentItem";
+                _key: string;
+              }>;
+              _type: "equipmentCategory";
+              _key: string;
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -254692,6 +269157,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & BandcampWidget | {
               _key: string;
             } & Card | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & ImageBlock | {
               _key: string;
@@ -255113,6 +269580,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -255149,6 +269618,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -255293,6 +269764,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -255302,6 +269801,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -255704,6 +270205,8 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & Divider | {
               _key: string;
+            } & EquipmentList | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
@@ -255740,6 +270243,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             } & CtaCalloutLink | {
               _key: string;
             } & Divider | {
+              _key: string;
+            } & EquipmentList | {
               _key: string;
             } & GridLayout | {
               _key: string;
@@ -255884,6 +270389,34 @@ export type PRIVACY_POLICY_QUERYResult = {
           style?: string;
         } | {
           _key: string;
+          _type: "equipmentList";
+          categories?: Array<{
+            name?: string;
+            icon?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            items?: Array<{
+              name?: string;
+              isTemporarilyUnavailable?: boolean;
+              unavailableReason?: string;
+              _type: "equipmentItem";
+              _key: string;
+            }>;
+            _type: "equipmentCategory";
+            _key: string;
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -255893,6 +270426,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & BandcampWidget | {
             _key: string;
           } & Card | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & ImageBlock | {
             _key: string;
@@ -256316,6 +270851,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -256352,6 +270889,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -256496,6 +271035,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -256505,6 +271072,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -256907,6 +271476,8 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & Divider | {
             _key: string;
+          } & EquipmentList | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
@@ -256943,6 +271514,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           } & CtaCalloutLink | {
             _key: string;
           } & Divider | {
+            _key: string;
+          } & EquipmentList | {
             _key: string;
           } & GridLayout | {
             _key: string;
@@ -257087,6 +271660,34 @@ export type PRIVACY_POLICY_QUERYResult = {
         style?: string;
       } | {
         _key: string;
+        _type: "equipmentList";
+        categories?: Array<{
+          name?: string;
+          icon?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          items?: Array<{
+            name?: string;
+            isTemporarilyUnavailable?: boolean;
+            unavailableReason?: string;
+            _type: "equipmentItem";
+            _key: string;
+          }>;
+          _type: "equipmentCategory";
+          _key: string;
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -257096,6 +271697,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & BandcampWidget | {
           _key: string;
         } & Card | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & ImageBlock | {
           _key: string;
@@ -257561,6 +272164,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -257597,6 +272202,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -257741,6 +272348,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -257750,6 +272385,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;
@@ -258152,6 +272789,8 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & Divider | {
           _key: string;
+        } & EquipmentList | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
@@ -258188,6 +272827,8 @@ export type PRIVACY_POLICY_QUERYResult = {
         } & CtaCalloutLink | {
           _key: string;
         } & Divider | {
+          _key: string;
+        } & EquipmentList | {
           _key: string;
         } & GridLayout | {
           _key: string;
@@ -258332,6 +272973,34 @@ export type PRIVACY_POLICY_QUERYResult = {
       style?: string;
     } | {
       _key: string;
+      _type: "equipmentList";
+      categories?: Array<{
+        name?: string;
+        icon?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        items?: Array<{
+          name?: string;
+          isTemporarilyUnavailable?: boolean;
+          unavailableReason?: string;
+          _type: "equipmentItem";
+          _key: string;
+        }>;
+        _type: "equipmentCategory";
+        _key: string;
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -258341,6 +273010,8 @@ export type PRIVACY_POLICY_QUERYResult = {
       } & BandcampWidget | {
         _key: string;
       } & Card | {
+        _key: string;
+      } & EquipmentList | {
         _key: string;
       } & ImageBlock | {
         _key: string;

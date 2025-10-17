@@ -32,6 +32,7 @@ import { companyLinksBlockType } from './blocks/companyLinksBlockType';
 import { blockListWithStatsType } from './blocks/blockListWithStatsType';
 import { checkListType } from './blocks/checkListType';
 import { itemListType } from './blocks/itemListType';
+import { equipmentListType } from './blocks/equipmentListType';
 import { clientListType } from './blocks/clientListType';
 import { teamMemberListType } from './blocks/teamMemberListType';
 import { contactFormType } from './blocks/contactFormType';
@@ -97,6 +98,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     blockListWithStatsType,
     checkListType,
     itemListType,
+    equipmentListType,
     clientListType,
     teamMemberListType,
     contactFormType,
