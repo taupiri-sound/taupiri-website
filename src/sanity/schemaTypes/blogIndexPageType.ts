@@ -34,28 +34,11 @@ export const blogIndexPageType = defineType({
       group: 'header',
     }),
     defineField({
-      name: 'heroImage',
-      type: 'image',
-      title: 'Hero Image',
-      description: 'Hero image for the blog index page header. Note: This image will also be used as the hero image for all individual blog posts.',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-          description: 'Helps explain what the image is for SEO and screen readers. Highly recommended to provide something that describes the image; if not provided, the system will try to come up with something.',
-        },
-      ],
-      group: 'header',
-    }),
-    defineField({
       name: 'subtitle',
       type: 'text',
       title: 'Page Subtitle',
-      description: 'Optional subtitle that appears below the page title. This text will also be used for SEO meta tags (the description that appears in search engine results and when sharing on social media).',
+      description:
+        'Optional subtitle that appears below the page title. This text will also be used for SEO meta tags (the description that appears in search engine results and when sharing on social media).',
       rows: 3,
       validation: (Rule) => Rule.max(300),
       group: 'header',

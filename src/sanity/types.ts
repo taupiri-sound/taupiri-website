@@ -1200,19 +1200,6 @@ export type BlogIndexPage = {
   _updatedAt: string;
   _rev: string;
   title?: string;
-  heroImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
   subtitle?: string;
   noArticlesMessage?: string;
   hasClosingCard?: boolean;
@@ -1227,19 +1214,6 @@ export type Page = {
   _rev: string;
   title?: string;
   slug?: Slug;
-  heroImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
   subtitle?: string;
   content?: Array<{
     _key: string;
@@ -16845,17 +16819,7 @@ export type PAGE_QUERYResult = {
     image: null;
     content: null;
   }> | null;
-  heroImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
+  heroImage: null;
   hasClosingCard: boolean | null;
   closingCard: {
     _type: "card";
@@ -94213,17 +94177,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
   _id: string;
   _type: "blogIndexPage";
   title: string | null;
-  heroImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
+  heroImage: null;
   subtitle: string | null;
   noArticlesMessage: string | null;
   hasClosingCard: boolean | null;
@@ -94408,17 +94362,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
   _id: string;
   _type: "page";
   title: string | null;
-  heroImage: {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  } | null;
+  heroImage: null;
   subtitle: string | null;
   noArticlesMessage: null;
   hasClosingCard: boolean | null;
@@ -109848,17 +109792,7 @@ export type BLOG_POST_QUERYResult = {
     } & YouTubeVideo>;
     ctaList: null;
   } | null;
-  blogIndexHeroImage: null | {
-    asset: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    } | null;
-    alt: string | null;
-    hotspot: SanityImageHotspot | null;
-    crop: SanityImageCrop | null;
-  };
+  blogIndexHeroImage: null;
 } | null;
 // Variable: ADJACENT_BLOG_POSTS_QUERY
 // Query: {  "currentPost": *[_type == "blogPost" && slug.current == $slug][0]{    _id,    title,    hasOverrideDate,    overrideDate,    _createdAt  },  "prevPost": *[_type == "blogPost" && coalesce(overrideDate, _createdAt) > coalesce(*[_type == "blogPost" && slug.current == $slug][0].overrideDate, *[_type == "blogPost" && slug.current == $slug][0]._createdAt)]|order(coalesce(overrideDate, _createdAt) asc)[0]{    _id,    title,    slug  },  "nextPost": *[_type == "blogPost" && coalesce(overrideDate, _createdAt) < coalesce(*[_type == "blogPost" && slug.current == $slug][0].overrideDate, *[_type == "blogPost" && slug.current == $slug][0]._createdAt)]|order(coalesce(overrideDate, _createdAt) desc)[0]{    _id,    title,    slug  }}
