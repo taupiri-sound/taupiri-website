@@ -12,10 +12,7 @@ interface EquipmentListProps {
   equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
 }
 
-const EquipmentList = ({
-  className = '',
-  equipmentListData,
-}: EquipmentListProps) => {
+const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps) => {
   const documentId = equipmentListData?._id || 'equipmentListSingleton';
   const documentType = 'equipmentListSingleton';
   const categories = equipmentListData?.categories || [];
@@ -47,7 +44,7 @@ const EquipmentList = ({
             {/* Category Header */}
             <button
               onClick={() => toggleCategory(categoryIndex)}
-              className='w-full flex items-center gap-4 px-6 py-4 text-left hover:bg-brand-primary/5 transition-colors duration-200'
+              className='w-full flex items-center gap-4 px-6 py-4 text-left hover:bg-brand-primary/5 transition-colors duration-200 cursor-pointer'
               aria-expanded={isOpen}
               aria-controls={`category-content-${category._key}`}>
               {/* Icon */}
@@ -72,7 +69,7 @@ const EquipmentList = ({
                 {...(documentId && documentType
                   ? createSanityDataAttribute(documentId, documentType, `${categoryPath}.name`)
                   : {})}
-                className='flex-1 text-h4 font-semibold text-brand-primary'>
+                className='flex-1 text-h6 font-semibold text-brand-primary'>
                 {category.name}
               </p>
 
@@ -81,7 +78,7 @@ const EquipmentList = ({
                 className={`flex-shrink-0 transition-transform duration-300 ${
                   isOpen ? 'rotate-180' : ''
                 }`}>
-                <ChevronDownIcon className='w-6 h-6 text-brand-primary' />
+                <ChevronDownIcon className='w-10 h-10 text-brand-primary' />
               </div>
             </button>
 
@@ -116,7 +113,7 @@ const EquipmentList = ({
                     }>
                     <div className='flex items-center'>
                       {/* Bullet point */}
-                      <div className='flex-shrink-0 w-2 h-2 rounded-full bg-brand-secondary mr-3' />
+                      <div className='flex-shrink-0 w-2 h-2 rounded-full bg-subtle mr-3' />
 
                       {/* Item Name */}
                       <p
@@ -125,8 +122,8 @@ const EquipmentList = ({
                           : {})}
                         className={`text-body-base ${
                           item.isTemporarilyUnavailable
-                            ? 'line-through text-slate-500 cursor-help'
-                            : 'text-slate-800'
+                            ? 'line-through text-subtle cursor-help'
+                            : ''
                         }`}>
                         {item.name}
                       </p>
@@ -134,7 +131,7 @@ const EquipmentList = ({
 
                     {/* Tooltip for unavailable items */}
                     {item.isTemporarilyUnavailable && item.unavailableReason && isHovered && (
-                      <div className='absolute z-50 left-0 bottom-full mb-2 px-3 py-2 bg-slate-800 text-brand-white text-body-sm rounded-md shadow-xl max-w-xs whitespace-normal pointer-events-none'>
+                      <div className='absolute z-50 left-0 bottom-full mb-2 px-3 py-2 bg-brand-secondary text-brand-white text-body-sm rounded-md shadow-xl max-w-xs whitespace-normal pointer-events-none text-left'>
                         <div className='relative'>
                           {/* Tooltip arrow pointing down */}
                           <div className='absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800' />
