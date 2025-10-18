@@ -60,11 +60,12 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
         role='dialog'
         aria-modal='true'
         aria-label='Main navigation menu'
-        className={`fixed top-0 right-0 h-full w-90 max-w-screen bg-white bg-opacity-90 backdrop-blur-md shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-0 right-0 h-full w-full md:w-90 shadow-2xl transition-transform duration-300 ease-in-out flex flex-col bg-brand-gradient-brown ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
         {/* Menu Header */}
-        <div className={`flex items-center justify-between px-4 ${headerHeight} transition-all duration-300 shadow-md relative z-10 bg-brand-secondary`}>
+        <div
+          className={`flex items-center justify-between px-4 ${headerHeight} transition-all duration-300 relative z-10`}>
           {/* Logo in Menu */}
           <Link href='/' onClick={onClose} className='flex items-center gap-2'>
             <div className='relative w-[160px] h-[60px]'>
@@ -86,7 +87,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
         {/* Menu Navigation */}
         <div
           ref={scrollContainerRef}
-          className='flex-1 overflow-y-auto overflow-x-hidden bg-gray-50'
+          className='flex-1 overflow-y-auto overflow-x-hidden'
           style={{
             scrollbarWidth: 'thin',
             scrollbarColor: '#d1d5db transparent',
@@ -155,7 +156,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                                   <Link
                                     {...linkProps}
                                     onClick={onClose}
-                                    className='flex items-center justify-between w-full text-brand-black hover:text-brand-primary transition-colors'>
+                                    className='flex items-center justify-between w-full text-brand-white hover:text-brand-primary transition-colors'>
                                     <span>{label}</span>
                                     {isExternal && (
                                       <FaExternalLinkAlt className='text-body-xs text-current ml-2 flex-shrink-0' />
@@ -169,7 +170,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                           {/* Add divider between sections (but not after the last section) */}
                           {sectionIndex < filteredSections.length - 1 && (
                             <div className='pt-6'>
-                              <Divider isSmall alignment='left' />
+                              <Divider size='thin' color='light' />
                             </div>
                           )}
                         </div>

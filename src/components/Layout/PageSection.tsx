@@ -141,7 +141,7 @@ const PageSection = ({
             </p>
           )}
           <div className={sectionDividerBottomSpacing}>
-            <Divider alignment={effectiveTextAlign} variant='default' />
+            <Divider size='wide' color='dark' />
           </div>
         </div>
         {children}

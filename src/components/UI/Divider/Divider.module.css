@@ -1,45 +1,6 @@
-/* Gradient Divider - simple with pointed star accent */
-.gradient {
-  width: 100%;
-  height: 24px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Main horizontal line */
-.gradient::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-brand-primary) 25%,
-    var(--color-brand-secondary) 50%,
-    var(--color-brand-primary) 75%,
-    transparent 100%
-  );
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Center pointed star */
-.gradient::after {
-  content: '✦';
-  position: relative;
-  z-index: 1;
-  color: var(--color-brand-primary);
-  background: var(--color-brand-white);
-  padding: 0 1rem;
-  font-size: 0.75rem;
-  line-height: 1;
-}
-
-/* Thin gradient variant - delicate with three diamonds */
-.gradientThin {
+/* Thin dividers - delicate with three diamonds */
+.thinLight,
+.thinDark {
   width: 100%;
   height: 20px;
   position: relative;
@@ -48,27 +9,175 @@
   justify-content: center;
 }
 
-/* Thin horizontal line */
-.gradientThin::before {
+.thinLight::before,
+.thinDark::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 0.5px;
-  background: var(--background-image-brand-gradient-red);
   top: 50%;
   transform: translateY(-50%);
   opacity: 0.8;
 }
 
-/* Three diamonds in center */
-.gradientThin::after {
+.thinLight::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-brand-white) 25%,
+    var(--color-brand-white) 50%,
+    var(--color-brand-white) 75%,
+    transparent 100%
+  );
+}
+
+.thinDark::before {
+  background: var(--background-image-brand-gradient-red);
+}
+
+.thinLight::after,
+.thinDark::after {
   content: '◆ ◆ ◆';
   position: relative;
   z-index: 1;
-  color: var(--color-brand-primary);
-  background: var(--color-brand-white);
   padding: 0 1rem;
   font-size: 0.5rem;
   line-height: 1;
   letter-spacing: 0.25rem;
+}
+
+.thinLight::after {
+  color: var(--color-brand-white);
+  background: var(--color-brand-primary); /* Background matches the brown nav */
+}
+
+.thinDark::after {
+  color: var(--color-brand-primary);
+  background: var(--color-brand-white);
+}
+
+/* Medium dividers - simple with pointed star */
+.mediumLight,
+.mediumDark {
+  width: 100%;
+  height: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mediumLight::before,
+.mediumDark::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mediumLight::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-brand-white) 25%,
+    var(--color-brand-white) 50%,
+    var(--color-brand-white) 75%,
+    transparent 100%
+  );
+}
+
+.mediumDark::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-brand-primary) 25%,
+    var(--color-brand-secondary) 50%,
+    var(--color-brand-primary) 75%,
+    transparent 100%
+  );
+}
+
+.mediumLight::after,
+.mediumDark::after {
+  content: '✦';
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.mediumLight::after {
+  color: var(--color-brand-white);
+  background: var(--color-brand-primary);
+}
+
+.mediumDark::after {
+  color: var(--color-brand-primary);
+  background: var(--color-brand-white);
+}
+
+/* Wide dividers - bold with large pointed star */
+.wideLight,
+.wideDark {
+  width: 100%;
+  height: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wideLight::before,
+.wideDark::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wideLight::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-brand-white) 25%,
+    var(--color-brand-white) 50%,
+    var(--color-brand-white) 75%,
+    transparent 100%
+  );
+}
+
+.wideDark::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-brand-primary) 25%,
+    var(--color-brand-secondary) 50%,
+    var(--color-brand-primary) 75%,
+    transparent 100%
+  );
+}
+
+.wideLight::after,
+.wideDark::after {
+  content: '✦';
+  position: relative;
+  z-index: 1;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.wideLight::after {
+  color: var(--color-brand-white);
+  background: var(--color-brand-primary);
+}
+
+.wideDark::after {
+  color: var(--color-brand-primary);
+  background: var(--color-brand-white);
 }

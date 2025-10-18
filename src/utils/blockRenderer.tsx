@@ -151,7 +151,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const dividerBlock = typedBlock as WithKey<DividerType>;
       return (
         <BlockWrapper key={dividerBlock._key}>
-          <Divider alignment='center' variant='default' useFixedWidth={true} />
+          <Divider size='medium' color='dark' />
         </BlockWrapper>
       );
     }
