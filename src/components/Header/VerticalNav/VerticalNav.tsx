@@ -87,7 +87,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
         {/* Menu Navigation */}
         <div
           ref={scrollContainerRef}
-          className='flex-1 overflow-y-auto overflow-x-hidden'
+          className='flex-1 overflow-y-auto overflow-x-hidden flex flex-col items-center md:items-start text-center md:text-left'
           style={{
             scrollbarWidth: 'thin',
             scrollbarColor: '#d1d5db transparent',
@@ -127,14 +127,14 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                           {/* Section Heading */}
                           {section.heading && (
                             <div className='mb-4'>
-                              <h3 className='text-body-sm uppercase tracking-wide'>
+                              <p className='text-body-sm uppercase tracking-wide text-subtle/70'>
                                 {section.heading}
-                              </h3>
+                              </p>
                             </div>
                           )}
 
                           {/* Section Links */}
-                          <div className='space-y-4'>
+                          <div className='space-y-4 flex flex-col items-center md:items-start'>
                             {section.links?.map((link, linkIndex) => {
                               if (!isNavigationLink(link)) return null;
 

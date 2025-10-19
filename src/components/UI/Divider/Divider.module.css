@@ -49,15 +49,15 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--color-brand-white) 25%,
-    var(--color-brand-white) 50%,
-    var(--color-brand-white) 75%,
+    var(--color-subtle) 25%,
+    var(--color-subtle) 50%,
+    var(--color-subtle) 75%,
     transparent 100%
   );
 }
 
 .light::after {
-  color: var(--color-brand-white);
+  color: var(--color-subtle);
 }
 
 .dark::before {
@@ -73,5 +73,5 @@
 
 .dark::after {
   color: var(--color-brand-primary);
-  background: var(--color-brand-white);
+  background: var(--color-white);
 }

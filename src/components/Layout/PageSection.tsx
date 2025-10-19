@@ -142,7 +142,6 @@ const PageSection = ({
           )}
           <div className={sectionDividerBottomSpacing}>
             <Divider size='full' color='dark' />
-            <Divider size='half' color='dark' />
           </div>
         </div>
         {children}
