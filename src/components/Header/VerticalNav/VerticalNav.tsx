@@ -101,7 +101,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
           onMouseLeave={(e) => {
             e.currentTarget.style.scrollbarColor = '#d1d5db transparent';
           }}>
-          <nav className='px-10 py-10'>
+          <nav className='px-10 py-10 w-full'>
             <div className='space-y-8'>
               {navLinks && navLinks.length > 0 ? (
                 <>
