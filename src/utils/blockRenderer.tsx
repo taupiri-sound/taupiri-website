@@ -151,7 +151,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const dividerBlock = typedBlock as WithKey<DividerType>;
       return (
         <BlockWrapper key={dividerBlock._key}>
-          <Divider size='medium' color='dark' />
+          <Divider size='half' color='dark' />
         </BlockWrapper>
       );
     }
@@ -394,7 +394,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
         <BlockWrapper key={clientListBlock._key}>
           <ClientList
             documentId={clientsData?._id || 'clients'}
-            documentType="clients"
+            documentType='clients'
             clientsData={clientsData}
           />
         </BlockWrapper>
