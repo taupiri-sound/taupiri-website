@@ -170,7 +170,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                           {/* Add divider between sections (but not after the last section) */}
                           {sectionIndex < filteredSections.length - 1 && (
                             <div className='pt-6'>
-                              <Divider size='thin' color='light' />
+                              <Divider size='full' color='light' />
                             </div>
                           )}
                         </div>
