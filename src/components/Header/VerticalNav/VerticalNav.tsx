@@ -65,8 +65,8 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
         }`}>
         {/* Menu Header */}
         <div
-          className={`flex items-center justify-between px-4 ${headerHeight} transition-all duration-300 relative z-10`}>
-          {/* Logo in Menu */}
+          className={`flex items-center justify-center md:justify-between px-4 ${headerHeight} transition-all duration-300 relative z-10`}>
+          {/* Logo in Menu - centered on mobile, left-aligned on desktop */}
           <Link href='/' onClick={onClose} className='flex items-center gap-2'>
             <div className='relative w-[160px] h-[60px]'>
               <UnifiedImage
@@ -80,8 +80,12 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
             </div>
           </Link>
 
-          {/* Close Button */}
-          <MenuButton variant='close' onClick={onClose} className='text-black' />
+          {/* Close Button - absolute on mobile to keep logo centered, relative on desktop */}
+          <MenuButton
+            variant='close'
+            onClick={onClose}
+            className='text-black absolute right-4 md:relative md:right-0'
+          />
         </div>
 
         {/* Menu Navigation */}
