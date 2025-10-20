@@ -13,7 +13,7 @@ interface PageHeroProps {
 const PageHero = ({ title = null, subtTitle = null, documentId, documentType }: PageHeroProps) => {
   return (
     <div {...createSanityDataAttribute(documentId, documentType, 'heroImage')}>
-      <section data-hero className='bg-brand-secondary text-center overflow-hidden px-5'>
+      <section data-hero className='bg-brand-secondary text-center overflow-hidden px-5 pb-12'>
         {/* Header spacer */}
         <div className={`${headerHeight}`}></div>
         {title && (
@@ -22,7 +22,7 @@ const PageHero = ({ title = null, subtTitle = null, documentId, documentType }: 
           </Heading>
         )}
         {subtTitle && (
-          <p className='text-body-2xl text-brand-white mt-4 mb-12 max-w-4xl mx-auto'>{subtTitle}</p>
+          <p className='text-body-2xl text-brand-white mt-4 max-w-4xl mx-auto'>{subtTitle}</p>
         )}
       </section>
     </div>

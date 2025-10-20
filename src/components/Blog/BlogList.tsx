@@ -28,8 +28,7 @@ const BlogList = ({ posts, noPostsText }: BlogListProps) => {
   if (validPosts.length === 0) {
     return (
       <div className='text-center py-16'>
-        <div className='text-gray-400 text-h2 mb-4'>📝</div>
-        <p className='text-gray-500 text-body-lg'>{noPostsText}</p>
+        <p className='text-body-lg'>{noPostsText}</p>
       </div>
     );
   }

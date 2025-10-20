@@ -3,7 +3,6 @@ import { getAllBlogPosts, getBlogIndexPage } from '@/actions/blog';
 import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
-import PageSubtitle from '@/components/Typography/PageSubtitle';
 import { closingCardSpacing } from '@/utils/spacingConstants';
 import { getSiteSettings, getCompanyLinks } from '@/actions';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
@@ -41,6 +40,7 @@ export default async function BlogPage() {
       {/* Page Hero */}
       <PageHero
         title={blogIndexPage?.title || 'Blog'}
+        subtTitle={blogIndexPage?.subtitle}
         documentId={blogIndexPage?._id}
         documentType={blogIndexPage?._type}
       />
@@ -49,9 +49,6 @@ export default async function BlogPage() {
       <Breadcrumb pageTitle={blogIndexPage?.title || 'Blog'} />
 
       <Container>
-        {/* Page Subtitle */}
-        {blogIndexPage?.subtitle && <PageSubtitle>{blogIndexPage.subtitle}</PageSubtitle>}
-
         {/* List of Blog Posts */}
         <div className={`${!blogIndexPage?.subtitle ? 'pt-16 md:pt-24' : ''}`}>
           <BlogList
