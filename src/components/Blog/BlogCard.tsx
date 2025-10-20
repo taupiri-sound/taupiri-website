@@ -44,14 +44,14 @@ const BlogCard = (props: BlogCardProps) => {
 
   return (
     <Link href={blogPostUrl} className='block w-full h-full'>
-      <div className='w-full h-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-103 cursor-pointer group'>
+      <div className='w-full h-full bg-brand-white-dark rounded-lg shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-103 cursor-pointer group'>
         {/* Blog Post Image */}
         <div className='relative w-full aspect-[4/3] bg-gray-900 overflow-hidden flex-shrink-0'>
           <UnifiedImage
             src={mainImage}
             alt={`${title || 'Blog post'} image`}
             mode='fill'
-            sizeContext='card'
+            sizeContext='full'
             objectFit='cover'
             priority
             generateSchema
@@ -71,7 +71,7 @@ const BlogCard = (props: BlogCardProps) => {
         {/* Blog Post Details */}
         <div className='p-6 flex flex-col flex-grow text-left'>
           {/* Title */}
-          <h2 className='text-body-lg font-medium mb-6 text-gray-800 transition-all duration-300 leading-tight group-hover:underline line-clamp-2'>
+          <h2 className='text-h6 font-medium mb-6 text-brand-secondary transition-all duration-300 leading-tight group-hover:underline line-clamp-2'>
             {title}
           </h2>
 
@@ -79,15 +79,15 @@ const BlogCard = (props: BlogCardProps) => {
             {/* Author */}
             {author && (
               <div className='flex items-center text-body-sm'>
-                <FaUser className='mr-2 text-brand-secondary' />
+                <FaUser className='mr-2 text-subtle' />
                 <span>{author}</span>
               </div>
             )}
 
             {/* Date */}
             <div className='flex items-center text-body-sm'>
-              <FaCalendar className='mr-2 text-brand-secondary' />
-              <span>{formattedDate}</span>
+              <FaCalendar className='mr-2 text-subtle' />
+              <span className='text-subtle'>{formattedDate}</span>
             </div>
           </div>
 

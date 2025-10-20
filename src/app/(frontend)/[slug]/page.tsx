@@ -14,8 +14,7 @@ import {
 } from '@/actions';
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
-import { pageSubtitleBottomSpacing, closingCardSpacing } from '@/utils/spacingConstants';
-import PageSubtitle from '@/components/Typography/PageSubtitle';
+import { closingCardSpacing } from '@/utils/spacingConstants';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
