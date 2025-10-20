@@ -34,8 +34,23 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
   const handleInteraction = (e: React.MouseEvent | React.TouchEvent) => {
     // On touchscreens, toggle the overlay
     if ('touches' in e || window.matchMedia('(hover: none)').matches) {
+      // If overlay is not open, prevent default and show overlay
+      if (!isOpen) {
+        e.preventDefault();
+        onToggle();
+      }
+      // If overlay is already open, allow clicks through to the link
+    }
+  };
+
+  /**
+   * Handle link button click on touch devices
+   */
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // On touch devices, if overlay just opened, prevent link click
+    if (window.matchMedia('(hover: none)').matches && !isOpen) {
       e.preventDefault();
-      onToggle();
+      e.stopPropagation();
     }
   };
 
@@ -69,7 +84,7 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
       {/* Overlay with Project Info */}
       <div
         className={`absolute inset-0 bg-brand-black bg-opacity-80 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
-          showOverlay ? 'opacity-100' : 'opacity-0'
+          showOverlay ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}>
         {/* Project Name */}
         {name && (
@@ -89,14 +104,14 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
           </p>
         )}
 
-        {/* Link Button - Only if link exists */}
-        {hasLink && (
+        {/* Link Button - Only if link exists and overlay is visible */}
+        {hasLink && showOverlay && (
           <a
             href={link}
             target='_blank'
             rel='noopener noreferrer'
             className='inline-flex items-center justify-center px-6 py-3 bg-brand-primary text-brand-white-dark rounded-md hover:bg-brand-secondary transition-colors duration-200 text-body-base font-medium'
-            onClick={(e) => e.stopPropagation()} // Prevent card click when clicking button
+            onClick={handleLinkClick}
             {...createSanityDataAttribute(project._id, project._type, getFieldPath('link'))}>
             {displayLinkLabel}
           </a>
