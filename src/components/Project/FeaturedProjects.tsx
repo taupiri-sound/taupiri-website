@@ -11,8 +11,7 @@ interface FeaturedProjectsProps {
 const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   const [openProjectId, setOpenProjectId] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
-  const lastPausePosition = useRef<number>(0);
+  const animationRef = useRef<number | undefined>(undefined);
 
   // Configuration
   const SCROLL_SPEED = 40; // Pixels per second - adjust this to make it faster/slower

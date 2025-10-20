@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import UnifiedImage from '@/components/UI/UnifiedImage';
+import CTA from '@/components/UI/CTA';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import type { ALL_PROJECTS_QUERYResult } from '@/sanity/types';
 
@@ -43,17 +44,6 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
     }
   };
 
-  /**
-   * Handle link button click on touch devices
-   */
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // On touch devices, if overlay just opened, prevent link click
-    if (window.matchMedia('(hover: none)').matches && !isOpen) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  };
-
   // Show overlay on hover (desktop) or when open (mobile)
   const showOverlay = isHovered || isOpen;
 
@@ -83,22 +73,22 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
 
       {/* Overlay with Project Info */}
       <div
-        className={`absolute inset-0 bg-brand-black bg-opacity-80 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
+        className={`absolute inset-0 bg-brand-black/85 flex flex-col items-center justify-center p-2 transition-opacity duration-300 ${
           showOverlay ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}>
         {/* Project Name */}
         {name && (
-          <h3
-            className='text-h5 text-brand-white-dark text-center mb-2'
+          <p
+            className='text-brand-white-dark font-bold text-center mb-2'
             {...createSanityDataAttribute(project._id, project._type, getFieldPath('name'))}>
             {name}
-          </h3>
+          </p>
         )}
 
         {/* Project Description */}
         {description && (
           <p
-            className='text-body-base text-brand-white-dark text-center mb-4'
+            className='text-subtle text-center mb-4'
             {...createSanityDataAttribute(project._id, project._type, getFieldPath('description'))}>
             {description}
           </p>
@@ -106,15 +96,15 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
 
         {/* Link Button - Only if link exists and overlay is visible */}
         {hasLink && showOverlay && (
-          <a
+          <CTA
             href={link}
+            variant='filled'
             target='_blank'
             rel='noopener noreferrer'
-            className='inline-flex items-center justify-center px-6 py-3 bg-brand-primary text-brand-white-dark rounded-md hover:bg-brand-secondary transition-colors duration-200 text-body-base font-medium'
-            onClick={handleLinkClick}
+            shortOnMobile
             {...createSanityDataAttribute(project._id, project._type, getFieldPath('link'))}>
             {displayLinkLabel}
-          </a>
+          </CTA>
         )}
       </div>
     </div>

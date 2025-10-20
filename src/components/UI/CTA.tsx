@@ -6,6 +6,7 @@ type BaseCTAProps = {
   children: React.ReactNode;
   className?: string;
   variant?: 'filled' | 'outline-light' | 'outline-dark' | 'text-link';
+  shortOnMobile?: boolean;
 };
 
 type LinkCTAProps = BaseCTAProps & {
@@ -26,21 +27,22 @@ type CTAProps = LinkCTAProps | ButtonCTAProps;
 
 const getVariantStyles = (
   variant: 'filled' | 'outline-light' | 'outline-dark' | 'text-link' = 'filled',
-  disabled: boolean = false
+  disabled: boolean = false,
+  shortOnMobile: boolean = false
 ) => {
   // Disabled/read-only styling - applies to all variants
-  const disabledStyles = disabled
-    ? 'opacity-50 cursor-not-allowed pointer-events-none'
-    : '';
+  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : '';
 
   // Text link variant - no padding/borders, just text styling with chevron
   if (variant === 'text-link') {
     return `inline-flex items-center gap-2 text-body-lg font-semibold hover:text-brand-primary transition-colors duration-200 cursor-pointer group ${disabledStyles}`.trim();
   }
 
+  // Height styles
+  const heightStyles = shortOnMobile ? 'py-1 md:py-3' : 'py-3 min-h-[56px]';
+
   // Note that the min-h-[56px] is so that regular buttons become the same height as the CTA Email Button, which needs more internal space because of the icon.
-  const baseStyles =
-    'inline-flex items-center justify-center px-6 py-3 min-h-[56px] font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer';
+  const baseStyles = `inline-flex items-center justify-center px-6 ${heightStyles} font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer`;
 
   if (variant === 'outline-light') {
     // Outline button on light background - dark border and text
@@ -57,12 +59,14 @@ const getVariantStyles = (
 };
 
 const CTA = (props: CTAProps) => {
-  const { children, className = '', variant = 'filled', ...restProps } = props;
+  const { children, className = '', variant = 'filled', shortOnMobile, ...restProps } = props;
 
   // Check if button is disabled (only applicable for button type)
-  const isDisabled = props.as === 'button' ? (restProps as ButtonCTAProps).disabled || false : false;
+  const isDisabled =
+    props.as === 'button' ? (restProps as ButtonCTAProps).disabled || false : false;
 
-  const combinedClassName = `${getVariantStyles(variant, isDisabled)} ${className}`.trim();
+  const combinedClassName =
+    `${getVariantStyles(variant, isDisabled, shortOnMobile)} ${className}`.trim();
 
   // Determine if this is an external link for text-link variant
   let isExternal = false;
@@ -77,9 +81,15 @@ const CTA = (props: CTAProps) => {
       <>
         {children}
         {isExternal ? (
-          <FiExternalLink className='transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 text-xl' strokeWidth={2.5} />
+          <FiExternalLink
+            className='transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 text-xl'
+            strokeWidth={2.5}
+          />
         ) : (
-          <FiChevronRight className='transition-transform duration-200 group-hover:translate-x-1 text-xl' strokeWidth={3} />
+          <FiChevronRight
+            className='transition-transform duration-200 group-hover:translate-x-1 text-xl'
+            strokeWidth={3}
+          />
         )}
       </>
     ) : (

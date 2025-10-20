@@ -435,8 +435,9 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
 
     case 'featuredProjects': {
       const featuredProjectsBlock = typedBlock as WithKey<FeaturedProjectsType>;
-      // Projects are already dereferenced in the GROQ query
-      const featuredProjects = featuredProjectsBlock.projects || [];
+      // Projects are already dereferenced in the GROQ query via the contentProjection
+      // The schema type shows references, but at runtime they're dereferenced objects
+      const featuredProjects = (featuredProjectsBlock.projects || []) as unknown as FEATURED_PROJECTS_QUERYResult;
 
       return (
         <BlockWrapper key={featuredProjectsBlock._key}>
