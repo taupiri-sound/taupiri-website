@@ -38,7 +38,7 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ isLoading = false }) =>
       <div className='h-screen'>
         <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[75%] h-[75%] sm:w-[500px] sm:h-[500px]'>
           <UnifiedImage
-            src='/images/logos/logo-black.png'
+            src='/images/logos/logo-only.png'
             alt='Taupiri Sound Logo'
             mode='fill'
             sizeContext='hero'
@@ -62,29 +62,35 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ isLoading = false }) =>
         {/* Black overlay with reduced opacity */}
         <div className='absolute inset-0 bg-black/70' />
 
-        {/* Spinner in center */}
+        {/* Soundwave loader in center */}
         <div className='absolute inset-0 flex items-center justify-center'>
-          <div className='relative'>
-            {/* Outer ring - Brand Secondary */}
-            <div
-              className='w-16 h-16 border-4 border-transparent rounded-full animate-spin'
-              style={{
-                borderTopColor: '#f4a300', // brand-secondary
-                borderRightColor: '#f4a300',
-              }}
-            />
-            {/* Inner ring - Brand Primary */}
-            <div
-              className='absolute top-2 left-2 w-12 h-12 border-4 border-transparent rounded-full animate-spin'
-              style={{
-                borderTopColor: '#ffea00', // brand-primary
-                borderLeftColor: '#ffea00',
-                animationDirection: 'reverse',
-                animationDuration: '1.5s',
-              }}
-            />
+          <div className='flex items-center gap-1.5 h-16'>
+            {/* 7 bars with alternating colors and staggered animations */}
+            {[...Array(7)].map((_, i) => (
+              <div
+                key={i}
+                className='w-2 rounded-full'
+                style={{
+                  backgroundColor: i % 2 === 0 ? '#900000' : '#430c08', // Alternate brand-primary and brand-secondary
+                  animation: `soundwave 1.2s ease-in-out infinite`,
+                  animationDelay: `${i * 0.1}s`,
+                }}
+              />
+            ))}
           </div>
         </div>
+
+        {/* CSS Animation for soundwave */}
+        <style jsx>{`
+          @keyframes soundwave {
+            0%, 100% {
+              height: 20%;
+            }
+            50% {
+              height: 100%;
+            }
+          }
+        `}</style>
       </div>
     </>
   );
