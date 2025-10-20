@@ -426,8 +426,6 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
 
     case 'projectList': {
       const projectListBlock = typedBlock as WithKey<ProjectListType>;
-      console.log('[blockRenderer] projectList case - allProjectsData:', allProjectsData);
-      console.log('[blockRenderer] projectList case - allProjectsData length:', allProjectsData?.length);
       return (
         <BlockWrapper key={projectListBlock._key}>
           <ProjectListComponent projects={allProjectsData || []} />
@@ -437,17 +435,8 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
 
     case 'featuredProjects': {
       const featuredProjectsBlock = typedBlock as WithKey<FeaturedProjectsType>;
-      // Extract project IDs from the references
-      const projectRefs = featuredProjectsBlock.projects || [];
-      const projectIds = projectRefs
-        .map((ref) => (typeof ref === 'object' && ref !== null && '_ref' in ref ? ref._ref : null))
-        .filter((id): id is string => id !== null);
-
-      // Filter allProjectsData to only include featured projects in the correct order
-      const featuredProjects =
-        projectIds
-          .map((id) => allProjectsData?.find((project) => project._id === id))
-          .filter((project): project is NonNullable<typeof project> => project !== undefined) || [];
+      // Projects are already dereferenced in the GROQ query
+      const featuredProjects = featuredProjectsBlock.projects || [];
 
       return (
         <BlockWrapper key={featuredProjectsBlock._key}>
