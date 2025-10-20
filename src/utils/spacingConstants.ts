@@ -5,7 +5,7 @@
 /**
  * Space under breadcrumb navigation before page content
  */
-export const breadcrumbBottomSpacing = 'mb-14 md:mb-24';
+export const breadcrumbBottomSpacing = 'mb-8 md:mb-14';
 
 /**
  * Space under home hero section before the next content
@@ -40,7 +40,7 @@ export const sectionDividerBottomSpacing = 'mb-6 md:mb-8';
 /**
  * Bottom padding for PageSections (after the last piece of content in that section)
  */
-export const sectionBottomPadding = 'pb-26 md:pb-40';
+export const sectionBottomPadding = 'pb-24 md:pb-36';
 
 /**
  * Compact bottom padding for PageSections when useCompactGap is enabled

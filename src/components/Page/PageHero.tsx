@@ -17,7 +17,7 @@ const PageHero = ({ title = null, subtTitle = null, documentId, documentType }: 
         {/* Header spacer */}
         <div className={`${headerHeight}`}></div>
         {title && (
-          <Heading level='h1' className='text-h1 font-bold text-brand-white mt-4'>
+          <Heading level='h1' className='text-h1 font-bold text-brand-white mt-6'>
             {title}
           </Heading>
         )}
