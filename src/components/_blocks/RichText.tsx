@@ -9,6 +9,7 @@ import { maxCardWidth } from '@/utils/spacingConstants';
 
 type RichTextProps = RichTextBlock & {
   inheritAlignment?: 'left' | 'center' | 'right';
+  fullWidth?: boolean;
 };
 
 const RichText = ({
@@ -16,6 +17,7 @@ const RichText = ({
   textAlign = 'inherit',
   isCallout = false,
   inheritAlignment,
+  fullWidth = false,
 }: RichTextProps) => {
   // Clean the values to remove Sanity's stega encoding
   const cleanTextAlign = stegaClean(textAlign) || 'inherit';
@@ -52,7 +54,7 @@ const RichText = ({
     <PortableTextWrapper
       value={content}
       components={alignedComponents}
-      className={`prose prose-slate ${maxCardWidth} ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}
+      className={`prose prose-slate ${fullWidth ? 'max-w-full' : maxCardWidth} ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}
     />
   );
 
@@ -60,7 +62,7 @@ const RichText = ({
   if (cleanIsCallout) {
     return (
       <div
-        className={`bg-brand-white-dark rounded-tr-lg rounded-br-lg px-6 py-4 ${maxCardWidth} border-l-4 border-brand-primary shadow-sm ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}>
+        className={`bg-brand-white-dark rounded-tr-lg rounded-br-lg px-6 py-4 ${fullWidth ? 'max-w-full' : maxCardWidth} border-l-4 border-brand-primary shadow-sm ${getTextAlignClass(effectiveTextAlign)} ${getContainerAlignClass(effectiveTextAlign)}`}>
         {proseContent}
       </div>
     );

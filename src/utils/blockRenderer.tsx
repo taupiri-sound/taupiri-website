@@ -170,7 +170,11 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const richTextBlock = typedBlock as WithKey<RichTextType>;
       return (
         <BlockWrapper key={richTextBlock._key}>
-          <RichText {...richTextBlock} inheritAlignment={alignment} />
+          <RichText
+            {...richTextBlock}
+            inheritAlignment={alignment}
+            fullWidth={documentType === 'blogPost'}
+          />
         </BlockWrapper>
       );
     }
@@ -437,7 +441,8 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
       const featuredProjectsBlock = typedBlock as WithKey<FeaturedProjectsType>;
       // Projects are already dereferenced in the GROQ query via the contentProjection
       // The schema type shows references, but at runtime they're dereferenced objects
-      const featuredProjects = (featuredProjectsBlock.projects || []) as unknown as FEATURED_PROJECTS_QUERYResult;
+      const featuredProjects = (featuredProjectsBlock.projects ||
+        []) as unknown as FEATURED_PROJECTS_QUERYResult;
 
       return (
         <BlockWrapper key={featuredProjectsBlock._key}>
