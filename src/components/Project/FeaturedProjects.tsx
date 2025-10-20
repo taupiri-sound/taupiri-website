@@ -18,11 +18,16 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
 
   // Configuration
   const SCROLL_SPEED = 40; // Pixels per second - adjust this to make it faster/slower
+  const REPETITIONS = 3; // Number of times we repeat the projects array for seamless infinite scroll
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     const innerContainer = innerContainerRef.current;
     if (!container || !innerContainer || !projects || projects.length === 0) return;
+
+    // Get the actual width of a single project item
+    const firstChild = innerContainer.firstElementChild as HTMLElement;
+    if (!firstChild) return;
 
     let lastTime = performance.now();
 
@@ -41,12 +46,17 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
       const scrollAmount = SCROLL_SPEED * deltaTime;
       translateX.current -= scrollAmount;
 
-      // Handle infinite loop - reset when reaching 1/3 of the way through
-      const itemWidth = innerContainer.offsetWidth / 3;
+      // Calculate the width of one complete set of original projects
+      // Each project item has the same width, so multiply by the count
+      const itemWidth = firstChild.offsetWidth;
+      const singleSetWidth = itemWidth * projects.length;
 
-      if (Math.abs(translateX.current) >= itemWidth) {
-        // Jump back to start position for seamless loop
-        translateX.current += itemWidth;
+      // Use modulo to create seamless infinite loop
+      // When we've scrolled one full set, jump back by that amount
+      // This is seamless because the content repeats
+      if (Math.abs(translateX.current) >= singleSetWidth) {
+        // Add back the single set width to loop seamlessly
+        translateX.current = translateX.current + singleSetWidth;
       }
 
       innerContainer.style.transform = `translate3d(${translateX.current}px, 0, 0)`;
@@ -97,8 +107,8 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
     setOpenProjectId((prev) => (prev === projectId ? null : projectId));
   };
 
-  // Triple the projects for seamless infinite scroll
-  const tripleProjects = [...projects, ...projects, ...projects];
+  // Repeat the projects array REPETITIONS times for seamless infinite scroll
+  const repeatedProjects = Array(REPETITIONS).fill(projects).flat();
 
   return (
     <div
@@ -113,7 +123,7 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
         style={{
           willChange: 'transform',
         }}>
-        {tripleProjects.map((project, index) => (
+        {repeatedProjects.map((project, index) => (
           <div
             key={`${project._id}-${index}`}
             className='flex-shrink-0 w-1/2 md:w-1/5'>
