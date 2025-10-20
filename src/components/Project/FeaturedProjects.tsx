@@ -11,15 +11,18 @@ interface FeaturedProjectsProps {
 const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   const [openProjectId, setOpenProjectId] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const innerContainerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
   const isUserInteracting = useRef<boolean>(false);
+  const translateX = useRef<number>(0);
 
   // Configuration
   const SCROLL_SPEED = 40; // Pixels per second - adjust this to make it faster/slower
 
   useEffect(() => {
     const container = scrollContainerRef.current;
-    if (!container || !projects || projects.length === 0) return;
+    const innerContainer = innerContainerRef.current;
+    if (!container || !innerContainer || !projects || projects.length === 0) return;
 
     let lastTime = performance.now();
 
@@ -34,19 +37,19 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
       const deltaTime = (currentTime - lastTime) / 1000; // Convert to seconds
       lastTime = currentTime;
 
-      // Continuous smooth scrolling
+      // Continuous smooth scrolling using CSS transform
       const scrollAmount = SCROLL_SPEED * deltaTime;
-      container.scrollLeft += scrollAmount;
+      translateX.current -= scrollAmount;
 
-      // Handle infinite loop - reset when reaching 2/3 of the way through
-      const scrollWidth = container.scrollWidth;
-      const resetPoint = (scrollWidth / 3) * 2;
+      // Handle infinite loop - reset when reaching 1/3 of the way through
+      const itemWidth = innerContainer.offsetWidth / 3;
 
-      if (container.scrollLeft >= resetPoint) {
-        // Jump back to 1/3 position for seamless loop
-        const offset = container.scrollLeft - resetPoint;
-        container.scrollLeft = (scrollWidth / 3) + offset;
+      if (Math.abs(translateX.current) >= itemWidth) {
+        // Jump back to start position for seamless loop
+        translateX.current += itemWidth;
       }
+
+      innerContainer.style.transform = `translate3d(${translateX.current}px, 0, 0)`;
 
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -98,16 +101,17 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   const tripleProjects = [...projects, ...projects, ...projects];
 
   return (
-    <div className='relative overflow-hidden'>
+    <div
+      ref={scrollContainerRef}
+      className='relative overflow-hidden'
+      style={{
+        touchAction: 'pan-x',
+      }}>
       <div
-        ref={scrollContainerRef}
-        className='flex overflow-x-scroll scrollbar-hide'
+        ref={innerContainerRef}
+        className='flex'
         style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-          WebkitOverflowScrolling: 'touch',
-          scrollBehavior: 'auto',
-          touchAction: 'pan-x',
+          willChange: 'transform',
         }}>
         {tripleProjects.map((project, index) => (
           <div
@@ -121,13 +125,6 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
           </div>
         ))}
       </div>
-
-      {/* Hide scrollbar */}
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </div>
   );
 };
