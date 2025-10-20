@@ -131,7 +131,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                           {/* Section Heading */}
                           {section.heading && (
                             <div className='mb-4'>
-                              <p className='text-body-sm uppercase tracking-wide text-subtle/70'>
+                              <p className='uppercase tracking-wide text-subtle/70'>
                                 {section.heading}
                               </p>
                             </div>
@@ -160,7 +160,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                                   <Link
                                     {...linkProps}
                                     onClick={onClose}
-                                    className='flex items-center justify-between w-full text-brand-white hover:text-brand-primary transition-colors'>
+                                    className='text-xl flex items-center justify-between w-full text-brand-white hover:text-brand-primary transition-colors'>
                                     <span>{label}</span>
                                     {isExternal && (
                                       <FaExternalLinkAlt className='text-body-xs text-current ml-2 flex-shrink-0' />
