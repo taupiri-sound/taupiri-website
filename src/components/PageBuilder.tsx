@@ -354,6 +354,7 @@ const PageBuilder = ({
   clientsData,
   equipmentListData,
   teamMembersData,
+  allProjectsData,
   contactFormSettings,
   alignment = 'center',
 }: PageBuilderProps) => {
@@ -382,6 +383,7 @@ const PageBuilder = ({
         clientsData={clientsData}
         equipmentListData={equipmentListData}
         teamMembersData={teamMembersData}
+        allProjectsData={allProjectsData}
         contactFormSettings={contactFormSettings}
         alignment={alignment}
       />

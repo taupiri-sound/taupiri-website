@@ -89,6 +89,9 @@ export async function getAllProjects(): Promise<ALL_PROJECTS_QUERYResult | null>
     query: ALL_PROJECTS_QUERY,
   });
 
+  console.log('[getAllProjects] Fetched data:', data);
+  console.log('[getAllProjects] Data length:', data?.length);
+
   return data;
 }
 

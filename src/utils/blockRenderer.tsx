@@ -426,6 +426,8 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
 
     case 'projectList': {
       const projectListBlock = typedBlock as WithKey<ProjectListType>;
+      console.log('[blockRenderer] projectList case - allProjectsData:', allProjectsData);
+      console.log('[blockRenderer] projectList case - allProjectsData length:', allProjectsData?.length);
       return (
         <BlockWrapper key={projectListBlock._key}>
           <ProjectListComponent projects={allProjectsData || []} />

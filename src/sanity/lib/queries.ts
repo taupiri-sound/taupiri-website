@@ -369,6 +369,25 @@ const contentProjection = `
       hasOverrideDate,
       overrideDate
     }
+  },
+  _type == "projectList" => {...},
+  _type == "featuredProjects" => {
+    ...,
+    projects[]->{
+      _id,
+      _type,
+      name,
+      image{
+        asset,
+        alt,
+        hotspot,
+        crop
+      },
+      description,
+      linkLabel,
+      link,
+      order
+    }
   }
 `;
 
