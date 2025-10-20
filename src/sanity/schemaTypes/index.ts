@@ -35,9 +35,12 @@ import { itemListType } from './blocks/itemListType';
 import { equipmentListType } from './blocks/equipmentListType';
 import { clientListType } from './blocks/clientListType';
 import { teamMemberListType } from './blocks/teamMemberListType';
+import { projectListType } from './blocks/projectListType';
+import { featuredProjectsType } from './blocks/featuredProjectsType';
 import { contactFormType } from './blocks/contactFormType';
 import { siteSettingsType } from './siteSettingsType';
 import { teamMemberType } from './teamMemberType';
+import { projectType } from './projectType';
 import { companyLinksType } from './companyLinksType';
 import { companyLinksArrayType } from './shared/socialLinksArrayType';
 import { ctaListType } from './shared/ctaListType';
@@ -68,6 +71,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     clientsType,
     equipmentListSingletonType,
     teamMemberType,
+    projectType,
     termsAndConditionsType,
     privacyPolicyType,
     blockContentType,
@@ -103,6 +107,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     equipmentListType,
     clientListType,
     teamMemberListType,
+    projectListType,
+    featuredProjectsType,
     contactFormType,
     // Shared Components
     companyLinksArrayType,

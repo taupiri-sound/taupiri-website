@@ -4,7 +4,7 @@ import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { NestedBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
-import type { COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
+import type { COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute, type SanityLiveEditingProps } from '../../utils/sectionHelpers';
 import { contentBlockBottomSpacing } from '@/utils/spacingConstants';
 import { renderBlock } from '@/utils/blockRenderer';
@@ -28,6 +28,7 @@ interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' 
   clientsData?: CLIENTS_QUERYResult | null;
   equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
   teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
+  allProjectsData?: ALL_PROJECTS_QUERYResult | null;
   contactFormSettings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
 }
@@ -45,6 +46,7 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   clientsData,
   equipmentListData,
   teamMembersData,
+  allProjectsData,
   contactFormSettings,
   alignment = 'center',
 }) => {
@@ -70,6 +72,7 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
       clientsData,
       equipmentListData,
       teamMembersData,
+      allProjectsData,
       contactFormSettings,
       alignment,
       config: createDataAttributeConfig,

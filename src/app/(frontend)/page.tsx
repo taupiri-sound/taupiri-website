@@ -1,7 +1,7 @@
 import React from 'react';
 import PageBuilder from '@/components/PageBuilder';
 import Hero from '@/components/HomeHero/Hero';
-import { getHomePage, getSiteSettings, getCompanyLinks, getContactFormSettings, getClients, getEquipmentList, getTeamMembers } from '@/actions';
+import { getHomePage, getSiteSettings, getCompanyLinks, getContactFormSettings, getClients, getEquipmentList, getTeamMembers, getAllProjects } from '@/actions';
 import type { PAGE_QUERYResult } from '@/sanity/types';
 import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
@@ -23,7 +23,7 @@ export async function generateMetadata() {
 }
 
 const Page = async () => {
-  const [page, siteSettings, companyLinks, contactFormSettings, clientsData, equipmentListData, teamMembersData] = await Promise.all([
+  const [page, siteSettings, companyLinks, contactFormSettings, clientsData, equipmentListData, teamMembersData, allProjectsData] = await Promise.all([
     getHomePage(),
     getSiteSettings(),
     getCompanyLinks(),
@@ -31,6 +31,7 @@ const Page = async () => {
     getClients(),
     getEquipmentList(),
     getTeamMembers(),
+    getAllProjects(),
   ]);
 
   if (!page) {
@@ -67,6 +68,7 @@ const Page = async () => {
             clientsData={clientsData}
             equipmentListData={equipmentListData}
             teamMembersData={teamMembersData}
+            allProjectsData={allProjectsData}
             contactFormSettings={contactFormSettings}
             alignment='center'
           />

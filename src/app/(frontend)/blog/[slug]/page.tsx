@@ -1,7 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getAdjacentBlogPosts } from '@/actions/blog';
-import { getCompanyLinks, getSiteSettings, getContactFormSettings, getClients } from '@/actions';
+import { getCompanyLinks, getSiteSettings, getContactFormSettings, getClients, getAllProjects } from '@/actions';
 import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
@@ -71,13 +71,14 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const [post, companyLinks, siteSettings, contactFormSettings, clientsData, adjacentPosts] = await Promise.all([
+  const [post, companyLinks, siteSettings, contactFormSettings, clientsData, adjacentPosts, allProjectsData] = await Promise.all([
     getBlogPostBySlug(slug),
     getCompanyLinks(),
     getSiteSettings(),
     getContactFormSettings(),
     getClients(),
     getAdjacentBlogPosts(slug),
+    getAllProjects(),
   ]);
 
   if (!post) {
@@ -199,6 +200,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 documentType='blogPost'
                 companyLinks={companyLinks}
                 clientsData={clientsData}
+                allProjectsData={allProjectsData}
                 contactFormSettings={contactFormSettings}
                 alignment='left'
               />

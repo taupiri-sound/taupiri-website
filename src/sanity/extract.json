@@ -607,6 +607,89 @@
     }
   },
   {
+    "name": "featuredProjects",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "featuredProjects"
+          }
+        },
+        "projects": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "array",
+            "of": {
+              "type": "object",
+              "attributes": {
+                "_ref": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "_type": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "string",
+                    "value": "reference"
+                  }
+                },
+                "_weak": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "boolean"
+                  },
+                  "optional": true
+                }
+              },
+              "dereferencesTo": "project",
+              "rest": {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "optional": true
+        }
+      }
+    }
+  },
+  {
+    "name": "projectList",
+    "type": "type",
+    "value": {
+      "type": "object",
+      "attributes": {
+        "_type": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string",
+            "value": "projectList"
+          }
+        },
+        "placeholder": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "string"
+          },
+          "optional": true
+        }
+      }
+    }
+  },
+  {
     "name": "teamMemberList",
     "type": "type",
     "value": {
@@ -2214,6 +2297,36 @@
                   },
                   "rest": {
                     "type": "inline",
+                    "name": "projectList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "featuredProjects"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
                     "name": "contactForm"
                   }
                 },
@@ -2497,6 +2610,36 @@
                   "rest": {
                     "type": "inline",
                     "name": "equipmentList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "projectList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "featuredProjects"
                   }
                 },
                 {
@@ -3349,6 +3492,36 @@
                   },
                   "rest": {
                     "type": "inline",
+                    "name": "projectList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "featuredProjects"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
                     "name": "card"
                   }
                 },
@@ -3915,6 +4088,36 @@
                   },
                   "rest": {
                     "type": "inline",
+                    "name": "projectList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "featuredProjects"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
                     "name": "contactForm"
                   }
                 },
@@ -4317,6 +4520,36 @@
                   "rest": {
                     "type": "inline",
                     "name": "teamMemberList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "projectList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "featuredProjects"
                   }
                 },
                 {
@@ -4768,6 +5001,36 @@
                   },
                   "rest": {
                     "type": "inline",
+                    "name": "projectList"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "featuredProjects"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
                     "name": "contactForm"
                   }
                 },
@@ -5130,6 +5393,36 @@
             "rest": {
               "type": "inline",
               "name": "teamMemberList"
+            }
+          },
+          {
+            "type": "object",
+            "attributes": {
+              "_key": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "rest": {
+              "type": "inline",
+              "name": "projectList"
+            }
+          },
+          {
+            "type": "object",
+            "attributes": {
+              "_key": {
+                "type": "objectAttribute",
+                "value": {
+                  "type": "string"
+                }
+              }
+            },
+            "rest": {
+              "type": "inline",
+              "name": "featuredProjects"
             }
           },
           {
@@ -5940,6 +6233,36 @@
                 },
                 "rest": {
                   "type": "inline",
+                  "name": "projectList"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "featuredProjects"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
                   "name": "contactForm"
                 }
               },
@@ -6370,6 +6693,36 @@
                 },
                 "rest": {
                   "type": "inline",
+                  "name": "projectList"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "featuredProjects"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
                   "name": "contactForm"
                 }
               },
@@ -6555,6 +6908,147 @@
               }
             ]
           }
+        },
+        "optional": true
+      }
+    }
+  },
+  {
+    "name": "project",
+    "type": "document",
+    "attributes": {
+      "_id": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_type": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string",
+          "value": "project"
+        }
+      },
+      "_createdAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_updatedAt": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "_rev": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        }
+      },
+      "name": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "image": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "object",
+          "attributes": {
+            "asset": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "object",
+                "attributes": {
+                  "_ref": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  },
+                  "_type": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string",
+                      "value": "reference"
+                    }
+                  },
+                  "_weak": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "boolean"
+                    },
+                    "optional": true
+                  }
+                },
+                "dereferencesTo": "sanity.imageAsset"
+              },
+              "optional": true
+            },
+            "media": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "unknown"
+              },
+              "optional": true
+            },
+            "hotspot": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "inline",
+                "name": "sanity.imageHotspot"
+              },
+              "optional": true
+            },
+            "crop": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "inline",
+                "name": "sanity.imageCrop"
+              },
+              "optional": true
+            },
+            "_type": {
+              "type": "objectAttribute",
+              "value": {
+                "type": "string",
+                "value": "image"
+              }
+            }
+          }
+        },
+        "optional": true
+      },
+      "description": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "linkLabel": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "link": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "order": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "number"
         },
         "optional": true
       }
@@ -7706,6 +8200,36 @@
                 },
                 "rest": {
                   "type": "inline",
+                  "name": "projectList"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "featuredProjects"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
                   "name": "contactForm"
                 }
               },
@@ -8211,6 +8735,36 @@
                 "rest": {
                   "type": "inline",
                   "name": "teamMemberList"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "projectList"
+                }
+              },
+              {
+                "type": "object",
+                "attributes": {
+                  "_key": {
+                    "type": "objectAttribute",
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rest": {
+                  "type": "inline",
+                  "name": "featuredProjects"
                 }
               },
               {

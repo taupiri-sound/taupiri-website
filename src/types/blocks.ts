@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, AudioSamplePlayer, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList, EquipmentList, ClientList, TeamMemberList, ContactForm } from '@/sanity/types';
+import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, AudioSamplePlayer, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList, EquipmentList, ClientList, TeamMemberList, ContactForm, ProjectList, FeaturedProjects } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -46,6 +46,8 @@ export type EquipmentListBlock = EquipmentList & { _key: string };
 export type ClientListBlock = ClientList & { _key: string };
 export type TeamMemberListBlock = TeamMemberList & { _key: string };
 export type ContactFormBlock = ContactForm & { _key: string };
+export type ProjectListBlock = ProjectList & { _key: string };
+export type FeaturedProjectsBlock = FeaturedProjects & { _key: string };
 
 // Union of all possible block types (current and future)
 export type NestedBlock =
@@ -76,7 +78,9 @@ export type NestedBlock =
   | EquipmentListBlock
   | ClientListBlock
   | TeamMemberListBlock
-  | ContactFormBlock;
+  | ContactFormBlock
+  | ProjectListBlock
+  | FeaturedProjectsBlock;
 
 // Union of blocks that can contain nested content
 export type BlockWithContent = PageSectionBlock | SubSectionBlock | SubSubSectionBlock | SectionBlock | CardBlock;
@@ -188,4 +192,12 @@ export const isTeamMemberListBlock = (block: NestedBlock): block is TeamMemberLi
 
 export const isContactFormBlock = (block: NestedBlock): block is ContactFormBlock => {
   return block._type === 'contactForm';
+};
+
+export const isProjectListBlock = (block: NestedBlock): block is ProjectListBlock => {
+  return block._type === 'projectList';
+};
+
+export const isFeaturedProjectsBlock = (block: NestedBlock): block is FeaturedProjectsBlock => {
+  return block._type === 'featuredProjects';
 };

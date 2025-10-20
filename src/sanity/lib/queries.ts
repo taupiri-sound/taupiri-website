@@ -686,3 +686,37 @@ export const TEAM_MEMBERS_QUERY = defineQuery(`*[_type == "teamMember"] | order(
   displayOrder,
   description
 }`);
+
+export const ALL_PROJECTS_QUERY = defineQuery(`*[_type == "project"] | order(order asc, name asc) {
+  _id,
+  _type,
+  _key,
+  name,
+  image{
+    asset,
+    alt,
+    hotspot,
+    crop
+  },
+  description,
+  linkLabel,
+  link,
+  order
+}`);
+
+export const FEATURED_PROJECTS_QUERY = defineQuery(`*[_type == "project" && _id in $projectIds]{
+  _id,
+  _type,
+  _key,
+  name,
+  image{
+    asset,
+    alt,
+    hotspot,
+    crop
+  },
+  description,
+  linkLabel,
+  link,
+  order
+}`);

@@ -8,6 +8,7 @@ import {
   PlayIcon,
   CogIcon,
   DocumentTextIcon,
+  FolderIcon,
 } from '@sanity/icons';
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
@@ -89,6 +90,22 @@ export const structure: StructureResolver = (S) =>
           S.documentTypeList('audioSample')
             .title('Audio Samples')
             .defaultOrdering([{ field: '_createdAt', direction: 'desc' }])
+        ),
+
+      S.divider(),
+
+      // === PROJECTS ===
+      S.listItem()
+        .id('projects')
+        .title('Projects')
+        .icon(FolderIcon)
+        .child(
+          S.documentTypeList('project')
+            .title('Projects')
+            .defaultOrdering([
+              { field: 'order', direction: 'asc' },
+              { field: 'name', direction: 'asc' },
+            ])
         ),
 
       S.divider(),

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import type { PAGE_QUERYResult, COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
+import type { PAGE_QUERYResult, COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
 import type { NestedBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
 import { client } from '@/sanity/lib/client';
@@ -28,6 +28,7 @@ interface SharedPageBuilderProps {
   clientsData?: CLIENTS_QUERYResult | null;
   equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
   teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
+  allProjectsData?: ALL_PROJECTS_QUERYResult | null;
   contactFormSettings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
 }
@@ -62,6 +63,7 @@ const BlockRenderer = ({
   clientsData,
   equipmentListData,
   teamMembersData,
+  allProjectsData,
   contactFormSettings,
   alignment = 'center',
 }: BlockRendererProps) => {
@@ -197,6 +199,7 @@ const BlockRenderer = ({
               clientsData={clientsData}
               equipmentListData={equipmentListData}
               teamMembersData={teamMembersData}
+              allProjectsData={allProjectsData}
               contactFormSettings={contactFormSettings}
               alignment={alignment}
             />
@@ -309,6 +312,8 @@ const BlockRenderer = ({
                   documentId={documentId}
                   documentType={documentType}
                   fieldPathPrefix={blockPath}
+                  equipmentListData={equipmentListData}
+                  allProjectsData={allProjectsData}
                 />
               </BlockWrapper>
             );
@@ -326,6 +331,7 @@ const BlockRenderer = ({
                   clientsData,
                   equipmentListData,
                   teamMembersData,
+                  allProjectsData,
                   contactFormSettings,
                   alignment,
                   config: createDataAttributeConfig,

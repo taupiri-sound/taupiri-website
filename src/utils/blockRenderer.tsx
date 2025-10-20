@@ -5,6 +5,8 @@ import type {
   CLIENTS_QUERYResult,
   EQUIPMENT_LIST_QUERYResult,
   TEAM_MEMBERS_QUERYResult,
+  ALL_PROJECTS_QUERYResult,
+  FEATURED_PROJECTS_QUERYResult,
   CONTACT_FORM_SETTINGS_QUERYResult,
   RichText as RichTextType,
   Quote as QuoteType,
@@ -25,6 +27,8 @@ import type {
   EquipmentList as EquipmentListType,
   ClientList as ClientListType,
   TeamMemberList as TeamMemberListType,
+  ProjectList as ProjectListType,
+  FeaturedProjects as FeaturedProjectsType,
   ContactForm as ContactFormType,
   Divider as DividerType,
   Card as CardType,
@@ -52,6 +56,8 @@ import ItemList from '@/components/_blocks/ItemList';
 import EquipmentList from '@/components/_blocks/EquipmentList';
 import ClientList from '@/components/_blocks/ClientList';
 import TeamMemberListComponent from '@/components/_blocks/TeamMemberList';
+import ProjectListComponent from '@/components/_blocks/ProjectList';
+import FeaturedProjectsComponent from '@/components/_blocks/FeaturedProjects';
 import ContactFormComponent from '@/components/_blocks/ContactForm';
 import Divider from '@/components/UI/Divider';
 import Card from '@/components/_blocks/Card';
@@ -72,6 +78,7 @@ interface RenderBlockOptions {
   clientsData?: CLIENTS_QUERYResult | null;
   equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
   teamMembersData?: TEAM_MEMBERS_QUERYResult | null;
+  allProjectsData?: ALL_PROJECTS_QUERYResult | null;
   contactFormSettings?: CONTACT_FORM_SETTINGS_QUERYResult | null;
   alignment?: 'left' | 'center' | 'right';
   config?: RenderBlockConfig;
@@ -101,6 +108,8 @@ type BlockType =
   | WithKey<EquipmentListType>
   | WithKey<ClientListType>
   | WithKey<TeamMemberListType>
+  | WithKey<ProjectListType>
+  | WithKey<FeaturedProjectsType>
   | WithKey<ContactFormType>
   | WithKey<DividerType>
   | WithKey<CardType>
@@ -120,6 +129,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     clientsData,
     equipmentListData,
     teamMembersData,
+    allProjectsData,
     contactFormSettings,
     alignment = 'center',
     config,
@@ -410,6 +420,36 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             displayStyle={teamMemberListBlock.displayStyle as 'detailed' | 'condensed'}
             teamMembers={teamMembersData || []}
           />
+        </BlockWrapper>
+      );
+    }
+
+    case 'projectList': {
+      const projectListBlock = typedBlock as WithKey<ProjectListType>;
+      return (
+        <BlockWrapper key={projectListBlock._key}>
+          <ProjectListComponent projects={allProjectsData || []} />
+        </BlockWrapper>
+      );
+    }
+
+    case 'featuredProjects': {
+      const featuredProjectsBlock = typedBlock as WithKey<FeaturedProjectsType>;
+      // Extract project IDs from the references
+      const projectRefs = featuredProjectsBlock.projects || [];
+      const projectIds = projectRefs
+        .map((ref) => (typeof ref === 'object' && ref !== null && '_ref' in ref ? ref._ref : null))
+        .filter((id): id is string => id !== null);
+
+      // Filter allProjectsData to only include featured projects in the correct order
+      const featuredProjects =
+        projectIds
+          .map((id) => allProjectsData?.find((project) => project._id === id))
+          .filter((project): project is NonNullable<typeof project> => project !== undefined) || [];
+
+      return (
+        <BlockWrapper key={featuredProjectsBlock._key}>
+          <FeaturedProjectsComponent projects={featuredProjects} />
         </BlockWrapper>
       );
     }

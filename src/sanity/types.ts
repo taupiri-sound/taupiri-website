@@ -121,6 +121,22 @@ export type ContactForm = {
   placeholder?: string;
 };
 
+export type FeaturedProjects = {
+  _type: "featuredProjects";
+  projects?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "project";
+  }>;
+};
+
+export type ProjectList = {
+  _type: "projectList";
+  placeholder?: string;
+};
+
 export type TeamMemberList = {
   _type: "teamMemberList";
   category?: "primary" | "secondary";
@@ -386,6 +402,10 @@ export type TwoColumnLayout = {
     _key: string;
   } & EquipmentList | {
     _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
+    _key: string;
   } & ContactForm | {
     _key: string;
   } & Quote | {
@@ -424,6 +444,10 @@ export type TwoColumnLayout = {
   } & CheckList | {
     _key: string;
   } & EquipmentList | {
+    _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
     _key: string;
   } & ContactForm | {
     _key: string;
@@ -556,6 +580,10 @@ export type GridLayout = {
     _key: string;
   } & EquipmentList | {
     _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
+    _key: string;
   } & Card | {
     _key: string;
   } & ImageBlock | {
@@ -628,6 +656,10 @@ export type SubSubSection = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
+    _key: string;
   } & ContactForm | {
     _key: string;
   } & Quote | {
@@ -684,6 +716,10 @@ export type SubSection = {
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
+    _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
     _key: string;
   } & ContactForm | {
     _key: string;
@@ -745,6 +781,10 @@ export type PageSection = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
+    _key: string;
   } & ContactForm | {
     _key: string;
   } & Quote | {
@@ -795,6 +835,10 @@ export type PageBuilder = Array<{
 } & ClientList | {
   _key: string;
 } & TeamMemberList | {
+  _key: string;
+} & ProjectList | {
+  _key: string;
+} & FeaturedProjects | {
   _key: string;
 } & ContactForm | {
   _key: string;
@@ -905,6 +949,10 @@ export type PrivacyPolicy = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
+    _key: string;
   } & ContactForm | {
     _key: string;
   } & Quote | {
@@ -965,6 +1013,10 @@ export type TermsAndConditions = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
+    _key: string;
   } & ContactForm | {
     _key: string;
   } & Quote | {
@@ -990,6 +1042,31 @@ export type TermsAndConditions = {
   } & AudioSamplePlayer | {
     _key: string;
   } & CompanyLinksBlock>;
+};
+
+export type Project = {
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  description?: string;
+  linkLabel?: string;
+  link?: string;
+  order?: number;
 };
 
 export type TeamMember = {
@@ -1164,6 +1241,10 @@ export type BlogPost = {
     _key: string;
   } & TeamMemberList | {
     _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
+    _key: string;
   } & ContactForm | {
     _key: string;
   } & Quote | {
@@ -1238,6 +1319,10 @@ export type Page = {
   } & ClientList | {
     _key: string;
   } & TeamMemberList | {
+    _key: string;
+  } & ProjectList | {
+    _key: string;
+  } & FeaturedProjects | {
     _key: string;
   } & ContactForm | {
     _key: string;
@@ -1566,7 +1651,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ContactForm | TeamMemberList | ClientList | EquipmentList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | TeamMember | EquipmentListSingleton | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | ContactFormSettings | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ContactForm | FeaturedProjects | ProjectList | TeamMemberList | ClientList | EquipmentList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | Project | TeamMember | EquipmentListSingleton | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | ContactFormSettings | CompanyLinks | CompanyLinksArray | SiteSettings | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -2242,11 +2327,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -2281,11 +2370,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -2428,6 +2521,16 @@ export type PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -2440,7 +2543,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -2485,6 +2592,10 @@ export type PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -2843,11 +2954,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -2882,11 +2997,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -3029,6 +3148,16 @@ export type PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -3041,7 +3170,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -3086,6 +3219,10 @@ export type PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -3322,6 +3459,18 @@ export type PAGE_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -3979,11 +4128,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -4018,11 +4171,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -4165,6 +4322,16 @@ export type PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -4177,7 +4344,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -4222,6 +4393,10 @@ export type PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -4580,11 +4755,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -4619,11 +4798,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -4766,6 +4949,16 @@ export type PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -4778,7 +4971,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -4823,6 +5020,10 @@ export type PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -4880,6 +5081,18 @@ export type PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -4894,6 +5107,12 @@ export type PAGE_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -5674,11 +5893,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -5713,11 +5936,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -5860,6 +6087,16 @@ export type PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -5872,7 +6109,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -5917,6 +6158,10 @@ export type PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -6275,11 +6520,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -6314,11 +6563,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -6461,6 +6714,16 @@ export type PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -6473,7 +6736,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -6518,6 +6785,10 @@ export type PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -6754,6 +7025,18 @@ export type PAGE_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -7398,11 +7681,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -7437,11 +7724,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -7584,6 +7875,16 @@ export type PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -7596,7 +7897,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -7641,6 +7946,10 @@ export type PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -7999,11 +8308,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -8038,11 +8351,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -8185,6 +8502,16 @@ export type PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -8197,7 +8524,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -8242,6 +8573,10 @@ export type PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -8297,6 +8632,18 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -8311,6 +8658,12 @@ export type PAGE_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -8416,6 +8769,12 @@ export type PAGE_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -9116,11 +9475,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -9155,11 +9518,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -9302,6 +9669,16 @@ export type PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -9314,7 +9691,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -9359,6 +9740,10 @@ export type PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -9717,11 +10102,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -9756,11 +10145,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -9903,6 +10296,16 @@ export type PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -9915,7 +10318,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -9960,6 +10367,10 @@ export type PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -10194,6 +10605,18 @@ export type PAGE_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -10533,11 +10956,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -10572,11 +10999,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -10597,6 +11028,17 @@ export type PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -10611,6 +11053,11 @@ export type PAGE_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -10712,6 +11159,12 @@ export type PAGE_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -11105,11 +11558,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -11144,11 +11601,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -11341,6 +11802,17 @@ export type PAGE_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -11677,11 +12149,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -11716,11 +12192,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -11740,6 +12220,16 @@ export type PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -11754,6 +12244,10 @@ export type PAGE_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -11850,6 +12344,11 @@ export type PAGE_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -12217,11 +12716,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -12256,11 +12759,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -12403,6 +12910,16 @@ export type PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -12415,7 +12932,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -12460,6 +12981,10 @@ export type PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -12818,11 +13343,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -12857,11 +13386,15 @@ export type PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -13004,6 +13537,16 @@ export type PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -13016,7 +13559,11 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -13061,6 +13608,10 @@ export type PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -13438,11 +13989,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -13477,11 +14032,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -13624,6 +14183,16 @@ export type PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -13636,7 +14205,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -13681,6 +14254,10 @@ export type PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -14039,11 +14616,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -14078,11 +14659,15 @@ export type PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -14225,6 +14810,16 @@ export type PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -14237,7 +14832,11 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -14282,6 +14881,10 @@ export type PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -14661,11 +15264,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -14700,11 +15307,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -14847,6 +15458,16 @@ export type PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -14859,7 +15480,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -14904,6 +15529,10 @@ export type PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -15262,11 +15891,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -15301,11 +15934,15 @@ export type PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -15448,6 +16085,16 @@ export type PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -15460,7 +16107,11 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -15505,6 +16156,10 @@ export type PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -15555,6 +16210,12 @@ export type PAGE_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -15926,11 +16587,15 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -15965,11 +16630,15 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -16112,6 +16781,16 @@ export type PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -16124,7 +16803,11 @@ export type PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -16169,6 +16852,10 @@ export type PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -16527,11 +17214,15 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -16566,11 +17257,15 @@ export type PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -16713,6 +17408,16 @@ export type PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -16725,7 +17430,11 @@ export type PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -16770,6 +17479,10 @@ export type PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -17115,11 +17828,15 @@ export type PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -17154,11 +17871,15 @@ export type PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -17880,11 +18601,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -17919,11 +18644,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -18066,6 +18795,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -18078,7 +18817,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -18123,6 +18866,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -18481,11 +19228,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -18520,11 +19271,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -18667,6 +19422,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -18679,7 +19444,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -18724,6 +19493,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -18960,6 +19733,18 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -19617,11 +20402,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -19656,11 +20445,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -19803,6 +20596,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -19815,7 +20618,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -19860,6 +20667,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -20218,11 +21029,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -20257,11 +21072,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -20404,6 +21223,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -20416,7 +21245,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -20461,6 +21294,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -20518,6 +21355,18 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -20532,6 +21381,12 @@ export type HOME_PAGE_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -21312,11 +22167,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -21351,11 +22210,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -21498,6 +22361,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -21510,7 +22383,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -21555,6 +22432,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -21913,11 +22794,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -21952,11 +22837,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -22099,6 +22988,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -22111,7 +23010,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -22156,6 +23059,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -22392,6 +23299,18 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -23036,11 +23955,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -23075,11 +23998,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -23222,6 +24149,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -23234,7 +24171,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -23279,6 +24220,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -23637,11 +24582,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -23676,11 +24625,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -23823,6 +24776,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -23835,7 +24798,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -23880,6 +24847,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -23935,6 +24906,18 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -23949,6 +24932,12 @@ export type HOME_PAGE_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -24054,6 +25043,12 @@ export type HOME_PAGE_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -24754,11 +25749,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -24793,11 +25792,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -24940,6 +25943,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -24952,7 +25965,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -24997,6 +26014,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -25355,11 +26376,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -25394,11 +26419,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -25541,6 +26570,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -25553,7 +26592,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -25598,6 +26641,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -25832,6 +26879,18 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -26171,11 +27230,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -26210,11 +27273,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -26235,6 +27302,17 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -26249,6 +27327,11 @@ export type HOME_PAGE_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -26350,6 +27433,12 @@ export type HOME_PAGE_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -26743,11 +27832,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -26782,11 +27875,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -26979,6 +28076,17 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -27315,11 +28423,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -27354,11 +28466,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -27378,6 +28494,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -27392,6 +28518,10 @@ export type HOME_PAGE_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -27488,6 +28618,11 @@ export type HOME_PAGE_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -27855,11 +28990,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -27894,11 +29033,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -28041,6 +29184,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -28053,7 +29206,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -28098,6 +29255,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -28456,11 +29617,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -28495,11 +29660,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -28642,6 +29811,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -28654,7 +29833,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -28699,6 +29882,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -29076,11 +30263,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -29115,11 +30306,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -29262,6 +30457,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -29274,7 +30479,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -29319,6 +30528,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -29677,11 +30890,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -29716,11 +30933,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -29863,6 +31084,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -29875,7 +31106,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -29920,6 +31155,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -30299,11 +31538,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -30338,11 +31581,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -30485,6 +31732,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -30497,7 +31754,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -30542,6 +31803,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -30900,11 +32165,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -30939,11 +32208,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -31086,6 +32359,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -31098,7 +32381,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -31143,6 +32430,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -31193,6 +32484,12 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -31564,11 +32861,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -31603,11 +32904,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -31750,6 +33055,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -31762,7 +33077,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -31807,6 +33126,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -32165,11 +33488,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -32204,11 +33531,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -32351,6 +33682,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -32363,7 +33704,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -32408,6 +33753,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -33301,11 +34650,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -33340,11 +34693,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -33487,6 +34844,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -33499,7 +34866,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -33544,6 +34915,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -33902,11 +35277,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -33941,11 +35320,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -34088,6 +35471,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -34100,7 +35493,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -34145,6 +35542,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -34381,6 +35782,18 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -35038,11 +36451,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -35077,11 +36494,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -35224,6 +36645,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -35236,7 +36667,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -35281,6 +36716,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -35639,11 +37078,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -35678,11 +37121,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -35825,6 +37272,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -35837,7 +37294,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -35882,6 +37343,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -35939,6 +37404,18 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -35953,6 +37430,12 @@ export type HOME_PAGE_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -36733,11 +38216,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -36772,11 +38259,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -36919,6 +38410,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -36931,7 +38432,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -36976,6 +38481,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -37334,11 +38843,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -37373,11 +38886,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -37520,6 +39037,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -37532,7 +39059,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -37577,6 +39108,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -37813,6 +39348,18 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -38457,11 +40004,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -38496,11 +40047,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -38643,6 +40198,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -38655,7 +40220,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -38700,6 +40269,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -39058,11 +40631,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -39097,11 +40674,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -39244,6 +40825,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -39256,7 +40847,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -39301,6 +40896,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -39356,6 +40955,18 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -39370,6 +40981,12 @@ export type HOME_PAGE_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -39475,6 +41092,12 @@ export type HOME_PAGE_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -40175,11 +41798,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -40214,11 +41841,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -40361,6 +41992,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -40373,7 +42014,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -40418,6 +42063,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -40776,11 +42425,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -40815,11 +42468,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -40962,6 +42619,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -40974,7 +42641,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -41019,6 +42690,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -41253,6 +42928,18 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -41592,11 +43279,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -41631,11 +43322,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -41656,6 +43351,17 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -41670,6 +43376,11 @@ export type HOME_PAGE_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -41771,6 +43482,12 @@ export type HOME_PAGE_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -42164,11 +43881,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -42203,11 +43924,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -42400,6 +44125,17 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -42736,11 +44472,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -42775,11 +44515,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -42799,6 +44543,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -42813,6 +44567,10 @@ export type HOME_PAGE_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -42909,6 +44667,11 @@ export type HOME_PAGE_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -43276,11 +45039,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -43315,11 +45082,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -43462,6 +45233,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -43474,7 +45255,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -43519,6 +45304,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -43877,11 +45666,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -43916,11 +45709,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -44063,6 +45860,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -44075,7 +45882,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -44120,6 +45931,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -44497,11 +46312,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -44536,11 +46355,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -44683,6 +46506,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -44695,7 +46528,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -44740,6 +46577,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -45098,11 +46939,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -45137,11 +46982,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -45284,6 +47133,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -45296,7 +47155,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -45341,6 +47204,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -45720,11 +47587,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -45759,11 +47630,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -45906,6 +47781,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -45918,7 +47803,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -45963,6 +47852,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -46321,11 +48214,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -46360,11 +48257,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -46507,6 +48408,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -46519,7 +48430,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -46564,6 +48479,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -46614,6 +48533,12 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -46985,11 +48910,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -47024,11 +48953,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -47171,6 +49104,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -47183,7 +49126,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -47228,6 +49175,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -47586,11 +49537,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -47625,11 +49580,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -47772,6 +49731,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -47784,7 +49753,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -47829,6 +49802,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -48554,11 +50531,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -48593,11 +50574,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -48740,6 +50725,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -48752,7 +50747,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -48797,6 +50796,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -49155,11 +51158,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -49194,11 +51201,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -49341,6 +51352,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -49353,7 +51374,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -49398,6 +51423,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -49634,6 +51663,18 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -50291,11 +52332,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -50330,11 +52375,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -50477,6 +52526,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -50489,7 +52548,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -50534,6 +52597,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -50892,11 +52959,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -50931,11 +53002,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -51078,6 +53153,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -51090,7 +53175,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -51135,6 +53224,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -51192,6 +53285,18 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -51206,6 +53311,12 @@ export type HOME_PAGE_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -51986,11 +54097,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -52025,11 +54140,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -52172,6 +54291,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -52184,7 +54313,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -52229,6 +54362,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -52587,11 +54724,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -52626,11 +54767,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -52773,6 +54918,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -52785,7 +54940,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -52830,6 +54989,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -53066,6 +55229,18 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -53710,11 +55885,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -53749,11 +55928,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -53896,6 +56079,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -53908,7 +56101,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -53953,6 +56150,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -54311,11 +56512,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -54350,11 +56555,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -54497,6 +56706,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -54509,7 +56728,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -54554,6 +56777,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -54609,6 +56836,18 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -54623,6 +56862,12 @@ export type HOME_PAGE_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -54728,6 +56973,12 @@ export type HOME_PAGE_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -55428,11 +57679,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -55467,11 +57722,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -55614,6 +57873,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -55626,7 +57895,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -55671,6 +57944,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -56029,11 +58306,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -56068,11 +58349,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -56215,6 +58500,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -56227,7 +58522,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -56272,6 +58571,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -56506,6 +58809,18 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -56845,11 +59160,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -56884,11 +59203,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -56909,6 +59232,17 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -56923,6 +59257,11 @@ export type HOME_PAGE_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -57024,6 +59363,12 @@ export type HOME_PAGE_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -57417,11 +59762,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -57456,11 +59805,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -57653,6 +60006,17 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -57989,11 +60353,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -58028,11 +60396,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -58052,6 +60424,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -58066,6 +60448,10 @@ export type HOME_PAGE_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -58162,6 +60548,11 @@ export type HOME_PAGE_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -58529,11 +60920,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -58568,11 +60963,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -58715,6 +61114,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -58727,7 +61136,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -58772,6 +61185,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -59130,11 +61547,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -59169,11 +61590,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -59316,6 +61741,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -59328,7 +61763,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -59373,6 +61812,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -59750,11 +62193,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -59789,11 +62236,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -59936,6 +62387,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -59948,7 +62409,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -59993,6 +62458,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -60351,11 +62820,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -60390,11 +62863,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -60537,6 +63014,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -60549,7 +63036,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -60594,6 +63085,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -60973,11 +63468,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -61012,11 +63511,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -61159,6 +63662,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -61171,7 +63684,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -61216,6 +63733,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -61574,11 +64095,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -61613,11 +64138,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -61760,6 +64289,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -61772,7 +64311,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -61817,6 +64360,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -61867,6 +64414,12 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -62238,11 +64791,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -62277,11 +64834,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -62424,6 +64985,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -62436,7 +65007,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -62481,6 +65056,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -62839,11 +65418,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -62878,11 +65461,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -63025,6 +65612,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -63037,7 +65634,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -63082,6 +65683,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -63807,11 +66412,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -63846,11 +66455,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -63993,6 +66606,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -64005,7 +66628,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -64050,6 +66677,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -64408,11 +67039,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -64447,11 +67082,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -64594,6 +67233,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -64606,7 +67255,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -64651,6 +67304,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -64887,6 +67544,18 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -65544,11 +68213,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -65583,11 +68256,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -65730,6 +68407,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -65742,7 +68429,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -65787,6 +68478,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -66145,11 +68840,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -66184,11 +68883,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -66331,6 +69034,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -66343,7 +69056,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -66388,6 +69105,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -66445,6 +69166,18 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -66459,6 +69192,12 @@ export type HOME_PAGE_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -67239,11 +69978,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -67278,11 +70021,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -67425,6 +70172,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -67437,7 +70194,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -67482,6 +70243,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -67840,11 +70605,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -67879,11 +70648,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -68026,6 +70799,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -68038,7 +70821,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -68083,6 +70870,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -68319,6 +71110,18 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -68963,11 +71766,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -69002,11 +71809,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -69149,6 +71960,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -69161,7 +71982,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -69206,6 +72031,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -69564,11 +72393,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -69603,11 +72436,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -69750,6 +72587,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -69762,7 +72609,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -69807,6 +72658,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -69862,6 +72717,18 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -69876,6 +72743,12 @@ export type HOME_PAGE_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -69981,6 +72854,12 @@ export type HOME_PAGE_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -70681,11 +73560,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -70720,11 +73603,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -70867,6 +73754,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -70879,7 +73776,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -70924,6 +73825,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -71282,11 +74187,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -71321,11 +74230,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -71468,6 +74381,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -71480,7 +74403,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -71525,6 +74452,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -71759,6 +74690,18 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -72098,11 +75041,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -72137,11 +75084,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -72162,6 +75113,17 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -72176,6 +75138,11 @@ export type HOME_PAGE_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -72277,6 +75244,12 @@ export type HOME_PAGE_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -72670,11 +75643,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -72709,11 +75686,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -72906,6 +75887,17 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -73242,11 +76234,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -73281,11 +76277,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -73305,6 +76305,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -73319,6 +76329,10 @@ export type HOME_PAGE_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -73415,6 +76429,11 @@ export type HOME_PAGE_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -73782,11 +76801,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -73821,11 +76844,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -73968,6 +76995,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -73980,7 +77017,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -74025,6 +77066,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -74383,11 +77428,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -74422,11 +77471,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -74569,6 +77622,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -74581,7 +77644,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -74626,6 +77693,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -75003,11 +78074,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -75042,11 +78117,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -75189,6 +78268,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -75201,7 +78290,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -75246,6 +78339,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -75604,11 +78701,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -75643,11 +78744,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -75790,6 +78895,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -75802,7 +78917,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -75847,6 +78966,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -76226,11 +79349,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -76265,11 +79392,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -76412,6 +79543,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -76424,7 +79565,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -76469,6 +79614,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -76827,11 +79976,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -76866,11 +80019,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -77013,6 +80170,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -77025,7 +80192,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -77070,6 +80241,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -77120,6 +80295,12 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -77491,11 +80672,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -77530,11 +80715,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -77677,6 +80866,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -77689,7 +80888,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -77734,6 +80937,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -78092,11 +81299,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -78131,11 +81342,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -78278,6 +81493,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -78290,7 +81515,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -78335,6 +81564,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -78384,6 +81617,20 @@ export type HOME_PAGE_QUERYResult = {
     image: null;
     content: null;
   }> | null;
+} | {
+  _id: string;
+  _type: "project";
+  heroStyle: null;
+  heroTextColor: null;
+  heroLogoDisplay: null;
+  heroBackgroundImages: null;
+  heroImageTransitionDuration: null;
+  h1Title: null;
+  heroTitle: null;
+  heroCallToActionList: null;
+  hideScrollIndicator: null;
+  heroContentPosition: null;
+  content: null;
 } | {
   _id: string;
   _type: "sanity.fileAsset";
@@ -79116,11 +82363,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -79155,11 +82406,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -79302,6 +82557,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -79314,7 +82579,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -79359,6 +82628,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -79717,11 +82990,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -79756,11 +83033,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -79903,6 +83184,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -79915,7 +83206,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -79960,6 +83255,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -80196,6 +83495,18 @@ export type HOME_PAGE_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -80853,11 +84164,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -80892,11 +84207,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -81039,6 +84358,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -81051,7 +84380,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -81096,6 +84429,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -81454,11 +84791,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -81493,11 +84834,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -81640,6 +84985,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -81652,7 +85007,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -81697,6 +85056,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -81754,6 +85117,18 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -81768,6 +85143,12 @@ export type HOME_PAGE_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -82548,11 +85929,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -82587,11 +85972,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -82734,6 +86123,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -82746,7 +86145,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -82791,6 +86194,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -83149,11 +86556,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -83188,11 +86599,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -83335,6 +86750,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -83347,7 +86772,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -83392,6 +86821,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -83628,6 +87061,18 @@ export type HOME_PAGE_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -84272,11 +87717,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -84311,11 +87760,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -84458,6 +87911,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -84470,7 +87933,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -84515,6 +87982,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -84873,11 +88344,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -84912,11 +88387,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -85059,6 +88538,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -85071,7 +88560,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -85116,6 +88609,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -85171,6 +88668,18 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -85185,6 +88694,12 @@ export type HOME_PAGE_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -85290,6 +88805,12 @@ export type HOME_PAGE_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -85990,11 +89511,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -86029,11 +89554,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -86176,6 +89705,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -86188,7 +89727,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -86233,6 +89776,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -86591,11 +90138,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -86630,11 +90181,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -86777,6 +90332,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -86789,7 +90354,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -86834,6 +90403,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -87068,6 +90641,18 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -87407,11 +90992,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -87446,11 +91035,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -87471,6 +91064,17 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -87485,6 +91089,11 @@ export type HOME_PAGE_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -87586,6 +91195,12 @@ export type HOME_PAGE_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -87979,11 +91594,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -88018,11 +91637,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -88215,6 +91838,17 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -88551,11 +92185,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -88590,11 +92228,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -88614,6 +92256,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -88628,6 +92280,10 @@ export type HOME_PAGE_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -88724,6 +92380,11 @@ export type HOME_PAGE_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -89091,11 +92752,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -89130,11 +92795,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -89277,6 +92946,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -89289,7 +92968,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -89334,6 +93017,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -89692,11 +93379,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -89731,11 +93422,15 @@ export type HOME_PAGE_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -89878,6 +93573,16 @@ export type HOME_PAGE_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -89890,7 +93595,11 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -89935,6 +93644,10 @@ export type HOME_PAGE_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -90312,11 +94025,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -90351,11 +94068,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -90498,6 +94219,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -90510,7 +94241,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -90555,6 +94290,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -90913,11 +94652,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -90952,11 +94695,15 @@ export type HOME_PAGE_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -91099,6 +94846,16 @@ export type HOME_PAGE_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -91111,7 +94868,11 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -91156,6 +94917,10 @@ export type HOME_PAGE_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -91535,11 +95300,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -91574,11 +95343,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -91721,6 +95494,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -91733,7 +95516,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -91778,6 +95565,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -92136,11 +95927,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -92175,11 +95970,15 @@ export type HOME_PAGE_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -92322,6 +96121,16 @@ export type HOME_PAGE_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -92334,7 +96143,11 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -92379,6 +96192,10 @@ export type HOME_PAGE_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -92429,6 +96246,12 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -92800,11 +96623,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -92839,11 +96666,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -92986,6 +96817,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -92998,7 +96839,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -93043,6 +96888,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -93401,11 +97250,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -93440,11 +97293,15 @@ export type HOME_PAGE_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -93587,6 +97444,16 @@ export type HOME_PAGE_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -93599,7 +97466,11 @@ export type HOME_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -93644,6 +97515,10 @@ export type HOME_PAGE_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -93936,6 +97811,12 @@ export type HEADER_QUERYResult = {
   verticalNavCtas: null;
 } | {
   _id: string;
+  _type: "project";
+  horizontalNav: null;
+  verticalNav: null;
+  verticalNavCtas: null;
+} | {
+  _id: string;
   _type: "sanity.fileAsset";
   horizontalNav: null;
   verticalNav: null;
@@ -94065,6 +97946,14 @@ export type SITE_SETTINGS_QUERYResult = {
   defaultOgImage: null;
 } | {
   _id: string;
+  _type: "project";
+  siteTitle: null;
+  defaultPageTitle: null;
+  siteDescription: null;
+  seoKeywords: null;
+  defaultOgImage: null;
+} | {
+  _id: string;
   _type: "sanity.fileAsset";
   siteTitle: null;
   defaultPageTitle: null;
@@ -94172,6 +98061,10 @@ export type COMPANY_LINKS_QUERYResult = {
 } | {
   _id: string;
   _type: "privacyPolicy";
+  companyLinks: null;
+} | {
+  _id: string;
+  _type: "project";
   companyLinks: null;
 } | {
   _id: string;
@@ -94321,6 +98214,17 @@ export type CONTACT_FORM_SETTINGS_QUERYResult = {
   _id: string;
   _type: "privacyPolicy";
   title: string | null;
+  subtitle: null;
+  messagePlaceholder: null;
+  successHeading: null;
+  successMessage: null;
+  emailGreeting: null;
+  emailIntroMessage: null;
+  emailOutroMessage: null;
+} | {
+  _id: string;
+  _type: "project";
+  title: null;
   subtitle: null;
   messagePlaceholder: null;
   successHeading: null;
@@ -94701,11 +98605,15 @@ export type BLOG_POSTS_QUERYResult = Array<{
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -94740,11 +98648,15 @@ export type BLOG_POSTS_QUERYResult = Array<{
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -95073,11 +98985,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -95112,11 +99028,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -95433,11 +99353,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -95472,11 +99396,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -95856,11 +99784,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -95895,11 +99827,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -95918,6 +99854,15 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
   _id: string;
   _type: "privacyPolicy";
   title: string | null;
+  heroImage: null;
+  subtitle: null;
+  noArticlesMessage: null;
+  hasClosingCard: null;
+  closingCard: null;
+} | {
+  _id: string;
+  _type: "project";
+  title: null;
   heroImage: null;
   subtitle: null;
   noArticlesMessage: null;
@@ -96656,11 +100601,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -96695,11 +100644,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -96842,6 +100795,16 @@ export type BLOG_POST_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -96854,7 +100817,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -96899,6 +100866,10 @@ export type BLOG_POST_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -97257,11 +101228,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -97296,11 +101271,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -97443,6 +101422,16 @@ export type BLOG_POST_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -97455,7 +101444,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -97500,6 +101493,10 @@ export type BLOG_POST_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -97736,6 +101733,18 @@ export type BLOG_POST_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -98393,11 +102402,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -98432,11 +102445,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -98579,6 +102596,16 @@ export type BLOG_POST_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -98591,7 +102618,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -98636,6 +102667,10 @@ export type BLOG_POST_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -98994,11 +103029,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -99033,11 +103072,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -99180,6 +103223,16 @@ export type BLOG_POST_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -99192,7 +103245,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -99237,6 +103294,10 @@ export type BLOG_POST_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -99294,6 +103355,18 @@ export type BLOG_POST_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -99308,6 +103381,12 @@ export type BLOG_POST_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -100088,11 +104167,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -100127,11 +104210,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -100274,6 +104361,16 @@ export type BLOG_POST_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -100286,7 +104383,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -100331,6 +104432,10 @@ export type BLOG_POST_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -100689,11 +104794,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -100728,11 +104837,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -100875,6 +104988,16 @@ export type BLOG_POST_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -100887,7 +105010,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -100932,6 +105059,10 @@ export type BLOG_POST_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -101168,6 +105299,18 @@ export type BLOG_POST_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -101812,11 +105955,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -101851,11 +105998,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -101998,6 +106149,16 @@ export type BLOG_POST_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -102010,7 +106171,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -102055,6 +106220,10 @@ export type BLOG_POST_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -102413,11 +106582,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -102452,11 +106625,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -102599,6 +106776,16 @@ export type BLOG_POST_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -102611,7 +106798,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -102656,6 +106847,10 @@ export type BLOG_POST_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -102711,6 +106906,18 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -102725,6 +106932,12 @@ export type BLOG_POST_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -102830,6 +107043,12 @@ export type BLOG_POST_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -103530,11 +107749,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -103569,11 +107792,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -103716,6 +107943,16 @@ export type BLOG_POST_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -103728,7 +107965,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -103773,6 +108014,10 @@ export type BLOG_POST_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -104131,11 +108376,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -104170,11 +108419,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -104317,6 +108570,16 @@ export type BLOG_POST_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -104329,7 +108592,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -104374,6 +108641,10 @@ export type BLOG_POST_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -104608,6 +108879,18 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -104947,11 +109230,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -104986,11 +109273,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -105011,6 +109302,17 @@ export type BLOG_POST_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -105025,6 +109327,11 @@ export type BLOG_POST_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -105126,6 +109433,12 @@ export type BLOG_POST_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -105519,11 +109832,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -105558,11 +109875,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -105755,6 +110076,17 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -106091,11 +110423,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -106130,11 +110466,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -106154,6 +110494,16 @@ export type BLOG_POST_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -106168,6 +110518,10 @@ export type BLOG_POST_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -106264,6 +110618,11 @@ export type BLOG_POST_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -106631,11 +110990,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -106670,11 +111033,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -106817,6 +111184,16 @@ export type BLOG_POST_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -106829,7 +111206,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -106874,6 +111255,10 @@ export type BLOG_POST_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -107232,11 +111617,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -107271,11 +111660,15 @@ export type BLOG_POST_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -107418,6 +111811,16 @@ export type BLOG_POST_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -107430,7 +111833,11 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -107475,6 +111882,10 @@ export type BLOG_POST_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -107852,11 +112263,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -107891,11 +112306,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -108038,6 +112457,16 @@ export type BLOG_POST_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -108050,7 +112479,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -108095,6 +112528,10 @@ export type BLOG_POST_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -108453,11 +112890,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -108492,11 +112933,15 @@ export type BLOG_POST_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -108639,6 +113084,16 @@ export type BLOG_POST_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -108651,7 +113106,11 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -108696,6 +113155,10 @@ export type BLOG_POST_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -109075,11 +113538,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -109114,11 +113581,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -109261,6 +113732,16 @@ export type BLOG_POST_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -109273,7 +113754,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -109318,6 +113803,10 @@ export type BLOG_POST_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -109676,11 +114165,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -109715,11 +114208,15 @@ export type BLOG_POST_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -109862,6 +114359,16 @@ export type BLOG_POST_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -109874,7 +114381,11 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -109919,6 +114430,10 @@ export type BLOG_POST_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -109969,6 +114484,12 @@ export type BLOG_POST_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -110340,11 +114861,15 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -110379,11 +114904,15 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -110526,6 +115055,16 @@ export type BLOG_POST_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -110538,7 +115077,11 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -110583,6 +115126,10 @@ export type BLOG_POST_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -110941,11 +115488,15 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -110980,11 +115531,15 @@ export type BLOG_POST_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -111127,6 +115682,16 @@ export type BLOG_POST_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -111139,7 +115704,11 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -111184,6 +115753,10 @@ export type BLOG_POST_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -111528,11 +116101,15 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -111567,11 +116144,15 @@ export type BLOG_POST_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & GridLayout | {
         _key: string;
       } & ImageBlock | {
         _key: string;
       } & ImageGallery | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & Quote | {
         _key: string;
@@ -112325,11 +116906,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -112364,11 +116949,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -112511,6 +117100,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -112523,7 +117122,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -112568,6 +117171,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -112926,11 +117533,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -112965,11 +117576,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -113112,6 +117727,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -113124,7 +117749,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -113169,6 +117798,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -113405,6 +118038,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -114062,11 +118707,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -114101,11 +118750,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -114248,6 +118901,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -114260,7 +118923,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -114305,6 +118972,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -114663,11 +119334,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -114702,11 +119377,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -114849,6 +119528,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -114861,7 +119550,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -114906,6 +119599,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -114963,6 +119660,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -114977,6 +119686,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -115757,11 +120472,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -115796,11 +120515,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -115943,6 +120666,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -115955,7 +120688,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -116000,6 +120737,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -116358,11 +121099,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -116397,11 +121142,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -116544,6 +121293,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -116556,7 +121315,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -116601,6 +121364,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -116837,6 +121604,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -117481,11 +122260,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -117520,11 +122303,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -117667,6 +122454,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -117679,7 +122476,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -117724,6 +122525,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -118082,11 +122887,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -118121,11 +122930,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -118268,6 +123081,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -118280,7 +123103,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -118325,6 +123152,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -118380,6 +123211,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -118394,6 +123237,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -118499,6 +123348,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -119199,11 +124054,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -119238,11 +124097,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -119385,6 +124248,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -119397,7 +124270,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -119442,6 +124319,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -119800,11 +124681,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -119839,11 +124724,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -119986,6 +124875,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -119998,7 +124897,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -120043,6 +124946,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -120277,6 +125184,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -120616,11 +125535,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -120655,11 +125578,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -120680,6 +125607,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -120694,6 +125632,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -120795,6 +125738,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -121188,11 +126137,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -121227,11 +126180,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -121424,6 +126381,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -121760,11 +126728,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -121799,11 +126771,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -121823,6 +126799,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -121837,6 +126823,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -121933,6 +126923,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -122300,11 +127295,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -122339,11 +127338,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -122486,6 +127489,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -122498,7 +127511,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -122543,6 +127560,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -122901,11 +127922,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -122940,11 +127965,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -123087,6 +128116,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -123099,7 +128138,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -123144,6 +128187,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -123521,11 +128568,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -123560,11 +128611,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -123707,6 +128762,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -123719,7 +128784,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -123764,6 +128833,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -124122,11 +129195,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -124161,11 +129238,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -124308,6 +129389,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -124320,7 +129411,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -124365,6 +129460,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -124744,11 +129843,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -124783,11 +129886,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -124930,6 +130037,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -124942,7 +130059,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -124987,6 +130108,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -125345,11 +130470,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -125384,11 +130513,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -125531,6 +130664,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -125543,7 +130686,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -125588,6 +130735,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -125638,6 +130789,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -126009,11 +131166,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -126048,11 +131209,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -126195,6 +131360,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -126207,7 +131382,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -126252,6 +131431,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -126610,11 +131793,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -126649,11 +131836,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -126796,6 +131987,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -126808,7 +132009,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -126853,6 +132058,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -127620,11 +132829,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -127659,11 +132872,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -127806,6 +133023,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -127818,7 +133045,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -127863,6 +133094,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -128221,11 +133456,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -128260,11 +133499,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -128407,6 +133650,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -128419,7 +133672,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -128464,6 +133721,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -128700,6 +133961,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -129357,11 +134630,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -129396,11 +134673,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -129543,6 +134824,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -129555,7 +134846,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -129600,6 +134895,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -129958,11 +135257,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -129997,11 +135300,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -130144,6 +135451,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -130156,7 +135473,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -130201,6 +135522,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -130258,6 +135583,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -130272,6 +135609,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -131052,11 +136395,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -131091,11 +136438,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -131238,6 +136589,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -131250,7 +136611,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -131295,6 +136660,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -131653,11 +137022,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -131692,11 +137065,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -131839,6 +137216,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -131851,7 +137238,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -131896,6 +137287,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -132132,6 +137527,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -132776,11 +138183,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -132815,11 +138226,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -132962,6 +138377,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -132974,7 +138399,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -133019,6 +138448,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -133377,11 +138810,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -133416,11 +138853,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -133563,6 +139004,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -133575,7 +139026,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -133620,6 +139075,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -133675,6 +139134,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -133689,6 +139160,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -133794,6 +139271,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -134494,11 +139977,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -134533,11 +140020,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -134680,6 +140171,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -134692,7 +140193,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -134737,6 +140242,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -135095,11 +140604,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -135134,11 +140647,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -135281,6 +140798,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -135293,7 +140820,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -135338,6 +140869,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -135572,6 +141107,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -135911,11 +141458,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -135950,11 +141501,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -135975,6 +141530,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -135989,6 +141555,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -136090,6 +141661,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -136483,11 +142060,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -136522,11 +142103,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -136719,6 +142304,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -137055,11 +142651,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -137094,11 +142694,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -137118,6 +142722,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -137132,6 +142746,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -137228,6 +142846,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -137595,11 +143218,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -137634,11 +143261,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -137781,6 +143412,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -137793,7 +143434,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -137838,6 +143483,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -138196,11 +143845,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -138235,11 +143888,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -138382,6 +144039,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -138394,7 +144061,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -138439,6 +144110,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -138816,11 +144491,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -138855,11 +144534,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -139002,6 +144685,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -139014,7 +144707,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -139059,6 +144756,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -139417,11 +145118,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -139456,11 +145161,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -139603,6 +145312,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -139615,7 +145334,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -139660,6 +145383,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -140039,11 +145766,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -140078,11 +145809,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -140225,6 +145960,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -140237,7 +145982,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -140282,6 +146031,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -140640,11 +146393,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -140679,11 +146436,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -140826,6 +146587,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -140838,7 +146609,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -140883,6 +146658,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -140933,6 +146712,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -141304,11 +147089,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -141343,11 +147132,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -141490,6 +147283,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -141502,7 +147305,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -141547,6 +147354,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -141905,11 +147716,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -141944,11 +147759,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -142091,6 +147910,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -142103,7 +147932,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -142148,6 +147981,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -142867,11 +148704,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -142906,11 +148747,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -143053,6 +148898,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -143065,7 +148920,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -143110,6 +148969,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -143468,11 +149331,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -143507,11 +149374,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -143654,6 +149525,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -143666,7 +149547,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -143711,6 +149596,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -143947,6 +149836,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -144604,11 +150505,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -144643,11 +150548,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -144790,6 +150699,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -144802,7 +150721,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -144847,6 +150770,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -145205,11 +151132,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -145244,11 +151175,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -145391,6 +151326,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -145403,7 +151348,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -145448,6 +151397,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -145505,6 +151458,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -145519,6 +151484,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -146299,11 +152270,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -146338,11 +152313,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -146485,6 +152464,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -146497,7 +152486,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -146542,6 +152535,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -146900,11 +152897,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -146939,11 +152940,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -147086,6 +153091,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -147098,7 +153113,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -147143,6 +153162,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -147379,6 +153402,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -148023,11 +154058,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -148062,11 +154101,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -148209,6 +154252,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -148221,7 +154274,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -148266,6 +154323,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -148624,11 +154685,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -148663,11 +154728,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -148810,6 +154879,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -148822,7 +154901,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -148867,6 +154950,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -148922,6 +155009,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -148936,6 +155035,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -149041,6 +155146,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -149741,11 +155852,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -149780,11 +155895,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -149927,6 +156046,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -149939,7 +156068,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -149984,6 +156117,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -150342,11 +156479,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -150381,11 +156522,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -150528,6 +156673,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -150540,7 +156695,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -150585,6 +156744,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -150819,6 +156982,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -151158,11 +157333,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -151197,11 +157376,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -151222,6 +157405,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -151236,6 +157430,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -151337,6 +157536,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -151730,11 +157935,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -151769,11 +157978,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -151966,6 +158179,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -152302,11 +158526,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -152341,11 +158569,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -152365,6 +158597,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -152379,6 +158621,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -152475,6 +158721,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -152842,11 +159093,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -152881,11 +159136,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -153028,6 +159287,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -153040,7 +159309,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -153085,6 +159358,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -153443,11 +159720,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -153482,11 +159763,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -153629,6 +159914,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -153641,7 +159936,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -153686,6 +159985,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -154063,11 +160366,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -154102,11 +160409,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -154249,6 +160560,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -154261,7 +160582,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -154306,6 +160631,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -154664,11 +160993,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -154703,11 +161036,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -154850,6 +161187,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -154862,7 +161209,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -154907,6 +161258,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -155286,11 +161641,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -155325,11 +161684,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -155472,6 +161835,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -155484,7 +161857,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -155529,6 +161906,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -155887,11 +162268,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -155926,11 +162311,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -156073,6 +162462,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -156085,7 +162484,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -156130,6 +162533,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -156180,6 +162587,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -156551,11 +162964,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -156590,11 +163007,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -156737,6 +163158,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -156749,7 +163180,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -156794,6 +163229,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -157152,11 +163591,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -157191,11 +163634,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -157338,6 +163785,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -157350,7 +163807,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -157395,6 +163856,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -158114,11 +164579,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -158153,11 +164622,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -158300,6 +164773,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -158312,7 +164795,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -158357,6 +164844,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -158715,11 +165206,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -158754,11 +165249,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -158901,6 +165400,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -158913,7 +165422,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -158958,6 +165471,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -159194,6 +165711,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -159851,11 +166380,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -159890,11 +166423,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -160037,6 +166574,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -160049,7 +166596,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -160094,6 +166645,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -160452,11 +167007,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -160491,11 +167050,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -160638,6 +167201,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -160650,7 +167223,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -160695,6 +167272,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -160752,6 +167333,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -160766,6 +167359,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -161546,11 +168145,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -161585,11 +168188,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -161732,6 +168339,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -161744,7 +168361,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -161789,6 +168410,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -162147,11 +168772,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -162186,11 +168815,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -162333,6 +168966,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -162345,7 +168988,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -162390,6 +169037,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -162626,6 +169277,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -163270,11 +169933,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -163309,11 +169976,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -163456,6 +170127,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -163468,7 +170149,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -163513,6 +170198,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -163871,11 +170560,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -163910,11 +170603,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -164057,6 +170754,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -164069,7 +170776,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -164114,6 +170825,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -164169,6 +170884,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -164183,6 +170910,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -164288,6 +171021,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -164988,11 +171727,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -165027,11 +171770,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -165174,6 +171921,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -165186,7 +171943,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -165231,6 +171992,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -165589,11 +172354,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -165628,11 +172397,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -165775,6 +172548,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -165787,7 +172570,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -165832,6 +172619,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -166066,6 +172857,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -166405,11 +173208,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -166444,11 +173251,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -166469,6 +173280,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -166483,6 +173305,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -166584,6 +173411,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -166977,11 +173810,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -167016,11 +173853,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -167213,6 +174054,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -167549,11 +174401,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -167588,11 +174444,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -167612,6 +174472,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -167626,6 +174496,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -167722,6 +174596,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -168089,11 +174968,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -168128,11 +175011,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -168275,6 +175162,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -168287,7 +175184,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -168332,6 +175233,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -168690,11 +175595,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -168729,11 +175638,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -168876,6 +175789,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -168888,7 +175811,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -168933,6 +175860,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -169310,11 +176241,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -169349,11 +176284,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -169496,6 +176435,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -169508,7 +176457,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -169553,6 +176506,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -169911,11 +176868,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -169950,11 +176911,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -170097,6 +177062,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -170109,7 +177084,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -170154,6 +177133,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -170533,11 +177516,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -170572,11 +177559,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -170719,6 +177710,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -170731,7 +177732,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -170776,6 +177781,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -171134,11 +178143,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -171173,11 +178186,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -171320,6 +178337,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -171332,7 +178359,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -171377,6 +178408,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -171427,6 +178462,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -171798,11 +178839,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -171837,11 +178882,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -171984,6 +179033,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -171996,7 +179055,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -172041,6 +179104,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -172399,11 +179466,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -172438,11 +179509,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -172585,6 +179660,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -172597,7 +179682,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -172642,6 +179731,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -172691,6 +179784,14 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     image: null;
     content: null;
   }> | null;
+} | {
+  _id: string;
+  _type: "project";
+  _updatedAt: string;
+  hide: null;
+  title: null;
+  topText: null;
+  content: null;
 } | {
   _id: string;
   _type: "sanity.fileAsset";
@@ -173393,11 +180494,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -173432,11 +180537,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -173579,6 +180688,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -173591,7 +180710,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -173636,6 +180759,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -173994,11 +181121,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -174033,11 +181164,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -174180,6 +181315,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -174192,7 +181337,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -174237,6 +181386,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -174473,6 +181626,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -175130,11 +182295,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -175169,11 +182338,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -175316,6 +182489,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -175328,7 +182511,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -175373,6 +182560,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -175731,11 +182922,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -175770,11 +182965,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -175917,6 +183116,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -175929,7 +183138,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -175974,6 +183187,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -176031,6 +183248,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -176045,6 +183274,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -176825,11 +184060,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -176864,11 +184103,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -177011,6 +184254,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -177023,7 +184276,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -177068,6 +184325,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -177426,11 +184687,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -177465,11 +184730,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -177612,6 +184881,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -177624,7 +184903,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -177669,6 +184952,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -177905,6 +185192,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -178549,11 +185848,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -178588,11 +185891,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -178735,6 +186042,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -178747,7 +186064,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -178792,6 +186113,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -179150,11 +186475,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -179189,11 +186518,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -179336,6 +186669,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -179348,7 +186691,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -179393,6 +186740,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -179448,6 +186799,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -179462,6 +186825,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -179567,6 +186936,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -180267,11 +187642,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -180306,11 +187685,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -180453,6 +187836,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -180465,7 +187858,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -180510,6 +187907,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -180868,11 +188269,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -180907,11 +188312,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -181054,6 +188463,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -181066,7 +188485,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -181111,6 +188534,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -181345,6 +188772,18 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -181684,11 +189123,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -181723,11 +189166,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -181748,6 +189195,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -181762,6 +189220,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -181863,6 +189326,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -182256,11 +189725,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -182295,11 +189768,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -182492,6 +189969,17 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -182828,11 +190316,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -182867,11 +190359,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -182891,6 +190387,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -182905,6 +190411,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -183001,6 +190511,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -183368,11 +190883,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -183407,11 +190926,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -183554,6 +191077,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -183566,7 +191099,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -183611,6 +191148,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -183969,11 +191510,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -184008,11 +191553,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -184155,6 +191704,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -184167,7 +191726,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -184212,6 +191775,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -184589,11 +192156,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -184628,11 +192199,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -184775,6 +192350,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -184787,7 +192372,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -184832,6 +192421,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -185190,11 +192783,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -185229,11 +192826,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -185376,6 +192977,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -185388,7 +192999,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -185433,6 +193048,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -185812,11 +193431,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -185851,11 +193474,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -185998,6 +193625,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -186010,7 +193647,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -186055,6 +193696,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -186413,11 +194058,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -186452,11 +194101,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -186599,6 +194252,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -186611,7 +194274,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -186656,6 +194323,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -186706,6 +194377,12 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -187077,11 +194754,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -187116,11 +194797,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -187263,6 +194948,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -187275,7 +194970,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -187320,6 +195019,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -187678,11 +195381,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -187717,11 +195424,15 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -187864,6 +195575,16 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -187876,7 +195597,11 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -187921,6 +195646,10 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -188659,11 +196388,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -188698,11 +196431,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -188845,6 +196582,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -188857,7 +196604,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -188902,6 +196653,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -189260,11 +197015,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -189299,11 +197058,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -189446,6 +197209,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -189458,7 +197231,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -189503,6 +197280,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -189739,6 +197520,18 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -190396,11 +198189,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -190435,11 +198232,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -190582,6 +198383,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -190594,7 +198405,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -190639,6 +198454,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -190997,11 +198816,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -191036,11 +198859,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -191183,6 +199010,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -191195,7 +199032,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -191240,6 +199081,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -191297,6 +199142,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -191311,6 +199168,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -192091,11 +199954,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -192130,11 +199997,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -192277,6 +200148,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -192289,7 +200170,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -192334,6 +200219,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -192692,11 +200581,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -192731,11 +200624,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -192878,6 +200775,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -192890,7 +200797,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -192935,6 +200846,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -193171,6 +201086,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -193815,11 +201742,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -193854,11 +201785,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -194001,6 +201936,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -194013,7 +201958,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -194058,6 +202007,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -194416,11 +202369,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -194455,11 +202412,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -194602,6 +202563,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -194614,7 +202585,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -194659,6 +202634,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -194714,6 +202693,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -194728,6 +202719,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -194833,6 +202830,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -195533,11 +203536,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -195572,11 +203579,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -195719,6 +203730,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -195731,7 +203752,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -195776,6 +203801,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -196134,11 +204163,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -196173,11 +204206,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -196320,6 +204357,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -196332,7 +204379,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -196377,6 +204428,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -196611,6 +204666,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -196950,11 +205017,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -196989,11 +205060,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -197014,6 +205089,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -197028,6 +205114,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -197129,6 +205220,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -197522,11 +205619,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -197561,11 +205662,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -197758,6 +205863,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -198094,11 +206210,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -198133,11 +206253,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -198157,6 +206281,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -198171,6 +206305,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -198267,6 +206405,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -198634,11 +206777,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -198673,11 +206820,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -198820,6 +206971,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -198832,7 +206993,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -198877,6 +207042,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -199235,11 +207404,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -199274,11 +207447,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -199421,6 +207598,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -199433,7 +207620,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -199478,6 +207669,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -199855,11 +208050,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -199894,11 +208093,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -200041,6 +208244,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -200053,7 +208266,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -200098,6 +208315,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -200456,11 +208677,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -200495,11 +208720,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -200642,6 +208871,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -200654,7 +208893,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -200699,6 +208942,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -201078,11 +209325,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -201117,11 +209368,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -201264,6 +209519,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -201276,7 +209541,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -201321,6 +209590,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -201679,11 +209952,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -201718,11 +209995,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -201865,6 +210146,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -201877,7 +210168,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -201922,6 +210217,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -201972,6 +210271,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -202343,11 +210648,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -202382,11 +210691,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -202529,6 +210842,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -202541,7 +210864,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -202586,6 +210913,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -202944,11 +211275,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -202983,11 +211318,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -203130,6 +211469,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -203142,7 +211491,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -203187,6 +211540,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -203954,11 +212311,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -203993,11 +212354,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -204140,6 +212505,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -204152,7 +212527,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -204197,6 +212576,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -204555,11 +212938,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -204594,11 +212981,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -204741,6 +213132,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -204753,7 +213154,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -204798,6 +213203,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -205034,6 +213443,18 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -205691,11 +214112,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -205730,11 +214155,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -205877,6 +214306,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -205889,7 +214328,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -205934,6 +214377,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -206292,11 +214739,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -206331,11 +214782,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -206478,6 +214933,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -206490,7 +214955,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -206535,6 +215004,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -206592,6 +215065,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -206606,6 +215091,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -207386,11 +215877,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -207425,11 +215920,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -207572,6 +216071,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -207584,7 +216093,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -207629,6 +216142,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -207987,11 +216504,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -208026,11 +216547,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -208173,6 +216698,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -208185,7 +216720,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -208230,6 +216769,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -208466,6 +217009,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -209110,11 +217665,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -209149,11 +217708,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -209296,6 +217859,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -209308,7 +217881,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -209353,6 +217930,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -209711,11 +218292,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -209750,11 +218335,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -209897,6 +218486,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -209909,7 +218508,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -209954,6 +218557,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -210009,6 +218616,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -210023,6 +218642,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -210128,6 +218753,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -210828,11 +219459,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -210867,11 +219502,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -211014,6 +219653,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -211026,7 +219675,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -211071,6 +219724,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -211429,11 +220086,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -211468,11 +220129,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -211615,6 +220280,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -211627,7 +220302,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -211672,6 +220351,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -211906,6 +220589,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -212245,11 +220940,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -212284,11 +220983,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -212309,6 +221012,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -212323,6 +221037,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -212424,6 +221143,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -212817,11 +221542,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -212856,11 +221585,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -213053,6 +221786,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -213389,11 +222133,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -213428,11 +222176,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -213452,6 +222204,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -213466,6 +222228,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -213562,6 +222328,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -213929,11 +222700,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -213968,11 +222743,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -214115,6 +222894,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -214127,7 +222916,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -214172,6 +222965,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -214530,11 +223327,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -214569,11 +223370,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -214716,6 +223521,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -214728,7 +223543,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -214773,6 +223592,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -215150,11 +223973,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -215189,11 +224016,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -215336,6 +224167,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -215348,7 +224189,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -215393,6 +224238,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -215751,11 +224600,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -215790,11 +224643,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -215937,6 +224794,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -215949,7 +224816,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -215994,6 +224865,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -216373,11 +225248,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -216412,11 +225291,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -216559,6 +225442,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -216571,7 +225464,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -216616,6 +225513,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -216974,11 +225875,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -217013,11 +225918,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -217160,6 +226069,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -217172,7 +226091,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -217217,6 +226140,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -217267,6 +226194,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -217638,11 +226571,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -217677,11 +226614,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -217824,6 +226765,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -217836,7 +226787,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -217881,6 +226836,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -218239,11 +227198,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -218278,11 +227241,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -218425,6 +227392,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -218437,7 +227414,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -218482,6 +227463,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -219201,11 +228186,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -219240,11 +228229,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -219387,6 +228380,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -219399,7 +228402,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -219444,6 +228451,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -219802,11 +228813,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -219841,11 +228856,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -219988,6 +229007,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -220000,7 +229029,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -220045,6 +229078,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -220281,6 +229318,18 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -220938,11 +229987,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -220977,11 +230030,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -221124,6 +230181,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -221136,7 +230203,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -221181,6 +230252,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -221539,11 +230614,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -221578,11 +230657,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -221725,6 +230808,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -221737,7 +230830,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -221782,6 +230879,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -221839,6 +230940,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -221853,6 +230966,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -222633,11 +231752,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -222672,11 +231795,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -222819,6 +231946,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -222831,7 +231968,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -222876,6 +232017,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -223234,11 +232379,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -223273,11 +232422,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -223420,6 +232573,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -223432,7 +232595,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -223477,6 +232644,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -223713,6 +232884,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -224357,11 +233540,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -224396,11 +233583,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -224543,6 +233734,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -224555,7 +233756,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -224600,6 +233805,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -224958,11 +234167,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -224997,11 +234210,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -225144,6 +234361,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -225156,7 +234383,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -225201,6 +234432,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -225256,6 +234491,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -225270,6 +234517,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -225375,6 +234628,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -226075,11 +235334,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -226114,11 +235377,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -226261,6 +235528,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -226273,7 +235550,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -226318,6 +235599,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -226676,11 +235961,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -226715,11 +236004,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -226862,6 +236155,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -226874,7 +236177,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -226919,6 +236226,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -227153,6 +236464,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -227492,11 +236815,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -227531,11 +236858,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -227556,6 +236887,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -227570,6 +236912,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -227671,6 +237018,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -228064,11 +237417,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -228103,11 +237460,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -228300,6 +237661,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -228636,11 +238008,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -228675,11 +238051,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -228699,6 +238079,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -228713,6 +238103,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -228809,6 +238203,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -229176,11 +238575,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -229215,11 +238618,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -229362,6 +238769,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -229374,7 +238791,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -229419,6 +238840,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -229777,11 +239202,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -229816,11 +239245,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -229963,6 +239396,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -229975,7 +239418,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -230020,6 +239467,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -230397,11 +239848,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -230436,11 +239891,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -230583,6 +240042,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -230595,7 +240064,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -230640,6 +240113,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -230998,11 +240475,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -231037,11 +240518,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -231184,6 +240669,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -231196,7 +240691,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -231241,6 +240740,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -231620,11 +241123,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -231659,11 +241166,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -231806,6 +241317,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -231818,7 +241339,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -231863,6 +241388,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -232221,11 +241750,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -232260,11 +241793,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -232407,6 +241944,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -232419,7 +241966,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -232464,6 +242015,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -232514,6 +242069,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -232885,11 +242446,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -232924,11 +242489,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -233071,6 +242640,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -233083,7 +242662,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -233128,6 +242711,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -233486,11 +243073,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -233525,11 +243116,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -233672,6 +243267,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -233684,7 +243289,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -233729,6 +243338,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -234448,11 +244061,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -234487,11 +244104,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -234634,6 +244255,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -234646,7 +244277,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -234691,6 +244326,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -235049,11 +244688,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -235088,11 +244731,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -235235,6 +244882,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -235247,7 +244904,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -235292,6 +244953,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -235528,6 +245193,18 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -236185,11 +245862,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -236224,11 +245905,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -236371,6 +246056,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -236383,7 +246078,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -236428,6 +246127,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -236786,11 +246489,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -236825,11 +246532,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -236972,6 +246683,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -236984,7 +246705,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -237029,6 +246754,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -237086,6 +246815,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -237100,6 +246841,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -237880,11 +247627,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -237919,11 +247670,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -238066,6 +247821,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -238078,7 +247843,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -238123,6 +247892,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -238481,11 +248254,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -238520,11 +248297,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -238667,6 +248448,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -238679,7 +248470,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -238724,6 +248519,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -238960,6 +248759,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -239604,11 +249415,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -239643,11 +249458,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -239790,6 +249609,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -239802,7 +249631,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -239847,6 +249680,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -240205,11 +250042,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -240244,11 +250085,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -240391,6 +250236,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -240403,7 +250258,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -240448,6 +250307,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -240503,6 +250366,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -240517,6 +250392,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -240622,6 +250503,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -241322,11 +251209,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -241361,11 +251252,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -241508,6 +251403,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -241520,7 +251425,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -241565,6 +251474,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -241923,11 +251836,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -241962,11 +251879,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -242109,6 +252030,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -242121,7 +252052,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -242166,6 +252101,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -242400,6 +252339,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -242739,11 +252690,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -242778,11 +252733,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -242803,6 +252762,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -242817,6 +252787,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -242918,6 +252893,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -243311,11 +253292,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -243350,11 +253335,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -243547,6 +253536,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -243883,11 +253883,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -243922,11 +253926,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -243946,6 +253954,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -243960,6 +253978,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -244056,6 +254078,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -244423,11 +254450,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -244462,11 +254493,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -244609,6 +254644,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -244621,7 +254666,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -244666,6 +254715,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -245024,11 +255077,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -245063,11 +255120,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -245210,6 +255271,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -245222,7 +255293,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -245267,6 +255342,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -245644,11 +255723,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -245683,11 +255766,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -245830,6 +255917,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -245842,7 +255939,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -245887,6 +255988,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -246245,11 +256350,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -246284,11 +256393,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -246431,6 +256544,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -246443,7 +256566,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -246488,6 +256615,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -246867,11 +256998,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -246906,11 +257041,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -247053,6 +257192,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -247065,7 +257214,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -247110,6 +257263,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -247468,11 +257625,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -247507,11 +257668,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -247654,6 +257819,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -247666,7 +257841,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -247711,6 +257890,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -247761,6 +257944,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -248132,11 +258321,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -248171,11 +258364,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -248318,6 +258515,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -248330,7 +258537,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -248375,6 +258586,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -248733,11 +258948,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -248772,11 +258991,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -248919,6 +259142,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -248931,7 +259164,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -248976,6 +259213,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -249025,6 +259266,14 @@ export type PRIVACY_POLICY_QUERYResult = {
     image: null;
     content: null;
   }> | null;
+} | {
+  _id: string;
+  _type: "project";
+  _updatedAt: string;
+  hide: null;
+  title: null;
+  topText: null;
+  content: null;
 } | {
   _id: string;
   _type: "sanity.fileAsset";
@@ -249727,11 +259976,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -249766,11 +260019,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -249913,6 +260170,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -249925,7 +260192,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -249970,6 +260241,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -250328,11 +260603,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -250367,11 +260646,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -250514,6 +260797,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -250526,7 +260819,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -250571,6 +260868,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -250807,6 +261108,18 @@ export type PRIVACY_POLICY_QUERYResult = {
     _key: string;
     _type: "equipmentList";
     placeholder?: string;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
+    _type: "featuredProjects";
+    projects?: Array<{
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      _key: string;
+      [internalGroqTypeReferenceTo]?: "project";
+    }>;
     image: null;
     content: null;
   } | {
@@ -251464,11 +261777,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -251503,11 +261820,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -251650,6 +261971,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -251662,7 +261993,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -251707,6 +262042,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -252065,11 +262404,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -252104,11 +262447,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -252251,6 +262598,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -252263,7 +262620,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -252308,6 +262669,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -252365,6 +262730,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "imageBlock";
       image: {
         asset: {
@@ -252379,6 +262756,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       } | null;
       size?: "full" | "small";
       caption?: string;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
+      image: null;
       content: null;
     } | {
       _key: string;
@@ -253159,11 +263542,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -253198,11 +263585,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -253345,6 +263736,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -253357,7 +263758,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -253402,6 +263807,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -253760,11 +264169,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -253799,11 +264212,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -253946,6 +264363,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -253958,7 +264385,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -254003,6 +264434,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -254239,6 +264674,18 @@ export type PRIVACY_POLICY_QUERYResult = {
       _key: string;
       _type: "equipmentList";
       placeholder?: string;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
       image: null;
       content: null;
     } | {
@@ -254883,11 +265330,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -254922,11 +265373,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -255069,6 +265524,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -255081,7 +265546,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -255126,6 +265595,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -255484,11 +265957,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -255523,11 +266000,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -255670,6 +266151,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -255682,7 +266173,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -255727,6 +266222,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -255782,6 +266281,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "imageBlock";
         image: {
           asset: {
@@ -255796,6 +266307,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         } | null;
         size?: "full" | "small";
         caption?: string;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
+        image: null;
         content: null;
       } | {
         _key: string;
@@ -255901,6 +266418,12 @@ export type PRIVACY_POLICY_QUERYResult = {
         _type: "listItem";
         _key: string;
       }>;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
       image: null;
       content: null;
     } | {
@@ -256601,11 +267124,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -256640,11 +267167,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -256787,6 +267318,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -256799,7 +267340,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -256844,6 +267389,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -257202,11 +267751,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -257241,11 +267794,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -257388,6 +267945,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -257400,7 +267967,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -257445,6 +268016,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -257679,6 +268254,18 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
         _type: "equipmentList";
         placeholder?: string;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
         image: null;
         content: null;
       } | {
@@ -258018,11 +268605,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -258057,11 +268648,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -258082,6 +268677,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+          image: null;
+        } | {
+          _key: string;
           _type: "imageBlock";
           image: {
             asset: {
@@ -258096,6 +268702,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           } | null;
           size?: "full" | "small";
           caption?: string;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
+          image: null;
         } | {
           _key: string;
           _type: "richText";
@@ -258197,6 +268808,12 @@ export type PRIVACY_POLICY_QUERYResult = {
           _type: "listItem";
           _key: string;
         }>;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
         image: null;
         content: null;
       } | {
@@ -258590,11 +269207,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -258629,11 +269250,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -258826,6 +269451,17 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
           _type: "equipmentList";
           placeholder?: string;
+          image: null;
+        } | {
+          _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
           image: null;
         } | {
           _key: string;
@@ -259162,11 +269798,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -259201,11 +269841,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -259225,6 +269869,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "imageBlock";
             image: {
               asset: {
@@ -259239,6 +269893,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             } | null;
             size?: "full" | "small";
             caption?: string;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "richText";
@@ -259335,6 +269993,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _type: "listItem";
             _key: string;
           }>;
+          image: null;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
           image: null;
         } | {
           _key: string;
@@ -259702,11 +270365,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -259741,11 +270408,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -259888,6 +270559,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -259900,7 +270581,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -259945,6 +270630,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -260303,11 +270992,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -260342,11 +271035,15 @@ export type PRIVACY_POLICY_QUERYResult = {
                 _key: string;
               } & EquipmentList | {
                 _key: string;
+              } & FeaturedProjects | {
+                _key: string;
               } & GridLayout | {
                 _key: string;
               } & ImageBlock | {
                 _key: string;
               } & ImageGallery | {
+                _key: string;
+              } & ProjectList | {
                 _key: string;
               } & Quote | {
                 _key: string;
@@ -260489,6 +271186,16 @@ export type PRIVACY_POLICY_QUERYResult = {
             placeholder?: string;
           } | {
             _key: string;
+            _type: "featuredProjects";
+            projects?: Array<{
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              _key: string;
+              [internalGroqTypeReferenceTo]?: "project";
+            }>;
+          } | {
+            _key: string;
             _type: "gridLayout";
             columns?: "2" | "3" | "4";
             content?: Array<{
@@ -260501,7 +271208,11 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & ImageBlock | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & RichText | {
               _key: string;
@@ -260546,6 +271257,10 @@ export type PRIVACY_POLICY_QUERYResult = {
               caption?: string;
               _key: string;
             }>;
+          } | {
+            _key: string;
+            _type: "projectList";
+            placeholder?: string;
           } | {
             _key: string;
             _type: "quote";
@@ -260923,11 +271638,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -260962,11 +271681,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -261109,6 +271832,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -261121,7 +271854,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -261166,6 +271903,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -261524,11 +272265,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -261563,11 +272308,15 @@ export type PRIVACY_POLICY_QUERYResult = {
               _key: string;
             } & EquipmentList | {
               _key: string;
+            } & FeaturedProjects | {
+              _key: string;
             } & GridLayout | {
               _key: string;
             } & ImageBlock | {
               _key: string;
             } & ImageGallery | {
+              _key: string;
+            } & ProjectList | {
               _key: string;
             } & Quote | {
               _key: string;
@@ -261710,6 +272459,16 @@ export type PRIVACY_POLICY_QUERYResult = {
           placeholder?: string;
         } | {
           _key: string;
+          _type: "featuredProjects";
+          projects?: Array<{
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            _key: string;
+            [internalGroqTypeReferenceTo]?: "project";
+          }>;
+        } | {
+          _key: string;
           _type: "gridLayout";
           columns?: "2" | "3" | "4";
           content?: Array<{
@@ -261722,7 +272481,11 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & ImageBlock | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & RichText | {
             _key: string;
@@ -261767,6 +272530,10 @@ export type PRIVACY_POLICY_QUERYResult = {
             caption?: string;
             _key: string;
           }>;
+        } | {
+          _key: string;
+          _type: "projectList";
+          placeholder?: string;
         } | {
           _key: string;
           _type: "quote";
@@ -262146,11 +272913,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -262185,11 +272956,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -262332,6 +273107,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -262344,7 +273129,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -262389,6 +273178,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -262747,11 +273540,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -262786,11 +273583,15 @@ export type PRIVACY_POLICY_QUERYResult = {
             _key: string;
           } & EquipmentList | {
             _key: string;
+          } & FeaturedProjects | {
+            _key: string;
           } & GridLayout | {
             _key: string;
           } & ImageBlock | {
             _key: string;
           } & ImageGallery | {
+            _key: string;
+          } & ProjectList | {
             _key: string;
           } & Quote | {
             _key: string;
@@ -262933,6 +273734,16 @@ export type PRIVACY_POLICY_QUERYResult = {
         placeholder?: string;
       } | {
         _key: string;
+        _type: "featuredProjects";
+        projects?: Array<{
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          _key: string;
+          [internalGroqTypeReferenceTo]?: "project";
+        }>;
+      } | {
+        _key: string;
         _type: "gridLayout";
         columns?: "2" | "3" | "4";
         content?: Array<{
@@ -262945,7 +273756,11 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & ImageBlock | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & RichText | {
           _key: string;
@@ -262990,6 +273805,10 @@ export type PRIVACY_POLICY_QUERYResult = {
           caption?: string;
           _key: string;
         }>;
+      } | {
+        _key: string;
+        _type: "projectList";
+        placeholder?: string;
       } | {
         _key: string;
         _type: "quote";
@@ -263040,6 +273859,12 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     }> | null;
     image: null;
+  } | {
+    _key: string;
+    _type: "projectList";
+    placeholder?: string;
+    image: null;
+    content: null;
   } | {
     _key: string;
     _type: "quote";
@@ -263411,11 +274236,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -263450,11 +274279,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -263597,6 +274430,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -263609,7 +274452,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -263654,6 +274501,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -264012,11 +274863,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -264051,11 +274906,15 @@ export type PRIVACY_POLICY_QUERYResult = {
           _key: string;
         } & EquipmentList | {
           _key: string;
+        } & FeaturedProjects | {
+          _key: string;
         } & GridLayout | {
           _key: string;
         } & ImageBlock | {
           _key: string;
         } & ImageGallery | {
+          _key: string;
+        } & ProjectList | {
           _key: string;
         } & Quote | {
           _key: string;
@@ -264198,6 +275057,16 @@ export type PRIVACY_POLICY_QUERYResult = {
       placeholder?: string;
     } | {
       _key: string;
+      _type: "featuredProjects";
+      projects?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "project";
+      }>;
+    } | {
+      _key: string;
       _type: "gridLayout";
       columns?: "2" | "3" | "4";
       content?: Array<{
@@ -264210,7 +275079,11 @@ export type PRIVACY_POLICY_QUERYResult = {
         _key: string;
       } & EquipmentList | {
         _key: string;
+      } & FeaturedProjects | {
+        _key: string;
       } & ImageBlock | {
+        _key: string;
+      } & ProjectList | {
         _key: string;
       } & RichText | {
         _key: string;
@@ -264255,6 +275128,10 @@ export type PRIVACY_POLICY_QUERYResult = {
         caption?: string;
         _key: string;
       }>;
+    } | {
+      _key: string;
+      _type: "projectList";
+      placeholder?: string;
     } | {
       _key: string;
       _type: "quote";
@@ -264423,6 +275300,14 @@ export type CLIENTS_QUERYResult = {
   level5: null;
 } | {
   _id: string;
+  _type: "project";
+  level1: null;
+  level2: null;
+  level3: null;
+  level4: null;
+  level5: null;
+} | {
+  _id: string;
   _type: "sanity.fileAsset";
   level1: null;
   level2: null;
@@ -264534,6 +275419,10 @@ export type EQUIPMENT_LIST_QUERYResult = {
   categories: null;
 } | {
   _id: string;
+  _type: "project";
+  categories: null;
+} | {
+  _id: string;
   _type: "sanity.fileAsset";
   categories: null;
 } | {
@@ -264593,6 +275482,52 @@ export type TEAM_MEMBERS_QUERYResult = Array<{
     _key: string;
   }> | null;
 }>;
+// Variable: ALL_PROJECTS_QUERY
+// Query: *[_type == "project"] | order(order asc, name asc) {  _id,  _type,  _key,  name,  image{    asset,    alt,    hotspot,    crop  },  description,  linkLabel,  link,  order}
+export type ALL_PROJECTS_QUERYResult = Array<{
+  _id: string;
+  _type: "project";
+  _key: null;
+  name: string | null;
+  image: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    } | null;
+    alt: null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+  } | null;
+  description: string | null;
+  linkLabel: string | null;
+  link: string | null;
+  order: number | null;
+}>;
+// Variable: FEATURED_PROJECTS_QUERY
+// Query: *[_type == "project" && _id in $projectIds]{  _id,  _type,  _key,  name,  image{    asset,    alt,    hotspot,    crop  },  description,  linkLabel,  link,  order}
+export type FEATURED_PROJECTS_QUERYResult = Array<{
+  _id: string;
+  _type: "project";
+  _key: null;
+  name: string | null;
+  image: {
+    asset: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    } | null;
+    alt: null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+  } | null;
+  description: string | null;
+  linkLabel: string | null;
+  link: string | null;
+  order: number | null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -264617,5 +275552,7 @@ declare module "@sanity/client" {
     "*[_id == \"clients\"][0]{\n  _id,\n  _type,\n  level1,\n  level2,\n  level3,\n  level4,\n  level5\n}": CLIENTS_QUERYResult;
     "*[_id == \"equipmentListSingleton\"][0]{\n  _id,\n  _type,\n  categories[]{\n    _key,\n    name,\n    icon{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    items[]{\n      _key,\n      name,\n      isTemporarilyUnavailable,\n      unavailableReason\n    }\n  }\n}": EQUIPMENT_LIST_QUERYResult;
     "*[_type == \"teamMember\"] | order(displayOrder asc, name asc) {\n  _id,\n  _type,\n  _key,\n  name,\n  role,\n  category,\n  profilePicture{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  displayOrder,\n  description\n}": TEAM_MEMBERS_QUERYResult;
+    "*[_type == \"project\"] | order(order asc, name asc) {\n  _id,\n  _type,\n  _key,\n  name,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  description,\n  linkLabel,\n  link,\n  order\n}": ALL_PROJECTS_QUERYResult;
+    "*[_type == \"project\" && _id in $projectIds]{\n  _id,\n  _type,\n  _key,\n  name,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  description,\n  linkLabel,\n  link,\n  order\n}": FEATURED_PROJECTS_QUERYResult;
   }
 }
