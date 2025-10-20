@@ -28,7 +28,7 @@ const CardHeader = ({
   const subtitleColor = visualStyle === 'dark' ? 'text-subtle' : 'text-subtle';
 
   return (
-    <div className='mb-4'>
+    <div className='mb-3'>
       {title && (
         <p
           className={`text-h5 ${titleColor}`}
@@ -38,7 +38,7 @@ const CardHeader = ({
       )}
       {subtitle && (
         <p
-          className={`text-body-lg mt-2 ${subtitleColor}`}
+          className={`text-body-lg ${subtitleColor}`}
           {...createSanityDataAttribute(documentId, documentType, getFieldPath('subtitle'))}>
           {subtitle}
         </p>
