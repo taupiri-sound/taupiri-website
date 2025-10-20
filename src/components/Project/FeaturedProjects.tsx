@@ -12,6 +12,7 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   const [openProjectId, setOpenProjectId] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
+  const isUserInteracting = useRef<boolean>(false);
 
   // Configuration
   const SCROLL_SPEED = 40; // Pixels per second - adjust this to make it faster/slower
@@ -23,6 +24,13 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
     let lastTime = performance.now();
 
     const animate = (currentTime: number) => {
+      // Pause animation if user is interacting
+      if (isUserInteracting.current) {
+        lastTime = currentTime;
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
+
       const deltaTime = (currentTime - lastTime) / 1000; // Convert to seconds
       lastTime = currentTime;
 
@@ -43,12 +51,34 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
       animationRef.current = requestAnimationFrame(animate);
     };
 
+    // Handle touch/pointer start - pause animation
+    const handleInteractionStart = () => {
+      isUserInteracting.current = true;
+    };
+
+    // Handle touch/pointer end - resume animation after delay
+    const handleInteractionEnd = () => {
+      setTimeout(() => {
+        isUserInteracting.current = false;
+      }, 100);
+    };
+
+    // Add event listeners for touch and pointer events
+    container.addEventListener('touchstart', handleInteractionStart, { passive: true });
+    container.addEventListener('touchend', handleInteractionEnd, { passive: true });
+    container.addEventListener('pointerdown', handleInteractionStart);
+    container.addEventListener('pointerup', handleInteractionEnd);
+
     animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      container.removeEventListener('touchstart', handleInteractionStart);
+      container.removeEventListener('touchend', handleInteractionEnd);
+      container.removeEventListener('pointerdown', handleInteractionStart);
+      container.removeEventListener('pointerup', handleInteractionEnd);
     };
   }, [projects, SCROLL_SPEED]);
 
@@ -75,6 +105,9 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
+          WebkitOverflowScrolling: 'touch',
+          scrollBehavior: 'auto',
+          touchAction: 'pan-x',
         }}>
         {tripleProjects.map((project, index) => (
           <div
