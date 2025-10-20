@@ -11,90 +11,47 @@ interface FeaturedProjectsProps {
 const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   const [openProjectId, setOpenProjectId] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [duplicatedProjects, setDuplicatedProjects] = useState<
-    NonNullable<FEATURED_PROJECTS_QUERYResult>
-  >([]);
+  const animationRef = useRef<number>();
+  const lastPausePosition = useRef<number>(0);
 
   // Configuration
-  const VISIBLE_DESKTOP = 5; // Fully visible images on desktop
-  const VISIBLE_MOBILE = 2; // Fully visible images on mobile
-  const PAUSE_DURATION = 2000; // Pause duration in ms when image becomes fully visible
-  const SCROLL_SPEED = 0.5; // Pixels per frame
+  const SCROLL_SPEED = 40; // Pixels per second - adjust this to make it faster/slower
 
   useEffect(() => {
-    if (!projects || projects.length === 0) return;
-
-    // Duplicate projects if needed to fill the viewport
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const visibleCount = isMobile ? VISIBLE_MOBILE : VISIBLE_DESKTOP;
-    const totalNeeded = visibleCount + 2; // +2 for partial images on sides
-
-    let workingProjects = [...projects];
-
-    // Duplicate until we have enough items
-    while (workingProjects.length < totalNeeded) {
-      workingProjects = [...workingProjects, ...projects];
-    }
-
-    // Add extra duplicates for seamless looping
-    workingProjects = [...workingProjects, ...projects, ...projects];
-
-    setDuplicatedProjects(workingProjects);
-  }, [projects]);
-
-  useEffect(() => {
-    if (!scrollContainerRef.current || duplicatedProjects.length === 0) return;
-
     const container = scrollContainerRef.current;
-    let animationFrame: number;
-    let lastScrollTime = Date.now();
-    let isPaused = false;
-    let pauseTimeout: NodeJS.Timeout;
+    if (!container || !projects || projects.length === 0) return;
 
-    const animate = () => {
-      if (!container) return;
+    let lastTime = performance.now();
 
-      const now = Date.now();
-      const delta = now - lastScrollTime;
+    const animate = (currentTime: number) => {
+      const deltaTime = (currentTime - lastTime) / 1000; // Convert to seconds
+      lastTime = currentTime;
 
-      if (!isPaused) {
-        // Scroll smoothly with easing (parabolic profile)
-        const scrollAmount = SCROLL_SPEED * delta * 0.016; // Normalize to ~60fps
-        container.scrollLeft += scrollAmount;
+      // Continuous smooth scrolling
+      const scrollAmount = SCROLL_SPEED * deltaTime;
+      container.scrollLeft += scrollAmount;
 
-        // Check if we need to loop back
-        const maxScroll = container.scrollWidth - container.clientWidth;
-        const oneThirdScroll = container.scrollWidth / 3;
+      // Handle infinite loop - reset when reaching 2/3 of the way through
+      const scrollWidth = container.scrollWidth;
+      const resetPoint = (scrollWidth / 3) * 2;
 
-        if (container.scrollLeft >= oneThirdScroll * 2) {
-          // Reset to one-third position for seamless loop
-          container.scrollLeft = oneThirdScroll;
-        }
-
-        // Check if an image is now fully visible (crossing into view)
-        const imageWidth = container.clientWidth / (window.innerWidth < 768 ? VISIBLE_MOBILE : VISIBLE_DESKTOP);
-        const scrollPosition = container.scrollLeft % imageWidth;
-
-        // Pause when image becomes fully visible (scrollPosition crosses 0)
-        if (scrollPosition < SCROLL_SPEED * delta * 0.016) {
-          isPaused = true;
-          pauseTimeout = setTimeout(() => {
-            isPaused = false;
-          }, PAUSE_DURATION);
-        }
+      if (container.scrollLeft >= resetPoint) {
+        // Jump back to 1/3 position for seamless loop
+        const offset = container.scrollLeft - resetPoint;
+        container.scrollLeft = (scrollWidth / 3) + offset;
       }
 
-      lastScrollTime = now;
-      animationFrame = requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animationFrame = requestAnimationFrame(animate);
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
-      cancelAnimationFrame(animationFrame);
-      clearTimeout(pauseTimeout);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
-  }, [duplicatedProjects]);
+  }, [projects, SCROLL_SPEED]);
 
   if (!projects || projects.length === 0) {
     return (
@@ -108,28 +65,22 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
     setOpenProjectId((prev) => (prev === projectId ? null : projectId));
   };
 
+  // Triple the projects for seamless infinite scroll
+  const tripleProjects = [...projects, ...projects, ...projects];
+
   return (
     <div className='relative overflow-hidden'>
       <div
         ref={scrollContainerRef}
-        className='flex overflow-x-hidden scroll-smooth'
+        className='flex overflow-x-scroll scrollbar-hide'
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          WebkitOverflowScrolling: 'touch',
         }}>
-        {/* Hide scrollbar for all browsers */}
-        <style jsx>{`
-          div::-webkit-scrollbar {
-            display: none;
-          }
-        `}</style>
-
-        {duplicatedProjects.map((project, index) => (
+        {tripleProjects.map((project, index) => (
           <div
             key={`${project._id}-${index}`}
-            className='flex-shrink-0 w-1/2 md:w-1/5'
-            style={{ minWidth: '20%' }}>
+            className='flex-shrink-0 w-1/2 md:w-1/5'>
             <ProjectCard
               project={project}
               isOpen={openProjectId === project._id}
@@ -138,6 +89,13 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
           </div>
         ))}
       </div>
+
+      {/* Hide scrollbar */}
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 };
