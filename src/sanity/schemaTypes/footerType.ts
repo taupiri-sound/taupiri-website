@@ -4,6 +4,7 @@
 
 import { ComponentIcon } from '@sanity/icons';
 import { defineField, defineType } from 'sanity';
+import { createLinkFieldSet } from './shared/linkSystem';
 
 export const footerType = defineType({
   name: 'footer',
@@ -47,6 +48,65 @@ export const footerType = defineType({
               const displaySubtitle = message
                 ? message.substring(0, 50) + (message.length > 50 ? '...' : '')
                 : 'No message';
+              return {
+                title: displayTitle,
+                subtitle: displaySubtitle,
+              };
+            },
+          },
+        },
+      ],
+      options: {
+        sortable: true,
+      },
+    }),
+    defineField({
+      name: 'quickLinks',
+      type: 'array',
+      title: 'Quick Links',
+      description: 'Add quick navigation links to appear in the footer. This field is optional - leave empty if not needed',
+      of: [
+        {
+          type: 'object',
+          title: 'Quick Link',
+          fields: [
+            defineField({
+              name: 'label',
+              type: 'string',
+              title: 'Link Label',
+              description: 'The text to display for this link',
+              validation: (Rule) => Rule.required().error('Link label is required').max(50).warning('Keep link labels concise for better display'),
+            }),
+            ...createLinkFieldSet({
+              linkTypeConfig: {
+                description: 'Choose whether this links to another page on your site or an external URL',
+                initialValue: 'internal',
+              },
+              internalLinkConfig: {
+                description: 'Select a page from your website to link to',
+              },
+              externalUrlConfig: {
+                description: 'Enter the full URL for the external link',
+              },
+            }),
+          ],
+          preview: {
+            select: {
+              label: 'label',
+              linkType: 'linkType',
+              internalLink: 'internalLink.title',
+              externalUrl: 'externalUrl',
+            },
+            prepare({ label, linkType, internalLink, externalUrl }) {
+              const displayTitle = label || 'Untitled Link';
+              let displaySubtitle = '';
+
+              if (linkType === 'internal') {
+                displaySubtitle = internalLink ? `Internal: ${internalLink}` : 'Internal: (No page selected)';
+              } else if (linkType === 'external') {
+                displaySubtitle = externalUrl ? `External: ${externalUrl}` : 'External: (No URL entered)';
+              }
+
               return {
                 title: displayTitle,
                 subtitle: displaySubtitle,

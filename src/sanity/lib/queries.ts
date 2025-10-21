@@ -614,6 +614,11 @@ export const FOOTER_QUERY = defineQuery(`*[_type == "footer" && _id == "footer"]
     title,
     message
   },
+  quickLinks[]{
+    _key,
+    label,
+    ${fullLinkProjection}
+  },
   copyrightText
 }`);
 

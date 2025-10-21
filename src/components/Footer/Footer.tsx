@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { stegaClean } from 'next-sanity';
 import UnifiedImage from '@/components/UI/UnifiedImage';
 import { SocialIcon, type SocialPlatform, getPlatformLabel } from '@/utils/socialIcons';
 import { cleanPlatform } from '@/utils/cleanPlatform';
@@ -51,14 +52,20 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
     },
   ];
 
-  // REPLACE THIS WITH CMS DATA WHEN READY
-  const quickLinks = [
-    { label: 'Home', url: '/' },
-    { label: 'Services', url: '/' },
-    { label: 'Music', url: '/' },
-    { label: 'The Studio', url: '/' },
-    { label: 'About Us', url: '/' },
-  ];
+  // Get quick links from CMS, filtering out invalid entries
+  const quickLinks =
+    footerData?.quickLinks?.filter((link) => {
+      if (!link.label) return false;
+
+      // Check if link has valid href (computed or manual)
+      if (link.computedHref) return true;
+
+      // Fallback checks
+      if (link.linkType === 'internal' && link.internalLink?.href) return true;
+      if (link.linkType === 'external' && link.externalUrl) return true;
+
+      return false;
+    }) || [];
 
   // Get company links from company links data, filtering out hidden ones and invalid entries
   const companyLinks =
@@ -156,15 +163,45 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
               {quickLinks.length > 0 && (
                 <div>
                   <p className='text-h6 mb-6'>Quick Links</p>
-                  <div className='flex flex-col items-center md:items-start gap-4'>
-                    {quickLinks.map((link) => (
-                      <Link
-                        key={link.label}
-                        href={link.url}
-                        className='block text-white hover:text-brand-primary transition-colors duration-200'>
-                        {link.label}
-                      </Link>
-                    ))}
+                  <div
+                    className='flex flex-col items-center md:items-start gap-4'
+                    {...createSanityDataAttribute('footer', 'footer', 'quickLinks')}>
+                    {quickLinks.map((link) => {
+                      // Use computed href from GROQ query (includes section anchors)
+                      // or fallback to internalLink.href
+                      let href = '';
+
+                      if (link.computedHref) {
+                        href = stegaClean(link.computedHref);
+                      } else if (link.linkType === 'internal' && link.internalLink?.href) {
+                        href = link.internalLink.href;
+                        if (link.pageSectionId) {
+                          href = `${href}#${stegaClean(link.pageSectionId)}`;
+                        }
+                      } else if (link.linkType === 'external' && link.externalUrl) {
+                        href = stegaClean(link.externalUrl);
+                      }
+
+                      // Determine if this should open in a new tab
+                      const shouldOpenInNewTab =
+                        link.linkType === 'external' || (link.linkType === 'internal' && link.openInNewTab);
+
+                      return (
+                        <Link
+                          key={link._key}
+                          href={href}
+                          target={shouldOpenInNewTab ? '_blank' : undefined}
+                          rel={shouldOpenInNewTab ? 'noopener noreferrer' : undefined}
+                          className='block text-white hover:text-brand-primary transition-colors duration-200'
+                          {...createSanityDataAttribute(
+                            'footer',
+                            'footer',
+                            `quickLinks[_key=="${link._key}"]`
+                          )}>
+                          {link.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
