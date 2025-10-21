@@ -10154,7 +10154,7 @@
         },
         "optional": true
       },
-      "defaultPageTitle": {
+      "siteTagline": {
         "type": "objectAttribute",
         "value": {
           "type": "string"

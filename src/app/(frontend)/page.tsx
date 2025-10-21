@@ -1,7 +1,16 @@
 import React from 'react';
 import PageBuilder from '@/components/PageBuilder';
 import Hero from '@/components/HomeHero/Hero';
-import { getHomePage, getSiteSettings, getCompanyLinks, getContactFormSettings, getClients, getEquipmentList, getTeamMembers, getAllProjects } from '@/actions';
+import {
+  getHomePage,
+  getSiteSettings,
+  getCompanyLinks,
+  getContactFormSettings,
+  getClients,
+  getEquipmentList,
+  getTeamMembers,
+  getAllProjects,
+} from '@/actions';
 import type { PAGE_QUERYResult } from '@/sanity/types';
 import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
@@ -10,7 +19,7 @@ export async function generateMetadata() {
   const siteSettings = await getSiteSettings();
   if (!siteSettings) {
     return {
-      title: 'Taupiri Sound | Something here...',
+      title: 'Taupiri Sound',
       description:
         "Taupiri Sound is a recording studio based in the countryside of northern Waikato. For over a decade we have worked on countless projects from educational resources to some of Aotearoa's best artists.",
     };
@@ -23,7 +32,16 @@ export async function generateMetadata() {
 }
 
 const Page = async () => {
-  const [page, siteSettings, companyLinks, contactFormSettings, clientsData, equipmentListData, teamMembersData, allProjectsData] = await Promise.all([
+  const [
+    page,
+    siteSettings,
+    companyLinks,
+    contactFormSettings,
+    clientsData,
+    equipmentListData,
+    teamMembersData,
+    allProjectsData,
+  ] = await Promise.all([
     getHomePage(),
     getSiteSettings(),
     getCompanyLinks(),

@@ -478,7 +478,7 @@ export const SITE_SETTINGS_QUERY = defineQuery(`*[_id == "siteSettings"][0]{
   _id,
   _type,
   siteTitle,
-  defaultPageTitle,
+  siteTagline,
   siteDescription,
   seoKeywords,
   defaultOgImage{
@@ -698,7 +698,8 @@ export const EQUIPMENT_LIST_QUERY = defineQuery(`*[_id == "equipmentListSingleto
   }
 }`);
 
-export const TEAM_MEMBERS_QUERY = defineQuery(`*[_type == "teamMember"] | order(displayOrder asc, name asc) {
+export const TEAM_MEMBERS_QUERY =
+  defineQuery(`*[_type == "teamMember"] | order(displayOrder asc, name asc) {
   _id,
   _type,
   _key,

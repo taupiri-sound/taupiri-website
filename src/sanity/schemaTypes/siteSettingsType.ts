@@ -20,12 +20,11 @@ export const siteSettingsType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'defaultPageTitle',
+      name: 'siteTagline',
       type: 'string',
-      title: 'Default Page Title',
+      title: 'Site Tagline',
       description:
-        'The default page title used for the home page and when no specific page title is available',
-      validation: (Rule) => Rule.required(),
+        'Optional tagline that appears after the "|" in the browser tab for the Home Page and other pages without a specific title.',
     }),
     defineField({
       name: 'siteDescription',

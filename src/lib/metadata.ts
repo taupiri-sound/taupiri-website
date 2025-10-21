@@ -32,12 +32,12 @@ export function generateMetadata({
   siteSettings,
 }: MetadataConfig): Metadata {
   const siteTitle = siteSettings?.siteTitle || 'Taupiri Sound';
-  const defaultPageTitle = siteSettings?.defaultPageTitle || 'Something here...';
+  const siteTagline = siteSettings?.siteTagline ? ` | ${siteSettings.siteTagline}` : '';
   const siteDescription = siteSettings?.siteDescription || '';
   const seoKeywords = siteSettings?.seoKeywords || '';
 
   // Generate page title
-  const pageTitle = title ? `${siteTitle} | ${title}` : `${siteTitle} | ${defaultPageTitle}`;
+  const pageTitle = title ? `${siteTitle} | ${title}` : `${siteTitle}${siteTagline}`;
 
   // Generate description
   const pageDescription = description || siteDescription;
@@ -49,11 +49,11 @@ export function generateMetadata({
   if (image?.asset?._ref) {
     // Use provided image
     ogImageUrl = urlFor(image).width(1200).height(630).url();
-    ogImageAlt = image.alt || `${siteTitle} - ${title || defaultPageTitle}`;
+    ogImageAlt = image.alt || `${siteTitle} - ${title || siteTagline}`;
   } else if (siteSettings?.defaultOgImage?.asset?._ref) {
     // Fall back to site default image
     ogImageUrl = urlFor(siteSettings.defaultOgImage).width(1200).height(630).url();
-    ogImageAlt = siteSettings.defaultOgImage.alt || `${siteTitle} - ${title || defaultPageTitle}`;
+    ogImageAlt = siteSettings.defaultOgImage.alt || `${siteTitle} - ${title || siteTagline}`;
   }
 
   const metadata: Metadata = {
@@ -77,7 +77,7 @@ export function generateMetadata({
             url: ogImageUrl,
             width: 1200,
             height: 630,
-            alt: ogImageAlt || `${siteTitle} - ${title || defaultPageTitle}`,
+            alt: ogImageAlt || `${siteTitle} - ${title || siteTagline}`,
           },
         ],
       }),
@@ -90,7 +90,7 @@ export function generateMetadata({
         images: [
           {
             url: ogImageUrl,
-            alt: ogImageAlt || `${siteTitle} - ${title || defaultPageTitle}`,
+            alt: ogImageAlt || `${siteTitle} - ${title || siteTagline}`,
           },
         ],
       }),
