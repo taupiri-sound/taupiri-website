@@ -1,7 +1,15 @@
 'use client';
 
 import React from 'react';
-import type { PAGE_QUERYResult, COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
+import type {
+  PAGE_QUERYResult,
+  COMPANY_LINKS_QUERYResult,
+  CLIENTS_QUERYResult,
+  EQUIPMENT_LIST_QUERYResult,
+  TEAM_MEMBERS_QUERYResult,
+  ALL_PROJECTS_QUERYResult,
+  CONTACT_FORM_SETTINGS_QUERYResult,
+} from '@/sanity/types';
 import type { NestedBlock } from '@/types/blocks';
 import type { SiteSettingsProps } from '@/types/shared';
 import { client } from '@/sanity/lib/client';
@@ -251,6 +259,7 @@ const BlockRenderer = ({
                   inheritAlignment={alignment}
                   textAlign={(block as { textAlign?: string }).textAlign}
                   shouldApplyBottomPadding={shouldApplyBottomPadding}
+                  hideGraphic={documentType === 'blogPost'}
                   useCompactGap={(block as { useCompactGap?: boolean }).useCompactGap}>
                   {renderNestedContent(block.content)}
                 </PageSection>

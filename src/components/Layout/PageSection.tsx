@@ -37,6 +37,7 @@ interface PageSectionProps extends SanityLiveEditingProps {
   useCompactGap?: boolean; // Whether to use compact spacing instead of default spacing
   topTextPath?: string;
   titleTranslationPath?: string;
+  hideGraphic?: boolean;
 }
 
 const PageSection = ({
@@ -57,6 +58,7 @@ const PageSection = ({
   textAlign = 'inherit',
   shouldApplyBottomPadding = true,
   useCompactGap = false,
+  hideGraphic = false,
 }: PageSectionProps) => {
   // Create data attributes for Sanity live editing
   const titleDataAttribute = createSanityDataAttribute(documentId, documentType, titlePath);
@@ -101,16 +103,18 @@ const PageSection = ({
         {/* Title is now always present since it's required */}
         <div className={getTextAlignClass(effectiveTextAlign)}>
           <div className={`inline-flex items-end gap-4 sm:gap-8 ${sectionTitleBottomSpacing}`}>
-            <UnifiedImage
-              src='/images/logos/logo-left.png'
-              alt='Taupiri Logo'
-              mode='sized'
-              width={200}
-              height={200}
-              sizeContext='logo'
-              objectFit='contain'
-              className='w-40 sm:w-60 lg:w-80 h-auto'
-            />
+            {!hideGraphic && (
+              <UnifiedImage
+                src='/images/logos/logo-left.png'
+                alt='Taupiri Logo'
+                mode='sized'
+                width={200}
+                height={200}
+                sizeContext='logo'
+                objectFit='contain'
+                className='w-40 sm:w-60 lg:w-80 h-auto'
+              />
+            )}
             <div className='text-left'>
               <Heading level='h2' showMargin={false} className='mb-0' {...titleDataAttribute}>
                 <div>
