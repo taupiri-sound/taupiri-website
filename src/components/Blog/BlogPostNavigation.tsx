@@ -15,57 +15,69 @@ interface BlogPostNavigationProps {
   nextPost?: BlogPost | null;
 }
 
+interface NavigationLinkProps {
+  post: BlogPost;
+  direction: 'prev' | 'next';
+}
+
+const NavigationLink = ({ post, direction }: NavigationLinkProps) => {
+  const isNext = direction === 'next';
+  const label = isNext ? 'Next Post' : 'Previous Post';
+  const Icon = isNext ? FaChevronRight : FaChevronLeft;
+
+  const commonStyles = {
+    link: 'group bg-brand-white-dark shadow-sm rounded-lg py-6 px-6 w-full hover:bg-brand-primary/5 hover:shadow-md transition-all duration-200 cursor-pointer flex items-start gap-4',
+    iconWrapper:
+      'group-hover:bg-brand-primary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm',
+    icon: 'text-brand-secondary group-hover:text-brand-white transition-colors duration-200',
+    title:
+      'text-body-lg font-semibold text-gray-900 group-hover:text-brand-secondary transition-colors duration-300 line-clamp-2',
+  };
+
+  return (
+    <Link
+      href={`/blog/${post.slug?.current}`}
+      className={`${commonStyles.link} ${isNext ? 'text-right' : ''}`}>
+      {!isNext && (
+        <div className='flex-shrink-0 mt-1'>
+          <div className={commonStyles.iconWrapper}>
+            <Icon className={commonStyles.icon} />
+          </div>
+        </div>
+      )}
+      <div className='min-w-0 flex-1'>
+        <p className='text-body-sm font-medium mb-1'>{label}</p>
+        <p className={commonStyles.title}>{post.title || 'Untitled Post'}</p>
+      </div>
+      {isNext && (
+        <div className='flex-shrink-0 mt-1'>
+          <div className={commonStyles.iconWrapper}>
+            <Icon className={commonStyles.icon} />
+          </div>
+        </div>
+      )}
+    </Link>
+  );
+};
+
 export default function BlogPostNavigation({ prevPost, nextPost }: BlogPostNavigationProps) {
-  if (!prevPost && !nextPost) {
-    return null;
-  }
+  if (!prevPost && !nextPost) return null;
 
   return (
     <nav className='pt-8 mt-8'>
       <div className='flex flex-col sm:flex-row justify-between gap-6 sm:items-stretch'>
-        {/* Previous Post */}
         <div className='flex-1 flex'>
-          {prevPost && prevPost.slug?.current ? (
-            <Link
-              href={`/blog/${prevPost.slug.current}`}
-              className='group bg-brand-secondary/10 border border-brand-secondary/20 rounded-lg py-6 px-6 w-full hover:bg-brand-secondary/15 hover:border-brand-secondary/30 hover:shadow-md transition-all duration-200 cursor-pointer flex items-start gap-4'>
-              <div className='flex-shrink-0 mt-1'>
-                <div className='group-hover:bg-brand-primary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm'>
-                  <FaChevronLeft className='text-brand-secondary group-hover:text-black transition-colors duration-200' />
-                </div>
-              </div>
-              <div className='min-w-0 flex-1'>
-                <p className='text-body-sm font-medium mb-1'>Previous Post</p>
-                <p className='text-body-lg font-semibold text-gray-900 group-hover:text-brand-secondary transition-colors duration-300 line-clamp-2'>
-                  {prevPost.title || 'Untitled Post'}
-                </p>
-              </div>
-            </Link>
+          {prevPost?.slug?.current ? (
+            <NavigationLink post={prevPost} direction='prev' />
           ) : (
-            <div className='flex-1' /> // Empty space when no previous post
+            <div className='flex-1' />
           )}
         </div>
-
-        {/* Next Post */}
         <div className='flex-1 flex'>
-          {nextPost && nextPost.slug?.current ? (
-            <Link
-              href={`/blog/${nextPost.slug.current}`}
-              className='group bg-brand-secondary/10 border border-brand-secondary/20 rounded-lg py-6 px-6 w-full hover:bg-brand-secondary/15 hover:border-brand-secondary/30 hover:shadow-md transition-all duration-200 cursor-pointer flex items-start gap-4 text-right'>
-              <div className='min-w-0 flex-1'>
-                <p className='text-body-sm font-medium mb-1'>Next Post</p>
-                <p className='text-body-lg font-semibold text-gray-900 group-hover:text-brand-secondary transition-colors duration-300 line-clamp-2'>
-                  {nextPost.title || 'Untitled Post'}
-                </p>
-              </div>
-              <div className='flex-shrink-0 mt-1'>
-                <div className='group-hover:bg-brand-primary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm'>
-                  <FaChevronRight className='text-brand-secondary group-hover:text-black transition-colors duration-200' />
-                </div>
-              </div>
-            </Link>
+          {nextPost?.slug?.current ? (
+            <NavigationLink post={nextPost} direction='next' />
           ) : (
-            <div className='flex-1' /> // Empty space when no next post
+            <div className='flex-1' />
           )}
         </div>
       </div>

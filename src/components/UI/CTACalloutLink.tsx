@@ -95,7 +95,7 @@ const CTACalloutLink = ({
 
         {/* Link Icon - Consistent style with hover circle */}
         <div className='flex-shrink-0 flex items-center justify-center'>
-          <div className='group-hover:bg-brand-secondary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm'>
+          <div className='group-hover:bg-brand-primary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm'>
             <LinkIcon className='w-5 h-5 text-brand-secondary group-hover:text-brand-white transition-colors duration-200' />
           </div>
         </div>
