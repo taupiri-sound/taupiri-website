@@ -1,8 +1,13 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getAdjacentBlogPosts } from '@/actions/blog';
-import { getCompanyLinks, getSiteSettings, getContactFormSettings, getClients, getAllProjects } from '@/actions';
-import PageHero from '@/components/Page/PageHero';
+import {
+  getCompanyLinks,
+  getSiteSettings,
+  getContactFormSettings,
+  getClients,
+  getAllProjects,
+} from '@/actions';
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
 import PageBuilder from '@/components/PageBuilder';
@@ -10,7 +15,11 @@ import { FaUser, FaCalendar } from 'react-icons/fa6';
 import UnifiedImage from '@/components/UI/UnifiedImage';
 import { urlFor } from '@/sanity/lib/image';
 import type { PAGE_QUERYResult } from '@/sanity/types';
-import { blogHeaderBottomSpacing, closingCardSpacing } from '@/utils/spacingConstants';
+import {
+  blogHeaderBottomSpacing,
+  closingCardSpacing,
+  headerHeight,
+} from '@/utils/spacingConstants';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 import {
   generateBlogPostSchema,
@@ -71,7 +80,15 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const [post, companyLinks, siteSettings, contactFormSettings, clientsData, adjacentPosts, allProjectsData] = await Promise.all([
+  const [
+    post,
+    companyLinks,
+    siteSettings,
+    contactFormSettings,
+    clientsData,
+    adjacentPosts,
+    allProjectsData,
+  ] = await Promise.all([
     getBlogPostBySlug(slug),
     getCompanyLinks(),
     getSiteSettings(),
@@ -130,8 +147,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
       )}
 
-      {/* Page Hero - No title, back to blog */}
-      <PageHero documentId={post._id} documentType={post._type} />
+      <div className={headerHeight}></div>
 
       {/* Breadcrumb */}
       <Breadcrumb pageTitle='Blog' pageTitleClickable={true} pageTitleHref='/blog' />
@@ -140,7 +156,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Article Header */}
         <div className={`text-left ${blogHeaderBottomSpacing}`}>
           {/* Title */}
-          <h1 className='mb-4 text-h1 font-bold text-gray-900 leading-tight'>{post.title}</h1>
+          <h1 className='mb-4 text-h1 font-bold text-brand-secondary leading-tight'>
+            {post.title}
+          </h1>
 
           {/* Subtitle */}
           {post.subtitle && (
@@ -153,21 +171,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className='flex flex-wrap items-center gap-4'>
             {/* Author */}
             {post.author && (
-              <div className='flex items-center text-body-base'>
-                <FaUser className='mr-2 text-brand-secondary' />
+              <div className='flex items-center text-body-base text-subtle'>
+                <FaUser className='mr-2' />
                 <span>{post.author}</span>
               </div>
             )}
 
             {/* Date */}
-            <div className='flex items-center text-body-base'>
-              <FaCalendar className='mr-2 text-brand-secondary' />
+            <div className='flex items-center text-body-base text-subtle'>
+              <FaCalendar className='mr-2' />
               <span>{formattedDate}</span>
             </div>
           </div>
 
           {/* Horizontal line */}
-          <hr className='border-t border-gray-200' />
+          <hr className='border-t border-subtle' />
         </div>
 
         {/* Main Image - displayed between horizontal line and content */}
@@ -192,7 +210,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Article Content Container */}
         {post.content && (
-          <div className='bg-white rounded-lg shadow-sm px-6 md:px-16 py-6 md:py-8'>
+          <div className='bg-brand-white-dark/30 rounded-lg shadow-sm px-6 md:px-16 py-12 md:py-18'>
             <div className='text-left'>
               <PageBuilder
                 content={post.content as NonNullable<PAGE_QUERYResult>['content']}

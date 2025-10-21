@@ -20,7 +20,7 @@ export const pageSubtitleBottomSpacing = 'mb-6 md:mb-8';
 /**
  * Space above PageSections that come after orphaned content blocks
  */
-export const pageSectionTopSpacing = 'mt-26 md:mt-40';
+export const pageSectionTopSpacing = 'mt-24';
 
 /**
  * Space under blog header sections (title, subtitle, author, date, horizontal line group)
