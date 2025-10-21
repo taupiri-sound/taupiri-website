@@ -105,7 +105,8 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
           onMouseLeave={(e) => {
             e.currentTarget.style.scrollbarColor = '#430c08 transparent';
           }}>
-          <nav className='px-10 py-10 w-full'>
+          {/* Navigation Links - grows to fill available space */}
+          <nav className='px-10 py-10 w-full flex-grow'>
             <div className='space-y-8'>
               {navLinks && navLinks.length > 0 ? (
                 <>
@@ -184,21 +185,19 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
               ) : (
                 <div className='text-body-base text-center'>No navigation links configured</div>
               )}
-
-              {/* Navigation CTAs */}
-              {navCtas && navCtas.length > 0 && (
-                <>
-                  {/* Separator line between navigation and CTAs */}
-                  <div className='pt-6 border-t border-subtle/30'>
-                    {/* CTAs rendered in vertical column with full width */}
-                    <div className='pt-6'>
-                      <CTAList ctaList={navCtas} alignment='flex-col' fullWidth={true} onClick={onClose} />
-                    </div>
-                  </div>
-                </>
-              )}
             </div>
           </nav>
+
+          {/* Navigation CTAs - pinned to bottom on tall screens */}
+          {navCtas && navCtas.length > 0 && (
+            <div className='w-full px-10 pb-10 mt-auto'>
+              <div className='pt-6 border-t border-subtle/30'>
+                <div className='pt-6'>
+                  <CTAList ctaList={navCtas} alignment='flex-col' fullWidth={true} onClick={onClose} />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
