@@ -13,6 +13,7 @@ interface CTAListProps {
   alignment?: 'flex-row' | 'flex-col' | 'flex-col-left';
   className?: string;
   fullWidth?: boolean;
+  onClick?: () => void;
 }
 
 const CTAList = ({
@@ -20,6 +21,7 @@ const CTAList = ({
   alignment = 'flex-row',
   className = '',
   fullWidth = false,
+  onClick,
 }: CTAListProps) => {
   // Return nothing if no CTAs
   if (!ctaList || ctaList.length === 0) {
@@ -63,6 +65,7 @@ const CTAList = ({
               computedHref={cta.computedHref as string}
               pageSectionId={cta.pageSectionId as string}
               className={ctaClassName}
+              onClick={onClick}
             />
           );
         }

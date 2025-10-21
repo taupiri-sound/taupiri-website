@@ -8,7 +8,7 @@ import { getAlignmentClasses } from './shared/alignmentUtils';
 
 type CTAButtonProps = CTABlockProps<CTAButtonBlock>;
 
-const CTAButton = (props: CTAButtonProps) => {
+const CTAButton = (props: CTAButtonProps & { onClick?: () => void }) => {
   const {
     text,
     variant = 'filled',
@@ -21,6 +21,7 @@ const CTAButton = (props: CTAButtonProps) => {
     computedHref,
     className = '',
     pageSectionId,
+    onClick,
   } = props;
 
   const cleanText = stegaClean(text);
@@ -71,7 +72,8 @@ const CTAButton = (props: CTAButtonProps) => {
         href={href}
         variant={cleanVariant}
         target={shouldOpenInNewTab ? '_blank' : undefined}
-        rel={shouldOpenInNewTab ? 'noopener noreferrer' : undefined}>
+        rel={shouldOpenInNewTab ? 'noopener noreferrer' : undefined}
+        onClick={onClick}>
         {cleanText}
         {shouldOpenInNewTab && cleanVariant !== 'text-link' && <FaExternalLinkAlt className='ml-4' />}
       </CTA>

@@ -192,7 +192,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
                   <div className='pt-6 border-t border-subtle/30'>
                     {/* CTAs rendered in vertical column with full width */}
                     <div className='pt-6'>
-                      <CTAList ctaList={navCtas} alignment='flex-col' fullWidth={true} />
+                      <CTAList ctaList={navCtas} alignment='flex-col' fullWidth={true} onClick={onClose} />
                     </div>
                   </div>
                 </>

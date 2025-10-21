@@ -14,6 +14,7 @@ type LinkCTAProps = BaseCTAProps & {
   href: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 };
 
 type ButtonCTAProps = BaseCTAProps & {
@@ -106,21 +107,21 @@ const CTA = (props: CTAProps) => {
   }
 
   // Default to link behavior
-  const { href, target, rel } = restProps as LinkCTAProps;
+  const { href, target, rel, onClick } = restProps as LinkCTAProps;
 
   // Use Next.js Link for internal links, regular anchor for external links or when target="_blank"
   const shouldUseAnchor = isExternal || target === '_blank';
 
   if (shouldUseAnchor) {
     return (
-      <a href={href} target={target} rel={rel} className={combinedClassName}>
+      <a href={href} target={target} rel={rel} onClick={onClick} className={combinedClassName}>
         {content}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={combinedClassName}>
+    <Link href={href} onClick={onClick} className={combinedClassName}>
       {content}
     </Link>
   );
