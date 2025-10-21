@@ -3,6 +3,7 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { YouTubeVideo as YouTubeVideoType } from '@/sanity/types';
+import { maxCardWidth } from '@/utils/spacingConstants';
 
 interface YouTubeVideoProps extends YouTubeVideoType {
   className?: string;
@@ -33,7 +34,7 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ url, className = '' }) => {
   }
 
   return (
-    <div className={`${className} relative w-full mx-auto`}>
+    <div className={`${className} relative ${maxCardWidth} mx-auto`}>
       <iframe
         className='rounded-2xl lg:rounded-[1.25rem] w-full aspect-video'
         src={embedUrl}

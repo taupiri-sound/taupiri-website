@@ -4,6 +4,7 @@ import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { SpotifyWidget as SpotifyWidgetType } from '@/sanity/types';
 import { createSanityDataAttribute, type SanityLiveEditingProps } from '../../utils/sectionHelpers';
+import { maxCardWidth } from '@/utils/spacingConstants';
 
 interface SpotifyWidgetProps
   extends SpotifyWidgetType,
@@ -74,14 +75,14 @@ const SpotifyWidget: React.FC<SpotifyWidgetProps> = ({
 
   const iframeStyle = {
     width: width ? (width.includes('%') ? width : `${width}%`) : '100%',
-    height: height ? `${height}px` : '352px' // Default to 352px if no height specified
+    height: height ? `${height}px` : '352px', // Default to 352px if no height specified
   };
 
   return (
-    <div className={`${className}`} {...widgetDataAttribute}>
+    <div className={`${className} ${maxCardWidth} mx-auto`} {...widgetDataAttribute}>
       <iframe
         src={src}
-        className="hidden md:block mx-auto rounded-xl border-0"
+        className='hidden md:block mx-auto rounded-xl border-0'
         style={iframeStyle}
         allowFullScreen
         allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
@@ -90,7 +91,7 @@ const SpotifyWidget: React.FC<SpotifyWidgetProps> = ({
       />
       <iframe
         src={src}
-        className="md:hidden w-full mx-auto rounded-xl border-0"
+        className='md:hidden w-full mx-auto rounded-xl border-0'
         style={iframeStyle}
         allowFullScreen
         allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
