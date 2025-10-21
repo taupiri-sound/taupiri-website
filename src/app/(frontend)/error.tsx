@@ -3,9 +3,9 @@
 import React from 'react';
 import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
-import ErrorGraphic from '@/components/UI/Graphics/ErrorGraphic';
 import CTA from '@/components/UI/CTA';
 import Breadcrumb from '@/components/UI/Breadcrumb';
+import { MdError } from 'react-icons/md';
 
 interface ErrorPageProps {
   error: Error & { digest?: string };
@@ -24,9 +24,7 @@ export default function ErrorPage({ error }: ErrorPageProps) {
       <Container>
         <div className='flex flex-col items-center text-center pb-12 md:pb-16'>
           {/* Graphic */}
-          <div className='w-full max-w-[200px] sm:max-w-[300px] mb-8 md:mb-12'>
-            <ErrorGraphic className='w-full' />
-          </div>
+          <MdError className='text-[150px] sm:text-[250px] text-brand-primary mb-8 md:mb-12' />
 
           {/* Message */}
           <div className='max-w-2xl mb-8 md:mb-12'>
