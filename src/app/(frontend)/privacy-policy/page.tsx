@@ -2,7 +2,14 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
-import { getPrivacyPolicy, getSiteSettings, getCompanyLinks, getContactFormSettings, getClients, getAllProjects } from '@/actions';
+import {
+  getPrivacyPolicy,
+  getSiteSettings,
+  getCompanyLinks,
+  getContactFormSettings,
+  getClients,
+  getAllProjects,
+} from '@/actions';
 import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 import {
@@ -35,7 +42,14 @@ export async function generateMetadata() {
 }
 
 const PrivacyPolicyPage = async () => {
-  const [privacyData, siteSettings, companyLinks, contactFormSettings, clientsData, allProjectsData] = await Promise.all([
+  const [
+    privacyData,
+    siteSettings,
+    companyLinks,
+    contactFormSettings,
+    clientsData,
+    allProjectsData,
+  ] = await Promise.all([
     getPrivacyPolicy(),
     getSiteSettings(),
     getCompanyLinks(),
@@ -49,7 +63,7 @@ const PrivacyPolicyPage = async () => {
     notFound();
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://0717records.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://taupirisound.co.nz/';
 
   // Generate breadcrumb data
   const breadcrumbItems = [

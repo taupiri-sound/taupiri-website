@@ -38,6 +38,7 @@ const termsAndConditionsData = {
       hideSection: false,
       title: 'Introduction',
       anchorId: 'introduction',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -50,7 +51,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Welcome to 07:17 Records. These Terms & Conditions govern your use of our website and services. By accessing or using our website, collaborating with our artists, or engaging with our content, you agree to be bound by these terms.',
+                  text: 'Welcome to Taupiri Sound. These Terms & Conditions govern your use of our website and recording studio services. By accessing or using our website, booking our recording studio, or engaging with our services, you agree to be bound by these terms.',
                   marks: []
                 }
               ]
@@ -65,6 +66,7 @@ const termsAndConditionsData = {
       hideSection: false,
       title: 'Definitions',
       anchorId: 'definitions',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -90,7 +92,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: '"Company", "we", "us", or "our" refers to 07:17 Records',
+                  text: '"Studio", "we", "us", or "our" refers to Taupiri Sound',
                   marks: []
                 }
               ]
@@ -103,7 +105,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: '"Website" refers to 0717records.com and all associated pages',
+                  text: '"Website" refers to taupirisound.co.nz and all associated pages',
                   marks: []
                 }
               ]
@@ -116,20 +118,33 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: '"Services" refers to our record label activities, artist collaborations, event organization, and content distribution',
+                  text: '"Services" refers to our recording studio services including recording, mixing, editing, voice work, audio for media, and related professional audio production services',
                   marks: []
                 }
               ]
             },
             {
               _type: 'block',
-              _key: 'def-user',
+              _key: 'def-client',
               style: 'normal',
               listItem: 'bullet',
               children: [
                 {
                   _type: 'span',
-                  text: '"User", "you", or "your" refers to any individual or entity accessing our website or services',
+                  text: '"Client", "you", or "your" refers to any individual or entity booking our studio services or accessing our website',
+                  marks: []
+                }
+              ]
+            },
+            {
+              _type: 'block',
+              _key: 'def-session',
+              style: 'normal',
+              listItem: 'bullet',
+              children: [
+                {
+                  _type: 'span',
+                  text: '"Session" refers to a booked period of studio time for recording, mixing, or other audio production work',
                   marks: []
                 }
               ]
@@ -144,6 +159,7 @@ const termsAndConditionsData = {
       hideSection: false,
       title: 'Website Use',
       anchorId: 'website-use',
+      useCompactGap: true,
       content: [
         {
           _type: 'subSection',
@@ -176,7 +192,7 @@ const termsAndConditionsData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Browsing and discovering music and artists',
+                      text: 'Learning about our recording studio services and facilities',
                       marks: []
                     }
                   ]
@@ -189,7 +205,7 @@ const termsAndConditionsData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Reading blog posts and articles',
+                      text: 'Listening to audio samples and viewing project examples',
                       marks: []
                     }
                   ]
@@ -202,7 +218,7 @@ const termsAndConditionsData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Finding information about events and collaborations',
+                      text: 'Reading blog posts and articles about recording techniques',
                       marks: []
                     }
                   ]
@@ -215,7 +231,7 @@ const termsAndConditionsData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Contacting us for legitimate business purposes',
+                      text: 'Contacting us to inquire about booking studio sessions',
                       marks: []
                     }
                   ]
@@ -281,7 +297,7 @@ const termsAndConditionsData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Distribute malware or harmful code',
+                      text: 'Download, copy, or distribute audio samples without permission',
                       marks: []
                     }
                   ]
@@ -320,69 +336,43 @@ const termsAndConditionsData = {
     },
     {
       _type: 'pageSection',
-      _key: 'intellectual-property-section',
+      _key: 'booking-payment-section',
       hideSection: false,
-      title: 'Intellectual Property',
-      anchorId: 'intellectual-property',
-      content: [
-        {
-          _type: 'richText',
-          _key: 'ip-text',
-          content: [
-            {
-              _type: 'block',
-              _key: 'ip-ownership',
-              style: 'normal',
-              children: [
-                {
-                  _type: 'span',
-                  text: 'All content on this website, including but not limited to text, graphics, logos, music, and software, is owned by 07:17 Records or our content suppliers and is protected by intellectual property laws.',
-                  marks: []
-                }
-              ]
-            },
-            {
-              _type: 'block',
-              _key: 'ip-music',
-              style: 'normal',
-              children: [
-                {
-                  _type: 'span',
-                  text: 'Music and artistic content featured on our website belongs to the respective artists and is used with permission. Unauthorized reproduction or distribution is prohibited.',
-                  marks: []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      _type: 'pageSection',
-      _key: 'services-section',
-      hideSection: false,
-      title: 'Our Services',
-      anchorId: 'our-services',
+      title: 'Booking and Payment',
+      anchorId: 'booking-payment',
+      useCompactGap: true,
       content: [
         {
           _type: 'subSection',
-          _key: 'record-label-services',
+          _key: 'booking-process',
           hideSection: false,
-          title: 'Record Label Services',
-          anchorId: 'record-label-services',
+          title: 'Booking Process',
+          anchorId: 'booking-process',
           content: [
             {
               _type: 'richText',
-              _key: 'record-label-text',
+              _key: 'booking-text',
               content: [
                 {
                   _type: 'block',
-                  _key: 'record-label-desc',
+                  _key: 'booking-1',
                   style: 'normal',
                   children: [
                     {
                       _type: 'span',
-                      text: 'We provide record label services including artist development, music distribution, and promotional support. All agreements with artists are subject to separate contracts.',
+                      text: 'All studio sessions must be booked in advance. Bookings are confirmed upon receipt of payment or deposit as agreed. We reserve the right to decline bookings at our discretion.',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'booking-2',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Session times are agreed upon booking and should be adhered to. Extensions may be accommodated subject to availability and additional charges.',
                       marks: []
                     }
                   ]
@@ -393,23 +383,388 @@ const termsAndConditionsData = {
         },
         {
           _type: 'subSection',
-          _key: 'events-services',
+          _key: 'payment-terms',
           hideSection: false,
-          title: 'Events and Collaborations',
-          anchorId: 'events-services',
+          title: 'Payment Terms',
+          anchorId: 'payment-terms',
           content: [
             {
               _type: 'richText',
-              _key: 'events-text',
+              _key: 'payment-text',
               content: [
                 {
                   _type: 'block',
-                  _key: 'events-desc',
+                  _key: 'payment-1',
                   style: 'normal',
                   children: [
                     {
                       _type: 'span',
-                      text: 'We organize and promote music events and artistic collaborations. Event terms and conditions may vary and will be communicated separately for each event.',
+                      text: 'Payment terms will be agreed upon booking and may include deposits, upfront payments, or invoicing arrangements depending on the scope of work.',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'payment-2',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Final recordings and project files will not be released until all outstanding payments have been received in full.',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          _type: 'subSection',
+          _key: 'cancellation-policy',
+          hideSection: false,
+          title: 'Cancellation Policy',
+          anchorId: 'cancellation-policy',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'cancellation-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'cancel-intro',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Cancellation policies will be communicated at the time of booking. Generally:',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'cancel-1',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Cancellations with reasonable notice may receive a full or partial refund',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'cancel-2',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Late cancellations or no-shows may result in forfeiture of deposits or full session fees',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'cancel-3',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'We reserve the right to cancel or reschedule sessions due to unforeseen circumstances, in which case full refunds will be provided',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      _type: 'pageSection',
+      _key: 'intellectual-property-section',
+      hideSection: false,
+      title: 'Intellectual Property and Recording Rights',
+      anchorId: 'intellectual-property',
+      useCompactGap: true,
+      content: [
+        {
+          _type: 'subSection',
+          _key: 'client-ownership',
+          hideSection: false,
+          title: 'Client Ownership',
+          anchorId: 'client-ownership',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'client-ownership-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'ownership-1',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Unless otherwise agreed in writing, clients retain full ownership of the master recordings created during their sessions. We claim no rights to your creative work, compositions, or performances.',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          _type: 'subSection',
+          _key: 'client-responsibilities',
+          hideSection: false,
+          title: 'Client Responsibilities',
+          anchorId: 'client-responsibilities',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'client-resp-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'resp-intro',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Clients are responsible for:',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'resp-1',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Ensuring they have all necessary rights and permissions for material recorded at our studio',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'resp-2',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Obtaining any required licenses before duplication or distribution of works',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'resp-3',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Indemnifying the studio against any claims related to copyright infringement or contractual breaches',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          _type: 'subSection',
+          _key: 'portfolio-use',
+          hideSection: false,
+          title: 'Portfolio and Promotional Use',
+          anchorId: 'portfolio-use',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'portfolio-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'portfolio-1',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'We may request permission to use excerpts of your recordings for promotional purposes, portfolio examples, or website content. Any such use will be discussed and agreed upon with you.',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          _type: 'subSection',
+          _key: 'website-content',
+          hideSection: false,
+          title: 'Website Content',
+          anchorId: 'website-content',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'website-content-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'web-content-1',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'All content on this website, including text, graphics, logos, photographs, and design, is owned by Taupiri Sound and is protected by intellectual property laws. Unauthorized reproduction or distribution is prohibited.',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      _type: 'pageSection',
+      _key: 'studio-conduct-section',
+      hideSection: false,
+      title: 'Studio Conduct and Safety',
+      anchorId: 'studio-conduct',
+      useCompactGap: true,
+      content: [
+        {
+          _type: 'subSection',
+          _key: 'facility-access',
+          hideSection: false,
+          title: 'Facility Access',
+          anchorId: 'facility-access',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'facility-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'facility-1',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Clients may only permit individuals directly involved in the recording session to enter the studio premises during their booked time. All visitors must be approved in advance.',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          _type: 'subSection',
+          _key: 'equipment-care',
+          hideSection: false,
+          title: 'Equipment Care and Liability',
+          anchorId: 'equipment-care',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'equipment-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'equipment-intro',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Our studio contains professional-grade equipment that must be handled with care:',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'equipment-1',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Clients are responsible for any loss or damage to studio property caused by misuse, negligence, or careless actions',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'equipment-2',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Studio equipment should only be operated by authorized personnel',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'equipment-3',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Food and beverages must be kept away from all equipment',
+                      marks: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          _type: 'subSection',
+          _key: 'hearing-safety',
+          hideSection: false,
+          title: 'Hearing Safety',
+          anchorId: 'hearing-safety',
+          content: [
+            {
+              _type: 'richText',
+              _key: 'hearing-text',
+              content: [
+                {
+                  _type: 'block',
+                  _key: 'hearing-1',
+                  style: 'normal',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Prolonged exposure to high noise levels above 85 dB(A) may cause hearing damage. We maintain safe monitoring levels, but clients should take regular breaks and use hearing protection when appropriate.',
                       marks: []
                     }
                   ]
@@ -424,8 +779,9 @@ const termsAndConditionsData = {
       _type: 'pageSection',
       _key: 'third-party-section',
       hideSection: false,
-      title: 'Third-Party Services',
+      title: 'Third-Party Services and Embedded Content',
       anchorId: 'third-party-services',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -438,7 +794,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Our website integrates with various third-party services:',
+                  text: 'Our website integrates with various third-party services to showcase our work and provide enhanced functionality:',
                   marks: []
                 }
               ]
@@ -451,7 +807,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Spotify widgets for music streaming',
+                  text: 'Spotify widgets for streaming audio samples',
                   marks: []
                 }
               ]
@@ -464,7 +820,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Bandcamp widgets for music purchases',
+                  text: 'Bandcamp widgets for music playback',
                   marks: []
                 }
               ]
@@ -477,7 +833,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'YouTube videos for content sharing',
+                  text: 'YouTube videos for video content and studio tours',
                   marks: []
                 }
               ]
@@ -490,7 +846,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Social media platforms for connectivity',
+                  text: 'Social media platforms for connectivity and updates',
                   marks: []
                 }
               ]
@@ -502,7 +858,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'These third-party services have their own terms of service and privacy policies. We are not responsible for their practices or content.',
+                  text: 'These third-party services have their own terms of service and privacy policies. We are not responsible for their practices or content. Please refer to our Privacy Policy for information about cookies and data collection.',
                   marks: []
                 }
               ]
@@ -517,6 +873,7 @@ const termsAndConditionsData = {
       hideSection: false,
       title: 'Disclaimers and Limitation of Liability',
       anchorId: 'disclaimers',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -529,7 +886,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Our website and services are provided "as is" without any warranties, express or implied. We do not guarantee that our website will be uninterrupted, error-free, or free from harmful components.',
+                  text: 'Our website and services are provided "as is" without any warranties, express or implied. While we strive for the highest quality in our services, we do not guarantee that our website will be uninterrupted, error-free, or free from harmful components.',
                   marks: []
                 }
               ]
@@ -541,7 +898,19 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To the fullest extent permitted by law, 07:17 Records shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or services.',
+                  text: 'To the fullest extent permitted by law, Taupiri Sound shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our website or services. We maintain appropriate insurance coverage for our studio operations.',
+                  marks: []
+                }
+              ]
+            },
+            {
+              _type: 'block',
+              _key: 'disclaimer-results',
+              style: 'normal',
+              children: [
+                {
+                  _type: 'span',
+                  text: 'While we aim to deliver professional results, the quality of final recordings depends on many factors including source material, performances, and creative decisions. We cannot guarantee specific commercial or artistic outcomes.',
                   marks: []
                 }
               ]
@@ -556,6 +925,7 @@ const termsAndConditionsData = {
       hideSection: false,
       title: 'Contact Information',
       anchorId: 'contact',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -568,7 +938,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'If you have any questions about these Terms & Conditions, please contact us at:',
+                  text: 'If you have any questions about these Terms & Conditions, please contact us:',
                   marks: []
                 }
               ]
@@ -580,7 +950,46 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Email: 0717records@gmail.com',
+                  text: 'Email: ',
+                  marks: []
+                },
+                {
+                  _type: 'span',
+                  text: 'lance@taupirisound.co.nz',
+                  marks: ['strong']
+                }
+              ]
+            },
+            {
+              _type: 'block',
+              _key: 'contact-phone',
+              style: 'normal',
+              children: [
+                {
+                  _type: 'span',
+                  text: 'Phone: ',
+                  marks: []
+                },
+                {
+                  _type: 'span',
+                  text: '+64 21 311 903',
+                  marks: ['strong']
+                }
+              ]
+            },
+            {
+              _type: 'block',
+              _key: 'contact-address',
+              style: 'normal',
+              children: [
+                {
+                  _type: 'span',
+                  text: 'Address: ',
+                  marks: []
+                },
+                {
+                  _type: 'span',
+                  text: 'Topview Road, Taupiri 3792, New Zealand',
                   marks: ['strong']
                 }
               ]
@@ -595,6 +1004,7 @@ const termsAndConditionsData = {
       hideSection: false,
       title: 'Changes to Terms',
       anchorId: 'changes',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -607,7 +1017,7 @@ const termsAndConditionsData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'We reserve the right to modify these Terms & Conditions at any time. Changes will be effective immediately upon posting on this website. Your continued use of our website constitutes acceptance of any changes.',
+                  text: 'We reserve the right to modify these Terms & Conditions at any time. Changes will be effective immediately upon posting on this website. Your continued use of our website or services constitutes acceptance of any changes.',
                   marks: []
                 }
               ]
@@ -642,13 +1052,13 @@ const termsAndConditionsData = {
 
 async function createAndPopulateTermsAndConditions() {
   try {
-    console.log('=€ Creating Terms & Conditions document...');
+    console.log('=ï¿½ Creating Terms & Conditions document...');
 
     // Check if document already exists
     const existingDoc = await client.fetch('*[_id == "termsAndConditions"][0]');
 
     if (existingDoc) {
-      console.log('   Terms & Conditions document already exists.');
+      console.log('ï¿½  Terms & Conditions document already exists.');
       console.log('   Updating existing document...');
 
       const result = await client.createOrReplace(termsAndConditionsData);
@@ -660,14 +1070,14 @@ async function createAndPopulateTermsAndConditions() {
       console.log(`   Document ID: ${result._id}`);
     }
 
-    console.log('\n=Ý Next steps:');
+    console.log('\n=ï¿½ Next steps:');
     console.log('1. Go to your Sanity Studio');
-    console.log('2. Navigate to Site Management ’ Legal ’ Terms & Conditions');
+    console.log('2. Navigate to Site Management ï¿½ Legal ï¿½ Terms & Conditions');
     console.log('3. Review the content and make any necessary adjustments');
     console.log('4. Publish the document when ready');
     console.log('5. The page will be available at /terms-and-conditions');
   } catch (error) {
-    console.error('=¥ Script failed:', error);
+    console.error('=ï¿½ Script failed:', error);
     process.exit(1);
   }
 }

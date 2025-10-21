@@ -259,7 +259,11 @@ const BlockRenderer = ({
                   inheritAlignment={alignment}
                   textAlign={(block as { textAlign?: string }).textAlign}
                   shouldApplyBottomPadding={shouldApplyBottomPadding}
-                  hideGraphic={documentType === 'blogPost'}
+                  hideGraphic={
+                    documentType === 'blogPost' ||
+                    documentType === 'termsAndConditions' ||
+                    documentType === 'privacyPolicy'
+                  }
                   useCompactGap={(block as { useCompactGap?: boolean }).useCompactGap}>
                   {renderNestedContent(block.content)}
                 </PageSection>

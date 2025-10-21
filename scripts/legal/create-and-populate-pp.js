@@ -38,6 +38,7 @@ const privacyPolicyData = {
       hideSection: false,
       title: 'Introduction',
       anchorId: 'introduction',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -50,7 +51,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'At 07:17 Records, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or engage with our services.',
+                  text: 'At Taupiri Sound, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website, use our contact form, or engage with our recording studio services.',
                   marks: []
                 }
               ]
@@ -65,6 +66,7 @@ const privacyPolicyData = {
       hideSection: false,
       title: 'Information We Collect',
       anchorId: 'information-we-collect',
+      useCompactGap: true,
       content: [
         {
           _type: 'subSection',
@@ -97,7 +99,7 @@ const privacyPolicyData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Name and contact information when you reach out to us',
+                      text: 'Email address when you submit our contact form',
                       marks: []
                     }
                   ]
@@ -110,7 +112,7 @@ const privacyPolicyData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Email address for correspondence and event notifications',
+                      text: 'Phone number (optional) when provided through our contact form',
                       marks: []
                     }
                   ]
@@ -123,7 +125,7 @@ const privacyPolicyData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Professional information for artist collaborations',
+                      text: 'Name and contact information when booking studio services',
                       marks: []
                     }
                   ]
@@ -136,7 +138,20 @@ const privacyPolicyData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Social media handles when provided for promotional purposes',
+                      text: 'Project details and preferences discussed during studio bookings',
+                      marks: []
+                    }
+                  ]
+                },
+                {
+                  _type: 'block',
+                  _key: 'personal-5',
+                  style: 'normal',
+                  listItem: 'bullet',
+                  children: [
+                    {
+                      _type: 'span',
+                      text: 'Billing and payment information for studio session bookings',
                       marks: []
                     }
                   ]
@@ -232,6 +247,7 @@ const privacyPolicyData = {
       hideSection: false,
       title: 'Cookies and Tracking Technologies',
       anchorId: 'cookies-tracking',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -244,7 +260,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Our website and embedded third-party services may use cookies and similar tracking technologies:',
+                  text: 'Our website and embedded third-party services may use cookies and similar tracking technologies. Cookies are small text files stored on your device that help improve your browsing experience:',
                   marks: []
                 }
               ]
@@ -257,7 +273,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Spotify widgets may set cookies for music streaming functionality',
+                  text: 'Spotify widgets may set cookies for music streaming functionality and playback preferences',
                   marks: []
                 }
               ]
@@ -270,7 +286,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Bandcamp widgets may use cookies for music purchasing and playback',
+                  text: 'Bandcamp widgets may use cookies for audio playback and user preferences',
                   marks: []
                 }
               ]
@@ -283,20 +299,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'YouTube embedded videos may set cookies for video playback and analytics',
-                  marks: []
-                }
-              ]
-            },
-            {
-              _type: 'block',
-              _key: 'cookies-social',
-              style: 'normal',
-              listItem: 'bullet',
-              children: [
-                {
-                  _type: 'span',
-                  text: 'Social media widgets may set cookies for sharing and tracking purposes',
+                  text: 'YouTube embedded videos may set cookies for video playback, quality settings, and analytics',
                   marks: []
                 }
               ]
@@ -308,7 +311,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'You can control cookies through your browser settings, though this may affect website functionality.',
+                  text: 'You can control cookies through your browser settings. Most browsers allow you to refuse cookies or delete existing cookies. However, disabling cookies may affect the functionality of embedded audio and video players on our website.',
                   marks: []
                 }
               ]
@@ -323,6 +326,7 @@ const privacyPolicyData = {
       hideSection: false,
       title: 'How We Use Your Information',
       anchorId: 'how-we-use-information',
+      useCompactGap: true,
       content: [
         {
           _type: 'richText',
@@ -348,7 +352,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To respond to inquiries and provide customer support',
+                  text: 'To respond to inquiries submitted through our contact form',
                   marks: []
                 }
               ]
@@ -361,7 +365,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To facilitate artist collaborations and partnerships',
+                  text: 'To process and manage studio session bookings',
                   marks: []
                 }
               ]
@@ -374,7 +378,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To send event notifications and promotional updates (with consent)',
+                  text: 'To communicate about your recording projects and sessions',
                   marks: []
                 }
               ]
@@ -387,7 +391,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To improve our website and services based on usage patterns',
+                  text: 'To send booking confirmations, session reminders, and project updates',
                   marks: []
                 }
               ]
@@ -395,6 +399,19 @@ const privacyPolicyData = {
             {
               _type: 'block',
               _key: 'use-5',
+              style: 'normal',
+              listItem: 'bullet',
+              children: [
+                {
+                  _type: 'span',
+                  text: 'To improve our website and services based on your feedback',
+                  marks: []
+                }
+              ]
+            },
+            {
+              _type: 'block',
+              _key: 'use-6',
               style: 'normal',
               listItem: 'bullet',
               children: [
@@ -492,6 +509,7 @@ const privacyPolicyData = {
       _type: 'pageSection',
       _key: 'third-party-section',
       hideSection: false,
+      useCompactGap: true,
       title: 'Third-Party Services',
       anchorId: 'third-party-services',
       content: [
@@ -506,7 +524,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Our website integrates with various third-party services that have their own privacy policies:',
+                  text: 'Our website integrates with various third-party services to showcase our work. These services have their own privacy policies and may collect data independently:',
                   marks: []
                 }
               ]
@@ -519,7 +537,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Spotify: Music streaming and playlist embedding',
+                  text: 'Spotify: Audio streaming widgets for sample playback',
                   marks: []
                 }
               ]
@@ -532,7 +550,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Bandcamp: Music distribution and purchase widgets',
+                  text: 'Bandcamp: Music playback widgets',
                   marks: []
                 }
               ]
@@ -545,20 +563,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'YouTube: Video content embedding',
-                  marks: []
-                }
-              ]
-            },
-            {
-              _type: 'block',
-              _key: 'third-party-social',
-              style: 'normal',
-              listItem: 'bullet',
-              children: [
-                {
-                  _type: 'span',
-                  text: 'Social Media: Facebook, Instagram, Twitter integration',
+                  text: 'YouTube: Video content embedding for studio tours and project showcases',
                   marks: []
                 }
               ]
@@ -570,7 +575,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'We encourage you to review the privacy policies of these third-party services as we are not responsible for their data practices.',
+                  text: 'We encourage you to review the privacy policies of these third-party services. We are not responsible for their data collection practices or privacy policies. These services may set cookies and collect information as described in their respective privacy policies.',
                   marks: []
                 }
               ]
@@ -583,6 +588,7 @@ const privacyPolicyData = {
       _type: 'pageSection',
       _key: 'data-security-section',
       hideSection: false,
+      useCompactGap: true,
       title: 'Data Security',
       anchorId: 'data-security',
       content: [
@@ -622,6 +628,7 @@ const privacyPolicyData = {
       _type: 'pageSection',
       _key: 'data-retention-section',
       hideSection: false,
+      useCompactGap: true,
       title: 'Data Retention',
       anchorId: 'data-retention',
       content: [
@@ -661,6 +668,7 @@ const privacyPolicyData = {
       _type: 'pageSection',
       _key: 'your-rights-section',
       hideSection: false,
+      useCompactGap: true,
       title: 'Your Rights',
       anchorId: 'your-rights',
       content: [
@@ -765,6 +773,7 @@ const privacyPolicyData = {
       _type: 'pageSection',
       _key: 'contact-section',
       hideSection: false,
+      useCompactGap: true,
       title: 'Contact Information',
       anchorId: 'contact',
       content: [
@@ -779,7 +788,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us at:',
+                  text: 'If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us:',
                   marks: []
                 }
               ]
@@ -791,7 +800,46 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Email: 0717records@gmail.com',
+                  text: 'Email: ',
+                  marks: []
+                },
+                {
+                  _type: 'span',
+                  text: 'lance@taupirisound.co.nz',
+                  marks: ['strong']
+                }
+              ]
+            },
+            {
+              _type: 'block',
+              _key: 'contact-phone',
+              style: 'normal',
+              children: [
+                {
+                  _type: 'span',
+                  text: 'Phone: ',
+                  marks: []
+                },
+                {
+                  _type: 'span',
+                  text: '+64 21 311 903',
+                  marks: ['strong']
+                }
+              ]
+            },
+            {
+              _type: 'block',
+              _key: 'contact-address',
+              style: 'normal',
+              children: [
+                {
+                  _type: 'span',
+                  text: 'Address: ',
+                  marks: []
+                },
+                {
+                  _type: 'span',
+                  text: 'Topview Road, Taupiri 3792, New Zealand',
                   marks: ['strong']
                 }
               ]
@@ -816,6 +864,7 @@ const privacyPolicyData = {
       _type: 'pageSection',
       _key: 'changes-section',
       hideSection: false,
+      useCompactGap: true,
       title: 'Changes to This Privacy Policy',
       anchorId: 'changes',
       content: [
@@ -865,13 +914,13 @@ const privacyPolicyData = {
 
 async function createAndPopulatePrivacyPolicy() {
   try {
-    console.log('=€ Creating Privacy Policy document...');
+    console.log('=ï¿½ Creating Privacy Policy document...');
 
     // Check if document already exists
     const existingDoc = await client.fetch('*[_id == "privacyPolicy"][0]');
 
     if (existingDoc) {
-      console.log('   Privacy Policy document already exists.');
+      console.log('ï¿½  Privacy Policy document already exists.');
       console.log('   Updating existing document...');
 
       const result = await client.createOrReplace(privacyPolicyData);
@@ -883,14 +932,14 @@ async function createAndPopulatePrivacyPolicy() {
       console.log(`   Document ID: ${result._id}`);
     }
 
-    console.log('\n=Ý Next steps:');
+    console.log('\n=ï¿½ Next steps:');
     console.log('1. Go to your Sanity Studio');
-    console.log('2. Navigate to Site Management ’ Legal ’ Privacy Policy');
+    console.log('2. Navigate to Site Management ï¿½ Legal ï¿½ Privacy Policy');
     console.log('3. Review the content and make any necessary adjustments');
     console.log('4. Publish the document when ready');
     console.log('5. The page will be available at /privacy-policy');
   } catch (error) {
-    console.error('=¥ Script failed:', error);
+    console.error('=ï¿½ Script failed:', error);
     process.exit(1);
   }
 }

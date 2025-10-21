@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const formattedDate = formatBlogDate(post._createdAt, post.overrideDate, post.hasOverrideDate);
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://0717records.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://taupirisound.co.nz/';
 
   // Generate breadcrumb data
   const breadcrumbItems = [
