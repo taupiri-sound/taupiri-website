@@ -58,7 +58,5 @@ export async function getAdjacentBlogPosts(slug: string) {
     params: { slug },
   });
 
-  console.log('Adjacent blog posts data:', data);
-
   return data;
 }

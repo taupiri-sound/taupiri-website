@@ -227,7 +227,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         )}
 
         {/* Prev & Next Links */}
-        <BlogPostNavigation prevPost={adjacentPosts?.nextPost} nextPost={adjacentPosts?.prevPost} />
+        <BlogPostNavigation prevPost={adjacentPosts?.prevPost} nextPost={adjacentPosts?.nextPost} />
 
         <div className='flex justify-center mt-8'>
           <CTA href='/blog' variant='outline-light'>

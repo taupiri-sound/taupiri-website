@@ -519,7 +519,7 @@ export const CONTACT_FORM_SETTINGS_QUERY = defineQuery(`*[_id == "contactFormSet
 
 // Blog Post Queries
 export const BLOG_POSTS_QUERY =
-  defineQuery(`*[_type == "blogPost"]|order(coalesce(overrideDate, _createdAt) desc){
+  defineQuery(`*[_type == "blogPost"]|order(select(hasOverrideDate == true && defined(overrideDate) => overrideDate, _createdAt) desc){
   _id,
   _createdAt,
   title,
@@ -588,14 +588,18 @@ export const ADJACENT_BLOG_POSTS_QUERY = defineQuery(`{
     title,
     hasOverrideDate,
     overrideDate,
-    _createdAt
+    _createdAt,
+    "effectiveDate": select(
+      hasOverrideDate == true && defined(overrideDate) => overrideDate,
+      _createdAt
+    )
   },
-  "prevPost": *[_type == "blogPost" && coalesce(overrideDate, _createdAt) > coalesce(*[_type == "blogPost" && slug.current == $slug][0].overrideDate, *[_type == "blogPost" && slug.current == $slug][0]._createdAt)]|order(coalesce(overrideDate, _createdAt) asc)[0]{
+  "prevPost": *[_type == "blogPost" && select(hasOverrideDate == true && defined(overrideDate) => overrideDate, _createdAt) < select(*[_type == "blogPost" && slug.current == $slug][0].hasOverrideDate == true && defined(*[_type == "blogPost" && slug.current == $slug][0].overrideDate) => *[_type == "blogPost" && slug.current == $slug][0].overrideDate, *[_type == "blogPost" && slug.current == $slug][0]._createdAt)]|order(select(hasOverrideDate == true && defined(overrideDate) => overrideDate, _createdAt) desc)[0]{
     _id,
     title,
     slug
   },
-  "nextPost": *[_type == "blogPost" && coalesce(overrideDate, _createdAt) < coalesce(*[_type == "blogPost" && slug.current == $slug][0].overrideDate, *[_type == "blogPost" && slug.current == $slug][0]._createdAt)]|order(coalesce(overrideDate, _createdAt) desc)[0]{
+  "nextPost": *[_type == "blogPost" && select(hasOverrideDate == true && defined(overrideDate) => overrideDate, _createdAt) > select(*[_type == "blogPost" && slug.current == $slug][0].hasOverrideDate == true && defined(*[_type == "blogPost" && slug.current == $slug][0].overrideDate) => *[_type == "blogPost" && slug.current == $slug][0].overrideDate, *[_type == "blogPost" && slug.current == $slug][0]._createdAt)]|order(select(hasOverrideDate == true && defined(overrideDate) => overrideDate, _createdAt) asc)[0]{
     _id,
     title,
     slug
