@@ -156,9 +156,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Article Header */}
         <div className={`text-left ${blogHeaderBottomSpacing}`}>
           {/* Title */}
-          <h1 className='mb-4 text-h1 font-bold text-brand-secondary leading-tight'>
-            {post.title}
-          </h1>
+          <h1 className='mb-4 text-h1 text-brand-secondary leading-tight'>{post.title}</h1>
 
           {/* Subtitle */}
           {post.subtitle && (
