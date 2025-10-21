@@ -6,13 +6,6 @@ import {
   ALL_BLOG_POSTS_SLUGS_QUERY,
   ADJACENT_BLOG_POSTS_QUERY,
 } from '@/sanity/lib/queries';
-import type {
-  BLOG_POSTS_QUERYResult,
-  BLOG_INDEX_PAGE_QUERYResult,
-  BLOG_POST_QUERYResult,
-  ALL_BLOG_POSTS_SLUGS_QUERYResult,
-  ADJACENT_BLOG_POSTS_QUERYResult,
-} from '@/sanity/types';
 
 // Server-side function using live queries (for use in server components)
 export async function getAllBlogPosts() {

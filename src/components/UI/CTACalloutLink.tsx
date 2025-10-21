@@ -41,9 +41,9 @@ const CTACalloutLink = ({
   const content = (
     <div
       className={`
-        bg-brand-secondary/10
-        border border-brand-secondary/20
-        rounded-lg
+        bg-brand-white-dark 
+        rounded-lg    
+        shadow-sm 
         py-3
         px-4
         [@media(min-width:400px)]:py-4
@@ -53,9 +53,8 @@ const CTACalloutLink = ({
         w-full 
         ${maxCardWidth}  
         m-auto  
-        hover:bg-brand-secondary/15 
-        hover:border-brand-secondary/30
-        hover:shadow-md
+        hover:bg-brand-primary/5 
+        hover:shadow-md 
         transition-all 
         duration-200 
         cursor-pointer
@@ -81,15 +80,23 @@ const CTACalloutLink = ({
         {/* Content */}
         {(heading || text) && (
           <div className='flex-grow text-left min-w-0'>
-            {heading && <div className='font-semibold text-body-base [@media(min-width:400px)]:text-body-lg mb-1 leading-tight'>{heading}</div>}
-            {text && <p className='text-gray-600 text-body-sm [@media(min-width:400px)]:text-body-base leading-snug [@media(min-width:400px)]:leading-relaxed whitespace-pre-line'>{text}</p>}
+            {heading && (
+              <div className='font-semibold group-hover:underline text-body-base [@media(min-width:400px)]:text-body-lg mb-1 leading-tight'>
+                {heading}
+              </div>
+            )}
+            {text && (
+              <p className='text-subtle text-body-sm [@media(min-width:400px)]:text-body-base leading-snug [@media(min-width:400px)]:leading-relaxed whitespace-pre-line'>
+                {text}
+              </p>
+            )}
           </div>
         )}
 
         {/* Link Icon - Consistent style with hover circle */}
         <div className='flex-shrink-0 flex items-center justify-center'>
-          <div className='group-hover:bg-brand-primary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm'>
-            <LinkIcon className='w-5 h-5 text-brand-secondary group-hover:text-black transition-colors duration-200' />
+          <div className='group-hover:bg-brand-secondary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm'>
+            <LinkIcon className='w-5 h-5 text-brand-secondary group-hover:text-brand-white transition-colors duration-200' />
           </div>
         </div>
       </div>
