@@ -94,16 +94,16 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
           className='flex-1 overflow-y-auto overflow-x-hidden flex flex-col items-center md:items-start text-center md:text-left'
           style={{
             scrollbarWidth: 'thin',
-            scrollbarColor: '#d1d5db transparent',
+            scrollbarColor: '#430c08 transparent',
             WebkitOverflowScrolling: 'touch',
             overscrollBehavior: 'contain',
             touchAction: 'pan-y',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.scrollbarColor = '#9ca3af transparent';
+            e.currentTarget.style.scrollbarColor = '#430c08 transparent';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.scrollbarColor = '#d1d5db transparent';
+            e.currentTarget.style.scrollbarColor = '#430c08 transparent';
           }}>
           <nav className='px-10 py-10 w-full'>
             <div className='space-y-8'>
@@ -189,7 +189,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
               {navCtas && navCtas.length > 0 && (
                 <>
                   {/* Separator line between navigation and CTAs */}
-                  <div className='pt-6 border-t border-gray-300'>
+                  <div className='pt-6 border-t border-subtle/30'>
                     {/* CTAs rendered in vertical column with full width */}
                     <div className='pt-6'>
                       <CTAList ctaList={navCtas} alignment='flex-col' fullWidth={true} />
