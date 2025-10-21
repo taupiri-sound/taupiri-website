@@ -15,6 +15,9 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   const animationRef = useRef<number | undefined>(undefined);
   const isUserInteracting = useRef<boolean>(false);
   const translateX = useRef<number>(0);
+  const dragStartX = useRef<number>(0);
+  const dragStartTranslateX = useRef<number>(0);
+  const isDragging = useRef<boolean>(false);
 
   // Configuration
   const SCROLL_SPEED = 40; // Pixels per second - adjust this to make it faster/slower
@@ -64,22 +67,66 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    // Handle touch/pointer start - pause animation
-    const handleInteractionStart = () => {
+    // Handle drag/touch start - pause animation and record starting position
+    const handleInteractionStart = (e: TouchEvent | PointerEvent) => {
       isUserInteracting.current = true;
+      isDragging.current = false;
+
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      dragStartX.current = clientX;
+      dragStartTranslateX.current = translateX.current;
     };
 
-    // Handle touch/pointer end - resume animation after delay
+    // Handle drag/touch move - update position if user is dragging
+    const handleInteractionMove = (e: TouchEvent | PointerEvent) => {
+      if (!isUserInteracting.current) return;
+
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const deltaX = clientX - dragStartX.current;
+
+      // If moved more than 5px, consider it a drag
+      if (Math.abs(deltaX) > 5) {
+        // Close any open overlay when user starts dragging
+        if (!isDragging.current && openProjectId) {
+          setOpenProjectId(null);
+        }
+        isDragging.current = true;
+      }
+
+      // Update position based on drag
+      if (isDragging.current && innerContainer) {
+        translateX.current = dragStartTranslateX.current + deltaX;
+
+        // Apply seamless looping logic during drag
+        const firstChild = innerContainer.firstElementChild as HTMLElement;
+        if (firstChild) {
+          const itemWidth = firstChild.offsetWidth;
+          const singleSetWidth = itemWidth * projects.length;
+
+          if (Math.abs(translateX.current) >= singleSetWidth) {
+            translateX.current = translateX.current + singleSetWidth;
+            dragStartTranslateX.current = translateX.current;
+          }
+        }
+
+        innerContainer.style.transform = `translate3d(${translateX.current}px, 0, 0)`;
+      }
+    };
+
+    // Handle drag/touch end - resume animation after delay
     const handleInteractionEnd = () => {
       setTimeout(() => {
         isUserInteracting.current = false;
+        isDragging.current = false;
       }, 100);
     };
 
     // Add event listeners for touch and pointer events
     container.addEventListener('touchstart', handleInteractionStart, { passive: true });
+    container.addEventListener('touchmove', handleInteractionMove, { passive: true });
     container.addEventListener('touchend', handleInteractionEnd, { passive: true });
     container.addEventListener('pointerdown', handleInteractionStart);
+    container.addEventListener('pointermove', handleInteractionMove);
     container.addEventListener('pointerup', handleInteractionEnd);
 
     animationRef.current = requestAnimationFrame(animate);
@@ -89,8 +136,10 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
         cancelAnimationFrame(animationRef.current);
       }
       container.removeEventListener('touchstart', handleInteractionStart);
+      container.removeEventListener('touchmove', handleInteractionMove);
       container.removeEventListener('touchend', handleInteractionEnd);
       container.removeEventListener('pointerdown', handleInteractionStart);
+      container.removeEventListener('pointermove', handleInteractionMove);
       container.removeEventListener('pointerup', handleInteractionEnd);
     };
   }, [projects, SCROLL_SPEED]);

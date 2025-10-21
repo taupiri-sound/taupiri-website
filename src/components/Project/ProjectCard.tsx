@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import UnifiedImage from '@/components/UI/UnifiedImage';
 import CTA from '@/components/UI/CTA';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
@@ -18,6 +18,8 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardProps) => {
   const { name, description, link, linkLabel, image } = project;
   const [isHovered, setIsHovered] = useState(false);
+  const touchStartPos = useRef<{ x: number; y: number } | null>(null);
+  const touchMoved = useRef(false);
 
   const hasLink = !!link;
   const displayLinkLabel = linkLabel || 'More info';
@@ -28,19 +30,63 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
   const getFieldPath = (field: string): string => field;
 
   /**
-   * Handle card interaction
-   * For desktop: hover shows overlay
-   * For mobile: tap toggles overlay
+   * Handle touch start - record starting position
    */
-  const handleInteraction = (e: React.MouseEvent | React.TouchEvent) => {
-    // On touchscreens, toggle the overlay
-    if ('touches' in e || window.matchMedia('(hover: none)').matches) {
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    touchStartPos.current = { x: touch.clientX, y: touch.clientY };
+    touchMoved.current = false;
+  };
+
+  /**
+   * Handle touch move - detect if user is swiping
+   */
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!touchStartPos.current) return;
+
+    const touch = e.touches[0];
+    const deltaX = Math.abs(touch.clientX - touchStartPos.current.x);
+    const deltaY = Math.abs(touch.clientY - touchStartPos.current.y);
+
+    // If moved more than 10px in any direction, consider it a swipe/scroll
+    if (deltaX > 10 || deltaY > 10) {
+      touchMoved.current = true;
+    }
+  };
+
+  /**
+   * Handle touch end - only toggle if it was a tap (not a swipe)
+   */
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    // Only toggle if this was a tap (not a swipe)
+    if (!touchMoved.current && touchStartPos.current) {
       // If overlay is not open, prevent default and show overlay
       if (!isOpen) {
         e.preventDefault();
         onToggle();
       }
       // If overlay is already open, allow clicks through to the link
+    }
+
+    // Reset tracking
+    touchStartPos.current = null;
+    touchMoved.current = false;
+  };
+
+  /**
+   * Handle click for non-touch devices
+   */
+  const handleClick = (e: React.MouseEvent) => {
+    // Only handle if it's a hover-capable device (desktop)
+    if (window.matchMedia('(hover: hover)').matches) {
+      // On desktop, clicks work normally with hover
+      return;
+    }
+
+    // On touch devices without proper touch events, use click
+    if (!isOpen) {
+      e.preventDefault();
+      onToggle();
     }
   };
 
@@ -52,8 +98,10 @@ const ProjectCard = ({ project, isOpen, onToggle, className = '' }: ProjectCardP
       className={`relative aspect-square overflow-hidden group cursor-pointer ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={handleInteraction}
-      onTouchStart={handleInteraction}
+      onClick={handleClick}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       {...createSanityDataAttribute(project._id, project._type, '')}>
       {/* Project Image */}
       <div className='relative w-full h-full'>
