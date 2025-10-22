@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 
 const MaintenancePage = () => {
   return (
-    <div className='min-h-screen bg-brand-primary flex items-center justify-center px-4'>
+    <div className='min-h-screen bg-brand-gradient-brown flex items-center justify-center px-4'>
       <div className='max-w-2xl w-full text-center space-y-8'>
         {/* Logo */}
         <div className='flex justify-center'>
@@ -18,17 +18,21 @@ const MaintenancePage = () => {
           />
         </div>
 
-        {/* Coming Soon Message - Placeholder for now */}
+        {/* Coming Soon Message */}
         <div className='space-y-4'>
           <h1 className='text-h2 text-brand-white font-bold'>Coming Soon</h1>
-          <p className='text-body-lg text-brand-white/90'>
-            We are currently working on something exciting. Check back soon!
+          <p className='text-body-xl text-brand-white/90'>
+            New website on its way ...
+            <br />
+            Check back soon!
           </p>
         </div>
 
         {/* Contact Information */}
         <div className='space-y-3 pt-8 border-t border-brand-white/20'>
-          <p className='text-body-base text-brand-white/80 font-semibold'>Get in touch:</p>
+          <p className='text-body-lg text-brand-white/80 font-semibold'>
+            For all enquiries, please contact Lance:
+          </p>
           <div className='space-y-2 text-body-base text-brand-white/80'>
             <p>
               <a
