@@ -6,6 +6,11 @@ export const SITE_CONFIG = {
   // Production domain - update this for your new project
   PRODUCTION_DOMAIN: 'http://taupirisound.co.nz/',
 
+  // Maintenance Mode - Enable to show placeholder page instead of full site
+  // When true: All routes redirect to maintenance page (except /studio)
+  // When false: Site operates normally
+  MAINTENANCE_MODE_ENABLED: true,
+
   // Organization information
   ORGANIZATION_NAME: 'Taupriri Sound',
   ORGANIZATION_DESCRIPTION:

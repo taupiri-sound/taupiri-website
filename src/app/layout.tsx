@@ -24,6 +24,11 @@ const RootLayout = ({
   const isProd = process.env.NEXT_PUBLIC_ENV === 'production';
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
 
+  // Only show robots meta tag if:
+  // 1. NOT in production (always hide), OR
+  // 2. In production AND maintenance mode is OFF
+  const shouldHideFromRobots = !isProd || SITE_CONFIG.MAINTENANCE_MODE_ENABLED;
+
   // Basic organization structured data
   const organizationSchema = {
     '@context': 'https://schema.org',
@@ -37,7 +42,7 @@ const RootLayout = ({
     <html lang='en'>
       <head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        {!isProd && <meta name='robots' content='noindex, nofollow' />}
+        {shouldHideFromRobots && <meta name='robots' content='noindex, nofollow' />}
 
         {/* Resource hints for performance */}
         <link rel='dns-prefetch' href='//cdn.sanity.io' />
