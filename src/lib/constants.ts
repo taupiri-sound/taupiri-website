@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   // Maintenance Mode - Enable to show placeholder page instead of full site
   // When true: All routes redirect to maintenance page (except /studio)
   // When false: Site operates normally
-  MAINTENANCE_MODE_ENABLED: false,
+  MAINTENANCE_MODE_ENABLED: true,
 
   // Organization information
   ORGANIZATION_NAME: 'Taupriri Sound',
