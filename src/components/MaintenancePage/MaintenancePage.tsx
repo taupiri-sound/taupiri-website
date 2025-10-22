@@ -18,7 +18,7 @@ const MaintenancePage = () => {
           />
         </div>
 
-        {/* Coming Soon Message */}
+        {/* Coming Soon Message - Placeholder for now */}
         <div className='space-y-4'>
           <h1 className='text-h2 text-brand-white font-bold'>Coming Soon</h1>
           <p className='text-body-xl text-brand-white/90'>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Saira_Condensed, Chau_Philomene_One } from 'next/font/google';
 import '@/app/globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
+import MaintenancePage from '@/components/MaintenancePage/MaintenancePage';
 
 const sairaCondensed = Saira_Condensed({
   subsets: ['latin'],
@@ -91,7 +92,7 @@ const RootLayout = ({
       </head>
       <body
         className={`${sairaCondensed.className} ${chauPhilomeneOne.variable} text-body-base text-body bg-brand-white`}>
-        {children}
+        {SITE_CONFIG.MAINTENANCE_MODE_ENABLED ? <MaintenancePage /> : children}
       </body>
     </html>
   );
