@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   MAINTENANCE_MODE_ENABLED: true,
 
   // Organization information
-  ORGANIZATION_NAME: 'Taupriri Sound',
+  ORGANIZATION_NAME: 'Taupiri Sound',
   ORGANIZATION_DESCRIPTION:
     "Taupiri Sound is a recording studio based in the countryside of northern Waikato. For over a decade we have worked on countless projects from educational resources to some of Aotearoa's best artists.",
 
