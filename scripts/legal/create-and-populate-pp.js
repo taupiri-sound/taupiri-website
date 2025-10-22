@@ -51,7 +51,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'At Taupiri Sound, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website, use our contact form, or engage with our recording studio services.',
+                  text: 'At Taupiri Sound, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website. Please note that any privacy considerations relating to recording studio services or use of our facilities are subject to separate agreements that will be established directly between the studio and the client.',
                   marks: []
                 }
               ]
@@ -86,7 +86,7 @@ const privacyPolicyData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'We may collect the following personal information:',
+                      text: 'When you interact with our website, we may collect the following personal information:',
                       marks: []
                     }
                   ]
@@ -125,33 +125,7 @@ const privacyPolicyData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'Name and contact information when booking studio services',
-                      marks: []
-                    }
-                  ]
-                },
-                {
-                  _type: 'block',
-                  _key: 'personal-4',
-                  style: 'normal',
-                  listItem: 'bullet',
-                  children: [
-                    {
-                      _type: 'span',
-                      text: 'Project details and preferences discussed during studio bookings',
-                      marks: []
-                    }
-                  ]
-                },
-                {
-                  _type: 'block',
-                  _key: 'personal-5',
-                  style: 'normal',
-                  listItem: 'bullet',
-                  children: [
-                    {
-                      _type: 'span',
-                      text: 'Billing and payment information for studio session bookings',
+                      text: 'Any other information you choose to provide when contacting us',
                       marks: []
                     }
                   ]
@@ -178,7 +152,7 @@ const privacyPolicyData = {
                   children: [
                     {
                       _type: 'span',
-                      text: 'We automatically collect certain information when you visit our website:',
+                      text: 'We may automatically collect certain information when you visit our website:',
                       marks: []
                     }
                   ]
@@ -365,7 +339,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To process and manage studio session bookings',
+                  text: 'To communicate with you about your inquiries',
                   marks: []
                 }
               ]
@@ -378,7 +352,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To communicate about your recording projects and sessions',
+                  text: 'To improve our website based on usage patterns and feedback',
                   marks: []
                 }
               ]
@@ -391,20 +365,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'To send booking confirmations, session reminders, and project updates',
-                  marks: []
-                }
-              ]
-            },
-            {
-              _type: 'block',
-              _key: 'use-5',
-              style: 'normal',
-              listItem: 'bullet',
-              children: [
-                {
-                  _type: 'span',
-                  text: 'To improve our website and services based on your feedback',
+                  text: 'To send occasional updates or information about our services (with your consent)',
                   marks: []
                 }
               ]
@@ -615,7 +576,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'In the event of a data breach that affects your personal information, we will notify you as required by applicable law.',
+                  text: 'In the event of a data breach that affects personal information, we will take appropriate steps in accordance with applicable law.',
                   marks: []
                 }
               ]
@@ -643,7 +604,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, comply with legal obligations, resolve disputes, and enforce our agreements.',
+                  text: 'We may retain personal information for various periods depending on the nature of the information and our operational needs. Retention periods may vary based on legal requirements, business purposes, and the type of data collected.',
                   marks: []
                 }
               ]
@@ -655,7 +616,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Typically, we retain contact information for active business relationships and correspondence for up to 7 years after the last interaction, unless longer retention is required by law.',
+                  text: 'While we aim to manage data responsibly, we do not guarantee specific retention or deletion timeframes. Information may be retained for as long as reasonably necessary for legitimate business purposes or as required by applicable law.',
                   marks: []
                 }
               ]
@@ -683,7 +644,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'You have the following rights regarding your personal information:',
+                  text: 'Depending on applicable law and our capabilities, you may have certain rights regarding your personal information. Where feasible and appropriate, we may be able to:',
                   marks: []
                 }
               ]
@@ -696,7 +657,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Access: Request copies of your personal information',
+                  text: 'Provide access to personal information we hold about you',
                   marks: []
                 }
               ]
@@ -709,7 +670,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Rectification: Request correction of inaccurate information',
+                  text: 'Correct inaccurate information upon request',
                   marks: []
                 }
               ]
@@ -722,7 +683,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Erasure: Request deletion of your personal information',
+                  text: 'Delete personal information when appropriate and feasible',
                   marks: []
                 }
               ]
@@ -735,32 +696,19 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'Portability: Request transfer of your data to another service',
+                  text: 'Provide data in a portable format where technically possible',
                   marks: []
                 }
               ]
             },
             {
               _type: 'block',
-              _key: 'rights-5',
-              style: 'normal',
-              listItem: 'bullet',
-              children: [
-                {
-                  _type: 'span',
-                  text: 'Objection: Object to processing of your personal information',
-                  marks: []
-                }
-              ]
-            },
-            {
-              _type: 'block',
-              _key: 'rights-exercise',
+              _key: 'rights-disclaimer',
               style: 'normal',
               children: [
                 {
                   _type: 'span',
-                  text: 'To exercise any of these rights, please contact us using the information provided below.',
+                  text: 'We will consider requests regarding personal information on a case-by-case basis. Our ability to fulfill such requests may be limited by technical constraints, legal requirements, or operational considerations. To make a request, please contact us using the information provided below.',
                   marks: []
                 }
               ]
@@ -851,7 +799,7 @@ const privacyPolicyData = {
               children: [
                 {
                   _type: 'span',
-                  text: 'We will respond to your inquiry within 30 days of receiving your request.',
+                  text: 'We aim to respond to inquiries as soon as possible, though response times may vary.',
                   marks: []
                 }
               ]
