@@ -107,9 +107,7 @@ const TermsAndConditionsPage = async () => {
 
       <Container textAlign='left'>
         {/* Page Content */}
-        {termsData.topText && (
-          <p className='text-body-sm text-brand-secondary font-bold mb-8'>{termsData.topText}</p>
-        )}
+        {termsData.topText && <p className='font-bold mb-8'>{termsData.topText}</p>}
         {termsData.content && (
           <PageBuilder
             content={termsData.content}
