@@ -51,12 +51,13 @@ const BlogCard = (props: BlogCardProps) => {
             src={mainImage}
             alt={`${title || 'Blog post'} image`}
             mode='fill'
-            sizeContext='full'
             objectFit='cover'
             priority
             generateSchema
             schemaContext='blog'
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw'
+            sizes='(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw'
+            sanityWidth={2400}
+            quality={95}
             className='transition-all duration-300'
             fallback={
               <div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900'>

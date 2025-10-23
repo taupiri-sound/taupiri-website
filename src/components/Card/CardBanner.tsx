@@ -63,8 +63,10 @@ const CardBanner = (props: CardBannerProps) => {
           src={image}
           alt={image.alt || 'Card banner image'}
           mode='fill'
-          sizeContext='full'
           objectFit='cover'
+          sizes='(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw'
+          sanityWidth={2400}
+          quality={95}
           generateSchema
           schemaContext='article'
           documentId={documentId}

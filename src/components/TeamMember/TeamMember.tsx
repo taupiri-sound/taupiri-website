@@ -134,8 +134,10 @@ const TeamMember = ({ member, layout }: TeamMemberProps) => {
             src={profilePicture}
             alt={profilePicture.alt || `${name} profile picture`}
             mode='fill'
-            sizeContext='full'
             objectFit='cover'
+            sizes='(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 60vw'
+            sanityWidth={1600}
+            quality={95}
             generateSchema
             schemaContext='profile'
             documentId={member._id}
