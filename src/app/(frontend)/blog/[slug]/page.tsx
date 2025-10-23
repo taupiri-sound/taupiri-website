@@ -20,7 +20,11 @@ import {
   closingCardSpacing,
   headerHeight,
 } from '@/utils/spacingConstants';
-import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
+import {
+  generateMetadata as generatePageMetadata,
+  generateCanonicalUrl,
+  getBaseUrl,
+} from '@/lib/metadata';
 import {
   generateBlogPostSchema,
   getOrganizationDataFromSiteSettings,
@@ -70,7 +74,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   // Calculate published and modified dates (same logic as in the page component)
-  const publishedTime = post.hasOverrideDate && post.overrideDate ? post.overrideDate : post._createdAt;
+  const publishedTime =
+    post.hasOverrideDate && post.overrideDate ? post.overrideDate : post._createdAt;
   const modifiedTime = post._updatedAt;
 
   return generatePageMetadata({
@@ -162,7 +167,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Article Header */}
         <div className={`text-left ${blogHeaderBottomSpacing}`}>
           {/* Title */}
-          <h1 className='mb-4 text-h1 text-brand-secondary leading-tight'>{post.title}</h1>
+          <h1 className='mb-4 text-h1 md:text-h2 text-body leading-tight'>{post.title}</h1>
 
           {/* Subtitle */}
           {post.subtitle && (
