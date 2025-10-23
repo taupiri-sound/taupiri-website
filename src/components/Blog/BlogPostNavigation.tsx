@@ -31,7 +31,7 @@ const NavigationLink = ({ post, direction }: NavigationLinkProps) => {
       'group-hover:bg-brand-primary p-3 rounded-full transition-all duration-200 group-hover:shadow-sm',
     icon: 'text-brand-secondary group-hover:text-brand-white transition-colors duration-200',
     title:
-      'text-body-lg font-semibold text-gray-900 group-hover:text-brand-secondary transition-colors duration-300 line-clamp-2',
+      'text-body-lg font-semibold group-hover:text-brand-secondary transition-colors duration-300 line-clamp-2',
   };
 
   return (
@@ -46,7 +46,7 @@ const NavigationLink = ({ post, direction }: NavigationLinkProps) => {
         </div>
       )}
       <div className='min-w-0 flex-1'>
-        <p className='text-body-sm font-medium mb-1'>{label}</p>
+        <p className='text-body-sm font-medium mb-1 text-subtle'>{label}</p>
         <p className={commonStyles.title}>{post.title || 'Untitled Post'}</p>
       </div>
       {isNext && (
