@@ -494,7 +494,7 @@ export default function manifest(): MetadataRoute.Manifest {
 
 ---
 
-### Issue #15: Missing Article Published/Modified Dates in Metadata
+### Issue #15: Missing Article Published/Modified Dates in Metadata [FIXED]
 
 **Status:** LOW - Freshness signals
 **Current State:** Blog posts have dates in schema but not in HTML meta tags
