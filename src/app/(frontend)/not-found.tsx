@@ -7,8 +7,7 @@ import CTA from '@/components/UI/CTA';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 import { FaQuestionCircle } from 'react-icons/fa';
 
-const META_DESCRIPTION =
-  'Sorry, the page you are looking for could not be found. Explore ....[COMPLETE THIS]..... at Taupiri Sound.';
+const META_DESCRIPTION = 'Sorry, the page you are looking for could not be found.';
 
 export const metadata: Metadata = {
   title: 'Page Not Found - Taupiri Sound',
