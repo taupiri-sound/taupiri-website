@@ -154,6 +154,13 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                               </a>
                             </td>
                           </tr>
+                          <tr>
+                            <td align="center" style="padding: 5px 0; color: #b8956a; font-size: 14px;">
+                              <a href="${SITE_CONFIG.PRODUCTION_DOMAIN}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${SITE_CONFIG.PRODUCTION_DOMAIN}
+                              </a>
+                            </td>
+                          </tr>
                         </table>
 
                         <!-- Divider -->
