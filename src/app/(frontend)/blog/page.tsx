@@ -5,9 +5,10 @@ import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
 import { closingCardSpacing } from '@/utils/spacingConstants';
 import { getSiteSettings, getCompanyLinks } from '@/actions';
-import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
+import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 import Breadcrumb from '@/components/UI/Breadcrumb';
+import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
 
 export async function generateMetadata() {
   const [siteSettings, blogIndexPage] = await Promise.all([getSiteSettings(), getBlogIndexPage()]);
@@ -35,8 +36,19 @@ export default async function BlogPage() {
     getCompanyLinks(),
   ]);
 
+  const baseUrl = getBaseUrl();
+
+  // Generate breadcrumb data for structured data
+  const breadcrumbItems = [
+    { name: 'Home', url: baseUrl },
+    { name: blogIndexPage?.title || 'Blog', url: `${baseUrl}/blog` },
+  ];
+
   return (
     <>
+      {/* Breadcrumb Structured Data */}
+      <BreadcrumbStructuredData items={breadcrumbItems} />
+
       {/* Page Hero */}
       <PageHero
         title={blogIndexPage?.title || 'Blog'}
