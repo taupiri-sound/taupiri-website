@@ -80,6 +80,13 @@ export function generateMetadata({
         canonical: canonicalUrl,
       },
     }),
+    // Geographic meta tags for local SEO
+    other: {
+      'geo.region': SITE_CONFIG.BUSINESS_LOCATION.regionCode,
+      'geo.placename': SITE_CONFIG.BUSINESS_LOCATION.addressLocality,
+      'geo.position': `${SITE_CONFIG.BUSINESS_LOCATION.latitude};${SITE_CONFIG.BUSINESS_LOCATION.longitude}`,
+      ICBM: `${SITE_CONFIG.BUSINESS_LOCATION.latitude}, ${SITE_CONFIG.BUSINESS_LOCATION.longitude}`,
+    },
     openGraph: {
       title: pageTitle,
       description: pageDescription,

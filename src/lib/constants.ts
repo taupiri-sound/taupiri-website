@@ -39,6 +39,8 @@ export const SITE_CONFIG = {
     // GPS coordinates from Google Maps - used for local SEO and map integration
     latitude: -37.5940869,
     longitude: 175.2095489,
+    // ISO 3166-2 region code for Waikato, New Zealand
+    regionCode: 'NZ-WKO',
   },
 
   // Business Hours - Used for LocalBusiness structured data
