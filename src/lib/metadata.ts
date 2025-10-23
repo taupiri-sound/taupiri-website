@@ -1,9 +1,23 @@
 import { Metadata } from 'next';
 import { urlFor } from '@/sanity/lib/image';
 import type { SITE_SETTINGS_QUERYResult } from '@/sanity/types';
+import { SITE_CONFIG } from '@/lib/constants';
 
+/**
+ * Get the base URL for the site
+ * Priority: NEXT_PUBLIC_BASE_URL env var > SITE_CONFIG.PRODUCTION_DOMAIN > localhost fallback
+ * Always returns URL without trailing slash for consistency
+ */
 export function getBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const envUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  const fallbackUrl = SITE_CONFIG.PRODUCTION_DOMAIN;
+  const localhostUrl = 'http://localhost:3000';
+
+  // Use env var if set, otherwise use production domain, finally localhost for dev
+  const baseUrl = envUrl || fallbackUrl || localhostUrl;
+
+  // Remove trailing slash if present
+  return baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
 }
 
 export function generateCanonicalUrl(path: string): string {

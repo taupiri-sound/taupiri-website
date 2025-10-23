@@ -15,7 +15,7 @@ import {
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
 import { closingCardSpacing } from '@/utils/spacingConstants';
-import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
+import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
   getOrganizationDataFromSiteSettings,
@@ -78,7 +78,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     notFound();
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://taupirisound.co.nz/';
+  const baseUrl = getBaseUrl();
 
   // Generate breadcrumb data
   const breadcrumbItems = [

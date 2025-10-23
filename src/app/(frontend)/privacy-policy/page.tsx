@@ -11,7 +11,7 @@ import {
   getAllProjects,
 } from '@/actions';
 import Container from '@/components/Layout/Container';
-import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
+import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
   getOrganizationDataFromSiteSettings,
@@ -63,7 +63,7 @@ const PrivacyPolicyPage = async () => {
     notFound();
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://taupirisound.co.nz/';
+  const baseUrl = getBaseUrl();
 
   // Generate breadcrumb data
   const breadcrumbItems = [

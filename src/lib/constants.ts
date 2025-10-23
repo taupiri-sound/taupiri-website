@@ -4,7 +4,8 @@
 
 export const SITE_CONFIG = {
   // Production domain - update this for your new project
-  PRODUCTION_DOMAIN: 'http://taupirisound.co.nz/',
+  // IMPORTANT: Always use HTTPS (not HTTP) and no trailing slash for SEO consistency
+  PRODUCTION_DOMAIN: 'https://taupirisound.co.nz',
 
   // Maintenance Mode - Enable to show placeholder page instead of full site
   // When true: All routes redirect to maintenance page (except /studio)

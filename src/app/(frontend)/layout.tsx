@@ -53,7 +53,7 @@ const FrontendLayout = async ({
   const companyLinksData = await getCompanyLinks();
   const legalPagesVisibilityData = await getLegalPagesVisibility();
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
 
   // Generate structured data if site settings are available
   let organizationSchema;

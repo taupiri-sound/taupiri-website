@@ -20,7 +20,7 @@ import {
   closingCardSpacing,
   headerHeight,
 } from '@/utils/spacingConstants';
-import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
+import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateBlogPostSchema,
   getOrganizationDataFromSiteSettings,
@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const formattedDate = formatBlogDate(post._createdAt, post.overrideDate, post.hasOverrideDate);
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://taupirisound.co.nz/';
+  const baseUrl = getBaseUrl();
 
   // Generate breadcrumb data
   const breadcrumbItems = [

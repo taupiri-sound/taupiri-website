@@ -22,7 +22,8 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   const isProd = process.env.NEXT_PUBLIC_ENV === 'production';
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
+  // Use consistent baseUrl - will use NEXT_PUBLIC_BASE_URL if set, otherwise SITE_CONFIG.PRODUCTION_DOMAIN
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
 
   // Only show robots meta tag if:
   // 1. NOT in production (always hide), OR
