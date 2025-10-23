@@ -408,6 +408,7 @@ export const PAGE_QUERY = defineQuery(`*[_type == "page" && slug.current == $slu
   _createdAt,
   _updatedAt,
   title,
+  titleTeReo,
   subtitle,
   slug,
   ${recursiveContent},

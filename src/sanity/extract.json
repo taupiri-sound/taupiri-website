@@ -8791,6 +8791,13 @@
         },
         "optional": true
       },
+      "titleTeReo": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "subtitle": {
         "type": "objectAttribute",
         "value": {
