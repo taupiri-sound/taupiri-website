@@ -6275,6 +6275,13 @@
         },
         "optional": true
       },
+      "titleTeReo": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "topText": {
         "type": "objectAttribute",
         "value": {
@@ -6729,6 +6736,13 @@
         "optional": true
       },
       "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "titleTeReo": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
@@ -8704,6 +8718,13 @@
         }
       },
       "title": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "titleTeReo": {
         "type": "objectAttribute",
         "value": {
           "type": "string"

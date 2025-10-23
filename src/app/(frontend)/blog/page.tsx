@@ -52,6 +52,7 @@ export default async function BlogPage() {
       {/* Page Hero */}
       <PageHero
         title={blogIndexPage?.title || 'Blog'}
+        titleTeReo={blogIndexPage?.titleTeReo || null}
         subtTitle={blogIndexPage?.subtitle}
         documentId={blogIndexPage?._id}
         documentType={blogIndexPage?._type}

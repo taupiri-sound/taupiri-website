@@ -543,6 +543,7 @@ export const BLOG_INDEX_PAGE_QUERY = defineQuery(`*[_id == "blogIndexPage"][0]{
   _id,
   _type,
   title,
+  titleTeReo,
   heroImage{
     asset,
     alt,
@@ -646,6 +647,7 @@ export const TERMS_AND_CONDITIONS_QUERY = defineQuery(`*[_id == "termsAndConditi
   _updatedAt,
   hide,
   title,
+  titleTeReo,
   topText,
   ${recursiveContent}
 }`);
@@ -656,6 +658,7 @@ export const PRIVACY_POLICY_QUERY = defineQuery(`*[_id == "privacyPolicy"][0]{
   _updatedAt,
   hide,
   title,
+  titleTeReo,
   topText,
   ${recursiveContent}
 }`);

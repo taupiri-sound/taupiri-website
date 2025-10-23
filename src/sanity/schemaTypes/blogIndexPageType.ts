@@ -34,6 +34,14 @@ export const blogIndexPageType = defineType({
       group: 'header',
     }),
     defineField({
+      name: 'titleTeReo',
+      type: 'string',
+      title: 'Page Title (Te Reo Translation)',
+      description: 'Optional Te Reo Māori translation of the page title',
+      validation: (Rule) => Rule.max(200),
+      group: 'header',
+    }),
+    defineField({
       name: 'subtitle',
       type: 'text',
       title: 'Page Subtitle',
