@@ -21,8 +21,10 @@ import { generateMetadata as generateDefaultMetadata } from '@/lib/metadata';
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
+  generateLocalBusinessSchema,
   getOrganizationDataFromSiteSettings,
   getWebSiteDataFromSiteSettings,
+  getLocalBusinessDataFromSiteSettings,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import { SITE_CONFIG } from '@/lib/constants';
@@ -58,13 +60,16 @@ const FrontendLayout = async ({
   // Generate structured data if site settings are available
   let organizationSchema;
   let webSiteSchema;
+  let localBusinessSchema;
 
   if (siteSettingsData) {
     const organizationData = getOrganizationDataFromSiteSettings(siteSettingsData, baseUrl);
     const webSiteData = getWebSiteDataFromSiteSettings(siteSettingsData, baseUrl);
+    const localBusinessData = getLocalBusinessDataFromSiteSettings(siteSettingsData, baseUrl);
 
     organizationSchema = generateOrganizationSchema(organizationData);
     webSiteSchema = generateWebSiteSchema(webSiteData);
+    localBusinessSchema = generateLocalBusinessSchema(localBusinessData);
   }
 
   return (
@@ -84,6 +89,12 @@ const FrontendLayout = async ({
           <script
             type='application/ld+json'
             dangerouslySetInnerHTML={generateStructuredDataScript(webSiteSchema)}
+          />
+        )}
+        {localBusinessSchema && (
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={generateStructuredDataScript(localBusinessSchema)}
           />
         )}
 
