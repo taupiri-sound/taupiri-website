@@ -97,9 +97,9 @@ const FrontendLayout = async ({
             companyLinksData={companyLinksData}
             legalPagesVisibilityData={legalPagesVisibilityData}
           />
-          <SanityLive />
           {(await draftMode()).isEnabled && (
             <>
+              <SanityLive />
               <VisualEditingProvider />
               <DisableDraftMode />
             </>
