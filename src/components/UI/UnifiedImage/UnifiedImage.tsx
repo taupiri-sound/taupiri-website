@@ -140,6 +140,7 @@ const UnifiedImage: React.FC<UnifiedImageProps> = ({
   ...props
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Clean Sanity data
   const cleanSrc = stegaClean(src);
@@ -215,6 +216,39 @@ const UnifiedImage: React.FC<UnifiedImageProps> = ({
 
     return null;
   }, [hasValidImage, isStringUrl, isSanityImage, cleanSrc, optimalDimensions, quality]);
+
+  // Generate blur data URL for placeholder
+  const blurDataURL = useMemo(() => {
+    if (!isSanityImage || !hasValidImage) return undefined;
+
+    // Check if Sanity image has LQIP (Low Quality Image Placeholder) metadata
+    if (
+      typeof cleanSrc === 'object' &&
+      cleanSrc &&
+      'asset' in cleanSrc &&
+      cleanSrc.asset &&
+      typeof cleanSrc.asset === 'object' &&
+      'metadata' in cleanSrc.asset &&
+      cleanSrc.asset.metadata &&
+      typeof cleanSrc.asset.metadata === 'object' &&
+      'lqip' in cleanSrc.asset.metadata &&
+      typeof cleanSrc.asset.metadata.lqip === 'string'
+    ) {
+      return cleanSrc.asset.metadata.lqip;
+    }
+
+    // Otherwise, generate a blurred version using Sanity URL builder
+    try {
+      return urlFor(cleanSrc)
+        .width(20)
+        .blur(50)
+        .quality(30)
+        .auto('format')
+        .url();
+    } catch {
+      return undefined;
+    }
+  }, [isSanityImage, hasValidImage, cleanSrc]);
 
   // Generate alt text
   const imageAlt = useMemo(() => {
@@ -301,6 +335,7 @@ const UnifiedImage: React.FC<UnifiedImageProps> = ({
 
   // Handle image load
   const handleLoad = () => {
+    setImageLoaded(true);
     onLoad?.();
   };
 
@@ -320,7 +355,7 @@ const UnifiedImage: React.FC<UnifiedImageProps> = ({
   const imageProps = {
     src: imageUrl,
     alt: imageAlt,
-    className: `${objectFit === 'contain' ? 'object-contain' : 'object-cover'} ${roundedClasses} ${className}`,
+    className: `${objectFit === 'contain' ? 'object-contain' : 'object-cover'} ${roundedClasses} transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${className}`,
     sizes: responsiveSizesString || (mode === 'fill' ? '100vw' : undefined),
     priority,
     loading,
@@ -343,11 +378,36 @@ const UnifiedImage: React.FC<UnifiedImageProps> = ({
       )}
 
       {/* Image element */}
-      <div {...sanityDataAttribute} className={mode === 'fill' && fillContainer ? 'relative w-full h-full' : mode === 'fill' ? 'absolute inset-0' : 'flex justify-center'}>
+      <div
+        {...sanityDataAttribute}
+        className={
+          mode === 'fill' && fillContainer
+            ? 'relative w-full h-full'
+            : mode === 'fill'
+            ? 'absolute inset-0'
+            : blurDataURL
+            ? 'relative flex justify-center'
+            : 'flex justify-center'
+        }
+      >
+        {/* Blur background layer - shows immediately */}
+        {blurDataURL && (
+          <div
+            className={`absolute inset-0 ${roundedClasses} ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
+            style={{
+              backgroundImage: `url(${blurDataURL})`,
+              backgroundSize: objectFit === 'contain' ? 'contain' : 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+            aria-hidden="true"
+          />
+        )}
+
         {enableModal ? (
           <button
             onClick={handleOpenModal}
-            className={`cursor-pointer border-none bg-transparent p-0 block ${
+            className={`cursor-pointer border-none bg-transparent p-0 block relative ${
               mode === 'fill' ? 'w-full h-full' : 'w-full'
             }`}
             aria-label={`View full-screen image: ${imageAlt}`}

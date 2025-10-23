@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
-import { getAllProjects } from '@/actions';
 import type { ALL_PROJECTS_QUERYResult } from '@/sanity/types';
 
 interface ProjectListProps {
