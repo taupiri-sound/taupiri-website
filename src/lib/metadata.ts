@@ -36,6 +36,8 @@ export interface MetadataConfig {
   } | null;
   canonicalUrl?: string;
   siteSettings: SITE_SETTINGS_QUERYResult;
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 export function generateMetadata({
@@ -44,6 +46,8 @@ export function generateMetadata({
   image,
   canonicalUrl,
   siteSettings,
+  publishedTime,
+  modifiedTime,
 }: MetadataConfig): Metadata {
   const siteTitle = siteSettings?.siteTitle || 'Taupiri Sound';
   const siteTagline = siteSettings?.siteTagline ? ` | ${siteSettings.siteTagline}` : '';
@@ -90,8 +94,10 @@ export function generateMetadata({
     openGraph: {
       title: pageTitle,
       description: pageDescription,
-      type: 'website',
+      type: publishedTime ? 'article' : 'website',
       ...(canonicalUrl && { url: canonicalUrl }),
+      ...(publishedTime && { publishedTime }),
+      ...(modifiedTime && { modifiedTime }),
       ...(ogImageUrl && {
         images: [
           {

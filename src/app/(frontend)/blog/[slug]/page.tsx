@@ -69,12 +69,18 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
+  // Calculate published and modified dates (same logic as in the page component)
+  const publishedTime = post.hasOverrideDate && post.overrideDate ? post.overrideDate : post._createdAt;
+  const modifiedTime = post._updatedAt;
+
   return generatePageMetadata({
     title: post.title || undefined,
     description: post.subtitle || siteSettings.siteDescription || undefined,
     siteSettings,
     image: post.mainImage?.asset?._ref ? post.mainImage : undefined, // Only pass image if it exists, otherwise use default
     canonicalUrl: generateCanonicalUrl(`/blog/${slug}`),
+    publishedTime,
+    modifiedTime,
   });
 }
 
