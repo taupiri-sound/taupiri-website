@@ -127,7 +127,7 @@ export async function POST(request: Request) {
 
     // Get contact email from environment variable
     const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'Taupiri Sound <onboarding@resend.dev>';
 
     if (!contactEmail) {
       console.error('NEXT_PUBLIC_CONTACT_EMAIL environment variable is not set');
