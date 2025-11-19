@@ -646,16 +646,7 @@ SANITY_API_WRITE_TOKEN="your-new-sanity-write-token"  # Optional</code></pre>
             <section id="step8">
                 <h2><span class="step-number">8</span>Email Configuration</h2>
 
-                <h3>A. Update Email Subject Lines</h3>
-                <div class="file-path"><strong>File:</strong> src/app/api/contact/route.ts</div>
-                <p>Update email subject lines and sender names:</p>
-
-                <ul>
-                    <li><strong>Line 130:</strong> Change default from email if needed: <code>'OmarPT &lt;onboarding@resend.dev&gt;'</code></li>
-                    <li><strong>Line 194:</strong> Change confirmation email subject: <code>'Thank you for contacting OmarPT'</code></li>
-                </ul>
-
-                <h3>B. Update Email Templates (Optional)</h3>
+                <h3>A. Update Email Templates (Optional)</h3>
                 <p>If you want to customize the email templates, update these files:</p>
                 <ul>
                     <li><code>src/lib/email-templates/confirmationEmail.tsx</code> - User confirmation email</li>
