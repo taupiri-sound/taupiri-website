@@ -58,13 +58,15 @@ export async function GET() {
       changefreq: 'monthly',
       priority: '0.7'
     })),
-    // Dynamic pages
-    ...(pages || []).map((page: ALL_PAGES_QUERYResult[number]) => ({
-      url: `/${page.slug?.current}`,
-      lastmod: page._updatedAt,
-      changefreq: 'monthly',
-      priority: '0.6'
-    })),
+    // Dynamic pages (exclude dev-test routes)
+    ...(pages || [])
+      .filter((page: ALL_PAGES_QUERYResult[number]) => !page.slug?.current?.startsWith('dev-test'))
+      .map((page: ALL_PAGES_QUERYResult[number]) => ({
+        url: `/${page.slug?.current}`,
+        lastmod: page._updatedAt,
+        changefreq: 'monthly',
+        priority: '0.6'
+      })),
   ];
 
   const allUrls = [...staticPages, ...legalPages, ...dynamicUrls];

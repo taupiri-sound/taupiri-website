@@ -3,12 +3,19 @@ import type { NextRequest } from 'next/server';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Block development/test routes (anything under /dev-test/) in non-development environments
+  if (pathname.startsWith('/dev-test/') || pathname === '/dev-test') {
+    if (process.env.NEXT_PUBLIC_ENV !== 'development') {
+      return NextResponse.redirect(new URL('/404', request.url));
+    }
+  }
+
   // If maintenance mode is disabled, allow normal site operation
   if (!SITE_CONFIG.MAINTENANCE_MODE_ENABLED) {
     return NextResponse.next();
   }
-
-  const { pathname } = request.nextUrl;
 
   // Allow access to Sanity Studio
   if (pathname.startsWith('/studio')) {
