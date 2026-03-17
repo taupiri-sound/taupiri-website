@@ -7,11 +7,6 @@ export const SITE_CONFIG = {
   // IMPORTANT: Always use HTTPS (not HTTP) and no trailing slash for SEO consistency
   PRODUCTION_DOMAIN: 'https://taupirisound.co.nz',
 
-  // Maintenance Mode - Enable to show placeholder page instead of full site
-  // When true: All routes redirect to maintenance page (except /studio)
-  // When false: Site operates normally
-  MAINTENANCE_MODE_ENABLED: false,
-
   // Organization information
   ORGANIZATION_NAME: 'Taupiri Sound',
   ORGANIZATION_DESCRIPTION:

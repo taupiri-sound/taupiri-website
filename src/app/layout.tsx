@@ -28,7 +28,7 @@ const RootLayout = ({
   // Only show robots meta tag if:
   // 1. NOT in production (always hide), OR
   // 2. In production AND maintenance mode is OFF
-  const shouldHideFromRobots = !isProd || SITE_CONFIG.MAINTENANCE_MODE_ENABLED;
+  const shouldHideFromRobots = !isProd || process.env.MAINTENANCE_MODE_ENABLED === 'true';
 
   // Basic organization structured data
   const organizationSchema = {
