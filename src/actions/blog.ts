@@ -1,4 +1,4 @@
-import { sanityFetch } from '@/sanity/lib/live';
+import { staticSanityFetch, type FetchFn } from '@/sanity/lib/fetch';
 import {
   BLOG_POSTS_QUERY,
   BLOG_INDEX_PAGE_QUERY,
@@ -6,50 +6,57 @@ import {
   ALL_BLOG_POSTS_SLUGS_QUERY,
   ADJACENT_BLOG_POSTS_QUERY,
 } from '@/sanity/lib/queries';
+import type {
+  BLOG_POSTS_QUERYResult,
+  BLOG_INDEX_PAGE_QUERYResult,
+  BLOG_POST_QUERYResult,
+  ALL_BLOG_POSTS_SLUGS_QUERYResult,
+  ADJACENT_BLOG_POSTS_QUERYResult,
+} from '@/sanity/types';
 
-// Server-side function using live queries (for use in server components)
-export async function getAllBlogPosts() {
-  const { data: posts } = await sanityFetch({
+export async function getAllBlogPosts(fetchFn: FetchFn = staticSanityFetch): Promise<BLOG_POSTS_QUERYResult> {
+  const { data } = await fetchFn({
     query: BLOG_POSTS_QUERY,
+    tags: ['sanity', 'blogPost'],
   });
 
-  return posts;
+  return data as BLOG_POSTS_QUERYResult;
 }
 
-// Server-side function to get blog index page data
-export async function getBlogIndexPage() {
-  const { data: page } = await sanityFetch({
+export async function getBlogIndexPage(fetchFn: FetchFn = staticSanityFetch): Promise<BLOG_INDEX_PAGE_QUERYResult | null> {
+  const { data } = await fetchFn({
     query: BLOG_INDEX_PAGE_QUERY,
+    tags: ['sanity', 'blogIndexPage'],
   });
 
-  return page;
+  return data as BLOG_INDEX_PAGE_QUERYResult | null;
 }
 
-// Server-side function to get a single blog post by slug
-export async function getBlogPostBySlug(slug: string) {
-  const { data: post } = await sanityFetch({
+export async function getBlogPostBySlug(slug: string, fetchFn: FetchFn = staticSanityFetch): Promise<BLOG_POST_QUERYResult | null> {
+  const { data } = await fetchFn({
     query: BLOG_POST_QUERY,
     params: { slug },
+    tags: ['sanity', 'blogPost'],
   });
 
-  return post;
+  return data as BLOG_POST_QUERYResult | null;
 }
 
-// Server-side function to get all blog posts for sitemap
-export async function getAllBlogPostsForSitemap() {
-  const { data: posts } = await sanityFetch({
+export async function getAllBlogPostsForSitemap(fetchFn: FetchFn = staticSanityFetch): Promise<ALL_BLOG_POSTS_SLUGS_QUERYResult> {
+  const { data } = await fetchFn({
     query: ALL_BLOG_POSTS_SLUGS_QUERY,
+    tags: ['sanity', 'blogPost'],
   });
 
-  return posts;
+  return data as ALL_BLOG_POSTS_SLUGS_QUERYResult;
 }
 
-// Server-side function to get adjacent blog posts (prev/next)
-export async function getAdjacentBlogPosts(slug: string) {
-  const { data } = await sanityFetch({
+export async function getAdjacentBlogPosts(slug: string, fetchFn: FetchFn = staticSanityFetch): Promise<ADJACENT_BLOG_POSTS_QUERYResult> {
+  const { data } = await fetchFn({
     query: ADJACENT_BLOG_POSTS_QUERY,
     params: { slug },
+    tags: ['sanity', 'blogPost'],
   });
 
-  return data;
+  return data as ADJACENT_BLOG_POSTS_QUERYResult;
 }
