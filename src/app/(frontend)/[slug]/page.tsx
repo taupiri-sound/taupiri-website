@@ -11,6 +11,7 @@ import {
   getEquipmentList,
   getTeamMembers,
   getAllProjects,
+  getAllPages,
 } from '@/actions';
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
@@ -25,6 +26,13 @@ import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStru
 import { urlFor } from '@/sanity/lib/image';
 import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 import Breadcrumb from '@/components/UI/Breadcrumb';
+
+export const generateStaticParams = async () => {
+  const pages = await getAllPages();
+  return pages
+    .filter(page => page.slug?.current)
+    .map(page => ({ slug: page.slug!.current }));
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

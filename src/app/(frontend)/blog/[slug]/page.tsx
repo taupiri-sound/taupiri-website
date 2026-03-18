@@ -1,6 +1,6 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { getBlogPostBySlug, getAdjacentBlogPosts } from '@/actions/blog';
+import { getBlogPostBySlug, getAdjacentBlogPosts, getAllBlogPostsForSitemap } from '@/actions/blog';
 import {
   getCompanyLinks,
   getSiteSettings,
@@ -54,6 +54,13 @@ function formatBlogDate(
     })
     .toUpperCase();
 }
+
+export const generateStaticParams = async () => {
+  const posts = await getAllBlogPostsForSitemap();
+  return posts
+    .filter(post => post.slug?.current)
+    .map(post => ({ slug: post.slug!.current }));
+};
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
