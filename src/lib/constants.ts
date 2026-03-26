@@ -5,7 +5,7 @@
 export const SITE_CONFIG = {
   // Production domain - update this for your new project
   // IMPORTANT: Always use HTTPS (not HTTP) and no trailing slash for SEO consistency
-  PRODUCTION_DOMAIN: 'https://taupirisound.co.nz',
+  PRODUCTION_DOMAIN: process.env.NEXT_PUBLIC_BASE_URL || 'https://your-domain.com',
 
   // Contact information - single source of truth for all company contact details
   ORGANISATION_EMAIL: {
