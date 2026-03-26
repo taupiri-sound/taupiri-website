@@ -9,6 +9,7 @@ import {
   CogIcon,
   DocumentTextIcon,
   FolderIcon,
+  MenuIcon,
 } from '@sanity/icons';
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
@@ -101,6 +102,71 @@ export const structure: StructureResolver = (S) =>
               { field: 'name', direction: 'asc' },
             ]),
         ),
+      S.divider(),
+
+      // === LEGALS ===
+      S.listItem()
+        .id('legals')
+        .title('Legals')
+        .icon(DocumentTextIcon)
+        .child(
+          S.list()
+            .title('Legals')
+            .items([
+              // Terms & Conditions - Singleton
+              S.listItem()
+                .id('termsAndConditions')
+                .schemaType('termsAndConditions')
+                .title('Terms & Conditions')
+                .child(
+                  S.editor()
+                    .id('termsAndConditions')
+                    .schemaType('termsAndConditions')
+                    .documentId('termsAndConditions')
+                    .title('Terms & Conditions'),
+                ),
+              // Privacy Policy - Singleton
+              S.listItem()
+                .id('privacyPolicy')
+                .schemaType('privacyPolicy')
+                .title('Privacy Policy')
+                .child(
+                  S.editor()
+                    .id('privacyPolicy')
+                    .schemaType('privacyPolicy')
+                    .documentId('privacyPolicy')
+                    .title('Privacy Policy'),
+                ),
+            ]),
+        ),
+
+      // === NAVIGATION ===
+      S.listItem()
+        .id('navigation')
+        .title('Navigation')
+        .icon(MenuIcon)
+        .child(
+          S.list()
+            .title('Navigation')
+            .items([
+              // Header - Singleton
+              S.listItem()
+                .id('header')
+                .schemaType('header')
+                .title('Header')
+                .child(
+                  S.editor().id('header').schemaType('header').documentId('header').title('Header'),
+                ),
+              // Footer - Singleton
+              S.listItem()
+                .id('footer')
+                .schemaType('footer')
+                .title('Footer')
+                .child(
+                  S.editor().id('footer').schemaType('footer').documentId('footer').title('Footer'),
+                ),
+            ]),
+        ),
 
       S.divider(),
 
@@ -147,22 +213,6 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title('Site Management')
             .items([
-              // Header - Singleton
-              S.listItem()
-                .id('header')
-                .schemaType('header')
-                .title('Header')
-                .child(
-                  S.editor().id('header').schemaType('header').documentId('header').title('Header'),
-                ),
-              // Footer - Singleton
-              S.listItem()
-                .id('footer')
-                .schemaType('footer')
-                .title('Footer')
-                .child(
-                  S.editor().id('footer').schemaType('footer').documentId('footer').title('Footer'),
-                ),
               // Company Links - Singleton
               S.listItem()
                 .id('companyLinks')
@@ -198,44 +248,6 @@ export const structure: StructureResolver = (S) =>
                     .schemaType('contactFormSettings')
                     .documentId('contactFormSettings')
                     .title('Contact Form Settings'),
-                ),
-
-              S.divider(),
-
-              // Legal - Menu for Terms & Conditions and Privacy Policy
-              S.listItem()
-                .id('legal')
-                .title('Legal')
-                .icon(DocumentTextIcon)
-                .child(
-                  S.list()
-                    .title('Legal Documents')
-                    .items([
-                      // Terms & Conditions - Singleton
-                      S.listItem()
-                        .id('termsAndConditions')
-                        .schemaType('termsAndConditions')
-                        .title('Terms & Conditions')
-                        .child(
-                          S.editor()
-                            .id('termsAndConditions')
-                            .schemaType('termsAndConditions')
-                            .documentId('termsAndConditions')
-                            .title('Terms & Conditions'),
-                        ),
-                      // Privacy Policy - Singleton
-                      S.listItem()
-                        .id('privacyPolicy')
-                        .schemaType('privacyPolicy')
-                        .title('Privacy Policy')
-                        .child(
-                          S.editor()
-                            .id('privacyPolicy')
-                            .schemaType('privacyPolicy')
-                            .documentId('privacyPolicy')
-                            .title('Privacy Policy'),
-                        ),
-                    ]),
                 ),
             ]),
         ),
