@@ -23,10 +23,12 @@ export const structure: StructureResolver = (S) =>
         .title('Home Page')
         .icon(HomeIcon)
         .child(
-          S.editor().id('homePage').schemaType('homePage').documentId('homePage').title('Home Page')
+          S.editor()
+            .id('homePage')
+            .schemaType('homePage')
+            .documentId('homePage')
+            .title('Home Page'),
         ),
-
-      S.divider(),
 
       // === PAGES ===
       S.listItem()
@@ -34,7 +36,7 @@ export const structure: StructureResolver = (S) =>
         .title('Pages')
         .icon(DocumentIcon)
         .child(
-          S.documentTypeList('page').title('Pages').filter('_type == "page" && _id != "homePage"')
+          S.documentTypeList('page').title('Pages').filter('_type == "page" && _id != "homePage"'),
         ),
 
       S.divider(),
@@ -45,10 +47,8 @@ export const structure: StructureResolver = (S) =>
         .title('Clients')
         .icon(HeartIcon)
         .child(
-          S.editor().id('clients').schemaType('clients').documentId('clients').title('Clients')
+          S.editor().id('clients').schemaType('clients').documentId('clients').title('Clients'),
         ),
-
-      S.divider(),
 
       // === TEAM MEMBERS ===
       S.listItem()
@@ -61,10 +61,8 @@ export const structure: StructureResolver = (S) =>
             .defaultOrdering([
               { field: 'displayOrder', direction: 'asc' },
               { field: 'name', direction: 'asc' },
-            ])
+            ]),
         ),
-
-      S.divider(),
 
       // === EQUIPMENT LIST ===
       S.listItem()
@@ -76,10 +74,8 @@ export const structure: StructureResolver = (S) =>
             .id('equipmentListSingleton')
             .schemaType('equipmentListSingleton')
             .documentId('equipmentListSingleton')
-            .title('Equipment List')
+            .title('Equipment List'),
         ),
-
-      S.divider(),
 
       // === AUDIO SAMPLES ===
       S.listItem()
@@ -89,10 +85,8 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.documentTypeList('audioSample')
             .title('Audio Samples')
-            .defaultOrdering([{ field: '_createdAt', direction: 'desc' }])
+            .defaultOrdering([{ field: '_createdAt', direction: 'desc' }]),
         ),
-
-      S.divider(),
 
       // === PROJECTS ===
       S.listItem()
@@ -105,7 +99,7 @@ export const structure: StructureResolver = (S) =>
             .defaultOrdering([
               { field: 'order', direction: 'asc' },
               { field: 'name', direction: 'asc' },
-            ])
+            ]),
         ),
 
       S.divider(),
@@ -129,7 +123,7 @@ export const structure: StructureResolver = (S) =>
                     .id('blogIndexPage')
                     .schemaType('blogIndexPage')
                     .documentId('blogIndexPage')
-                    .title('Blog Index Page')
+                    .title('Blog Index Page'),
                 ),
               // Individual Blog Posts
               S.listItem()
@@ -138,9 +132,9 @@ export const structure: StructureResolver = (S) =>
                 .child(
                   S.documentTypeList('blogPost')
                     .title('Blog Posts')
-                    .defaultOrdering([{ field: '_createdAt', direction: 'desc' }])
+                    .defaultOrdering([{ field: '_createdAt', direction: 'desc' }]),
                 ),
-            ])
+            ]),
         ),
 
       S.divider(),
@@ -159,7 +153,7 @@ export const structure: StructureResolver = (S) =>
                 .schemaType('header')
                 .title('Header')
                 .child(
-                  S.editor().id('header').schemaType('header').documentId('header').title('Header')
+                  S.editor().id('header').schemaType('header').documentId('header').title('Header'),
                 ),
               // Footer - Singleton
               S.listItem()
@@ -167,7 +161,7 @@ export const structure: StructureResolver = (S) =>
                 .schemaType('footer')
                 .title('Footer')
                 .child(
-                  S.editor().id('footer').schemaType('footer').documentId('footer').title('Footer')
+                  S.editor().id('footer').schemaType('footer').documentId('footer').title('Footer'),
                 ),
               // Company Links - Singleton
               S.listItem()
@@ -179,7 +173,7 @@ export const structure: StructureResolver = (S) =>
                     .id('companyLinks')
                     .schemaType('companyLinks')
                     .documentId('companyLinks')
-                    .title('Company Links')
+                    .title('Company Links'),
                 ),
               // Site Settings - Singleton
               S.listItem()
@@ -191,7 +185,7 @@ export const structure: StructureResolver = (S) =>
                     .id('siteSettings')
                     .schemaType('siteSettings')
                     .documentId('siteSettings')
-                    .title('Site Settings')
+                    .title('Site Settings'),
                 ),
               // Contact Form Settings - Singleton
               S.listItem()
@@ -203,7 +197,7 @@ export const structure: StructureResolver = (S) =>
                     .id('contactFormSettings')
                     .schemaType('contactFormSettings')
                     .documentId('contactFormSettings')
-                    .title('Contact Form Settings')
+                    .title('Contact Form Settings'),
                 ),
 
               S.divider(),
@@ -227,7 +221,7 @@ export const structure: StructureResolver = (S) =>
                             .id('termsAndConditions')
                             .schemaType('termsAndConditions')
                             .documentId('termsAndConditions')
-                            .title('Terms & Conditions')
+                            .title('Terms & Conditions'),
                         ),
                       // Privacy Policy - Singleton
                       S.listItem()
@@ -239,10 +233,10 @@ export const structure: StructureResolver = (S) =>
                             .id('privacyPolicy')
                             .schemaType('privacyPolicy')
                             .documentId('privacyPolicy')
-                            .title('Privacy Policy')
+                            .title('Privacy Policy'),
                         ),
-                    ])
+                    ]),
                 ),
-            ])
+            ]),
         ),
     ]);
