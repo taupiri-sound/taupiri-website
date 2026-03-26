@@ -20,10 +20,10 @@ import { PageLoadProvider } from '@/contexts/PageLoadContext';
 import { HeaderProvider } from '@/contexts/HeaderContext';
 import { generateMetadata as generateDefaultMetadata } from '@/lib/metadata';
 import {
-  generateOrganizationSchema,
+  generateOrganisationSchema,
   generateWebSiteSchema,
   generateLocalBusinessSchema,
-  getOrganizationDataFromSeoMetaData,
+  getOrganisationDataFromSeoMetaData,
   getWebSiteDataFromSeoMetaData,
   getLocalBusinessDataFromSeoMetaData,
   generateStructuredDataScript,
@@ -33,8 +33,8 @@ import { SITE_CONFIG } from '@/lib/constants';
 export async function generateMetadata() {
   const [seoMetaData, businessInfo] = await Promise.all([getSeoMetaData(), getBusinessInfo()]);
   if (!seoMetaData) {
-    const orgName = businessInfo?.organizationName || '';
-    const orgDescription = businessInfo?.organizationDescription || '';
+    const orgName = businessInfo?.organisationName || '';
+    const orgDescription = businessInfo?.organisationDescription || '';
     return {
       title: orgDescription ? `${orgName} | ${orgDescription}` : orgName,
       description: `Welcome to ${orgName}`,
@@ -64,16 +64,16 @@ const FrontendLayout = async ({
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
 
   // Generate structured data if site settings are available
-  let organizationSchema;
+  let organisationSchema;
   let webSiteSchema;
   let localBusinessSchema;
 
   if (seoMetaData) {
-    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo);
+    const organisationData = getOrganisationDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo);
     const webSiteData = getWebSiteDataFromSeoMetaData(seoMetaData, baseUrl);
     const localBusinessData = getLocalBusinessDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo);
 
-    organizationSchema = generateOrganizationSchema(organizationData);
+    organisationSchema = generateOrganisationSchema(organisationData);
     webSiteSchema = generateWebSiteSchema(webSiteData);
     localBusinessSchema = generateLocalBusinessSchema(localBusinessData);
   }
@@ -85,10 +85,10 @@ const FrontendLayout = async ({
         <PageReadyTrigger />
 
         {/* Structured Data */}
-        {organizationSchema && (
+        {organisationSchema && (
           <script
             type='application/ld+json'
-            dangerouslySetInnerHTML={generateStructuredDataScript(organizationSchema)}
+            dangerouslySetInnerHTML={generateStructuredDataScript(organisationSchema)}
           />
         )}
         {webSiteSchema && (

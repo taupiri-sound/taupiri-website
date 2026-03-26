@@ -130,12 +130,12 @@ export async function POST(request: Request) {
       getContactFormSettings(),
       getBusinessInfo(),
     ]);
-    const organizationName = businessInfo?.organizationName || '';
+    const organisationName = businessInfo?.organisationName || '';
 
     // Get contact email from environment variable
     const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
     const fromEmail =
-      process.env.RESEND_FROM_EMAIL || `${organizationName} <onboarding@resend.dev>`;
+      process.env.RESEND_FROM_EMAIL || `${organisationName} <onboarding@resend.dev>`;
 
     if (!contactEmail) {
       console.error('NEXT_PUBLIC_CONTACT_EMAIL environment variable is not set');
@@ -195,8 +195,8 @@ export async function POST(request: Request) {
       const confirmationEmailResult = await resend.emails.send({
         from: fromEmail,
         to: sanitizedEmail,
-        replyTo: SITE_CONFIG.ORGANIZATION_EMAIL.value,
-        subject: `Thank you for contacting ${organizationName}`,
+        replyTo: SITE_CONFIG.ORGANISATION_EMAIL.value,
+        subject: `Thank you for contacting ${organisationName}`,
         html: confirmationEmailHtml,
       });
 

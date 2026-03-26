@@ -37,18 +37,18 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: Foot
   const contactDetails = [
     {
       icon: <FaPhoneAlt />,
-      value: SITE_CONFIG.ORGANIZATION_PHONE.value,
-      link: SITE_CONFIG.ORGANIZATION_PHONE.link,
+      value: SITE_CONFIG.ORGANISATION_PHONE.value,
+      link: SITE_CONFIG.ORGANISATION_PHONE.link,
     },
     {
       icon: <MdEmail />,
-      value: SITE_CONFIG.ORGANIZATION_EMAIL.value,
-      link: SITE_CONFIG.ORGANIZATION_EMAIL.link,
+      value: SITE_CONFIG.ORGANISATION_EMAIL.value,
+      link: SITE_CONFIG.ORGANISATION_EMAIL.link,
     },
     {
       icon: <GoLocation />,
-      value: SITE_CONFIG.ORGANIZATION_ADDRESS.value,
-      link: SITE_CONFIG.ORGANIZATION_ADDRESS.link,
+      value: SITE_CONFIG.ORGANISATION_ADDRESS.value,
+      link: SITE_CONFIG.ORGANISATION_ADDRESS.link,
     },
   ];
 

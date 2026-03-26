@@ -135,22 +135,22 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                           <tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="${SITE_CONFIG.ORGANIZATION_EMAIL.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${SITE_CONFIG.ORGANIZATION_EMAIL.value}
+                              <a href="${SITE_CONFIG.ORGANISATION_EMAIL.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${SITE_CONFIG.ORGANISATION_EMAIL.value}
                               </a>
                             </td>
                           </tr>
                           <tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="${SITE_CONFIG.ORGANIZATION_PHONE.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${SITE_CONFIG.ORGANIZATION_PHONE.value}
+                              <a href="${SITE_CONFIG.ORGANISATION_PHONE.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${SITE_CONFIG.ORGANISATION_PHONE.value}
                               </a>
                             </td>
                           </tr>
                           <tr>
                             <td align="center" style="padding: 5px 0; color: #b8956a; font-size: 14px;">
-                              <a href="${SITE_CONFIG.ORGANIZATION_ADDRESS.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${SITE_CONFIG.ORGANIZATION_ADDRESS.value}
+                              <a href="${SITE_CONFIG.ORGANISATION_ADDRESS.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${SITE_CONFIG.ORGANISATION_ADDRESS.value}
                               </a>
                             </td>
                           </tr>

@@ -5,7 +5,7 @@ import { getBusinessInfo } from '@/actions';
 
 export async function generateMetadata(): Promise<Metadata> {
   const businessInfo = await getBusinessInfo();
-  const orgName = businessInfo?.organizationName || '';
+  const orgName = businessInfo?.organisationName || '';
 
   return {
     title: `${orgName} | Coming Soon`,

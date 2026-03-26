@@ -27,7 +27,7 @@ import {
 } from '@/lib/metadata';
 import {
   generateBlogPostSchema,
-  getOrganizationDataFromSeoMetaData,
+  getOrganisationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       post.hasOverrideDate && post.overrideDate ? post.overrideDate : post._createdAt;
     const modifiedDate = post._updatedAt;
 
-    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
+    const organisationData = getOrganisationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     blogPostSchema = generateBlogPostSchema({
       headline: post.title || 'Blog Post',
@@ -149,7 +149,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         name: post.author || seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Person',
       },
-      publisher: organizationData,
+      publisher: organisationData,
       url: `${baseUrl}/blog/${slug}`,
     });
   }

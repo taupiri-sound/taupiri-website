@@ -5,7 +5,7 @@ import { getBusinessInfo } from '@/actions';
 
 const MaintenancePage = async () => {
   const businessInfo = await getBusinessInfo();
-  const orgName = businessInfo?.organizationName || '';
+  const orgName = businessInfo?.organisationName || '';
 
   return (
     <div className='min-h-svh bg-brand-gradient-brown flex items-center justify-center px-4'>
@@ -36,16 +36,16 @@ const MaintenancePage = async () => {
           <div className='space-y-2 text-body-base text-brand-white/80'>
             <p>
               <a
-                href={SITE_CONFIG.ORGANIZATION_EMAIL.link}
+                href={SITE_CONFIG.ORGANISATION_EMAIL.link}
                 className='hover:text-brand-white transition-colors underline'>
-                {SITE_CONFIG.ORGANIZATION_EMAIL.value}
+                {SITE_CONFIG.ORGANISATION_EMAIL.value}
               </a>
             </p>
             <p>
               <a
-                href={SITE_CONFIG.ORGANIZATION_PHONE.link}
+                href={SITE_CONFIG.ORGANISATION_PHONE.link}
                 className='hover:text-brand-white transition-colors underline'>
-                {SITE_CONFIG.ORGANIZATION_PHONE.value}
+                {SITE_CONFIG.ORGANISATION_PHONE.value}
               </a>
             </p>
           </div>

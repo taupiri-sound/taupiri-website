@@ -8,12 +8,12 @@ export const SITE_CONFIG = {
   PRODUCTION_DOMAIN: 'https://taupirisound.co.nz',
 
   // Contact information - single source of truth for all company contact details
-  ORGANIZATION_EMAIL: {
+  ORGANISATION_EMAIL: {
     value: 'lance@taupirisound.co.nz',
     link: 'mailto:lance@taupirisound.co.nz',
   },
-  ORGANIZATION_PHONE: { value: '+64 21 311 903', link: 'tel:+6421311903' },
-  ORGANIZATION_ADDRESS: {
+  ORGANISATION_PHONE: { value: '+64 21 311 903', link: 'tel:+6421311903' },
+  ORGANISATION_ADDRESS: {
     value: 'Topview Road, Taupiri 3792, New Zealand',
     link: 'https://maps.app.goo.gl/AXFyaZad32c1c2sx6',
   },

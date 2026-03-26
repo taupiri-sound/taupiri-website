@@ -33,13 +33,13 @@ const RootLayout = async ({
 
   const businessInfo = await getBusinessInfo();
 
-  // Basic organization structured data
-  const organizationSchema = {
+  // Basic organisation structured data
+  const organisationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: businessInfo?.organizationName || '',
+    name: businessInfo?.organisationName || '',
     url: baseUrl,
-    description: businessInfo?.organizationDescription || '',
+    description: businessInfo?.organisationDescription || '',
   };
 
   return (
@@ -89,7 +89,7 @@ const RootLayout = async ({
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: JSON.stringify(organisationSchema),
           }}
         />
       </head>

@@ -14,7 +14,7 @@ import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
-  getOrganizationDataFromSeoMetaData,
+  getOrganisationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
@@ -68,7 +68,7 @@ const TermsAndConditionsPage = async () => {
   // Generate Article structured data
   let articleSchema;
   if (seoMetaData && termsData._updatedAt) {
-    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
+    const organisationData = getOrganisationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     articleSchema = generateArticleSchema({
       headline: termsData.title || 'Terms & Conditions',
@@ -79,7 +79,7 @@ const TermsAndConditionsPage = async () => {
         name: seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
-      publisher: organizationData,
+      publisher: organisationData,
       url: `${baseUrl}/terms-and-conditions`,
     });
   }

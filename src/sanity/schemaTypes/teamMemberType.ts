@@ -22,7 +22,7 @@ export const teamMemberType = defineType({
       name: 'role',
       title: 'Role',
       type: 'string',
-      description: 'Job title or role within the organization',
+      description: 'Job title or role within the organisation',
     }),
     defineField({
       name: 'category',

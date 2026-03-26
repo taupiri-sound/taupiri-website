@@ -3,7 +3,7 @@ import type { SEO_META_DATA_QUERYResult, BUSINESS_INFO_QUERYResult } from '@/san
 import type { ImageObjectData } from '@/lib/imageUtils';
 import { SITE_CONFIG } from '@/lib/constants';
 
-export interface OrganizationData {
+export interface OrganisationData {
   name: string;
   url: string;
   logo?: string;
@@ -62,7 +62,7 @@ export interface BlogPostData {
     name: string;
     type?: string;
   };
-  publisher: OrganizationData;
+  publisher: OrganisationData;
   url: string;
 }
 
@@ -76,7 +76,7 @@ export interface ArticleData {
     name: string;
     type?: string;
   };
-  publisher: OrganizationData;
+  publisher: OrganisationData;
   url: string;
 }
 
@@ -96,7 +96,7 @@ export function generateImageObjectSchema(data: ImageObjectData) {
   };
 }
 
-export function generateOrganizationSchema(data: OrganizationData) {
+export function generateOrganisationSchema(data: OrganisationData) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -184,7 +184,7 @@ export function generateBlogPostSchema(data: BlogPostData) {
       '@type': data.author.type || 'Person',
       name: data.author.name,
     },
-    publisher: generateOrganizationSchema(data.publisher),
+    publisher: generateOrganisationSchema(data.publisher),
     url: data.url,
   };
 }
@@ -208,7 +208,7 @@ export function generateArticleSchema(data: ArticleData) {
       '@type': data.author.type || 'Person',
       name: data.author.name,
     },
-    publisher: generateOrganizationSchema(data.publisher),
+    publisher: generateOrganisationSchema(data.publisher),
     url: data.url,
   };
 }
@@ -226,17 +226,17 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
-export function getOrganizationDataFromSeoMetaData(
+export function getOrganisationDataFromSeoMetaData(
   seoMetaData: SEO_META_DATA_QUERYResult,
   baseUrl: string,
   businessInfo?: BUSINESS_INFO_QUERYResult
-): OrganizationData {
+): OrganisationData {
   return {
-    name: seoMetaData?.siteTitle || businessInfo?.organizationName || '',
+    name: seoMetaData?.siteTitle || businessInfo?.organisationName || '',
     url: baseUrl,
-    email: SITE_CONFIG.ORGANIZATION_EMAIL.value,
-    telephone: SITE_CONFIG.ORGANIZATION_PHONE.value,
-    address: SITE_CONFIG.ORGANIZATION_ADDRESS.value,
+    email: SITE_CONFIG.ORGANISATION_EMAIL.value,
+    telephone: SITE_CONFIG.ORGANISATION_PHONE.value,
+    address: SITE_CONFIG.ORGANISATION_ADDRESS.value,
     ...(seoMetaData?.siteDescription && { description: seoMetaData.siteDescription }),
     ...(seoMetaData?.defaultOgImage && {
       logo: urlFor(seoMetaData.defaultOgImage).width(512).height(512).url(),
@@ -268,11 +268,11 @@ export function getLocalBusinessDataFromSeoMetaData(
   businessInfo?: BUSINESS_INFO_QUERYResult
 ): LocalBusinessData {
   return {
-    name: seoMetaData?.siteTitle || businessInfo?.organizationName || '',
-    description: seoMetaData?.siteDescription || businessInfo?.organizationDescription || '',
+    name: seoMetaData?.siteTitle || businessInfo?.organisationName || '',
+    description: seoMetaData?.siteDescription || businessInfo?.organisationDescription || '',
     url: baseUrl,
-    telephone: SITE_CONFIG.ORGANIZATION_PHONE.value,
-    email: SITE_CONFIG.ORGANIZATION_EMAIL.value,
+    telephone: SITE_CONFIG.ORGANISATION_PHONE.value,
+    email: SITE_CONFIG.ORGANISATION_EMAIL.value,
     address: {
       streetAddress: SITE_CONFIG.BUSINESS_LOCATION.streetAddress,
       addressLocality: SITE_CONFIG.BUSINESS_LOCATION.addressLocality,

@@ -19,7 +19,7 @@ import { closingCardSpacing } from '@/utils/spacingConstants';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
-  getOrganizationDataFromSeoMetaData,
+  getOrganisationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
@@ -97,7 +97,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   // Generate Article structured data
   let articleSchema;
   if (seoMetaData && page._createdAt && page._updatedAt) {
-    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
+    const organisationData = getOrganisationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     articleSchema = generateArticleSchema({
       headline: page.title || 'Page',
@@ -109,7 +109,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
         name: seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
-      publisher: organizationData,
+      publisher: organisationData,
       url: `${baseUrl}/${slug}`,
     });
   }

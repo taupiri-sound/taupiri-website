@@ -12,14 +12,14 @@ export const businessInfoType = defineType({
   icon: InfoOutlineIcon,
   fields: [
     defineField({
-      name: 'organizationName',
+      name: 'organisationName',
       type: 'string',
       title: 'Organisation Name',
       description: 'The name of your organisation (e.g., "Taupiri Sound")',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'organizationDescription',
+      name: 'organisationDescription',
       type: 'text',
       title: 'Organisation Description',
       description:

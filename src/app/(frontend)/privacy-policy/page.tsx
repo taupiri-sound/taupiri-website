@@ -14,7 +14,7 @@ import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
-  getOrganizationDataFromSeoMetaData,
+  getOrganisationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
@@ -74,7 +74,7 @@ const PrivacyPolicyPage = async () => {
   // Generate Article structured data
   let articleSchema;
   if (seoMetaData && privacyData._updatedAt) {
-    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
+    const organisationData = getOrganisationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     articleSchema = generateArticleSchema({
       headline: privacyData.title || 'Privacy Policy',
@@ -85,7 +85,7 @@ const PrivacyPolicyPage = async () => {
         name: seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
-      publisher: organizationData,
+      publisher: organisationData,
       url: `${baseUrl}/privacy-policy`,
     });
   }
