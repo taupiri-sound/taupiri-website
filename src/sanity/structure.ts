@@ -40,6 +40,39 @@ export const structure: StructureResolver = (S) =>
           S.documentTypeList('page').title('Pages').filter('_type == "page" && _id != "homePage"'),
         ),
 
+      // === BLOG ===
+      S.listItem()
+        .id('blog')
+        .title('Blog')
+        .icon(EditIcon)
+        .child(
+          S.list()
+            .title('Blog Management')
+            .items([
+              // Blog Index Page - Singleton
+              S.listItem()
+                .id('blogIndexPage')
+                .schemaType('blogIndexPage')
+                .title('Blog Index Page')
+                .child(
+                  S.editor()
+                    .id('blogIndexPage')
+                    .schemaType('blogIndexPage')
+                    .documentId('blogIndexPage')
+                    .title('Blog Index Page'),
+                ),
+              // Individual Blog Posts
+              S.listItem()
+                .id('blogPosts')
+                .title('Blog Posts')
+                .child(
+                  S.documentTypeList('blogPost')
+                    .title('Blog Posts')
+                    .defaultOrdering([{ field: '_createdAt', direction: 'desc' }]),
+                ),
+            ]),
+        ),
+
       S.divider(),
 
       // === CLIENTS ===
@@ -104,6 +137,34 @@ export const structure: StructureResolver = (S) =>
         ),
       S.divider(),
 
+      // === NAVIGATION ===
+      S.listItem()
+        .id('navigation')
+        .title('Navigation')
+        .icon(MenuIcon)
+        .child(
+          S.list()
+            .title('Navigation')
+            .items([
+              // Header - Singleton
+              S.listItem()
+                .id('header')
+                .schemaType('header')
+                .title('Header')
+                .child(
+                  S.editor().id('header').schemaType('header').documentId('header').title('Header'),
+                ),
+              // Footer - Singleton
+              S.listItem()
+                .id('footer')
+                .schemaType('footer')
+                .title('Footer')
+                .child(
+                  S.editor().id('footer').schemaType('footer').documentId('footer').title('Footer'),
+                ),
+            ]),
+        ),
+
       // === LEGALS ===
       S.listItem()
         .id('legals')
@@ -136,69 +197,6 @@ export const structure: StructureResolver = (S) =>
                     .schemaType('privacyPolicy')
                     .documentId('privacyPolicy')
                     .title('Privacy Policy'),
-                ),
-            ]),
-        ),
-
-      // === NAVIGATION ===
-      S.listItem()
-        .id('navigation')
-        .title('Navigation')
-        .icon(MenuIcon)
-        .child(
-          S.list()
-            .title('Navigation')
-            .items([
-              // Header - Singleton
-              S.listItem()
-                .id('header')
-                .schemaType('header')
-                .title('Header')
-                .child(
-                  S.editor().id('header').schemaType('header').documentId('header').title('Header'),
-                ),
-              // Footer - Singleton
-              S.listItem()
-                .id('footer')
-                .schemaType('footer')
-                .title('Footer')
-                .child(
-                  S.editor().id('footer').schemaType('footer').documentId('footer').title('Footer'),
-                ),
-            ]),
-        ),
-
-      S.divider(),
-
-      // === BLOG ===
-      S.listItem()
-        .id('blog')
-        .title('Blog')
-        .icon(EditIcon)
-        .child(
-          S.list()
-            .title('Blog Management')
-            .items([
-              // Blog Index Page - Singleton
-              S.listItem()
-                .id('blogIndexPage')
-                .schemaType('blogIndexPage')
-                .title('Blog Index Page')
-                .child(
-                  S.editor()
-                    .id('blogIndexPage')
-                    .schemaType('blogIndexPage')
-                    .documentId('blogIndexPage')
-                    .title('Blog Index Page'),
-                ),
-              // Individual Blog Posts
-              S.listItem()
-                .id('blogPosts')
-                .title('Blog Posts')
-                .child(
-                  S.documentTypeList('blogPost')
-                    .title('Blog Posts')
-                    .defaultOrdering([{ field: '_createdAt', direction: 'desc' }]),
                 ),
             ]),
         ),
