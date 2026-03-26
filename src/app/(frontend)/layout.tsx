@@ -9,6 +9,7 @@ import NavigationScroll from '@/components/NavigationScroll';
 import PageReadyTrigger from '@/components/PageReadyTrigger';
 import { VisualEditingProvider } from '@/components/VisualEditingProvider';
 import {
+  getBusinessInfo,
   getHeader,
   getFooter,
   getSeoMetaData,
@@ -30,11 +31,13 @@ import {
 import { SITE_CONFIG } from '@/lib/constants';
 
 export async function generateMetadata() {
-  const seoMetaData = await getSeoMetaData();
+  const [seoMetaData, businessInfo] = await Promise.all([getSeoMetaData(), getBusinessInfo()]);
   if (!seoMetaData) {
+    const orgName = businessInfo?.organizationName || '';
+    const orgDescription = businessInfo?.organizationDescription || '';
     return {
-      title: `${SITE_CONFIG.ORGANIZATION_NAME} | ${SITE_CONFIG.ORGANIZATION_DESCRIPTION}`,
-      description: `Welcome to ${SITE_CONFIG.ORGANIZATION_NAME}`,
+      title: orgDescription ? `${orgName} | ${orgDescription}` : orgName,
+      description: `Welcome to ${orgName}`,
     };
   }
 
@@ -49,11 +52,14 @@ const FrontendLayout = async ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  const headerData = await getHeader();
-  const footerData = await getFooter();
-  const seoMetaData = await getSeoMetaData();
-  const companyLinksData = await getCompanyLinks();
-  const legalPagesVisibilityData = await getLegalPagesVisibility();
+  const [headerData, footerData, seoMetaData, companyLinksData, legalPagesVisibilityData, businessInfo] = await Promise.all([
+    getHeader(),
+    getFooter(),
+    getSeoMetaData(),
+    getCompanyLinks(),
+    getLegalPagesVisibility(),
+    getBusinessInfo(),
+  ]);
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || SITE_CONFIG.PRODUCTION_DOMAIN;
 
@@ -63,9 +69,9 @@ const FrontendLayout = async ({
   let localBusinessSchema;
 
   if (seoMetaData) {
-    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
+    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo);
     const webSiteData = getWebSiteDataFromSeoMetaData(seoMetaData, baseUrl);
-    const localBusinessData = getLocalBusinessDataFromSeoMetaData(seoMetaData, baseUrl);
+    const localBusinessData = getLocalBusinessDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo);
 
     organizationSchema = generateOrganizationSchema(organizationData);
     webSiteSchema = generateWebSiteSchema(webSiteData);

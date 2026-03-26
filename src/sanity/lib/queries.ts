@@ -475,6 +475,13 @@ export const HEADER_QUERY = defineQuery(`*[_id == "header"][0]{
   }
 }`);
 
+export const BUSINESS_INFO_QUERY = defineQuery(`*[_id == "businessInfo"][0]{
+  _id,
+  _type,
+  organizationName,
+  organizationDescription
+}`);
+
 export const SEO_META_DATA_QUERY = defineQuery(`*[_id == "seoMetaData"][0]{
   _id,
   _type,

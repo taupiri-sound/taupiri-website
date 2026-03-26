@@ -7,11 +7,6 @@ export const SITE_CONFIG = {
   // IMPORTANT: Always use HTTPS (not HTTP) and no trailing slash for SEO consistency
   PRODUCTION_DOMAIN: 'https://taupirisound.co.nz',
 
-  // Organization information
-  ORGANIZATION_NAME: 'Taupiri Sound',
-  ORGANIZATION_DESCRIPTION:
-    "Taupiri Sound is a recording studio based in the countryside of northern Waikato. For over a decade we have worked on countless projects from educational resources to some of Aotearoa's best artists.",
-
   // Contact information - single source of truth for all company contact details
   ORGANIZATION_EMAIL: {
     value: 'lance@taupirisound.co.nz',

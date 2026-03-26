@@ -224,6 +224,18 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title('Site Management')
             .items([
+              // Business & Contact Info - Singleton
+              S.listItem()
+                .id('businessInfo')
+                .schemaType('businessInfo')
+                .title('Business & Contact Info')
+                .child(
+                  S.editor()
+                    .id('businessInfo')
+                    .schemaType('businessInfo')
+                    .documentId('businessInfo')
+                    .title('Business & Contact Info'),
+                ),
               // Company & Social Links - Singleton
               S.listItem()
                 .id('companyLinks')

@@ -1,5 +1,5 @@
 import { urlFor } from '@/sanity/lib/image';
-import type { SEO_META_DATA_QUERYResult } from '@/sanity/types';
+import type { SEO_META_DATA_QUERYResult, BUSINESS_INFO_QUERYResult } from '@/sanity/types';
 import type { ImageObjectData } from '@/lib/imageUtils';
 import { SITE_CONFIG } from '@/lib/constants';
 
@@ -228,10 +228,11 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
 
 export function getOrganizationDataFromSeoMetaData(
   seoMetaData: SEO_META_DATA_QUERYResult,
-  baseUrl: string
+  baseUrl: string,
+  businessInfo?: BUSINESS_INFO_QUERYResult
 ): OrganizationData {
   return {
-    name: seoMetaData?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
+    name: seoMetaData?.siteTitle || businessInfo?.organizationName || '',
     url: baseUrl,
     email: SITE_CONFIG.ORGANIZATION_EMAIL.value,
     telephone: SITE_CONFIG.ORGANIZATION_PHONE.value,
@@ -263,11 +264,12 @@ export function getWebSiteDataFromSeoMetaData(
  */
 export function getLocalBusinessDataFromSeoMetaData(
   seoMetaData: SEO_META_DATA_QUERYResult,
-  baseUrl: string
+  baseUrl: string,
+  businessInfo?: BUSINESS_INFO_QUERYResult
 ): LocalBusinessData {
   return {
-    name: seoMetaData?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
-    description: seoMetaData?.siteDescription || SITE_CONFIG.ORGANIZATION_DESCRIPTION,
+    name: seoMetaData?.siteTitle || businessInfo?.organizationName || '',
+    description: seoMetaData?.siteDescription || businessInfo?.organizationDescription || '',
     url: baseUrl,
     telephone: SITE_CONFIG.ORGANIZATION_PHONE.value,
     email: SITE_CONFIG.ORGANIZATION_EMAIL.value,

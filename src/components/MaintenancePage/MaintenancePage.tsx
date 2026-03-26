@@ -1,8 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
+import { getBusinessInfo } from '@/actions';
 
-const MaintenancePage = () => {
+const MaintenancePage = async () => {
+  const businessInfo = await getBusinessInfo();
+  const orgName = businessInfo?.organizationName || '';
+
   return (
     <div className='min-h-svh bg-brand-gradient-brown flex items-center justify-center px-4'>
       <div className='max-w-2xl w-full text-center space-y-8'>
@@ -10,7 +14,7 @@ const MaintenancePage = () => {
         <div className='flex justify-center'>
           <Image
             src='/images/logos/logo-white.png'
-            alt={`${SITE_CONFIG.ORGANIZATION_NAME} Logo`}
+            alt={`${orgName} Logo`}
             width={300}
             height={208}
             priority

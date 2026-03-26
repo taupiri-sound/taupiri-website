@@ -2,6 +2,7 @@ import React from 'react';
 import { Saira_Condensed, Chau_Philomene_One } from 'next/font/google';
 import '@/app/globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
+import { getBusinessInfo } from '@/actions';
 
 const sairaCondensed = Saira_Condensed({
   subsets: ['latin'],
@@ -16,7 +17,7 @@ const chauPhilomeneOne = Chau_Philomene_One({
   variable: '--font-chau',
 });
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -30,13 +31,15 @@ const RootLayout = ({
   // 2. In production AND maintenance mode is OFF
   const shouldHideFromRobots = !isProd || process.env.MAINTENANCE_MODE_ENABLED === 'true';
 
+  const businessInfo = await getBusinessInfo();
+
   // Basic organization structured data
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: SITE_CONFIG.ORGANIZATION_NAME,
+    name: businessInfo?.organizationName || '',
     url: baseUrl,
-    description: SITE_CONFIG.ORGANIZATION_DESCRIPTION,
+    description: businessInfo?.organizationDescription || '',
   };
 
   return (

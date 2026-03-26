@@ -56,10 +56,12 @@ import { equipmentListSingletonType } from './singletons/equipmentList';
 import { termsAndConditionsType } from './termsAndConditionsType';
 import { privacyPolicyType } from './privacyPolicyType';
 import { contactFormSettingsType } from './contactFormSettingsType';
+import { businessInfoType } from './businessInfoType';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     // Documents
+    businessInfoType,
     seoMetaDataType,
     companyLinksType,
     contactFormSettingsType,

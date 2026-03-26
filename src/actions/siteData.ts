@@ -1,6 +1,16 @@
 import { staticSanityFetch, type FetchFn } from '@/sanity/lib/fetch';
-import { HEADER_QUERY, FOOTER_QUERY, SEO_META_DATA_QUERY, COMPANY_LINKS_QUERY, CONTACT_FORM_SETTINGS_QUERY, LEGAL_PAGES_VISIBILITY_QUERY, CLIENTS_QUERY, EQUIPMENT_LIST_QUERY, TEAM_MEMBERS_QUERY, ALL_PROJECTS_QUERY, FEATURED_PROJECTS_QUERY } from '@/sanity/lib/queries';
-import type { FOOTER_QUERYResult, HEADER_QUERYResult, SEO_META_DATA_QUERYResult, COMPANY_LINKS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult, LEGAL_PAGES_VISIBILITY_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, FEATURED_PROJECTS_QUERYResult } from '@/sanity/types';
+import { BUSINESS_INFO_QUERY, HEADER_QUERY, FOOTER_QUERY, SEO_META_DATA_QUERY, COMPANY_LINKS_QUERY, CONTACT_FORM_SETTINGS_QUERY, LEGAL_PAGES_VISIBILITY_QUERY, CLIENTS_QUERY, EQUIPMENT_LIST_QUERY, TEAM_MEMBERS_QUERY, ALL_PROJECTS_QUERY, FEATURED_PROJECTS_QUERY } from '@/sanity/lib/queries';
+import type { BUSINESS_INFO_QUERYResult, FOOTER_QUERYResult, HEADER_QUERYResult, SEO_META_DATA_QUERYResult, COMPANY_LINKS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult, LEGAL_PAGES_VISIBILITY_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, FEATURED_PROJECTS_QUERYResult } from '@/sanity/types';
+
+// Business Info actions
+export async function getBusinessInfo(fetchFn: FetchFn = staticSanityFetch): Promise<BUSINESS_INFO_QUERYResult | null> {
+  const { data } = await fetchFn({
+    query: BUSINESS_INFO_QUERY,
+    tags: ['sanity', 'businessInfo'],
+  });
+
+  return data as BUSINESS_INFO_QUERYResult | null;
+}
 
 // Header actions
 export async function getHeader(fetchFn: FetchFn = staticSanityFetch): Promise<HEADER_QUERYResult | null> {

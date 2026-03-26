@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 import { generateConfirmationEmail } from '@/lib/email-templates/confirmationEmail';
 import { generateAdminNotificationEmail } from '@/lib/email-templates/adminNotificationEmail';
 import { SITE_CONFIG } from '@/lib/constants';
-import { getContactFormSettings } from '@/actions';
+import { getBusinessInfo, getContactFormSettings } from '@/actions';
 
 // Initialize Resend with API key from environment variable
 // IMPORTANT: Add RESEND_API_KEY to your .env.local file
@@ -125,10 +125,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid input detected.' }, { status: 400 });
     }
 
+    // Fetch contact form settings and business info from Sanity
+    const [contactFormSettings, businessInfo] = await Promise.all([
+      getContactFormSettings(),
+      getBusinessInfo(),
+    ]);
+    const organizationName = businessInfo?.organizationName || '';
+
     // Get contact email from environment variable
     const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
     const fromEmail =
-      process.env.RESEND_FROM_EMAIL || `${SITE_CONFIG.ORGANIZATION_NAME} <onboarding@resend.dev>`;
+      process.env.RESEND_FROM_EMAIL || `${organizationName} <onboarding@resend.dev>`;
 
     if (!contactEmail) {
       console.error('NEXT_PUBLIC_CONTACT_EMAIL environment variable is not set');
@@ -147,9 +154,6 @@ export async function POST(request: Request) {
     // In production, ensure NEXT_PUBLIC_BASE_URL is set to your live domain in Vercel
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
     const logoUrl = `${baseUrl}/images/logos/logo-white.png`;
-
-    // Fetch contact form settings from Sanity for customizable email content
-    const contactFormSettings = await getContactFormSettings();
 
     // Send email to business owner using styled template
     const adminEmailHtml = generateAdminNotificationEmail({
@@ -192,7 +196,7 @@ export async function POST(request: Request) {
         from: fromEmail,
         to: sanitizedEmail,
         replyTo: SITE_CONFIG.ORGANIZATION_EMAIL.value,
-        subject: `Thank you for contacting ${SITE_CONFIG.ORGANIZATION_NAME}`,
+        subject: `Thank you for contacting ${organizationName}`,
         html: confirmationEmailHtml,
       });
 
