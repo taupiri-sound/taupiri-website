@@ -7,7 +7,7 @@ import { LinkIcon } from '@sanity/icons';
 
 export const companyLinksType = defineType({
   name: 'companyLinks',
-  title: 'Company Links',
+  title: 'Company & Social Links',
   type: 'document',
   icon: LinkIcon,
   fields: [
@@ -21,7 +21,7 @@ export const companyLinksType = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Company Links',
+        title: 'Company & Social Links',
         subtitle: 'Social media and external links',
       };
     },
