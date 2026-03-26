@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getAdjacentBlogPosts, getAllBlogPostsForSitemap } from '@/actions/blog';
 import {
   getCompanyLinks,
-  getSiteSettings,
+  getSeoMetaData,
   getContactFormSettings,
   getClients,
   getAllProjects,
@@ -27,7 +27,7 @@ import {
 } from '@/lib/metadata';
 import {
   generateBlogPostSchema,
-  getOrganizationDataFromSiteSettings,
+  getOrganizationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
@@ -64,9 +64,9 @@ export const generateStaticParams = async () => {
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const [siteSettings, post] = await Promise.all([getSiteSettings(), getBlogPostBySlug(slug)]);
+  const [seoMetaData, post] = await Promise.all([getSeoMetaData(), getBlogPostBySlug(slug)]);
 
-  if (!siteSettings) {
+  if (!seoMetaData) {
     return {
       title: 'Blog Post | Taupiri Sound',
       description: 'Read our latest article',
@@ -87,8 +87,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
   return generatePageMetadata({
     title: post.title || undefined,
-    description: post.subtitle || siteSettings.siteDescription || undefined,
-    siteSettings,
+    description: post.subtitle || seoMetaData.siteDescription || undefined,
+    seoMetaData,
     image: post.mainImage?.asset?._ref ? post.mainImage : undefined, // Only pass image if it exists, otherwise use default
     canonicalUrl: generateCanonicalUrl(`/blog/${slug}`),
     publishedTime,
@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const [
     post,
     companyLinks,
-    siteSettings,
+    seoMetaData,
     contactFormSettings,
     clientsData,
     adjacentPosts,
@@ -109,7 +109,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   ] = await Promise.all([
     getBlogPostBySlug(slug),
     getCompanyLinks(),
-    getSiteSettings(),
+    getSeoMetaData(),
     getContactFormSettings(),
     getClients(),
     getAdjacentBlogPosts(slug),
@@ -132,12 +132,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // Generate BlogPosting structured data
   let blogPostSchema;
-  if (siteSettings) {
+  if (seoMetaData) {
     const publishDate =
       post.hasOverrideDate && post.overrideDate ? post.overrideDate : post._createdAt;
     const modifiedDate = post._updatedAt;
 
-    const organizationData = getOrganizationDataFromSiteSettings(siteSettings, baseUrl);
+    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     blogPostSchema = generateBlogPostSchema({
       headline: post.title || 'Blog Post',
@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       datePublished: publishDate,
       dateModified: modifiedDate,
       author: {
-        name: post.author || siteSettings.siteTitle || 'Taupiri Sound',
+        name: post.author || seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Person',
       },
       publisher: organizationData,
@@ -259,7 +259,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               documentId={post._id}
               documentType={post._type}
               fieldPathPrefix='closingCard'
-              siteSettings={siteSettings || undefined}
+              seoMetaData={seoMetaData || undefined}
               companyLinks={companyLinks}
             />
           </div>

@@ -4,7 +4,7 @@ import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
 import {
   getTermsAndConditions,
-  getSiteSettings,
+  getSeoMetaData,
   getCompanyLinks,
   getContactFormSettings,
   getClients,
@@ -14,16 +14,16 @@ import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
-  getOrganizationDataFromSiteSettings,
+  getOrganizationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export async function generateMetadata() {
-  const [siteSettings, termsData] = await Promise.all([getSiteSettings(), getTermsAndConditions()]);
+  const [seoMetaData, termsData] = await Promise.all([getSeoMetaData(), getTermsAndConditions()]);
 
-  if (!siteSettings) {
+  if (!seoMetaData) {
     return {
       title: 'Terms & Conditions | Taupiri Sound',
       description: 'Terms and conditions for using our website and services',
@@ -35,17 +35,17 @@ export async function generateMetadata() {
   return generatePageMetadata({
     title,
     description:
-      siteSettings.siteDescription || 'Terms and conditions for using our website and services',
-    siteSettings,
+      seoMetaData.siteDescription || 'Terms and conditions for using our website and services',
+    seoMetaData,
     canonicalUrl: generateCanonicalUrl('/terms-and-conditions'),
   });
 }
 
 const TermsAndConditionsPage = async () => {
-  const [termsData, siteSettings, companyLinks, contactFormSettings, clientsData, allProjectsData] =
+  const [termsData, seoMetaData, companyLinks, contactFormSettings, clientsData, allProjectsData] =
     await Promise.all([
       getTermsAndConditions(),
-      getSiteSettings(),
+      getSeoMetaData(),
       getCompanyLinks(),
       getContactFormSettings(),
       getClients(),
@@ -67,16 +67,16 @@ const TermsAndConditionsPage = async () => {
 
   // Generate Article structured data
   let articleSchema;
-  if (siteSettings && termsData._updatedAt) {
-    const organizationData = getOrganizationDataFromSiteSettings(siteSettings, baseUrl);
+  if (seoMetaData && termsData._updatedAt) {
+    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     articleSchema = generateArticleSchema({
       headline: termsData.title || 'Terms & Conditions',
-      description: siteSettings.siteDescription || undefined,
+      description: seoMetaData.siteDescription || undefined,
       datePublished: termsData._updatedAt,
       dateModified: termsData._updatedAt,
       author: {
-        name: siteSettings.siteTitle || 'Taupiri Sound',
+        name: seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
       publisher: organizationData,
@@ -114,7 +114,7 @@ const TermsAndConditionsPage = async () => {
             content={termsData.content}
             documentId={termsData._id}
             documentType={termsData._type}
-            siteSettings={siteSettings || undefined}
+            seoMetaData={seoMetaData || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
             allProjectsData={allProjectsData}

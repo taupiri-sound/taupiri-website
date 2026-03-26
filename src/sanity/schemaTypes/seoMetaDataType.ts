@@ -5,9 +5,9 @@
 import { defineType, defineField } from 'sanity';
 import { ControlsIcon } from '@sanity/icons';
 
-export const siteSettingsType = defineType({
-  name: 'siteSettings',
-  title: 'Site Settings',
+export const seoMetaDataType = defineType({
+  name: 'seoMetaData',
+  title: 'SEO & Meta Data',
   type: 'document',
   icon: ControlsIcon,
   fields: [
@@ -58,7 +58,7 @@ export const siteSettingsType = defineType({
   preview: {
     prepare() {
       return {
-        title: 'Site Settings',
+        title: 'SEO & Meta Data',
       };
     },
   },

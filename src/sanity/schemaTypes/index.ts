@@ -38,7 +38,7 @@ import { teamMemberListType } from './blocks/teamMemberListType';
 import { projectListType } from './blocks/projectListType';
 import { featuredProjectsType } from './blocks/featuredProjectsType';
 import { contactFormType } from './blocks/contactFormType';
-import { siteSettingsType } from './siteSettingsType';
+import { seoMetaDataType } from './seoMetaDataType';
 import { teamMemberType } from './teamMemberType';
 import { projectType } from './projectType';
 import { companyLinksType } from './companyLinksType';
@@ -60,7 +60,7 @@ import { contactFormSettingsType } from './contactFormSettingsType';
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     // Documents
-    siteSettingsType,
+    seoMetaDataType,
     companyLinksType,
     contactFormSettingsType,
     homePageType,

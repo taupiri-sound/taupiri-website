@@ -3,7 +3,7 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { NestedBlock } from '@/types/blocks';
-import type { SiteSettingsProps } from '@/types/shared';
+import type { SeoMetaDataProps } from '@/types/shared';
 import type { COMPANY_LINKS_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute, type SanityLiveEditingProps } from '../../utils/sectionHelpers';
 import { contentBlockBottomSpacing } from '@/utils/spacingConstants';
@@ -23,7 +23,7 @@ interface TwoColumnLayoutProps extends Omit<SanityLiveEditingProps, 'titlePath' 
   verticallyCenter?: boolean;
   className?: string;
   pathPrefix?: string;
-  siteSettings?: SiteSettingsProps;
+  seoMetaData?: SeoMetaDataProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
   equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
@@ -41,7 +41,7 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   documentId,
   documentType,
   pathPrefix,
-  siteSettings,
+  seoMetaData,
   companyLinks,
   clientsData,
   equipmentListData,
@@ -67,7 +67,7 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
       documentId,
       documentType,
       blockPath,
-      siteSettings,
+      seoMetaData,
       companyLinks,
       clientsData,
       equipmentListData,

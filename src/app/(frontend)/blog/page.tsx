@@ -4,16 +4,16 @@ import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
 import Card from '@/components/_blocks/Card';
 import { closingCardSpacing } from '@/utils/spacingConstants';
-import { getSiteSettings, getCompanyLinks } from '@/actions';
+import { getSeoMetaData, getCompanyLinks } from '@/actions';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import { normalizeClosingCardForCard } from '@/utils/closingCardHelpers';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
 
 export async function generateMetadata() {
-  const [siteSettings, blogIndexPage] = await Promise.all([getSiteSettings(), getBlogIndexPage()]);
+  const [seoMetaData, blogIndexPage] = await Promise.all([getSeoMetaData(), getBlogIndexPage()]);
 
-  if (!siteSettings) {
+  if (!seoMetaData) {
     return {
       title: 'Blog | Taupiri Sound',
       description: 'Read our latest articles and insights',
@@ -22,17 +22,17 @@ export async function generateMetadata() {
 
   return generatePageMetadata({
     title: blogIndexPage?.title || 'Blog',
-    description: blogIndexPage?.subtitle || siteSettings.siteDescription || undefined,
-    siteSettings,
+    description: blogIndexPage?.subtitle || seoMetaData.siteDescription || undefined,
+    seoMetaData,
     canonicalUrl: generateCanonicalUrl('/blog'),
   });
 }
 
 export default async function BlogPage() {
-  const [blogPosts, blogIndexPage, siteSettings, companyLinks] = await Promise.all([
+  const [blogPosts, blogIndexPage, seoMetaData, companyLinks] = await Promise.all([
     getAllBlogPosts(),
     getBlogIndexPage(),
-    getSiteSettings(),
+    getSeoMetaData(),
     getCompanyLinks(),
   ]);
 
@@ -81,7 +81,7 @@ export default async function BlogPage() {
               documentId={blogIndexPage._id}
               documentType={blogIndexPage._type}
               fieldPathPrefix='closingCard'
-              siteSettings={siteSettings || undefined}
+              seoMetaData={seoMetaData || undefined}
               companyLinks={companyLinks}
             />
           </div>

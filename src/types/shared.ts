@@ -1,7 +1,7 @@
-// Shared type definitions for components that use site settings
+// Shared type definitions for components that use SEO & meta data
 // Using empty object type for now - can be extended with properties in the future
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface SiteSettingsProps {}
+export interface SeoMetaDataProps {}
 
 // Link system types - shared across CTA components
 export interface DereferencedPage {

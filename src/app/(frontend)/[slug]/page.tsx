@@ -4,7 +4,7 @@ import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
 import {
   getPageBySlug,
-  getSiteSettings,
+  getSeoMetaData,
   getCompanyLinks,
   getContactFormSettings,
   getClients,
@@ -19,7 +19,7 @@ import { closingCardSpacing } from '@/utils/spacingConstants';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
-  getOrganizationDataFromSiteSettings,
+  getOrganizationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
@@ -36,9 +36,9 @@ export const generateStaticParams = async () => {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [siteSettings, page] = await Promise.all([getSiteSettings(), getPageBySlug(slug)]);
+  const [seoMetaData, page] = await Promise.all([getSeoMetaData(), getPageBySlug(slug)]);
 
-  if (!siteSettings) {
+  if (!seoMetaData) {
     return {
       title: 'Page | Taupiri Sound',
       description: 'Discover more about our content',
@@ -54,8 +54,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return generatePageMetadata({
     title: page.title || undefined,
-    description: page.subtitle || siteSettings.siteDescription || undefined,
-    siteSettings,
+    description: page.subtitle || seoMetaData.siteDescription || undefined,
+    seoMetaData,
     canonicalUrl: generateCanonicalUrl(`/${slug}`),
   });
 }
@@ -64,7 +64,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const [
     page,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     contactFormSettings,
     clientsData,
@@ -73,7 +73,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
     allProjectsData,
   ] = await Promise.all([
     getPageBySlug(slug),
-    getSiteSettings(),
+    getSeoMetaData(),
     getCompanyLinks(),
     getContactFormSettings(),
     getClients(),
@@ -96,8 +96,8 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   // Generate Article structured data
   let articleSchema;
-  if (siteSettings && page._createdAt && page._updatedAt) {
-    const organizationData = getOrganizationDataFromSiteSettings(siteSettings, baseUrl);
+  if (seoMetaData && page._createdAt && page._updatedAt) {
+    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     articleSchema = generateArticleSchema({
       headline: page.title || 'Page',
@@ -106,7 +106,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       datePublished: page._createdAt,
       dateModified: page._updatedAt,
       author: {
-        name: siteSettings.siteTitle || 'Taupiri Sound',
+        name: seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
       publisher: organizationData,
@@ -144,7 +144,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
             content={page.content}
             documentId={page._id}
             documentType={page._type}
-            siteSettings={siteSettings || undefined}
+            seoMetaData={seoMetaData || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
             equipmentListData={equipmentListData}
@@ -162,7 +162,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               documentId={page._id}
               documentType={page._type}
               fieldPathPrefix='closingCard'
-              siteSettings={siteSettings || undefined}
+              seoMetaData={seoMetaData || undefined}
               companyLinks={companyLinks}
             />
           </div>

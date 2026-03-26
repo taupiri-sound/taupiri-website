@@ -26,7 +26,7 @@ const CardIcon = (props: CardIconProps) => {
     documentId,
     documentType,
     fieldPathPrefix,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     createDataAttributeConfig,
   } = props;
@@ -55,7 +55,7 @@ const CardIcon = (props: CardIconProps) => {
         documentId,
         documentType,
         blockPath,
-        siteSettings,
+        seoMetaData,
         companyLinks,
         alignment,
         config: createDataAttributeConfig,

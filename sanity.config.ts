@@ -46,7 +46,7 @@ export default defineConfig({
       prev.filter(
         (item) =>
           ![
-            'siteSettings',
+            'seoMetaData',
             'header',
             'footer',
             'homePage',

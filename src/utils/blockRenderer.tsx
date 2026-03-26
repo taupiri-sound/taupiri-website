@@ -34,7 +34,7 @@ import type {
   Card as CardType,
   GridLayout as GridLayoutType,
 } from '@/sanity/types';
-import type { SiteSettingsProps } from '@/types/shared';
+import type { SeoMetaDataProps } from '@/types/shared';
 
 // Import all block components
 import RichText from '@/components/_blocks/RichText';
@@ -73,7 +73,7 @@ interface RenderBlockOptions {
   documentId?: string;
   documentType?: string;
   blockPath: string;
-  siteSettings?: SiteSettingsProps;
+  seoMetaData?: SeoMetaDataProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
   equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
@@ -124,7 +124,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
     documentId,
     documentType,
     blockPath,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     clientsData,
     equipmentListData,
@@ -201,7 +201,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             documentId={documentId}
             documentType={documentType}
             pathPrefix={blockPath}
-            siteSettings={siteSettings}
+            seoMetaData={seoMetaData}
             companyLinks={companyLinks}
             clientsData={clientsData}
             equipmentListData={equipmentListData}
@@ -473,7 +473,7 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             documentId={documentId}
             documentType={documentType}
             fieldPathPrefix={blockPath}
-            siteSettings={siteSettings}
+            seoMetaData={seoMetaData}
             companyLinks={companyLinks}
             alignment={alignment}
           />

@@ -4,7 +4,7 @@ import PageBuilder from '@/components/PageBuilder';
 import PageHero from '@/components/Page/PageHero';
 import {
   getPrivacyPolicy,
-  getSiteSettings,
+  getSeoMetaData,
   getCompanyLinks,
   getContactFormSettings,
   getClients,
@@ -14,16 +14,16 @@ import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl, getBaseUrl } from '@/lib/metadata';
 import {
   generateArticleSchema,
-  getOrganizationDataFromSiteSettings,
+  getOrganizationDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import BreadcrumbStructuredData from '@/components/StructuredData/BreadcrumbStructuredData';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 
 export async function generateMetadata() {
-  const [siteSettings, privacyData] = await Promise.all([getSiteSettings(), getPrivacyPolicy()]);
+  const [seoMetaData, privacyData] = await Promise.all([getSeoMetaData(), getPrivacyPolicy()]);
 
-  if (!siteSettings) {
+  if (!seoMetaData) {
     return {
       title: 'Privacy Policy | Taupiri Sound',
       description: 'Privacy policy for our website and how we handle your data',
@@ -35,8 +35,8 @@ export async function generateMetadata() {
   return generatePageMetadata({
     title,
     description:
-      siteSettings.siteDescription || 'Privacy policy for our website and how we handle your data',
-    siteSettings,
+      seoMetaData.siteDescription || 'Privacy policy for our website and how we handle your data',
+    seoMetaData,
     canonicalUrl: generateCanonicalUrl('/privacy-policy'),
   });
 }
@@ -44,14 +44,14 @@ export async function generateMetadata() {
 const PrivacyPolicyPage = async () => {
   const [
     privacyData,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     contactFormSettings,
     clientsData,
     allProjectsData,
   ] = await Promise.all([
     getPrivacyPolicy(),
-    getSiteSettings(),
+    getSeoMetaData(),
     getCompanyLinks(),
     getContactFormSettings(),
     getClients(),
@@ -73,16 +73,16 @@ const PrivacyPolicyPage = async () => {
 
   // Generate Article structured data
   let articleSchema;
-  if (siteSettings && privacyData._updatedAt) {
-    const organizationData = getOrganizationDataFromSiteSettings(siteSettings, baseUrl);
+  if (seoMetaData && privacyData._updatedAt) {
+    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
 
     articleSchema = generateArticleSchema({
       headline: privacyData.title || 'Privacy Policy',
-      description: siteSettings.siteDescription || undefined,
+      description: seoMetaData.siteDescription || undefined,
       datePublished: privacyData._updatedAt,
       dateModified: privacyData._updatedAt,
       author: {
-        name: siteSettings.siteTitle || 'Taupiri Sound',
+        name: seoMetaData.siteTitle || 'Taupiri Sound',
         type: 'Organization',
       },
       publisher: organizationData,
@@ -120,7 +120,7 @@ const PrivacyPolicyPage = async () => {
             content={privacyData.content}
             documentId={privacyData._id}
             documentType={privacyData._type}
-            siteSettings={siteSettings || undefined}
+            seoMetaData={seoMetaData || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
             allProjectsData={allProjectsData}

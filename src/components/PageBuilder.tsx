@@ -11,7 +11,7 @@ import type {
   CONTACT_FORM_SETTINGS_QUERYResult,
 } from '@/sanity/types';
 import type { NestedBlock } from '@/types/blocks';
-import type { SiteSettingsProps } from '@/types/shared';
+import type { SeoMetaDataProps } from '@/types/shared';
 import { client } from '@/sanity/lib/client';
 import { createDataAttribute } from 'next-sanity';
 import { useOptimistic } from 'react';
@@ -31,7 +31,7 @@ import { renderBlock } from '@/utils/blockRenderer';
 interface SharedPageBuilderProps {
   documentId: string;
   documentType: string;
-  siteSettings?: SiteSettingsProps;
+  seoMetaData?: SeoMetaDataProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   clientsData?: CLIENTS_QUERYResult | null;
   equipmentListData?: EQUIPMENT_LIST_QUERYResult | null;
@@ -66,7 +66,7 @@ const BlockRenderer = ({
   documentType,
   pathPrefix,
   nestingLevel = 1,
-  siteSettings,
+  seoMetaData,
   companyLinks,
   clientsData,
   equipmentListData,
@@ -202,7 +202,7 @@ const BlockRenderer = ({
               documentType={documentType}
               pathPrefix={`${blockPath}.content`}
               nestingLevel={nestingLevel + 1}
-              siteSettings={siteSettings}
+              seoMetaData={seoMetaData}
               companyLinks={companyLinks}
               clientsData={clientsData}
               equipmentListData={equipmentListData}
@@ -310,7 +310,7 @@ const BlockRenderer = ({
                   documentId={documentId}
                   documentType={documentType}
                   fieldPathPrefix={blockPath}
-                  siteSettings={siteSettings}
+                  seoMetaData={seoMetaData}
                   companyLinks={companyLinks}
                   alignment={alignment}
                 />
@@ -339,7 +339,7 @@ const BlockRenderer = ({
                   documentId,
                   documentType,
                   blockPath,
-                  siteSettings,
+                  seoMetaData,
                   companyLinks,
                   clientsData,
                   equipmentListData,
@@ -362,7 +362,7 @@ const PageBuilder = ({
   documentId,
   documentType,
   pathPrefix = 'content',
-  siteSettings,
+  seoMetaData,
   companyLinks,
   clientsData,
   equipmentListData,
@@ -391,7 +391,7 @@ const PageBuilder = ({
         documentId={documentId}
         documentType={documentType}
         pathPrefix={pathPrefix}
-        siteSettings={siteSettings}
+        seoMetaData={seoMetaData}
         companyLinks={companyLinks}
         clientsData={clientsData}
         equipmentListData={equipmentListData}

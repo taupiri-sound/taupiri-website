@@ -22,7 +22,7 @@ const CardNoImage = (props: CardNoImageProps) => {
     documentId,
     documentType,
     fieldPathPrefix,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     createDataAttributeConfig,
   } = props;
@@ -46,7 +46,7 @@ const CardNoImage = (props: CardNoImageProps) => {
         documentId,
         documentType,
         blockPath,
-        siteSettings,
+        seoMetaData,
         companyLinks,
         alignment: cardAlignment,
         config: createDataAttributeConfig,

@@ -3,7 +3,7 @@ import PageBuilder from '@/components/PageBuilder';
 import Hero from '@/components/HomeHero/Hero';
 import {
   getHomePage,
-  getSiteSettings,
+  getSeoMetaData,
   getCompanyLinks,
   getContactFormSettings,
   getClients,
@@ -16,8 +16,8 @@ import Container from '@/components/Layout/Container';
 import { generateMetadata as generatePageMetadata, generateCanonicalUrl } from '@/lib/metadata';
 
 export async function generateMetadata() {
-  const siteSettings = await getSiteSettings();
-  if (!siteSettings) {
+  const seoMetaData = await getSeoMetaData();
+  if (!seoMetaData) {
     return {
       title: 'Taupiri Sound',
       description:
@@ -26,7 +26,7 @@ export async function generateMetadata() {
   }
 
   return generatePageMetadata({
-    siteSettings,
+    seoMetaData,
     canonicalUrl: generateCanonicalUrl('/'),
   });
 }
@@ -34,7 +34,7 @@ export async function generateMetadata() {
 const Page = async () => {
   const [
     page,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     contactFormSettings,
     clientsData,
@@ -43,7 +43,7 @@ const Page = async () => {
     allProjectsData,
   ] = await Promise.all([
     getHomePage(),
-    getSiteSettings(),
+    getSeoMetaData(),
     getCompanyLinks(),
     getContactFormSettings(),
     getClients(),
@@ -81,7 +81,7 @@ const Page = async () => {
             content={page.content as NonNullable<PAGE_QUERYResult>['content']}
             documentId={page._id}
             documentType={page._type}
-            siteSettings={siteSettings || undefined}
+            seoMetaData={seoMetaData || undefined}
             companyLinks={companyLinks}
             clientsData={clientsData}
             equipmentListData={equipmentListData}

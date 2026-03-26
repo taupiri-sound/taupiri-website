@@ -11,7 +11,7 @@ import { VisualEditingProvider } from '@/components/VisualEditingProvider';
 import {
   getHeader,
   getFooter,
-  getSiteSettings,
+  getSeoMetaData,
   getCompanyLinks,
   getLegalPagesVisibility,
 } from '@/actions';
@@ -22,16 +22,16 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
   generateLocalBusinessSchema,
-  getOrganizationDataFromSiteSettings,
-  getWebSiteDataFromSiteSettings,
-  getLocalBusinessDataFromSiteSettings,
+  getOrganizationDataFromSeoMetaData,
+  getWebSiteDataFromSeoMetaData,
+  getLocalBusinessDataFromSeoMetaData,
   generateStructuredDataScript,
 } from '@/lib/structuredData';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export async function generateMetadata() {
-  const siteSettings = await getSiteSettings();
-  if (!siteSettings) {
+  const seoMetaData = await getSeoMetaData();
+  if (!seoMetaData) {
     return {
       title: `${SITE_CONFIG.ORGANIZATION_NAME} | ${SITE_CONFIG.ORGANIZATION_DESCRIPTION}`,
       description: `Welcome to ${SITE_CONFIG.ORGANIZATION_NAME}`,
@@ -39,8 +39,8 @@ export async function generateMetadata() {
   }
 
   return generateDefaultMetadata({
-    siteSettings,
-    image: siteSettings.defaultOgImage, // Set default OG image at layout level
+    seoMetaData,
+    image: seoMetaData.defaultOgImage, // Set default OG image at layout level
   });
 }
 
@@ -51,7 +51,7 @@ const FrontendLayout = async ({
 }>) => {
   const headerData = await getHeader();
   const footerData = await getFooter();
-  const siteSettingsData = await getSiteSettings();
+  const seoMetaData = await getSeoMetaData();
   const companyLinksData = await getCompanyLinks();
   const legalPagesVisibilityData = await getLegalPagesVisibility();
 
@@ -62,10 +62,10 @@ const FrontendLayout = async ({
   let webSiteSchema;
   let localBusinessSchema;
 
-  if (siteSettingsData) {
-    const organizationData = getOrganizationDataFromSiteSettings(siteSettingsData, baseUrl);
-    const webSiteData = getWebSiteDataFromSiteSettings(siteSettingsData, baseUrl);
-    const localBusinessData = getLocalBusinessDataFromSiteSettings(siteSettingsData, baseUrl);
+  if (seoMetaData) {
+    const organizationData = getOrganizationDataFromSeoMetaData(seoMetaData, baseUrl);
+    const webSiteData = getWebSiteDataFromSeoMetaData(seoMetaData, baseUrl);
+    const localBusinessData = getLocalBusinessDataFromSeoMetaData(seoMetaData, baseUrl);
 
     organizationSchema = generateOrganizationSchema(organizationData);
     webSiteSchema = generateWebSiteSchema(webSiteData);

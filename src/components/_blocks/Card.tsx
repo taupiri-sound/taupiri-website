@@ -8,7 +8,7 @@ import CardNoImage from '../Card/CardNoImage';
 import CardBanner from '../Card/CardBanner';
 import CardIcon from '../Card/CardIcon';
 
-import type { SiteSettingsProps } from '@/types/shared';
+import type { SeoMetaDataProps } from '@/types/shared';
 import type { COMPANY_LINKS_QUERYResult } from '@/sanity/types';
 
 interface CardProps extends Omit<CardType, '_type'> {
@@ -18,7 +18,7 @@ interface CardProps extends Omit<CardType, '_type'> {
   documentId?: string;
   documentType?: string;
   fieldPathPrefix?: string;
-  siteSettings?: SiteSettingsProps;
+  seoMetaData?: SeoMetaDataProps;
   companyLinks?: COMPANY_LINKS_QUERYResult;
   alignment?: 'left' | 'center' | 'right';
 }
@@ -44,7 +44,7 @@ const Card = (props: CardProps) => {
     documentId,
     documentType,
     fieldPathPrefix,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     alignment = 'center',
   } = props;
@@ -82,7 +82,7 @@ const Card = (props: CardProps) => {
     documentId,
     documentType,
     fieldPathPrefix,
-    siteSettings,
+    seoMetaData,
     companyLinks,
     alignment,
     createDataAttributeConfig,

@@ -1,6 +1,6 @@
 import { staticSanityFetch, type FetchFn } from '@/sanity/lib/fetch';
-import { HEADER_QUERY, FOOTER_QUERY, SITE_SETTINGS_QUERY, COMPANY_LINKS_QUERY, CONTACT_FORM_SETTINGS_QUERY, LEGAL_PAGES_VISIBILITY_QUERY, CLIENTS_QUERY, EQUIPMENT_LIST_QUERY, TEAM_MEMBERS_QUERY, ALL_PROJECTS_QUERY, FEATURED_PROJECTS_QUERY } from '@/sanity/lib/queries';
-import type { FOOTER_QUERYResult, HEADER_QUERYResult, SITE_SETTINGS_QUERYResult, COMPANY_LINKS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult, LEGAL_PAGES_VISIBILITY_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, FEATURED_PROJECTS_QUERYResult } from '@/sanity/types';
+import { HEADER_QUERY, FOOTER_QUERY, SEO_META_DATA_QUERY, COMPANY_LINKS_QUERY, CONTACT_FORM_SETTINGS_QUERY, LEGAL_PAGES_VISIBILITY_QUERY, CLIENTS_QUERY, EQUIPMENT_LIST_QUERY, TEAM_MEMBERS_QUERY, ALL_PROJECTS_QUERY, FEATURED_PROJECTS_QUERY } from '@/sanity/lib/queries';
+import type { FOOTER_QUERYResult, HEADER_QUERYResult, SEO_META_DATA_QUERYResult, COMPANY_LINKS_QUERYResult, CONTACT_FORM_SETTINGS_QUERYResult, LEGAL_PAGES_VISIBILITY_QUERYResult, CLIENTS_QUERYResult, EQUIPMENT_LIST_QUERYResult, TEAM_MEMBERS_QUERYResult, ALL_PROJECTS_QUERYResult, FEATURED_PROJECTS_QUERYResult } from '@/sanity/types';
 
 // Header actions
 export async function getHeader(fetchFn: FetchFn = staticSanityFetch): Promise<HEADER_QUERYResult | null> {
@@ -22,14 +22,14 @@ export async function getFooter(fetchFn: FetchFn = staticSanityFetch): Promise<F
   return data as FOOTER_QUERYResult | null;
 }
 
-// Site Settings actions
-export async function getSiteSettings(fetchFn: FetchFn = staticSanityFetch): Promise<SITE_SETTINGS_QUERYResult | null> {
+// SEO & Meta Data actions
+export async function getSeoMetaData(fetchFn: FetchFn = staticSanityFetch): Promise<SEO_META_DATA_QUERYResult | null> {
   const { data } = await fetchFn({
-    query: SITE_SETTINGS_QUERY,
-    tags: ['sanity', 'siteSettings'],
+    query: SEO_META_DATA_QUERY,
+    tags: ['sanity', 'seoMetaData'],
   });
 
-  return data as SITE_SETTINGS_QUERYResult | null;
+  return data as SEO_META_DATA_QUERYResult | null;
 }
 
 // Company Links actions

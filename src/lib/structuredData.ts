@@ -1,5 +1,5 @@
 import { urlFor } from '@/sanity/lib/image';
-import type { SITE_SETTINGS_QUERYResult } from '@/sanity/types';
+import type { SEO_META_DATA_QUERYResult } from '@/sanity/types';
 import type { ImageObjectData } from '@/lib/imageUtils';
 import { SITE_CONFIG } from '@/lib/constants';
 
@@ -226,31 +226,31 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
-export function getOrganizationDataFromSiteSettings(
-  siteSettings: SITE_SETTINGS_QUERYResult,
+export function getOrganizationDataFromSeoMetaData(
+  seoMetaData: SEO_META_DATA_QUERYResult,
   baseUrl: string
 ): OrganizationData {
   return {
-    name: siteSettings?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
+    name: seoMetaData?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
     url: baseUrl,
     email: SITE_CONFIG.ORGANIZATION_EMAIL.value,
     telephone: SITE_CONFIG.ORGANIZATION_PHONE.value,
     address: SITE_CONFIG.ORGANIZATION_ADDRESS.value,
-    ...(siteSettings?.siteDescription && { description: siteSettings.siteDescription }),
-    ...(siteSettings?.defaultOgImage && {
-      logo: urlFor(siteSettings.defaultOgImage).width(512).height(512).url(),
+    ...(seoMetaData?.siteDescription && { description: seoMetaData.siteDescription }),
+    ...(seoMetaData?.defaultOgImage && {
+      logo: urlFor(seoMetaData.defaultOgImage).width(512).height(512).url(),
     }),
   };
 }
 
-export function getWebSiteDataFromSiteSettings(
-  siteSettings: SITE_SETTINGS_QUERYResult,
+export function getWebSiteDataFromSeoMetaData(
+  seoMetaData: SEO_META_DATA_QUERYResult,
   baseUrl: string
 ): WebSiteData {
   return {
-    name: siteSettings?.siteTitle || 'Taupiri Sound',
+    name: seoMetaData?.siteTitle || 'Taupiri Sound',
     url: baseUrl,
-    ...(siteSettings?.siteDescription && { description: siteSettings.siteDescription }),
+    ...(seoMetaData?.siteDescription && { description: seoMetaData.siteDescription }),
   };
 }
 
@@ -261,13 +261,13 @@ export function getWebSiteDataFromSiteSettings(
  * in SITE_CONFIG in constants.ts for easy maintenance. Update constants.ts to change
  * business information across the entire site.
  */
-export function getLocalBusinessDataFromSiteSettings(
-  siteSettings: SITE_SETTINGS_QUERYResult,
+export function getLocalBusinessDataFromSeoMetaData(
+  seoMetaData: SEO_META_DATA_QUERYResult,
   baseUrl: string
 ): LocalBusinessData {
   return {
-    name: siteSettings?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
-    description: siteSettings?.siteDescription || SITE_CONFIG.ORGANIZATION_DESCRIPTION,
+    name: seoMetaData?.siteTitle || SITE_CONFIG.ORGANIZATION_NAME,
+    description: seoMetaData?.siteDescription || SITE_CONFIG.ORGANIZATION_DESCRIPTION,
     url: baseUrl,
     telephone: SITE_CONFIG.ORGANIZATION_PHONE.value,
     email: SITE_CONFIG.ORGANIZATION_EMAIL.value,
@@ -284,11 +284,11 @@ export function getLocalBusinessDataFromSiteSettings(
     },
     openingHours: SITE_CONFIG.BUSINESS_HOURS,
     ...(SITE_CONFIG.PRICE_RANGE !== '' && { priceRange: SITE_CONFIG.PRICE_RANGE }),
-    ...(siteSettings?.defaultOgImage && {
-      image: urlFor(siteSettings.defaultOgImage).width(1200).height(630).url(),
+    ...(seoMetaData?.defaultOgImage && {
+      image: urlFor(seoMetaData.defaultOgImage).width(1200).height(630).url(),
     }),
-    ...(siteSettings?.defaultOgImage && {
-      logo: urlFor(siteSettings.defaultOgImage).width(512).height(512).url(),
+    ...(seoMetaData?.defaultOgImage && {
+      logo: urlFor(seoMetaData.defaultOgImage).width(512).height(512).url(),
     }),
     areaServed: SITE_CONFIG.SERVICE_AREAS,
     sameAs: SITE_CONFIG.SOCIAL_MEDIA_PROFILES,
