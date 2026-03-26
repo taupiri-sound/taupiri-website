@@ -198,19 +198,20 @@ export const structure: StructureResolver = (S) =>
                     .documentId('privacyPolicy')
                     .title('Privacy Policy'),
                 ),
-              // Contact Form Settings - Singleton
-              S.listItem()
-                .id('contactFormSettings')
-                .schemaType('contactFormSettings')
-                .title('Contact Form')
-                .child(
-                  S.editor()
-                    .id('contactFormSettings')
-                    .schemaType('contactFormSettings')
-                    .documentId('contactFormSettings')
-                    .title('Contact Form Settings'),
-                ),
             ]),
+        ),
+
+      // === CONTACT FORM SETTINGS ===
+      S.listItem()
+        .id('contactFormSettings')
+        .schemaType('contactFormSettings')
+        .title('Contact Form')
+        .child(
+          S.editor()
+            .id('contactFormSettings')
+            .schemaType('contactFormSettings')
+            .documentId('contactFormSettings')
+            .title('Contact Form Settings'),
         ),
 
       S.divider(),
