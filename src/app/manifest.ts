@@ -1,5 +1,4 @@
 import type { MetadataRoute } from 'next';
-import { SITE_CONFIG } from '@/lib/constants';
 import { getBusinessInfo } from '@/actions';
 
 /**
@@ -8,8 +7,8 @@ import { getBusinessInfo } from '@/actions';
  * This manifest allows users to install the Taupiri Sound website as a Progressive Web App (PWA)
  * on mobile devices, providing an app-like experience.
  *
- * PWA settings (name, colors, description) are centralized in SITE_CONFIG.PWA_MANIFEST
- * in constants.ts for easy maintenance. Update constants.ts to change PWA configuration.
+ * PWA name and description are sourced from Business & Contact Info in Sanity.
+ * Theme and background colors are hard-coded to match brand colors in globals.css.
  *
  * The icon is sourced dynamically from the Sanity favicon field in Business & Contact Info.
  * If no favicon is set, no icons are included in the manifest.
@@ -17,15 +16,17 @@ import { getBusinessInfo } from '@/actions';
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
   const businessInfo = await getBusinessInfo();
   const faviconUrl = businessInfo?.favicon?.asset?.url ?? null;
+  const name = businessInfo?.organisationName ?? '';
+  const description = businessInfo?.organisationDescription ?? '';
 
   return {
-    name: SITE_CONFIG.PWA_MANIFEST.name,
-    short_name: SITE_CONFIG.PWA_MANIFEST.shortName,
-    description: SITE_CONFIG.PWA_MANIFEST.description,
+    name,
+    short_name: name,
+    description,
     start_url: '/',
     display: 'standalone',
-    background_color: SITE_CONFIG.PWA_MANIFEST.backgroundColor,
-    theme_color: SITE_CONFIG.PWA_MANIFEST.themeColor,
+    background_color: '#430c08', // --color-brand-secondary
+    theme_color: '#900000', // --color-brand-primary
     icons: faviconUrl
       ? [
           {

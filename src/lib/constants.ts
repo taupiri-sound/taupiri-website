@@ -55,17 +55,6 @@ export const SITE_CONFIG = {
   // Add additional social media URLs as they become available
   SOCIAL_MEDIA_PROFILES: ['https://www.facebook.com/taupirisound/'],
 
-  // PWA Manifest Settings - Used for Progressive Web App configuration
-  // Update these values to customize the "Add to Home Screen" experience
-  PWA_MANIFEST: {
-    name: 'Taupiri Sound - Recording Studio',
-    shortName: 'Taupiri Sound',
-    description:
-      'Professional recording studio in Waikato, New Zealand. Over a decade of experience working with artists and educational projects.',
-    // Theme colors should match brand colors in globals.css
-    themeColor: '#900000', // --color-brand-primary
-    backgroundColor: '#430c08', // --color-brand-secondary
-  },
 } as const;
 
 // Type-safe access to configuration values
