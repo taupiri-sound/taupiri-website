@@ -1,5 +1,5 @@
 import { urlFor } from '@/sanity/lib/image';
-import type { SEO_META_DATA_QUERYResult, BUSINESS_INFO_QUERYResult } from '@/sanity/types';
+import type { SEO_META_DATA_QUERYResult, BUSINESS_INFO_QUERYResult, COMPANY_LINKS_QUERYResult } from '@/sanity/types';
 import type { ImageObjectData } from '@/lib/imageUtils';
 import { SITE_CONFIG } from '@/lib/constants';
 
@@ -265,8 +265,16 @@ export function getWebSiteDataFromSeoMetaData(
 export function getLocalBusinessDataFromSeoMetaData(
   seoMetaData: SEO_META_DATA_QUERYResult,
   baseUrl: string,
-  businessInfo?: BUSINESS_INFO_QUERYResult
+  businessInfo?: BUSINESS_INFO_QUERYResult,
+  companyLinksData?: COMPANY_LINKS_QUERYResult | null
 ): LocalBusinessData {
+  const socialUrls =
+    companyLinksData?._type === 'companyLinks'
+      ? (companyLinksData.companyLinks?.socialLinksArray
+          ?.map((link) => link.url)
+          .filter((url): url is string => !!url) ?? [])
+      : [];
+
   return {
     name: seoMetaData?.siteTitle || businessInfo?.organisationName || '',
     description: seoMetaData?.siteDescription || businessInfo?.organisationDescription || '',
@@ -293,7 +301,7 @@ export function getLocalBusinessDataFromSeoMetaData(
       logo: urlFor(seoMetaData.defaultOgImage).width(512).height(512).url(),
     }),
     areaServed: SITE_CONFIG.SERVICE_AREAS,
-    sameAs: SITE_CONFIG.SOCIAL_MEDIA_PROFILES,
+    sameAs: socialUrls,
   };
 }
 

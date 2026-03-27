@@ -51,10 +51,6 @@ export const SITE_CONFIG = {
     { type: 'City', name: 'Auckland' },
   ],
 
-  // Social Media Profiles - Used for LocalBusiness structured data
-  // Add additional social media URLs as they become available
-  SOCIAL_MEDIA_PROFILES: ['https://www.facebook.com/taupirisound/'],
-
 } as const;
 
 // Type-safe access to configuration values

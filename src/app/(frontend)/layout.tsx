@@ -71,7 +71,7 @@ const FrontendLayout = async ({
   if (seoMetaData) {
     const organisationData = getOrganisationDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo);
     const webSiteData = getWebSiteDataFromSeoMetaData(seoMetaData, baseUrl);
-    const localBusinessData = getLocalBusinessDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo);
+    const localBusinessData = getLocalBusinessDataFromSeoMetaData(seoMetaData, baseUrl, businessInfo, companyLinksData);
 
     organisationSchema = generateOrganisationSchema(organisationData);
     webSiteSchema = generateWebSiteSchema(webSiteData);
