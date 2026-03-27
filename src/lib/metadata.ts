@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { urlFor } from '@/sanity/lib/image';
-import type { SEO_META_DATA_QUERYResult } from '@/sanity/types';
+import type { SEO_META_DATA_QUERYResult, BUSINESS_INFO_QUERYResult } from '@/sanity/types';
 import { SITE_CONFIG } from '@/lib/constants';
 
 /**
@@ -36,6 +36,7 @@ export interface MetadataConfig {
   } | null;
   canonicalUrl?: string;
   seoMetaData: SEO_META_DATA_QUERYResult;
+  businessInfo?: BUSINESS_INFO_QUERYResult | null;
   publishedTime?: string;
   modifiedTime?: string;
 }
@@ -46,6 +47,7 @@ export function generateMetadata({
   image,
   canonicalUrl,
   seoMetaData,
+  businessInfo,
   publishedTime,
   modifiedTime,
 }: MetadataConfig): Metadata {
@@ -85,12 +87,14 @@ export function generateMetadata({
       },
     }),
     // Geographic meta tags for local SEO
-    other: {
-      'geo.region': SITE_CONFIG.BUSINESS_LOCATION.regionCode,
-      'geo.placename': SITE_CONFIG.BUSINESS_LOCATION.addressLocality,
-      'geo.position': `${SITE_CONFIG.BUSINESS_LOCATION.latitude};${SITE_CONFIG.BUSINESS_LOCATION.longitude}`,
-      ICBM: `${SITE_CONFIG.BUSINESS_LOCATION.latitude}, ${SITE_CONFIG.BUSINESS_LOCATION.longitude}`,
-    },
+    ...(businessInfo?.businessLocation && {
+      other: {
+        'geo.region': businessInfo.businessLocation.regionCode || '',
+        'geo.placename': businessInfo.businessLocation.addressLocality || '',
+        'geo.position': `${businessInfo.businessLocation.latitude || ''};${businessInfo.businessLocation.longitude || ''}`,
+        ICBM: `${businessInfo.businessLocation.latitude || ''}, ${businessInfo.businessLocation.longitude || ''}`,
+      },
+    }),
     openGraph: {
       title: pageTitle,
       description: pageDescription,

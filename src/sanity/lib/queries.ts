@@ -484,6 +484,35 @@ export const BUSINESS_INFO_QUERY = defineQuery(`*[_id == "businessInfo"][0]{
     asset->{
       url
     }
+  },
+  email{
+    value,
+    link
+  },
+  phone{
+    value,
+    link
+  },
+  address{
+    value,
+    link
+  },
+  businessLocation{
+    streetAddress,
+    addressLocality,
+    postalCode,
+    addressRegion,
+    addressCountry,
+    latitude,
+    longitude,
+    regionCode
+  },
+  businessHours,
+  priceRange,
+  serviceAreas[]{
+    _key,
+    type,
+    name
   }
 }`);
 

@@ -1,7 +1,6 @@
 import { urlFor } from '@/sanity/lib/image';
 import type { SEO_META_DATA_QUERYResult, BUSINESS_INFO_QUERYResult, COMPANY_LINKS_QUERYResult } from '@/sanity/types';
 import type { ImageObjectData } from '@/lib/imageUtils';
-import { SITE_CONFIG } from '@/lib/constants';
 
 export interface OrganisationData {
   name: string;
@@ -234,9 +233,9 @@ export function getOrganisationDataFromSeoMetaData(
   return {
     name: seoMetaData?.siteTitle || businessInfo?.organisationName || '',
     url: baseUrl,
-    email: SITE_CONFIG.ORGANISATION_EMAIL.value,
-    telephone: SITE_CONFIG.ORGANISATION_PHONE.value,
-    address: SITE_CONFIG.ORGANISATION_ADDRESS.value,
+    ...(businessInfo?.email?.value && { email: businessInfo.email.value }),
+    ...(businessInfo?.phone?.value && { telephone: businessInfo.phone.value }),
+    ...(businessInfo?.address?.value && { address: businessInfo.address.value }),
     ...(seoMetaData?.siteDescription && { description: seoMetaData.siteDescription }),
     ...(seoMetaData?.defaultOgImage && {
       logo: urlFor(seoMetaData.defaultOgImage).width(512).height(512).url(),
@@ -256,11 +255,10 @@ export function getWebSiteDataFromSeoMetaData(
 }
 
 /**
- * Generates LocalBusiness structured data from site settings and business constants.
+ * Generates LocalBusiness structured data from site settings and Sanity businessInfo.
  *
- * Business-specific data (location, hours, service areas, social media) is centralized
- * in SITE_CONFIG in constants.ts for easy maintenance. Update constants.ts to change
- * business information across the entire site.
+ * Business-specific data (location, hours, service areas) is managed in the
+ * "Business & Contact Info" singleton in Sanity Studio.
  */
 export function getLocalBusinessDataFromSeoMetaData(
   seoMetaData: SEO_META_DATA_QUERYResult,
@@ -275,32 +273,36 @@ export function getLocalBusinessDataFromSeoMetaData(
           .filter((url): url is string => !!url) ?? [])
       : [];
 
+  const loc = businessInfo?.businessLocation;
+  const priceRange = businessInfo?.priceRange;
+
   return {
     name: seoMetaData?.siteTitle || businessInfo?.organisationName || '',
     description: seoMetaData?.siteDescription || businessInfo?.organisationDescription || '',
     url: baseUrl,
-    telephone: SITE_CONFIG.ORGANISATION_PHONE.value,
-    email: SITE_CONFIG.ORGANISATION_EMAIL.value,
+    telephone: businessInfo?.phone?.value || '',
+    email: businessInfo?.email?.value || '',
     address: {
-      streetAddress: SITE_CONFIG.BUSINESS_LOCATION.streetAddress,
-      addressLocality: SITE_CONFIG.BUSINESS_LOCATION.addressLocality,
-      postalCode: SITE_CONFIG.BUSINESS_LOCATION.postalCode,
-      addressRegion: SITE_CONFIG.BUSINESS_LOCATION.addressRegion,
-      addressCountry: SITE_CONFIG.BUSINESS_LOCATION.addressCountry,
+      streetAddress: loc?.streetAddress || '',
+      addressLocality: loc?.addressLocality || '',
+      postalCode: loc?.postalCode || '',
+      addressRegion: loc?.addressRegion || '',
+      addressCountry: loc?.addressCountry || '',
     },
     geo: {
-      latitude: SITE_CONFIG.BUSINESS_LOCATION.latitude,
-      longitude: SITE_CONFIG.BUSINESS_LOCATION.longitude,
+      latitude: parseFloat(loc?.latitude || '0'),
+      longitude: parseFloat(loc?.longitude || '0'),
     },
-    openingHours: SITE_CONFIG.BUSINESS_HOURS,
-    ...(SITE_CONFIG.PRICE_RANGE !== '' && { priceRange: SITE_CONFIG.PRICE_RANGE }),
+    ...(businessInfo?.businessHours && { openingHours: businessInfo.businessHours }),
+    ...(priceRange && priceRange !== '' && { priceRange }),
     ...(seoMetaData?.defaultOgImage && {
       image: urlFor(seoMetaData.defaultOgImage).width(1200).height(630).url(),
     }),
     ...(seoMetaData?.defaultOgImage && {
       logo: urlFor(seoMetaData.defaultOgImage).width(512).height(512).url(),
     }),
-    areaServed: SITE_CONFIG.SERVICE_AREAS,
+    areaServed: (businessInfo?.serviceAreas ?? [])
+      .filter((a): a is { _key: string; type: string; name: string } => !!a.type && !!a.name),
     sameAs: socialUrls,
   };
 }

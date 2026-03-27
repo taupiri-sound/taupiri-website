@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { SITE_CONFIG } from '@/lib/constants';
 import { getBusinessInfo } from '@/actions';
 
 const MaintenancePage = async () => {
@@ -34,20 +33,24 @@ const MaintenancePage = async () => {
             For all enquiries, please contact Lance:
           </p>
           <div className='space-y-2 text-body-base text-brand-white/80'>
-            <p>
-              <a
-                href={SITE_CONFIG.ORGANISATION_EMAIL.link}
-                className='hover:text-brand-white transition-colors underline'>
-                {SITE_CONFIG.ORGANISATION_EMAIL.value}
-              </a>
-            </p>
-            <p>
-              <a
-                href={SITE_CONFIG.ORGANISATION_PHONE.link}
-                className='hover:text-brand-white transition-colors underline'>
-                {SITE_CONFIG.ORGANISATION_PHONE.value}
-              </a>
-            </p>
+            {businessInfo?.email?.link && businessInfo?.email?.value && (
+              <p>
+                <a
+                  href={businessInfo.email.link}
+                  className='hover:text-brand-white transition-colors underline'>
+                  {businessInfo.email.value}
+                </a>
+              </p>
+            )}
+            {businessInfo?.phone?.link && businessInfo?.phone?.value && (
+              <p>
+                <a
+                  href={businessInfo.phone.link}
+                  className='hover:text-brand-white transition-colors underline'>
+                  {businessInfo.phone.value}
+                </a>
+              </p>
+            )}
           </div>
         </div>
       </div>

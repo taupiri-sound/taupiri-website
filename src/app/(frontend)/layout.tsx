@@ -43,6 +43,7 @@ export async function generateMetadata() {
 
   return generateDefaultMetadata({
     seoMetaData,
+    businessInfo,
     image: seoMetaData.defaultOgImage, // Set default OG image at layout level
   });
 }
@@ -113,6 +114,7 @@ const FrontendLayout = async ({
             footerData={footerData}
             companyLinksData={companyLinksData}
             legalPagesVisibilityData={legalPagesVisibilityData}
+            businessInfoData={businessInfo}
           />
           {(await draftMode()).isEnabled && (
             <>

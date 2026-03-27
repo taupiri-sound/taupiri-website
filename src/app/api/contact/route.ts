@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { generateConfirmationEmail } from '@/lib/email-templates/confirmationEmail';
 import { generateAdminNotificationEmail } from '@/lib/email-templates/adminNotificationEmail';
-import { SITE_CONFIG } from '@/lib/constants';
 import { getBusinessInfo, getContactFormSettings } from '@/actions';
 
 // Initialize Resend with API key from environment variable
@@ -190,12 +189,18 @@ export async function POST(request: Request) {
         emailGreeting: contactFormSettings?.emailGreeting || undefined,
         emailIntroMessage: contactFormSettings?.emailIntroMessage || undefined,
         emailOutroMessage: contactFormSettings?.emailOutroMessage || undefined,
+        orgEmail: businessInfo?.email?.value || undefined,
+        orgEmailLink: businessInfo?.email?.link || undefined,
+        orgPhone: businessInfo?.phone?.value || undefined,
+        orgPhoneLink: businessInfo?.phone?.link || undefined,
+        orgAddress: businessInfo?.address?.value || undefined,
+        orgAddressLink: businessInfo?.address?.link || undefined,
       });
 
       const confirmationEmailResult = await resend.emails.send({
         from: fromEmail,
         to: sanitizedEmail,
-        replyTo: SITE_CONFIG.ORGANISATION_EMAIL.value,
+        replyTo: businessInfo?.email?.value || undefined,
         subject: `Thank you for contacting ${organisationName}`,
         html: confirmationEmailHtml,
       });

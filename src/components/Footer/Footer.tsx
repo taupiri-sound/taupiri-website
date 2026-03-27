@@ -13,8 +13,8 @@ import type {
   FOOTER_QUERYResult,
   COMPANY_LINKS_QUERYResult,
   LEGAL_PAGES_VISIBILITY_QUERYResult,
+  BUSINESS_INFO_QUERYResult,
 } from '@/sanity/types';
-import { SITE_CONFIG } from '@/lib/constants';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { GoLocation } from 'react-icons/go';
@@ -29,27 +29,22 @@ interface FooterProps {
   footerData: FOOTER_QUERYResult | null;
   companyLinksData: COMPANY_LINKS_QUERYResult | null;
   legalPagesVisibilityData: LEGAL_PAGES_VISIBILITY_QUERYResult | null;
+  businessInfoData: BUSINESS_INFO_QUERYResult | null;
 }
 
-const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData }: FooterProps) => {
+const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData, businessInfoData }: FooterProps) => {
   const { isPageReady } = usePageLoad();
 
   const contactDetails = [
-    {
-      icon: <FaPhoneAlt />,
-      value: SITE_CONFIG.ORGANISATION_PHONE.value,
-      link: SITE_CONFIG.ORGANISATION_PHONE.link,
-    },
-    {
-      icon: <MdEmail />,
-      value: SITE_CONFIG.ORGANISATION_EMAIL.value,
-      link: SITE_CONFIG.ORGANISATION_EMAIL.link,
-    },
-    {
-      icon: <GoLocation />,
-      value: SITE_CONFIG.ORGANISATION_ADDRESS.value,
-      link: SITE_CONFIG.ORGANISATION_ADDRESS.link,
-    },
+    ...(businessInfoData?.phone?.value && businessInfoData?.phone?.link
+      ? [{ icon: <FaPhoneAlt />, value: businessInfoData.phone.value, link: businessInfoData.phone.link }]
+      : []),
+    ...(businessInfoData?.email?.value && businessInfoData?.email?.link
+      ? [{ icon: <MdEmail />, value: businessInfoData.email.value, link: businessInfoData.email.link }]
+      : []),
+    ...(businessInfoData?.address?.value && businessInfoData?.address?.link
+      ? [{ icon: <GoLocation />, value: businessInfoData.address.value, link: businessInfoData.address.link }]
+      : []),
   ];
 
   // Get quick links from CMS, filtering out invalid entries

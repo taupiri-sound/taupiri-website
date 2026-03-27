@@ -14,6 +14,12 @@ interface ConfirmationEmailData {
   emailGreeting?: string;
   emailIntroMessage?: string;
   emailOutroMessage?: string;
+  orgEmail?: string;
+  orgEmailLink?: string;
+  orgPhone?: string;
+  orgPhoneLink?: string;
+  orgAddress?: string;
+  orgAddressLink?: string;
 }
 
 export function generateConfirmationEmail(data: ConfirmationEmailData): string {
@@ -26,6 +32,12 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
     emailGreeting = 'Hi',
     emailIntroMessage = 'We have successfully received your message and will aim to get back to you as soon as possible.',
     emailOutroMessage = 'If you have any urgent questions, feel free to reach out to us directly.',
+    orgEmail = '',
+    orgEmailLink = '',
+    orgPhone = '',
+    orgPhoneLink = '',
+    orgAddress = '',
+    orgAddressLink = '',
   } = data;
 
   return `
@@ -133,27 +145,27 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                         />
                         <!-- Contact Info -->
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
+                          ${orgEmail ? `<tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="${SITE_CONFIG.ORGANISATION_EMAIL.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${SITE_CONFIG.ORGANISATION_EMAIL.value}
+                              <a href="${orgEmailLink || `mailto:${orgEmail}`}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${orgEmail}
                               </a>
                             </td>
-                          </tr>
-                          <tr>
+                          </tr>` : ''}
+                          ${orgPhone ? `<tr>
                             <td align="center" style="padding: 5px 0;">
-                              <a href="${SITE_CONFIG.ORGANISATION_PHONE.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${SITE_CONFIG.ORGANISATION_PHONE.value}
+                              <a href="${orgPhoneLink || `tel:${orgPhone}`}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${orgPhone}
                               </a>
                             </td>
-                          </tr>
-                          <tr>
+                          </tr>` : ''}
+                          ${orgAddress ? `<tr>
                             <td align="center" style="padding: 5px 0; color: #b8956a; font-size: 14px;">
-                              <a href="${SITE_CONFIG.ORGANISATION_ADDRESS.link}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
-                                ${SITE_CONFIG.ORGANISATION_ADDRESS.value}
+                              <a href="${orgAddressLink}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
+                                ${orgAddress}
                               </a>
                             </td>
-                          </tr>
+                          </tr>` : ''}
                           <tr>
                             <td align="center" style="padding: 5px 0; color: #b8956a; font-size: 14px;">
                               <a href="${SITE_CONFIG.PRODUCTION_DOMAIN}" style="color: #b8956a; text-decoration: none; font-size: 14px;">
