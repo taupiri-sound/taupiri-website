@@ -479,7 +479,12 @@ export const BUSINESS_INFO_QUERY = defineQuery(`*[_id == "businessInfo"][0]{
   _id,
   _type,
   organisationName,
-  organisationDescription
+  organisationDescription,
+  favicon{
+    asset->{
+      url
+    }
+  }
 }`);
 
 export const SEO_META_DATA_QUERY = defineQuery(`*[_id == "seoMetaData"][0]{

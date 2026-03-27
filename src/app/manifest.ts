@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { SITE_CONFIG } from '@/lib/constants';
+import { getBusinessInfo } from '@/actions';
 
 /**
  * Web App Manifest - Enables "Add to Home Screen" functionality
@@ -9,8 +10,14 @@ import { SITE_CONFIG } from '@/lib/constants';
  *
  * PWA settings (name, colors, description) are centralized in SITE_CONFIG.PWA_MANIFEST
  * in constants.ts for easy maintenance. Update constants.ts to change PWA configuration.
+ *
+ * The icon is sourced dynamically from the Sanity favicon field in Business & Contact Info.
+ * If no favicon is set, no icons are included in the manifest.
  */
-export default function manifest(): MetadataRoute.Manifest {
+export default async function manifest(): Promise<MetadataRoute.Manifest> {
+  const businessInfo = await getBusinessInfo();
+  const faviconUrl = businessInfo?.favicon?.asset?.url ?? null;
+
   return {
     name: SITE_CONFIG.PWA_MANIFEST.name,
     short_name: SITE_CONFIG.PWA_MANIFEST.shortName,
@@ -19,21 +26,15 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     background_color: SITE_CONFIG.PWA_MANIFEST.backgroundColor,
     theme_color: SITE_CONFIG.PWA_MANIFEST.themeColor,
-    icons: [
-      {
-        src: '/icon2.png',
-        sizes: '192x192',
-        type: 'image/png',
-        purpose: 'any',
-      },
-      // TODO: Create 512x512 icon for better quality on high-res devices
-      // Once created, uncomment the following:
-      // {
-      //   src: '/icon-512.png',
-      //   sizes: '512x512',
-      //   type: 'image/png',
-      //   purpose: 'any',
-      // },
-    ],
+    icons: faviconUrl
+      ? [
+          {
+            src: faviconUrl,
+            sizes: 'any',
+            type: 'image/png',
+            purpose: 'any',
+          },
+        ]
+      : [],
   };
 }

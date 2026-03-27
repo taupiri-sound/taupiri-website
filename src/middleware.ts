@@ -50,8 +50,7 @@ export const config = {
      * Match all request paths except:
      * - _next/static (static files)
      * - _next/image (image optimization files)
-     * - favicon.ico, apple-icon.png, icon1.png, icon2.png (favicons)
      */
-    '/((?!_next/static|_next/image|favicon.ico|apple-icon.png|icon1.png|icon2.png).*)',
+    '/((?!_next/static|_next/image).*)',
   ],
 };

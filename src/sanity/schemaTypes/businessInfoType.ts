@@ -27,6 +27,13 @@ export const businessInfoType = defineType({
       rows: 3,
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'favicon',
+      type: 'image',
+      title: 'Favicon',
+      description:
+        'Custom favicon (browser tab icon). For best results, upload a square PNG image at least 512x512 pixels with a transparent background. SVG files also work well. If not set, no favicon is used.',
+    }),
   ],
   preview: {
     prepare() {

@@ -33,6 +33,8 @@ const RootLayout = async ({
 
   const businessInfo = await getBusinessInfo();
 
+  const faviconUrl = businessInfo?.favicon?.asset?.url ?? null;
+
   // Basic organisation structured data
   const organisationSchema = {
     '@context': 'https://schema.org',
@@ -47,6 +49,10 @@ const RootLayout = async ({
       <head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         {shouldHideFromRobots && <meta name='robots' content='noindex, nofollow' />}
+
+        {/* Dynamic icons from Sanity - only rendered when a favicon file is uploaded */}
+        {faviconUrl && <link rel='icon' href={faviconUrl} />}
+        {faviconUrl && <link rel='apple-touch-icon' href={faviconUrl} />}
 
         {/* Resource hints for performance */}
         <link rel='dns-prefetch' href='//cdn.sanity.io' />
