@@ -103,7 +103,7 @@ const Header = ({ headerData }: HeaderProps) => {
         }}>
         {/* Logo */}
         <Link
-          href='/#home'
+          href='/'
           className='flex items-center gap-2 transition-opacity duration-300'
           style={{
             opacity: headerOpacity,
