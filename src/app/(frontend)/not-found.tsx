@@ -72,18 +72,9 @@ export default function NotFound() {
           <div className='max-w-2xl mb-8 md:mb-12'>
             <h2 className='text-h3 md:text-h2 mb-4'>Oops! We can&apos;t find that page</h2>
             <p className='text-body-lg md:text-body-xl leading-relaxed mb-6'>
-              The page you&apos;re looking for doesn&apos;t exist or may have been moved. Don&apos;t
-              worry though - there&apos;s plenty to explore at Taupiri Sound!
+              The page you&apos;re looking for doesn&apos;t exist or may have been moved. Please
+              check the URL for errors.
             </p>
-          </div>
-
-          <div className='w-full max-w-4xl mb-12'>
-            <h3 className='text-h4 mb-6'>Here are some popular pages to get you back on track:</h3>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8'>
-              {navigationLinks.map((link, index) => (
-                <NavigationLink key={index} {...link} />
-              ))}
-            </div>
           </div>
 
           <CTA href='/' variant='filled' className='text-body-lg'>
