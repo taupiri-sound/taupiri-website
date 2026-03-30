@@ -36,7 +36,7 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
   // Extract position components
   const cleanPosition = stegaClean(
     heroContentPosition?.trim().replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g, '') ||
-      'center-center'
+      'center-center',
   );
   const [vertical, horizontal] = cleanPosition.split('-');
 
@@ -103,7 +103,7 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
       {...createSanityDataAttribute(documentId, documentType, 'heroContentPosition')}>
       {/* Content container with responsive alignment */}
       <div
-        className={`flex flex-col ${horizontalConfig.content} ${horizontalConfig.text} gap-4 sm:gap-6 max-w-4xl w-full mt-6`}>
+        className={`flex flex-col ${horizontalConfig.content} ${horizontalConfig.text} gap-4 sm:gap-6 max-w-4xl w-full mt-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]`}>
         {/* Logo - can shrink when needed */}
         <div className='flex-shrink min-h-0'>
           <HeroLogo {...componentProps} />
