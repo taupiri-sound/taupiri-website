@@ -9327,6 +9327,31 @@
           },
           "optional": true
         },
+        "iconSelection": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "acoustics"
+              },
+              {
+                "type": "string",
+                "value": "location"
+              },
+              {
+                "type": "string",
+                "value": "liveRoom"
+              },
+              {
+                "type": "string",
+                "value": "equipment"
+              }
+            ]
+          },
+          "optional": true
+        },
         "image": {
           "type": "objectAttribute",
           "value": {

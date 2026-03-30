@@ -97,6 +97,34 @@ export const cardType = defineType({
       },
     }),
     defineField({
+      name: 'iconSelection',
+      title: 'Icon',
+      type: 'string',
+      group: 'image',
+      options: {
+        list: [
+          { title: 'Acoustics', value: 'acoustics' },
+          { title: 'Location', value: 'location' },
+          { title: 'Live Room', value: 'liveRoom' },
+          { title: 'Equipment', value: 'equipment' },
+        ],
+      },
+      initialValue: 'acoustics',
+      description: 'Select an icon to display for this card',
+      hidden: ({ parent }) => {
+        const imageType = (parent as { imageType?: string })?.imageType;
+        return imageType !== 'icon';
+      },
+      validation: (Rule) =>
+        Rule.custom((value, context) => {
+          const parent = context.parent as { imageType?: string };
+          if (parent?.imageType === 'icon' && !value) {
+            return 'Please select an icon';
+          }
+          return true;
+        }),
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -113,12 +141,12 @@ export const cardType = defineType({
         },
       ],
       description: 'Upload the image for this card',
-      hidden: ({ parent }) => parent?.imageType === 'none',
+      hidden: ({ parent }) => parent?.imageType === 'none' || parent?.imageType === 'icon',
       validation: (Rule) =>
         Rule.custom((value, context) => {
           const parent = context.parent as { imageType?: string };
-          if (parent?.imageType && parent.imageType !== 'none' && !value) {
-            return 'Image is required when an image type is selected';
+          if (parent?.imageType === 'banner' && !value) {
+            return 'Image is required when Banner Image type is selected';
           }
           return true;
         }),

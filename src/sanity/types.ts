@@ -1403,6 +1403,7 @@ export type Card = {
   subtitle?: string;
   imageType?: "none" | "banner" | "icon";
   iconNoImageLayoutStyle?: "stacked" | "row";
+  iconSelection?: "acoustics" | "location" | "liveRoom" | "equipment";
   image?: {
     asset?: {
       _ref: string;
@@ -1818,6 +1819,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -2135,6 +2137,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -2762,6 +2765,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -3633,6 +3637,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -3949,6 +3954,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -4576,6 +4582,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -5411,6 +5418,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -5727,6 +5735,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -6354,6 +6363,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -7225,6 +7235,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -7528,6 +7539,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -8155,6 +8167,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -9032,6 +9045,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -9335,6 +9349,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -9962,6 +9977,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -10829,6 +10845,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -11444,6 +11461,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -12048,6 +12066,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -12615,6 +12634,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -13242,6 +13262,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -13888,6 +13909,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -14515,6 +14537,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -15163,6 +15186,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -15790,6 +15814,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -16486,6 +16511,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -17113,6 +17139,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -17727,6 +17754,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -18183,6 +18211,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -18500,6 +18529,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -19127,6 +19157,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -19998,6 +20029,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -20314,6 +20346,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -20941,6 +20974,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -21776,6 +21810,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -22092,6 +22127,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -22719,6 +22755,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -23590,6 +23627,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -23893,6 +23931,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -24520,6 +24559,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -25397,6 +25437,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -25700,6 +25741,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -26327,6 +26369,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -27194,6 +27237,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -27809,6 +27853,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -28413,6 +28458,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -28980,6 +29026,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -29607,6 +29654,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -30253,6 +30301,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -30880,6 +30929,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -31528,6 +31578,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -32155,6 +32206,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -32851,6 +32903,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -33478,6 +33531,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -34337,6 +34391,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -34654,6 +34709,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -35281,6 +35337,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -36152,6 +36209,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -36468,6 +36526,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -37095,6 +37154,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -37930,6 +37990,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -38246,6 +38307,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -38873,6 +38935,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -39744,6 +39807,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -40047,6 +40111,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -40674,6 +40739,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -41551,6 +41617,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -41854,6 +41921,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -42481,6 +42549,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -43348,6 +43417,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -43963,6 +44033,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -44567,6 +44638,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -45134,6 +45206,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -45761,6 +45834,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -46407,6 +46481,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -47034,6 +47109,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -47682,6 +47758,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -48309,6 +48386,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -49005,6 +49083,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -49632,6 +49711,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -50309,6 +50389,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -50626,6 +50707,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -51253,6 +51335,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -52124,6 +52207,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -52440,6 +52524,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -53067,6 +53152,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -53902,6 +53988,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -54218,6 +54305,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -54845,6 +54933,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -55716,6 +55805,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -56019,6 +56109,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -56646,6 +56737,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -57523,6 +57615,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -57826,6 +57919,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -58453,6 +58547,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -59320,6 +59415,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -59935,6 +60031,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -60539,6 +60636,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -61106,6 +61204,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -61733,6 +61832,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -62379,6 +62479,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -63006,6 +63107,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -63654,6 +63756,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -64281,6 +64384,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -64977,6 +65081,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -65604,6 +65709,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -66281,6 +66387,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -66598,6 +66705,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -67225,6 +67333,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -68096,6 +68205,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -68412,6 +68522,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -69039,6 +69150,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -69874,6 +69986,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -70190,6 +70303,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -70817,6 +70931,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -71688,6 +71803,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -71991,6 +72107,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -72618,6 +72735,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -73495,6 +73613,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -73798,6 +73917,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -74425,6 +74545,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -75292,6 +75413,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -75907,6 +76029,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -76511,6 +76634,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -77078,6 +77202,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -77705,6 +77830,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -78351,6 +78477,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -78978,6 +79105,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -79626,6 +79754,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -80253,6 +80382,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -80949,6 +81079,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -81576,6 +81707,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -82323,6 +82455,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -82640,6 +82773,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -83267,6 +83401,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -84138,6 +84273,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -84454,6 +84590,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -85081,6 +85218,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -85916,6 +86054,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -86232,6 +86371,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -86859,6 +86999,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -87730,6 +87871,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -88033,6 +88175,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -88660,6 +88803,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -89537,6 +89681,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -89840,6 +89985,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -90467,6 +90613,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -91334,6 +91481,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -91949,6 +92097,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -92553,6 +92702,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -93120,6 +93270,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -93747,6 +93898,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -94393,6 +94545,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -95020,6 +95173,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -95668,6 +95822,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -96295,6 +96450,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -96991,6 +97147,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -97618,6 +97775,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -99278,6 +99436,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -99660,6 +99819,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -100029,6 +100189,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -100478,6 +100639,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -100985,6 +101147,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -101302,6 +101465,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -101929,6 +102093,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -102800,6 +102965,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -103116,6 +103282,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -103743,6 +103910,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -104578,6 +104746,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -104894,6 +105063,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -105521,6 +105691,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -106392,6 +106563,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -106695,6 +106867,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -107322,6 +107495,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -108199,6 +108373,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -108502,6 +108677,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -109129,6 +109305,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -109996,6 +110173,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -110611,6 +110789,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -111215,6 +111394,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -111782,6 +111962,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -112409,6 +112590,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -113055,6 +113237,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -113682,6 +113865,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -114330,6 +114514,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -114957,6 +115142,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -115653,6 +115839,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -116280,6 +116467,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -116893,6 +117081,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -117437,6 +117626,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -117754,6 +117944,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -118381,6 +118572,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -119252,6 +119444,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -119568,6 +119761,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -120195,6 +120389,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -121030,6 +121225,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -121346,6 +121542,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -121973,6 +122170,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -122844,6 +123042,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -123147,6 +123346,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -123774,6 +123974,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -124651,6 +124852,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -124954,6 +125156,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -125581,6 +125784,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -126448,6 +126652,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -127063,6 +127268,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -127667,6 +127873,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -128234,6 +128441,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -128861,6 +129069,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -129507,6 +129716,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -130134,6 +130344,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -130782,6 +130993,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -131409,6 +131621,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -132105,6 +132318,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -132732,6 +132946,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -133467,6 +133682,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -133784,6 +134000,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -134411,6 +134628,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -135282,6 +135500,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -135598,6 +135817,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -136225,6 +136445,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -137060,6 +137281,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -137376,6 +137598,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -138003,6 +138226,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -138874,6 +139098,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -139177,6 +139402,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -139804,6 +140030,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -140681,6 +140908,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -140984,6 +141212,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -141611,6 +141840,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -142478,6 +142708,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -143093,6 +143324,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -143697,6 +143929,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -144264,6 +144497,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -144891,6 +145125,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -145537,6 +145772,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -146164,6 +146400,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -146812,6 +147049,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -147439,6 +147677,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -148135,6 +148374,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -148762,6 +149002,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -149434,6 +149675,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -149751,6 +149993,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -150378,6 +150621,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -151249,6 +151493,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -151565,6 +151810,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -152192,6 +152438,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -153027,6 +153274,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -153343,6 +153591,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -153970,6 +154219,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -154841,6 +155091,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -155144,6 +155395,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -155771,6 +156023,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -156648,6 +156901,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -156951,6 +157205,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -157578,6 +157833,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -158445,6 +158701,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -159060,6 +159317,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -159664,6 +159922,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -160231,6 +160490,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -160858,6 +161118,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -161504,6 +161765,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -162131,6 +162393,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -162779,6 +163042,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -163406,6 +163670,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -164102,6 +164367,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -164729,6 +164995,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -165401,6 +165668,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -165718,6 +165986,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -166345,6 +166614,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -167216,6 +167486,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -167532,6 +167803,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -168159,6 +168431,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -168994,6 +169267,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -169310,6 +169584,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -169937,6 +170212,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -170808,6 +171084,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -171111,6 +171388,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -171738,6 +172016,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -172615,6 +172894,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -172918,6 +173198,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -173545,6 +173826,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -174412,6 +174694,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -175027,6 +175310,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -175631,6 +175915,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -176198,6 +176483,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -176825,6 +177111,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -177471,6 +177758,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -178098,6 +178386,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -178746,6 +179035,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -179373,6 +179663,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -180069,6 +180360,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -180696,6 +180988,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -181413,6 +181706,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -181730,6 +182024,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -182357,6 +182652,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -183228,6 +183524,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -183544,6 +183841,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -184171,6 +184469,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -185006,6 +185305,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -185322,6 +185622,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -185949,6 +186250,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -186820,6 +187122,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -187123,6 +187426,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -187750,6 +188054,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -188627,6 +188932,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -188930,6 +189236,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -189557,6 +189864,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -190424,6 +190732,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -191039,6 +191348,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -191643,6 +191953,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -192210,6 +192521,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -192837,6 +193149,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -193483,6 +193796,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -194110,6 +194424,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -194758,6 +195073,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -195385,6 +195701,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -196081,6 +196398,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -196708,6 +197026,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -197401,6 +197720,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -197718,6 +198038,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -198345,6 +198666,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -199216,6 +199538,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -199532,6 +199855,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -200159,6 +200483,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -200994,6 +201319,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -201310,6 +201636,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -201937,6 +202264,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -202808,6 +203136,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -203111,6 +203440,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -203738,6 +204068,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -204615,6 +204946,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -204918,6 +205250,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -205545,6 +205878,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -206412,6 +206746,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -207027,6 +207362,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -207631,6 +207967,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -208198,6 +208535,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -208825,6 +209163,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -209471,6 +209810,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -210098,6 +210438,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -210746,6 +211087,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -211373,6 +211715,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -212069,6 +212412,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -212696,6 +213040,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -213431,6 +213776,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -213748,6 +214094,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -214375,6 +214722,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -215246,6 +215594,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -215562,6 +215911,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -216189,6 +216539,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -217024,6 +217375,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -217340,6 +217692,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -217967,6 +218320,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -218838,6 +219192,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -219141,6 +219496,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -219768,6 +220124,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -220645,6 +221002,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -220948,6 +221306,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -221575,6 +221934,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -222442,6 +222802,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -223057,6 +223418,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -223661,6 +224023,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -224228,6 +224591,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -224855,6 +225219,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -225501,6 +225866,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -226128,6 +226494,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -226776,6 +227143,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -227403,6 +227771,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -228099,6 +228468,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -228726,6 +229096,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -229398,6 +229769,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -229715,6 +230087,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -230342,6 +230715,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -231213,6 +231587,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -231529,6 +231904,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -232156,6 +232532,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -232991,6 +233368,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -233307,6 +233685,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -233934,6 +234313,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -234805,6 +235185,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -235108,6 +235489,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -235735,6 +236117,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -236612,6 +236995,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -236915,6 +237299,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -237542,6 +237927,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -238409,6 +238795,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -239024,6 +239411,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -239628,6 +240016,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -240195,6 +240584,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -240822,6 +241212,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -241468,6 +241859,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -242095,6 +242487,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -242743,6 +243136,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -243370,6 +243764,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -244066,6 +244461,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -244693,6 +245089,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -245365,6 +245762,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -245682,6 +246080,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -246309,6 +246708,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -247180,6 +247580,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -247496,6 +247897,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -248123,6 +248525,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -248958,6 +249361,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -249274,6 +249678,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -249901,6 +250306,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -250772,6 +251178,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -251075,6 +251482,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -251702,6 +252110,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -252579,6 +252988,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -252882,6 +253292,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -253509,6 +253920,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -254376,6 +254788,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -254991,6 +255404,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -255595,6 +256009,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -256162,6 +256577,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -256789,6 +257205,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -257435,6 +257852,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -258062,6 +258480,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -258710,6 +259129,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -259337,6 +259757,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -260033,6 +260454,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -260660,6 +261082,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -261377,6 +261800,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
+    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
     image: {
       asset: {
         _ref: string;
@@ -261694,6 +262118,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -262321,6 +262746,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -263192,6 +263618,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -263508,6 +263935,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -264135,6 +264563,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -264970,6 +265399,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -265286,6 +265716,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -265913,6 +266344,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -266784,6 +267216,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -267087,6 +267520,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -267714,6 +268148,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -268591,6 +269026,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -268894,6 +269330,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -269521,6 +269958,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -270388,6 +270826,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -271003,6 +271442,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -271607,6 +272047,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -272174,6 +272615,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -272801,6 +273243,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
+            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
             image: {
               asset: {
                 _ref: string;
@@ -273447,6 +273890,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -274074,6 +274518,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
+          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
           image: {
             asset: {
               _ref: string;
@@ -274722,6 +275167,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -275349,6 +275795,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
+        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
         image: {
           asset: {
             _ref: string;
@@ -276045,6 +276492,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;
@@ -276672,6 +277120,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
+      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
       image: {
         asset: {
           _ref: string;

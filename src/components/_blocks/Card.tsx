@@ -38,6 +38,7 @@ const Card = (props: CardProps) => {
     imageType = 'none',
     image,
     iconNoImageLayoutStyle,
+    iconSelection,
     content,
     className = '',
     isGridChild = false,
@@ -94,8 +95,9 @@ const Card = (props: CardProps) => {
   }
 
   // Icon
-  if (cleanImageType === 'icon' && image?.asset?._ref) {
-    return <CardIcon {...commonProps} image={image} layoutStyle={cleanLayoutStyle} />;
+  if (cleanImageType === 'icon') {
+    const cleanIconSelection = stegaClean(iconSelection);
+    return <CardIcon {...commonProps} iconSelection={cleanIconSelection} layoutStyle={cleanLayoutStyle} />;
   }
 
   // No Image

@@ -2,14 +2,13 @@
 
 import React from 'react';
 import CardContainer from '../UI/CardContainer';
-import { createSanityDataAttribute } from '@/utils/sectionHelpers';
-import UnifiedImage from '../UI/UnifiedImage';
 import { renderBlock } from '@/utils/blockRenderer';
 import CardHeader from './CardHeader';
-import type { BaseCardProps, CardImage, CardLayoutStyle } from './types';
+import { getCardIcon } from './CardIcons';
+import type { BaseCardProps, CardLayoutStyle } from './types';
 
 interface CardIconProps extends BaseCardProps {
-  image: CardImage;
+  iconSelection?: string | null;
   layoutStyle: CardLayoutStyle;
 }
 
@@ -17,7 +16,7 @@ const CardIcon = (props: CardIconProps) => {
   const {
     title,
     subtitle,
-    image,
+    iconSelection,
     content,
     layoutStyle,
     className = '',
@@ -30,6 +29,8 @@ const CardIcon = (props: CardIconProps) => {
     companyLinks,
     createDataAttributeConfig,
   } = props;
+
+  const Icon = getCardIcon(iconSelection);
 
   // Get field path for live editing
   const getFieldPath = (field: string) => (fieldPathPrefix ? `${fieldPathPrefix}.${field}` : field);
@@ -69,22 +70,8 @@ const CardIcon = (props: CardIconProps) => {
       isGridChild={isGridChild}
       visualStyle={visualStyle}>
       {/* Icon */}
-      <div
-        className='flex-shrink-0'
-        {...createSanityDataAttribute(documentId, documentType, getFieldPath('image'))}>
-        <UnifiedImage
-          src={image}
-          alt={image.alt || 'Icon'}
-          mode='sized'
-          width={100}
-          height={100}
-          sizeContext='profile'
-          objectFit='contain'
-          className='w-10 h-10'
-          documentId={documentId}
-          documentType={documentType}
-          fieldPath={getFieldPath('image')}
-        />
+      <div className='flex-shrink-0 w-10 h-10' style={{ color: 'var(--color-subtle)' }}>
+        <Icon />
       </div>
 
       {/* Header and Content */}
