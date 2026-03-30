@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import type { EQUIPMENT_LIST_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
 import { maxCardWidth } from '@/utils/spacingConstants';
-import UnifiedImage from '@/components/UI/UnifiedImage';
+import { getCardIcon } from '@/components/Card/CardIcons';
 import { ChevronDownIcon } from '@sanity/icons';
+import { stegaClean } from 'next-sanity';
 
 interface EquipmentListProps {
   className?: string;
@@ -48,20 +49,13 @@ const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps
               aria-expanded={isOpen}
               aria-controls={`category-content-${category._key}`}>
               {/* Icon */}
-              <div className='flex-shrink-0 w-8 h-8'>
-                <UnifiedImage
-                  src={category.icon}
-                  alt={category.icon?.alt || `${category.name} icon`}
-                  mode='sized'
-                  width={32}
-                  height={32}
-                  sizeContext='icon'
-                  objectFit='contain'
-                  className='w-full h-auto'
-                  documentId={documentId}
-                  documentType={documentType}
-                  fieldPath={`${categoryPath}.icon`}
-                />
+              <div
+                className='flex-shrink-0 w-10 h-10'
+                style={{ color: 'var(--color-subtle)' }}
+                {...(documentId && documentType
+                  ? createSanityDataAttribute(documentId, documentType, `${categoryPath}.icon`)
+                  : {})}>
+                {React.createElement(getCardIcon(stegaClean(category.icon)))}
               </div>
 
               {/* Category Name */}

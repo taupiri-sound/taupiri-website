@@ -1160,19 +1160,7 @@ export type EquipmentListSingleton = {
   _rev: string;
   categories?: Array<{
     name?: string;
-    icon?: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      alt?: string;
-      _type: "image";
-    };
+    icon?: "acoustics" | "location" | "liveRoom" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
     items?: Array<{
       name?: string;
       isTemporarilyUnavailable?: boolean;
@@ -1403,7 +1391,7 @@ export type Card = {
   subtitle?: string;
   imageType?: "none" | "banner" | "icon";
   iconNoImageLayoutStyle?: "stacked" | "row";
-  iconSelection?: "acoustics" | "location" | "liveRoom" | "equipment";
+  iconSelection?: "acoustics" | "location" | "liveRoom" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
   image?: {
     asset?: {
       _ref: string;
@@ -1819,7 +1807,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -2137,7 +2125,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -2765,7 +2753,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -3637,7 +3625,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -3954,7 +3942,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -4582,7 +4570,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -5418,7 +5406,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -5735,7 +5723,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -6363,7 +6351,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -7235,7 +7223,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -7539,7 +7527,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -8167,7 +8155,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -9045,7 +9033,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -9349,7 +9337,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -9977,7 +9965,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -10845,7 +10833,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -11461,7 +11449,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -12066,7 +12054,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -12634,7 +12622,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -13262,7 +13250,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -13909,7 +13897,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -14537,7 +14525,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -15186,7 +15174,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -15814,7 +15802,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -16511,7 +16499,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -17139,7 +17127,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -17754,7 +17742,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -18211,7 +18199,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -18529,7 +18517,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -19157,7 +19145,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -20029,7 +20017,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -20346,7 +20334,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -20974,7 +20962,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -21810,7 +21798,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -22127,7 +22115,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -22755,7 +22743,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -23627,7 +23615,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -23931,7 +23919,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -24559,7 +24547,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -25437,7 +25425,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -25741,7 +25729,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -26369,7 +26357,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -27237,7 +27225,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -27853,7 +27841,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -28458,7 +28446,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -29026,7 +29014,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -29654,7 +29642,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -30301,7 +30289,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -30929,7 +30917,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -31578,7 +31566,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -32206,7 +32194,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -32903,7 +32891,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -33531,7 +33519,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -34391,7 +34379,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -34709,7 +34697,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -35337,7 +35325,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -36209,7 +36197,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -36526,7 +36514,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -37154,7 +37142,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -37990,7 +37978,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -38307,7 +38295,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -38935,7 +38923,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -39807,7 +39795,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -40111,7 +40099,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -40739,7 +40727,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -41617,7 +41605,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -41921,7 +41909,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -42549,7 +42537,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -43417,7 +43405,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -44033,7 +44021,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -44638,7 +44626,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -45206,7 +45194,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -45834,7 +45822,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -46481,7 +46469,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -47109,7 +47097,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -47758,7 +47746,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -48386,7 +48374,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -49083,7 +49071,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -49711,7 +49699,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -50389,7 +50377,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -50707,7 +50695,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -51335,7 +51323,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -52207,7 +52195,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -52524,7 +52512,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -53152,7 +53140,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -53988,7 +53976,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -54305,7 +54293,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -54933,7 +54921,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -55805,7 +55793,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -56109,7 +56097,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -56737,7 +56725,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -57615,7 +57603,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -57919,7 +57907,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -58547,7 +58535,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -59415,7 +59403,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -60031,7 +60019,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -60636,7 +60624,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -61204,7 +61192,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -61832,7 +61820,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -62479,7 +62467,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -63107,7 +63095,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -63756,7 +63744,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -64384,7 +64372,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -65081,7 +65069,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -65709,7 +65697,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -66387,7 +66375,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -66705,7 +66693,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -67333,7 +67321,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -68205,7 +68193,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -68522,7 +68510,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -69150,7 +69138,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -69986,7 +69974,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -70303,7 +70291,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -70931,7 +70919,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -71803,7 +71791,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -72107,7 +72095,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -72735,7 +72723,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -73613,7 +73601,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -73917,7 +73905,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -74545,7 +74533,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -75413,7 +75401,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -76029,7 +76017,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -76634,7 +76622,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -77202,7 +77190,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -77830,7 +77818,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -78477,7 +78465,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -79105,7 +79093,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -79754,7 +79742,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -80382,7 +80370,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -81079,7 +81067,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -81707,7 +81695,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -82455,7 +82443,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -82773,7 +82761,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -83401,7 +83389,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -84273,7 +84261,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -84590,7 +84578,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -85218,7 +85206,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -86054,7 +86042,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -86371,7 +86359,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -86999,7 +86987,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -87871,7 +87859,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -88175,7 +88163,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -88803,7 +88791,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -89681,7 +89669,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -89985,7 +89973,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -90613,7 +90601,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -91481,7 +91469,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -92097,7 +92085,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -92702,7 +92690,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -93270,7 +93258,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -93898,7 +93886,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -94545,7 +94533,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -95173,7 +95161,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -95822,7 +95810,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -96450,7 +96438,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -97147,7 +97135,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -97775,7 +97763,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -99436,7 +99424,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -99819,7 +99807,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -100189,7 +100177,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -100639,7 +100627,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -101147,7 +101135,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -101465,7 +101453,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -102093,7 +102081,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -102965,7 +102953,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -103282,7 +103270,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -103910,7 +103898,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -104746,7 +104734,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -105063,7 +105051,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -105691,7 +105679,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -106563,7 +106551,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -106867,7 +106855,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -107495,7 +107483,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -108373,7 +108361,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -108677,7 +108665,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -109305,7 +109293,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -110173,7 +110161,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -110789,7 +110777,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -111394,7 +111382,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -111962,7 +111950,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -112590,7 +112578,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -113237,7 +113225,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -113865,7 +113853,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -114514,7 +114502,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -115142,7 +115130,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -115839,7 +115827,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -116467,7 +116455,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -117081,7 +117069,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -117626,7 +117614,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -117944,7 +117932,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -118572,7 +118560,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -119444,7 +119432,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -119761,7 +119749,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -120389,7 +120377,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -121225,7 +121213,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -121542,7 +121530,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -122170,7 +122158,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -123042,7 +123030,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -123346,7 +123334,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -123974,7 +123962,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -124852,7 +124840,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -125156,7 +125144,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -125784,7 +125772,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -126652,7 +126640,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -127268,7 +127256,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -127873,7 +127861,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -128441,7 +128429,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -129069,7 +129057,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -129716,7 +129704,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -130344,7 +130332,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -130993,7 +130981,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -131621,7 +131609,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -132318,7 +132306,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -132946,7 +132934,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -133682,7 +133670,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -134000,7 +133988,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -134628,7 +134616,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -135500,7 +135488,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -135817,7 +135805,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -136445,7 +136433,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -137281,7 +137269,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -137598,7 +137586,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -138226,7 +138214,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -139098,7 +139086,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -139402,7 +139390,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -140030,7 +140018,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -140908,7 +140896,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -141212,7 +141200,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -141840,7 +141828,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -142708,7 +142696,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -143324,7 +143312,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -143929,7 +143917,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -144497,7 +144485,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -145125,7 +145113,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -145772,7 +145760,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -146400,7 +146388,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -147049,7 +147037,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -147677,7 +147665,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -148374,7 +148362,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -149002,7 +148990,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -149675,7 +149663,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -149993,7 +149981,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -150621,7 +150609,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -151493,7 +151481,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -151810,7 +151798,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -152438,7 +152426,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -153274,7 +153262,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -153591,7 +153579,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -154219,7 +154207,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -155091,7 +155079,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -155395,7 +155383,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -156023,7 +156011,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -156901,7 +156889,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -157205,7 +157193,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -157833,7 +157821,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -158701,7 +158689,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -159317,7 +159305,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -159922,7 +159910,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -160490,7 +160478,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -161118,7 +161106,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -161765,7 +161753,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -162393,7 +162381,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -163042,7 +163030,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -163670,7 +163658,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -164367,7 +164355,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -164995,7 +164983,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -165668,7 +165656,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -165986,7 +165974,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -166614,7 +166602,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -167486,7 +167474,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -167803,7 +167791,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -168431,7 +168419,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -169267,7 +169255,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -169584,7 +169572,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -170212,7 +170200,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -171084,7 +171072,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -171388,7 +171376,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -172016,7 +172004,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -172894,7 +172882,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -173198,7 +173186,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -173826,7 +173814,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -174694,7 +174682,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -175310,7 +175298,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -175915,7 +175903,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -176483,7 +176471,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -177111,7 +177099,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -177758,7 +177746,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -178386,7 +178374,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -179035,7 +179023,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -179663,7 +179651,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -180360,7 +180348,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -180988,7 +180976,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -181706,7 +181694,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -182024,7 +182012,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -182652,7 +182640,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -183524,7 +183512,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -183841,7 +183829,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -184469,7 +184457,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -185305,7 +185293,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -185622,7 +185610,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -186250,7 +186238,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -187122,7 +187110,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -187426,7 +187414,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -188054,7 +188042,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -188932,7 +188920,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -189236,7 +189224,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -189864,7 +189852,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -190732,7 +190720,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -191348,7 +191336,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -191953,7 +191941,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -192521,7 +192509,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -193149,7 +193137,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -193796,7 +193784,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -194424,7 +194412,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -195073,7 +195061,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -195701,7 +195689,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -196398,7 +196386,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -197026,7 +197014,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -197720,7 +197708,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -198038,7 +198026,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -198666,7 +198654,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -199538,7 +199526,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -199855,7 +199843,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -200483,7 +200471,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -201319,7 +201307,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -201636,7 +201624,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -202264,7 +202252,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -203136,7 +203124,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -203440,7 +203428,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -204068,7 +204056,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -204946,7 +204934,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -205250,7 +205238,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -205878,7 +205866,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -206746,7 +206734,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -207362,7 +207350,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -207967,7 +207955,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -208535,7 +208523,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -209163,7 +209151,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -209810,7 +209798,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -210438,7 +210426,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -211087,7 +211075,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -211715,7 +211703,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -212412,7 +212400,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -213040,7 +213028,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -213776,7 +213764,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -214094,7 +214082,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -214722,7 +214710,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -215594,7 +215582,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -215911,7 +215899,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -216539,7 +216527,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -217375,7 +217363,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -217692,7 +217680,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -218320,7 +218308,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -219192,7 +219180,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -219496,7 +219484,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -220124,7 +220112,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -221002,7 +220990,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -221306,7 +221294,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -221934,7 +221922,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -222802,7 +222790,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -223418,7 +223406,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -224023,7 +224011,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -224591,7 +224579,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -225219,7 +225207,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -225866,7 +225854,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -226494,7 +226482,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -227143,7 +227131,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -227771,7 +227759,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -228468,7 +228456,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -229096,7 +229084,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -229769,7 +229757,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -230087,7 +230075,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -230715,7 +230703,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -231587,7 +231575,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -231904,7 +231892,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -232532,7 +232520,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -233368,7 +233356,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -233685,7 +233673,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -234313,7 +234301,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -235185,7 +235173,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -235489,7 +235477,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -236117,7 +236105,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -236995,7 +236983,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -237299,7 +237287,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -237927,7 +237915,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -238795,7 +238783,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -239411,7 +239399,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -240016,7 +240004,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -240584,7 +240572,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -241212,7 +241200,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -241859,7 +241847,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -242487,7 +242475,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -243136,7 +243124,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -243764,7 +243752,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -244461,7 +244449,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -245089,7 +245077,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -245762,7 +245750,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -246080,7 +246068,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -246708,7 +246696,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -247580,7 +247568,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -247897,7 +247885,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -248525,7 +248513,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -249361,7 +249349,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -249678,7 +249666,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -250306,7 +250294,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -251178,7 +251166,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -251482,7 +251470,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -252110,7 +252098,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -252988,7 +252976,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -253292,7 +253280,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -253920,7 +253908,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -254788,7 +254776,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -255404,7 +255392,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -256009,7 +255997,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -256577,7 +256565,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -257205,7 +257193,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -257852,7 +257840,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -258480,7 +258468,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -259129,7 +259117,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -259757,7 +259745,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -260454,7 +260442,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -261082,7 +261070,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -261800,7 +261788,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -262118,7 +262106,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -262746,7 +262734,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -263618,7 +263606,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -263935,7 +263923,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -264563,7 +264551,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -265399,7 +265387,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -265716,7 +265704,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -266344,7 +266332,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -267216,7 +267204,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -267520,7 +267508,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -268148,7 +268136,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -269026,7 +269014,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -269330,7 +269318,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -269958,7 +269946,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -270826,7 +270814,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -271442,7 +271430,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -272047,7 +272035,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -272615,7 +272603,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -273243,7 +273231,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -273890,7 +273878,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -274518,7 +274506,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -275167,7 +275155,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -275795,7 +275783,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -276492,7 +276480,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -277120,7 +277108,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "equipment" | "liveRoom" | "location";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -277901,7 +277889,7 @@ export type CLIENTS_QUERYResult = {
   level5: null;
 } | null;
 // Variable: EQUIPMENT_LIST_QUERY
-// Query: *[_id == "equipmentListSingleton"][0]{  _id,  _type,  categories[]{    _key,    name,    icon{      asset,      alt,      hotspot,      crop    },    items[]{      _key,      name,      isTemporarilyUnavailable,      unavailableReason    }  }}
+// Query: *[_id == "equipmentListSingleton"][0]{  _id,  _type,  categories[]{    _key,    name,    icon,    items[]{      _key,      name,      isTemporarilyUnavailable,      unavailableReason    }  }}
 export type EQUIPMENT_LIST_QUERYResult = {
   _id: string;
   _type: "audioSample";
@@ -277936,17 +277924,7 @@ export type EQUIPMENT_LIST_QUERYResult = {
   categories: Array<{
     _key: string;
     name: string | null;
-    icon: {
-      asset: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      } | null;
-      alt: string | null;
-      hotspot: SanityImageHotspot | null;
-      crop: SanityImageCrop | null;
-    } | null;
+    icon: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker" | null;
     items: Array<{
       _key: string;
       name: string | null;
@@ -278108,7 +278086,7 @@ declare module "@sanity/client" {
     "*[_id == \"privacyPolicy\"][0]{\n  _id,\n  _type,\n  _updatedAt,\n  hide,\n  title,\n  titleTeReo,\n  topText,\n  content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  },\n  _type == \"projectList\" => {...},\n  _type == \"featuredProjects\" => {\n    ...,\n    projects[]->{\n      _id,\n      _type,\n      name,\n      image{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      description,\n      linkLabel,\n      link,\n      order\n    }\n  }\n,\n  \"content\": content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  },\n  _type == \"projectList\" => {...},\n  _type == \"featuredProjects\" => {\n    ...,\n    projects[]->{\n      _id,\n      _type,\n      name,\n      image{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      description,\n      linkLabel,\n      link,\n      order\n    }\n  }\n,\n    \"content\": content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  },\n  _type == \"projectList\" => {...},\n  _type == \"featuredProjects\" => {\n    ...,\n    projects[]->{\n      _id,\n      _type,\n      name,\n      image{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      description,\n      linkLabel,\n      link,\n      order\n    }\n  }\n,\n      \"content\": content[]{\n  ...,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  _type == \"pageSection\" => {\n    ...,\n    anchorId,\n    topText\n  },\n  _type == \"subSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"subSubSection\" => {\n    ...,\n    anchorId\n  },\n  _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"ctaCard\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n  _type == \"card\" => {\n    ...,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    content[]{\n      ...,\n      _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"ctaBlogPost\" => {\n        ...,\n        blogPost->{\n          _id,\n          _createdAt,\n          title,\n          slug,\n          subtitle,\n          author,\n          mainImage{\n            asset,\n            alt,\n            hotspot,\n            crop\n          },\n          hasOverrideDate,\n          overrideDate\n        }\n      },\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n},\n  _type == \"twoColumnLayout\" => {\n    ...,\n    leftColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    },\n    rightColumn[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      }\n    }\n  },\n  _type == \"gridLayout\" => {\n    ...,\n    content[]{\n      ...,\n      _type == \"card\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        },\n        content[]{\n          ...,\n          _type == \"ctaButton\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"ctaCalloutLink\" => {\n  ...,\n  internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n},\n  \"computedHref\": select(\n    linkType == \"external\" => externalUrl,\n    linkType == \"internal\" && defined(pageSectionId) && pageSectionId != \"\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\") + \"#\" + pageSectionId,\n    linkType == \"internal\" =>\n      coalesce(internalLink->{\n  _id,\n  _type,\n  title,\n  slug,\n  \"pageType\": _type,\n  \"href\": select(\n    _type == \"homePage\" => \"/\",\n    _type == \"blogIndexPage\" => \"/blog\",\n    _type == \"blogPost\" => \"/blog/\" + slug.current,\n    _type == \"termsAndConditions\" => \"/terms-and-conditions\",\n    _type == \"privacyPolicy\" => \"/privacy-policy\",\n    \"/\" + slug.current\n  )\n}.href, \"/\"),\n    \"/\"\n  )\n},\n          _type == \"imageBlock\" => {\n            ...,\n            image{\n              asset,\n              alt,\n              hotspot,\n              crop\n            }\n          },\n          _type == \"ctaBlogPost\" => {\n            ...,\n            blogPost->{\n              _id,\n              _createdAt,\n              title,\n              slug,\n              subtitle,\n              author,\n              mainImage{\n                asset,\n                alt,\n                hotspot,\n                crop\n              },\n              hasOverrideDate,\n              overrideDate\n            }\n          },\n          _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n        }\n      },\n      _type == \"richText\" => {...},\n      _type == \"imageBlock\" => {\n        ...,\n        image{\n          asset,\n          alt,\n          hotspot,\n          crop\n        }\n      },\n      _type == \"youTubeVideo\" => {...},\n      _type == \"spotifyWidget\" => {...},\n      _type == \"bandcampWidget\" => {...},\n      _type == \"audioSamplePlayer\" => {\n  ...,\n  audioSamples[]->{\n    _id,\n    _type,\n    _key,\n    songName,\n    artistName,\n    services,\n    image{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    audioFile{\n      asset->{\n        _id,\n        url,\n        mimeType,\n        size,\n        originalFilename,\n        \"duration\": metadata.duration\n      }\n    }\n  }\n}\n    }\n  },\n  _type == \"ctaBlogPost\" => {\n    ...,\n    blogPost->{\n      _id,\n      _createdAt,\n      title,\n      slug,\n      subtitle,\n      author,\n      mainImage{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      hasOverrideDate,\n      overrideDate\n    }\n  },\n  _type == \"projectList\" => {...},\n  _type == \"featuredProjects\" => {\n    ...,\n    projects[]->{\n      _id,\n      _type,\n      name,\n      image{\n        asset,\n        alt,\n        hotspot,\n        crop\n      },\n      description,\n      linkLabel,\n      link,\n      order\n    }\n  }\n\n      }\n    }\n  }\n}\n}": PRIVACY_POLICY_QUERYResult;
     "{\n  \"termsAndConditions\": *[_id == \"termsAndConditions\"][0]{_id, hide},\n  \"privacyPolicy\": *[_id == \"privacyPolicy\"][0]{_id, hide}\n}": LEGAL_PAGES_VISIBILITY_QUERYResult;
     "*[_id == \"clients\"][0]{\n  _id,\n  _type,\n  level1,\n  level2,\n  level3,\n  level4,\n  level5\n}": CLIENTS_QUERYResult;
-    "*[_id == \"equipmentListSingleton\"][0]{\n  _id,\n  _type,\n  categories[]{\n    _key,\n    name,\n    icon{\n      asset,\n      alt,\n      hotspot,\n      crop\n    },\n    items[]{\n      _key,\n      name,\n      isTemporarilyUnavailable,\n      unavailableReason\n    }\n  }\n}": EQUIPMENT_LIST_QUERYResult;
+    "*[_id == \"equipmentListSingleton\"][0]{\n  _id,\n  _type,\n  categories[]{\n    _key,\n    name,\n    icon,\n    items[]{\n      _key,\n      name,\n      isTemporarilyUnavailable,\n      unavailableReason\n    }\n  }\n}": EQUIPMENT_LIST_QUERYResult;
     "*[_type == \"teamMember\"] | order(displayOrder asc, name asc) {\n  _id,\n  _type,\n  _key,\n  name,\n  role,\n  category,\n  profilePicture{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  displayOrder,\n  description\n}": TEAM_MEMBERS_QUERYResult;
     "*[_type == \"project\"] | order(order asc, name asc) {\n  _id,\n  _type,\n  _key,\n  name,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  description,\n  linkLabel,\n  link,\n  order\n}": ALL_PROJECTS_QUERYResult;
     "*[_type == \"project\" && _id in $projectIds]{\n  _id,\n  _type,\n  _key,\n  name,\n  image{\n    asset,\n    alt,\n    hotspot,\n    crop\n  },\n  description,\n  linkLabel,\n  link,\n  order\n}": FEATURED_PROJECTS_QUERYResult;

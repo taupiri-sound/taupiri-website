@@ -728,12 +728,7 @@ export const EQUIPMENT_LIST_QUERY = defineQuery(`*[_id == "equipmentListSingleto
   categories[]{
     _key,
     name,
-    icon{
-      asset,
-      alt,
-      hotspot,
-      crop
-    },
+    icon,
     items[]{
       _key,
       name,

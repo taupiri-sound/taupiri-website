@@ -4,6 +4,7 @@
 
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { CogIcon } from '@sanity/icons';
+import { ICON_OPTIONS } from '@/sanity/schemaTypes/shared/iconOptions';
 
 export const equipmentListSingletonType = defineType({
   name: 'equipmentListSingleton',
@@ -31,19 +32,11 @@ export const equipmentListSingletonType = defineType({
             defineField({
               name: 'icon',
               title: 'Category Icon',
-              type: 'image',
+              type: 'string',
               description: 'Icon to display for this category',
               options: {
-                hotspot: true,
+                list: [...ICON_OPTIONS],
               },
-              fields: [
-                {
-                  name: 'alt',
-                  type: 'string',
-                  title: 'Alternative Text',
-                  description: 'Describes the icon for accessibility',
-                },
-              ],
               validation: (Rule) => Rule.required(),
             }),
             defineField({
@@ -108,15 +101,13 @@ export const equipmentListSingletonType = defineType({
           preview: {
             select: {
               name: 'name',
-              icon: 'icon',
               items: 'items',
             },
-            prepare({ name, icon, items }) {
+            prepare({ name, items }) {
               const itemCount = items?.length || 0;
               return {
                 title: name || 'Untitled Category',
                 subtitle: `${itemCount} item${itemCount !== 1 ? 's' : ''}`,
-                media: icon,
               };
             },
           },

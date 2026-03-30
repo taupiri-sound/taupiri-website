@@ -4,6 +4,7 @@
 
 import { defineField, defineType, defineArrayMember } from 'sanity';
 import { DocumentIcon } from '@sanity/icons';
+import { ICON_OPTIONS } from '@/sanity/schemaTypes/shared/iconOptions';
 
 export const cardType = defineType({
   name: 'card',
@@ -102,12 +103,7 @@ export const cardType = defineType({
       type: 'string',
       group: 'image',
       options: {
-        list: [
-          { title: 'Acoustics', value: 'acoustics' },
-          { title: 'Location', value: 'location' },
-          { title: 'Live Room', value: 'liveRoom' },
-          { title: 'Equipment', value: 'equipment' },
-        ],
+        list: [...ICON_OPTIONS],
       },
       initialValue: 'acoustics',
       description: 'Select an icon to display for this card',
