@@ -10,7 +10,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // IMPORTANT: Add these environment variables to your .env.local file:
 // RESEND_API_KEY=your_resend_api_key_here
-// NEXT_PUBLIC_CONTACT_EMAIL=your_contact_email@example.com
+// RESEND_CONTACT_EMAIL=your_contact_email@example.com
 // RESEND_FROM_EMAIL=noreply@yourdomain.com (must be verified in Resend)
 
 // Rate limiting configuration (in-memory, resets on server restart)
@@ -132,12 +132,12 @@ export async function POST(request: Request) {
     const organisationName = businessInfo?.organisationName || '';
 
     // Get contact email from environment variable
-    const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+    const contactEmail = process.env.RESEND_CONTACT_EMAIL;
     const fromEmail =
       process.env.RESEND_FROM_EMAIL || `${organisationName} <onboarding@resend.dev>`;
 
     if (!contactEmail) {
-      console.error('NEXT_PUBLIC_CONTACT_EMAIL environment variable is not set');
+      console.error('RESEND_CONTACT_EMAIL environment variable is not set');
       return NextResponse.json(
         {
           error:
