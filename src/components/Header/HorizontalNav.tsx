@@ -10,9 +10,10 @@ import {
 
 interface HorizontalNavProps {
   navLinks: HorizontalNavData | null;
+  isMenuOpen?: boolean;
 }
 
-const HorizontalNav = ({ navLinks }: HorizontalNavProps) => {
+const HorizontalNav = ({ navLinks, isMenuOpen }: HorizontalNavProps) => {
   if (!navLinks || navLinks.length === 0) {
     return null;
   }
@@ -25,7 +26,7 @@ const HorizontalNav = ({ navLinks }: HorizontalNavProps) => {
   }
 
   return (
-    <nav className=''>
+    <nav className={isMenuOpen ? 'hidden' : ''}>
       {/* RESPONSIVE VISIBILITY: lg:flex breakpoint must align with VerticalNav hideOnDesktop logic */}
       {/* ⚠️ IMPORTANT: If this 'lg:flex' changes, update VerticalNav.tsx hideOnDesktop 'lg:hidden' accordingly */}
       <ul className='hidden lg:flex items-center gap-6'>
