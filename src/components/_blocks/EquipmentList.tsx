@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import type { EQUIPMENT_LIST_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
-import { maxCardWidth } from '@/utils/spacingConstants';
 import { getCardIcon } from '@/components/Card/CardIcons';
-import { ChevronDownIcon } from '@sanity/icons';
 import { stegaClean } from 'next-sanity';
+import { useState } from 'react';
 
 interface EquipmentListProps {
   className?: string;
@@ -17,135 +16,82 @@ const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps
   const documentId = equipmentListData?._id || 'equipmentListSingleton';
   const documentType = 'equipmentListSingleton';
   const categories = equipmentListData?.categories || [];
-  const [openCategoryIndex, setOpenCategoryIndex] = useState<number | null>(null);
   const [hoveredItemKey, setHoveredItemKey] = useState<string | null>(null);
 
-  if (!categories || categories.length === 0) {
-    return null;
-  }
-
-  const toggleCategory = (index: number) => {
-    setOpenCategoryIndex(openCategoryIndex === index ? null : index);
-  };
-
-  if (!equipmentListData) {
+  if (!equipmentListData || categories.length === 0) {
     return null;
   }
 
   return (
-    <div className={`space-y-4 ${className}`.trim()}>
+    <div className={`columns-1 sm:columns-2 lg:columns-3 gap-4 text-left ${className}`.trim()}>
       {categories.map((category, categoryIndex) => {
         const categoryPath = `categories[${categoryIndex}]`;
-        const isOpen = openCategoryIndex === categoryIndex;
+        const IconComponent = getCardIcon(stegaClean(category.icon));
 
         return (
           <div
             key={category._key}
-            className={`mx-auto w-full ${maxCardWidth} rounded-lg overflow-hidden shadow-sm bg-brand-white-dark`}>
-            {/* Category Header */}
-            <button
-              onClick={() => toggleCategory(categoryIndex)}
-              className='w-full flex items-center gap-4 px-6 py-4 text-left hover:bg-brand-primary/5 transition-colors duration-200 cursor-pointer'
-              aria-expanded={isOpen}
-              aria-controls={`category-content-${category._key}`}>
-              {/* Icon */}
-              <div
-                className='flex-shrink-0 w-10 h-10'
-                style={{ color: 'var(--color-subtle)' }}
-                {...(documentId && documentType
-                  ? createSanityDataAttribute(documentId, documentType, `${categoryPath}.icon`)
-                  : {})}>
-                {React.createElement(getCardIcon(stegaClean(category.icon)))}
-              </div>
+            className='break-inside-avoid mb-4 bg-brand-white-dark rounded-xl shadow-sm overflow-hidden'>
 
-              {/* Category Name */}
+            {/* Accent bar */}
+            <div className='h-1 w-full bg-subtle' />
+
+            {/* Card header */}
+            <div className='flex items-center gap-3 px-5 pt-4 pb-3'>
+              <div
+                className='flex-shrink-0 w-8 h-8 rounded-full bg-subtle/20 flex items-center justify-center text-subtle'
+                {...createSanityDataAttribute(documentId, documentType, `${categoryPath}.icon`)}>
+                <div className='w-4 h-4'>
+                  {React.createElement(IconComponent)}
+                </div>
+              </div>
               <p
-                {...(documentId && documentType
-                  ? createSanityDataAttribute(documentId, documentType, `${categoryPath}.name`)
-                  : {})}
-                className='flex-1 text-h6 font-semibold text-brand-primary'>
+                className='text-h6 font-semibold text-brand-primary'
+                {...createSanityDataAttribute(documentId, documentType, `${categoryPath}.name`)}>
                 {category.name}
               </p>
+            </div>
 
-              {/* Chevron */}
-              <div
-                className={`flex-shrink-0 transition-transform duration-300 ${
-                  isOpen ? 'rotate-180' : ''
-                }`}>
-                <ChevronDownIcon className='w-10 h-10 text-brand-primary' />
-              </div>
-            </button>
+            {/* Divider */}
+            <div className='mx-5 border-t border-brand-primary/10' />
 
-            {/* Category Items */}
-            <div
-              id={`category-content-${category._key}`}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-3 px-6 transition-[max-height,padding,opacity] duration-300 ease-in-out ${
-                isOpen
-                  ? 'max-h-[2000px] py-4 opacity-100 overflow-visible'
-                  : 'max-h-0 py-0 opacity-0 overflow-hidden'
-              }`}
-              style={{
-                transitionProperty: 'max-height, padding, opacity',
-                transitionTimingFunction: 'ease-in-out',
-                transitionDuration: '300ms',
-              }}
-              aria-hidden={!isOpen}>
+            {/* Items */}
+            <ul className='px-5 py-4 space-y-2'>
               {category.items?.map((item, itemIndex) => {
                 const itemPath = `${categoryPath}.items[${itemIndex}]`;
                 const isHovered = hoveredItemKey === item._key;
 
                 return (
-                  <div
+                  <li
                     key={item._key}
-                    className='relative'
-                    onMouseEnter={() =>
-                      item.isTemporarilyUnavailable && setHoveredItemKey(item._key)
-                    }
+                    className='relative flex items-start gap-2.5'
+                    onMouseEnter={() => item.isTemporarilyUnavailable && setHoveredItemKey(item._key)}
                     onMouseLeave={() => setHoveredItemKey(null)}
-                    onTouchStart={() =>
-                      item.isTemporarilyUnavailable && setHoveredItemKey(item._key)
-                    }>
-                    <div className='flex items-center'>
-                      {/* Bullet point */}
-                      <div className='flex-shrink-0 w-2 h-2 rounded-full bg-subtle mr-3' />
-
-                      {/* Item Name */}
-                      <p
-                        {...(documentId && documentType
-                          ? createSanityDataAttribute(documentId, documentType, `${itemPath}.name`)
-                          : {})}
-                        className={`text-body-base ${
-                          item.isTemporarilyUnavailable
-                            ? 'line-through text-subtle cursor-help'
-                            : ''
-                        }`}>
-                        {item.name}
-                      </p>
-                    </div>
+                    onTouchStart={() => item.isTemporarilyUnavailable && setHoveredItemKey(item._key)}>
+                    <div className='flex-shrink-0 w-1.5 h-1.5 rounded-full bg-subtle mt-[0.4rem]' />
+                    <span
+                      className={`text-body-sm ${item.isTemporarilyUnavailable ? 'line-through text-subtle cursor-help' : 'text-brand-primary/80'}`}
+                      {...createSanityDataAttribute(documentId, documentType, `${itemPath}.name`)}>
+                      {item.name}
+                    </span>
 
                     {/* Tooltip for unavailable items */}
                     {item.isTemporarilyUnavailable && item.unavailableReason && isHovered && (
                       <div className='absolute z-50 left-0 bottom-full mb-2 px-3 py-2 bg-brand-secondary text-brand-white text-body-sm rounded-md shadow-xl max-w-xs whitespace-normal pointer-events-none text-left'>
                         <div className='relative'>
-                          {/* Tooltip arrow pointing down */}
-                          <div className='absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800' />
+                          <div className='absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-brand-secondary' />
                           <p
-                            {...(documentId && documentType
-                              ? createSanityDataAttribute(
-                                  documentId,
-                                  documentType,
-                                  `${itemPath}.unavailableReason`
-                                )
-                              : {})}>
+                            {...createSanityDataAttribute(documentId, documentType, `${itemPath}.unavailableReason`)}>
                             {item.unavailableReason}
                           </p>
                         </div>
                       </div>
                     )}
-                  </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
+
           </div>
         );
       })}
