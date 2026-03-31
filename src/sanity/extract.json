@@ -7688,7 +7688,7 @@
                     },
                     {
                       "type": "string",
-                      "value": "liveRoom"
+                      "value": "mic"
                     },
                     {
                       "type": "string",
@@ -9311,7 +9311,7 @@
               },
               {
                 "type": "string",
-                "value": "liveRoom"
+                "value": "mic"
               },
               {
                 "type": "string",

@@ -4,7 +4,7 @@ import React from 'react';
 import CardContainer from '../UI/CardContainer';
 import { renderBlock } from '@/utils/blockRenderer';
 import CardHeader from './CardHeader';
-import { getCardIcon } from './CardIcons';
+import { getCardIcon } from '@/components/UI/IconRegistry';
 import type { BaseCardProps, CardLayoutStyle } from './types';
 
 interface CardIconProps extends BaseCardProps {

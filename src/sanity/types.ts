@@ -1160,7 +1160,7 @@ export type EquipmentListSingleton = {
   _rev: string;
   categories?: Array<{
     name?: string;
-    icon?: "acoustics" | "location" | "liveRoom" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
+    icon?: "acoustics" | "location" | "mic" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
     items?: Array<{
       name?: string;
       isTemporarilyUnavailable?: boolean;
@@ -1391,7 +1391,7 @@ export type Card = {
   subtitle?: string;
   imageType?: "none" | "banner" | "icon";
   iconNoImageLayoutStyle?: "stacked" | "row";
-  iconSelection?: "acoustics" | "location" | "liveRoom" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
+  iconSelection?: "acoustics" | "location" | "mic" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
   image?: {
     asset?: {
       _ref: string;
@@ -1807,7 +1807,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -2125,7 +2125,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -2753,7 +2753,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -3625,7 +3625,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -3942,7 +3942,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -4570,7 +4570,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -5406,7 +5406,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -5723,7 +5723,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -6351,7 +6351,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -7223,7 +7223,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -7527,7 +7527,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -8155,7 +8155,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -9033,7 +9033,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -9337,7 +9337,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -9965,7 +9965,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -10833,7 +10833,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -11449,7 +11449,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -12054,7 +12054,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -12622,7 +12622,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -13250,7 +13250,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -13897,7 +13897,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -14525,7 +14525,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -15174,7 +15174,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -15802,7 +15802,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -16499,7 +16499,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -17127,7 +17127,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -17742,7 +17742,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -18199,7 +18199,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -18517,7 +18517,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -19145,7 +19145,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -20017,7 +20017,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -20334,7 +20334,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -20962,7 +20962,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -21798,7 +21798,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -22115,7 +22115,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -22743,7 +22743,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -23615,7 +23615,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -23919,7 +23919,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -24547,7 +24547,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -25425,7 +25425,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -25729,7 +25729,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -26357,7 +26357,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -27225,7 +27225,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -27841,7 +27841,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -28446,7 +28446,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -29014,7 +29014,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -29642,7 +29642,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -30289,7 +30289,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -30917,7 +30917,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -31566,7 +31566,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -32194,7 +32194,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -32891,7 +32891,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -33519,7 +33519,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -34379,7 +34379,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -34697,7 +34697,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -35325,7 +35325,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -36197,7 +36197,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -36514,7 +36514,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -37142,7 +37142,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -37978,7 +37978,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -38295,7 +38295,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -38923,7 +38923,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -39795,7 +39795,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -40099,7 +40099,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -40727,7 +40727,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -41605,7 +41605,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -41909,7 +41909,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -42537,7 +42537,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -43405,7 +43405,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -44021,7 +44021,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -44626,7 +44626,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -45194,7 +45194,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -45822,7 +45822,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -46469,7 +46469,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -47097,7 +47097,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -47746,7 +47746,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -48374,7 +48374,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -49071,7 +49071,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -49699,7 +49699,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -50377,7 +50377,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -50695,7 +50695,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -51323,7 +51323,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -52195,7 +52195,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -52512,7 +52512,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -53140,7 +53140,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -53976,7 +53976,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -54293,7 +54293,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -54921,7 +54921,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -55793,7 +55793,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -56097,7 +56097,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -56725,7 +56725,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -57603,7 +57603,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -57907,7 +57907,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -58535,7 +58535,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -59403,7 +59403,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -60019,7 +60019,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -60624,7 +60624,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -61192,7 +61192,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -61820,7 +61820,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -62467,7 +62467,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -63095,7 +63095,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -63744,7 +63744,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -64372,7 +64372,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -65069,7 +65069,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -65697,7 +65697,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -66375,7 +66375,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -66693,7 +66693,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -67321,7 +67321,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -68193,7 +68193,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -68510,7 +68510,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -69138,7 +69138,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -69974,7 +69974,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -70291,7 +70291,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -70919,7 +70919,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -71791,7 +71791,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -72095,7 +72095,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -72723,7 +72723,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -73601,7 +73601,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -73905,7 +73905,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -74533,7 +74533,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -75401,7 +75401,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -76017,7 +76017,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -76622,7 +76622,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -77190,7 +77190,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -77818,7 +77818,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -78465,7 +78465,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -79093,7 +79093,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -79742,7 +79742,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -80370,7 +80370,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -81067,7 +81067,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -81695,7 +81695,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -82443,7 +82443,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -82761,7 +82761,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -83389,7 +83389,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -84261,7 +84261,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -84578,7 +84578,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -85206,7 +85206,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -86042,7 +86042,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -86359,7 +86359,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -86987,7 +86987,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -87859,7 +87859,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -88163,7 +88163,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -88791,7 +88791,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -89669,7 +89669,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -89973,7 +89973,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -90601,7 +90601,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -91469,7 +91469,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -92085,7 +92085,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -92690,7 +92690,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -93258,7 +93258,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -93886,7 +93886,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -94533,7 +94533,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -95161,7 +95161,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -95810,7 +95810,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -96438,7 +96438,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -97135,7 +97135,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -97763,7 +97763,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -99424,7 +99424,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -99807,7 +99807,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -100177,7 +100177,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -100627,7 +100627,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -101135,7 +101135,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -101453,7 +101453,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -102081,7 +102081,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -102953,7 +102953,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -103270,7 +103270,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -103898,7 +103898,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -104734,7 +104734,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -105051,7 +105051,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -105679,7 +105679,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -106551,7 +106551,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -106855,7 +106855,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -107483,7 +107483,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -108361,7 +108361,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -108665,7 +108665,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -109293,7 +109293,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -110161,7 +110161,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -110777,7 +110777,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -111382,7 +111382,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -111950,7 +111950,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -112578,7 +112578,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -113225,7 +113225,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -113853,7 +113853,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -114502,7 +114502,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -115130,7 +115130,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -115827,7 +115827,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -116455,7 +116455,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -117069,7 +117069,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -117614,7 +117614,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -117932,7 +117932,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -118560,7 +118560,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -119432,7 +119432,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -119749,7 +119749,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -120377,7 +120377,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -121213,7 +121213,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -121530,7 +121530,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -122158,7 +122158,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -123030,7 +123030,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -123334,7 +123334,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -123962,7 +123962,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -124840,7 +124840,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -125144,7 +125144,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -125772,7 +125772,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -126640,7 +126640,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -127256,7 +127256,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -127861,7 +127861,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -128429,7 +128429,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -129057,7 +129057,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -129704,7 +129704,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -130332,7 +130332,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -130981,7 +130981,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -131609,7 +131609,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -132306,7 +132306,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -132934,7 +132934,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -133670,7 +133670,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -133988,7 +133988,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -134616,7 +134616,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -135488,7 +135488,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -135805,7 +135805,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -136433,7 +136433,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -137269,7 +137269,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -137586,7 +137586,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -138214,7 +138214,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -139086,7 +139086,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -139390,7 +139390,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -140018,7 +140018,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -140896,7 +140896,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -141200,7 +141200,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -141828,7 +141828,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -142696,7 +142696,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -143312,7 +143312,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -143917,7 +143917,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -144485,7 +144485,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -145113,7 +145113,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -145760,7 +145760,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -146388,7 +146388,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -147037,7 +147037,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -147665,7 +147665,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -148362,7 +148362,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -148990,7 +148990,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -149663,7 +149663,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -149981,7 +149981,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -150609,7 +150609,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -151481,7 +151481,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -151798,7 +151798,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -152426,7 +152426,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -153262,7 +153262,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -153579,7 +153579,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -154207,7 +154207,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -155079,7 +155079,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -155383,7 +155383,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -156011,7 +156011,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -156889,7 +156889,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -157193,7 +157193,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -157821,7 +157821,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -158689,7 +158689,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -159305,7 +159305,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -159910,7 +159910,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -160478,7 +160478,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -161106,7 +161106,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -161753,7 +161753,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -162381,7 +162381,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -163030,7 +163030,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -163658,7 +163658,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -164355,7 +164355,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -164983,7 +164983,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -165656,7 +165656,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -165974,7 +165974,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -166602,7 +166602,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -167474,7 +167474,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -167791,7 +167791,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -168419,7 +168419,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -169255,7 +169255,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -169572,7 +169572,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -170200,7 +170200,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -171072,7 +171072,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -171376,7 +171376,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -172004,7 +172004,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -172882,7 +172882,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -173186,7 +173186,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -173814,7 +173814,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -174682,7 +174682,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -175298,7 +175298,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -175903,7 +175903,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -176471,7 +176471,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -177099,7 +177099,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -177746,7 +177746,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -178374,7 +178374,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -179023,7 +179023,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -179651,7 +179651,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -180348,7 +180348,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -180976,7 +180976,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -181694,7 +181694,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -182012,7 +182012,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -182640,7 +182640,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -183512,7 +183512,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -183829,7 +183829,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -184457,7 +184457,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -185293,7 +185293,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -185610,7 +185610,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -186238,7 +186238,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -187110,7 +187110,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -187414,7 +187414,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -188042,7 +188042,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -188920,7 +188920,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -189224,7 +189224,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -189852,7 +189852,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -190720,7 +190720,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -191336,7 +191336,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -191941,7 +191941,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -192509,7 +192509,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -193137,7 +193137,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -193784,7 +193784,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -194412,7 +194412,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -195061,7 +195061,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -195689,7 +195689,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -196386,7 +196386,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -197014,7 +197014,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -197708,7 +197708,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -198026,7 +198026,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -198654,7 +198654,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -199526,7 +199526,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -199843,7 +199843,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -200471,7 +200471,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -201307,7 +201307,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -201624,7 +201624,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -202252,7 +202252,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -203124,7 +203124,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -203428,7 +203428,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -204056,7 +204056,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -204934,7 +204934,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -205238,7 +205238,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -205866,7 +205866,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -206734,7 +206734,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -207350,7 +207350,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -207955,7 +207955,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -208523,7 +208523,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -209151,7 +209151,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -209798,7 +209798,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -210426,7 +210426,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -211075,7 +211075,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -211703,7 +211703,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -212400,7 +212400,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -213028,7 +213028,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -213764,7 +213764,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -214082,7 +214082,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -214710,7 +214710,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -215582,7 +215582,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -215899,7 +215899,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -216527,7 +216527,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -217363,7 +217363,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -217680,7 +217680,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -218308,7 +218308,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -219180,7 +219180,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -219484,7 +219484,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -220112,7 +220112,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -220990,7 +220990,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -221294,7 +221294,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -221922,7 +221922,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -222790,7 +222790,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -223406,7 +223406,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -224011,7 +224011,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -224579,7 +224579,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -225207,7 +225207,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -225854,7 +225854,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -226482,7 +226482,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -227131,7 +227131,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -227759,7 +227759,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -228456,7 +228456,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -229084,7 +229084,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -229757,7 +229757,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -230075,7 +230075,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -230703,7 +230703,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -231575,7 +231575,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -231892,7 +231892,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -232520,7 +232520,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -233356,7 +233356,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -233673,7 +233673,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -234301,7 +234301,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -235173,7 +235173,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -235477,7 +235477,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -236105,7 +236105,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -236983,7 +236983,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -237287,7 +237287,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -237915,7 +237915,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -238783,7 +238783,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -239399,7 +239399,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -240004,7 +240004,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -240572,7 +240572,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -241200,7 +241200,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -241847,7 +241847,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -242475,7 +242475,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -243124,7 +243124,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -243752,7 +243752,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -244449,7 +244449,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -245077,7 +245077,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -245750,7 +245750,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -246068,7 +246068,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -246696,7 +246696,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -247568,7 +247568,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -247885,7 +247885,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -248513,7 +248513,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -249349,7 +249349,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -249666,7 +249666,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -250294,7 +250294,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -251166,7 +251166,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -251470,7 +251470,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -252098,7 +252098,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -252976,7 +252976,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -253280,7 +253280,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -253908,7 +253908,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -254776,7 +254776,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -255392,7 +255392,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -255997,7 +255997,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -256565,7 +256565,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -257193,7 +257193,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -257840,7 +257840,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -258468,7 +258468,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -259117,7 +259117,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -259745,7 +259745,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -260442,7 +260442,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -261070,7 +261070,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -261788,7 +261788,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -262106,7 +262106,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -262734,7 +262734,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -263606,7 +263606,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -263923,7 +263923,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -264551,7 +264551,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -265387,7 +265387,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -265704,7 +265704,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -266332,7 +266332,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -267204,7 +267204,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -267508,7 +267508,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -268136,7 +268136,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -269014,7 +269014,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -269318,7 +269318,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -269946,7 +269946,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -270814,7 +270814,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -271430,7 +271430,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -272035,7 +272035,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -272603,7 +272603,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -273231,7 +273231,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -273878,7 +273878,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -274506,7 +274506,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -275155,7 +275155,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -275783,7 +275783,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -276480,7 +276480,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -277108,7 +277108,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -277924,7 +277924,7 @@ export type EQUIPMENT_LIST_QUERYResult = {
   categories: Array<{
     _key: string;
     name: string | null;
-    icon: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "liveRoom" | "location" | "phone" | "speaker" | null;
+    icon: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker" | null;
     items: Array<{
       _key: string;
       name: string | null;

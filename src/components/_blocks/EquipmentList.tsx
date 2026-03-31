@@ -3,7 +3,7 @@
 import React from 'react';
 import type { EQUIPMENT_LIST_QUERYResult } from '@/sanity/types';
 import { createSanityDataAttribute } from '@/utils/sectionHelpers';
-import { getCardIcon } from '@/components/Card/CardIcons';
+import { getCardIcon } from '@/components/UI/IconRegistry';
 import { stegaClean } from 'next-sanity';
 import { useState } from 'react';
 

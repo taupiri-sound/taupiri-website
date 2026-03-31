@@ -2,16 +2,6 @@
 // When modifying, ensure all fields have appropriate validation, titles, and descriptions for content editors.
 // Follow the existing patterns in other schema files for consistency.
 
-// Shared icon options list — used by Card and Equipment Category icon fields.
-// When adding a new icon, also update CardIconType and ICON_MAP in src/components/Card/CardIcons.tsx.
-export const ICON_OPTIONS = [
-  { title: 'Acoustics', value: 'acoustics' },
-  { title: 'Location', value: 'location' },
-  { title: 'Live Room', value: 'liveRoom' },
-  { title: 'Equipment', value: 'equipment' },
-  { title: 'Phone', value: 'phone' },
-  { title: 'Email', value: 'email' },
-  { title: 'Facebook', value: 'facebook' },
-  { title: 'Guitar', value: 'guitar' },
-  { title: 'Speaker', value: 'speaker' },
-] as const;
+// Icons are managed in a single place: src/components/Card/CardIcons.tsx
+// To add or change an icon, edit that file only — changes flow here automatically.
+export { ICON_OPTIONS } from '@/components/UI/IconRegistry';
