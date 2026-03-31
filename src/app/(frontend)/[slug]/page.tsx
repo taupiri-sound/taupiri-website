@@ -40,14 +40,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!seoMetaData) {
     return {
-      title: 'Page | Taupiri Sound',
+      title: 'Page',
       description: 'Discover more about our content',
     };
   }
 
   if (!page) {
     return {
-      title: 'Page Not Found | Taupiri Sound',
+      title: 'Page Not Found',
       description: 'The page you are looking for could not be found.',
     };
   }
@@ -106,7 +106,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       datePublished: page._createdAt,
       dateModified: page._updatedAt,
       author: {
-        name: seoMetaData.siteTitle || 'Taupiri Sound',
+        name: seoMetaData.siteTitle || '',
         type: 'Organization',
       },
       publisher: organisationData,

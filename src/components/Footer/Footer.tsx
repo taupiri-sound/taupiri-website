@@ -109,7 +109,7 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData, busine
             <Link href='/#home'>
               <UnifiedImage
                 src='/images/logos/logo-white.png'
-                alt='Taupiri Sound Logo'
+                alt={`${businessInfoData?.organisationName || ''} Logo`}
                 mode='sized'
                 width={400}
                 height={190}

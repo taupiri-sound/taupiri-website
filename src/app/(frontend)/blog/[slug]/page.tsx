@@ -68,14 +68,14 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
   if (!seoMetaData) {
     return {
-      title: 'Blog Post | Taupiri Sound',
+      title: 'Blog Post',
       description: 'Read our latest article',
     };
   }
 
   if (!post) {
     return {
-      title: 'Blog Post Not Found | Taupiri Sound',
+      title: 'Blog Post Not Found',
       description: 'The blog post you are looking for could not be found.',
     };
   }
@@ -146,7 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       datePublished: publishDate,
       dateModified: modifiedDate,
       author: {
-        name: post.author || seoMetaData.siteTitle || 'Taupiri Sound',
+        name: post.author || seoMetaData.siteTitle || '',
         type: 'Person',
       },
       publisher: organisationData,

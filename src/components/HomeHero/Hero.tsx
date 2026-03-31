@@ -25,6 +25,7 @@ interface HeroProps {
   heroContentPosition: NonNullable<HOME_PAGE_QUERYResult>['heroContentPosition'];
   documentId: string;
   documentType: string;
+  businessName?: string;
 }
 
 const Hero = ({
@@ -40,6 +41,7 @@ const Hero = ({
   heroContentPosition,
   documentId,
   documentType,
+  businessName,
 }: HeroProps) => {
   const { setEnableOpacityFade } = useHeader();
   const [firstImageLoaded, setFirstImageLoaded] = useState(false);
@@ -136,6 +138,7 @@ const Hero = ({
           heroContentPosition={heroContentPosition}
           documentId={documentId}
           documentType={documentType}
+          businessName={businessName}
         />
       </div>
 

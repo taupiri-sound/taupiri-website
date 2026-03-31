@@ -25,7 +25,7 @@ export async function generateMetadata() {
 
   if (!seoMetaData) {
     return {
-      title: 'Terms & Conditions | Taupiri Sound',
+      title: 'Terms & Conditions',
       description: 'Terms and conditions for using our website and services',
     };
   }
@@ -76,7 +76,7 @@ const TermsAndConditionsPage = async () => {
       datePublished: termsData._updatedAt,
       dateModified: termsData._updatedAt,
       author: {
-        name: seoMetaData.siteTitle || 'Taupiri Sound',
+        name: seoMetaData.siteTitle || '',
         type: 'Organization',
       },
       publisher: organisationData,

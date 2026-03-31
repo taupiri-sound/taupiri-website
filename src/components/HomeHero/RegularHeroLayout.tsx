@@ -17,6 +17,7 @@ interface RegularHeroLayoutProps {
   documentId: string;
   documentType: string;
   showLogoBackColor?: boolean;
+  businessName?: string;
 }
 
 // Regular flexbox layout: content positioning with flexbox
@@ -31,6 +32,7 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
     documentId,
     documentType,
     showLogoBackColor,
+    businessName,
   } = props;
 
   // Extract position components
@@ -91,6 +93,7 @@ const RegularHeroLayout = (props: RegularHeroLayoutProps) => {
     documentType,
     showLogoBackColor,
     textAlignment: horizontal,
+    businessName,
   };
 
   return (

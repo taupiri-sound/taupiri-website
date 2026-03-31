@@ -25,9 +25,10 @@ interface VerticalNavProps {
   onClose: () => void;
   navLinks: VerticalNavData | null;
   navCtas: VerticalNavCTAData | null;
+  businessName?: string;
 }
 
-const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProps) => {
+const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas, businessName = '' }: VerticalNavProps) => {
   useBodyScrollLock(isMenuOpen);
   const focusTrapRef = useFocusTrap(isMenuOpen);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -71,7 +72,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas }: VerticalNavProp
             <div className='relative w-[160px] h-[60px]'>
               <UnifiedImage
                 src='/images/logos/logo-white.png'
-                alt='Taupiri Sound Logo'
+                alt={`${businessName} Logo`}
                 mode='fill'
                 sizeContext='logo'
                 objectFit='contain'

@@ -51,7 +51,7 @@ export function generateMetadata({
   publishedTime,
   modifiedTime,
 }: MetadataConfig): Metadata {
-  const siteTitle = seoMetaData?.siteTitle || 'Taupiri Sound';
+  const siteTitle = seoMetaData?.siteTitle || '';
   const siteTagline = seoMetaData?.siteTagline ? ` | ${seoMetaData.siteTagline}` : '';
   const siteDescription = seoMetaData?.siteDescription || '';
   const seoKeywords = seoMetaData?.seoKeywords || '';

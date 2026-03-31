@@ -15,7 +15,7 @@ export async function generateMetadata() {
 
   if (!seoMetaData) {
     return {
-      title: 'Blog | Taupiri Sound',
+      title: 'Blog',
       description: 'Read our latest articles and insights',
     };
   }

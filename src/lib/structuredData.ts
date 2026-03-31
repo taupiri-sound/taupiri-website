@@ -248,7 +248,7 @@ export function getWebSiteDataFromSeoMetaData(
   baseUrl: string
 ): WebSiteData {
   return {
-    name: seoMetaData?.siteTitle || 'Taupiri Sound',
+    name: seoMetaData?.siteTitle || '',
     url: baseUrl,
     ...(seoMetaData?.siteDescription && { description: seoMetaData.siteDescription }),
   };

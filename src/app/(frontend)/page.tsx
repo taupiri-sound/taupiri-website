@@ -10,6 +10,7 @@ import {
   getEquipmentList,
   getTeamMembers,
   getAllProjects,
+  getBusinessInfo,
 } from '@/actions';
 import type { PAGE_QUERYResult } from '@/sanity/types';
 import Container from '@/components/Layout/Container';
@@ -19,9 +20,8 @@ export async function generateMetadata() {
   const seoMetaData = await getSeoMetaData();
   if (!seoMetaData) {
     return {
-      title: 'Taupiri Sound',
-      description:
-        "Taupiri Sound is a recording studio based in the countryside of northern Waikato. For over a decade we have worked on countless projects from educational resources to some of Aotearoa's best artists.",
+      title: '',
+      description: '',
     };
   }
 
@@ -41,6 +41,7 @@ const Page = async () => {
     equipmentListData,
     teamMembersData,
     allProjectsData,
+    businessInfo,
   ] = await Promise.all([
     getHomePage(),
     getSeoMetaData(),
@@ -50,6 +51,7 @@ const Page = async () => {
     getEquipmentList(),
     getTeamMembers(),
     getAllProjects(),
+    getBusinessInfo(),
   ]);
 
   if (!page) {
@@ -72,6 +74,7 @@ const Page = async () => {
         heroContentPosition={page.heroContentPosition}
         documentId={page._id}
         documentType={page._type}
+        businessName={businessInfo?.organisationName || ''}
       />
 
       {/* Additional Page Builder Content */}

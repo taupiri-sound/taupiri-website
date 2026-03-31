@@ -9,9 +9,10 @@ interface HeroLogoProps {
   heroTextColor: NonNullable<HOME_PAGE_QUERYResult>['heroTextColor'];
   documentId: string;
   documentType: string;
+  businessName?: string;
 }
 
-const HeroLogo = ({ heroLogoDisplay, heroTextColor, documentId, documentType }: HeroLogoProps) => {
+const HeroLogo = ({ heroLogoDisplay, heroTextColor, documentId, documentType, businessName = '' }: HeroLogoProps) => {
   const cleanLogoDisplay = stegaClean(heroLogoDisplay) || 'with-text';
 
   // Don't render anything if 'none' is selected
@@ -42,7 +43,7 @@ const HeroLogo = ({ heroLogoDisplay, heroTextColor, documentId, documentType }: 
       {...createSanityDataAttribute(documentId, documentType, 'heroLogoDisplay')}>
       <UnifiedImage
         src={logoSrc}
-        alt='Taupiri Sound Logo'
+        alt={`${businessName} Logo`}
         mode='sized'
         width={500}
         height={500}

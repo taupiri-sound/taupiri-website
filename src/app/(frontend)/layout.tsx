@@ -18,6 +18,7 @@ import {
 } from '@/actions';
 import { PageLoadProvider } from '@/contexts/PageLoadContext';
 import { HeaderProvider } from '@/contexts/HeaderContext';
+import { SiteProvider } from '@/contexts/SiteContext';
 import { generateMetadata as generateDefaultMetadata } from '@/lib/metadata';
 import {
   generateOrganisationSchema,
@@ -80,6 +81,7 @@ const FrontendLayout = async ({
   }
 
   return (
+    <SiteProvider businessName={businessInfo?.organisationName || ''}>
     <PageLoadProvider>
       <HeaderProvider>
         <NavigationScroll />
@@ -106,7 +108,7 @@ const FrontendLayout = async ({
         )}
 
         <div className='min-h-screen flex flex-col'>
-          <Header headerData={headerData} />
+          <Header headerData={headerData} businessName={businessInfo?.organisationName || ''} />
           <main id='main-content' className='flex-1'>
             {children}
           </main>
@@ -126,6 +128,7 @@ const FrontendLayout = async ({
         </div>
       </HeaderProvider>
     </PageLoadProvider>
+    </SiteProvider>
   );
 };
 

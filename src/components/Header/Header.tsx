@@ -13,9 +13,10 @@ import { headerHeight } from '@/utils/spacingConstants';
 
 interface HeaderProps {
   headerData: HEADER_QUERYResult | null;
+  businessName?: string;
 }
 
-const Header = ({ headerData }: HeaderProps) => {
+const Header = ({ headerData, businessName = '' }: HeaderProps) => {
   const { enableOpacityFade } = useHeader();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // Always start transparent - useEffect will set correct value
@@ -111,7 +112,7 @@ const Header = ({ headerData }: HeaderProps) => {
           }}>
           <UnifiedImage
             src='/images/logos/logo-white.png'
-            alt='Taupiri Sound Logo'
+            alt={`${businessName} Logo`}
             mode='sized'
             width={200}
             height={125}
@@ -142,6 +143,7 @@ const Header = ({ headerData }: HeaderProps) => {
         onClose={closeMenu}
         navLinks={headerData?.verticalNav || null}
         navCtas={headerData?.verticalNavCtas || null}
+        businessName={businessName}
       />
     </>
   );

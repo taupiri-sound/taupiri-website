@@ -19,6 +19,7 @@ import {
   anchorLinkScrollMarginTop,
 } from '@/utils/spacingConstants';
 import UnifiedImage from '../UI/UnifiedImage';
+import { useSite } from '@/contexts/SiteContext';
 
 // Context to track if PageSection has a title (affects nested section heading levels)
 const PageSectionContext = createContext<{ hasTitle: boolean }>({ hasTitle: false });
@@ -60,6 +61,8 @@ const PageSection = ({
   useCompactGap = false,
   hideGraphic = false,
 }: PageSectionProps) => {
+  const { businessName } = useSite();
+
   // Create data attributes for Sanity live editing
   const titleDataAttribute = createSanityDataAttribute(documentId, documentType, titlePath);
   const titleTranslationDataAttribute = createSanityDataAttribute(
@@ -106,7 +109,7 @@ const PageSection = ({
             {!hideGraphic && (
               <UnifiedImage
                 src='/images/logos/logo-left.png'
-                alt='Taupiri Logo'
+                alt={`${businessName} Logo`}
                 mode='sized'
                 width={200}
                 height={200}

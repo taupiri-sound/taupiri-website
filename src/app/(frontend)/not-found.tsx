@@ -1,24 +1,29 @@
 import React from 'react';
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
 import CTA from '@/components/UI/CTA';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 import { FaQuestionCircle } from 'react-icons/fa';
+import { getBusinessInfo } from '@/actions';
 
 const META_DESCRIPTION = 'Sorry, the page you are looking for could not be found.';
 
-export const metadata: Metadata = {
-  title: 'Page Not Found - Taupiri Sound',
-  description: META_DESCRIPTION,
-  robots: 'noindex, nofollow',
-  openGraph: {
-    title: 'Page Not Found - Taupiri Sound',
+export async function generateMetadata() {
+  const businessInfo = await getBusinessInfo();
+  const orgName = businessInfo?.organisationName || '';
+  const title = orgName ? `Page Not Found - ${orgName}` : 'Page Not Found';
+  return {
+    title,
     description: META_DESCRIPTION,
-    type: 'website',
-  },
-};
+    robots: 'noindex, nofollow',
+    openGraph: {
+      title,
+      description: META_DESCRIPTION,
+      type: 'website',
+    },
+  };
+}
 
 const navigationLinks = [
   {

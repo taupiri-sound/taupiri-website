@@ -188,6 +188,7 @@ export async function POST(request: Request) {
         phone: sanitizedPhone,
         message: sanitizedMessage,
         logoUrl,
+        orgName: organisationName || '',
         emailGreeting: contactFormSettings?.emailGreeting || undefined,
         emailIntroMessage: contactFormSettings?.emailIntroMessage || undefined,
         emailOutroMessage: contactFormSettings?.emailOutroMessage || undefined,

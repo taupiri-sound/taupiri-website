@@ -25,7 +25,7 @@ export async function generateMetadata() {
 
   if (!seoMetaData) {
     return {
-      title: 'Privacy Policy | Taupiri Sound',
+      title: 'Privacy Policy',
       description: 'Privacy policy for our website and how we handle your data',
     };
   }
@@ -82,7 +82,7 @@ const PrivacyPolicyPage = async () => {
       datePublished: privacyData._updatedAt,
       dateModified: privacyData._updatedAt,
       author: {
-        name: seoMetaData.siteTitle || 'Taupiri Sound',
+        name: seoMetaData.siteTitle || '',
         type: 'Organization',
       },
       publisher: organisationData,
