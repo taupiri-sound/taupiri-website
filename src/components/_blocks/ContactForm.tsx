@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import CTA from '../UI/CTA';
 import type { CONTACT_FORM_SETTINGS_QUERYResult } from '@/sanity/types';
@@ -46,6 +46,13 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (status === 'success') {
+      containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [status]);
 
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
     setStatus('loading');
@@ -99,6 +106,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
 
   return (
     <div
+      ref={containerRef}
       className={`max-w-2xl bg-brand-white-dark rounded-lg px-6 md:px-8 py-8 shadow-sm text-left ${className}`.trim()}>
       {/* Optional Title and Subtitle */}
       {(title || subtitle) && (
@@ -108,124 +116,124 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
-        {/* Honeypot field - hidden from users, only bots will fill it */}
-        <div className='hidden' aria-hidden='true'>
-          <label htmlFor='honeypot'>Leave this field empty</label>
-          <input
-            type='text'
-            id='honeypot'
-            {...register('honeypot')}
-            tabIndex={-1}
-            autoComplete='off'
-          />
-        </div>
-
-        {/* Name field */}
-        <div>
-          <label htmlFor='name' className={labelStyles}>
-            Name <span className='text-red-500'>*</span>
-          </label>
-          <input
-            type='text'
-            id='name'
-            {...register('name', {
-              required: 'Please enter your name',
-              minLength: {
-                value: 2,
-                message: 'Name must be at least 2 characters',
-              },
-            })}
-            disabled={fieldDisabled}
-            className={getInputStyles('name')}
-            placeholder='Your name'
-            aria-invalid={errors.name ? 'true' : 'false'}
-          />
-          {errors.name && (
-            <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
-              {errors.name.message}
-            </p>
-          )}
-        </div>
-
-        {/* Email field */}
-        <div>
-          <label htmlFor='email' className={labelStyles}>
-            Email <span className='text-red-500'>*</span>
-          </label>
-          <input
-            type='email'
-            id='email'
-            {...register('email', {
-              required: 'Please enter your email address',
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: 'Please enter a valid email address',
-              },
-            })}
-            disabled={fieldDisabled}
-            className={getInputStyles('email')}
-            placeholder='your.email@example.com'
-            aria-invalid={errors.email ? 'true' : 'false'}
-          />
-          {errors.email && (
-            <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
-              {errors.email.message}
-            </p>
-          )}
-        </div>
-
-        {/* Phone field (optional) */}
-        <div>
-          <label htmlFor='phone' className={labelStyles}>
-            Phone <span className='text-gray-400 text-body-sm'>(optional)</span>
-          </label>
-          <input
-            type='tel'
-            id='phone'
-            {...register('phone')}
-            disabled={fieldDisabled}
-            className={getInputStyles('phone')}
-            placeholder='+64 21 123 4567'
-          />
-        </div>
-
-        {/* Message field */}
-        <div>
-          <label htmlFor='message' className={labelStyles}>
-            Message <span className='text-red-500'>*</span>
-          </label>
-          <textarea
-            id='message'
-            {...register('message', {
-              required: 'Please enter a message',
-              minLength: {
-                value: 10,
-                message: 'Message must be at least 10 characters',
-              },
-            })}
-            disabled={fieldDisabled}
-            rows={6}
-            className={getInputStyles('message')}
-            placeholder={messagePlaceholder}
-            aria-invalid={errors.message ? 'true' : 'false'}
-          />
-          {errors.message && (
-            <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
-              {errors.message.message}
-            </p>
-          )}
-        </div>
-
-        {/* Error message display */}
-        {status === 'error' && (
-          <div className='bg-red-50 border-2 border-red-200 rounded-lg p-4'>
-            <p className='text-body-base text-red-700'>{errorMessage}</p>
+      {status !== 'success' && (
+        <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
+          {/* Honeypot field - hidden from users, only bots will fill it */}
+          <div className='hidden' aria-hidden='true'>
+            <label htmlFor='honeypot'>Leave this field empty</label>
+            <input
+              type='text'
+              id='honeypot'
+              {...register('honeypot')}
+              tabIndex={-1}
+              autoComplete='off'
+            />
           </div>
-        )}
 
-        {/* Submit button */}
-        {status !== 'success' && (
+          {/* Name field */}
+          <div>
+            <label htmlFor='name' className={labelStyles}>
+              Name <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type='text'
+              id='name'
+              {...register('name', {
+                required: 'Please enter your name',
+                minLength: {
+                  value: 2,
+                  message: 'Name must be at least 2 characters',
+                },
+              })}
+              disabled={fieldDisabled}
+              className={getInputStyles('name')}
+              placeholder='Your name'
+              aria-invalid={errors.name ? 'true' : 'false'}
+            />
+            {errors.name && (
+              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+                {errors.name.message}
+              </p>
+            )}
+          </div>
+
+          {/* Email field */}
+          <div>
+            <label htmlFor='email' className={labelStyles}>
+              Email <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type='email'
+              id='email'
+              {...register('email', {
+                required: 'Please enter your email address',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Please enter a valid email address',
+                },
+              })}
+              disabled={fieldDisabled}
+              className={getInputStyles('email')}
+              placeholder='your.email@example.com'
+              aria-invalid={errors.email ? 'true' : 'false'}
+            />
+            {errors.email && (
+              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+                {errors.email.message}
+              </p>
+            )}
+          </div>
+
+          {/* Phone field (optional) */}
+          <div>
+            <label htmlFor='phone' className={labelStyles}>
+              Phone <span className='text-gray-400 text-body-sm'>(optional)</span>
+            </label>
+            <input
+              type='tel'
+              id='phone'
+              {...register('phone')}
+              disabled={fieldDisabled}
+              className={getInputStyles('phone')}
+              placeholder='+64 21 123 4567'
+            />
+          </div>
+
+          {/* Message field */}
+          <div>
+            <label htmlFor='message' className={labelStyles}>
+              Message <span className='text-red-500'>*</span>
+            </label>
+            <textarea
+              id='message'
+              {...register('message', {
+                required: 'Please enter a message',
+                minLength: {
+                  value: 10,
+                  message: 'Message must be at least 10 characters',
+                },
+              })}
+              disabled={fieldDisabled}
+              rows={6}
+              className={getInputStyles('message')}
+              placeholder={messagePlaceholder}
+              aria-invalid={errors.message ? 'true' : 'false'}
+            />
+            {errors.message && (
+              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+                {errors.message.message}
+              </p>
+            )}
+          </div>
+
+          {/* Error message display */}
+          {status === 'error' && (
+            <div className='bg-red-50 border-2 border-red-200 rounded-lg p-4'>
+              <p className='text-body-base text-red-700'>{errorMessage}</p>
+            </div>
+          )}
+
+          {/* Submit button */}
           <div className='flex justify-center'>
             <CTA
               as='button'
@@ -236,13 +244,13 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               {status === 'loading' ? 'Sending...' : 'Send Message'}
             </CTA>
           </div>
-        )}
-      </form>
+        </form>
+      )}
 
       {status === 'success' && (
-        <div className='bg-brand-white rounded-lg shadow-sm p-6 mt-4 text-center'>
-          <p className='text-h4 mb-2'>{successHeading}</p>
-          <p className='text-body-base mb-4'>{successMessage}</p>
+        <div className='bg-brand-secondary rounded-lg shadow-sm p-6 mt-4 text-center'>
+          <p className='text-h4 mb-2 text-brand-white'>{successHeading}</p>
+          <p className='text-body-base mb-4 text-brand-white'>{successMessage}</p>
         </div>
       )}
     </div>
