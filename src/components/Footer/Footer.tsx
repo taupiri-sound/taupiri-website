@@ -244,8 +244,10 @@ const Footer = ({ footerData, companyLinksData, legalPagesVisibilityData, busine
 
           <div className='flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0'>
             {/* Copyright */}
-            {footerData?._type === 'footer' && footerData.copyrightText && (
-              <div className='text-brand-white text-body-sm'>{footerData.copyrightText}</div>
+            {businessInfoData?.organisationName && (
+              <div className='text-brand-white text-body-sm'>
+                © {businessInfoData.organisationName} {new Date().getFullYear()}
+              </div>
             )}
 
             {/* Legal Links */}
