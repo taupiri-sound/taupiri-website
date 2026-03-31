@@ -38,6 +38,7 @@ import { teamMemberListType } from './blocks/teamMemberListType';
 import { projectListType } from './blocks/projectListType';
 import { featuredProjectsType } from './blocks/featuredProjectsType';
 import { contactFormType } from './blocks/contactFormType';
+import { imageGroupType } from './blocks/imageGroupType';
 import { seoMetaDataType } from './seoMetaDataType';
 import { teamMemberType } from './teamMemberType';
 import { projectType } from './projectType';
@@ -91,6 +92,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     iconType,
     imageType,
     imageGalleryType,
+    imageGroupType,
     youTubeVideoType,
     spotifyWidgetType,
     bandcampWidgetType,

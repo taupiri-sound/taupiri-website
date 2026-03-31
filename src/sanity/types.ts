@@ -511,6 +511,29 @@ export type YouTubeVideo = {
   url?: string;
 };
 
+export type ImageGroup = {
+  _type: "imageGroup";
+  images?: Array<{
+    image?: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      _type: "image";
+    };
+    _type: "imageGroupItem";
+    _key: string;
+  }>;
+  size?: "full" | "small";
+  duration?: number;
+};
+
 export type ImageGallery = {
   _type: "imageGallery";
   columns?: "2" | "3" | "4";
@@ -668,6 +691,8 @@ export type SubSubSection = {
     _key: string;
   } & ImageGallery | {
     _key: string;
+  } & ImageGroup | {
+    _key: string;
   } & CtaButton | {
     _key: string;
   } & CtaCalloutLink | {
@@ -728,6 +753,8 @@ export type SubSection = {
   } & ImageBlock | {
     _key: string;
   } & ImageGallery | {
+    _key: string;
+  } & ImageGroup | {
     _key: string;
   } & CtaButton | {
     _key: string;
@@ -793,6 +820,8 @@ export type PageSection = {
     _key: string;
   } & ImageGallery | {
     _key: string;
+  } & ImageGroup | {
+    _key: string;
   } & CtaButton | {
     _key: string;
   } & CtaCalloutLink | {
@@ -847,6 +876,8 @@ export type PageBuilder = Array<{
 } & ImageBlock | {
   _key: string;
 } & ImageGallery | {
+  _key: string;
+} & ImageGroup | {
   _key: string;
 } & CtaButton | {
   _key: string;
@@ -1001,6 +1032,8 @@ export type PrivacyPolicy = {
     _key: string;
   } & ImageGallery | {
     _key: string;
+  } & ImageGroup | {
+    _key: string;
   } & CtaButton | {
     _key: string;
   } & CtaCalloutLink | {
@@ -1065,6 +1098,8 @@ export type TermsAndConditions = {
   } & ImageBlock | {
     _key: string;
   } & ImageGallery | {
+    _key: string;
+  } & ImageGroup | {
     _key: string;
   } & CtaButton | {
     _key: string;
@@ -1160,7 +1195,7 @@ export type EquipmentListSingleton = {
   _rev: string;
   categories?: Array<{
     name?: string;
-    icon?: "acoustics" | "location" | "mic" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
+    icon?: "acoustics" | "location" | "mic" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker" | "computer" | "cog" | "software";
     items?: Array<{
       name?: string;
       isTemporarilyUnavailable?: boolean;
@@ -1282,6 +1317,8 @@ export type BlogPost = {
     _key: string;
   } & ImageGallery | {
     _key: string;
+  } & ImageGroup | {
+    _key: string;
   } & CtaButton | {
     _key: string;
   } & CtaCalloutLink | {
@@ -1363,6 +1400,8 @@ export type Page = {
     _key: string;
   } & ImageGallery | {
     _key: string;
+  } & ImageGroup | {
+    _key: string;
   } & CtaButton | {
     _key: string;
   } & CtaCalloutLink | {
@@ -1391,7 +1430,7 @@ export type Card = {
   subtitle?: string;
   imageType?: "none" | "banner" | "icon";
   iconNoImageLayoutStyle?: "stacked" | "row";
-  iconSelection?: "acoustics" | "location" | "mic" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker";
+  iconSelection?: "acoustics" | "location" | "mic" | "equipment" | "phone" | "email" | "facebook" | "guitar" | "speaker" | "computer" | "cog" | "software";
   image?: {
     asset?: {
       _ref: string;
@@ -1734,7 +1773,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ContactForm | FeaturedProjects | ProjectList | TeamMemberList | ClientList | EquipmentList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | Project | TeamMember | EquipmentListSingleton | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | ContactFormSettings | CompanyLinks | CompanyLinksArray | SeoMetaData | BusinessInfo | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = NavSection | VerticalNavDivider | VerticalNavLink | NavLink | CtaList | ContactForm | FeaturedProjects | ProjectList | TeamMemberList | ClientList | EquipmentList | ItemList | CheckList | BlockListWithStats | CompanyLinksBlock | CtaBlogPost | HomeHeroCtaButton | EmbeddedCtaButton | CtaCalloutLink | CtaButton | TwoColumnLayout | Quote | AudioSamplePlayer | BandcampWidget | SpotifyWidget | YouTubeVideo | ImageGroup | ImageGallery | ImageBlock | Icon | GridLayout | RichText | Divider | SubSubSection | SubSection | PageSection | PageBuilder | Footer | Header | BlockContent | PrivacyPolicy | TermsAndConditions | Project | TeamMember | EquipmentListSingleton | Clients | AudioSample | BlogPost | BlogIndexPage | Page | Card | HomePage | ContactFormSettings | CompanyLinks | CompanyLinksArray | SeoMetaData | BusinessInfo | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: PAGE_QUERY
@@ -1807,7 +1846,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -2125,7 +2164,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -2753,7 +2792,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -3625,7 +3664,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -3942,7 +3981,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -4570,7 +4609,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -5315,6 +5354,30 @@ export type PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -5406,7 +5469,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -5723,7 +5786,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -6351,7 +6414,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -7223,7 +7286,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -7527,7 +7590,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -8155,7 +8218,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -8897,6 +8960,30 @@ export type PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -9033,7 +9120,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -9337,7 +9424,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -9965,7 +10052,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -10833,7 +10920,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -11317,6 +11404,30 @@ export type PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -11449,7 +11560,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -12054,7 +12165,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -12517,6 +12628,29 @@ export type PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -12622,7 +12756,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -13250,7 +13384,7 @@ export type PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -13897,7 +14031,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -14525,7 +14659,7 @@ export type PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -15174,7 +15308,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -15802,7 +15936,7 @@ export type PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -16499,7 +16633,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -17127,7 +17261,7 @@ export type PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -17742,7 +17876,7 @@ export type PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -18199,7 +18333,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -18517,7 +18651,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -19145,7 +19279,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -20017,7 +20151,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -20334,7 +20468,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -20962,7 +21096,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -21707,6 +21841,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -21798,7 +21956,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -22115,7 +22273,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -22743,7 +22901,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -23615,7 +23773,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -23919,7 +24077,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -24547,7 +24705,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -25289,6 +25447,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -25425,7 +25607,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -25729,7 +25911,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -26357,7 +26539,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -27225,7 +27407,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -27709,6 +27891,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -27841,7 +28047,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -28446,7 +28652,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -28909,6 +29115,29 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -29014,7 +29243,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -29642,7 +29871,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -30289,7 +30518,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -30917,7 +31146,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -31566,7 +31795,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -32194,7 +32423,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -32891,7 +33120,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -33519,7 +33748,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -34379,7 +34608,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -34697,7 +34926,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -35325,7 +35554,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -36197,7 +36426,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -36514,7 +36743,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -37142,7 +37371,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -37887,6 +38116,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -37978,7 +38231,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -38295,7 +38548,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -38923,7 +39176,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -39795,7 +40048,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -40099,7 +40352,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -40727,7 +40980,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -41469,6 +41722,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -41605,7 +41882,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -41909,7 +42186,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -42537,7 +42814,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -43405,7 +43682,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -43889,6 +44166,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -44021,7 +44322,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -44626,7 +44927,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -45089,6 +45390,29 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -45194,7 +45518,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -45822,7 +46146,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -46469,7 +46793,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -47097,7 +47421,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -47746,7 +48070,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -48374,7 +48698,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -49071,7 +49395,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -49699,7 +50023,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -50377,7 +50701,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -50695,7 +51019,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -51323,7 +51647,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -52195,7 +52519,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -52512,7 +52836,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -53140,7 +53464,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -53885,6 +54209,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -53976,7 +54324,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -54293,7 +54641,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -54921,7 +55269,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -55793,7 +56141,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -56097,7 +56445,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -56725,7 +57073,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -57467,6 +57815,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -57603,7 +57975,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -57907,7 +58279,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -58535,7 +58907,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -59403,7 +59775,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -59887,6 +60259,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -60019,7 +60415,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -60624,7 +61020,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -61087,6 +61483,29 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -61192,7 +61611,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -61820,7 +62239,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -62467,7 +62886,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -63095,7 +63514,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -63744,7 +64163,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -64372,7 +64791,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -65069,7 +65488,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -65697,7 +66116,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -66375,7 +66794,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -66693,7 +67112,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -67321,7 +67740,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -68193,7 +68612,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -68510,7 +68929,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -69138,7 +69557,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -69883,6 +70302,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -69974,7 +70417,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -70291,7 +70734,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -70919,7 +71362,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -71791,7 +72234,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -72095,7 +72538,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -72723,7 +73166,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -73465,6 +73908,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -73601,7 +74068,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -73905,7 +74372,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -74533,7 +75000,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -75401,7 +75868,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -75885,6 +76352,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -76017,7 +76508,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -76622,7 +77113,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -77085,6 +77576,29 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -77190,7 +77704,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -77818,7 +78332,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -78465,7 +78979,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -79093,7 +79607,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -79742,7 +80256,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -80370,7 +80884,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -81067,7 +81581,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -81695,7 +82209,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -82443,7 +82957,7 @@ export type HOME_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -82761,7 +83275,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -83389,7 +83903,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -84261,7 +84775,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -84578,7 +85092,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -85206,7 +85720,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -85951,6 +86465,30 @@ export type HOME_PAGE_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -86042,7 +86580,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -86359,7 +86897,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -86987,7 +87525,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -87859,7 +88397,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -88163,7 +88701,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -88791,7 +89329,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -89533,6 +90071,30 @@ export type HOME_PAGE_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -89669,7 +90231,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -89973,7 +90535,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -90601,7 +91163,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -91469,7 +92031,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -91953,6 +92515,30 @@ export type HOME_PAGE_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -92085,7 +92671,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -92690,7 +93276,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -93153,6 +93739,29 @@ export type HOME_PAGE_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -93258,7 +93867,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -93886,7 +94495,7 @@ export type HOME_PAGE_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -94533,7 +95142,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -95161,7 +95770,7 @@ export type HOME_PAGE_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -95810,7 +96419,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -96438,7 +97047,7 @@ export type HOME_PAGE_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -97135,7 +97744,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -97763,7 +98372,7 @@ export type HOME_PAGE_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -99424,7 +100033,7 @@ export type BLOG_POSTS_QUERYResult = Array<{
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -99807,7 +100416,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -100177,7 +100786,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -100627,7 +101236,7 @@ export type BLOG_INDEX_PAGE_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -101135,7 +101744,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -101453,7 +102062,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -102081,7 +102690,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -102953,7 +103562,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -103270,7 +103879,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -103898,7 +104507,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -104643,6 +105252,30 @@ export type BLOG_POST_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -104734,7 +105367,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -105051,7 +105684,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -105679,7 +106312,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -106551,7 +107184,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -106855,7 +107488,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -107483,7 +108116,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -108225,6 +108858,30 @@ export type BLOG_POST_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -108361,7 +109018,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -108665,7 +109322,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -109293,7 +109950,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -110161,7 +110818,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -110645,6 +111302,30 @@ export type BLOG_POST_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -110777,7 +111458,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -111382,7 +112063,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -111845,6 +112526,29 @@ export type BLOG_POST_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -111950,7 +112654,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -112578,7 +113282,7 @@ export type BLOG_POST_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -113225,7 +113929,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -113853,7 +114557,7 @@ export type BLOG_POST_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -114502,7 +115206,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -115130,7 +115834,7 @@ export type BLOG_POST_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -115827,7 +116531,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -116455,7 +117159,7 @@ export type BLOG_POST_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -117069,7 +117773,7 @@ export type BLOG_POST_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -117614,7 +118318,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -117932,7 +118636,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -118560,7 +119264,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -119432,7 +120136,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -119749,7 +120453,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -120377,7 +121081,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -121122,6 +121826,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -121213,7 +121941,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -121530,7 +122258,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -122158,7 +122886,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -123030,7 +123758,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -123334,7 +124062,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -123962,7 +124690,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -124704,6 +125432,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -124840,7 +125592,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -125144,7 +125896,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -125772,7 +126524,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -126640,7 +127392,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -127124,6 +127876,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -127256,7 +128032,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -127861,7 +128637,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -128324,6 +129100,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -128429,7 +129228,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -129057,7 +129856,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -129704,7 +130503,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -130332,7 +131131,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -130981,7 +131780,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -131609,7 +132408,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -132306,7 +133105,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -132934,7 +133733,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -133670,7 +134469,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -133988,7 +134787,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -134616,7 +135415,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -135488,7 +136287,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -135805,7 +136604,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -136433,7 +137232,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -137178,6 +137977,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -137269,7 +138092,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -137586,7 +138409,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -138214,7 +139037,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -139086,7 +139909,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -139390,7 +140213,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -140018,7 +140841,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -140760,6 +141583,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -140896,7 +141743,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -141200,7 +142047,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -141828,7 +142675,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -142696,7 +143543,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -143180,6 +144027,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -143312,7 +144183,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -143917,7 +144788,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -144380,6 +145251,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -144485,7 +145379,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -145113,7 +146007,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -145760,7 +146654,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -146388,7 +147282,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -147037,7 +147931,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -147665,7 +148559,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -148362,7 +149256,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -148990,7 +149884,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -149663,7 +150557,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -149981,7 +150875,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -150609,7 +151503,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -151481,7 +152375,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -151798,7 +152692,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -152426,7 +153320,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -153171,6 +154065,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -153262,7 +154180,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -153579,7 +154497,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -154207,7 +155125,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -155079,7 +155997,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -155383,7 +156301,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -156011,7 +156929,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -156753,6 +157671,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -156889,7 +157831,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -157193,7 +158135,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -157821,7 +158763,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -158689,7 +159631,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -159173,6 +160115,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -159305,7 +160271,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -159910,7 +160876,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -160373,6 +161339,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -160478,7 +161467,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -161106,7 +162095,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -161753,7 +162742,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -162381,7 +163370,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -163030,7 +164019,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -163658,7 +164647,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -164355,7 +165344,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -164983,7 +165972,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -165656,7 +166645,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -165974,7 +166963,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -166602,7 +167591,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -167474,7 +168463,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -167791,7 +168780,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -168419,7 +169408,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -169164,6 +170153,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -169255,7 +170268,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -169572,7 +170585,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -170200,7 +171213,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -171072,7 +172085,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -171376,7 +172389,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -172004,7 +173017,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -172746,6 +173759,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -172882,7 +173919,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -173186,7 +174223,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -173814,7 +174851,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -174682,7 +175719,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -175166,6 +176203,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -175298,7 +176359,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -175903,7 +176964,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -176366,6 +177427,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -176471,7 +177555,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -177099,7 +178183,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -177746,7 +178830,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -178374,7 +179458,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -179023,7 +180107,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -179651,7 +180735,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -180348,7 +181432,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -180976,7 +182060,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -181694,7 +182778,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -182012,7 +183096,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -182640,7 +183724,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -183512,7 +184596,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -183829,7 +184913,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -184457,7 +185541,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -185202,6 +186286,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -185293,7 +186401,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -185610,7 +186718,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -186238,7 +187346,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -187110,7 +188218,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -187414,7 +188522,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -188042,7 +189150,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -188784,6 +189892,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -188920,7 +190052,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -189224,7 +190356,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -189852,7 +190984,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -190720,7 +191852,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -191204,6 +192336,30 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -191336,7 +192492,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -191941,7 +193097,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -192404,6 +193560,29 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -192509,7 +193688,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -193137,7 +194316,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -193784,7 +194963,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -194412,7 +195591,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -195061,7 +196240,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -195689,7 +196868,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -196386,7 +197565,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -197014,7 +198193,7 @@ export type TERMS_AND_CONDITIONS_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -197708,7 +198887,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -198026,7 +199205,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -198654,7 +199833,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -199526,7 +200705,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -199843,7 +201022,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -200471,7 +201650,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -201216,6 +202395,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -201307,7 +202510,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -201624,7 +202827,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -202252,7 +203455,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -203124,7 +204327,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -203428,7 +204631,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -204056,7 +205259,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -204798,6 +206001,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -204934,7 +206161,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -205238,7 +206465,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -205866,7 +207093,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -206734,7 +207961,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -207218,6 +208445,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -207350,7 +208601,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -207955,7 +209206,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -208418,6 +209669,29 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -208523,7 +209797,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -209151,7 +210425,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -209798,7 +211072,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -210426,7 +211700,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -211075,7 +212349,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -211703,7 +212977,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -212400,7 +213674,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -213028,7 +214302,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -213764,7 +215038,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -214082,7 +215356,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -214710,7 +215984,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -215582,7 +216856,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -215899,7 +217173,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -216527,7 +217801,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -217272,6 +218546,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -217363,7 +218661,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -217680,7 +218978,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -218308,7 +219606,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -219180,7 +220478,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -219484,7 +220782,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -220112,7 +221410,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -220854,6 +222152,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -220990,7 +222312,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -221294,7 +222616,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -221922,7 +223244,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -222790,7 +224112,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -223274,6 +224596,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -223406,7 +224752,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -224011,7 +225357,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -224474,6 +225820,29 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -224579,7 +225948,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -225207,7 +226576,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -225854,7 +227223,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -226482,7 +227851,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -227131,7 +228500,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -227759,7 +229128,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -228456,7 +229825,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -229084,7 +230453,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -229757,7 +231126,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -230075,7 +231444,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -230703,7 +232072,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -231575,7 +232944,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -231892,7 +233261,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -232520,7 +233889,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -233265,6 +234634,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -233356,7 +234749,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -233673,7 +235066,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -234301,7 +235694,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -235173,7 +236566,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -235477,7 +236870,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -236105,7 +237498,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -236847,6 +238240,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -236983,7 +238400,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -237287,7 +238704,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -237915,7 +239332,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -238783,7 +240200,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -239267,6 +240684,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -239399,7 +240840,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -240004,7 +241445,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -240467,6 +241908,29 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -240572,7 +242036,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -241200,7 +242664,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -241847,7 +243311,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -242475,7 +243939,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -243124,7 +244588,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -243752,7 +245216,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -244449,7 +245913,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -245077,7 +246541,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -245750,7 +247214,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -246068,7 +247532,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -246696,7 +248160,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -247568,7 +249032,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -247885,7 +249349,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -248513,7 +249977,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -249258,6 +250722,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -249349,7 +250837,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -249666,7 +251154,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -250294,7 +251782,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -251166,7 +252654,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -251470,7 +252958,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -252098,7 +253586,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -252840,6 +254328,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -252976,7 +254488,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -253280,7 +254792,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -253908,7 +255420,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -254776,7 +256288,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -255260,6 +256772,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -255392,7 +256928,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -255997,7 +257533,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -256460,6 +257996,29 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -256565,7 +258124,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -257193,7 +258752,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -257840,7 +259399,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -258468,7 +260027,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -259117,7 +260676,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -259745,7 +261304,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -260442,7 +262001,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -261070,7 +262629,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -261788,7 +263347,7 @@ export type PRIVACY_POLICY_QUERYResult = {
     subtitle?: string;
     imageType?: "banner" | "icon" | "none";
     iconNoImageLayoutStyle?: "row" | "stacked";
-    iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+    iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
     image: {
       asset: {
         _ref: string;
@@ -262106,7 +263665,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -262734,7 +264293,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -263606,7 +265165,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -263923,7 +265482,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -264551,7 +266110,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -265296,6 +266855,30 @@ export type PRIVACY_POLICY_QUERYResult = {
     content: null;
   } | {
     _key: string;
+    _type: "imageGroup";
+    images?: Array<{
+      image?: {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+      };
+      _type: "imageGroupItem";
+      _key: string;
+    }>;
+    size?: "full" | "small";
+    duration?: number;
+    image: null;
+    content: null;
+  } | {
+    _key: string;
     _type: "itemList";
     alignment?: "center" | "inherit" | "left" | "right";
     items?: Array<{
@@ -265387,7 +266970,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -265704,7 +267287,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -266332,7 +267915,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -267204,7 +268787,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -267508,7 +269091,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -268136,7 +269719,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -268878,6 +270461,30 @@ export type PRIVACY_POLICY_QUERYResult = {
       content: null;
     } | {
       _key: string;
+      _type: "imageGroup";
+      images?: Array<{
+        image?: {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+        };
+        _type: "imageGroupItem";
+        _key: string;
+      }>;
+      size?: "full" | "small";
+      duration?: number;
+      image: null;
+      content: null;
+    } | {
+      _key: string;
       _type: "itemList";
       alignment?: "center" | "inherit" | "left" | "right";
       items?: Array<{
@@ -269014,7 +270621,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -269318,7 +270925,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -269946,7 +271553,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -270814,7 +272421,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -271298,6 +272905,30 @@ export type PRIVACY_POLICY_QUERYResult = {
         content: null;
       } | {
         _key: string;
+        _type: "imageGroup";
+        images?: Array<{
+          image?: {
+            asset?: {
+              _ref: string;
+              _type: "reference";
+              _weak?: boolean;
+              [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            alt?: string;
+            _type: "image";
+          };
+          _type: "imageGroupItem";
+          _key: string;
+        }>;
+        size?: "full" | "small";
+        duration?: number;
+        image: null;
+        content: null;
+      } | {
+        _key: string;
         _type: "itemList";
         alignment?: "center" | "inherit" | "left" | "right";
         items?: Array<{
@@ -271430,7 +273061,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -272035,7 +273666,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -272498,6 +274129,29 @@ export type PRIVACY_POLICY_QUERYResult = {
           image: null;
         } | {
           _key: string;
+          _type: "imageGroup";
+          images?: Array<{
+            image?: {
+              asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+              };
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt?: string;
+              _type: "image";
+            };
+            _type: "imageGroupItem";
+            _key: string;
+          }>;
+          size?: "full" | "small";
+          duration?: number;
+          image: null;
+        } | {
+          _key: string;
           _type: "itemList";
           alignment?: "center" | "inherit" | "left" | "right";
           items?: Array<{
@@ -272603,7 +274257,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -273231,7 +274885,7 @@ export type PRIVACY_POLICY_QUERYResult = {
             subtitle?: string;
             imageType?: "banner" | "icon" | "none";
             iconNoImageLayoutStyle?: "row" | "stacked";
-            iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+            iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
             image: {
               asset: {
                 _ref: string;
@@ -273878,7 +275532,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -274506,7 +276160,7 @@ export type PRIVACY_POLICY_QUERYResult = {
           subtitle?: string;
           imageType?: "banner" | "icon" | "none";
           iconNoImageLayoutStyle?: "row" | "stacked";
-          iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+          iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
           image: {
             asset: {
               _ref: string;
@@ -275155,7 +276809,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -275783,7 +277437,7 @@ export type PRIVACY_POLICY_QUERYResult = {
         subtitle?: string;
         imageType?: "banner" | "icon" | "none";
         iconNoImageLayoutStyle?: "row" | "stacked";
-        iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+        iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
         image: {
           asset: {
             _ref: string;
@@ -276480,7 +278134,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -277108,7 +278762,7 @@ export type PRIVACY_POLICY_QUERYResult = {
       subtitle?: string;
       imageType?: "banner" | "icon" | "none";
       iconNoImageLayoutStyle?: "row" | "stacked";
-      iconSelection?: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker";
+      iconSelection?: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker";
       image: {
         asset: {
           _ref: string;
@@ -277924,7 +279578,7 @@ export type EQUIPMENT_LIST_QUERYResult = {
   categories: Array<{
     _key: string;
     name: string | null;
-    icon: "acoustics" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "speaker" | null;
+    icon: "acoustics" | "cog" | "computer" | "email" | "equipment" | "facebook" | "guitar" | "location" | "mic" | "phone" | "software" | "speaker" | null;
     items: Array<{
       _key: string;
       name: string | null;

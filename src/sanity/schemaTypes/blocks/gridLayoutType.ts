@@ -57,6 +57,10 @@ export const gridLayoutType = defineType({
           title: 'Image Block',
         }),
         defineArrayMember({
+          type: 'imageGroup',
+          title: 'Image Group (Slideshow)',
+        }),
+        defineArrayMember({
           type: 'youTubeVideo',
           title: 'YouTube Video',
         }),

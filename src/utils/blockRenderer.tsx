@@ -16,6 +16,7 @@ import type {
   CtaBlogPost as CtaBlogPostType,
   ImageBlock as ImageBlockType,
   ImageGallery as ImageGalleryType,
+  ImageGroup as ImageGroupType,
   YouTubeVideo as YouTubeVideoType,
   SpotifyWidget as SpotifyWidgetType,
   BandcampWidget as BandcampWidgetType,
@@ -45,6 +46,7 @@ import CTACalloutLinkComponent from '@/components/_blocks/CTACalloutLink';
 import CTABlogPost from '@/components/_blocks/CTABlogPost';
 import ImageBlock from '@/components/_blocks/Image';
 import ImageGallery from '@/components/_blocks/ImageGallery';
+import ImageGroupComponent from '@/components/_blocks/ImageGroup';
 import YouTubeVideo from '@/components/_blocks/YouTubeVideo';
 import SpotifyWidget from '@/components/_blocks/SpotifyWidget';
 import BandcampWidget from '@/components/_blocks/BandcampWidget';
@@ -97,6 +99,7 @@ type BlockType =
   | WithKey<CtaBlogPostType>
   | WithKey<ImageBlockType>
   | WithKey<ImageGalleryType>
+  | WithKey<ImageGroupType>
   | WithKey<YouTubeVideoType>
   | WithKey<SpotifyWidgetType>
   | WithKey<BandcampWidgetType>
@@ -264,6 +267,15 @@ export const renderBlock = (block: unknown, options: RenderBlockOptions): React.
             documentType={documentType}
             pathPrefix={blockPath}
           />
+        </BlockWrapper>
+      );
+    }
+
+    case 'imageGroup': {
+      const imageGroupBlock = typedBlock as WithKey<ImageGroupType>;
+      return (
+        <BlockWrapper key={imageGroupBlock._key}>
+          <ImageGroupComponent {...imageGroupBlock} />
         </BlockWrapper>
       );
     }

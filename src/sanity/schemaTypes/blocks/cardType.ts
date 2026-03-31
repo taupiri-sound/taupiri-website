@@ -163,6 +163,7 @@ export const cardType = defineType({
         defineArrayMember({ type: 'quote' }),
         defineArrayMember({ type: 'imageBlock' }),
         defineArrayMember({ type: 'imageGallery' }),
+        defineArrayMember({ type: 'imageGroup' }),
         defineArrayMember({ type: 'ctaButton' }),
         defineArrayMember({ type: 'ctaCalloutLink' }),
         defineArrayMember({ type: 'ctaBlogPost' }),
