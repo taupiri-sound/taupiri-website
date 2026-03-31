@@ -2387,6 +2387,21 @@
                   },
                   "rest": {
                     "type": "inline",
+                    "name": "imageGroup"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
                     "name": "ctaButton"
                   }
                 },
@@ -2700,6 +2715,21 @@
                   "rest": {
                     "type": "inline",
                     "name": "imageGallery"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "imageGroup"
                   }
                 },
                 {
@@ -3684,6 +3714,21 @@
                   "rest": {
                     "type": "inline",
                     "name": "imageBlock"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "imageGroup"
                   }
                 },
                 {
@@ -9832,6 +9877,21 @@
                   "rest": {
                     "type": "inline",
                     "name": "imageGallery"
+                  }
+                },
+                {
+                  "type": "object",
+                  "attributes": {
+                    "_key": {
+                      "type": "objectAttribute",
+                      "value": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "rest": {
+                    "type": "inline",
+                    "name": "imageGroup"
                   }
                 },
                 {

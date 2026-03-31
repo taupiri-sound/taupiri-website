@@ -1,6 +1,7 @@
 import React from 'react';
 import { stegaClean } from 'next-sanity';
 import type { GridLayoutBlock, RichTextBlock, EquipmentListBlock, CardBlock, ImageBlock as ImageBlockType, YouTubeVideoBlock, SpotifyWidgetBlock, BandcampWidgetBlock, AudioSamplePlayerBlock, ProjectListBlock, FeaturedProjectsBlock } from '@/types/blocks';
+import type { ImageGroup as ImageGroupType } from '@/sanity/types';
 import type { EQUIPMENT_LIST_QUERYResult, ALL_PROJECTS_QUERYResult } from '@/sanity/types';
 import Card from './Card';
 import RichText from './RichText';
@@ -8,6 +9,7 @@ import EquipmentList from './EquipmentList';
 import ProjectListComponent from './ProjectList';
 import FeaturedProjectsComponent from './FeaturedProjects';
 import ImageBlock from './Image';
+import ImageGroupComponent from './ImageGroup';
 import YouTubeVideo from './YouTubeVideo';
 import SpotifyWidget from './SpotifyWidget';
 import BandcampWidget from './BandcampWidget';
@@ -52,7 +54,7 @@ const GridLayout = ({
 
   const itemClasses = getGridClasses(validColumns);
 
-  type GridContentItem = RichTextBlock | EquipmentListBlock | ProjectListBlock | FeaturedProjectsBlock | CardBlock | ImageBlockType | YouTubeVideoBlock | SpotifyWidgetBlock | BandcampWidgetBlock | AudioSamplePlayerBlock;
+  type GridContentItem = RichTextBlock | EquipmentListBlock | ProjectListBlock | FeaturedProjectsBlock | CardBlock | ImageBlockType | (ImageGroupType & { _key: string }) | YouTubeVideoBlock | SpotifyWidgetBlock | BandcampWidgetBlock | AudioSamplePlayerBlock;
 
   const renderGridItem = (item: GridContentItem, idx: number) => {
     const key = item._key || idx;
@@ -112,6 +114,13 @@ const GridLayout = ({
               {...baseProps}
               pathPrefix={baseProps.fieldPathPrefix}
             />
+          </div>
+        );
+
+      case 'imageGroup':
+        return (
+          <div key={key} className={itemClasses}>
+            <ImageGroupComponent {...item} />
           </div>
         );
 

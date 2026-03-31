@@ -2,7 +2,7 @@
 // This type represents any block that can contain other blocks
 
 
-import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, YouTubeVideo, SpotifyWidget, BandcampWidget, AudioSamplePlayer, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList, EquipmentList, ClientList, TeamMemberList, ContactForm, ProjectList, FeaturedProjects } from '@/sanity/types';
+import type { Divider, RichText, Quote, TwoColumnLayout, Card, GridLayout, Icon, ImageBlock as SanityImageBlock, ImageGallery, ImageGroup as SanityImageGroup, YouTubeVideo, SpotifyWidget, BandcampWidget, AudioSamplePlayer, PageSection, CtaButton, CtaCalloutLink, EmbeddedCtaButton, CtaBlogPost, SubSection, SubSubSection, CompanyLinksBlock, BlockListWithStats, CheckList, ItemList, EquipmentList, ClientList, TeamMemberList, ContactForm, ProjectList, FeaturedProjects } from '@/sanity/types';
 
 export interface BaseBlock {
   _key: string;
@@ -30,6 +30,7 @@ export type GridLayoutBlock = GridLayout & { _key: string };
 export type IconBlock = Icon & { _key: string };
 export type ImageBlock = SanityImageBlock & { _key: string };
 export type ImageGalleryBlock = ImageGallery & { _key: string };
+export type ImageGroupBlock = SanityImageGroup & { _key: string };
 export type YouTubeVideoBlock = YouTubeVideo & { _key: string };
 export type SpotifyWidgetBlock = SpotifyWidget & { _key: string };
 export type BandcampWidgetBlock = BandcampWidget & { _key: string };
@@ -64,6 +65,7 @@ export type NestedBlock =
   | IconBlock
   | ImageBlock
   | ImageGalleryBlock
+  | ImageGroupBlock
   | YouTubeVideoBlock
   | SpotifyWidgetBlock
   | BandcampWidgetBlock
