@@ -5,6 +5,7 @@ import { stegaClean } from 'next-sanity';
 import Image from 'next/image';
 import type { ImageGroup } from '@/sanity/types';
 import { urlFor } from '@/sanity/lib/image';
+import useIsVisible from '@/hooks/useIsVisible';
 
 interface ImageGroupProps extends ImageGroup {
   className?: string;
@@ -14,6 +15,7 @@ const ImageGroup = ({ images, size = 'full', duration = 5, className = '' }: Ima
   const cleanSize = stegaClean(size) || 'full';
   const durationMs = (stegaClean(duration) || 5) * 1000;
 
+  const [containerRef, isVisible] = useIsVisible<HTMLElement>();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
 
@@ -24,14 +26,14 @@ const ImageGroup = ({ images, size = 'full', duration = 5, className = '' }: Ima
   }, []);
 
   useEffect(() => {
-    if (validImages.length <= 1) return;
+    if (validImages.length <= 1 || !isVisible) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % validImages.length);
     }, durationMs);
 
     return () => clearInterval(interval);
-  }, [durationMs, validImages.length]);
+  }, [durationMs, validImages.length, isVisible]);
 
   if (validImages.length === 0) return null;
 
@@ -47,7 +49,7 @@ const ImageGroup = ({ images, size = 'full', duration = 5, className = '' }: Ima
 
   const sizeClasses = getSizeClasses(cleanSize);
   return (
-    <figure className={`${sizeClasses} ${className}`}>
+    <figure ref={containerRef} className={`${sizeClasses} ${className}`}>
       <div className='relative aspect-[3/2] overflow-hidden rounded-lg'>
         {validImages.map((item, index) => {
           const isCurrentImage = index === currentIndex;
