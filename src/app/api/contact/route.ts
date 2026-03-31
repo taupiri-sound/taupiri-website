@@ -11,7 +11,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // IMPORTANT: Add these environment variables to your .env.local file:
 // RESEND_API_KEY=your_resend_api_key_here
 // RESEND_CONTACT_EMAIL=your_contact_email@example.com
-// RESEND_FROM_EMAIL=noreply@yourdomain.com (must be verified in Resend)
+// RESEND_FROM_EMAIL=noreply@yourdomain.com (plain email only; business name is sourced from Sanity)
 
 // Rate limiting configuration (in-memory, resets on server restart)
 // For production, consider using a more robust solution like Redis or Upstash
@@ -133,8 +133,10 @@ export async function POST(request: Request) {
 
     // Get contact email from environment variable
     const contactEmail = process.env.RESEND_CONTACT_EMAIL;
-    const fromEmail =
-      process.env.RESEND_FROM_EMAIL || `${organisationName} <onboarding@resend.dev>`;
+    const fromEmailAddress = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+    const fromEmail = organisationName
+      ? `${organisationName} <${fromEmailAddress}>`
+      : fromEmailAddress;
 
     if (!contactEmail) {
       console.error('RESEND_CONTACT_EMAIL environment variable is not set');
