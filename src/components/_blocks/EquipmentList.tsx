@@ -32,7 +32,6 @@ const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps
           <div
             key={category._key}
             className='break-inside-avoid mb-4 bg-brand-white-dark rounded-xl shadow-sm overflow-hidden'>
-
             {/* Accent bar */}
             <div className='h-1 w-full bg-subtle' />
 
@@ -41,9 +40,7 @@ const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps
               <div
                 className='flex-shrink-0 w-8 h-8 rounded-full bg-subtle/20 flex items-center justify-center text-subtle'
                 {...createSanityDataAttribute(documentId, documentType, `${categoryPath}.icon`)}>
-                <div className='w-4 h-4'>
-                  {React.createElement(IconComponent)}
-                </div>
+                <div className='w-4 h-4'>{React.createElement(IconComponent)}</div>
               </div>
               <p
                 className='text-h6 font-semibold text-brand-primary'
@@ -65,12 +62,16 @@ const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps
                   <li
                     key={item._key}
                     className='relative flex items-start gap-2.5'
-                    onMouseEnter={() => item.isTemporarilyUnavailable && setHoveredItemKey(item._key)}
+                    onMouseEnter={() =>
+                      item.isTemporarilyUnavailable && setHoveredItemKey(item._key)
+                    }
                     onMouseLeave={() => setHoveredItemKey(null)}
-                    onTouchStart={() => item.isTemporarilyUnavailable && setHoveredItemKey(item._key)}>
+                    onTouchStart={() =>
+                      item.isTemporarilyUnavailable && setHoveredItemKey(item._key)
+                    }>
                     <div className='flex-shrink-0 w-1.5 h-1.5 rounded-full bg-subtle mt-[0.4rem]' />
                     <span
-                      className={`text-body-sm ${item.isTemporarilyUnavailable ? 'line-through text-subtle cursor-help' : 'text-brand-primary/80'}`}
+                      className={`text-body-base ${item.isTemporarilyUnavailable ? 'line-through text-subtle cursor-help' : 'text-brand-primary/80'}`}
                       {...createSanityDataAttribute(documentId, documentType, `${itemPath}.name`)}>
                       {item.name}
                     </span>
@@ -81,7 +82,11 @@ const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps
                         <div className='relative'>
                           <div className='absolute -bottom-2 left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-brand-secondary' />
                           <p
-                            {...createSanityDataAttribute(documentId, documentType, `${itemPath}.unavailableReason`)}>
+                            {...createSanityDataAttribute(
+                              documentId,
+                              documentType,
+                              `${itemPath}.unavailableReason`,
+                            )}>
                             {item.unavailableReason}
                           </p>
                         </div>
@@ -91,7 +96,6 @@ const EquipmentList = ({ className = '', equipmentListData }: EquipmentListProps
                 );
               })}
             </ul>
-
           </div>
         );
       })}
