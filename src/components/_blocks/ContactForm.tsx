@@ -117,7 +117,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
       )}
 
       {status !== 'success' && (
-        <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
+        <form onSubmit={handleSubmit(onSubmit)} className='space-y-6' aria-busy={status === 'loading'}>
           {/* Honeypot field - hidden from users, only bots will fill it */}
           <div className='hidden' aria-hidden='true'>
             <label htmlFor='honeypot'>Leave this field empty</label>
@@ -146,6 +146,8 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
                 },
               })}
               disabled={fieldDisabled}
+              required
+              aria-required='true'
               className={getInputStyles('name')}
               placeholder='Your name'
               aria-invalid={errors.name ? 'true' : 'false'}
@@ -174,6 +176,8 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
                 },
               })}
               disabled={fieldDisabled}
+              required
+              aria-required='true'
               className={getInputStyles('email')}
               placeholder='your.email@example.com'
               aria-invalid={errors.email ? 'true' : 'false'}
@@ -217,6 +221,8 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               })}
               disabled={fieldDisabled}
               rows={6}
+              required
+              aria-required='true'
               className={getInputStyles('message')}
               placeholder={messagePlaceholder}
               aria-invalid={errors.message ? 'true' : 'false'}
