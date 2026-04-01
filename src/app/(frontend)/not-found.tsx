@@ -1,11 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
 import PageHero from '@/components/Page/PageHero';
 import Container from '@/components/Layout/Container';
 import CTA from '@/components/UI/CTA';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 import { FaQuestionCircle } from 'react-icons/fa';
 import { getBusinessInfo } from '@/actions';
+import { getBaseUrl } from '@/lib/metadata';
 
 const META_DESCRIPTION = 'Sorry, the page you are looking for could not be found.';
 
@@ -14,6 +14,7 @@ export async function generateMetadata() {
   const orgName = businessInfo?.organisationName || '';
   const title = orgName ? `Page Not Found - ${orgName}` : 'Page Not Found';
   return {
+    metadataBase: new URL(getBaseUrl()),
     title,
     description: META_DESCRIPTION,
     robots: 'noindex, nofollow',
@@ -24,45 +25,6 @@ export async function generateMetadata() {
     },
   };
 }
-
-const navigationLinks = [
-  {
-    href: '/',
-    icon: '🏠',
-    title: 'Home',
-    description: 'Discover our latest news and featured content',
-  },
-  {
-    href: '/discography',
-    icon: '🎵',
-    title: 'Discography',
-    description: 'Explore our complete collection of music releases',
-  },
-  {
-    href: '/blog',
-    icon: '📝',
-    title: 'Blog',
-    description: 'Read our latest news, stories, and insights',
-  },
-];
-
-interface NavigationLinkProps {
-  href: string;
-  icon: string;
-  title: string;
-  description: string;
-}
-
-const NavigationLink = ({ href, icon, title, description }: NavigationLinkProps) => (
-  <Link
-    href={href}
-    className='group bg-brand-white-dark shadow-sm rounded-lg p-4 hover:bg-brand-primary/10 hover:shadow-md transition-all duration-200'>
-    <div className='text-body-base font-medium mb-2 group-hover:underline group-hover:underline-offset-4'>
-      {icon} {title}
-    </div>
-    <div className='text-body-sm text-gray-600'>{description}</div>
-  </Link>
-);
 
 export default function NotFound() {
   return (

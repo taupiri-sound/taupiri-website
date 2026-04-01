@@ -221,7 +221,7 @@ export const blogPostType = defineType({
       overrideDate: 'overrideDate',
       hasOverrideDate: 'hasOverrideDate',
     },
-    prepare({ title, author, media, publishedAt, overrideDate, hasOverrideDate }) {
+    prepare({ title, media, publishedAt, overrideDate, hasOverrideDate }) {
       const displayDate =
         hasOverrideDate && overrideDate
           ? new Date(overrideDate).toLocaleDateString()

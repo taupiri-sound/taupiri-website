@@ -185,7 +185,7 @@ export const cardType = defineType({
       image: 'image',
       content: 'content',
     },
-    prepare({ title, subtitle, visualStyle, imageType, iconNoImageLayoutStyle, image, content }) {
+    prepare({ title, visualStyle, imageType, iconNoImageLayoutStyle, image, content }) {
       const imageTypeLabel =
         imageType === 'banner'
           ? 'Banner'

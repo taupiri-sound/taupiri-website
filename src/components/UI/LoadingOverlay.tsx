@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
-import UnifiedImage from '@/components/UI/UnifiedImage';
 
 interface LoadingOverlayProps {
   isLoading?: boolean;

@@ -10,6 +10,7 @@ interface FeaturedProjectsProps {
 
 const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   const [openProjectId, setOpenProjectId] = useState<string | null>(null);
+  const openProjectIdRef = useRef<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const innerContainerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
@@ -87,8 +88,9 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
       // If moved more than 5px, consider it a drag
       if (Math.abs(deltaX) > 5) {
         // Close any open overlay when user starts dragging
-        if (!isDragging.current && openProjectId) {
+        if (!isDragging.current && openProjectIdRef.current) {
           setOpenProjectId(null);
+          openProjectIdRef.current = null;
         }
         isDragging.current = true;
       }
@@ -153,7 +155,11 @@ const FeaturedProjects = ({ projects }: FeaturedProjectsProps) => {
   }
 
   const handleToggle = (projectId: string) => {
-    setOpenProjectId((prev) => (prev === projectId ? null : projectId));
+    setOpenProjectId((prev) => {
+      const next = prev === projectId ? null : projectId;
+      openProjectIdRef.current = next;
+      return next;
+    });
   };
 
   // Repeat the projects array REPETITIONS times for seamless infinite scroll
