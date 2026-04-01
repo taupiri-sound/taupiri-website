@@ -35,15 +35,34 @@ function validateHoneypot(honeypot: string | undefined): boolean {
   return !honeypot || honeypot === '';
 }
 
+// Field length limits
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 254;
+const MAX_PHONE_LENGTH = 30;
+const MAX_MESSAGE_LENGTH = 5000;
+
 // Validate email format
 function validateEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
-// Sanitize input to prevent injection attacks
-function sanitizeInput(input: string): string {
-  return input.replace(/[<>]/g, '').trim();
+// Escape HTML entities to prevent injection in email templates.
+// This ensures user-supplied values render as plain text, not markup,
+// including entity-encoded payloads like &#60; or javascript: URIs.
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+    .trim();
+}
+
+// Sanitize phone: only allow characters valid in phone numbers
+function sanitizePhone(phone: string): string {
+  return phone.replace(/[^0-9\s+\-().]/g, '').trim();
 }
 
 // Check rate limit for IP address
@@ -108,16 +127,30 @@ export async function POST(request: Request) {
       );
     }
 
+    // Validate field lengths
+    if (name.length > MAX_NAME_LENGTH) {
+      return NextResponse.json({ error: 'Name is too long.' }, { status: 400 });
+    }
+    if (email.length > MAX_EMAIL_LENGTH) {
+      return NextResponse.json({ error: 'Email address is too long.' }, { status: 400 });
+    }
+    if (phone && phone.length > MAX_PHONE_LENGTH) {
+      return NextResponse.json({ error: 'Phone number is too long.' }, { status: 400 });
+    }
+    if (message.length > MAX_MESSAGE_LENGTH) {
+      return NextResponse.json({ error: 'Message is too long (max 5000 characters).' }, { status: 400 });
+    }
+
     // Validate email format
     if (!validateEmail(email)) {
       return NextResponse.json({ error: 'Please provide a valid email address.' }, { status: 400 });
     }
 
-    // Sanitize inputs
-    const sanitizedName = sanitizeInput(name);
-    const sanitizedEmail = sanitizeInput(email);
-    const sanitizedPhone = phone ? sanitizeInput(phone) : '';
-    const sanitizedMessage = sanitizeInput(message);
+    // Escape HTML entities in all user-supplied fields to prevent injection in email templates
+    const sanitizedName = escapeHtml(name);
+    const sanitizedEmail = escapeHtml(email);
+    const sanitizedPhone = phone ? sanitizePhone(phone) : '';
+    const sanitizedMessage = escapeHtml(message);
 
     // Validate sanitized inputs aren't empty after sanitization
     if (!sanitizedName || !sanitizedEmail || !sanitizedMessage) {
