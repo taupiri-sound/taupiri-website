@@ -309,6 +309,6 @@ export function getLocalBusinessDataFromSeoMetaData(
 
 export function generateStructuredDataScript(schema: object) {
   return {
-    __html: JSON.stringify(schema),
+    __html: JSON.stringify(schema).replace(/</g, '\\u003c'),
   };
 }

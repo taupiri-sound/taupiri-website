@@ -96,7 +96,7 @@ const RootLayout = async ({
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organisationSchema),
+            __html: JSON.stringify(organisationSchema).replace(/</g, '\\u003c'),
           }}
         />
       </head>
