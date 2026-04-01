@@ -274,15 +274,10 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Contact form error:', error);
 
-    // Check if it's a Resend-specific error
-    const errorMessage =
-      error instanceof Error ? error.message : 'Failed to send message. Please try again later.';
-
     return NextResponse.json(
       {
         error:
           'We encountered an issue sending your message. Please try contacting us directly via email or phone.',
-        details: errorMessage,
       },
       { status: 500 }
     );
