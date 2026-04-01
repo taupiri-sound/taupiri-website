@@ -149,9 +149,10 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               className={getInputStyles('name')}
               placeholder='Your name'
               aria-invalid={errors.name ? 'true' : 'false'}
+              aria-describedby={errors.name ? 'name-error' : undefined}
             />
             {errors.name && (
-              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+              <p id='name-error' className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
                 {errors.name.message}
               </p>
             )}
@@ -176,9 +177,10 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               className={getInputStyles('email')}
               placeholder='your.email@example.com'
               aria-invalid={errors.email ? 'true' : 'false'}
+              aria-describedby={errors.email ? 'email-error' : undefined}
             />
             {errors.email && (
-              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+              <p id='email-error' className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
                 {errors.email.message}
               </p>
             )}
@@ -218,9 +220,10 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               className={getInputStyles('message')}
               placeholder={messagePlaceholder}
               aria-invalid={errors.message ? 'true' : 'false'}
+              aria-describedby={errors.message ? 'message-error' : undefined}
             />
             {errors.message && (
-              <p className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
+              <p id='message-error' className='mt-1 text-body-sm text-red-600 transition-opacity duration-200'>
                 {errors.message.message}
               </p>
             )}
