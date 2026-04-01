@@ -227,11 +227,13 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
           </div>
 
           {/* Error message display */}
-          {status === 'error' && (
-            <div className='bg-red-50 border-2 border-red-200 rounded-lg p-4'>
-              <p className='text-body-base text-red-700'>{errorMessage}</p>
-            </div>
-          )}
+          <div role='status' aria-live='polite'>
+            {status === 'error' && (
+              <div className='bg-red-50 border-2 border-red-200 rounded-lg p-4'>
+                <p className='text-body-base text-red-700'>{errorMessage}</p>
+              </div>
+            )}
+          </div>
 
           {/* Submit button */}
           <div className='flex justify-center'>
@@ -247,12 +249,14 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
         </form>
       )}
 
-      {status === 'success' && (
-        <div className='bg-brand-secondary rounded-lg shadow-sm p-6 mt-4 text-center'>
-          <p className='text-h4 mb-2 text-brand-white'>{successHeading}</p>
-          <p className='text-body-base mb-4 text-brand-white'>{successMessage}</p>
-        </div>
-      )}
+      <div role='status' aria-live='polite'>
+        {status === 'success' && (
+          <div className='bg-brand-secondary rounded-lg shadow-sm p-6 mt-4 text-center'>
+            <p className='text-h4 mb-2 text-brand-white'>{successHeading}</p>
+            <p className='text-body-base mb-4 text-brand-white'>{successMessage}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
