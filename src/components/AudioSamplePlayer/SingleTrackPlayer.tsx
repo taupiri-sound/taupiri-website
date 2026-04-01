@@ -42,6 +42,8 @@ const SingleTrackPlayer = ({
 }: SingleTrackPlayerProps) => {
   return (
     <div
+      role='region'
+      aria-label='Audio player'
       className={`${maxCardWidth} mx-auto relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left`}
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
       {/* Header */}

@@ -28,7 +28,7 @@ const TimelineBar = ({ currentTime, duration, progressPercentage, onTimelineChan
           aria-label='Audio timeline'
         />
         <div
-          className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 pointer-events-none'
+          className='absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-brand-primary rounded-full shadow-lg transition-all duration-150 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none'
           style={{ left: `calc(${progressPercentage}% - 0.5rem)` }}
         />
       </div>

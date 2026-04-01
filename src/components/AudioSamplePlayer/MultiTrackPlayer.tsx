@@ -53,8 +53,14 @@ const MultiTrackPlayer = ({
 }: MultiTrackPlayerProps) => {
   return (
     <div
+      role='region'
+      aria-label='Audio player'
       className={`${maxCardWidth} mx-auto relative rounded-lg bg-gradient-to-br from-brand-white to-brand-white-dark overflow-hidden shadow-sm text-left`}
       data-sanity-edit-target={documentId && documentType ? `${documentId}` : undefined}>
+      {/* Screen reader live region for track changes */}
+      <div aria-live='polite' aria-atomic='true' className='sr-only'>
+        {`Now playing: ${currentTrack.songName} by ${currentTrack.artistName}`}
+      </div>
       {/* Currently playing track header */}
       <div className='bg-brand-white-dark border-b border-brand-primary/10 p-4'>
         <div className='flex flex-col md:flex-row items-start md:items-center gap-4'>
