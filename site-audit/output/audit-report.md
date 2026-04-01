@@ -95,7 +95,7 @@ Each item is a checkbox — tick it off once resolved. Items are ordered by seve
 
 ### 2.2 API & Input Validation
 
-- [ ] 🔴 **Weak input sanitisation in contact API** — `sanitizeInput()` only strips `<` and `>` characters. This does not protect against XSS via entity encoding (`&#60;`), `javascript:` protocol URIs, event handler attributes, or HTML injection in email templates. See [src/app/api/contact/route.ts:44-47](src/app/api/contact/route.ts#L44). Replace with a proper schema validation library (e.g., `zod`) for all contact form inputs, with explicit max lengths and format rules
+- [x] 🔴 **Weak input sanitisation in contact API** — `sanitizeInput()` only strips `<` and `>` characters. This does not protect against XSS via entity encoding (`&#60;`), `javascript:` protocol URIs, event handler attributes, or HTML injection in email templates. See [src/app/api/contact/route.ts:44-47](src/app/api/contact/route.ts#L44). Replace with a proper schema validation library (e.g., `zod`) for all contact form inputs, with explicit max lengths and format rules
 - [ ] 🟠 **`x-forwarded-for` header used for rate limiting without validation** — the current implementation reads the first IP from `x-forwarded-for`, which can be spoofed by attackers to bypass rate limiting (`X-Forwarded-For: 1.2.3.4`). On Vercel, use the `x-real-ip` header or the `waitUntil` + Vercel's built-in rate limiting instead. See [src/app/api/contact/route.ts:76-77](src/app/api/contact/route.ts#L76)
 - [ ] 🟠 **In-memory rate limiting** — the rate limit store is a `Map` that resets on every cold start and does not work across serverless function instances. This is acknowledged in the code comments. Replace with a persistent solution (Upstash Redis, Vercel KV, or Cloudflare Workers KV) for reliable rate limiting. See [src/app/api/contact/route.ts:20](src/app/api/contact/route.ts#L20)
 - [ ] 🟠 **No CSRF protection on contact form** — the `POST /api/contact` endpoint accepts JSON from any origin. While the Sanity revalidate webhook uses HMAC signature validation (✅), the contact form does not validate request origin. Add `Origin` header checking or an explicit CSRF token for the contact form API
@@ -188,7 +188,7 @@ Each item is a checkbox — tick it off once resolved. Items are ordered by seve
 
 ### 4.3 Visual & Motion
 
-- [ ] 🔴 **No `prefers-reduced-motion` support** — no media query for `prefers-reduced-motion` exists anywhere in the codebase (confirmed: zero matches in `src/`). This affects scroll animations, header fade-in, CSS transitions, and any JavaScript-driven animations. Users who have enabled reduced motion in their OS settings receive no accommodation. Add to `globals.css`:
+- [x] 🔴 **No `prefers-reduced-motion` support** — no media query for `prefers-reduced-motion` exists anywhere in the codebase (confirmed: zero matches in `src/`). This affects scroll animations, header fade-in, CSS transitions, and any JavaScript-driven animations. Users who have enabled reduced motion in their OS settings receive no accommodation. Add to `globals.css`:
   ```css
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {

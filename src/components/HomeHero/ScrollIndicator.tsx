@@ -6,15 +6,18 @@ interface ScrollIndicatorProps {
 
 const ScrollIndicator = ({ className = '' }: ScrollIndicatorProps) => {
   const handleScrollDown = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const scrollBehavior: ScrollBehavior = prefersReducedMotion ? 'instant' : 'smooth';
+
     // Scroll to the next section after the hero
     const heroElement = document.querySelector('[data-hero]') as HTMLElement;
     if (heroElement) {
       const nextElement = heroElement.nextElementSibling as HTMLElement;
       if (nextElement) {
-        nextElement.scrollIntoView({ behavior: 'smooth' });
+        nextElement.scrollIntoView({ behavior: scrollBehavior });
       } else {
         // Fallback: scroll by viewport height
-        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+        window.scrollBy({ top: window.innerHeight, behavior: scrollBehavior });
       }
     }
   };
