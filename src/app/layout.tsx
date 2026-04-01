@@ -1,5 +1,6 @@
 import React from 'react';
 import { Saira_Condensed, Chau_Philomene_One } from 'next/font/google';
+import Script from 'next/script';
 import '@/app/globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
 import { getBusinessInfo } from '@/actions';
@@ -102,6 +103,22 @@ const RootLayout = async ({
       <body
         className={`${sairaCondensed.className} ${chauPhilomeneOne.variable} text-body-base text-body bg-brand-white`}>
         {children}
+        {isProd && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+              strategy='afterInteractive'
+            />
+            <Script id='ga4-init' strategy='afterInteractive'>
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );
