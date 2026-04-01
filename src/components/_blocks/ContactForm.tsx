@@ -147,6 +147,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               })}
               disabled={fieldDisabled}
               required
+              autoComplete='name'
               aria-required='true'
               className={getInputStyles('name')}
               placeholder='Your name'
@@ -177,6 +178,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               })}
               disabled={fieldDisabled}
               required
+              autoComplete='email'
               aria-required='true'
               className={getInputStyles('email')}
               placeholder='your.email@example.com'
@@ -200,6 +202,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               id='phone'
               {...register('phone')}
               disabled={fieldDisabled}
+              autoComplete='tel'
               className={getInputStyles('phone')}
               placeholder='+64 21 123 4567'
             />
@@ -222,6 +225,7 @@ const ContactForm = ({ className = '', settings }: ContactFormProps) => {
               disabled={fieldDisabled}
               rows={6}
               required
+              autoComplete='off'
               aria-required='true'
               className={getInputStyles('message')}
               placeholder={messagePlaceholder}
