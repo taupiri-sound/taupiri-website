@@ -91,9 +91,13 @@ function checkRateLimit(ip: string): boolean {
 
 export async function POST(request: Request) {
   try {
-    // Get client IP for rate limiting
-    const forwarded = request.headers.get('x-forwarded-for');
-    const ip = forwarded ? forwarded.split(',')[0] : 'unknown';
+    // Get client IP for rate limiting.
+    // On Vercel, x-real-ip is set by the infrastructure and cannot be spoofed by clients.
+    // Fall back to the LAST value of x-forwarded-for (appended by Vercel's proxy, not the client).
+    const ip =
+      request.headers.get('x-real-ip') ??
+      request.headers.get('x-forwarded-for')?.split(',').at(-1)?.trim() ??
+      'unknown';
 
     // Check rate limit
     if (!checkRateLimit(ip)) {
