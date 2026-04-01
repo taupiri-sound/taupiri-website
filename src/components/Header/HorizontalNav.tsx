@@ -26,7 +26,7 @@ const HorizontalNav = ({ navLinks, isMenuOpen }: HorizontalNavProps) => {
   }
 
   return (
-    <nav className={isMenuOpen ? 'hidden' : ''}>
+    <nav aria-label="Main navigation" className={isMenuOpen ? 'hidden' : ''}>
       {/* RESPONSIVE VISIBILITY: lg:flex breakpoint must align with VerticalNav hideOnDesktop logic */}
       {/* ⚠️ IMPORTANT: If this 'lg:flex' changes, update VerticalNav.tsx hideOnDesktop 'lg:hidden' accordingly */}
       <ul className='hidden lg:flex items-center gap-6'>

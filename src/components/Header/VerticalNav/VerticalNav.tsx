@@ -107,7 +107,7 @@ const VerticalNav = ({ isMenuOpen, onClose, navLinks, navCtas, businessName = ''
             e.currentTarget.style.scrollbarColor = '#430c08 transparent';
           }}>
           {/* Navigation Links - grows to fill available space */}
-          <nav className='px-10 py-10 w-full flex-grow'>
+          <nav aria-label="Mobile navigation" className='px-10 py-10 w-full flex-grow'>
             <div className='space-y-8'>
               {navLinks && navLinks.length > 0 ? (
                 <>
